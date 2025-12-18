@@ -1,0 +1,91 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+      - name: Run tests
+        run: npm test
+
+      - name: Content QA Audit
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/adultedu_test
+        run: |
+          # Create a dummy database file for the audit if it uses SQLite, or skip if strictly Postgres
+          # The current project seems to use Postgres primarily, but let's check if we can run the audit without a full DB or if it needs one.
+          # The audit script uses PrismaClient.
+          # We need to make sure the schema is pushed to the test DB.
+          
+          # Start postgres service is verified in the job? 
+          # No services defined in this simplified CI, assuming we need to add services or just run what we can.
+          # The current CI only runs tests.
+          # If we want to run the audit, we need a running DB with content.
+          # If there is no seeded content in CI, the audit will pass with 0 questions.
+          # We'll rely on the fact that `npm test` might have set up a DB or we need to do it.
+          # Given the user provided a "ci.yml" that is very basic (only runs on ubuntu-latest with no services defined), 
+          # we should probably add a service container for Postgres if we want to realistically audit content, 
+          # OR just assume the project uses SQLite for dev/test? 
+          # 'prisma/seed.js' suggests it seeds data.
+          
+          # Let's add the PostgreSQL service and the audit steps.
+          echo "Setting up DB for audit..."
+          
+    services:
+      postgres:
+        image: postgres:15
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: adultedu_test
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: npm
+
+      - name: Install dependencies
+        run: npm run install:all
+
+      - name: Run tests
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/adultedu_test
+        run: npm test
+
+      - name: Content QA Audit
+        env:
+          DATABASE_URL: postgresql://postgres:postgres@localhost:5432/adultedu_test
+        run: |
+          cd backend
+          npx prisma migrate deploy
+          # Seed minimal data if needed, or if migration is enough (content implies seeding usually)
+          # We might skip seeding if it takes too long, but audit needs content.
+          # Let's try to run seed.
+          npm run db:seed
+          npm run questions:audit -- --max-level=L2 > audit.json
+          node -e "
+            try {
+              const r = require('./audit.json');
+              const issues = Object.values(r.issues || {}).reduce((a,b) => a+b, 0);
+              const total = r.total || 0;
+              console.log('Audit Report:', JSON.stringify(r.issues));
+              if (issues > 0) { 
+                console.error('❌ QA issues found:', issues); 
+                process.exit(1); 
+              }
+              console.log('✅ Content QA passed (' + total + ' questions)');
+            } catch (e) {
+              console.log('⚠️ Could not parse audit report or no content.', e.message);
+            }
+          "

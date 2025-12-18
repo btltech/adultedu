@@ -1,0 +1,412 @@
+// Prisma Schema for AdultEdu
+// UK Adult Learning Platform
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================
+// User & Authentication
+// ============================================
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  passwordHash String   @map("password_hash")
+  role         String   @default("user") // user, admin, org_admin
+  organizationId String? @map("organization_id")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+  
+  // Gamification
+  xpTotal              Int       @default(0) @map("xp_total")
+  currentStreak        Int       @default(0) @map("current_streak")
+  longestStreak        Int       @default(0) @map("longest_streak")
+  lastActiveDate       DateTime? @map("last_active_date")
+  dailyChallengeStreak Int       @default(0) @map("daily_challenge_streak")
+
+  organization            Organization? @relation(fields: [organizationId], references: [id])
+  sessions                Session[]
+  enrollments             Enrollment[]
+  attempts                Attempt[]
+  certificates            Certificate[]
+  reviewItems             ReviewItem[]
+  achievements            Achievement[]
+  dailyChallengeAttempts  DailyChallengeAttempt[]
+  analyticsEvents         AnalyticsEvent[]
+
+  @@map("users")
+}
+
+// ============================================
+// Organizations (Multi-tenancy)
+// ============================================
+
+model Organization {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  name        String
+  domain      String?  @unique // Optional: auto-assign users by email domain
+  logoUrl     String?  @map("logo_url")
+  primaryColor String? @map("primary_color") // e.g. "#14b8a6"
+  isActive    Boolean  @default(true) @map("is_active")
+  settings    String?  // JSON: { allowedTracks: [], customWelcome: "", etc }
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  users User[]
+
+  @@map("organizations")
+}
+
+
+model Session {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  token     String   @unique
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+// ============================================
+// UK Qualification Framework
+// ============================================
+
+model Framework {
+  id          String   @id @default(uuid())
+  slug        String   @unique // EDS, FS, GCSE, ALEVEL, HE, TECH
+  title       String
+  description String?
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  trackFrameworks TrackFramework[]
+  outcomes        Outcome[]
+
+  @@map("frameworks")
+}
+
+model UkLevel {
+  id        String   @id @default(uuid())
+  code      String   @unique // E1, E2, E3, L1, L2, L3, L4, L5, L6, L7, L8
+  title     String
+  sortOrder Int      @map("sort_order")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  topics      Topic[]
+  questions   Question[]
+  enrollments Enrollment[]
+  assessments Assessment[]
+
+  @@map("uk_levels")
+}
+
+// ============================================
+// Learning Tracks & Content
+// ============================================
+
+model Track {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  title       String
+  description String?
+  category    String   @default("workplace") // workplace, qual_prep, he, tech
+  isLive      Boolean  @default(false) @map("is_live")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  trackFrameworks TrackFramework[]
+  topics          Topic[]
+  enrollments     Enrollment[]
+  assessments     Assessment[]
+  certificates    Certificate[]
+
+  @@map("tracks")
+}
+
+model TrackFramework {
+  trackId     String @map("track_id")
+  frameworkId String @map("framework_id")
+
+  track     Track     @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  framework Framework @relation(fields: [frameworkId], references: [id], onDelete: Cascade)
+
+  @@id([trackId, frameworkId])
+  @@map("track_frameworks")
+}
+
+model Topic {
+  id          String   @id @default(uuid())
+  trackId     String   @map("track_id")
+  ukLevelId   String   @map("uk_level_id")
+  title       String
+  description String?
+  sortOrder   Int      @default(0) @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  track         Track          @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  ukLevel       UkLevel        @relation(fields: [ukLevelId], references: [id])
+  lessons       Lesson[]
+  questions     Question[]
+  topicOutcomes TopicOutcome[]
+
+  @@map("topics")
+}
+
+model Outcome {
+  id          String   @id @default(uuid())
+  frameworkId String   @map("framework_id")
+  code        String   // e.g., "EDS-C1", "GCSE-N1"
+  title       String
+  description String?
+  area        String?  // For EDS: communicating, handling_info, transacting, problem_solving, being_safe, foundation
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  framework     Framework      @relation(fields: [frameworkId], references: [id], onDelete: Cascade)
+  topicOutcomes TopicOutcome[]
+
+  @@unique([frameworkId, code])
+  @@map("outcomes")
+}
+
+model TopicOutcome {
+  topicId   String @map("topic_id")
+  outcomeId String @map("outcome_id")
+
+  topic   Topic   @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  outcome Outcome @relation(fields: [outcomeId], references: [id], onDelete: Cascade)
+
+  @@id([topicId, outcomeId])
+  @@map("topic_outcomes")
+}
+
+model Lesson {
+  id            String   @id @default(uuid())
+  topicId       String   @map("topic_id")
+  title         String
+  summary       String?
+  contentBlocks String   @db.Text @map("content_blocks") // JSON string
+  estMinutes    Int      @default(15) @map("est_minutes")
+  isPublished   Boolean  @default(false) @map("is_published")
+  sortOrder     Int      @default(0) @map("sort_order")
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+  version       Int      @default(1)
+
+  topic     Topic      @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  questions Question[]
+
+  @@map("lessons")
+}
+
+// ============================================
+// Questions & Assessments
+// ============================================
+
+model Question {
+  id          String   @id @default(uuid())
+  topicId     String   @map("topic_id")
+  lessonId    String?  @map("lesson_id") // Optional - can be standalone
+  ukLevelId   String   @map("uk_level_id")
+  type        String   @default("mcq") // mcq, true_false, short_answer, multi_step, scenario
+  prompt      String   @db.Text
+  options     String?  @db.Text // JSON string for MCQ/multi-select
+  answer      String   @db.Text // JSON string - correct answer(s)
+  explanation String   @db.Text // Required - always show after answering
+  difficulty  Int      @default(3) // 1-5 scale
+  tags        String?  // JSON string - topic tags
+  imageUrl    String?  @map("image_url") // URL to main question image
+  assets      String?  // JSON string - additional assets (diagrams, etc)
+  sourceMeta  String?  @map("source_meta") // JSON: {framework, paper_style, marks, etc}
+  isPublished Boolean  @default(false) @map("is_published")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+  version     Int      @default(1)
+  
+  topic               Topic                @relation(fields: [topicId], references: [id], onDelete: Cascade)
+  lesson              Lesson?              @relation(fields: [lessonId], references: [id], onDelete: SetNull)
+  ukLevel             UkLevel              @relation(fields: [ukLevelId], references: [id])
+  attempts            Attempt[]
+  assessmentQuestions AssessmentQuestion[]
+  reviewItems         ReviewItem[]
+  dailyChallenges     DailyChallenge[]
+
+  @@map("questions")
+}
+
+model Assessment {
+  id        String   @id @default(uuid())
+  trackId   String   @map("track_id")
+  ukLevelId String   @map("uk_level_id")
+  type      String   @default("practice") // diagnostic, practice, mock
+  title     String
+  config    String?  // JSON: {timeLimit, questionCount, passingScore, etc}
+  isActive  Boolean  @default(true) @map("is_active")
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  track               Track                @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  ukLevel             UkLevel              @relation(fields: [ukLevelId], references: [id])
+  assessmentQuestions AssessmentQuestion[]
+
+  @@map("assessments")
+}
+
+model AssessmentQuestion {
+  assessmentId String @map("assessment_id")
+  questionId   String @map("question_id")
+  sortOrder    Int    @default(0) @map("sort_order")
+
+  assessment Assessment @relation(fields: [assessmentId], references: [id], onDelete: Cascade)
+  question   Question   @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@id([assessmentId, questionId])
+  @@map("assessment_questions")
+}
+
+// ============================================
+// User Progress & Attempts
+// ============================================
+
+model Enrollment {
+  id              String   @id @default(uuid())
+  userId          String   @map("user_id")
+  trackId         String   @map("track_id")
+  currentUkLevelId String?  @map("current_uk_level_id")
+  createdAt       DateTime @default(now()) @map("created_at")
+  updatedAt       DateTime @updatedAt @map("updated_at")
+
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  track         Track    @relation(fields: [trackId], references: [id], onDelete: Cascade)
+  currentUkLevel UkLevel? @relation(fields: [currentUkLevelId], references: [id])
+
+  @@unique([userId, trackId])
+  @@map("enrollments")
+}
+
+model Attempt {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  questionId   String   @map("question_id")
+  isCorrect    Boolean  @map("is_correct")
+  userAnswer   String   @map("user_answer") // JSON string
+  timeSpentSec Int?     @map("time_spent_sec")
+  createdAt    DateTime @default(now()) @map("created_at")
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@map("attempts")
+}
+
+// Spaced Repetition Review Items
+model ReviewItem {
+  id           String   @id @default(uuid())
+  userId       String   @map("user_id")
+  questionId   String   @map("question_id")
+  easeFactor   Float    @default(2.5) @map("ease_factor") // SM-2 ease factor
+  interval     Int      @default(1) // days until next review
+  repetitions  Int      @default(0) // number of successful reviews
+  dueDate      DateTime @map("due_date")
+  lastReviewed DateTime? @map("last_reviewed")
+  createdAt    DateTime @default(now()) @map("created_at")
+  updatedAt    DateTime @updatedAt @map("updated_at")
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, questionId])
+  @@map("review_items")
+}
+
+// ============================================
+// Certificates
+// ============================================
+
+model Certificate {
+  id          String   @id @default(uuid())
+  userId      String   @map("user_id")
+  trackId     String   @map("track_id")
+  title       String
+  description String?
+  awardedAt   DateTime @default(now()) @map("awarded_at")
+  downloadUrl String   @map("download_url")
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  track Track @relation(fields: [trackId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, trackId])
+  @@map("certificates")
+}
+
+// ============================================
+// Gamification - Achievements & Daily Challenges
+// ============================================
+
+model Achievement {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  type      String   // first_perfect, 7_day_streak, speed_demon, night_owl, topic_master, etc.
+  earnedAt  DateTime @default(now()) @map("earned_at")
+  metadata  String?  // JSON: optional extra data like {topicId, etc}
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, type])
+  @@map("achievements")
+}
+
+model DailyChallenge {
+  id         String   @id @default(uuid())
+  date       DateTime @unique
+  questionId String   @map("question_id")
+  xpMultiplier Float  @default(2.0) @map("xp_multiplier")
+  createdAt  DateTime @default(now()) @map("created_at")
+
+  question Question @relation(fields: [questionId], references: [id])
+  attempts DailyChallengeAttempt[]
+
+  @@map("daily_challenges")
+}
+
+model DailyChallengeAttempt {
+  id               String   @id @default(uuid())
+  userId           String   @map("user_id")
+  dailyChallengeId String   @map("daily_challenge_id")
+  completed        Boolean  @default(false)
+  isCorrect        Boolean  @default(false) @map("is_correct")
+  xpEarned         Int      @default(0) @map("xp_earned")
+  createdAt        DateTime @default(now()) @map("created_at")
+
+  user           User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  dailyChallenge DailyChallenge @relation(fields: [dailyChallengeId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, dailyChallengeId])
+  @@map("daily_challenge_attempts")
+}
+
+// ============================================
+// Analytics Events
+// ============================================
+
+model AnalyticsEvent {
+  id        String   @id @default(uuid())
+  userId    String   @map("user_id")
+  eventType String   @map("event_type") // page_view, question_start, question_submit, track_enroll, etc.
+  metadata  String?  @db.Text // JSON: { questionId, trackId, timeSpentMs, ... }
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, eventType, createdAt])
+  @@map("analytics_events")
+}

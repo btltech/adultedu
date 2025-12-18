@@ -1,0 +1,5796 @@
+{
+  "graphChallenges": [
+    {
+      "id": 1,
+      "title": "Morning Rush",
+      "slope": 2.3,
+      "intercept": -4.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 2,
+      "title": "Afternoon Glitch",
+      "slope": -1.8,
+      "intercept": 6.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "title": "Evening Calm",
+      "slope": 0.9,
+      "intercept": -7.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 4,
+      "title": "Night Shift",
+      "slope": -3.6,
+      "intercept": 1.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 5,
+      "title": "Midday Mirage",
+      "slope": 4,
+      "intercept": -2.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 6,
+      "title": "Twilight Twist",
+      "slope": -0.5,
+      "intercept": 8.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 7,
+      "title": "Dawn Pulse",
+      "slope": 1.2,
+      "intercept": -9.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 8,
+      "title": "Sunset Surge",
+      "slope": -4.1,
+      "intercept": 3.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 9,
+      "title": "Midnight Echo",
+      "slope": 2.7,
+      "intercept": -5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 10,
+      "title": "Starlight Drift",
+      "slope": -1.4,
+      "intercept": 0.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 11,
+      "title": "Sunny Start",
+      "slope": 1.5,
+      "intercept": -2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 12,
+      "title": "Morning Breeze",
+      "slope": -0.8,
+      "intercept": 3.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 13,
+      "title": "Midday Rush",
+      "slope": 2.1,
+      "intercept": -5.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 14,
+      "title": "Afternoon Glow",
+      "slope": -1.3,
+      "intercept": 7.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 15,
+      "title": "Evening Chill",
+      "slope": 0.6,
+      "intercept": -9.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 16,
+      "title": "Nightfall Curve",
+      "slope": -3.4,
+      "intercept": 1.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 17,
+      "title": "Starry Path",
+      "slope": 2.7,
+      "intercept": -4.9,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 18,
+      "title": "Dawn Twist",
+      "slope": 1.2,
+      "intercept": -7.6,
+      "difficulty": "Expert"
+    },
+    {
+      "id": 19,
+      "title": "Twilight Loop",
+      "slope": -4,
+      "intercept": 5.9,
+      "difficulty": "Expert"
+    },
+    {
+      "id": 20,
+      "title": "Evening Walk",
+      "slope": 0.9,
+      "intercept": -2.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 21,
+      "title": "Night Shift",
+      "slope": -3.4,
+      "intercept": 8.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 22,
+      "title": "Sunny Outing",
+      "slope": -0.5,
+      "intercept": 4.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 23,
+      "title": "Mountain Hike",
+      "slope": 3.7,
+      "intercept": -1.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 24,
+      "title": "City Tour",
+      "slope": -2,
+      "intercept": 9.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 25,
+      "title": "Library Study",
+      "slope": 0.4,
+      "intercept": -5.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 26,
+      "title": "Festival Parade",
+      "slope": -1.3,
+      "intercept": 7.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 27,
+      "title": "Twisty Road",
+      "slope": -3.2,
+      "intercept": 4.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 28,
+      "title": "Morning Breeze",
+      "slope": 0.6,
+      "intercept": -7.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 29,
+      "title": "Mountain Path",
+      "slope": 2.4,
+      "intercept": 3.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 30,
+      "title": "River Flow",
+      "slope": -0.9,
+      "intercept": 8.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 31,
+      "title": "Desert Heat",
+      "slope": 4.3,
+      "intercept": -5.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 32,
+      "title": "Starry Night",
+      "slope": -1.7,
+      "intercept": 0.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 33,
+      "title": "Forest Trail",
+      "slope": 3.8,
+      "intercept": -2.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 34,
+      "title": "Coastal Line",
+      "slope": -0.4,
+      "intercept": 5.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 35,
+      "title": "City Skyline",
+      "slope": 2.1,
+      "intercept": -9.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 36,
+      "title": "Gentle Descent",
+      "slope": -0.8,
+      "intercept": 4.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 37,
+      "title": "Rapid Rise",
+      "slope": 2.7,
+      "intercept": -1.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 38,
+      "title": "Flat Horizon",
+      "slope": 0,
+      "intercept": 3.9,
+      "difficulty": "Very Easy"
+    },
+    {
+      "id": 39,
+      "title": "Sharp Decline",
+      "slope": -3.4,
+      "intercept": 2.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 40,
+      "title": "Balanced Glide",
+      "slope": 0.5,
+      "intercept": -0.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 41,
+      "title": "Steep Climb",
+      "slope": 4.2,
+      "intercept": -3.7,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 42,
+      "title": "Mild Drop",
+      "slope": -1.1,
+      "intercept": 5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 43,
+      "title": "Smooth Slope",
+      "slope": 0.9,
+      "intercept": 1.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 44,
+      "title": "Extreme Tilt",
+      "slope": -4.8,
+      "intercept": -2.5,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 45,
+      "title": "Negative Nudge",
+      "slope": -3.2,
+      "intercept": 4.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 46,
+      "title": "Flat Horizon",
+      "slope": 0,
+      "intercept": -5.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 47,
+      "title": "Steep Rise",
+      "slope": 4.9,
+      "intercept": -1.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 48,
+      "title": "Gentle Decline",
+      "slope": -0.8,
+      "intercept": 7.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 49,
+      "title": "High Intercept",
+      "slope": 2.1,
+      "intercept": 9.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 50,
+      "title": "Low Intercept",
+      "slope": -4.6,
+      "intercept": -8.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 51,
+      "title": "Balanced Slope",
+      "slope": 3,
+      "intercept": 2.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 52,
+      "title": "Extreme Negative Slope",
+      "slope": -9.7,
+      "intercept": 1.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 53,
+      "title": "Extreme Positive Slope",
+      "slope": 8.3,
+      "intercept": -6.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 54,
+      "title": "Linear Leap",
+      "slope": 1.8,
+      "intercept": -3.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 55,
+      "title": "Slope Quest",
+      "slope": -2.4,
+      "intercept": 4.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 56,
+      "title": "Intercept Invasion",
+      "slope": 0.6,
+      "intercept": -8.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 57,
+      "title": "Graph Glide",
+      "slope": -5.2,
+      "intercept": 1.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 58,
+      "title": "Rise and Fall",
+      "slope": 3.7,
+      "intercept": -0.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 59,
+      "title": "Steep Challenge",
+      "slope": -9.1,
+      "intercept": 6.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 60,
+      "title": "Flatline Fun",
+      "slope": 0,
+      "intercept": -7.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 61,
+      "title": "Negative Nudge",
+      "slope": -1.2,
+      "intercept": 9.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 62,
+      "title": "Positive Push",
+      "slope": 4.3,
+      "intercept": -2.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 63,
+      "title": "Diagonal Duel",
+      "slope": -7.5,
+      "intercept": 0.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 64,
+      "title": "Morning Breeze",
+      "slope": 0.8,
+      "intercept": 1.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 65,
+      "title": "Evening Glow",
+      "slope": -1.4,
+      "intercept": -5.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 66,
+      "title": "Twilight Path",
+      "slope": 2.9,
+      "intercept": -7.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 67,
+      "title": "Midnight Whisper",
+      "slope": -0.5,
+      "intercept": 3.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 68,
+      "title": "Starlit Journey",
+      "slope": 4.6,
+      "intercept": -9.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 69,
+      "title": "Dawn Chorus",
+      "slope": -2.3,
+      "intercept": 0.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 70,
+      "title": "Noon Shadow",
+      "slope": 1.1,
+      "intercept": -6.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 71,
+      "title": "Sunset Fade",
+      "slope": -3.7,
+      "intercept": 8.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 72,
+      "title": "Gentle Hills",
+      "slope": 0.6,
+      "intercept": 1.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 73,
+      "title": "Steep Climb",
+      "slope": 4.7,
+      "intercept": -5.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 74,
+      "title": "Flatlands",
+      "slope": 0,
+      "intercept": 3.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 75,
+      "title": "Twisted Trails",
+      "slope": -1.8,
+      "intercept": 7.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 76,
+      "title": "Mountain Pass",
+      "slope": 3,
+      "intercept": -9.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 77,
+      "title": "River Run",
+      "slope": -0.4,
+      "intercept": -1.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 78,
+      "title": "Urban Edge",
+      "slope": 2.5,
+      "intercept": 6.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 79,
+      "title": "Celestial Path",
+      "slope": -4.9,
+      "intercept": 0.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 80,
+      "title": "Steep Ascent",
+      "slope": 3.7,
+      "intercept": 4.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 81,
+      "title": "Gentle Descent",
+      "slope": -0.8,
+      "intercept": 9.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 82,
+      "title": "Rapid Rise",
+      "slope": 6.4,
+      "intercept": -5.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 83,
+      "title": "Subtle Decline",
+      "slope": -1.2,
+      "intercept": 2.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 84,
+      "title": "Balanced Path",
+      "slope": 0,
+      "intercept": -7.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 85,
+      "title": "Sharp Turn",
+      "slope": -4.5,
+      "intercept": 1.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 86,
+      "title": "Sine-like Slope",
+      "slope": 2.3,
+      "intercept": -9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 87,
+      "title": "Flat Horizon",
+      "slope": 0.7,
+      "intercept": 5.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 88,
+      "title": "Extreme Gradient",
+      "slope": -9.2,
+      "intercept": -3.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 89,
+      "title": "Linear Start",
+      "slope": 1.2,
+      "intercept": -3.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 90,
+      "title": "Slope Shift",
+      "slope": -0.8,
+      "intercept": 4.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 91,
+      "title": "Intercept Challenge",
+      "slope": 2.5,
+      "intercept": -9.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 92,
+      "title": "Negative Slope",
+      "slope": -3.4,
+      "intercept": 0.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 93,
+      "title": "Steep Line",
+      "slope": 9.2,
+      "intercept": -1.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 94,
+      "title": "Gentle Slope",
+      "slope": 0.5,
+      "intercept": 7.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 95,
+      "title": "Zero Intercept",
+      "slope": -4.6,
+      "intercept": 0,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 96,
+      "title": "Balanced Line",
+      "slope": 3.3,
+      "intercept": 2.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 97,
+      "title": "High Intercept",
+      "slope": -1.7,
+      "intercept": 9.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 98,
+      "title": "Low Slope, High Intercept",
+      "slope": 0.2,
+      "intercept": -8.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 99,
+      "title": "Easy Start",
+      "slope": 0.5,
+      "intercept": -1.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 100,
+      "title": "Midway Challenge",
+      "slope": 1.8,
+      "intercept": 3.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 101,
+      "title": "Steep Ascent",
+      "slope": -2.6,
+      "intercept": -5.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 102,
+      "title": "Flat Horizon",
+      "slope": 0.1,
+      "intercept": 8.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 103,
+      "title": "Twisty Path",
+      "slope": -4.2,
+      "intercept": 2.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 104,
+      "title": "Sudden Drop",
+      "slope": 3.7,
+      "intercept": -9.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 105,
+      "title": "Balanced Equation",
+      "slope": -0.9,
+      "intercept": 4.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 106,
+      "title": "Rapid Rise",
+      "slope": 5.3,
+      "intercept": -2.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 107,
+      "title": "Sharp Turn",
+      "slope": 2.9,
+      "intercept": 6.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 108,
+      "title": "Sharp Turn",
+      "slope": 4.2,
+      "intercept": -9.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 109,
+      "title": "Steep Drop",
+      "slope": -3.6,
+      "intercept": 2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 110,
+      "title": "Balanced Path",
+      "slope": 1,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 111,
+      "title": "Rapid Rise",
+      "slope": 5.7,
+      "intercept": -7.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 112,
+      "title": "Sudden Dip",
+      "slope": -6.1,
+      "intercept": 8.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 113,
+      "title": "Smooth Ascent",
+      "slope": 2.9,
+      "intercept": 3.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 114,
+      "title": "Flat Horizon",
+      "slope": -0.5,
+      "intercept": -1.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 115,
+      "title": "Creeping Climb",
+      "slope": 0.8,
+      "intercept": 7.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 116,
+      "title": "Sunrise Slide",
+      "slope": 1.8,
+      "intercept": -3.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 117,
+      "title": "Mountain Climb",
+      "slope": -2.5,
+      "intercept": 7.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 118,
+      "title": "River Flow",
+      "slope": 0.9,
+      "intercept": -1.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 119,
+      "title": "Desert Heat",
+      "slope": -4.3,
+      "intercept": 5.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 120,
+      "title": "Forest Path",
+      "slope": 2.7,
+      "intercept": -8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 121,
+      "title": "Space Drift",
+      "slope": -1.1,
+      "intercept": 9.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 122,
+      "title": "Iceberg Glide",
+      "slope": 3.4,
+      "intercept": -6.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 123,
+      "title": "Canyon Echo",
+      "slope": -0.7,
+      "intercept": 2.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 124,
+      "title": "Thunderstorm Twist",
+      "slope": 4.9,
+      "intercept": -9.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 125,
+      "title": "Lunar Leap",
+      "slope": -3.6,
+      "intercept": 1.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 126,
+      "title": "Mountain Trail",
+      "slope": 2.1,
+      "intercept": -5.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 127,
+      "title": "River Bend",
+      "slope": -1.4,
+      "intercept": 0.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 128,
+      "title": "City Skyline",
+      "slope": 0.9,
+      "intercept": 3.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 129,
+      "title": "Desert Mirage",
+      "slope": -2.5,
+      "intercept": -1.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 130,
+      "title": "Forest Pathway",
+      "slope": 1,
+      "intercept": -4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 131,
+      "title": "Coastal Line",
+      "slope": -0.5,
+      "intercept": 2.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 132,
+      "title": "Space Odyssey",
+      "slope": 3.4,
+      "intercept": -6.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 133,
+      "title": "Garden Walk",
+      "slope": -1.2,
+      "intercept": 5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 134,
+      "title": "Linear Breeze",
+      "slope": 0.8,
+      "intercept": -1.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 135,
+      "title": "Steady Climb",
+      "slope": 1.2,
+      "intercept": 3.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 136,
+      "title": "Rapid Descent",
+      "slope": -2.5,
+      "intercept": 0.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 137,
+      "title": "Gentle Slope",
+      "slope": 0.3,
+      "intercept": -4.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 138,
+      "title": "Sharp Turn",
+      "slope": -1.8,
+      "intercept": 2.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 139,
+      "title": "Steep Rise",
+      "slope": 3.6,
+      "intercept": -0.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 140,
+      "title": "Negative Nudge",
+      "slope": -0.5,
+      "intercept": 1.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 141,
+      "title": "Fluctuating Line",
+      "slope": -2.2,
+      "intercept": -3.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 142,
+      "title": "Smooth Curve",
+      "slope": 0.6,
+      "intercept": 4.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 143,
+      "title": "Intercept Insight",
+      "slope": 0.9,
+      "intercept": -9.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 144,
+      "title": "Steep Challenge",
+      "slope": 7.4,
+      "intercept": 3.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 145,
+      "title": "Negative Nudge",
+      "slope": -5.6,
+      "intercept": -2.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 146,
+      "title": "Balanced Line",
+      "slope": 3,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 147,
+      "title": "High Rise",
+      "slope": 9.7,
+      "intercept": -1.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 148,
+      "title": "Flat Field",
+      "slope": 0,
+      "intercept": 5.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 149,
+      "title": "Twist and Turn",
+      "slope": -2.9,
+      "intercept": 8.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 150,
+      "title": "Precision Path",
+      "slope": 4.1,
+      "intercept": -7.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 151,
+      "title": "City Skyline",
+      "slope": -3.4,
+      "intercept": 0.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 152,
+      "title": "Desert Mirage",
+      "slope": 0.6,
+      "intercept": 7.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 153,
+      "title": "Forest Pathway",
+      "slope": -1.9,
+      "intercept": -3.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 154,
+      "title": "Ocean Horizon",
+      "slope": 4,
+      "intercept": -8.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 155,
+      "title": "Starry Night",
+      "slope": -2.7,
+      "intercept": 5.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 156,
+      "title": "Moonlit Ridge",
+      "slope": 1,
+      "intercept": -9.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 157,
+      "title": "Aurora Loop",
+      "slope": -4.2,
+      "intercept": 2.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 158,
+      "title": "Negative Slope",
+      "slope": -1.2,
+      "intercept": 7.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 159,
+      "title": "Positive Offset",
+      "slope": 0.6,
+      "intercept": 9.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 160,
+      "title": "Balanced Line",
+      "slope": -2.4,
+      "intercept": -5.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 161,
+      "title": "Sharp Drop",
+      "slope": -3.9,
+      "intercept": 0.7,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 162,
+      "title": "Sine‑like Slope",
+      "slope": 1.2,
+      "intercept": -8.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 163,
+      "title": "Zero Intercept",
+      "slope": -0.5,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 164,
+      "title": "Descending Drop",
+      "slope": -2.3,
+      "intercept": 4.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 165,
+      "title": "Steep Rise",
+      "slope": 3.8,
+      "intercept": -5.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 166,
+      "title": "Gentle Decline",
+      "slope": -0.9,
+      "intercept": 2.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 167,
+      "title": "Flat Horizon",
+      "slope": 0,
+      "intercept": -1.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 168,
+      "title": "Sharp Turn",
+      "slope": 4.2,
+      "intercept": 3.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 169,
+      "title": "Negative Slope",
+      "slope": -1.7,
+      "intercept": -0.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 170,
+      "title": "Balanced Equation",
+      "slope": 2.6,
+      "intercept": 0.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 171,
+      "title": "Complex Curve",
+      "slope": -3.1,
+      "intercept": 5.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 172,
+      "title": "Random Walk",
+      "slope": 0.7,
+      "intercept": -4.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 173,
+      "title": "Steep Climb",
+      "slope": 4.9,
+      "intercept": -6.3,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 174,
+      "title": "Flatland Drift",
+      "slope": 0,
+      "intercept": 2.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 175,
+      "title": "Reverse Route",
+      "slope": -1.7,
+      "intercept": 8.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 176,
+      "title": "Bouncy Bounce",
+      "slope": 2.3,
+      "intercept": -9.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 177,
+      "title": "Curved Corridor",
+      "slope": -0.6,
+      "intercept": 5.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 178,
+      "title": "Highway Hike",
+      "slope": 3.7,
+      "intercept": -4.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 179,
+      "title": "Lowland Lull",
+      "slope": -0.9,
+      "intercept": 1.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 180,
+      "title": "Rising Tide",
+      "slope": 2.7,
+      "intercept": -5.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 181,
+      "title": "Falling Star",
+      "slope": -3.4,
+      "intercept": 9.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 182,
+      "title": "Steady Growth",
+      "slope": 0.5,
+      "intercept": -7.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 183,
+      "title": "Sharp Decline",
+      "slope": -4.9,
+      "intercept": 3.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 184,
+      "title": "Gentle Slope",
+      "slope": 0.9,
+      "intercept": -1.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 185,
+      "title": "Rapid Ascent",
+      "slope": 3.2,
+      "intercept": -8.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 186,
+      "title": "Balanced Trend",
+      "slope": -1.1,
+      "intercept": 6.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 187,
+      "title": "Extreme Flip",
+      "slope": 5,
+      "intercept": -9.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 188,
+      "title": "Easy Start",
+      "slope": 0.5,
+      "intercept": 1.2,
+      "difficulty": "Very Easy"
+    },
+    {
+      "id": 189,
+      "title": "Balanced Line",
+      "slope": -1.3,
+      "intercept": -4.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 190,
+      "title": "Steep Rise",
+      "slope": 2.8,
+      "intercept": -0.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 191,
+      "title": "Gentle Decline",
+      "slope": -0.9,
+      "intercept": 3.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 192,
+      "title": "High Intercept",
+      "slope": 1.1,
+      "intercept": 8.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 193,
+      "title": "Low Intercept",
+      "slope": -2.4,
+      "intercept": -7.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 194,
+      "title": "Sharp Positive",
+      "slope": 3.6,
+      "intercept": -9.1,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 195,
+      "title": "Sharp Negative",
+      "slope": -4.2,
+      "intercept": 5.8,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 196,
+      "title": "Balanced Challenge",
+      "slope": 0.7,
+      "intercept": -3.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 197,
+      "title": "Extreme Slope",
+      "slope": -6.5,
+      "intercept": 2.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 198,
+      "title": "Steep Drop",
+      "slope": -6.5,
+      "intercept": -0.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 199,
+      "title": "Balanced Path",
+      "slope": 2.4,
+      "intercept": -3.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 200,
+      "title": "Twisty Turn",
+      "slope": -0.5,
+      "intercept": 7.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 201,
+      "title": "High Hurdle",
+      "slope": 4.9,
+      "intercept": -8.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 202,
+      "title": "Low Ledge",
+      "slope": -1.7,
+      "intercept": 0.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 203,
+      "title": "Sine Wave Start",
+      "slope": 3.3,
+      "intercept": 2.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 204,
+      "title": "Flatland Finish",
+      "slope": -0.1,
+      "intercept": -5.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 205,
+      "title": "Linear Lift",
+      "slope": 1.7,
+      "intercept": -3.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 206,
+      "title": "Slope Sprint",
+      "slope": -0.6,
+      "intercept": 4.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 207,
+      "title": "Intercept Intrigue",
+      "slope": 2.3,
+      "intercept": -1.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 208,
+      "title": "Steep Challenge",
+      "slope": -4,
+      "intercept": 2.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 209,
+      "title": "Flatline Fun",
+      "slope": 0.3,
+      "intercept": -5.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 210,
+      "title": "Negative Nexus",
+      "slope": -2.9,
+      "intercept": 7.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 211,
+      "title": "Positive Peak",
+      "slope": 3.6,
+      "intercept": -0.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 212,
+      "title": "Zero Crossing",
+      "slope": -1.2,
+      "intercept": 0.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 213,
+      "title": "Steady Slide",
+      "slope": 4.5,
+      "intercept": -6.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 214,
+      "title": "Twist and Turn",
+      "slope": -0.9,
+      "intercept": 8.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 215,
+      "title": "Slopey Start",
+      "slope": 1.2,
+      "intercept": -3.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 216,
+      "title": "Midline Move",
+      "slope": -0.8,
+      "intercept": 5.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 217,
+      "title": "Steep Ascent",
+      "slope": 4.1,
+      "intercept": -7.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 218,
+      "title": "Gentle Glide",
+      "slope": -0.3,
+      "intercept": 2.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 219,
+      "title": "Sharp Turn",
+      "slope": 7.5,
+      "intercept": 1.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 220,
+      "title": "Flat Horizon",
+      "slope": 0,
+      "intercept": -6.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 221,
+      "title": "Negative Nudge",
+      "slope": -3.7,
+      "intercept": 8.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 222,
+      "title": "Positive Pulse",
+      "slope": 2.6,
+      "intercept": -1.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 223,
+      "title": "Twisty Path",
+      "slope": -4.3,
+      "intercept": 0.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 224,
+      "title": "Balanced Bridge",
+      "slope": 1,
+      "intercept": 1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 225,
+      "title": "Rapid Rise",
+      "slope": 5.9,
+      "intercept": -2.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 226,
+      "title": "Slow Slide",
+      "slope": -1.4,
+      "intercept": 6.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 227,
+      "title": "Diagonal Drift",
+      "slope": 3.2,
+      "intercept": 4.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 228,
+      "title": "Zero Zone",
+      "slope": -0.7,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 229,
+      "title": "Extreme Edge",
+      "slope": -9.6,
+      "intercept": -8.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 230,
+      "title": "Smooth Slope",
+      "slope": 0.5,
+      "intercept": 3.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 231,
+      "title": "Rough Road",
+      "slope": -6.2,
+      "intercept": 9.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 232,
+      "title": "Balanced Bump",
+      "slope": 2,
+      "intercept": -5.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 233,
+      "title": "Curved Corridor",
+      "slope": -3.1,
+      "intercept": 2.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 234,
+      "title": "Final Frontier",
+      "slope": 8.4,
+      "intercept": -0.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 235,
+      "title": "Steep Rise",
+      "slope": 9.2,
+      "intercept": -3.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 236,
+      "title": "Gentle Decline",
+      "slope": -0.4,
+      "intercept": 8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 237,
+      "title": "Balanced Line",
+      "slope": 3.6,
+      "intercept": 2.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 238,
+      "title": "Negative Intercept",
+      "slope": -2.5,
+      "intercept": -7.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 239,
+      "title": "Positive Slope, Zero Intercept",
+      "slope": 4.1,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 240,
+      "title": "High Intercept",
+      "slope": -3.9,
+      "intercept": 10,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 241,
+      "title": "Low Intercept",
+      "slope": 1.2,
+      "intercept": -9.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 242,
+      "title": "Negative Slope, Positive Intercept",
+      "slope": -4.7,
+      "intercept": 5.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 243,
+      "title": "Positive Slope, Negative Intercept",
+      "slope": 6.8,
+      "intercept": -2.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 244,
+      "title": "Small Magnitude",
+      "slope": 0.9,
+      "intercept": -0.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 245,
+      "title": "Large Magnitude",
+      "slope": -8.6,
+      "intercept": 7.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 246,
+      "title": "Symmetric Line",
+      "slope": -5,
+      "intercept": 5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 247,
+      "title": "Diagonal Through Origin",
+      "slope": 3.3,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 248,
+      "title": "Horizontal Line",
+      "slope": 0,
+      "intercept": 4.2,
+      "difficulty": "Very Easy"
+    },
+    {
+      "id": 249,
+      "title": "Vertical-ish Slope",
+      "slope": -9.5,
+      "intercept": -1.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 250,
+      "title": "Moderate Decline",
+      "slope": -2,
+      "intercept": 3.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 251,
+      "title": "Steep Rise with Negative Intercept",
+      "slope": 7.4,
+      "intercept": -6.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 252,
+      "title": "Zero Slope Run",
+      "slope": 0,
+      "intercept": -6.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 253,
+      "title": "High Positive Slope Dash",
+      "slope": 9.8,
+      "intercept": 1.3,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 254,
+      "title": "Low Negative Slope Crawl",
+      "slope": -0.4,
+      "intercept": 7.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 255,
+      "title": "Midrange Intercept Quest",
+      "slope": 2.6,
+      "intercept": -8.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 256,
+      "title": "Balanced Slope Battle",
+      "slope": -5.1,
+      "intercept": 3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 257,
+      "title": "Steep Ascent Trial",
+      "slope": 7.4,
+      "intercept": -9.5,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 258,
+      "title": "Gentle Descent Duel",
+      "slope": -2.3,
+      "intercept": 6.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 259,
+      "title": "Intercept Twist",
+      "slope": 4,
+      "intercept": -10,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 260,
+      "title": "Slope Shift Showdown",
+      "slope": -8.7,
+      "intercept": 2.5,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 261,
+      "title": "Zero Intercept Race",
+      "slope": 3.9,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 262,
+      "title": "Negative Slope Sprint",
+      "slope": -1.2,
+      "intercept": -7.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 263,
+      "title": "Positive Intercept Path",
+      "slope": 6.5,
+      "intercept": 8.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 264,
+      "title": "Steep Decline Challenge",
+      "slope": -9.2,
+      "intercept": -1.7,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 265,
+      "title": "Gentle Rise Run",
+      "slope": 0.8,
+      "intercept": 5.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 266,
+      "title": "Balanced Intercept Battle",
+      "slope": -4.9,
+      "intercept": -3.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 267,
+      "title": "Extreme Slope Escapade",
+      "slope": 10,
+      "intercept": 0.2,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 268,
+      "title": "Mild Decline Match",
+      "slope": -0.6,
+      "intercept": 9.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 269,
+      "title": "Intercept Insight",
+      "slope": 2.1,
+      "intercept": -4.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 270,
+      "title": "Steep Drop",
+      "slope": -4.5,
+      "intercept": 7.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 271,
+      "title": "Gentle Rise",
+      "slope": 0.6,
+      "intercept": -1.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 272,
+      "title": "Negative Intercept",
+      "slope": 3.3,
+      "intercept": -9.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 273,
+      "title": "Zero Slope",
+      "slope": 0,
+      "intercept": 5.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 274,
+      "title": "High Positive Slope",
+      "slope": 9.2,
+      "intercept": -4.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 275,
+      "title": "Low Negative Slope",
+      "slope": -0.8,
+      "intercept": 2.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 276,
+      "title": "Balanced Line",
+      "slope": 2.5,
+      "intercept": 2.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 277,
+      "title": "Crossing Zero",
+      "slope": -3.7,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 278,
+      "title": "Steep Positive",
+      "slope": 8.1,
+      "intercept": -6.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 279,
+      "title": "Gentle Negative",
+      "slope": -0.9,
+      "intercept": -2.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 280,
+      "title": "Mid Slope",
+      "slope": 5.6,
+      "intercept": -1.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 281,
+      "title": "Low Positive",
+      "slope": 0.4,
+      "intercept": 8.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 282,
+      "title": "Negative High Slope",
+      "slope": -7.3,
+      "intercept": 4.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 283,
+      "title": "Zero Intercept Positive Slope",
+      "slope": 6,
+      "intercept": 0,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 284,
+      "title": "Zero Intercept Negative Slope",
+      "slope": -2.4,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 285,
+      "title": "Symmetric Positive",
+      "slope": 3.9,
+      "intercept": 3.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 286,
+      "title": "Symmetric Negative",
+      "slope": -4.1,
+      "intercept": -4.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 287,
+      "title": "Extreme Range",
+      "slope": 10,
+      "intercept": -10,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 288,
+      "title": "Level 2",
+      "slope": -1.8,
+      "intercept": 5.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 289,
+      "title": "Level 4",
+      "slope": -3.5,
+      "intercept": 1.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 290,
+      "title": "Level 5",
+      "slope": 4,
+      "intercept": -9.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 291,
+      "title": "Level 6",
+      "slope": -2.7,
+      "intercept": 8.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 292,
+      "title": "Level 7",
+      "slope": 1,
+      "intercept": 0.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 293,
+      "title": "Level 8",
+      "slope": -4.2,
+      "intercept": -3.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 294,
+      "title": "Level 9",
+      "slope": 3.7,
+      "intercept": 2.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 295,
+      "title": "Level 10",
+      "slope": -0.5,
+      "intercept": -8.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 296,
+      "title": "Level 11",
+      "slope": 2.9,
+      "intercept": -6.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 297,
+      "title": "Level 12",
+      "slope": -1.4,
+      "intercept": 7.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 298,
+      "title": "Level 13",
+      "slope": 5.2,
+      "intercept": -0.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 299,
+      "title": "Level 14",
+      "slope": -3.1,
+      "intercept": 4.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 300,
+      "title": "Level 15",
+      "slope": 0.6,
+      "intercept": -5.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 301,
+      "title": "Level 16",
+      "slope": -2.4,
+      "intercept": 9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 302,
+      "title": "Level 17",
+      "slope": 1.7,
+      "intercept": -2.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 303,
+      "title": "Level 18",
+      "slope": -4.6,
+      "intercept": 3.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 304,
+      "title": "Level 19",
+      "slope": 2.1,
+      "intercept": -7.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 305,
+      "title": "Level 20",
+      "slope": -0.3,
+      "intercept": 6.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 306,
+      "title": "Mountain Ridge",
+      "slope": 2.7,
+      "intercept": -6.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 307,
+      "title": "River Bend",
+      "slope": -3.4,
+      "intercept": 1.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 308,
+      "title": "Desert Dunes",
+      "slope": 0.6,
+      "intercept": -8.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 309,
+      "title": "Forest Trail",
+      "slope": -1.2,
+      "intercept": 3.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 310,
+      "title": "Starlight Curve",
+      "slope": 4.9,
+      "intercept": -0.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 311,
+      "title": "City Skyline",
+      "slope": -5.3,
+      "intercept": 7.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 312,
+      "title": "Ocean Wave",
+      "slope": 0.1,
+      "intercept": -9.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 313,
+      "title": "Canyon Echo",
+      "slope": -2.5,
+      "intercept": 6.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 314,
+      "title": "Aurora Glow",
+      "slope": 3.1,
+      "intercept": -4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 315,
+      "title": "Lunar Landing",
+      "slope": -0.9,
+      "intercept": 2.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 316,
+      "title": "Solar Flare",
+      "slope": 5.7,
+      "intercept": -1.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 317,
+      "title": "Geyser Rise",
+      "slope": -4.2,
+      "intercept": 9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 318,
+      "title": "Rainforest Mist",
+      "slope": 1,
+      "intercept": -7.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 319,
+      "title": "Glacier Melt",
+      "slope": -3.8,
+      "intercept": 0.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 320,
+      "title": "Nebula Drift",
+      "slope": 6.4,
+      "intercept": -5.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 321,
+      "title": "Tornado Spin",
+      "slope": -2,
+      "intercept": 8.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 322,
+      "title": "Comet Trail",
+      "slope": 0.4,
+      "intercept": -6.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 323,
+      "title": "Gentle Decline",
+      "slope": -1.4,
+      "intercept": 5.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 324,
+      "title": "Flat Horizon",
+      "slope": 0,
+      "intercept": -2.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 325,
+      "title": "Sharp Turn",
+      "slope": 6.1,
+      "intercept": 7.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 326,
+      "title": "Inverse Path",
+      "slope": -5.2,
+      "intercept": -9.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 327,
+      "title": "Midway Rise",
+      "slope": 2,
+      "intercept": 3.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 328,
+      "title": "Descending Drop",
+      "slope": -4.5,
+      "intercept": 1.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 329,
+      "title": "Upward Spiral",
+      "slope": 8.3,
+      "intercept": -7.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 330,
+      "title": "Balanced Line",
+      "slope": 0.5,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 331,
+      "title": "Rapid Rise",
+      "slope": 9.7,
+      "intercept": -3.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 332,
+      "title": "Slow Descent",
+      "slope": -0.8,
+      "intercept": 4.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 333,
+      "title": "Mid-Magnitude",
+      "slope": 3,
+      "intercept": -1.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 334,
+      "title": "Negative Slope",
+      "slope": -2.6,
+      "intercept": 8.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 335,
+      "title": "Positive Intercept",
+      "slope": 1.2,
+      "intercept": 9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 336,
+      "title": "High Decline",
+      "slope": -7.8,
+      "intercept": -5.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 337,
+      "title": "Low Rise",
+      "slope": 0.9,
+      "intercept": -6.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 338,
+      "title": "Steady Gradient",
+      "slope": 4.4,
+      "intercept": 2.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 339,
+      "title": "Negative Intercept",
+      "slope": -3.3,
+      "intercept": -8.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 340,
+      "title": "Balanced Decline",
+      "slope": -0.4,
+      "intercept": 6.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 341,
+      "title": "Rapid Drop",
+      "slope": -9.1,
+      "intercept": 2.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 342,
+      "title": "Sunny Path",
+      "slope": 2.3,
+      "intercept": -1.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 343,
+      "title": "River Bend",
+      "slope": 1.9,
+      "intercept": -3.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 344,
+      "title": "Mountain Climb",
+      "slope": -2.4,
+      "intercept": 6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 345,
+      "title": "City Skyline",
+      "slope": 0.5,
+      "intercept": 8.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 346,
+      "title": "Desert Mirage",
+      "slope": -3.7,
+      "intercept": -2.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 347,
+      "title": "Forest Trail",
+      "slope": 1.1,
+      "intercept": -0.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 348,
+      "title": "Ocean Horizon",
+      "slope": -1.3,
+      "intercept": 5.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 349,
+      "title": "Starry Night",
+      "slope": 2.8,
+      "intercept": -7.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 350,
+      "title": "Valley View",
+      "slope": -0.4,
+      "intercept": 3.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 351,
+      "title": "Lakeside Path",
+      "slope": 1.6,
+      "intercept": -4.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 352,
+      "title": "Canyon Edge",
+      "slope": -2.9,
+      "intercept": 7.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 353,
+      "title": "Garden Walk",
+      "slope": 0.7,
+      "intercept": -6.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 354,
+      "title": "Nightfall Ridge",
+      "slope": -1.9,
+      "intercept": 2.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 355,
+      "title": "Sunrise Peak",
+      "slope": 3,
+      "intercept": -5.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 356,
+      "title": "Hidden Path",
+      "slope": -0.2,
+      "intercept": 1.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 357,
+      "title": "Rainy Trail",
+      "slope": 1.4,
+      "intercept": 9.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 358,
+      "title": "Electric Avenue",
+      "slope": -2.5,
+      "intercept": -8.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 359,
+      "title": "Winding Road",
+      "slope": 0.9,
+      "intercept": -2.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 360,
+      "title": "Flat Horizon",
+      "slope": 0.3,
+      "intercept": 7.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 361,
+      "title": "Steep Descent",
+      "slope": -4.2,
+      "intercept": -5.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 362,
+      "title": "Gentle Rise",
+      "slope": 0.8,
+      "intercept": 3.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 363,
+      "title": "Inverse Twist",
+      "slope": -2.9,
+      "intercept": 1.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 364,
+      "title": "Balanced Line",
+      "slope": 2,
+      "intercept": -4.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 365,
+      "title": "Sharp Upturn",
+      "slope": 5.6,
+      "intercept": -8.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 366,
+      "title": "Soft Decline",
+      "slope": -1.2,
+      "intercept": 9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 367,
+      "title": "Midway Slope",
+      "slope": 3.4,
+      "intercept": 0.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 368,
+      "title": "Negative Rise",
+      "slope": -6.7,
+      "intercept": -2.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 369,
+      "title": "Tiny Tilt",
+      "slope": 0.1,
+      "intercept": -7.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 370,
+      "title": "Bold Bounce",
+      "slope": 4.1,
+      "intercept": 2.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 371,
+      "title": "Steady Slide",
+      "slope": -3.5,
+      "intercept": 6.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 372,
+      "title": "Quiet Rise",
+      "slope": 1,
+      "intercept": -1.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 373,
+      "title": "Rapid Descent",
+      "slope": -7.2,
+      "intercept": -9.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 374,
+      "title": "High Pitch",
+      "slope": 9.3,
+      "intercept": -5.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 375,
+      "title": "Low Glide",
+      "slope": -0.4,
+      "intercept": 8.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 376,
+      "title": "Midpoint Mix",
+      "slope": 2.7,
+      "intercept": -3.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 377,
+      "title": "First Challenge",
+      "slope": -0.7,
+      "intercept": 5.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 378,
+      "title": "Midway Mix",
+      "slope": 2.6,
+      "intercept": -1.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 379,
+      "title": "Rise and Fall",
+      "slope": -4.3,
+      "intercept": 0.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 380,
+      "title": "Steep Slope",
+      "slope": 7.1,
+      "intercept": -8.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 381,
+      "title": "Gentle Glide",
+      "slope": -0.9,
+      "intercept": 3.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 382,
+      "title": "Balanced Line",
+      "slope": 3.5,
+      "intercept": 1.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 383,
+      "title": "Negative Twist",
+      "slope": -6.4,
+      "intercept": -2.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 384,
+      "title": "Zero Intercept",
+      "slope": 4,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 385,
+      "title": "High Rise",
+      "slope": -2.1,
+      "intercept": 9.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 386,
+      "title": "Low Drop",
+      "slope": 0.3,
+      "intercept": -7.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 387,
+      "title": "Sharp Turn",
+      "slope": 8.9,
+      "intercept": -4.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 388,
+      "title": "Smooth Curve",
+      "slope": -5.2,
+      "intercept": 6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 389,
+      "title": "Steady Path",
+      "slope": 1.8,
+      "intercept": 2.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 390,
+      "title": "Twisty Line",
+      "slope": -3.7,
+      "intercept": -5.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 391,
+      "title": "Sharp Decline",
+      "slope": 6.3,
+      "intercept": -1.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 392,
+      "title": "Flat Horizon",
+      "slope": -0.4,
+      "intercept": 8.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 393,
+      "title": "Quick Rise",
+      "slope": 2.9,
+      "intercept": -6.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 394,
+      "title": "Long Slope",
+      "slope": -7.8,
+      "intercept": 4.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 395,
+      "title": "Upward Trend",
+      "slope": 3.2,
+      "intercept": 4.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 396,
+      "title": "Negative Descent",
+      "slope": -2.8,
+      "intercept": -5.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 397,
+      "title": "Flat Line",
+      "slope": 0,
+      "intercept": 7.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 398,
+      "title": "Steep Rise",
+      "slope": 9.5,
+      "intercept": -1.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 399,
+      "title": "Gentle Decline",
+      "slope": -0.6,
+      "intercept": 3.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 400,
+      "title": "Midpoint Line",
+      "slope": 2.1,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 401,
+      "title": "High Slope",
+      "slope": -7.9,
+      "intercept": 6.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 402,
+      "title": "Low Intercept",
+      "slope": 4.3,
+      "intercept": -8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 403,
+      "title": "Zero Slope",
+      "slope": 0,
+      "intercept": -3.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 404,
+      "title": "Balanced Equation",
+      "slope": 1.2,
+      "intercept": 5.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 405,
+      "title": "Sharp Drop",
+      "slope": -9,
+      "intercept": 2.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 406,
+      "title": "Small Slope",
+      "slope": 0.4,
+      "intercept": -1.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 407,
+      "title": "Large Intercept",
+      "slope": -3.7,
+      "intercept": 9.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 408,
+      "title": "Negative Slope",
+      "slope": -5.6,
+      "intercept": -4.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 409,
+      "title": "Positive Intercept",
+      "slope": 2.9,
+      "intercept": 8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 410,
+      "title": "Steep Negative",
+      "slope": -8.3,
+      "intercept": -6.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 411,
+      "title": "Low Intercept",
+      "slope": 0.7,
+      "intercept": -9.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 412,
+      "title": "High Positive Slope",
+      "slope": 10,
+      "intercept": -2.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 413,
+      "title": "Intercept Insight",
+      "slope": 2.7,
+      "intercept": -1.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 414,
+      "title": "Flatline Fun",
+      "slope": 0.5,
+      "intercept": 7.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 415,
+      "title": "Negative Nexus",
+      "slope": -1.9,
+      "intercept": -4.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 416,
+      "title": "Positive Pathway",
+      "slope": 2.3,
+      "intercept": 2.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 417,
+      "title": "Midpoint Mystery",
+      "slope": -0.6,
+      "intercept": 4.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 418,
+      "title": "Slope Surge",
+      "slope": 3.9,
+      "intercept": -5.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 419,
+      "title": "Intercept Intrigue",
+      "slope": -2.4,
+      "intercept": 1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 420,
+      "title": "Steady Streak",
+      "slope": 1.8,
+      "intercept": -6.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 421,
+      "title": "Slope Shuffle",
+      "slope": -4.2,
+      "intercept": 3.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 422,
+      "title": "Intercept Icy",
+      "slope": 0.9,
+      "intercept": -8.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 423,
+      "title": "Slope Symphony",
+      "slope": -2.7,
+      "intercept": 6.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 424,
+      "title": "Linear Labyrinth",
+      "slope": 4.5,
+      "intercept": -0.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 425,
+      "title": "Intercept Echo",
+      "slope": -1.3,
+      "intercept": 9.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 426,
+      "title": "Slope Spiral",
+      "slope": 2,
+      "intercept": -7.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 427,
+      "title": "Slope Storm",
+      "slope": 5,
+      "intercept": -4.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 428,
+      "title": "Level Three",
+      "slope": 0.8,
+      "intercept": -6.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 429,
+      "title": "Level Four",
+      "slope": -1.4,
+      "intercept": 2.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 430,
+      "title": "Level Five",
+      "slope": 2.9,
+      "intercept": -8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 431,
+      "title": "Level Six",
+      "slope": -5.1,
+      "intercept": 0.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 432,
+      "title": "Level Seven",
+      "slope": 4.3,
+      "intercept": -3.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 433,
+      "title": "Level Eight",
+      "slope": -0.7,
+      "intercept": 5.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 434,
+      "title": "Level Nine",
+      "slope": 6,
+      "intercept": -1.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 435,
+      "title": "Level Ten",
+      "slope": -2.5,
+      "intercept": 7.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 436,
+      "title": "Level Eleven",
+      "slope": 1,
+      "intercept": -9.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 437,
+      "title": "Level Twelve",
+      "slope": -4.8,
+      "intercept": 3.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 438,
+      "title": "Level Thirteen",
+      "slope": 3.6,
+      "intercept": -0.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 439,
+      "title": "Level Fourteen",
+      "slope": -7.2,
+      "intercept": 8.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 440,
+      "title": "Level Fifteen",
+      "slope": 0.5,
+      "intercept": -4.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 441,
+      "title": "Level Sixteen",
+      "slope": -9.7,
+      "intercept": 1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 442,
+      "title": "Level Seventeen",
+      "slope": 2.4,
+      "intercept": 6.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 443,
+      "title": "Level Eighteen",
+      "slope": -1.9,
+      "intercept": -7.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 444,
+      "title": "Level Nineteen",
+      "slope": 5.5,
+      "intercept": -2.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 445,
+      "title": "Level Twenty",
+      "slope": -8.3,
+      "intercept": 4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 446,
+      "title": "Intercept Insight",
+      "slope": 0.8,
+      "intercept": -9.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 447,
+      "title": "Steep Slide",
+      "slope": 7.6,
+      "intercept": 2.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 448,
+      "title": "Gentle Glide",
+      "slope": -0.4,
+      "intercept": 5.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 449,
+      "title": "Twist and Turn",
+      "slope": 2.1,
+      "intercept": -7.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 450,
+      "title": "Mirror Match",
+      "slope": -6.5,
+      "intercept": -3.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 451,
+      "title": "Balanced Beam",
+      "slope": 0,
+      "intercept": 1.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 452,
+      "title": "Rapid Rise",
+      "slope": 9.3,
+      "intercept": -8.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 453,
+      "title": "Low Ledge",
+      "slope": -2.7,
+      "intercept": 0.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 454,
+      "title": "Steady Streak",
+      "slope": 4.9,
+      "intercept": 3.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 455,
+      "title": "Negative Nudge",
+      "slope": -1,
+      "intercept": -6.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 456,
+      "title": "Sharp Shift",
+      "slope": 5.4,
+      "intercept": -9.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 457,
+      "title": "Smooth Slide",
+      "slope": -0.6,
+      "intercept": 7.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 458,
+      "title": "Midpoint Maze",
+      "slope": 3.3,
+      "intercept": -1.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 459,
+      "title": "Zero Zone",
+      "slope": 0,
+      "intercept": -4.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 460,
+      "title": "Rapid Descent",
+      "slope": -8.2,
+      "intercept": 6.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 461,
+      "title": "Slope Sprint",
+      "slope": 1.9,
+      "intercept": 2.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 462,
+      "title": "Intercept Inversion",
+      "slope": -7.8,
+      "intercept": -0.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 463,
+      "title": "Sunrise Path",
+      "slope": 0.8,
+      "intercept": -1.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 464,
+      "title": "River Bend",
+      "slope": -0.6,
+      "intercept": 3.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 465,
+      "title": "Urban Grid",
+      "slope": -1.8,
+      "intercept": 5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 466,
+      "title": "Garden Pathway",
+      "slope": 0.4,
+      "intercept": -0.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 467,
+      "title": "Desert Mirage",
+      "slope": 3.1,
+      "intercept": -6.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 468,
+      "title": "Forest Trail",
+      "slope": -0.9,
+      "intercept": 2.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 469,
+      "title": "Coastal Line",
+      "slope": 1.2,
+      "intercept": -3.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 470,
+      "title": "Horizon Line",
+      "slope": -2.5,
+      "intercept": 4.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 471,
+      "title": "River Delta",
+      "slope": 0.7,
+      "intercept": -1.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 472,
+      "title": "Skyward Ascent",
+      "slope": 2.8,
+      "intercept": -5.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 473,
+      "title": "Nightfall Curve",
+      "slope": -1.3,
+      "intercept": 3.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 474,
+      "title": "Mountain Ridge",
+      "slope": 0.5,
+      "intercept": -2.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 475,
+      "title": "Urban Skyline",
+      "slope": -3,
+      "intercept": 6.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 476,
+      "title": "Garden Archway",
+      "slope": 1,
+      "intercept": -0.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 477,
+      "title": "Desert Horizon",
+      "slope": 2.6,
+      "intercept": -4.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 478,
+      "title": "Forest Canopy",
+      "slope": -0.7,
+      "intercept": 1.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 479,
+      "title": "Coastal Sunset",
+      "slope": 1.4,
+      "intercept": -3.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 480,
+      "title": "Zero Intercept",
+      "slope": 0.9,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 481,
+      "title": "High Slope",
+      "slope": 7.4,
+      "intercept": -5.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 482,
+      "title": "Low Slope",
+      "slope": -0.6,
+      "intercept": 3.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 483,
+      "title": "Steep Decline",
+      "slope": -8.9,
+      "intercept": 1.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 484,
+      "title": "Gentle Ascent",
+      "slope": 2.3,
+      "intercept": -7.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 485,
+      "title": "Midpoint Intercept",
+      "slope": -1.4,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 486,
+      "title": "Balanced Slope",
+      "slope": 3.7,
+      "intercept": 2.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 487,
+      "title": "Extreme Intercept",
+      "slope": -4.5,
+      "intercept": 10,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 488,
+      "title": "Negative Intercept",
+      "slope": 6.1,
+      "intercept": -9.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 489,
+      "title": "Zero Slope",
+      "slope": 0,
+      "intercept": -4.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 490,
+      "title": "Steady Decline",
+      "slope": -3,
+      "intercept": -1.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 491,
+      "title": "Sharp Rise",
+      "slope": 9.2,
+      "intercept": -3.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 492,
+      "title": "Low Decline",
+      "slope": -0.8,
+      "intercept": 7.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 493,
+      "title": "Balanced Decline",
+      "slope": -5.6,
+      "intercept": 2.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 494,
+      "title": "Steep Ascent",
+      "slope": 8,
+      "intercept": -6.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 495,
+      "title": "Gentle Decline",
+      "slope": -1.2,
+      "intercept": 4.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 496,
+      "title": "Zero Crossing",
+      "slope": 0.7,
+      "intercept": -1.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 497,
+      "title": "Negative Nudge",
+      "slope": -2.4,
+      "intercept": -3.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 498,
+      "title": "Positive Pulse",
+      "slope": 3.9,
+      "intercept": 0.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 499,
+      "title": "Flat Field",
+      "slope": 0,
+      "intercept": 7.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 500,
+      "title": "Gentle Descent",
+      "slope": -1.1,
+      "intercept": 2.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 501,
+      "title": "Midpoint Madness",
+      "slope": 2,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 502,
+      "title": "High Intercept",
+      "slope": -0.8,
+      "intercept": 9.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 503,
+      "title": "Low Intercept",
+      "slope": 1.3,
+      "intercept": -9.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 504,
+      "title": "Balanced Blend",
+      "slope": -2.5,
+      "intercept": 4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 505,
+      "title": "Sharp Shift",
+      "slope": 3.1,
+      "intercept": -7.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 506,
+      "title": "Smooth Slide",
+      "slope": -0.6,
+      "intercept": 1.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 507,
+      "title": "Diagonal Dilemma",
+      "slope": 2.7,
+      "intercept": -3.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 508,
+      "title": "Vertical Vibe",
+      "slope": -4,
+      "intercept": 5.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 509,
+      "title": "Symmetry Shift",
+      "slope": -3.6,
+      "intercept": -2.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 510,
+      "title": "Dynamic Duo",
+      "slope": 1.8,
+      "intercept": 3.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 511,
+      "title": "Descending Trail",
+      "slope": -2.8,
+      "intercept": 9.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 512,
+      "title": "Steady Rise",
+      "slope": 0.6,
+      "intercept": -7.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 513,
+      "title": "Rapid Descent",
+      "slope": -5.4,
+      "intercept": 1.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 514,
+      "title": "Gentle Glide",
+      "slope": 0.9,
+      "intercept": 3.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 515,
+      "title": "Sharp Turn",
+      "slope": -4.1,
+      "intercept": -6.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 516,
+      "title": "High Hill",
+      "slope": 4.5,
+      "intercept": -3.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 517,
+      "title": "Low Valley",
+      "slope": -0.3,
+      "intercept": 7.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 518,
+      "title": "Sharp Ascent",
+      "slope": 5.8,
+      "intercept": -1.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 519,
+      "title": "Smooth Slope",
+      "slope": 1.2,
+      "intercept": 6.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 520,
+      "title": "Sudden Drop",
+      "slope": -3.9,
+      "intercept": -4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 521,
+      "title": "Steep Climb",
+      "slope": 6.7,
+      "intercept": -8.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 522,
+      "title": "Gentle Decline",
+      "slope": -1.4,
+      "intercept": 5.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 523,
+      "title": "Balanced Path",
+      "slope": -2.3,
+      "intercept": -2.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 524,
+      "title": "Dynamic Drift",
+      "slope": 4,
+      "intercept": 1.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 525,
+      "title": "Slope-Intercept Challenge 5",
+      "slope": 4.1,
+      "intercept": -9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 526,
+      "title": "Slope-Intercept Challenge 6",
+      "slope": -2.7,
+      "intercept": 3.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 527,
+      "title": "Slope-Intercept Challenge 7",
+      "slope": 1,
+      "intercept": -5.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 528,
+      "title": "Slope-Intercept Challenge 8",
+      "slope": -4.2,
+      "intercept": 7.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 529,
+      "title": "Slope-Intercept Challenge 9",
+      "slope": 3.5,
+      "intercept": -1.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 530,
+      "title": "Slope-Intercept Challenge 10",
+      "slope": -0.8,
+      "intercept": 4.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 531,
+      "title": "Slope-Intercept Challenge 11",
+      "slope": 2.6,
+      "intercept": -3.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 532,
+      "title": "Slope-Intercept Challenge 12",
+      "slope": -5,
+      "intercept": 8.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 533,
+      "title": "Slope-Intercept Challenge 13",
+      "slope": 1.7,
+      "intercept": -6.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 534,
+      "title": "Slope-Intercept Challenge 14",
+      "slope": -3,
+      "intercept": 2.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 535,
+      "title": "Slope-Intercept Challenge 15",
+      "slope": 4.8,
+      "intercept": -7.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 536,
+      "title": "Slope-Intercept Challenge 17",
+      "slope": 0.5,
+      "intercept": -8.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 537,
+      "title": "Slope-Intercept Challenge 18",
+      "slope": -6.1,
+      "intercept": 5.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 538,
+      "title": "Slope-Intercept Challenge 19",
+      "slope": 3.2,
+      "intercept": -0.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 539,
+      "title": "Slope-Intercept Challenge 20",
+      "slope": -2.9,
+      "intercept": 6.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 540,
+      "title": "Flat Line Fun",
+      "slope": 0,
+      "intercept": 8.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 541,
+      "title": "Steep Ascent",
+      "slope": 7.6,
+      "intercept": -1.3,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 542,
+      "title": "Downward Drift",
+      "slope": -4.9,
+      "intercept": 2.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 543,
+      "title": "Midway Slope",
+      "slope": 3.1,
+      "intercept": 0.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 544,
+      "title": "Tiny Tilt",
+      "slope": -0.7,
+      "intercept": -5.4,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 545,
+      "title": "High Rise",
+      "slope": 9.2,
+      "intercept": -8.3,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 546,
+      "title": "Low Drop",
+      "slope": -1.4,
+      "intercept": 7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 547,
+      "title": "Balanced Slope",
+      "slope": 2.8,
+      "intercept": -3.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 548,
+      "title": "Sharp Descent",
+      "slope": -6.5,
+      "intercept": 1.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 549,
+      "title": "Gentle Rise",
+      "slope": 0.9,
+      "intercept": -4.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 550,
+      "title": "Steep Slope",
+      "slope": 5.3,
+      "intercept": 2.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 551,
+      "title": "Negative Intercept",
+      "slope": -2.6,
+      "intercept": -9.7,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 552,
+      "title": "Positive Intercept",
+      "slope": 4,
+      "intercept": 5.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 553,
+      "title": "Large Slope",
+      "slope": 8.9,
+      "intercept": -6.4,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 554,
+      "title": "Small Slope",
+      "slope": -0.3,
+      "intercept": 9.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 555,
+      "title": "Balanced Drop",
+      "slope": 2.4,
+      "intercept": -7.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 556,
+      "title": "Upward Trend",
+      "slope": 2.7,
+      "intercept": -1.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 557,
+      "title": "Descending Line",
+      "slope": -4.5,
+      "intercept": 9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 558,
+      "title": "Mid-Magnitude",
+      "slope": 3.1,
+      "intercept": 2.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 559,
+      "title": "Negative Start",
+      "slope": -1.6,
+      "intercept": -7.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 560,
+      "title": "Steep Ascent",
+      "slope": 5.9,
+      "intercept": -0.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 561,
+      "title": "Gentle Descent",
+      "slope": -2.3,
+      "intercept": 6.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 562,
+      "title": "Balanced Slope",
+      "slope": 0,
+      "intercept": 4.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 563,
+      "title": "Sharp Drop",
+      "slope": -6.2,
+      "intercept": 1.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 564,
+      "title": "Flat Terrain",
+      "slope": 0.3,
+      "intercept": -2.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 565,
+      "title": "Extreme Ascend",
+      "slope": 9.7,
+      "intercept": -4.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 566,
+      "title": "Extreme Descend",
+      "slope": -9.3,
+      "intercept": 3.8,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 567,
+      "title": "Moderate Slope",
+      "slope": 1.8,
+      "intercept": 7.2,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 568,
+      "title": "Low Intercept",
+      "slope": -0.5,
+      "intercept": -9.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 569,
+      "title": "High Intercept",
+      "slope": 2.4,
+      "intercept": 10,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 570,
+      "title": "Zero Crossing",
+      "slope": -3.6,
+      "intercept": 0,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 571,
+      "title": "Near Zero Slope",
+      "slope": 0.1,
+      "intercept": -5.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 572,
+      "title": "Sunrise Slope",
+      "slope": 2.3,
+      "intercept": -1.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 573,
+      "title": "Mountain Gradient",
+      "slope": -4.7,
+      "intercept": 3.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 574,
+      "title": "River Flow",
+      "slope": 0.9,
+      "intercept": -5.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 575,
+      "title": "Desert Dune",
+      "slope": -8.1,
+      "intercept": 7.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 576,
+      "title": "City Skyline",
+      "slope": 3.6,
+      "intercept": -2.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 577,
+      "title": "Forest Trail",
+      "slope": -0.4,
+      "intercept": 1.7,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 578,
+      "title": "Space Rocket",
+      "slope": 9.2,
+      "intercept": -6.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 579,
+      "title": "Ocean Current",
+      "slope": -7.5,
+      "intercept": 4.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 580,
+      "title": "Iceberg Path",
+      "slope": 0.2,
+      "intercept": -8.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 581,
+      "title": "Volcano Edge",
+      "slope": 5.9,
+      "intercept": 2.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 582,
+      "title": "Star Trail",
+      "slope": -1.1,
+      "intercept": 6.8,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 583,
+      "title": "Cave Entrance",
+      "slope": 7.4,
+      "intercept": -3.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 584,
+      "title": "Rainy Day",
+      "slope": -2.6,
+      "intercept": 0.9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 585,
+      "title": "Night Sky",
+      "slope": 4.1,
+      "intercept": -7.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 586,
+      "title": "Windy Hill",
+      "slope": -0.9,
+      "intercept": 5.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 587,
+      "title": "Solar Flare",
+      "slope": 8.7,
+      "intercept": -1.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 588,
+      "title": "Lunar Eclipse",
+      "slope": -3.3,
+      "intercept": 9,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 589,
+      "title": "Bamboo Forest",
+      "slope": 1.4,
+      "intercept": -4.5,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 590,
+      "title": "Thunderstorm Path",
+      "slope": -6.2,
+      "intercept": 2.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 591,
+      "title": "Negative Nudge",
+      "slope": -1.1,
+      "intercept": -9.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 592,
+      "title": "Positive Punch",
+      "slope": 2.4,
+      "intercept": 7.6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 593,
+      "title": "Steep Ascent",
+      "slope": 9.1,
+      "intercept": -0.4,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 594,
+      "title": "Sharp Descent",
+      "slope": -7.8,
+      "intercept": 1.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 595,
+      "title": "Mild Rise",
+      "slope": 0.3,
+      "intercept": -4.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 596,
+      "title": "Twin Slopes",
+      "slope": 5.6,
+      "intercept": -5.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 597,
+      "title": "Negative Valley",
+      "slope": -2.9,
+      "intercept": -8.1,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 598,
+      "title": "High Horizon",
+      "slope": 6.7,
+      "intercept": 9,
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 599,
+      "title": "Low Landing",
+      "slope": -4.2,
+      "intercept": -1.3,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 600,
+      "title": "Steady Step",
+      "slope": -0.5,
+      "intercept": 2.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 601,
+      "title": "Rapid Rise",
+      "slope": 8.4,
+      "intercept": -7.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 602,
+      "title": "Gentle Glide",
+      "slope": -1.6,
+      "intercept": 5.9,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 603,
+      "title": "Midline Mystery",
+      "slope": -3.7,
+      "intercept": 3.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 604,
+      "title": "Level 1",
+      "slope": 0.5,
+      "intercept": -3.2,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 605,
+      "title": "Level 2",
+      "slope": -1.7,
+      "intercept": 4.6,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 606,
+      "title": "Level 3",
+      "slope": 2.3,
+      "intercept": -0.8,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 607,
+      "title": "Level 4",
+      "slope": -0.9,
+      "intercept": 7.1,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 608,
+      "title": "Level 5",
+      "slope": 3.6,
+      "intercept": -5.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 609,
+      "title": "Level 6",
+      "slope": -2.1,
+      "intercept": 1.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 610,
+      "title": "Level 7",
+      "slope": 4.8,
+      "intercept": -2.5,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 611,
+      "title": "Level 8",
+      "slope": -3.4,
+      "intercept": 6,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 612,
+      "title": "Level 9",
+      "slope": 1.2,
+      "intercept": -7.3,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 613,
+      "title": "Level 10",
+      "slope": -4.5,
+      "intercept": 0.7,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 614,
+      "title": "Level 11",
+      "slope": 2.9,
+      "intercept": -1.6,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 615,
+      "title": "Level 12",
+      "slope": -5,
+      "intercept": 3.4,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 616,
+      "title": "Level 13",
+      "slope": 6.1,
+      "intercept": -8.2,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 617,
+      "title": "Level 14",
+      "slope": -7.3,
+      "intercept": 5.9,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 618,
+      "title": "Level 15",
+      "slope": 0.8,
+      "intercept": -4.1,
+      "difficulty": "Easy"
+    },
+    {
+      "id": 619,
+      "title": "Level 16",
+      "slope": -2.7,
+      "intercept": 9.5,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 620,
+      "title": "Level 17",
+      "slope": 3.1,
+      "intercept": -6.4,
+      "difficulty": "Medium"
+    },
+    {
+      "id": 621,
+      "title": "Level 18",
+      "slope": -8,
+      "intercept": 2.3,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 622,
+      "title": "Level 19",
+      "slope": 5.6,
+      "intercept": -9.7,
+      "difficulty": "Hard"
+    },
+    {
+      "id": 623,
+      "title": "Level 20",
+      "slope": -1.4,
+      "intercept": 0.2,
+      "difficulty": "Easy"
+    }
+  ],
+  "logicPuzzles": [
+    {
+      "id": 1,
+      "title": "Tangled Truths",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "A"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 2,
+      "title": "Binary Barrier",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "B",
+        "C"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 3,
+      "title": "Flip-Flop Fiasco",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "D"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 4,
+      "title": "Logic Loop",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "E",
+        "F"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 5,
+      "title": "Signal Squeeze",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "G"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 6,
+      "title": "Circuit Conundrum",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "H",
+        "I"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 7,
+      "title": "Nifty NAND",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "J"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 8,
+      "title": "Orchestrated OR",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "K",
+        "L"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 9,
+      "title": "Xor Xtreme",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "M"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 10,
+      "title": "Final Fusion",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "N",
+        "O"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 11,
+      "title": "Quantum Leap",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 12,
+      "title": "Binary Bridge",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "E",
+        "F"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 13,
+      "title": "Cascade Lock",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "G"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 14,
+      "title": "Pulse Sync",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 15,
+      "title": "Mirror Gate",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "H"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 16,
+      "title": "Shadow Switch",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "I",
+        "J"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 17,
+      "title": "Final Conductor",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [],
+      "difficulty": "Very Hard"
+    },
+    {
+      "id": 18,
+      "title": "Dual Relay",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 19,
+      "title": "Signal Diverge",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "C"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 20,
+      "title": "NAND Nexus",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "B",
+        "D"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 21,
+      "title": "Parity Pulse",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 22,
+      "title": "Cascade Core",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "A"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 23,
+      "title": "Merge Point",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "D"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 24,
+      "title": "Toggle Truss",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "B"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 25,
+      "title": "Final Conduit",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "C",
+        "D"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 26,
+      "title": "Inverted Whisper",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "E",
+        "F"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 27,
+      "title": "Open Gateway",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "J"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 28,
+      "title": "Reversal Loop",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "K",
+        "L"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 29,
+      "title": "Mirror Maze",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "G"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 30,
+      "title": "Squeeze Spot",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "H",
+        "I"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 31,
+      "title": "Back Door",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "J"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 32,
+      "title": "Red Light",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "K",
+        "L"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 33,
+      "title": "XOR Cascade",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "E"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 34,
+      "title": "AND Enigma",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "F",
+        "G"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 35,
+      "title": "OR Overload",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "H"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 36,
+      "title": "XOR Xtravaganza",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "I",
+        "J"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 37,
+      "title": "OR Odyssey",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 38,
+      "title": "NAND Negotiation",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "D"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 39,
+      "title": "OR Escapade",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "G"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 40,
+      "title": "NAND Nexus",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "H",
+        "I"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 41,
+      "title": "XOR Cascade",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 42,
+      "title": "Final Fused Gate",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "J",
+        "K"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 43,
+      "title": "Twin Paths",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "A",
+        "B"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 44,
+      "title": "Binary Bridge",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 45,
+      "title": "Choice Cascade",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "C"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 46,
+      "title": "Flip-Flop Fusion",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "B",
+        "D"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 47,
+      "title": "Signal Synthesis",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "A",
+        "D"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 48,
+      "title": "Dual Drift",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "H",
+        "I"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 49,
+      "title": "Cascade Code",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "J"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 50,
+      "title": "Pulse Paradox",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "K",
+        "L"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 51,
+      "title": "Binary Bridge",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "B"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 52,
+      "title": "Parallel Pulse",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "F"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 53,
+      "title": "Shadow Circuit",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "H"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 54,
+      "title": "Echo Nexus",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "I"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 55,
+      "title": "Pulse Paradox",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "J"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 56,
+      "title": "XOR Xylophone",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "M"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 57,
+      "title": "XOR Maze",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "J"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 58,
+      "title": "Final AND",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "K",
+        "L"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 59,
+      "title": "ANDed Alliance",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "G"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 60,
+      "title": "Orchestrated OR",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "H",
+        "I"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 61,
+      "title": "OR Odyssey",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "J"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 62,
+      "title": "NAND Nexus",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "K",
+        "L"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 63,
+      "title": "ANDed Puzzle",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "F",
+        "G"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 64,
+      "title": "Balanced Load",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "E"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 65,
+      "title": "Sine Wave",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "F"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 66,
+      "title": "Signal Merge",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "G"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 67,
+      "title": "Redundant Path",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "H"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 68,
+      "title": "Parallel Path",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "E"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 69,
+      "title": "Synchronized Switch",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "F",
+        "G"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 70,
+      "title": "Binary Bridge",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "H"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 71,
+      "title": "Negation Nexus",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "I",
+        "J"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 72,
+      "title": "Open Orbit",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "K"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 73,
+      "title": "Complementary Circuit",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "L"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 74,
+      "title": "Final Fuse",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "M",
+        "N"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 75,
+      "title": "Complement Cascade",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "H",
+        "I"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 76,
+      "title": "Echo Loop",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "D"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 77,
+      "title": "Double Lockdown",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "A",
+        "B"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 78,
+      "title": "Mirror Maze",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "C"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 79,
+      "title": "Cascade Core",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "A",
+        "D"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 80,
+      "title": "Silent Signal",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "B"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 81,
+      "title": "Lockstep",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "C",
+        "D"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 82,
+      "title": "Quantum Q",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "A"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 83,
+      "title": "Twist Tangle",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "B",
+        "C"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 84,
+      "title": "Stability Switch",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "A",
+        "D"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 85,
+      "title": "Beacon Beam",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "P"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 86,
+      "title": "Shadow Sync",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "Q",
+        "R"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 87,
+      "title": "Pulse Paradox",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "S"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 88,
+      "title": "Gridlock Gate",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "T",
+        "U"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 89,
+      "title": "Resonance Relay",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "V"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 90,
+      "title": "Echoed Enigma",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "W",
+        "X"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 91,
+      "title": "Quantum Quirk",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "Y"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 92,
+      "title": "Chain Reaction",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "A1",
+        "Z"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 93,
+      "title": "Narrow Path",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "A"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 94,
+      "title": "Mirror Maze",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "D"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 95,
+      "title": "Binary Bridge",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "A"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 96,
+      "title": "Gate Matrix",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "P"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 97,
+      "title": "Mirror Logic",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "Q",
+        "R"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 98,
+      "title": "Resonance Ring",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "S"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 99,
+      "title": "Final Barrier",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "T",
+        "U"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 100,
+      "title": "Naughty NAND",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "E"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 101,
+      "title": "NAND Nuisance",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "G",
+        "H"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 102,
+      "title": "XOR Twist",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "I"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 103,
+      "title": "Double OR",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "J",
+        "K"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 104,
+      "title": "NAND Necessity",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "L"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 105,
+      "title": "XOR Xtreme",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "M",
+        "N"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 106,
+      "title": "Quiet OR",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "O"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 107,
+      "title": "NAND Nightfall",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "P"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 108,
+      "title": "XOR Crossroads",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "Q",
+        "R"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 109,
+      "title": "AND Ascend",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "S"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 110,
+      "title": "Twin Flames",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "C"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 111,
+      "title": "Shadow Loop",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "A",
+        "C"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 112,
+      "title": "Flux Field",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "B",
+        "D"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 113,
+      "title": "Quantum Leap",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "A",
+        "D"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 114,
+      "title": "Ghost Circuit",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 115,
+      "title": "Dual Path",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "A",
+        "B",
+        "C"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 116,
+      "title": "Circuit Rift",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "B",
+        "C",
+        "D"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 117,
+      "title": "Silent Flux",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "C"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 118,
+      "title": "Shadow Pulse",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "A",
+        "D"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 119,
+      "title": "Gatekeeper's Gambit",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "Q",
+        "R"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 120,
+      "title": "Negated Nexus",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "V"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 121,
+      "title": "Overloaded OR",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "W",
+        "X"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 122,
+      "title": "Inverse Intrigue",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "B1"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 123,
+      "title": "Final Fusion",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "C1",
+        "D1"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 124,
+      "title": "Voltage Vault",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "M"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 125,
+      "title": "Starlight Sync",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "S"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 126,
+      "title": "XOR Labyrinth",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "F",
+        "G"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 127,
+      "title": "AND Puzzle Trail",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "H"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 128,
+      "title": "OR Challenge Circuit",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "I",
+        "J"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 129,
+      "title": "NAND Mystery Maze",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "K"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 130,
+      "title": "OR Puzzle Circuit",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "O"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 131,
+      "title": "NAND Brain Teaser",
+      "gate": "NAND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "P",
+        "Q"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 132,
+      "title": "XOR Secret Switch",
+      "gate": "XOR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "R"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 133,
+      "title": "AND Enigma Pathway",
+      "gate": "AND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "S",
+        "T"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 134,
+      "title": "OR Mystery Circuit",
+      "gate": "OR",
+      "targetOutput": false,
+      "lockedInputs": [
+        "U"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 135,
+      "title": "NAND Puzzle Trail",
+      "gate": "NAND",
+      "targetOutput": true,
+      "lockedInputs": [
+        "V",
+        "W"
+      ],
+      "difficulty": "Hard"
+    },
+    {
+      "id": 136,
+      "title": "XOR Challenge Loop",
+      "gate": "XOR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "X"
+      ],
+      "difficulty": "Medium"
+    },
+    {
+      "id": 137,
+      "title": "AND Labyrinth Gate",
+      "gate": "AND",
+      "targetOutput": false,
+      "lockedInputs": [
+        "Y",
+        "Z"
+      ],
+      "difficulty": "Easy"
+    },
+    {
+      "id": 138,
+      "title": "OR Enigma Switch",
+      "gate": "OR",
+      "targetOutput": true,
+      "lockedInputs": [
+        "A1",
+        "B1"
+      ],
+      "difficulty": "Hard"
+    }
+  ]
+}
