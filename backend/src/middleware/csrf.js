@@ -19,6 +19,7 @@ export const generateCsrfToken = (req, res, next) => {
             secure: config.cookie.secure,
             sameSite: config.cookie.sameSite || 'lax', // Must be lax or strict for CSRF
             httpOnly: false, // Must be readable by frontend JS to echo in headers
+            ...(config.cookie.domain ? { domain: config.cookie.domain } : {}),
             path: '/',
         })
     }

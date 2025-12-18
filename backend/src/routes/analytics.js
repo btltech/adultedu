@@ -12,25 +12,27 @@ router.get('/analytics/overview', requireAuth, async (req, res, next) => {
     try {
         const userId = req.user.id
 
-        // Get total attempts and accuracy
-        const attempts = await prisma.attempt.findMany({
-            where: { userId },
-            select: { isCorrect: true, timeSpentSec: true, createdAt: true }
-        })
-
-        const totalQuestions = attempts.length
-        const correctAnswers = attempts.filter(a => a.isCorrect).length
+        const totalQuestions = await prisma.attempt.count({ where: { userId } })
+        const correctAnswers = await prisma.attempt.count({ where: { userId, isCorrect: true } })
         const accuracy = totalQuestions > 0 ? Math.round((correctAnswers / totalQuestions) * 100) : 0
-        const totalTimeSpent = attempts.reduce((sum, a) => sum + (a.timeSpentSec || 0), 0)
 
-        // Get questions by day for last 30 days
+        const timeAgg = await prisma.attempt.aggregate({
+            where: { userId },
+            _sum: { timeSpentSec: true },
+        })
+        const totalTimeSpent = timeAgg._sum.timeSpentSec || 0
+
         const thirtyDaysAgo = new Date()
         thirtyDaysAgo.setDate(thirtyDaysAgo.getDate() - 30)
 
-        const recentAttempts = attempts.filter(a => new Date(a.createdAt) >= thirtyDaysAgo)
-        const questionsLast30Days = recentAttempts.length
-        const accuracyLast30Days = recentAttempts.length > 0
-            ? Math.round((recentAttempts.filter(a => a.isCorrect).length / recentAttempts.length) * 100)
+        const questionsLast30Days = await prisma.attempt.count({
+            where: { userId, createdAt: { gte: thirtyDaysAgo } },
+        })
+        const correctLast30Days = await prisma.attempt.count({
+            where: { userId, createdAt: { gte: thirtyDaysAgo }, isCorrect: true },
+        })
+        const accuracyLast30Days = questionsLast30Days > 0
+            ? Math.round((correctLast30Days / questionsLast30Days) * 100)
             : 0
 
         // Get user's XP and streak
@@ -71,47 +73,26 @@ router.get('/analytics/topics', requireAuth, async (req, res, next) => {
     try {
         const userId = req.user.id
 
-        // Get all attempts grouped by topic
-        const attempts = await prisma.attempt.findMany({
-            where: { userId },
-            include: {
-                question: {
-                    include: {
-                        topic: {
-                            include: { track: true }
-                        }
-                    }
-                }
-            }
-        })
+        const rows = await prisma.$queryRaw`
+            SELECT
+                tp.id AS "id",
+                tp.title AS "title",
+                tr.title AS "trackTitle",
+                COUNT(*)::int AS "total",
+                SUM(CASE WHEN a.is_correct THEN 1 ELSE 0 END)::int AS "correct",
+                COALESCE(SUM(a.time_spent_sec), 0)::int AS "timeSpent"
+            FROM attempts a
+            JOIN questions q ON q.id = a.question_id
+            JOIN topics tp ON tp.id = q.topic_id
+            JOIN tracks tr ON tr.id = tp.track_id
+            WHERE a.user_id = ${userId}
+            GROUP BY tp.id, tp.title, tr.title;
+        `
 
-        // Group by topic
-        const topicStats = {}
-
-        for (const attempt of attempts) {
-            const topicId = attempt.question.topic.id
-
-            if (!topicStats[topicId]) {
-                topicStats[topicId] = {
-                    id: topicId,
-                    title: attempt.question.topic.title,
-                    trackTitle: attempt.question.topic.track.title,
-                    total: 0,
-                    correct: 0,
-                    timeSpent: 0
-                }
-            }
-
-            topicStats[topicId].total++
-            if (attempt.isCorrect) topicStats[topicId].correct++
-            topicStats[topicId].timeSpent += attempt.timeSpentSec || 0
-        }
-
-        // Convert to array and calculate percentages
-        const topics = Object.values(topicStats).map(t => ({
+        const topics = (rows || []).map((t) => ({
             ...t,
             accuracy: t.total > 0 ? Math.round((t.correct / t.total) * 100) : 0,
-            timeSpentFormatted: formatTime(t.timeSpent)
+            timeSpentFormatted: formatTime(t.timeSpent),
         }))
 
         // Sort by accuracy (lowest first for weakness identification)
@@ -135,43 +116,34 @@ router.get('/analytics/calendar', requireAuth, async (req, res, next) => {
         const yearAgo = new Date()
         yearAgo.setDate(yearAgo.getDate() - 365)
 
-        const attempts = await prisma.attempt.findMany({
-            where: {
-                userId,
-                createdAt: { gte: yearAgo }
-            },
-            select: { createdAt: true, isCorrect: true }
-        })
+        const rows = await prisma.$queryRaw`
+            SELECT
+                DATE(a.created_at) AS "date",
+                COUNT(*)::int AS "questions",
+                SUM(CASE WHEN a.is_correct THEN 1 ELSE 0 END)::int AS "correct"
+            FROM attempts a
+            WHERE a.user_id = ${userId} AND a.created_at >= ${yearAgo}
+            GROUP BY DATE(a.created_at)
+            ORDER BY DATE(a.created_at) ASC;
+        `
 
-        // Group by date
-        const dailyActivity = {}
+        const calendar = (rows || []).map((row) => {
+            const date = row.date instanceof Date
+                ? row.date.toISOString().split('T')[0]
+                : String(row.date)
 
-        for (const attempt of attempts) {
-            const date = attempt.createdAt.toISOString().split('T')[0]
-
-            if (!dailyActivity[date]) {
-                dailyActivity[date] = { questions: 0, correct: 0 }
+            return {
+                date,
+                questions: row.questions,
+                correct: row.correct,
+                accuracy: row.questions > 0 ? Math.round((row.correct / row.questions) * 100) : 0,
             }
-
-            dailyActivity[date].questions++
-            if (attempt.isCorrect) dailyActivity[date].correct++
-        }
-
-        // Convert to array format
-        const calendar = Object.entries(dailyActivity).map(([date, stats]) => ({
-            date,
-            questions: stats.questions,
-            correct: stats.correct,
-            accuracy: Math.round((stats.correct / stats.questions) * 100)
-        }))
-
-        // Sort by date
-        calendar.sort((a, b) => new Date(a.date) - new Date(b.date))
+        })
 
         res.json({
             calendar,
             totalDays: calendar.length,
-            totalQuestions: attempts.length
+            totalQuestions: calendar.reduce((sum, d) => sum + d.questions, 0)
         })
     } catch (error) {
         next(error)

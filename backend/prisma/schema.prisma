@@ -159,6 +159,7 @@ model Topic {
   questions     Question[]
   topicOutcomes TopicOutcome[]
 
+  @@index([trackId, sortOrder])
   @@map("topics")
 }
 
@@ -240,6 +241,7 @@ model Question {
   reviewItems         ReviewItem[]
   dailyChallenges     DailyChallenge[]
 
+  @@index([topicId, isPublished, createdAt])
   @@map("questions")
 }
 
@@ -305,6 +307,9 @@ model Attempt {
   user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
 
+  @@index([userId, questionId])
+  @@index([userId, createdAt])
+  @@index([questionId, createdAt])
   @@map("attempts")
 }
 
@@ -325,6 +330,7 @@ model ReviewItem {
   question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
 
   @@unique([userId, questionId])
+  @@index([userId, dueDate])
   @@map("review_items")
 }
 

@@ -130,11 +130,11 @@ GET /api/uk-levels       # List UK qualification levels
 
 This project supports multiple deployment strategies:
 
-### Option A: Cloudflare (Pages + Workers + D1)
-See `docs/deploy-cloudflare.md` (coming in Phase 6)
+### Option A: Railway (API + Postgres) + Cloudflare Pages (Web)
+See `docs/deploy-railway-cloudflare-pages.md`
 
 ### Option B: VPS/Docker
-See `docs/deploy-docker.md` (coming in Phase 6)
+See `docs/deploy-docker.md`
 
 ## Compliance Notice
 

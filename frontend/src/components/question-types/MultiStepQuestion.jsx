@@ -40,6 +40,13 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
     const activeStep = steps[currentStep];
     const isLastStep = currentStep === steps.length - 1;
 
+    const normalize = (value) =>
+        String(value ?? '')
+            .normalize('NFKC')
+            .replace(/\s+/g, ' ')
+            .trim()
+            .toLowerCase();
+
     // Handle submitting a sub-step
     const handleStepSubmit = () => {
         const answer = activeStep.options[selectedOption];
@@ -54,7 +61,7 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
         // If answer is string "A", mapping is hard. Let's assume answer is the correct string or index.
         // Let's standardize on: answer is the CORRECT STRING in the assets JSON.
 
-        const isCorrect = answer === activeStep.answer;
+        const isCorrect = normalize(answer) === normalize(activeStep.answer);
 
         setStepResults(prev => ({
             ...prev,
@@ -77,11 +84,9 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                     setSelectedOption(null);
                 }, 1500);
             } else {
-                // Final step correct! Submit to parent to record progress
-                // We pass "Correct" or the full chain of answers? 
-                // Parent expects a single answer string usually. 
-                // Let's pass "Completed" or the final answer.
-                onAnswer("Completed");
+                // Final step correct — submit all step answers so the backend can verify scoring.
+                const finalStepAnswers = { ...stepAnswers, [currentStep]: answer };
+                onAnswer({ stepAnswers: finalStepAnswers });
             }
         }
     };
@@ -118,7 +123,7 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
 
                 const isCompleted = index < currentStep;
                 const isCurrent = index === currentStep;
-                const result = stepResults[index];
+                const stepResult = stepResults[index];
 
                 return (
                     <div
@@ -136,7 +141,7 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                             <div className="space-y-2">
                                 {step.options.map((opt, optIdx) => {
                                     const isSelected = isCurrent ? selectedOption === optIdx : stepAnswers[index] === opt;
-                                    const isStepCorrect = result?.isCorrect;
+                                    const isStepCorrect = stepResult?.isCorrect;
 
                                     // Visual state
                                     let baseClass = "w-full text-left p-3 rounded-lg border text-sm transition-all ";
@@ -149,7 +154,7 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                                         }
                                     } else {
                                         // Active view
-                                        if (result) {
+                                        if (stepResult) {
                                             // Result shown
                                             if (isSelected && isStepCorrect) baseClass += "bg-accent-500/20 border-accent-500 text-accent-300";
                                             else if (isSelected && !isStepCorrect) baseClass += "bg-red-500/20 border-red-500 text-red-300";
@@ -164,8 +169,8 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                                     return (
                                         <button
                                             key={optIdx}
-                                            onClick={() => !result && isCurrent && setSelectedOption(optIdx)}
-                                            disabled={!isCurrent || !!result}
+                                            onClick={() => !stepResult && !showResult && isCurrent && setSelectedOption(optIdx)}
+                                            disabled={!isCurrent || !!stepResult || showResult}
                                             className={baseClass}
                                         >
                                             <div className="flex items-center gap-3">
@@ -173,8 +178,8 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                                                     {String.fromCharCode(65 + optIdx)}
                                                 </div>
                                                 <span>{opt}</span>
-                                                {result && isSelected && isStepCorrect && <CheckIcon />}
-                                                {result && isSelected && !isStepCorrect && <XIcon />}
+                                                {stepResult && isSelected && isStepCorrect && <CheckIcon />}
+                                                {stepResult && isSelected && !isStepCorrect && <XIcon />}
                                             </div>
                                         </button>
                                     )
@@ -182,13 +187,13 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                             </div>
 
                             {/* Feedback */}
-                            {result && (
-                                <div className={`mt-4 p-3 rounded-lg text-sm ${result.isCorrect ? 'bg-accent-500/10 text-accent-300' : 'bg-red-500/10 text-red-300'
+                            {stepResult && (
+                                <div className={`mt-4 p-3 rounded-lg text-sm ${stepResult.isCorrect ? 'bg-accent-500/10 text-accent-300' : 'bg-red-500/10 text-red-300'
                                     }`}>
-                                    <p className="font-bold mb-1">{result.isCorrect ? 'Correct!' : 'Try Again'}</p>
-                                    <p className="opacity-90">{result.explanation}</p>
+                                    <p className="font-bold mb-1">{stepResult.isCorrect ? 'Correct!' : 'Try Again'}</p>
+                                    <p className="opacity-90">{stepResult.explanation}</p>
 
-                                    {!result.isCorrect && (
+                                    {!stepResult.isCorrect && (
                                         <button
                                             onClick={() => setStepResults(prev => {
                                                 const newRes = { ...prev };
@@ -204,7 +209,7 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                             )}
 
                             {/* Submit Button for Current Step */}
-                            {isCurrent && !result && (
+                            {isCurrent && !stepResult && !showResult && (
                                 <button
                                     onClick={handleStepSubmit}
                                     disabled={selectedOption === null}
@@ -217,6 +222,23 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                     </div>
                 );
             })}
+
+            {/* Final feedback from backend scoring */}
+            {showResult && (
+                <div className={`p-4 rounded-xl ${result?.isCorrect
+                    ? 'bg-accent-500/10 border border-accent-500/30'
+                    : 'bg-amber-500/10 border border-amber-500/30'
+                    }`}>
+                    <div className="flex items-center gap-2 mb-2">
+                        {result?.isCorrect ? (
+                            <span className="text-accent-400 font-medium">✓ Completed!</span>
+                        ) : (
+                            <span className="text-amber-400 font-medium">✗ Not quite</span>
+                        )}
+                    </div>
+                    <p className="text-dark-300 text-sm">{result?.explanation}</p>
+                </div>
+            )}
         </div>
     );
 }

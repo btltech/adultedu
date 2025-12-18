@@ -9,7 +9,7 @@ export const config = {
 
     // Server
     port: parseInt(process.env.PORT || '3001', 10),
-    host: process.env.HOST || 'localhost',
+    host: process.env.HOST || (process.env.NODE_ENV === 'production' ? '0.0.0.0' : 'localhost'),
 
     // Database
     databaseUrl:

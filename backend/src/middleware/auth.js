@@ -1,6 +1,11 @@
 import prisma from '../lib/db.js'
+import config from '../config/env.js'
 
 
+const SESSION_CLEAR_COOKIE_OPTIONS = {
+    path: '/',
+    ...(config.cookie.domain ? { domain: config.cookie.domain } : {}),
+}
 
 /**
  * Auth middleware - checks for valid session and attaches user to request
@@ -26,7 +31,7 @@ export async function requireAuth(req, res, next) {
             if (session) {
                 await prisma.session.delete({ where: { id: session.id } })
             }
-            res.clearCookie('session', { path: '/' })
+            res.clearCookie('session', SESSION_CLEAR_COOKIE_OPTIONS)
             return res.status(401).json({
                 error: 'Unauthorized',
                 message: 'Session expired'
