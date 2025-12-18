@@ -16,8 +16,14 @@ const SESSION_COOKIE_OPTIONS = {
     httpOnly: true,
     secure: config.cookie.secure,
     sameSite: config.cookie.sameSite || 'lax',
+    ...(config.cookie.domain ? { domain: config.cookie.domain } : {}),
     maxAge: SESSION_DURATION_MS,
     path: '/',
+}
+
+const SESSION_CLEAR_COOKIE_OPTIONS = {
+    path: '/',
+    ...(config.cookie.domain ? { domain: config.cookie.domain } : {}),
 }
 
 async function rotateSessionIfNeeded(session, res) {
@@ -162,7 +168,7 @@ router.post('/auth/logout', async (req, res, next) => {
         }
 
         // Clear cookie
-        res.clearCookie('session', { path: '/' })
+        res.clearCookie('session', SESSION_CLEAR_COOKIE_OPTIONS)
 
         res.json({ message: 'Logged out successfully' })
     } catch (error) {
@@ -196,7 +202,7 @@ router.get('/auth/me', async (req, res, next) => {
             if (session) {
                 await prisma.session.delete({ where: { id: session.id } })
             }
-            res.clearCookie('session', { path: '/' })
+            res.clearCookie('session', SESSION_CLEAR_COOKIE_OPTIONS)
             return res.status(401).json({
                 error: 'Unauthorized',
                 message: 'Session expired'
