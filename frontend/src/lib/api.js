@@ -83,6 +83,10 @@ export const getUkLevels = () => apiGet('/uk-levels');
 // Progress
 export const getProgressDetail = (slug) => apiGet(`/progress/${slug}`);
 
+// Learning Lab
+export const getLabProgress = () => apiGet('/lab/progress');
+export const completeLabLevel = ({ labType, levelId }) => apiPost('/lab/complete', { labType, levelId });
+
 export default {
     get: apiGet,
     post: apiPost,

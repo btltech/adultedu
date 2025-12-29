@@ -141,11 +141,17 @@ function Hero() {
                         Free courses for essential digital skills, GCSE prep, and tech pathways. Learn at your pace, aligned to UK frameworks.
                     </p>
 
-                    {/* Single CTA */}
-                    <Link to="/tracks" className="btn-primary px-6 py-3 text-base">
-                        Explore courses
-                        <ArrowRightIcon />
-                    </Link>
+                    {/* CTAs */}
+                    <div className="flex flex-col sm:flex-row gap-3">
+                        <Link to="/tracks" className="btn-primary px-6 py-3 text-base">
+                            Explore courses
+                            <ArrowRightIcon />
+                        </Link>
+                        <Link to="/lab" className="btn-secondary px-6 py-3 text-base">
+                            Try the Learning Lab
+                            <ArrowRightIcon />
+                        </Link>
+                    </div>
                 </div>
             </div>
         </section>

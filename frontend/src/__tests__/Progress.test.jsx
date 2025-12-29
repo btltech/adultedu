@@ -9,10 +9,12 @@ vi.mock('../context/AuthContext', () => ({
 
 const mockApi = vi.hoisted(() => vi.fn())
 const mockGetProgressDetail = vi.hoisted(() => vi.fn())
+const mockGetLabProgress = vi.hoisted(() => vi.fn())
 
 vi.mock('../lib/api', () => ({
     api: mockApi,
     getProgressDetail: mockGetProgressDetail,
+    getLabProgress: mockGetLabProgress,
     default: {}
 }))
 
@@ -49,6 +51,7 @@ describe('Progress page', () => {
         vi.clearAllMocks()
         mockApi.mockResolvedValue({ enrollments: mockEnrollments })
         mockGetProgressDetail.mockResolvedValue(mockDetail)
+        mockGetLabProgress.mockResolvedValue(null)
     })
 
     it('shows enrollments and per-topic detail on expand', async () => {
