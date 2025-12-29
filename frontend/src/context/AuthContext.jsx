@@ -24,12 +24,12 @@ export function AuthProvider({ children }) {
         }
     }, [])
 
-    const signup = useCallback(async (email, password) => {
+    const signup = useCallback(async (email, password, displayName) => {
         setError(null)
         try {
             const data = await api('/auth/signup', {
                 method: 'POST',
-                body: { email, password },
+                body: { email, password, displayName },
             })
             setUser(data.user)
             return { success: true }

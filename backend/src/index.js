@@ -1,8 +1,8 @@
 import express from 'express'
 import cookieParser from 'cookie-parser'
+import helmet from 'helmet'
 import config from './config/env.js'
 import corsMiddleware from './middleware/cors.js'
-import { apiLimiter } from './middleware/rateLimiter.js'
 import healthRoutes from './routes/health.js'
 import authRoutes from './routes/auth.js'
 import tracksRoutes from './routes/tracks.js'
@@ -21,20 +21,41 @@ import diagnosticRoutes from './routes/diagnostic.js'
 import dailyRoutes from './routes/daily.js'
 import gamificationRoutes from './routes/gamification.js'
 import achievementsRoutes from './routes/achievements.js'
+import labRoutes from './routes/lab.js'
 
 import logger from './lib/logger.js'
 
 // ... imports ...
 import { generateCsrfToken, verifyCsrfToken } from './middleware/csrf.js'
+import { apiLimiter } from './middleware/rateLimiter.js'
 
 const app = express()
 
+app.set('trust proxy', config.trustProxy)
+
+// Security headers
+app.use(helmet({
+    contentSecurityPolicy: {
+        directives: {
+            defaultSrc: ["'self'"],
+            styleSrc: ["'self'", "'unsafe-inline'"], // For Tailwind or inline styles if needed
+            scriptSrc: ["'self'"],
+            imgSrc: ["'self'", "data:", "https:"],
+        },
+    },
+    hsts: {
+        maxAge: 31536000,
+        includeSubDomains: true,
+        preload: true
+    }
+}))
+
 // Middleware
 app.use(corsMiddleware)
-app.use(apiLimiter)
-app.use(express.json())
-app.use(express.urlencoded({ extended: true }))
+app.use(express.json({ limit: '10mb' }))
+app.use(express.urlencoded({ extended: true, limit: '10mb' }))
 app.use(cookieParser())
+app.use('/api', apiLimiter)
 
 // CSRF Protection
 // Note: Frontend must read 'XSRF-TOKEN' cookie and set 'X-CSRF-Token' header on mutations
@@ -64,6 +85,7 @@ v1Router.use('/', diagnosticRoutes)
 v1Router.use('/', dailyRoutes)
 v1Router.use('/', gamificationRoutes)
 v1Router.use('/', achievementsRoutes)
+v1Router.use('/', labRoutes)
 v1Router.use('/admin', adminRoutes)
 v1Router.use('/', certificatesRoutes)
 v1Router.use('/', eventsRoutes)

@@ -3,8 +3,9 @@ import prisma from '../lib/db.js'
 import bcrypt from 'bcryptjs'
 import crypto from 'crypto'
 import config from '../config/env.js'
-import { authLimiter } from '../middleware/rateLimiter.js'
 import { validate, signupSchema, loginSchema } from '../middleware/validate.js'
+import { authLimiter } from '../middleware/rateLimiter.js'
+import logger from '../lib/logger.js'
 
 const router = Router()
 
@@ -49,7 +50,7 @@ async function rotateSessionIfNeeded(session, res) {
  */
 router.post('/auth/signup', authLimiter, validate(signupSchema), async (req, res, next) => {
     try {
-        const { email, password } = req.body
+        const { email, password, displayName } = req.body
 
         // Check if email exists
         const existing = await prisma.user.findUnique({ where: { email } })
@@ -69,6 +70,7 @@ router.post('/auth/signup', authLimiter, validate(signupSchema), async (req, res
                 email,
                 passwordHash,
                 role: 'user',
+                displayName: displayName || null,
             },
         })
 
@@ -93,6 +95,7 @@ router.post('/auth/signup', authLimiter, validate(signupSchema), async (req, res
                 id: user.id,
                 email: user.email,
                 role: user.role,
+                displayName: user.displayName,
             },
         })
     } catch (error) {
@@ -111,6 +114,7 @@ router.post('/auth/login', authLimiter, validate(loginSchema), async (req, res, 
         // Find user
         const user = await prisma.user.findUnique({ where: { email } })
         if (!user) {
+            logger.warn(`Failed login attempt: user not found - ${email} from ${req.ip}`)
             return res.status(401).json({
                 error: 'Unauthorized',
                 message: 'Invalid email or password'
@@ -120,6 +124,7 @@ router.post('/auth/login', authLimiter, validate(loginSchema), async (req, res, 
         // Check password
         const valid = await bcrypt.compare(password, user.passwordHash)
         if (!valid) {
+            logger.warn(`Failed login attempt: invalid password - ${email} from ${req.ip}`)
             return res.status(401).json({
                 error: 'Unauthorized',
                 message: 'Invalid email or password'
@@ -147,6 +152,7 @@ router.post('/auth/login', authLimiter, validate(loginSchema), async (req, res, 
                 id: user.id,
                 email: user.email,
                 role: user.role,
+                displayName: user.displayName,
             },
         })
     } catch (error) {
@@ -216,6 +222,7 @@ router.get('/auth/me', async (req, res, next) => {
                 id: freshSession.user.id,
                 email: freshSession.user.email,
                 role: freshSession.user.role,
+                displayName: freshSession.user.displayName,
             },
         })
     } catch (error) {

@@ -1,20 +1,26 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { api, getProgressDetail } from '../lib/api'
+import { api, getLabProgress, getProgressDetail } from '../lib/api'
+import generatedLevels from '../data/generated-levels.json'
 
 export default function Progress() {
     const { user } = useAuth()
     const [enrollments, setEnrollments] = useState([])
     const [loading, setLoading] = useState(true)
+    const [labProgress, setLabProgress] = useState(null)
     const [expandedSlug, setExpandedSlug] = useState(null)
     const [details, setDetails] = useState({})
 
     useEffect(() => {
         async function fetchProgress() {
             try {
-                const data = await api('/progress')
+                const [data, lab] = await Promise.all([
+                    api('/progress'),
+                    getLabProgress().catch(() => null),
+                ])
                 setEnrollments(data.enrollments || [])
+                setLabProgress(lab)
             } catch (err) {
                 console.error('Failed to load progress:', err)
             } finally {
@@ -50,6 +56,56 @@ export default function Progress() {
                         Track your learning journey across all enrolled courses.
                     </p>
                 </div>
+
+                {/* Learning Lab Progress */}
+                {!loading && user && labProgress && (
+                    <div className="glass-card p-6 mb-6">
+                        <div className="flex items-start justify-between gap-4 mb-4">
+                            <div>
+                                <h3 className="text-xl font-semibold text-dark-50">Interactive Learning Lab</h3>
+                                <p className="text-sm text-dark-400">
+                                    Your saved progress across the Lab challenge modes.
+                                </p>
+                            </div>
+                            <Link to="/lab" className="btn-secondary text-sm">
+                                Open Lab
+                            </Link>
+                        </div>
+
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            {(() => {
+                                const graphTotal = generatedLevels.graphChallenges.length
+                                const logicTotal = generatedLevels.logicPuzzles.length
+                                const graphCount = labProgress?.graph?.count || 0
+                                const logicCount = labProgress?.logic?.count || 0
+                                const graphPct = graphTotal > 0 ? Math.round((graphCount / graphTotal) * 100) : 0
+                                const logicPct = logicTotal > 0 ? Math.round((logicCount / logicTotal) * 100) : 0
+
+                                const Bar = ({ label, count, total, pct }) => (
+                                    <div className="p-4 rounded-xl bg-dark-900/40 border border-dark-800">
+                                        <div className="flex items-center justify-between mb-2">
+                                            <span className="text-sm font-semibold text-dark-100">{label}</span>
+                                            <span className="text-xs text-dark-300">{count} / {total} ({pct}%)</span>
+                                        </div>
+                                        <div className="h-2 bg-dark-800 rounded-full overflow-hidden">
+                                            <div
+                                                className="h-full bg-accent-500/80 rounded-full transition-all"
+                                                style={{ width: `${Math.min(100, pct)}%` }}
+                                            />
+                                        </div>
+                                    </div>
+                                )
+
+                                return (
+                                    <>
+                                        <Bar label="Graph Challenges" count={graphCount} total={graphTotal} pct={graphPct} />
+                                        <Bar label="Logic Puzzles" count={logicCount} total={logicTotal} pct={logicPct} />
+                                    </>
+                                )
+                            })()}
+                        </div>
+                    </div>
+                )}
 
                 {loading ? (
                     <div className="space-y-4">

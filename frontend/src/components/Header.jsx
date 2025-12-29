@@ -99,7 +99,7 @@ export default function Header() {
                                 </div>
                                 <div className="hidden sm:flex items-center gap-2 px-2.5 py-1 rounded-lg bg-dark-800/50 text-xs">
                                     <div className="w-1.5 h-1.5 rounded-full bg-accent-400" />
-                                    <span className="text-dark-300 truncate max-w-[120px]">{user.email}</span>
+                                    <span className="text-dark-300 truncate max-w-[120px]">{user.displayName || user.email}</span>
                                 </div>
                                 <button
                                     onClick={logout}
@@ -215,4 +215,3 @@ export default function Header() {
         </header>
     )
 }
-

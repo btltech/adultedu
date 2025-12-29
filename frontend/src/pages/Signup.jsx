@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 export default function Signup() {
+    const [displayName, setDisplayName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
@@ -29,7 +30,7 @@ export default function Signup() {
 
         setLoading(true)
 
-        const result = await signup(email, password)
+        const result = await signup(email, password, displayName.trim() || undefined)
 
         setLoading(false)
 
@@ -62,6 +63,22 @@ export default function Signup() {
                                 {error}
                             </div>
                         )}
+
+                        <div>
+                            <label htmlFor="displayName" className="block text-sm font-medium text-dark-200 mb-2">
+                                What should we call you? <span className="text-dark-500 font-normal">(optional)</span>
+                            </label>
+                            <input
+                                id="displayName"
+                                type="text"
+                                value={displayName}
+                                onChange={(e) => setDisplayName(e.target.value)}
+                                className="input"
+                                placeholder="Your name"
+                                autoComplete="name"
+                                maxLength={50}
+                            />
+                        </div>
 
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-dark-200 mb-2">
