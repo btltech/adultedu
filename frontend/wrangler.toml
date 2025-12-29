@@ -1,18 +1,10 @@
 # Wrangler config template for Cloudflare Pages + Functions
-# Replace the placeholders below before publishing.
 
 name = "adultedu-pages"
-# Cloudflare Account ID (from your Pages dashboard URL)
-account_id = "24b639e6bb10b1ed00866ff2b98c40da"
 compatibility_date = "2025-12-19"
 
-# For `wrangler pages publish` you can set project_name/branch used by the helper script.
-project_name = "adultedu"
-branch = "main"
-
-[site]
-bucket = "./dist"
-entry-point = "frontend"
+# Pages configuration
+pages_build_output_dir = "./dist"
 
 # Notes:
 # - Replace `account_id` and `project_name` with your Cloudflare account/project values.
