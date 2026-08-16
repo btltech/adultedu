@@ -3,11 +3,23 @@ import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, BookOpenCheck, Clock3, GraduationCap, Lightbulb, ListChecks, NotebookPen, Target, TriangleAlert } from 'lucide-react'
 import { api } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
+import { usePageSeo } from '../components/SEO'
+import { formatPageDescription, formatPageTitle } from '../lib/seo/meta'
 
 export default function Lesson() {
     const { id } = useParams()
     const [lesson, setLesson] = useState(null)
     const [loading, setLoading] = useState(true)
+
+    usePageSeo({
+        title: lesson ? formatPageTitle(lesson.title, lesson.track?.title) : undefined,
+        description: lesson
+            ? formatPageDescription(
+                lesson.summary,
+                `Study "${lesson.title}" as part of the ${lesson.track?.title || 'AdultEdu'} pathway for UK adult learners.`
+            )
+            : undefined,
+    })
 
     useEffect(() => {
         async function fetchLesson() {
