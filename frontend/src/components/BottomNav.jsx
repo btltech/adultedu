@@ -36,7 +36,7 @@ export default function BottomNav() {
 
     const navItems = [
         { to: '/', icon: HomeIcon, label: 'Home' },
-        { to: '/tracks', icon: BookIcon, label: 'Courses' },
+        { to: '/tracks', icon: BookIcon, label: 'Pathways' },
         { to: '/progress', icon: ChartIcon, label: 'Progress', authRequired: true },
         { to: isAuthenticated ? '/dashboard' : '/login', icon: UserIcon, label: isAuthenticated ? 'Dashboard' : 'Login' },
     ]

@@ -1,105 +1,84 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import {
+    ArrowRight,
+    BarChart3,
+    BookOpenCheck,
+    CalendarDays,
+    Flame,
+    Gauge,
+    LineChart,
+    RefreshCw,
+    Sparkles,
+    Star,
+    Target,
+} from 'lucide-react'
 import { api } from '../lib/api'
 import StreakCalendar from '../components/analytics/StreakCalendar'
 import PerformanceChart from '../components/analytics/PerformanceChart'
 
-const FireIcon = () => (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 23c-4.97 0-9-3.582-9-8 0-2.547 1.398-4.91 2.75-6.625.638-.81 1.316-1.543 1.916-2.187.286-.307.552-.586.784-.844.114-.127.219-.248.313-.364.079-.098.148-.187.203-.265.039-.055.068-.1.087-.134a.75.75 0 011.305.081c.054.085.22.345.22.587 0 .354-.065.759-.149 1.165-.084.402-.186.813-.284 1.18a24.558 24.558 0 01-.234.82c-.082.275-.154.512-.21.704-.027.092-.049.171-.066.235a1.27 1.27 0 01-.02.067c.08-.076.199-.188.354-.33.313-.286.725-.673 1.175-1.11.893-.87 1.918-1.898 2.724-2.918.406-.513.774-1.027 1.05-1.514C14.148 3.055 14.25 2.61 14.25 2.25a.75.75 0 011.348-.45c.062.083.174.232.32.427.294.392.7.94 1.143 1.567a38.96 38.96 0 011.677 2.574c.532.88 1.055 1.843 1.44 2.774C20.565 10.067 21 11.209 21 12.25c0 4.695-4.03 10.75-9 10.75z" />
-    </svg>
-)
-
-const StarIcon = () => (
-    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-        <path fillRule="evenodd" d="M10.788 3.21c.448-1.077 1.976-1.077 2.424 0l2.082 5.007 5.404.433c1.164.093 1.636 1.545.749 2.305l-4.117 3.527 1.257 5.273c.271 1.136-.964 2.033-1.96 1.425L12 18.354 7.373 21.18c-.996.608-2.231-.29-1.96-1.425l1.257-5.273-4.117-3.527c-.887-.76-.415-2.212.749-2.305l5.404-.433 2.082-5.006z" clipRule="evenodd" />
-    </svg>
-)
-
-const TrendUpIcon = () => (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
-    </svg>
-)
-
-const TrendDownIcon = () => (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
-    </svg>
-)
-
-function StatCard({ icon, label, value, subValue, color = 'primary' }) {
-    const colorClasses = {
-        primary: 'from-primary-500/20 to-primary-500/5 border-primary-500/30',
-        accent: 'from-accent-500/20 to-accent-500/5 border-accent-500/30',
-        amber: 'from-amber-500/20 to-amber-500/5 border-amber-500/30',
+function StatCard({ icon: Icon, label, value, detail, tone = 'primary' }) {
+    const tones = {
+        primary: 'border-primary-500/25 bg-primary-500/10 text-primary-300',
+        accent: 'border-accent-500/25 bg-accent-500/10 text-accent-300',
+        amber: 'border-amber-500/25 bg-amber-500/10 text-amber-300',
+        neutral: 'border-dark-700 bg-dark-900/70 text-dark-300',
     }
 
     return (
-        <div className={`glass-card p-5 bg-gradient-to-br ${colorClasses[color]} border`}>
-            <div className="flex items-center gap-3 mb-3">
-                <div className={`text-${color}-400`}>{icon}</div>
-                <span className="text-dark-400 text-sm">{label}</span>
+        <div className="learning-stat">
+            <div className="flex items-start justify-between gap-4">
+                <div>
+                    <p className="learning-stat-label">{label}</p>
+                    <p className="learning-stat-value mt-2">{value}</p>
+                </div>
+                <div className={`flex h-11 w-11 items-center justify-center rounded-2xl border ${tones[tone]}`}>
+                    <Icon className="h-5 w-5" />
+                </div>
             </div>
-            <div className="text-3xl font-bold text-dark-50">{value}</div>
-            {subValue && <div className="text-sm text-dark-400 mt-1">{subValue}</div>}
+            {detail && <p className="mt-3 text-sm leading-6 text-dark-400">{detail}</p>}
         </div>
     )
 }
 
 function WeaknessCard({ weakness }) {
-    const priorityColors = {
-        high: 'bg-red-500/10 border-red-500/30 text-red-400',
-        medium: 'bg-amber-500/10 border-amber-500/30 text-amber-400',
-        low: 'bg-accent-500/10 border-accent-500/30 text-accent-400',
-    }
-
-    const TrendIcon = weakness.trend === 'improving' ? TrendUpIcon :
-        weakness.trend === 'declining' ? TrendDownIcon : null
+    const priorityTone = weakness.priority === 'high'
+        ? 'border-red-500/35 bg-red-500/10 text-red-300'
+        : weakness.priority === 'medium'
+            ? 'border-amber-500/35 bg-amber-500/10 text-amber-300'
+            : 'border-accent-500/35 bg-accent-500/10 text-accent-300'
 
     return (
-        <div className="glass-card p-4 hover:border-dark-600 transition-colors">
-            <div className="flex items-start justify-between mb-3">
+        <div className="progress-panel">
+            <div className="flex items-start justify-between gap-4">
                 <div>
-                    <h4 className="font-medium text-dark-100">{weakness.title}</h4>
-                    <p className="text-xs text-dark-500">{weakness.trackTitle}</p>
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-dark-500">Focus area</p>
+                    <h3 className="mt-2 text-lg font-semibold text-dark-50">{weakness.title}</h3>
+                    <p className="mt-1 text-sm text-dark-500">{weakness.trackTitle}</p>
                 </div>
-                <span className={`badge ${priorityColors[weakness.priority]}`}>
+                <span className={`rounded-full border px-3 py-1 text-xs font-semibold capitalize ${priorityTone}`}>
                     {weakness.priority}
                 </span>
             </div>
 
-            <div className="flex items-center gap-4 mb-3 text-sm">
-                <div className="flex-1">
-                    <div className="flex justify-between text-xs mb-1">
-                        <span className="text-dark-400">Accuracy</span>
-                        <span className="text-dark-200">{weakness.accuracy}%</span>
-                    </div>
-                    <div className="h-2 bg-dark-800 rounded-full overflow-hidden">
-                        <div
-                            className={`h-full rounded-full ${weakness.accuracy < 50 ? 'bg-red-500' :
-                                weakness.accuracy < 70 ? 'bg-amber-500' : 'bg-accent-500'
-                                }`}
-                            style={{ width: `${weakness.accuracy}%` }}
-                        />
-                    </div>
+            <div className="mt-5">
+                <div className="mb-2 flex items-center justify-between text-sm">
+                    <span className="text-dark-400">Accuracy</span>
+                    <span className="font-medium text-dark-100">{weakness.accuracy}%</span>
                 </div>
-                {TrendIcon && (
-                    <div className={`flex items-center gap-1 text-xs ${weakness.trend === 'improving' ? 'text-accent-400' : 'text-red-400'
-                        }`}>
-                        <TrendIcon />
-                        <span>{weakness.trend}</span>
-                    </div>
-                )}
+                <div className="h-2 overflow-hidden rounded-full bg-dark-800">
+                    <div
+                        className={`h-full rounded-full ${weakness.accuracy < 50 ? 'bg-red-500' : weakness.accuracy < 70 ? 'bg-amber-500' : 'bg-accent-500'}`}
+                        style={{ width: `${weakness.accuracy}%` }}
+                    />
+                </div>
             </div>
 
-            <p className="text-xs text-dark-400 mb-3">{weakness.recommendation}</p>
+            <p className="mt-4 text-sm leading-7 text-dark-300">{weakness.recommendation}</p>
 
-            <Link
-                to={`/practice/${weakness.id}`}
-                className="btn-secondary w-full text-sm justify-center"
-            >
-                Practice This Topic
+            <Link to={`/practice/${weakness.id}`} className="btn-secondary mt-5 w-full justify-center">
+                Practice this topic
+                <ArrowRight className="h-4 w-4" />
             </Link>
         </div>
     )
@@ -115,10 +94,10 @@ export default function Dashboard() {
             try {
                 const [overviewData, weaknessData] = await Promise.all([
                     api('/analytics/overview'),
-                    api('/analytics/weaknesses')
+                    api('/analytics/weaknesses'),
                 ])
                 setOverview(overviewData)
-                setWeaknesses(weaknessData.weaknesses)
+                setWeaknesses(weaknessData.weaknesses || [])
             } catch (err) {
                 console.error('Failed to fetch analytics:', err)
             } finally {
@@ -131,109 +110,148 @@ export default function Dashboard() {
     if (loading) {
         return (
             <div className="py-12">
-                <div className="container-app">
-                    <div className="skeleton h-8 w-48 mb-8" />
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-                        {[1, 2, 3, 4].map(i => (
-                            <div key={i} className="skeleton h-32 rounded-xl" />
-                        ))}
+                <div className="container-app max-w-6xl">
+                    <div className="skeleton mb-8 h-44 w-full rounded-[2rem]" />
+                    <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+                        {[1, 2, 3, 4].map((item) => <div key={item} className="skeleton h-32 rounded-[1.5rem]" />)}
                     </div>
-                    <div className="skeleton h-64 rounded-xl" />
+                    <div className="mt-6 grid gap-6 lg:grid-cols-2">
+                        <div className="skeleton h-80 rounded-[1.75rem]" />
+                        <div className="skeleton h-80 rounded-[1.75rem]" />
+                    </div>
                 </div>
             </div>
         )
     }
 
+    const accuracy = overview?.accuracy || 0
+    const totalQuestions = overview?.totalQuestions || 0
+    const currentStreak = overview?.currentStreak || 0
+    const level = overview?.level || 1
+    const hasActivity = totalQuestions > 0 || weaknesses.length > 0
+
     return (
         <div className="py-12">
-            <div className="container-app">
-                {/* Header */}
-                <div className="mb-10">
-                    <h1 className="text-4xl font-bold text-dark-50 mb-4">Dashboard</h1>
-                    <p className="text-dark-300">
-                        Track your learning progress and identify areas for improvement.
-                    </p>
-                </div>
-
-                {/* Stats Grid */}
-                <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-                    <StatCard
-                        icon={<span className="text-2xl">📊</span>}
-                        label="Accuracy"
-                        value={`${overview?.accuracy || 0}%`}
-                        subValue={`${overview?.correctAnswers || 0} correct`}
-                        color="primary"
-                    />
-                    <StatCard
-                        icon={<span className="text-2xl">❓</span>}
-                        label="Questions"
-                        value={overview?.totalQuestions || 0}
-                        subValue={`${overview?.questionsLast30Days || 0} this month`}
-                        color="accent"
-                    />
-                    <StatCard
-                        icon={<FireIcon />}
-                        label="Streak"
-                        value={`${overview?.currentStreak || 0} days`}
-                        subValue={`Best: ${overview?.longestStreak || 0} days`}
-                        color="amber"
-                    />
-                    <StatCard
-                        icon={<StarIcon />}
-                        label="Level"
-                        value={overview?.level || 1}
-                        subValue={`${overview?.xp || 0} XP`}
-                        color="primary"
-                    />
-                </div>
-
-                {/* Charts and Calendar */}
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
-                    <div className="glass-card p-6">
-                        <h3 className="text-lg font-semibold text-dark-50 mb-4">
-                            📈 Performance by Topic
-                        </h3>
-                        <PerformanceChart />
-                    </div>
-                    <div className="glass-card p-6">
-                        <h3 className="text-lg font-semibold text-dark-50 mb-4">
-                            🗓️ Activity Calendar
-                        </h3>
-                        <StreakCalendar />
-                    </div>
-                </div>
-
-                {/* Weaknesses */}
-                {weaknesses.length > 0 && (
-                    <div className="mb-10">
-                        <h3 className="text-xl font-semibold text-dark-50 mb-4">
-                            🎯 Areas to Improve
-                        </h3>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {weaknesses.map(w => (
-                                <WeaknessCard key={w.id} weakness={w} />
-                            ))}
+            <div className="container-app max-w-6xl">
+                <section className="marketing-shell mb-8 px-6 py-8 sm:px-8 sm:py-10 lg:px-10">
+                    <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(320px,0.85fr)] lg:items-end">
+                        <div>
+                            <span className="section-eyebrow">
+                                <Gauge className="h-3.5 w-3.5" />
+                                Learner dashboard
+                            </span>
+                            <h1 className="mt-4 text-3xl font-bold text-dark-50 sm:text-4xl lg:text-5xl">
+                                Keep your next learning move visible.
+                            </h1>
+                            <p className="mt-4 max-w-3xl text-lg leading-8 text-dark-300">
+                                Use this page as a calm check-in: see your accuracy, routine, recent activity, and the topics that would benefit from another pass.
+                            </p>
                         </div>
+
+                        <div className="editorial-panel p-6 lg:p-7">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-300">Best next step</p>
+                            <h2 className="mt-3 text-2xl font-semibold text-dark-50">
+                                {weaknesses.length > 0 ? 'Start with the weakest topic, then return to your pathway.' : 'Build momentum with one focused session.'}
+                            </h2>
+                            <p className="mt-3 text-sm leading-7 text-dark-300">
+                                {weaknesses.length > 0
+                                    ? 'The dashboard highlights where practice will make the biggest difference right now.'
+                                    : 'A short review or practice session is enough to make progress visible again.'}
+                            </p>
+                            <div className="mt-6 flex flex-col gap-3">
+                                <Link to={weaknesses[0] ? `/practice/${weaknesses[0].id}` : '/tracks'} className="btn-primary w-full justify-center">
+                                    {weaknesses[0] ? 'Practice priority topic' : 'Choose a pathway'}
+                                    <ArrowRight className="h-4 w-4" />
+                                </Link>
+                                <Link to="/review" className="btn-ghost w-full justify-center">
+                                    Open spaced review
+                                    <RefreshCw className="h-4 w-4" />
+                                </Link>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <div className="mb-8 grid grid-cols-2 gap-4 lg:grid-cols-4">
+                    <StatCard icon={BarChart3} label="Accuracy" value={`${accuracy}%`} detail={`${overview?.correctAnswers || 0} correct answers secured`} tone="primary" />
+                    <StatCard icon={BookOpenCheck} label="Questions" value={totalQuestions} detail={`${overview?.questionsLast30Days || 0} answered this month`} tone="accent" />
+                    <StatCard icon={Flame} label="Routine" value={`${currentStreak} day${currentStreak === 1 ? '' : 's'}`} detail={`Best streak: ${overview?.longestStreak || 0} days`} tone="amber" />
+                    <StatCard icon={Star} label="Level" value={level} detail={`${overview?.xp || 0} XP earned`} tone="neutral" />
+                </div>
+
+                {!hasActivity && (
+                    <div className="editorial-panel mb-8 p-10 text-center">
+                        <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-primary-500/12 text-primary-300">
+                            <Sparkles className="h-7 w-7" />
+                        </div>
+                        <h2 className="mt-6 text-2xl font-semibold text-dark-50">Your dashboard will fill in as you learn.</h2>
+                        <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-dark-300">
+                            Start a pathway or answer a practice set and this page will turn into your personal learning record.
+                        </p>
+                        <Link to="/tracks" className="btn-primary mt-6">
+                            Browse pathways
+                            <ArrowRight className="h-4 w-4" />
+                        </Link>
                     </div>
                 )}
 
-                {/* Quick Actions */}
-                <div className="glass-card p-6">
-                    <h3 className="text-lg font-semibold text-dark-50 mb-4">
-                        Quick Actions
-                    </h3>
-                    <div className="flex flex-wrap gap-3">
-                        <Link to="/review" className="btn-primary">
-                            📚 Review Due Cards
-                        </Link>
-                        <Link to="/tracks" className="btn-secondary">
-                            📖 Continue Learning
-                        </Link>
-                        <Link to="/progress" className="btn-secondary">
-                            📊 View Full Progress
-                        </Link>
-                    </div>
+                <div className="mb-8 grid gap-6 lg:grid-cols-2">
+                    <section className="progress-panel">
+                        <div className="mb-5 flex items-start justify-between gap-4">
+                            <div>
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-300">Performance</p>
+                                <h2 className="mt-2 text-xl font-semibold text-dark-50">Accuracy by topic</h2>
+                            </div>
+                            <LineChart className="h-5 w-5 text-primary-300" />
+                        </div>
+                        <PerformanceChart />
+                    </section>
+
+                    <section className="progress-panel">
+                        <div className="mb-5 flex items-start justify-between gap-4">
+                            <div>
+                                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-300">Routine</p>
+                                <h2 className="mt-2 text-xl font-semibold text-dark-50">Activity calendar</h2>
+                            </div>
+                            <CalendarDays className="h-5 w-5 text-accent-300" />
+                        </div>
+                        <StreakCalendar />
+                    </section>
                 </div>
+
+                {weaknesses.length > 0 && (
+                    <section className="mb-8">
+                        <div className="mb-5 flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+                            <div>
+                                <span className="section-eyebrow">
+                                    <Target className="h-3.5 w-3.5" />
+                                    Focus areas
+                                </span>
+                                <h2 className="mt-3 text-2xl font-semibold text-dark-50">Topics that need another pass</h2>
+                            </div>
+                            <p className="max-w-md text-sm leading-6 text-dark-400 sm:text-right">
+                                These are ranked by recent performance so practice feels purposeful.
+                            </p>
+                        </div>
+                        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+                            {weaknesses.map((weakness) => <WeaknessCard key={weakness.id} weakness={weakness} />)}
+                        </div>
+                    </section>
+                )}
+
+                <section className="progress-panel">
+                    <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+                        <div>
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-dark-500">Quick actions</p>
+                            <h2 className="mt-2 text-xl font-semibold text-dark-50">Pick up the thread without searching around.</h2>
+                        </div>
+                        <div className="flex flex-col gap-3 sm:flex-row">
+                            <Link to="/review" className="btn-primary justify-center">Review due cards</Link>
+                            <Link to="/tracks" className="btn-secondary justify-center">Continue learning</Link>
+                            <Link to="/progress" className="btn-ghost justify-center">View full progress</Link>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
     )

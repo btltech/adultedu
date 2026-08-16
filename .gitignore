@@ -17,6 +17,7 @@ build/
 *.db
 *.db-journal
 prisma/*.db
+backend/prisma/backups/
 
 # Logs
 logs/
@@ -40,3 +41,6 @@ coverage/
 
 # Generated Prisma client (SQLite import)
 backend/generated/
+
+# Playwright/vitest output
+frontend/test-results/

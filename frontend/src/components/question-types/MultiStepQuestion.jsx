@@ -1,16 +1,5 @@
 import React, { useState } from 'react';
-
-// Simple check/x icons for internal use
-const CheckIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-    </svg>
-)
-const XIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-    </svg>
-)
+import { CheckCircle2, XCircle } from 'lucide-react';
 
 export default function MultiStepQuestion({ question, onAnswer, showResult, result }) {
     // Parse steps from assets
@@ -94,7 +83,7 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
     return (
         <div className="space-y-6">
             {/* Header */}
-            <div className="glass-card p-4 flex items-center justify-between mb-2">
+            <div className="progress-panel p-4 flex items-center justify-between mb-2">
                 <span className="badge badge-primary">
                     Scaffolded Problem • Level {question.ukLevel}
                 </span>
@@ -104,7 +93,7 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
             </div>
 
             {/* Main Prompt (Scenario) */}
-            <div className="glass-card p-6 border-l-4 border-primary-500">
+            <div className="progress-panel p-6 border-l-4 border-primary-500">
                 <p className="text-lg text-dark-100 leading-relaxed">{question.prompt}</p>
                 {question.imageUrl && (
                     <div className="mt-4 rounded-xl overflow-hidden bg-dark-900/50 border border-dark-700 flex justify-center p-4">
@@ -131,7 +120,7 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                         className={`transition-all duration-500 ${isCurrent ? 'opacity-100 scale-100' : 'opacity-70 grayscale'
                             }`}
                     >
-                        <div className="glass-card p-6">
+                        <div className="editorial-subpanel p-6">
                             <h3 className="text-sm font-bold text-dark-400 mb-2 uppercase tracking-wide">
                                 Step {index + 1}
                             </h3>
@@ -178,8 +167,8 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                                                     {String.fromCharCode(65 + optIdx)}
                                                 </div>
                                                 <span>{opt}</span>
-                                                {stepResult && isSelected && isStepCorrect && <CheckIcon />}
-                                                {stepResult && isSelected && !isStepCorrect && <XIcon />}
+                                                {stepResult && isSelected && isStepCorrect && <CheckCircle2 className="ml-auto h-5 w-5" />}
+                                                {stepResult && isSelected && !isStepCorrect && <XCircle className="ml-auto h-5 w-5" />}
                                             </div>
                                         </button>
                                     )
@@ -225,15 +214,15 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
 
             {/* Final feedback from backend scoring */}
             {showResult && (
-                <div className={`p-4 rounded-xl ${result?.isCorrect
+                <div className={`p-4 rounded-2xl ${result?.isCorrect
                     ? 'bg-accent-500/10 border border-accent-500/30'
                     : 'bg-amber-500/10 border border-amber-500/30'
                     }`}>
                     <div className="flex items-center gap-2 mb-2">
                         {result?.isCorrect ? (
-                            <span className="text-accent-400 font-medium">✓ Completed!</span>
+                            <span className="flex items-center gap-2 text-accent-400 font-medium"><CheckCircle2 className="h-4 w-4" /> Completed</span>
                         ) : (
-                            <span className="text-amber-400 font-medium">✗ Not quite</span>
+                            <span className="flex items-center gap-2 text-amber-400 font-medium"><XCircle className="h-4 w-4" /> Not quite</span>
                         )}
                     </div>
                     <p className="text-dark-300 text-sm">{result?.explanation}</p>

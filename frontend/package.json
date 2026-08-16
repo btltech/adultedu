@@ -12,7 +12,7 @@
         "test:ui": "vitest --ui",
         "security:audit": "npm audit",
         "pages:build": "npm run build",
-        "pages:publish": "npx wrangler pages publish ./dist --project-name \"$WRANGLER_PROJECT\" --branch main",
+        "pages:publish": "npx wrangler pages deploy ./dist --project-name adultedu",
         "deploy:pages": "npm run pages:build && npm run pages:publish"
     },
     "dependencies": {

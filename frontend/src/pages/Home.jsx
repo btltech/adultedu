@@ -1,72 +1,67 @@
-import { useState, useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import {
+    ArrowRight,
+    BookOpenCheck,
+    BriefcaseBusiness,
+    CheckCircle2,
+    ClipboardCheck,
+    Clock3,
+    Code2,
+    GraduationCap,
+    NotebookText,
+    ShieldCheck,
+    Sparkles,
+    Target,
+} from 'lucide-react'
 import { checkHealth, getTracks } from '../lib/api'
+import { formatLessonTime } from '../lib/studyTime'
 import { useAuth } from '../context/AuthContext'
-import DailyChallenge from '../components/gamification/DailyChallenge'
-import AchievementBadges from '../components/gamification/AchievementBadges'
-import Leaderboard from '../components/gamification/Leaderboard'
 
-// Icons
-const BookIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
-    </svg>
-)
-
-const CodeIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
-    </svg>
-)
-
-const ComputerIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-    </svg>
-)
-
-const ArrowRightIcon = () => (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-    </svg>
-)
-
-const ClockIcon = () => (
-    <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-)
-
-// Category config
 const categoryConfig = {
-    workplace: { icon: ComputerIcon, label: 'Workplace Skills' },
-    qual_prep: { icon: BookIcon, label: 'Qualification Prep' },
-    tech: { icon: CodeIcon, label: 'Tech Pathways' },
-    he: { icon: BookIcon, label: 'Higher Education' },
+    workplace: { icon: BriefcaseBusiness, label: 'Workplace Skills' },
+    qual_prep: { icon: GraduationCap, label: 'Qualification Prep' },
+    qualifications: { icon: GraduationCap, label: 'GCSE Subjects' },
+    tech: { icon: Code2, label: 'Tech Pathways' },
+    he: { icon: BookOpenCheck, label: 'Higher Education' },
 }
 
-// Default tracks for demo mode
 const defaultTracks = [
-    { id: 1, slug: 'essential-digital-skills', title: 'Essential Digital Skills', description: 'Master the digital skills you need for everyday life and work.', category: 'workplace', isLive: true, framework: 'EDS', estimatedHours: 20, topics: 5 },
-    { id: 2, slug: 'gcse-maths', title: 'GCSE Maths Preparation', description: 'Build strong maths foundations with practice questions.', category: 'qual_prep', isLive: true, framework: 'GCSE', estimatedHours: 40, topics: 8 },
-    { id: 3, slug: 'python-foundations', title: 'Python Foundations', description: 'Learn programming from scratch with practical projects.', category: 'tech', isLive: true, framework: 'TECH', estimatedHours: 30, topics: 6 },
+    { id: 1, slug: 'essential-digital-skills', title: 'Essential Digital Skills', description: 'Master the digital skills you need for everyday life and work.', category: 'workplace', isLive: true, framework: 'EDS', estimatedMinutes: null, expectedStudyMinutes: null, questionCount: 0, learningGoal: { label: 'Work readiness' }, topics: 6 },
+    { id: 2, slug: 'gcse-maths', title: 'GCSE Maths Preparation', description: 'Build strong maths foundations with guided practice and confidence-building revision.', category: 'qual_prep', isLive: true, framework: 'GCSE', estimatedMinutes: null, expectedStudyMinutes: null, questionCount: 0, learningGoal: { label: 'Exam preparation' }, topics: 8 },
+    { id: 3, slug: 'python-foundations', title: 'Python Foundations', description: 'Learn programming from scratch with practical projects and structured support.', category: 'tech', isLive: true, framework: 'TECH', estimatedMinutes: null, expectedStudyMinutes: null, questionCount: 0, learningGoal: { label: 'Career and digital skills' }, topics: 8 },
 ]
 
 function TrackCard({ track }) {
     const config = categoryConfig[track.category] || categoryConfig.workplace
     const Icon = config.icon
     const topicCount = typeof track.topics === 'number' ? track.topics : (track.topics?.length || 0)
-
+    const lessonTime = formatLessonTime(track.estimatedMinutes)
+    const expectedStudyTime = formatLessonTime(track.expectedStudyMinutes)
     const CardWrapper = track.isLive ? Link : 'div'
     const cardProps = track.isLive ? { to: `/track/${track.slug}` } : {}
 
     return (
-        <CardWrapper {...cardProps} className={`track-card group ${!track.isLive ? 'opacity-50 cursor-not-allowed' : ''}`}>
-            <div className="flex items-start justify-between gap-3">
-                <div className="p-2 rounded-lg bg-primary-500/10 text-primary-400">
-                    <Icon />
+        <CardWrapper
+            {...cardProps}
+            className={`premium-track-card group ${!track.isLive ? 'opacity-55 cursor-not-allowed' : ''}`}
+        >
+            <div className="flex items-start justify-between gap-4">
+                <div className="flex items-start gap-3">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary-500/12 text-primary-300">
+                        <Icon className="h-5 w-5" />
+                    </div>
+                    <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-dark-500">
+                            {config.label}
+                        </p>
+                        <h3 className="mt-2 text-lg font-semibold text-dark-50 transition-colors group-hover:text-primary-300">
+                            {track.title}
+                        </h3>
+                    </div>
                 </div>
-                <div className="flex flex-wrap gap-1.5">
+
+                <div className="flex shrink-0 flex-wrap justify-end gap-1.5">
                     <span className={`badge ${track.isLive ? 'badge-primary' : 'badge-neutral'}`}>
                         {track.framework}
                     </span>
@@ -74,83 +69,106 @@ function TrackCard({ track }) {
                 </div>
             </div>
 
-            <div className="flex-grow space-y-1.5">
-                <h3 className="text-base font-semibold text-dark-50 group-hover:text-primary-400 transition-colors leading-snug">
-                    {track.title}
-                </h3>
-                <p className="text-dark-400 text-sm leading-relaxed line-clamp-2">
-                    {track.description}
-                </p>
+            <p className="text-sm leading-relaxed text-dark-300 line-clamp-2">
+                {track.description}
+            </p>
+
+            <div className="flex flex-wrap gap-2 text-xs font-medium text-dark-300">
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-dark-800/80 bg-dark-900/70 px-3 py-1.5">
+                    <Clock3 className="h-3.5 w-3.5 text-accent-300" />
+                    {lessonTime}
+                </span>
+                <span className="inline-flex items-center gap-1.5 rounded-full border border-dark-800/80 bg-dark-900/70 px-3 py-1.5">
+                    <NotebookText className="h-3.5 w-3.5 text-accent-300" />
+                    {topicCount} topics
+                </span>
+                <span className="inline-flex items-center rounded-full border border-dark-800/80 bg-dark-900/70 px-3 py-1.5">
+                    {track.questionCount || 0} questions
+                </span>
             </div>
 
-            <div className="flex items-center gap-3 text-xs text-dark-500 pt-2 border-t border-dark-700/50">
-                <span className="flex items-center gap-1">
-                    <ClockIcon />
-                    {track.estimatedHours}h
-                </span>
-                <span>{topicCount} topics</span>
+            <div className="mt-auto flex items-center justify-between border-t border-dark-800/70 pt-4 text-sm">
+                <span className="text-dark-400">Full study: {expectedStudyTime}</span>
+                {track.isLive && (
+                    <span className="inline-flex items-center gap-2 font-medium text-primary-300 transition-all group-hover:gap-3">
+                        Explore pathway <ArrowRight className="h-4 w-4" />
+                    </span>
+                )}
             </div>
-
-            {track.isLive && (
-                <span className="inline-flex items-center gap-1.5 text-sm font-medium text-primary-400 group-hover:gap-2.5 transition-all">
-                    Start Learning <ArrowRightIcon />
-                </span>
-            )}
         </CardWrapper>
     )
 }
 
 function TrackSkeleton() {
     return (
-        <div className="skeleton-card p-5 sm:p-6 flex flex-col gap-4 h-56">
+        <div className="skeleton-card h-72 rounded-[1.75rem] p-6">
             <div className="flex justify-between">
-                <div className="skeleton w-10 h-10 rounded-lg" />
-                <div className="skeleton w-12 h-5 rounded-md" />
+                <div className="skeleton h-10 w-10 rounded-2xl" />
+                <div className="skeleton h-5 w-12 rounded-md" />
             </div>
-            <div className="space-y-2 flex-grow">
+            <div className="mt-6 space-y-3">
                 <div className="skeleton-title" />
                 <div className="skeleton-text w-full" />
-                <div className="skeleton-text w-2/3" />
+                <div className="skeleton-text w-4/5" />
+            </div>
+            <div className="mt-6 grid grid-cols-2 gap-3">
+                <div className="skeleton h-16 rounded-2xl" />
+                <div className="skeleton h-16 rounded-2xl" />
             </div>
         </div>
     )
 }
 
 function Hero() {
+    const { user } = useAuth()
+
+    const primaryCta = user
+        ? (user.needsOnboarding
+            ? { to: '/start', label: 'Find your starting point' }
+            : { to: '/dashboard', label: 'Continue learning' })
+        : { to: '/signup', label: 'Find your starting point' }
+
     return (
-        <section className="relative overflow-hidden py-16 sm:py-20 lg:py-28">
-            {/* Gradient accents */}
-            <div className="absolute top-10 right-0 w-[500px] h-[500px] bg-primary-600/5 rounded-full blur-3xl pointer-events-none" />
-            <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-accent-500/5 rounded-full blur-3xl pointer-events-none" />
+        <section className="relative overflow-hidden pt-14 sm:pt-18 lg:pt-20">
+            <div className="container-app">
+                <div className="marketing-shell px-6 py-10 sm:px-8 sm:py-12 lg:px-12 lg:py-16">
+                    <div className="relative z-10 mx-auto max-w-3xl text-center animate-fade-slide-up lg:mx-0 lg:text-left">
+                        <span className="section-eyebrow">
+                            <Sparkles className="h-3.5 w-3.5" />
+                            Built for adult learners in the UK
+                        </span>
 
-            <div className="container-app relative">
-                <div className="max-w-2xl animate-fade-slide-up">
-                    {/* Eyebrow */}
-                    <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-dark-800/60 border border-dark-700/50 mb-6">
-                        <span className="w-1.5 h-1.5 rounded-full bg-accent-400" />
-                        <span className="text-xs font-medium text-dark-300">UK-aligned learning paths</span>
-                    </div>
+                        <h1 className="mt-6 max-w-3xl text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                            Learning that feels like a clear plan, not another app.
+                        </h1>
 
-                    {/* Headline */}
-                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-5 leading-[1.15] tracking-tight">
-                        Build skills that <span className="text-gradient">open doors</span>
-                    </h1>
+                        <p className="mt-5 max-w-2xl text-base leading-8 text-dark-300 sm:text-lg">
+                            Choose a pathway, try real practice, and build confidence with explanations that show what to revise next.
+                        </p>
 
-                    {/* Supporting copy */}
-                    <p className="text-base sm:text-lg text-dark-300 mb-8 leading-relaxed max-w-xl">
-                        Free courses for essential digital skills, GCSE prep, and tech pathways. Learn at your pace, aligned to UK frameworks.
-                    </p>
+                        <div className="mt-6 flex flex-wrap gap-2 text-xs font-medium text-dark-300">
+                            <span className="inline-flex items-center gap-1.5 rounded-full border border-accent-500/25 bg-accent-500/10 px-3 py-1.5 text-accent-200">
+                                <ShieldCheck className="h-3.5 w-3.5" />
+                                Free public practice available
+                            </span>
+                            <span className="inline-flex items-center gap-1.5 rounded-full border border-dark-700 bg-dark-900/70 px-3 py-1.5">
+                                UK-aligned pathways
+                            </span>
+                            <span className="inline-flex items-center gap-1.5 rounded-full border border-dark-700 bg-dark-900/70 px-3 py-1.5">
+                                Independent learning platform
+                            </span>
+                        </div>
 
-                    {/* CTAs */}
-                    <div className="flex flex-col sm:flex-row gap-3">
-                        <Link to="/tracks" className="btn-primary px-6 py-3 text-base">
-                            Explore courses
-                            <ArrowRightIcon />
-                        </Link>
-                        <Link to="/lab" className="btn-secondary px-6 py-3 text-base">
-                            Try the Learning Lab
-                            <ArrowRightIcon />
-                        </Link>
+                        <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
+                            <Link to={primaryCta.to} className="btn-primary px-6 py-3 text-base">
+                                {primaryCta.label}
+                                <ArrowRight className="h-4 w-4" />
+                            </Link>
+                            <Link to="/tracks" className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-dark-400 transition-colors hover:text-dark-100">
+                                Browse pathways
+                                <ArrowRight className="h-4 w-4" />
+                            </Link>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -158,32 +176,75 @@ function Hero() {
     )
 }
 
-function Features() {
-    const features = [
-        { icon: '🎯', title: 'UK Framework Aligned', description: 'Content mapped to Entry Level through Level 8.' },
-        { icon: '📊', title: 'Diagnostic First', description: 'Start with an assessment to find your level.' },
-        { icon: '✅', title: 'Clear Explanations', description: 'Every question includes detailed feedback.' },
-        { icon: '📈', title: 'Track Progress', description: 'See your mastery grow topic by topic.' },
+function WhyDifferent({ liveTrackCount }) {
+    const principles = [
+        {
+            icon: Target,
+            title: 'Start in the right place',
+            description: 'A guided intake helps learners choose a pathway that fits their goal and confidence level.',
+        },
+        {
+            icon: BookOpenCheck,
+            title: 'Study with structure',
+            description: 'Lessons, practice, and topic progress sit together so the route always feels visible.',
+        },
+        {
+            icon: CheckCircle2,
+            title: 'Try before signing up',
+            description: 'The Life in the UK mock test is public, so learners can check the practice experience before creating an account.',
+        },
+    ]
+
+    // Only claim a track count when the catalogue actually returned one, so the
+    // headline can never advertise pathways the page below is failing to show.
+    const stats = [
+        ...(liveTrackCount > 0
+            ? [{ label: 'Learning tracks', value: String(liveTrackCount) }]
+            : []),
+        { label: 'Practice style', value: 'Explained' },
+        { label: 'Study model', value: 'Self-paced' },
     ]
 
     return (
-        <section className="section-padding bg-dark-900/30">
+        <section className="section-padding">
             <div className="container-app">
-                <div className="text-center mb-10">
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-dark-50 mb-2">
-                        Why learn with AdultEdu?
-                    </h2>
-                    <p className="text-dark-400 max-w-md mx-auto text-sm">
-                        Designed for adult learners building new skills or returning to education.
-                    </p>
+                <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
+                    <div className="max-w-xl">
+                        <span className="section-eyebrow">
+                            <BookOpenCheck className="h-3.5 w-3.5" />
+                            Why this is different
+                        </span>
+                        <h2 className="mt-4 text-3xl font-semibold text-dark-50 sm:text-4xl">
+                            A calmer route into learning.
+                        </h2>
+                        <p className="mt-4 text-base leading-8 text-dark-300">
+                            AdultEdu keeps the first decision simple, then gives each learner a visible path through lessons, practice, and progress. It is independent and UK-aligned, not an awarding body or official exam provider.
+                        </p>
+                    </div>
+
+                    <div className="grid gap-4 sm:grid-cols-3 lg:grid-cols-1">
+                        {principles.map((principle) => {
+                            const Icon = principle.icon
+                            return (
+                                <div key={principle.title} className="feature-panel flex gap-4 p-5">
+                                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-primary-500/12 text-primary-300">
+                                        <Icon className="h-5 w-5" />
+                                    </div>
+                                    <div>
+                                        <h3 className="text-lg font-semibold text-dark-50">{principle.title}</h3>
+                                        <p className="mt-1 text-sm leading-relaxed text-dark-300">{principle.description}</p>
+                                    </div>
+                                </div>
+                            )
+                        })}
+                    </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 stagger-children">
-                    {features.map((feature, index) => (
-                        <div key={index} className="glass-card p-5 text-center hover:border-dark-600 transition-colors">
-                            <div className="text-2xl mb-2">{feature.icon}</div>
-                            <h3 className="text-sm font-semibold text-dark-100 mb-1">{feature.title}</h3>
-                            <p className="text-dark-400 text-xs leading-relaxed">{feature.description}</p>
+                <div className={`mt-8 grid gap-3 ${stats.length === 3 ? 'sm:grid-cols-3' : 'sm:grid-cols-2'}`}>
+                    {stats.map((stat) => (
+                        <div key={stat.label} className="learning-stat">
+                            <p className="learning-stat-label">{stat.label}</p>
+                            <p className="learning-stat-value">{stat.value}</p>
                         </div>
                     ))}
                 </div>
@@ -192,76 +253,110 @@ function Features() {
     )
 }
 
-function TracksSection() {
-    const [tracks, setTracks] = useState(import.meta.env.VITE_DEMO_MODE === 'true' ? defaultTracks : [])
+/**
+ * Fetched once for the whole page so the headline stats and the pathway grid
+ * can never disagree about how much catalogue exists.
+ */
+function useTrackCatalogue() {
+    const demoMode = import.meta.env.VITE_DEMO_MODE === 'true'
+    const [tracks, setTracks] = useState(demoMode ? defaultTracks : [])
     const [loading, setLoading] = useState(true)
+    const [failed, setFailed] = useState(false)
 
     useEffect(() => {
+        let cancelled = false
+
         async function fetchTracks() {
             try {
                 const data = await getTracks()
-                if (data && data.length > 0) {
-                    setTracks(data)
-                } else {
-                    setTracks([])
-                }
+                if (cancelled) return
+                setTracks(data && data.length > 0 ? data : [])
+                setFailed(false)
             } catch (err) {
-                console.log('Failed to fetch tracks:', err.message)
-                if (import.meta.env.VITE_DEMO_MODE === 'true') {
-                    console.log('Using default tracks in demo mode')
-                } else {
+                if (cancelled) return
+                console.error('Failed to load tracks:', err)
+                if (!demoMode) {
                     setTracks([])
+                    // A failed request is not an empty catalogue — say so.
+                    setFailed(true)
                 }
             } finally {
-                setLoading(false)
+                if (!cancelled) setLoading(false)
             }
         }
-        fetchTracks()
-    }, [])
 
-    const liveTracks = tracks.filter(t => t.isLive)
-    const comingSoonTracks = tracks.filter(t => !t.isLive)
+        fetchTracks()
+        return () => { cancelled = true }
+    }, [demoMode])
+
+    return { tracks, loading, failed }
+}
+
+function TracksSection({ tracks, loading, failed }) {
+    const liveTracks = tracks.filter((track) => track.isLive)
+    const featuredTracks = liveTracks.slice(0, 3)
 
     return (
-        <section className="section-padding">
+        <section className="section-padding pt-0">
             <div className="container-app">
-                <div className="mb-8">
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-dark-50 mb-2">
-                        Start Learning Today
-                    </h2>
-                    <p className="text-dark-400 text-sm">
-                        Free courses ready for you to begin right now.
-                    </p>
+                <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
+                    <div>
+                        <span className="section-eyebrow">
+                            <GraduationCap className="h-3.5 w-3.5" />
+                            Featured pathways
+                        </span>
+                        <h2 className="mt-4 text-3xl font-semibold text-dark-50 sm:text-4xl">
+                            Choose from a few strong starting points.
+                        </h2>
+                        <p className="mt-4 max-w-2xl text-base leading-8 text-dark-300">
+                            Start with one route that matches the learner's goal. The full catalogue is there when they are ready to compare more options.
+                        </p>
+                    </div>
+
+                    {!loading && liveTracks.length <= featuredTracks.length && (
+                        <Link to="/tracks" className="btn-secondary shrink-0 self-start lg:self-auto">
+                            Browse all pathways
+                            <ArrowRight className="h-4 w-4" />
+                        </Link>
+                    )}
                 </div>
 
                 {loading ? (
-                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                        {[1, 2, 3].map(i => <TrackSkeleton key={i} />)}
+                    <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+                        {[1, 2, 3].map((item) => <TrackSkeleton key={item} />)}
                     </div>
                 ) : (
                     <>
-                        {liveTracks.length > 0 && (
-                            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 stagger-children mb-12">
-                                {liveTracks.map(track => (
+                        {featuredTracks.length > 0 && (
+                            <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 xl:grid-cols-3">
+                                {featuredTracks.map((track) => (
                                     <TrackCard key={track.id} track={track} />
                                 ))}
                             </div>
                         )}
 
-                        {comingSoonTracks.length > 0 && (
-                            <div>
-                                <h3 className="text-lg font-semibold text-dark-400 mb-4">Coming Soon</h3>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-                                    {comingSoonTracks.map(track => (
-                                        <TrackCard key={track.id} track={track} />
-                                    ))}
-                                </div>
+                        {liveTracks.length > featuredTracks.length && (
+                            <div className="mt-8 flex justify-center">
+                                <Link to="/tracks" className="btn-primary">
+                                    View all pathways
+                                    <ArrowRight className="h-4 w-4" />
+                                </Link>
                             </div>
                         )}
 
                         {tracks.length === 0 && !loading && (
-                            <div className="text-center py-12 text-dark-400">
-                                <p>No courses available yet. Check back soon!</p>
+                            <div className="editorial-panel p-10 text-center">
+                                {failed ? (
+                                    <>
+                                        <h3 className="text-2xl font-semibold text-dark-50">Pathways aren't loading right now</h3>
+                                        <p className="mt-3 text-dark-300">This is a problem on our side, not yours. Please try again in a few minutes.</p>
+                                    </>
+                                ) : (
+                                    <>
+                                        <h3 className="text-2xl font-semibold text-dark-50">The catalogue is still being prepared</h3>
+                                        <p className="mt-3 text-dark-300">No pathways are available yet. Check back soon for new public learning routes.</p>
+                                    </>
+                                )}
                             </div>
                         )}
                     </>
@@ -271,83 +366,144 @@ function TracksSection() {
     )
 }
 
-function HealthStatus() {
-    const [status, setStatus] = useState(null)
-    const [checking, setChecking] = useState(true)
-
-    useEffect(() => {
-        async function check() {
-            try {
-                const result = await checkHealth()
-                setStatus({ ok: true, data: result })
-            } catch (err) {
-                setStatus({ ok: false, error: err.message })
-            } finally {
-                setChecking(false)
-            }
-        }
-        check()
-    }, [])
-
-    if (checking) return null
+function ProofSection() {
+    const proofItems = [
+        {
+            title: 'No account needed to try it',
+            description: 'Learners can answer real questions and see explanations before deciding whether to create an account.',
+        },
+        {
+            title: 'Feedback that points somewhere',
+            description: 'Each session gives explanations and topic links, so weak areas turn into a clearer revision step.',
+        },
+        {
+            title: 'Transparent limits',
+            description: 'AdultEdu supports practice and confidence-building. It does not replace official guidance or formal qualifications.',
+        },
+    ]
 
     return (
-        <div className="fixed bottom-4 right-4 z-50">
-            <div className={`px-2.5 py-1.5 rounded-lg text-xs font-medium ${status?.ok
-                ? 'bg-accent-500/20 text-accent-300 border border-accent-500/30'
-                : 'bg-red-500/20 text-red-300 border border-red-500/30'
-                }`}>
-                API: {status?.ok ? 'Connected' : 'Offline'}
-            </div>
-        </div>
-    )
-}
-
-function GamificationSection() {
-    const { user } = useAuth()
-
-    if (!user) return null // Only show for logged in users
-
-    return (
-        <section className="section-padding bg-dark-900/30">
+        <section className="section-padding pt-0">
             <div className="container-app">
-                <div className="mb-8">
-                    <h2 className="text-2xl sm:text-3xl font-semibold text-dark-50 mb-2">
-                        Your Progress
-                    </h2>
-                    <p className="text-dark-400 text-sm">
-                        Track your achievements and compete with fellow learners.
-                    </p>
-                </div>
+                <div className="marketing-shell px-6 py-8 sm:px-8 sm:py-10 lg:px-10">
+                    <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)] lg:items-start">
+                        <div>
+                            <span className="section-eyebrow">
+                                <ClipboardCheck className="h-3.5 w-3.5" />
+                                Proof in practice
+                            </span>
+                            <h2 className="mt-4 text-3xl font-semibold text-dark-50 sm:text-4xl">
+                                Try a complete public practice experience.
+                            </h2>
+                            <p className="mt-4 max-w-2xl text-base leading-8 text-dark-300">
+                                The Life in the UK mock test shows the platform promise in one focused flow: questions, explanations, scoring, and topic feedback, with no account required.
+                            </p>
+                            <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+                                <Link to="/life-in-the-uk-test" className="btn-primary">
+                                    Take the free mock test
+                                    <ArrowRight className="h-4 w-4" />
+                                </Link>
+                                <Link to="/track/life-in-the-uk-test" className="btn-secondary">
+                                    View the full pathway
+                                </Link>
+                            </div>
+                        </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-                    {/* Daily Challenge */}
-                    <div className="lg:col-span-2">
-                        <DailyChallenge />
+                        <div className="editorial-panel p-6 lg:p-7">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-300">Why it matters</p>
+                            <div className="mt-5 space-y-3 text-sm text-dark-300">
+                                {proofItems.map((item) => (
+                                    <div key={item.title} className="editorial-subpanel p-4">
+                                        <p className="font-semibold text-dark-100">{item.title}</p>
+                                        <p className="mt-1 text-dark-400">{item.description}</p>
+                                    </div>
+                                ))}
+                            </div>
+                        </div>
                     </div>
-
-                    {/* Achievements */}
-                    <div>
-                        <AchievementBadges />
-                    </div>
-                </div>
-
-                {/* Leaderboard */}
-                <div className="mt-6">
-                    <Leaderboard />
                 </div>
             </div>
         </section>
     )
 }
 
+function FinalCta() {
+    const { user } = useAuth()
+    const cta = user
+        ? (user.needsOnboarding
+            ? { to: '/start', label: 'Find your starting point', description: 'Answer a few questions and let AdultEdu point you toward a pathway that fits your goal.' }
+            : { to: '/dashboard', label: 'Continue learning', description: 'Pick up from your dashboard and keep moving through your current pathway.' })
+        : { to: '/signup', label: 'Find your starting point', description: 'Answer a few questions and let AdultEdu point you toward a pathway that fits your goal.' }
+
+    return (
+        <section className="section-padding pt-0">
+            <div className="container-app">
+                <div className="marketing-shell px-6 py-8 text-center sm:px-8 sm:py-10 lg:px-12">
+                    <span className="section-eyebrow justify-center">
+                        <ShieldCheck className="h-3.5 w-3.5" />
+                        Ready when you are
+                    </span>
+                    <h2 className="mx-auto mt-4 max-w-2xl text-3xl font-semibold text-dark-50 sm:text-4xl">
+                        Start with one clear next step.
+                    </h2>
+                    <p className="mx-auto mt-4 max-w-xl text-base leading-8 text-dark-300">
+                        {cta.description}
+                    </p>
+                    <div className="mt-7 flex justify-center">
+                        <Link to={cta.to} className="btn-primary px-6 py-3 text-base">
+                            {cta.label}
+                            <ArrowRight className="h-4 w-4" />
+                        </Link>
+                    </div>
+                </div>
+            </div>
+        </section>
+    )
+}
+
+function HealthStatus() {
+    const [status, setStatus] = useState(null)
+
+    useEffect(() => {
+        if (!import.meta.env.DEV) return
+
+        async function check() {
+            try {
+                const result = await checkHealth()
+                setStatus({ ok: true, data: result })
+            } catch (error) {
+                setStatus({ ok: false, error: error.message })
+            }
+        }
+
+        check()
+    }, [])
+
+    if (!import.meta.env.DEV || !status) return null
+
+    return (
+        <div className="fixed bottom-4 right-4 z-50">
+            <div className={`rounded-lg border px-2.5 py-1.5 text-xs font-medium ${status.ok
+                ? 'border-accent-500/30 bg-accent-500/20 text-accent-200'
+                : 'border-red-500/30 bg-red-500/20 text-red-200'
+                }`}>
+                API: {status.ok ? 'Connected' : 'Offline'}
+            </div>
+        </div>
+    )
+}
+
 export default function Home() {
+    const { tracks, loading, failed } = useTrackCatalogue()
+    const liveTrackCount = tracks.filter((track) => track.isLive).length
+
     return (
         <>
             <Hero />
-            <GamificationSection />
-            <Features />
-            <TracksSection />
+            <WhyDifferent liveTrackCount={loading || failed ? 0 : liveTrackCount} />
+            <TracksSection tracks={tracks} loading={loading} failed={failed} />
+            <ProofSection />
+            <FinalCta />
             <HealthStatus />
         </>
     )

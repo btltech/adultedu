@@ -1,75 +1,92 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
-import { getTrack, getProgressDetail } from '../lib/api'
+import { ArrowRight, Award, BookOpenCheck, CheckCircle2, Clock3, Layers3, Lock, PlayCircle, ShieldCheck, Target } from 'lucide-react'
+import { getTrack, getProgressDetail, recordOnboardingOutcome } from '../lib/api'
+import { formatLessonTime } from '../lib/studyTime'
 import { useAuth } from '../context/AuthContext'
 import DiagnosticModal from '../components/diagnostic/DiagnosticModal'
+import { getPathwayGuidance } from '../lib/pathwayGuidance'
 
-const ClockIcon = () => (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-)
+function getNextStepValue(nextStep) {
+    if (nextStep.slug) return nextStep.slug
+    if (nextStep.href) {
+        return nextStep.href
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-')
+            .replace(/^-|-$/g, '') || 'next-step'
+    }
 
+    return nextStep.title
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, '') || 'next-step'
+}
 
-const CheckIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-    </svg>
-)
-
-const PlayIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-)
-
-const LockIcon = () => (
-    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-    </svg>
-)
+function getNextStepHref(nextStep) {
+    if (nextStep.href) return nextStep.href
+    if (nextStep.slug) return `/track/${nextStep.slug}`
+    return null
+}
 
 function TopicCard({ topic, index, trackSlug, progress }) {
     const lessonsCount = topic.lessons?.length || 0
     const hasContent = lessonsCount > 0 || topic.questionCount > 0
+    const outcomes = Array.isArray(topic.outcomes) ? topic.outcomes.slice(0, 2) : []
 
-    // Use Link for topics with content, div for empty topics
     const CardWrapper = hasContent ? Link : 'div'
     const cardProps = hasContent ? { to: `/topic/${topic.id}` } : {}
 
     return (
         <CardWrapper
             {...cardProps}
-            className={`glass-card-hover p-6 flex gap-4 ${!hasContent ? 'opacity-50 cursor-not-allowed' : ''}`}
+            className={`topic-panel group flex gap-4 ${!hasContent ? 'opacity-55 cursor-not-allowed' : ''}`}
         >
-            {/* Number/Status */}
             <div className={`flex-shrink-0 w-10 h-10 rounded-xl flex items-center justify-center font-semibold ${hasContent ? 'bg-primary-500/20 text-primary-400' : 'bg-dark-700 text-dark-500'
                 }`}>
                 {index + 1}
             </div>
 
-            {/* Content */}
             <div className="flex-grow min-w-0">
                 <div className="flex items-start justify-between gap-4 mb-2">
-                    <h3 className="text-lg font-semibold text-dark-50 group-hover:text-primary-400">
-                        {topic.title}
-                    </h3>
+                    <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-dark-500">
+                            Topic {index + 1}
+                        </p>
+                        <h3 className="mt-1 text-lg font-semibold text-dark-50 group-hover:text-primary-300">
+                            {topic.title}
+                        </h3>
+                    </div>
                     <span className="badge badge-neutral flex-shrink-0">
                         {topic.ukLevel?.code || topic.ukLevel || 'N/A'}
                     </span>
                 </div>
 
-                <p className="text-dark-400 text-sm mb-3 line-clamp-2">
+                <p className="text-dark-300 text-sm mb-4 line-clamp-2">
                     {topic.description}
                 </p>
 
-                <div className="flex items-center gap-4 text-sm text-dark-500">
-                    <span>{lessonsCount} lessons</span>
-                    <span>{topic.questionCount || 0} questions</span>
+                <div className="grid gap-3 sm:grid-cols-2">
+                    <div className="rounded-2xl border border-dark-800/70 bg-dark-900/70 p-3">
+                        <p className="text-[11px] uppercase tracking-[0.14em] text-dark-500">Learning load</p>
+                        <p className="mt-2 text-sm text-dark-200">{lessonsCount} lessons and {topic.questionCount || 0} questions</p>
+                    </div>
+                    <div className="rounded-2xl border border-dark-800/70 bg-dark-900/70 p-3">
+                        <p className="text-[11px] uppercase tracking-[0.14em] text-dark-500">Outcomes</p>
+                        {outcomes.length > 0 ? (
+                            <ul className="mt-2 space-y-2 text-sm text-dark-300">
+                                {outcomes.map((outcome) => (
+                                    <li key={outcome.code} className="flex gap-2">
+                                        <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-300" />
+                                        <span className="line-clamp-2">{outcome.description}</span>
+                                    </li>
+                                ))}
+                            </ul>
+                        ) : (
+                            <p className="mt-2 text-sm text-dark-400">Structured practice and mastery tracking included.</p>
+                        )}
+                    </div>
                 </div>
 
-                {/* Progress Bar */}
                 {progress && (
                     <div className="mt-3">
                         <div className="flex justify-between text-xs mb-1">
@@ -89,12 +106,11 @@ function TopicCard({ topic, index, trackSlug, progress }) {
                 )}
             </div>
 
-            {/* Action icon */}
             <div className="flex-shrink-0 self-center">
                 {hasContent ? (
-                    <PlayIcon />
+                    <PlayCircle className="h-5 w-5 text-primary-300" />
                 ) : (
-                    <LockIcon />
+                    <Lock className="h-5 w-5 text-dark-500" />
                 )}
             </div>
         </CardWrapper>
@@ -103,13 +119,18 @@ function TopicCard({ topic, index, trackSlug, progress }) {
 
 export default function TrackDetail() {
     const { slug } = useParams()
-    const { isAuthenticated } = useAuth()
+    const { isAuthenticated, user, checkAuth } = useAuth()
     const navigate = useNavigate()
 
     const [track, setTrack] = useState(null)
     const [progressData, setProgressData] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const [confidenceAfter, setConfidenceAfter] = useState(4)
+    const [nextStepChoice, setNextStepChoice] = useState('')
+    const [savingOutcome, setSavingOutcome] = useState(false)
+    const [outcomeError, setOutcomeError] = useState('')
+    const [outcomeSaved, setOutcomeSaved] = useState(false)
 
     useEffect(() => {
         async function fetchTrack() {
@@ -137,6 +158,25 @@ export default function TrackDetail() {
     }, [slug, isAuthenticated])
 
     const [showDiagnostic, setShowDiagnostic] = useState(false)
+
+    useEffect(() => {
+        if (!track) return
+
+        const savedOutcome = user?.onboarding?.completedTrack?.slug === slug ? user.onboarding : null
+        if (savedOutcome?.confidenceAfter) {
+            setConfidenceAfter(savedOutcome.confidenceAfter)
+        }
+
+        if (savedOutcome?.nextStepChoice) {
+            setNextStepChoice(savedOutcome.nextStepChoice)
+            return
+        }
+
+        const defaultNextStep = getPathwayGuidance(track).nextSteps[0]
+        if (defaultNextStep) {
+            setNextStepChoice((currentValue) => currentValue || getNextStepValue(defaultNextStep))
+        }
+    }, [track, user, slug])
 
     const handleStartDiagnostic = () => {
         if (!isAuthenticated) {
@@ -181,15 +221,45 @@ export default function TrackDetail() {
 
     const totalLessons = track.topics.reduce((sum, t) => sum + t.lessons.length, 0)
     const totalQuestions = track.topics.reduce((sum, t) => sum + t.questionCount, 0)
+    const lessonTime = formatLessonTime(track.estimatedMinutes)
+    const expectedStudyTime = formatLessonTime(track.expectedStudyMinutes)
     const progressPercent = progressData?.overall?.percentage ?? null
     const trackMastered = !!progressData?.overall?.isMastered
     const topicsMastered = progressData?.topicsMastered ?? 0
     const topicsTotal = progressData?.topics?.length ?? 0
     const certificate = progressData?.certificate
+    const pathwayGuidance = getPathwayGuidance(track)
+    const savedOutcome = user?.onboarding?.completedTrack?.slug === slug ? user.onboarding : null
+    const isSavedStartingPathway = user?.onboarding?.selectedTrack?.slug === slug
+    const baselineConfidence = Number(user?.onboarding?.confidenceBefore || 0) || null
+    const recommendedTopic = track.topics.find((topic) => {
+        const topicProgress = progressData?.topics?.find((entry) => entry.id === topic.id)
+        const hasContent = topic.lessons.length > 0 || topic.questionCount > 0
+        return hasContent && (!topicProgress || !topicProgress.isMastered)
+    }) || track.topics.find((topic) => topic.lessons.length > 0 || topic.questionCount > 0) || null
+
+    const handleSaveOutcome = async (event) => {
+        event.preventDefault()
+        setSavingOutcome(true)
+        setOutcomeError('')
+
+        try {
+            await recordOnboardingOutcome({
+                trackSlug: slug,
+                confidenceAfter,
+                nextStepChoice,
+            })
+            setOutcomeSaved(true)
+            await checkAuth()
+        } catch (err) {
+            setOutcomeError(err.message || 'Unable to save pathway outcome right now.')
+        } finally {
+            setSavingOutcome(false)
+        }
+    }
 
     return (
         <div className="py-12">
-            {/* Diagnostic Modal */}
             <DiagnosticModal
                 trackSlug={slug}
                 trackTitle={track.title}
@@ -199,50 +269,159 @@ export default function TrackDetail() {
             />
 
             <div className="container-app">
-                {/* Breadcrumb */}
                 <nav className="mb-6 text-sm">
-                    <Link to="/tracks" className="text-dark-400 hover:text-dark-200">Courses</Link>
+                    <Link to="/tracks" className="text-dark-400 hover:text-dark-200">Pathways</Link>
                     <span className="mx-2 text-dark-600">/</span>
                     <span className="text-dark-200">{track.title}</span>
                 </nav>
 
-                {/* Hero */}
-                <div className="glass-card p-8 mb-8">
-                    <div className="flex flex-col lg:flex-row lg:items-center gap-6">
+                <div className="marketing-shell mb-8 px-6 py-8 sm:px-8 sm:py-10 lg:px-10">
+                    <div className="grid gap-6 lg:grid-cols-[minmax(0,1.15fr)_minmax(300px,0.85fr)] lg:items-start">
                         <div className="flex-grow">
-                            <div className="flex flex-wrap gap-2 mb-4">
+                            <span className="section-eyebrow">
+                                <Layers3 className="h-3.5 w-3.5" />
+                                Learning pathway
+                            </span>
+
+                            <div className="mt-4 flex flex-wrap gap-2">
                                 {track.frameworks.map(f => (
                                     <span key={f.slug} className="badge badge-primary">{f.title}</span>
                                 ))}
                             </div>
-                            <h1 className="text-3xl lg:text-4xl font-bold text-dark-50 mb-4">
+
+                            <h1 className="mt-4 text-3xl lg:text-5xl font-bold text-dark-50 mb-4">
                                 {track.title}
                             </h1>
-                            <p className="text-dark-300 text-lg max-w-2xl mb-6">
+                            <p className="text-dark-300 text-lg max-w-2xl mb-6 leading-8">
                                 {track.description}
                             </p>
-                            <div className="flex flex-wrap items-center gap-6 text-dark-400">
-                                <span className="flex items-center gap-2">
-                                    <ClockIcon />
-                                    {track.topics.length * 3}+ hours
-                                </span>
-                                <span>{track.topics.length} topics</span>
-                                <span>{totalLessons} lessons</span>
-                                <span>{totalQuestions} practice questions</span>
+
+                            <div className="mb-6 rounded-2xl border border-accent-500/25 bg-accent-500/10 p-4 text-sm leading-7 text-dark-200">
+                                <div className="flex items-start gap-3">
+                                    <ShieldCheck className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-300" />
+                                    <p>
+                                        AdultEdu is an independent practice platform. This pathway can support revision and confidence, but it is not a formal qualification or an official exam-board product.
+                                    </p>
+                                </div>
+                            </div>
+
+                            {isSavedStartingPathway && (
+                                <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-primary-500/30 bg-primary-500/10 px-4 py-2 text-sm font-medium text-primary-200">
+                                    <Target className="h-4 w-4" />
+                                    This is the pathway saved in your starting-point plan.
+                                </div>
+                            )}
+
+                            <div className="mb-6 grid gap-4 xl:grid-cols-3">
+                                <div className="rounded-3xl border border-dark-800/80 bg-dark-950/45 p-5">
+                                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-dark-500">Who this is for</p>
+                                    <p className="mt-3 text-sm leading-7 text-dark-300">{pathwayGuidance.audience}</p>
+                                </div>
+                                <div className="rounded-3xl border border-dark-800/80 bg-dark-950/45 p-5">
+                                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-dark-500">What this helps with</p>
+                                    <ul className="mt-3 space-y-2 text-sm text-dark-300">
+                                        {pathwayGuidance.outcomes.slice(0, 3).map((outcome) => (
+                                            <li key={outcome} className="flex gap-2">
+                                                <CheckCircle2 className="mt-0.5 h-4 w-4 flex-shrink-0 text-accent-300" />
+                                                <span>{outcome}</span>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                                <div className="rounded-3xl border border-dark-800/80 bg-dark-950/45 p-5">
+                                    <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-dark-500">What this leads to next</p>
+                                    <ul className="mt-3 space-y-3 text-sm text-dark-300">
+                                        {pathwayGuidance.nextSteps.slice(0, 3).map((nextStep) => {
+                                            const href = getNextStepHref(nextStep)
+                                            const body = (
+                                                <>
+                                                    <span className="font-medium text-dark-100">{nextStep.title}</span>
+                                                    {nextStep.description && <span className="mt-1 block text-dark-400">{nextStep.description}</span>}
+                                                </>
+                                            )
+
+                                            return (
+                                                <li key={nextStep.title} className="rounded-2xl border border-dark-800/80 bg-dark-900/60 p-3">
+                                                    {href ? (
+                                                        <Link to={href} className="block transition-colors hover:text-primary-200">
+                                                            {body}
+                                                        </Link>
+                                                    ) : body}
+                                                </li>
+                                            )
+                                        })}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div className="grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
+                                <div className="learning-stat">
+                                    <p className="learning-stat-label">Lesson time</p>
+                                    <p className="learning-stat-value">{lessonTime}</p>
+                                    <p className="mt-2 text-sm text-dark-400 flex items-center gap-2"><Clock3 className="h-4 w-4 text-accent-300" /> Based on published lessons</p>
+                                </div>
+                                <div className="learning-stat">
+                                    <p className="learning-stat-label">Full study</p>
+                                    <p className="learning-stat-value">{expectedStudyTime}</p>
+                                    <p className="mt-2 text-sm text-dark-400">Lessons plus current practice bank</p>
+                                </div>
+                                <div className="learning-stat">
+                                    <p className="learning-stat-label">Topics</p>
+                                    <p className="learning-stat-value">{track.topics.length}</p>
+                                    <p className="mt-2 text-sm text-dark-400">Structured topic sequence</p>
+                                </div>
+                                <div className="learning-stat">
+                                    <p className="learning-stat-label">Lessons</p>
+                                    <p className="learning-stat-value">{totalLessons}</p>
+                                    <p className="mt-2 text-sm text-dark-400">Published lesson content</p>
+                                </div>
+                                <div className="learning-stat">
+                                    <p className="learning-stat-label">Practice</p>
+                                    <p className="learning-stat-value">{totalQuestions}</p>
+                                    <p className="mt-2 text-sm text-dark-400">Question-led revision</p>
+                                </div>
                             </div>
                         </div>
-                        <div className="flex flex-col gap-3 lg:w-64">
+
+                        <div className="editorial-panel p-6 lg:p-7">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-300">Recommended next step</p>
+                            <h2 className="mt-3 text-2xl font-semibold text-dark-50">Find your starting level and keep the route legible.</h2>
+                            <p className="mt-3 text-sm leading-7 text-dark-300">
+                                The diagnostic helps place learners quickly, and this page keeps the route clear: who it is for, what it supports, and what a sensible next step could be.
+                            </p>
+
+                            {recommendedTopic && (
+                                <div className="mt-6 rounded-2xl border border-primary-500/25 bg-primary-500/10 p-4 text-sm text-dark-200">
+                                    <p className="font-semibold text-primary-300">Suggested next topic</p>
+                                    <p className="mt-2 leading-7 text-dark-300">{recommendedTopic.title} is the clearest next step based on the current course order and your visible progress.</p>
+                                    <Link to={`/topic/${recommendedTopic.id}`} className="btn-secondary mt-4 w-full justify-center">
+                                        Open suggested topic
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Link>
+                                </div>
+                            )}
+
+                            {slug === 'life-in-the-uk-test' && (
+                                <div className="mt-6 rounded-2xl border border-accent-500/25 bg-accent-500/10 p-4 text-sm text-dark-200">
+                                    <p className="font-semibold text-accent-300">Free public mock test</p>
+                                    <p className="mt-2 leading-7 text-dark-300">Anyone can take a mixed Life in the UK practice test without signing in.</p>
+                                    <Link to="/life-in-the-uk-test" className="btn-primary mt-4 w-full justify-center">
+                                        Take free practice test
+                                        <PlayCircle className="h-4 w-4" />
+                                    </Link>
+                                </div>
+                            )}
+
                             <button
                                 onClick={handleStartDiagnostic}
-                                className="btn-primary justify-center"
+                                className="btn-primary mt-6 w-full justify-center"
                             >
                                 Start Diagnostic
+                                <ArrowRight className="h-4 w-4" />
                             </button>
-                            <p className="text-dark-500 text-xs text-center">
-                                Take a quick assessment to find your level
-                            </p>
+
                             {progressPercent !== null && (
-                                <div className="p-3 rounded-lg border border-dark-800 bg-dark-900/60 space-y-2">
+                                <div className="progress-panel mt-6 space-y-3">
                                     <div className="flex items-center justify-between">
                                         <span className="text-sm font-semibold text-dark-100">Your progress</span>
                                         {trackMastered && (
@@ -261,22 +440,125 @@ export default function TrackDetail() {
                                     </div>
 
                                     {certificate?.awarded && (
-                                        <div className="mt-2 p-2 rounded-md bg-emerald-500/10 text-emerald-200 text-xs border border-emerald-500/30">
-                                            Certificate ready: {certificate.title}{' '}
+                                        <div className="mt-2 rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-3 text-xs text-emerald-200">
+                                            <div className="flex items-center gap-2 font-semibold text-emerald-100">
+                                                <Award className="h-4 w-4" />
+                                                Certificate ready
+                                            </div>
+                                            <p className="mt-2">{certificate.title}</p>
                                             {certificate.downloadPath && (
-                                                <a className="underline" href={certificate.downloadPath}>Download</a>
+                                                <a className="mt-2 inline-flex items-center gap-1 underline" href={certificate.downloadPath}>Download</a>
                                             )}
                                         </div>
                                     )}
+                                </div>
+                            )}
+
+                            {trackMastered && isAuthenticated && (
+                                <form onSubmit={handleSaveOutcome} className="progress-panel mt-6 space-y-4">
+                                    <div>
+                                        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-300">Progression record</p>
+                                        <h3 className="mt-2 text-lg font-semibold text-dark-50">Record what this pathway led to next.</h3>
+                                        <p className="mt-2 text-sm leading-7 text-dark-300">This keeps the learner record useful for you and creates lightweight evidence for provider or partner conversations.</p>
+                                    </div>
+
+                                    <div>
+                                        <p className="text-sm font-semibold text-dark-100">Confidence after this pathway</p>
+                                        <div className="mt-3 grid grid-cols-5 gap-2">
+                                            {[1, 2, 3, 4, 5].map((value) => (
+                                                <button
+                                                    key={value}
+                                                    type="button"
+                                                    onClick={() => setConfidenceAfter(value)}
+                                                    className={`rounded-2xl border px-3 py-3 text-sm font-medium transition-colors ${confidenceAfter === value
+                                                        ? 'border-primary-500 bg-primary-500/15 text-primary-100'
+                                                        : 'border-dark-700 bg-dark-900/70 text-dark-300 hover:border-dark-600 hover:text-dark-100'
+                                                        }`}
+                                                >
+                                                    {value}
+                                                </button>
+                                            ))}
+                                        </div>
+                                        {baselineConfidence ? (
+                                            <p className="mt-2 text-xs text-dark-500">Baseline confidence at onboarding: {baselineConfidence}/5</p>
+                                        ) : null}
+                                    </div>
+
+                                    <div>
+                                        <p className="text-sm font-semibold text-dark-100">What does this lead to next?</p>
+                                        <div className="mt-3 space-y-3">
+                                            {pathwayGuidance.nextSteps.map((nextStep) => {
+                                                const value = getNextStepValue(nextStep)
+                                                return (
+                                                    <button
+                                                        key={nextStep.title}
+                                                        type="button"
+                                                        onClick={() => setNextStepChoice(value)}
+                                                        className={`w-full rounded-2xl border p-4 text-left transition-colors ${nextStepChoice === value
+                                                            ? 'border-primary-500 bg-primary-500/12'
+                                                            : 'border-dark-700 bg-dark-900/60 hover:border-dark-600'
+                                                            }`}
+                                                    >
+                                                        <p className="font-medium text-dark-100">{nextStep.title}</p>
+                                                        {nextStep.description && (
+                                                            <p className="mt-2 text-sm leading-7 text-dark-400">{nextStep.description}</p>
+                                                        )}
+                                                    </button>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+
+                                    {(savedOutcome || outcomeSaved) && (
+                                        <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/10 p-4 text-sm text-emerald-100">
+                                            <p className="font-semibold">Outcome recorded</p>
+                                            <p className="mt-2 leading-7 text-emerald-100/90">
+                                                {savedOutcome?.confidenceChange !== null && savedOutcome?.confidenceChange !== undefined
+                                                    ? `Confidence change saved: ${savedOutcome.confidenceChange > 0 ? '+' : ''}${savedOutcome.confidenceChange}.`
+                                                    : 'This pathway now has a saved confidence-after and next-step choice.'}
+                                            </p>
+                                        </div>
+                                    )}
+
+                                    {outcomeError && (
+                                        <div className="rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-sm text-red-200">
+                                            {outcomeError}
+                                        </div>
+                                    )}
+
+                                    <button
+                                        type="submit"
+                                        disabled={savingOutcome || !nextStepChoice}
+                                        className="btn-primary w-full justify-center disabled:cursor-not-allowed disabled:opacity-60"
+                                    >
+                                        {savingOutcome ? 'Saving progression record...' : 'Save progression outcome'}
+                                        <ArrowRight className="h-4 w-4" />
+                                    </button>
+                                </form>
+                            )}
+
+                            {progressPercent === null && (
+                                <div className="mt-6 rounded-2xl border border-dark-800/80 bg-dark-900/60 p-4 text-sm leading-7 text-dark-300">
+                                    Start with the diagnostic if you want a guided placement, or open the suggested topic and move through the pathway one step at a time.
                                 </div>
                             )}
                         </div>
                     </div>
                 </div>
 
-                {/* Topics list */}
-                <div>
-                    <h2 className="text-2xl font-bold text-dark-50 mb-6">Topics</h2>
+                <div id="topic-outline">
+                    <div className="mb-6 flex items-end justify-between gap-4">
+                        <div>
+                            <span className="section-eyebrow">
+                                <BookOpenCheck className="h-3.5 w-3.5" />
+                                Pathway outline
+                            </span>
+                            <h2 className="mt-3 text-2xl font-bold text-dark-50">Topics and outcomes</h2>
+                        </div>
+                        <p className="max-w-xl text-sm text-dark-400 text-right">
+                            Each topic includes lessons, question coverage, and mastery tracking so the learning path feels deliberate.
+                        </p>
+                    </div>
                     <div className="space-y-4">
                         {track.topics.map((topic, index) => (
                             <TopicCard
