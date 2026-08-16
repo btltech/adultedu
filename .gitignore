@@ -44,3 +44,9 @@ backend/generated/
 
 # Playwright/vitest output
 frontend/test-results/
+
+# Claude Code local dev server configs
+.claude/
+
+# Wrangler local state
+frontend/.wrangler/

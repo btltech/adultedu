@@ -1,0 +1,852 @@
+[
+  {
+    "prompt": "Which of the following is the largest country in the United Kingdom by area?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Northern Ireland"
+    ],
+    "answer": "A) England",
+    "explanation": "England is the largest country in the UK by both area and population, covering most of the island of Great Britain.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the predominant climate type in most of the United Kingdom?",
+    "options": [
+      "A) Tropical",
+      "B) Arid",
+      "C) Temperate maritime",
+      "D) Continental"
+    ],
+    "answer": "C) Temperate maritime",
+    "explanation": "The UK has a temperate maritime climate, characterised by mild temperatures, high humidity, and frequent rainfall throughout the year.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a recognised official language of the UK?",
+    "options": [
+      "A) English",
+      "B) Welsh",
+      "C) Scottish Gaelic",
+      "D) Irish"
+    ],
+    "answer": "D) Irish",
+    "explanation": "While English, Welsh, and Scottish Gaelic are recognised as official languages in certain areas, Irish is not an official language of the UK.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which body of water lies to the east of the United Kingdom?",
+    "options": [
+      "A) Atlantic Ocean",
+      "B) Irish Sea",
+      "C) North Sea",
+      "D) English Channel"
+    ],
+    "answer": "C) North Sea",
+    "explanation": "The North Sea borders the eastern coast of the UK, separating it from mainland Europe.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which region of the UK has its own parliament and devolved government?",
+    "options": [
+      "A) Wales",
+      "B) England",
+      "C) Northern Ireland",
+      "D) Both A and C"
+    ],
+    "answer": "D) Both A and C",
+    "explanation": "Wales and Northern Ireland both have their own devolved parliaments, while Scotland also has a devolved parliament.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is the most populous country in the UK?",
+    "options": [
+      "A) Scotland",
+      "B) Wales",
+      "C) Northern Ireland",
+      "D) England"
+    ],
+    "answer": "D) England",
+    "explanation": "England has the largest population in the UK, making up over 80% of the total population of the country.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the highest mountain in the UK?",
+    "options": [
+      "A) Ben Nevis",
+      "B) Scafell Pike",
+      "C) Snowdon",
+      "D) Cross Fell"
+    ],
+    "answer": "A) Ben Nevis",
+    "explanation": "Ben Nevis, located in Scotland, is the highest mountain in the UK, standing at 1,345 metres (4,413 ft).",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a major river that flows through London?",
+    "options": [
+      "A) The Thames",
+      "B) The Severn",
+      "C) The Tyne",
+      "D) The Mersey"
+    ],
+    "answer": "A) The Thames",
+    "explanation": "The River Thames flows through London and is the longest river entirely within England.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which language is spoken by a significant minority in Wales and is recognised as an official language?",
+    "options": [
+      "A) Cornish",
+      "B) Irish",
+      "C) Scottish Gaelic",
+      "D) Welsh"
+    ],
+    "answer": "D) Welsh",
+    "explanation": "Welsh is a Celtic language spoken by a minority in Wales and is recognised as an official language of the UK.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following best describes the population density of the UK?",
+    "options": [
+      "A) Low population density",
+      "B) Medium population density",
+      "C) High population density",
+      "D) Very low population density"
+    ],
+    "answer": "C) High population density",
+    "explanation": "The UK has a high population density, especially in urban areas like London and the Midlands.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is the largest country in the United Kingdom by area?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Northern Ireland"
+    ],
+    "answer": "A) England",
+    "explanation": "England is the largest country in the UK by area, covering about 53% of the total land area of the United Kingdom.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the most common climate type found in the United Kingdom?",
+    "options": [
+      "A) Tropical",
+      "B) Arid",
+      "C) Temperate maritime",
+      "D) Polar"
+    ],
+    "answer": "C) Temperate maritime",
+    "explanation": "The UK has a temperate maritime climate, characterised by mild temperatures, frequent rain, and changeable weather due to its island location.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which language is spoken by the majority of people in Wales?",
+    "options": [
+      "A) English",
+      "B) Scottish Gaelic",
+      "C) Irish",
+      "D) Welsh"
+    ],
+    "answer": "D) Welsh",
+    "explanation": "Welsh is the native language of Wales and is spoken by a significant portion of the population, especially in the north and west of the country.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the official language of the United Kingdom?",
+    "options": [
+      "A) English",
+      "B) Welsh",
+      "C) Scots",
+      "D) Irish"
+    ],
+    "answer": "A) English",
+    "explanation": "English is the official language of the United Kingdom and is spoken by the majority of the population across all four countries.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a major geographical feature of the UK?",
+    "options": [
+      "A) The Sahara Desert",
+      "B) The Alps",
+      "C) The Pennines",
+      "D) The Himalayas"
+    ],
+    "answer": "C) The Pennines",
+    "explanation": "The Pennines are a range of hills and mountains running through northern England, often referred to as the 'backbone of England'.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the approximate population of the United Kingdom?",
+    "options": [
+      "A) 50 million",
+      "B) 67 million",
+      "C) 80 million",
+      "D) 100 million"
+    ],
+    "answer": "B) 67 million",
+    "explanation": "As of recent estimates, the population of the United Kingdom is around 67 million people, making it one of the more populous countries in Europe.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which country of the UK is known for its rugged coastline and highland regions?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Northern Ireland"
+    ],
+    "answer": "B) Scotland",
+    "explanation": "Scotland is famous for its highlands, dramatic coastlines, and mountainous terrain, including the Scottish Highlands.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "In which region of the UK is the city of Belfast located?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Northern Ireland"
+    ],
+    "answer": "D) Northern Ireland",
+    "explanation": "Belfast is the capital and largest city of Northern Ireland, located in the northeastern part of the island of Ireland.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a country that makes up the United Kingdom?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Republic of Ireland",
+      "D) Wales"
+    ],
+    "answer": "C) Republic of Ireland",
+    "explanation": "The United Kingdom consists of England, Scotland, Wales, and Northern Ireland; the Republic of Ireland is a separate sovereign country.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the most common language spoken in Scotland?",
+    "options": [
+      "A) English",
+      "B) Scots",
+      "C) Gaelic",
+      "D) Irish"
+    ],
+    "answer": "A) English",
+    "explanation": "Although Scots and Scottish Gaelic are spoken in Scotland, English is the most widely spoken language across the country.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is the largest country in the United Kingdom by area?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Northern Ireland"
+    ],
+    "answer": "A) England",
+    "explanation": "England is the largest country in the UK by area, covering more than half of the total land area of the United Kingdom.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the typical climate of the United Kingdom?",
+    "options": [
+      "A) Hot and dry",
+      "B) Cold and snowy",
+      "C) Mild and temperate",
+      "D) Tropical and humid"
+    ],
+    "answer": "C) Mild and temperate",
+    "explanation": "The UK has a mild and temperate climate due to its location in the North Atlantic, influenced by the Gulf Stream.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which language is spoken by the majority of the population in the UK?",
+    "options": [
+      "A) Welsh",
+      "B) Scots",
+      "C) English",
+      "D) Irish"
+    ],
+    "answer": "C) English",
+    "explanation": "English is the most widely spoken language in the UK and is the official language used in government, education, and daily life.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a UK country?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Ireland"
+    ],
+    "answer": "D) Ireland",
+    "explanation": "Ireland is a separate island and country; the UK consists of England, Scotland, Wales, and Northern Ireland.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Where is the UK located geographically?",
+    "options": [
+      "A) In the Atlantic Ocean",
+      "B) On the European continent",
+      "C) In the Mediterranean Sea",
+      "D) In the Arctic region"
+    ],
+    "answer": "B) On the European continent",
+    "explanation": "The UK is located on the north-western edge of the European continent, separated from mainland Europe by the English Channel.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the official name of the UK?",
+    "options": [
+      "A) United Kingdom of Great Britain and Northern Ireland",
+      "B) United Kingdom of Britain and Ireland",
+      "C) United Kingdom of England and Scotland",
+      "D) United Kingdom of Great Britain"
+    ],
+    "answer": "A) United Kingdom of Great Britain and Northern Ireland",
+    "explanation": "The full official name of the UK includes Great Britain and Northern Ireland, reflecting its political structure.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a major natural feature in the UK?",
+    "options": [
+      "A) The Alps",
+      "B) The Pyrenees",
+      "C) The Lake District",
+      "D) The Sahara Desert"
+    ],
+    "answer": "C) The Lake District",
+    "explanation": "The Lake District is a famous national park in northwest England known for its lakes, mountains, and scenic beauty.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the approximate population of the United Kingdom?",
+    "options": [
+      "A) 50 million",
+      "B) 67 million",
+      "C) 80 million",
+      "D) 100 million"
+    ],
+    "answer": "B) 67 million",
+    "explanation": "The UK has a population of approximately 67 million people, making it one of the more populous countries in Europe.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following languages is recognized as an official language in a UK country?",
+    "options": [
+      "A) Irish",
+      "B) Welsh",
+      "C) Gaelic",
+      "D) Scots"
+    ],
+    "answer": "B) Welsh",
+    "explanation": "Welsh is an official language in Wales and is recognized by the UK government, with bilingual signs and education in Welsh.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which region of the UK is known for its highland landscapes and lochs?",
+    "options": [
+      "A) The Pennines",
+      "B) The Lake District",
+      "C) The Scottish Highlands",
+      "D) The Yorkshire Dales"
+    ],
+    "answer": "C) The Scottish Highlands",
+    "explanation": "The Scottish Highlands are known for their rugged terrain, mountains, and numerous lochs, making them a distinctive region of the UK.",
+    "difficulty": "hard",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is the largest country in the United Kingdom by area?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Northern Ireland"
+    ],
+    "answer": "A) England",
+    "explanation": "England is the largest country in the UK by area, covering approximately 56% of the total land area of the UK.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the typical climate of the United Kingdom?",
+    "options": [
+      "A) Hot and dry",
+      "B) Cold and snowy",
+      "C) Mild and wet",
+      "D) Tropical and humid"
+    ],
+    "answer": "C) Mild and wet",
+    "explanation": "The UK has a temperate maritime climate, characterised by mild temperatures and frequent rain throughout the year.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a major river that flows through London?",
+    "options": [
+      "A) River Thames",
+      "B) River Severn",
+      "C) River Tyne",
+      "D) River Clyde"
+    ],
+    "answer": "A) River Thames",
+    "explanation": "The River Thames flows through London and is the longest river entirely within England.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the official language of the United Kingdom?",
+    "options": [
+      "A) English",
+      "B) Welsh",
+      "C) Scots",
+      "D) Irish"
+    ],
+    "answer": "A) English",
+    "explanation": "English is the official language of the United Kingdom, used in government, education, and daily life across all four countries.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a UK country?",
+    "options": [
+      "A) Scotland",
+      "B) Wales",
+      "C) Northern Ireland",
+      "D) Republic of Ireland"
+    ],
+    "answer": "D) Republic of Ireland",
+    "explanation": "The Republic of Ireland is a separate sovereign state, not part of the United Kingdom.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which UK country is known for its rugged mountains and lochs?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Northern Ireland"
+    ],
+    "answer": "B) Scotland",
+    "explanation": "Scotland is famous for its mountainous landscapes, including the Highlands and numerous lochs.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the approximate population of the United Kingdom?",
+    "options": [
+      "A) 50 million",
+      "B) 67 million",
+      "C) 80 million",
+      "D) 100 million"
+    ],
+    "answer": "B) 67 million",
+    "explanation": "The UK's population is approximately 67 million, based on recent estimates from the Office for National Statistics.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following languages is recognised as a national language in the UK?",
+    "options": [
+      "A) Cornish",
+      "B) Scottish Gaelic",
+      "C) Irish",
+      "D) Welsh"
+    ],
+    "answer": "D) Welsh",
+    "explanation": "Welsh is recognised as a national language in Wales and is taught in schools and used in public life.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which region of the UK is known for its rolling green hills and rural landscapes?",
+    "options": [
+      "A) The Lake District",
+      "B) The Peak District",
+      "C) The Cotswolds",
+      "D) The North York Moors"
+    ],
+    "answer": "C) The Cotswolds",
+    "explanation": "The Cotswolds, located in southern England, are renowned for their picturesque villages and rolling hills.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the mountain range that runs through the centre of Scotland?",
+    "options": [
+      "A) Pennines",
+      "B) Grampian Mountains",
+      "C) Cambrian Mountains",
+      "D) Snowdonia"
+    ],
+    "answer": "B) Grampian Mountains",
+    "explanation": "The Grampian Mountains form a significant range in the central and eastern part of Scotland.",
+    "difficulty": "hard",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is the largest country in the United Kingdom by area?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Northern Ireland"
+    ],
+    "answer": "A) England",
+    "explanation": "England is the largest country in the UK by area, covering more than half of the total land area of the United Kingdom.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the most common climate type in the UK?",
+    "options": [
+      "A) Tropical",
+      "B) Arid",
+      "C) Temperate maritime",
+      "D) Continental"
+    ],
+    "answer": "C) Temperate maritime",
+    "explanation": "The UK has a temperate maritime climate, characterised by mild temperatures, frequent rain, and changeable weather throughout the year.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following languages is officially recognised in the UK?",
+    "options": [
+      "A) Irish",
+      "B) Welsh",
+      "C) Gaelic",
+      "D) Scots"
+    ],
+    "answer": "B) Welsh",
+    "explanation": "Welsh is an official language in Wales and is recognised under the Welsh Language Act 1993, giving it official status in the UK.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the approximate population of the United Kingdom?",
+    "options": [
+      "A) 50 million",
+      "B) 67 million",
+      "C) 80 million",
+      "D) 100 million"
+    ],
+    "answer": "B) 67 million",
+    "explanation": "The population of the UK is approximately 67 million, according to recent estimates, making it one of the most populous countries in Europe.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which body of water separates the UK from mainland Europe?",
+    "options": [
+      "A) North Sea",
+      "B) English Channel",
+      "C) Irish Sea",
+      "D) Atlantic Ocean"
+    ],
+    "answer": "B) English Channel",
+    "explanation": "The English Channel separates the UK from mainland Europe, running between southern England and northern France.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which region of the UK is known for its rugged mountains and lochs?",
+    "options": [
+      "A) The Lake District",
+      "B) The Scottish Highlands",
+      "C) The Pennines",
+      "D) The Cotswolds"
+    ],
+    "answer": "B) The Scottish Highlands",
+    "explanation": "The Scottish Highlands are famous for their dramatic landscapes, including mountains, lochs, and vast moorland.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the official language of the United Kingdom?",
+    "options": [
+      "A) English",
+      "B) Welsh",
+      "C) Scots",
+      "D) Irish"
+    ],
+    "answer": "A) English",
+    "explanation": "English is the official language of the UK, used in government, education, and daily communication across the country.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a major city in Northern Ireland?",
+    "options": [
+      "A) Liverpool",
+      "B) Manchester",
+      "C) Belfast",
+      "D) Birmingham"
+    ],
+    "answer": "C) Belfast",
+    "explanation": "Belfast is the capital and largest city of Northern Ireland, located on the northeastern coast of the island of Ireland.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the largest island in the UK?",
+    "options": [
+      "A) Isle of Wight",
+      "B) Anglesey",
+      "C) Great Britain",
+      "D) Isle of Man"
+    ],
+    "answer": "C) Great Britain",
+    "explanation": "Great Britain is the largest island in the UK, comprising England, Scotland, and Wales.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which region of the UK is known for its rolling hills and picturesque villages?",
+    "options": [
+      "A) The Peak District",
+      "B) The Pennines",
+      "C) The Cotswolds",
+      "D) The Lake District"
+    ],
+    "answer": "C) The Cotswolds",
+    "explanation": "The Cotswolds are renowned for their charming villages, limestone hills, and rural landscapes, making them a popular tourist destination.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  }
+]
