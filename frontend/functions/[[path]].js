@@ -1,4 +1,26 @@
-import { getSeoTags } from '../src/lib/seo/meta.js'
+import {
+    getSeoTags,
+    lessonSeoTags,
+    mergeSeoTags,
+    NOT_FOUND_TAGS,
+    topicSeoTags,
+    trackSeoTags,
+} from '../src/lib/seo/meta.js'
+import { getApiBaseUrl } from '../src/lib/seo/sitemap.js'
+
+// Dynamic routes carry an identifier the URL alone cannot validate, so the
+// edge asks the API whether the entity exists. That single lookup decides both
+// the HTTP status and the real title/description — which matters for social
+// scrapers (Slack, WhatsApp, LinkedIn, X) that never execute the app's JS and
+// would otherwise preview every lesson with the same placeholder title.
+const DYNAMIC_ROUTES = [
+    { pattern: /^\/lesson\/([^/]+)\/?$/, collection: 'lessons', toTags: lessonSeoTags },
+    { pattern: /^\/topic\/([^/]+)\/?$/, collection: 'topics', toTags: topicSeoTags },
+    { pattern: /^\/track\/([^/]+)\/?$/, collection: 'tracks', toTags: trackSeoTags },
+]
+
+const API_CACHE_SECONDS = 300
+const API_TIMEOUT_MS = 2000
 
 const HTML_EXCLUDED_PREFIXES = [
     '/api/',
@@ -118,8 +140,76 @@ function upsertJsonLd(html, jsonLd) {
     return pattern.test(html) ? html.replace(pattern, markup) : injectBeforeHeadClose(html, markup)
 }
 
-function applySeoTags(html, pathname) {
-    const tags = getSeoTags(pathname)
+/**
+ * Fetch an API resource, caching only definitive answers. A timeout or 5xx is
+ * deliberately left uncached so a brief outage cannot pin a wrong verdict for
+ * the whole TTL.
+ */
+async function fetchEntity(context, url) {
+    const cache = caches.default
+    const cacheKey = new Request(url, { headers: { Accept: 'application/json' } })
+
+    const hit = await cache.match(cacheKey)
+    if (hit) return hit
+
+    const controller = new AbortController()
+    const timer = setTimeout(() => controller.abort(), API_TIMEOUT_MS)
+
+    try {
+        const response = await fetch(cacheKey, { signal: controller.signal })
+        if (response.status !== 200 && response.status !== 404) return response
+
+        const body = await response.text()
+        const cacheable = new Response(body, {
+            status: response.status,
+            headers: {
+                'content-type': 'application/json',
+                'Cache-Control': `public, max-age=${API_CACHE_SECONDS}`,
+            },
+        })
+
+        context.waitUntil(cache.put(cacheKey, cacheable.clone()))
+        return cacheable
+    } finally {
+        clearTimeout(timer)
+    }
+}
+
+/**
+ * Resolve a dynamic route to one of: 'static' (not a dynamic route), 'found'
+ * (with tags), 'missing' (a real 404), or 'unknown' (the API could not answer).
+ * 'unknown' must behave exactly like today's pattern-only rendering — an outage
+ * must never make live content report itself as deleted.
+ */
+async function resolveEntity(context, pathname) {
+    const route = DYNAMIC_ROUTES.find((entry) => entry.pattern.test(pathname))
+    if (!route) return { state: 'static' }
+
+    let id
+    try {
+        id = decodeURIComponent(route.pattern.exec(pathname)[1])
+    } catch {
+        // A malformed URL component cannot name a real entity. Handle it as a
+        // normal missing page instead of allowing decoding to fail the whole
+        // Pages Function request.
+        return { state: 'missing' }
+    }
+    const apiBaseUrl = getApiBaseUrl({ request: context.request, env: context.env })
+    const url = `${apiBaseUrl}/${route.collection}/${encodeURIComponent(id)}`
+
+    try {
+        const response = await fetchEntity(context, url)
+        if (response.status === 404) return { state: 'missing' }
+        if (!response.ok) return { state: 'unknown' }
+
+        return { state: 'found', tags: route.toTags(await response.json()) }
+    } catch {
+        return { state: 'unknown' }
+    }
+}
+
+function applySeoTags(html, pathname, override) {
+    const tags = mergeSeoTags(getSeoTags(pathname), override)
 
     let nextHtml = html
     nextHtml = upsertTitle(nextHtml, tags.title)
@@ -147,9 +237,23 @@ export async function onRequest(context) {
     }
 
     const url = new URL(context.request.url)
-    let response = await context.next()
+
+    // The asset fetch and the entity lookup are independent, so run them
+    // together: the lookup costs roughly nothing on top of serving the shell.
+    const [assetResponse, entity] = await Promise.all([
+        context.next(),
+        resolveEntity(context, url.pathname),
+    ])
+
+    let response = assetResponse
     const isKnownRoute = isKnownSpaRoute(url.pathname)
-    const shouldReturnNotFound = !isKnownRoute
+    const shouldReturnNotFound = !isKnownRoute || entity.state === 'missing'
+    // Anything answered with a 404 gets the not-found signal, whether it failed
+    // route matching or the API said the entity is gone. Otherwise a 404'd URL
+    // would still ship index/follow and organisation JSON-LD.
+    const seoOverride = shouldReturnNotFound
+        ? NOT_FOUND_TAGS
+        : entity.state === 'found' ? entity.tags : null
 
     if (response.status === 404) {
         const indexRequest = new Request(new URL('/index.html', context.request.url), context.request)
@@ -167,11 +271,13 @@ export async function onRequest(context) {
     headers.set('content-type', 'text/html; charset=UTF-8')
     headers.set('x-adultedu-seo-render', 'edge-html')
 
-    return new Response(applySeoTags(html, url.pathname), {
+    return new Response(applySeoTags(html, url.pathname, seoOverride), {
         // Pages' SPA fallback serves index.html with 200 for every unknown
         // extensionless URL. Keep that shell for React's NotFound screen, but
         // retain the HTTP 404 so browsers, crawlers, and link checkers do not
-        // treat a missing page as real content.
+        // treat a missing page as real content. A dynamic route the API
+        // reported as gone gets the same treatment; one it could not answer
+        // for does not, so an outage cannot 404 the whole catalogue.
         status: shouldReturnNotFound ? 404 : response.status,
         statusText: shouldReturnNotFound ? 'Not Found' : response.statusText,
         headers,

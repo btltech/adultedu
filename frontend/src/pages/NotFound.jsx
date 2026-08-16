@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Compass, Home, SearchX } from 'lucide-react'
 import { usePageSeo } from '../components/SEO'
+import { NOT_FOUND_TAGS } from '../lib/seo/meta'
 
 /**
  * Shown both for unmatched routes and for content routes whose lesson, topic,
@@ -8,11 +9,7 @@ import { usePageSeo } from '../components/SEO'
  * that falls back to this state stops advertising itself to search engines.
  */
 export default function NotFound() {
-    usePageSeo({
-        title: 'Page not found - AdultEdu',
-        description: 'This AdultEdu page could not be found. Browse the pathways catalogue to pick up where you left off.',
-        robots: 'noindex, nofollow',
-    })
+    usePageSeo(NOT_FOUND_TAGS)
 
     return (
         <div className="py-12">

@@ -129,6 +129,74 @@ export function formatPageDescription(text, fallback) {
     return `${chosen.slice(0, 157).replace(/\s+\S*$/, '')}…`
 }
 
+export const NOT_FOUND_TITLE = 'Page not found - AdultEdu'
+export const NOT_FOUND_DESCRIPTION = 'This AdultEdu page could not be found. Browse the pathways catalogue to pick up where you left off.'
+export const NOT_FOUND_ROBOTS = 'noindex, nofollow'
+
+export const NOT_FOUND_TAGS = {
+    title: NOT_FOUND_TITLE,
+    description: NOT_FOUND_DESCRIPTION,
+    robots: NOT_FOUND_ROBOTS,
+}
+
+/**
+ * Tags for a single entity. Shared by the React pages and the Pages Function
+ * so a lesson's title is identical whether it was rendered at the edge or in
+ * the browser.
+ */
+export function lessonSeoTags(lesson) {
+    if (!lesson) return {}
+    return {
+        title: formatPageTitle(lesson.title, lesson.track?.title),
+        description: formatPageDescription(
+            lesson.summary,
+            `Study "${lesson.title}" as part of the ${lesson.track?.title || SITE_NAME} pathway for UK adult learners.`
+        ),
+    }
+}
+
+export function topicSeoTags(topic) {
+    if (!topic) return {}
+    return {
+        title: formatPageTitle(topic.title, topic.trackTitle),
+        description: formatPageDescription(
+            topic.description,
+            `Work through "${topic.title}" with lessons and practice in the ${topic.trackTitle || SITE_NAME} pathway.`
+        ),
+    }
+}
+
+export function trackSeoTags(track) {
+    if (!track) return {}
+    return {
+        title: formatPageTitle(`${track.title} Pathway`),
+        description: formatPageDescription(
+            track.description,
+            `Follow the ${track.title} pathway on ${SITE_NAME} with structured topics, lessons, and practice for UK adult learners.`
+        ),
+    }
+}
+
+/**
+ * Combine baseline route metadata with a page override. Curated copy wins for
+ * title/description; `robots` always defers to the override because it reports
+ * whether the content exists, which curated copy has no say over.
+ */
+export function mergeSeoTags(base, override) {
+    const useOverride = base.generic && override
+    const tags = {
+        ...base,
+        title: (useOverride && override.title) || base.title,
+        description: (useOverride && override.description) || base.description,
+        robots: override?.robots || base.robots,
+    }
+
+    // Structured data advertises a real page, so it goes when robots does.
+    if (!tags.robots.startsWith('index')) tags.jsonLd = null
+
+    return tags
+}
+
 export function resolveRouteMeta(pathname) {
     return ROUTE_META.find((entry) => entry.pattern.test(pathname)) || {
         title: DEFAULT_TITLE,

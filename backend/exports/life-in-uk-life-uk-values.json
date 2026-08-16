@@ -1,0 +1,172 @@
+[
+  {
+    "prompt": "Which of the following best describes the principle of democracy in the UK?",
+    "options": [
+      "A) Power is held by a monarch who rules for life",
+      "B) Citizens elect representatives to make decisions on their behalf",
+      "C) Decisions are made by a religious leader",
+      "D) The government is chosen by a lottery system"
+    ],
+    "answer": "B) Citizens elect representatives to make decisions on their behalf",
+    "explanation": "In the UK, democracy means that citizens have the right to vote in free and fair elections to choose their representatives in Parliament.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does the rule of law mean in the UK?",
+    "options": [
+      "A) The government can act above the law if necessary",
+      "B) Everyone, including the government, must follow the law",
+      "C) Only citizens are bound by the law",
+      "D) Laws can be changed by popular vote only"
+    ],
+    "answer": "B) Everyone, including the government, must follow the law",
+    "explanation": "The rule of law means that no one is above the law, and everyone must follow the same legal standards, including public officials and the government.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a key component of individual liberty in the UK?",
+    "options": [
+      "A) The right to own a firearm without restriction",
+      "B) The right to express opinions freely, including in public",
+      "C) The right to ignore court orders",
+      "D) The right to own property without tax"
+    ],
+    "answer": "B) The right to express opinions freely, including in public",
+    "explanation": "Individual liberty in the UK includes the right to freedom of speech, allowing people to express their views peacefully and openly.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is one of the core British values mentioned in the Life in the UK handbook?",
+    "options": [
+      "A) Religious extremism",
+      "B) Secularism",
+      "C) Discrimination",
+      "D) Multiculturalism"
+    ],
+    "answer": "D) Multiculturalism",
+    "explanation": "The UK values multiculturalism, which means respecting and celebrating the diverse cultural backgrounds that make up British society.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which institution is central to the UK's democratic system?",
+    "options": [
+      "A) The House of Lords",
+      "B) The House of Commons",
+      "C) The Monarch",
+      "D) The Prime Minister's Office"
+    ],
+    "answer": "B) The House of Commons",
+    "explanation": "The House of Commons is the elected body of Parliament where most laws are debated and passed, making it central to UK democracy.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "How are human rights protected in the UK?",
+    "options": [
+      "A) Through a separate constitutional document",
+      "B) By the Human Rights Act 1998",
+      "C) By royal decree",
+      "D) By the European Court of Human Rights only"
+    ],
+    "answer": "B) By the Human Rights Act 1998",
+    "explanation": "The Human Rights Act 1998 incorporates the European Convention on Human Rights into UK law, protecting fundamental rights.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a fundamental British value?",
+    "options": [
+      "A) Tolerance",
+      "B) Respect",
+      "C) Freedom",
+      "D) Authority"
+    ],
+    "answer": "D) Authority",
+    "explanation": "While respect and tolerance are key British values, 'authority' is not listed as a core value; instead, the emphasis is on liberty and democracy.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What role does the jury system play in the UK's legal system?",
+    "options": [
+      "A) To decide guilt or innocence in criminal trials",
+      "B) To draft new laws",
+      "C) To serve as a check on the judiciary",
+      "D) To represent the public in Parliament"
+    ],
+    "answer": "A) To decide guilt or innocence in criminal trials",
+    "explanation": "In the UK, a jury of citizens decides whether a defendant is guilty or not guilty in criminal cases, reflecting democratic justice.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the significance of the Magna Carta in UK history?",
+    "options": [
+      "A) It established the first English Parliament",
+      "B) It limited the power of the king and protected basic rights",
+      "C) It introduced the concept of democracy",
+      "D) It created the House of Lords"
+    ],
+    "answer": "B) It limited the power of the king and protected basic rights",
+    "explanation": "The Magna Carta, signed in 1215, was a key step in limiting royal power and protecting individual rights, laying the foundation for modern democracy.",
+    "difficulty": "hard",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following best reflects the UK's commitment to individual liberty?",
+    "options": [
+      "A) The right to protest peacefully",
+      "B) The right to vote only for the wealthy",
+      "C) The right to be judged without a fair trial",
+      "D) The right to choose a religion without legal consequences"
+    ],
+    "answer": "A) The right to protest peacefully",
+    "explanation": "In the UK, individuals have the right to peaceful protest as part of their liberty, protected under the Human Rights Act.",
+    "difficulty": "hard",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  }
+]

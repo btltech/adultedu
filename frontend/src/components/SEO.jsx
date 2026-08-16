@@ -1,6 +1,6 @@
 import { createContext, useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { getSeoTags } from '../lib/seo/meta'
+import { getSeoTags, mergeSeoTags } from '../lib/seo/meta'
 
 function upsertMeta(selector, attributes) {
     let element = document.head.querySelector(selector)
@@ -77,21 +77,9 @@ export function SeoProvider({ children }) {
     }, [location.pathname])
 
     useEffect(() => {
-        const base = getSeoTags(location.pathname)
-        // Hand-written metadata for a specific route is deliberate copy, so a
-        // page override only fills in where the baseline is a shared placeholder.
-        const useOverride = base.generic && override
-        // `robots` is exempt: it reports whether the content actually exists,
-        // which curated copy has no say over. A deleted curated pathway still
-        // needs noindex.
-        const tags = {
-            ...base,
-            title: (useOverride && override.title) || base.title,
-            description: (useOverride && override.description) || base.description,
-            robots: override?.robots || base.robots,
-        }
-        // Structured data advertises a real page, so it goes when robots does.
-        if (!tags.robots.startsWith('index')) tags.jsonLd = null
+        // mergeSeoTags is shared with the Pages Function so edge-rendered and
+        // browser-rendered tags cannot drift apart.
+        const tags = mergeSeoTags(getSeoTags(location.pathname), override)
 
         document.title = tags.title
         upsertMeta('meta[name="description"]', { name: 'description', content: tags.description })
