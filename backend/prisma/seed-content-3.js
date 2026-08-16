@@ -170,7 +170,7 @@ const edsTransactingQuestions = [
 ]
 
 // ============================================
-// GCSE Maths: Statistics (Topic 5)
+// GCSE Maths: Statistics
 // ============================================
 const gcseStatsLesson = {
     title: 'Averages: Mean, Median, Mode',
@@ -485,7 +485,9 @@ async function seedBatch3() {
     const topicIds = {
         edsInfo: 'eds-3',
         edsTransacting: 'eds-4',
-        gcseStats: 'gcse-5',
+        // The lesson and its five linked questions retain their historical
+        // `gcse-5` IDs, but averages belong to Statistics, not Geometry.
+        gcseStats: 'gcse-7',
         gcseRatio: 'gcse-3',
         pythonLoops: 'python-4',
         pythonFunctions: 'python-5',
