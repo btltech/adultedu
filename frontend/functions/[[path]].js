@@ -17,6 +17,43 @@ const HTML_EXCLUDED_PATHS = new Set([
     '/workbox-f19dbf24.js',
 ])
 
+const SPA_ROUTES = new Set([
+    '/',
+    '/about',
+    '/accessibility',
+    '/contact',
+    '/cookies',
+    '/daily',
+    '/dashboard',
+    '/forgot-password',
+    '/life-in-the-uk-test',
+    '/login',
+    '/privacy-policy',
+    '/progress',
+    '/reset-password',
+    '/review',
+    '/signup',
+    '/start',
+    '/terms',
+    '/tracks',
+    '/verify-email',
+])
+
+const SPA_ROUTE_PATTERNS = [
+    /^\/lesson\/[^/]+\/?$/,
+    /^\/practice\/[^/]+\/?$/,
+    /^\/topic\/[^/]+\/?$/,
+    /^\/track\/[^/]+\/?$/,
+    /^\/admin\/?$/,
+    /^\/admin\/(?:analytics|content|partners|settings|users)\/?$/,
+    /^\/admin\/questions\/(?:new|[^/]+)\/?$/,
+]
+
+function isKnownSpaRoute(pathname) {
+    const normalized = pathname === '/' ? pathname : pathname.replace(/\/$/, '')
+    return SPA_ROUTES.has(normalized) || SPA_ROUTE_PATTERNS.some((pattern) => pattern.test(pathname))
+}
+
 function shouldRewriteHtml(request) {
     if (request.method !== 'GET') return false
 
@@ -111,6 +148,8 @@ export async function onRequest(context) {
 
     const url = new URL(context.request.url)
     let response = await context.next()
+    const isKnownRoute = isKnownSpaRoute(url.pathname)
+    const shouldReturnNotFound = !isKnownRoute
 
     if (response.status === 404) {
         const indexRequest = new Request(new URL('/index.html', context.request.url), context.request)
@@ -129,8 +168,12 @@ export async function onRequest(context) {
     headers.set('x-adultedu-seo-render', 'edge-html')
 
     return new Response(applySeoTags(html, url.pathname), {
-        status: response.status,
-        statusText: response.statusText,
+        // Pages' SPA fallback serves index.html with 200 for every unknown
+        // extensionless URL. Keep that shell for React's NotFound screen, but
+        // retain the HTTP 404 so browsers, crawlers, and link checkers do not
+        // treat a missing page as real content.
+        status: shouldReturnNotFound ? 404 : response.status,
+        statusText: shouldReturnNotFound ? 'Not Found' : response.statusText,
         headers,
     })
 }
