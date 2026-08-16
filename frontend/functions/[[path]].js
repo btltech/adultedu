@@ -185,7 +185,15 @@ async function resolveEntity(context, pathname) {
     const route = DYNAMIC_ROUTES.find((entry) => entry.pattern.test(pathname))
     if (!route) return { state: 'static' }
 
-    const id = decodeURIComponent(route.pattern.exec(pathname)[1])
+    let id
+    try {
+        id = decodeURIComponent(route.pattern.exec(pathname)[1])
+    } catch {
+        // A malformed URL component cannot name a real entity. Handle it as a
+        // normal missing page instead of allowing decoding to fail the whole
+        // Pages Function request.
+        return { state: 'missing' }
+    }
     const apiBaseUrl = getApiBaseUrl({ request: context.request, env: context.env })
     const url = `${apiBaseUrl}/${route.collection}/${encodeURIComponent(id)}`
 
