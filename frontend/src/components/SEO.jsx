@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { createContext, useContext, useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
 import { getSeoTags } from '../lib/seo/meta'
 
@@ -44,11 +44,48 @@ function removeElement(selector) {
     document.head.querySelector(selector)?.remove()
 }
 
-export default function SEO() {
-    const location = useLocation()
+const SeoOverrideContext = createContext(null)
+
+/**
+ * Lets a page supply its own title/description once its data has loaded.
+ *
+ * Route-pattern metadata alone cannot tell one lesson from another, so every
+ * /lesson/* and /topic/* URL would otherwise ship an identical title and
+ * description to search engines. Overrides live in context rather than being
+ * written to <head> directly by each page, so the baseline tags and the page
+ * tags can never race — SeoProvider is the only writer.
+ */
+export function usePageSeo({ title, description } = {}) {
+    const setOverride = useContext(SeoOverrideContext)
 
     useEffect(() => {
-        const tags = getSeoTags(location.pathname)
+        if (!setOverride || (!title && !description)) return
+
+        setOverride({ title, description })
+        return () => setOverride(null)
+    }, [setOverride, title, description])
+}
+
+export function SeoProvider({ children }) {
+    const location = useLocation()
+    const [override, setOverride] = useState(null)
+
+    // Drop a page's override the moment the route changes, so a lesson title
+    // can never linger on the next page while its data loads.
+    useEffect(() => {
+        setOverride(null)
+    }, [location.pathname])
+
+    useEffect(() => {
+        const base = getSeoTags(location.pathname)
+        // Hand-written metadata for a specific route is deliberate copy, so a
+        // page override only fills in where the baseline is a shared placeholder.
+        const useOverride = base.generic && override
+        const tags = {
+            ...base,
+            title: (useOverride && override.title) || base.title,
+            description: (useOverride && override.description) || base.description,
+        }
 
         document.title = tags.title
         upsertMeta('meta[name="description"]', { name: 'description', content: tags.description })
@@ -70,7 +107,11 @@ export default function SEO() {
         } else {
             removeElement('script#adultedu-jsonld')
         }
-    }, [location.pathname])
+    }, [location.pathname, override])
 
-    return null
+    return (
+        <SeoOverrideContext.Provider value={setOverride}>
+            {children}
+        </SeoOverrideContext.Provider>
+    )
 }

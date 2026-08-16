@@ -3,11 +3,23 @@ import { useParams, Link } from 'react-router-dom'
 import { ArrowRight, BookOpenCheck, Clock3, GraduationCap, Layers3, Lock, PlayCircle, Target } from 'lucide-react'
 import { api } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
+import { usePageSeo } from '../components/SEO'
+import { formatPageDescription, formatPageTitle } from '../lib/seo/meta'
 
 export default function Topic() {
     const { id } = useParams()
     const [topic, setTopic] = useState(null)
     const [loading, setLoading] = useState(true)
+
+    usePageSeo({
+        title: topic ? formatPageTitle(topic.title, topic.trackTitle) : undefined,
+        description: topic
+            ? formatPageDescription(
+                topic.description,
+                `Work through "${topic.title}" with lessons and practice in the ${topic.trackTitle || 'AdultEdu'} pathway.`
+            )
+            : undefined,
+    })
 
     useEffect(() => {
         async function fetchTopic() {
