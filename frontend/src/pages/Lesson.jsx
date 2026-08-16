@@ -5,7 +5,7 @@ import { api, getUserMessage } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
 import NotFound from './NotFound'
 import { usePageSeo } from '../components/SEO'
-import { formatPageDescription, formatPageTitle } from '../lib/seo/meta'
+import { lessonSeoTags } from '../lib/seo/meta'
 
 export default function Lesson() {
     const { id } = useParams()
@@ -14,15 +14,7 @@ export default function Lesson() {
     const [missing, setMissing] = useState(false)
     const [loadError, setLoadError] = useState(null)
 
-    usePageSeo({
-        title: lesson ? formatPageTitle(lesson.title, lesson.track?.title) : undefined,
-        description: lesson
-            ? formatPageDescription(
-                lesson.summary,
-                `Study "${lesson.title}" as part of the ${lesson.track?.title || 'AdultEdu'} pathway for UK adult learners.`
-            )
-            : undefined,
-    })
+    usePageSeo(lessonSeoTags(lesson))
 
     useEffect(() => {
         async function fetchLesson() {
