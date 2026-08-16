@@ -5,17 +5,17 @@ import Footer from '../components/Footer'
 import BottomNav from '../components/BottomNav'
 import EmailVerificationBanner from '../components/EmailVerificationBanner'
 import ErrorBoundary from '../components/ErrorBoundary'
-import SEO from '../components/SEO'
+import { SeoProvider } from '../components/SEO'
 
 export default function MainLayout() {
     const location = useLocation()
 
     return (
+        <SeoProvider>
         <div className="min-h-screen flex flex-col relative overflow-x-hidden">
             {/* Without this, a click on a footer link keeps the footer's scroll
                 offset and drops the learner into the middle of the new page. */}
             <ScrollRestoration />
-            <SEO />
             {/* Ambient Spatial Lighting Auras for Depth - purely aesthetic, no color overrides */}
             <div className="pointer-events-none fixed -top-[20%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-primary-500/10 blur-[120px] -z-10 hidden md:block"></div>
             <div className="pointer-events-none fixed top-[60%] -right-[15%] w-[70vw] h-[70vw] rounded-full bg-accent-500/10 blur-[150px] -z-10 hidden md:block"></div>
@@ -50,5 +50,6 @@ export default function MainLayout() {
             <Footer className="relative z-10" />
             <BottomNav />
         </div>
+        </SeoProvider>
     )
 }

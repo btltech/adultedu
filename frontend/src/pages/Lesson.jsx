@@ -3,11 +3,23 @@ import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, BookOpenCheck, Clock3, GraduationCap, Lightbulb, ListChecks, NotebookPen, Target, TriangleAlert } from 'lucide-react'
 import { api } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
+import { usePageSeo } from '../components/SEO'
+import { formatPageDescription, formatPageTitle } from '../lib/seo/meta'
 
 export default function Lesson() {
     const { id } = useParams()
     const [lesson, setLesson] = useState(null)
     const [loading, setLoading] = useState(true)
+
+    usePageSeo({
+        title: lesson ? formatPageTitle(lesson.title, lesson.track?.title) : undefined,
+        description: lesson
+            ? formatPageDescription(
+                lesson.summary,
+                `Study "${lesson.title}" as part of the ${lesson.track?.title || 'AdultEdu'} pathway for UK adult learners.`
+            )
+            : undefined,
+    })
 
     useEffect(() => {
         async function fetchLesson() {
@@ -211,7 +223,12 @@ export default function Lesson() {
                 </section>
 
                 <div className="grid gap-8 xl:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)]">
-                    <section className="lesson-content-shell">
+                    {/* min-w-0: a grid item defaults to min-width:auto and refuses to
+                        shrink below its content, pushing lesson text ~14px past the
+                        viewport on narrow phones where it is then clipped by the
+                        layout's overflow-x-hidden. The xl track uses minmax(0,…) for
+                        the same reason. */}
+                    <section className="lesson-content-shell min-w-0">
                         {contentBlocks.length > 0 ? (
                             contentBlocks.map(renderBlock)
                         ) : (
