@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowRight, BookOpenCheck, Clock3, GraduationCap, Layers3, Lock, PlayCircle, Target } from 'lucide-react'
-import { api } from '../lib/api'
+import { api, getUserMessage } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
+import NotFound from './NotFound'
 import { usePageSeo } from '../components/SEO'
 import { formatPageDescription, formatPageTitle } from '../lib/seo/meta'
 
@@ -10,6 +11,8 @@ export default function Topic() {
     const { id } = useParams()
     const [topic, setTopic] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [missing, setMissing] = useState(false)
+    const [loadError, setLoadError] = useState(null)
 
     usePageSeo({
         title: topic ? formatPageTitle(topic.title, topic.trackTitle) : undefined,
@@ -23,11 +26,18 @@ export default function Topic() {
 
     useEffect(() => {
         async function fetchTopic() {
+            setLoading(true)
+            setMissing(false)
+            setLoadError(null)
+
             try {
                 const data = await api(`/topics/${id}`)
                 setTopic(data)
             } catch (err) {
                 console.error('Failed to load topic:', err)
+                // See Lesson.jsx: only a 404 means the topic is really gone.
+                if (err.status === 404) setMissing(true)
+                else setLoadError(getUserMessage(err, "We couldn't load this topic."))
             } finally {
                 setLoading(false)
             }
@@ -46,11 +56,16 @@ export default function Topic() {
         )
     }
 
+    if (missing) return <NotFound />
+
     if (!topic) {
         return (
             <div className="py-12">
                 <div className="container-app text-center">
-                    <h1 className="text-2xl font-bold text-dark-50 mb-4">Topic not found</h1>
+                    <h1 className="text-2xl font-bold text-dark-50 mb-4">We couldn't load this topic</h1>
+                    <p className="mx-auto mb-6 max-w-md text-sm leading-7 text-dark-300">
+                        {loadError || 'Something went wrong. Please try again.'}
+                    </p>
                     <Link to="/tracks" className="btn-primary">Browse pathways</Link>
                 </div>
             </div>
