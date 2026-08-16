@@ -9,12 +9,10 @@ vi.mock('../context/AuthContext', () => ({
 
 const mockApi = vi.hoisted(() => vi.fn())
 const mockGetProgressDetail = vi.hoisted(() => vi.fn())
-const mockGetLabProgress = vi.hoisted(() => vi.fn())
 
 vi.mock('../lib/api', () => ({
     api: mockApi,
     getProgressDetail: mockGetProgressDetail,
-    getLabProgress: mockGetLabProgress,
     default: {}
 }))
 
@@ -51,7 +49,6 @@ describe('Progress page', () => {
         vi.clearAllMocks()
         mockApi.mockResolvedValue({ enrollments: mockEnrollments })
         mockGetProgressDetail.mockResolvedValue(mockDetail)
-        mockGetLabProgress.mockResolvedValue(null)
     })
 
     it('shows enrollments and per-topic detail on expand', async () => {
@@ -69,7 +66,7 @@ describe('Progress page', () => {
         await user.click(detailsButton)
 
         expect(mockGetProgressDetail).toHaveBeenCalledWith('essential-digital-skills')
-        expect(await screen.findByText('Track mastered')).toBeInTheDocument()
+        expect(await screen.findByText('Pathway complete')).toBeInTheDocument()
         expect(screen.getByText('Basics')).toBeInTheDocument()
         expect(screen.getByText('Safety')).toBeInTheDocument()
     })

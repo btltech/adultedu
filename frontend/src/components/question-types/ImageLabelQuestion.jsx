@@ -10,6 +10,7 @@ import {
 } from '@dnd-kit/core';
 import { useDraggable, useDroppable } from '@dnd-kit/core';
 import { CSS } from '@dnd-kit/utilities';
+import { CheckCircle2, XCircle } from 'lucide-react';
 
 // --- Draggable Label Component ---
 function DraggableLabel({ id, content, isDropped }) {
@@ -38,7 +39,7 @@ function DraggableLabel({ id, content, isDropped }) {
             {...listeners}
             {...attributes}
             className={`
-                px-4 py-2 bg-dark-800 border border-dark-600 rounded-full text-sm font-medium text-dark-200 cursor-grab active:cursor-grabbing shadow-sm hover:border-primary-500 hover:text-primary-400 transition-colors
+                px-4 py-2 bg-dark-900 border border-dark-600 rounded-full text-sm font-medium text-dark-200 cursor-grab active:cursor-grabbing shadow-sm hover:border-primary-500 hover:text-primary-300 transition-colors
                 ${isDragging ? 'opacity-0' : 'opacity-100'} 
             `}
         >
@@ -183,7 +184,7 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
     // If showResult is true, we check local state against config.answer if available, or parsed result.
 
     return (
-        <div className="glass-card p-6 select-none touch-none"> {/* touch-none prevents scrolling while dragging on mobile */}
+        <div className="progress-panel p-6 select-none touch-none"> {/* touch-none prevents scrolling while dragging on mobile */}
             <div className="mb-6">
                 <span className="badge badge-accent mb-3">
                     Drag & Drop Labeling • Level {question.ukLevel}
@@ -197,7 +198,7 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
                 onDragEnd={handleDragEnd}
             >
                 {/* Image Container with Drop Zones */}
-                <div className="relative mb-8 rounded-xl overflow-hidden bg-dark-900 border border-dark-700 shadow-2xl">
+                <div className="relative mb-8 rounded-2xl overflow-hidden bg-dark-900 border border-dark-700 shadow-2xl">
                     <img
                         src={config.imageUrl || question.imageUrl}
                         alt="Diagram to label"
@@ -227,7 +228,7 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
 
                 {/* Source Label Bank */}
                 {!showResult && (
-                    <div className="flex flex-wrap gap-3 justify-center p-4 bg-dark-800/50 rounded-xl border border-dashed border-dark-700 min-h-[80px]">
+                    <div className="flex flex-wrap gap-3 justify-center p-4 bg-dark-900/60 rounded-2xl border border-dashed border-dark-700 min-h-[80px]">
                         {config.options && config.options.map((label) => (
                             <DraggableLabel
                                 key={label}
@@ -251,15 +252,15 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
 
             {/* Answer Checking / Result Display */}
             {showResult ? (
-                <div className={`mt-6 p-4 rounded-xl ${result?.isCorrect
+                <div className={`mt-6 p-4 rounded-2xl ${result?.isCorrect
                     ? 'bg-accent-500/10 border border-accent-500/30'
                     : 'bg-amber-500/10 border border-amber-500/30'
                     }`}>
                     <div className="flex items-center gap-2 mb-2">
                         {result?.isCorrect ? (
-                            <span className="text-accent-400 font-medium">✓ Correct Labels!</span>
+                            <span className="flex items-center gap-2 text-accent-400 font-medium"><CheckCircle2 className="h-4 w-4" /> Correct labels</span>
                         ) : (
-                            <span className="text-amber-400 font-medium">✗ Some labels are incorrect</span>
+                            <span className="flex items-center gap-2 text-amber-400 font-medium"><XCircle className="h-4 w-4" /> Some labels need another look</span>
                         )}
                     </div>
                     <p className="text-dark-300 text-sm opacity-90">{result?.explanation}</p>

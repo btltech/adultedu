@@ -1,6 +1,6 @@
 # Wrangler config template for Cloudflare Pages + Functions
 
-name = "adultedu-pages"
+name = "adultedu"
 compatibility_date = "2025-12-19"
 
 # Pages configuration

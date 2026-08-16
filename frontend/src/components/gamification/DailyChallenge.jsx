@@ -1,18 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
+import { Award, CalendarClock, CheckCircle2, Flame, Lightbulb, Target, XCircle } from 'lucide-react'
 import { api } from '../../lib/api'
-
-const ClockIcon = () => (
-    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-)
-
-const CheckIcon = () => (
-    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-    </svg>
-)
 
 function formatTimeRemaining(ms) {
     const hours = Math.floor(ms / (1000 * 60 * 60))
@@ -78,7 +67,7 @@ export default function DailyChallenge({ compact = false }) {
 
     if (loading) {
         return (
-            <div className={`glass-card ${compact ? 'p-4' : 'p-6'}`}>
+            <div className={`progress-panel ${compact ? 'p-4' : 'p-6'}`}>
                 <div className="skeleton h-6 w-32 mb-3" />
                 <div className="skeleton h-4 w-full mb-2" />
                 <div className="skeleton h-10 w-full" />
@@ -95,21 +84,21 @@ export default function DailyChallenge({ compact = false }) {
         return (
             <Link
                 to="/daily"
-                className={`glass-card p-4 block transition-all hover:scale-[1.02] ${isCompleted ? 'opacity-75' : 'ring-2 ring-amber-500/30'
+                className={`feature-panel block ${isCompleted ? 'opacity-80' : 'ring-2 ring-amber-500/20'}
                     }`}
             >
                 <div className="flex items-center justify-between mb-2">
-                    <span className="text-amber-400 font-semibold text-sm">⚡ Daily Challenge</span>
-                    <span className="badge badge-accent">{challenge.xpMultiplier}x XP</span>
+                    <span className="flex items-center gap-2 text-sm font-semibold text-amber-400"><Target className="h-4 w-4" /> Daily Check-In</span>
+                    <span className="badge badge-accent">Today</span>
                 </div>
                 {isCompleted ? (
                     <div className="flex items-center gap-2 text-accent-400">
-                        <CheckIcon />
-                        <span className="text-sm">Completed! +{result?.xpEarned || challenge.xpEarned} XP</span>
+                        <CheckCircle2 className="h-5 w-5" />
+                        <span className="text-sm">Completed today</span>
                     </div>
                 ) : (
                     <div className="flex items-center gap-2 text-dark-400 text-xs">
-                        <ClockIcon />
+                        <CalendarClock className="h-4 w-4" />
                         <span>Resets in {formatTimeRemaining(timeRemaining)}</span>
                     </div>
                 )}
@@ -119,39 +108,37 @@ export default function DailyChallenge({ compact = false }) {
 
     // Full challenge view
     return (
-        <div className="glass-card p-6 relative overflow-hidden">
-            {/* Glow effect */}
+        <div className="progress-panel relative overflow-hidden">
             <div className="absolute -top-10 -right-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Header */}
             <div className="flex items-center justify-between mb-6">
                 <div>
-                    <h2 className="text-xl font-bold text-dark-50 flex items-center gap-2">
-                        ⚡ Daily Challenge
-                    </h2>
+                    <span className="section-eyebrow">
+                        <Target className="h-3.5 w-3.5" />
+                        Daily check-in
+                    </span>
+                    <h2 className="mt-3 text-2xl font-bold text-dark-50">One short question to keep the routine going.</h2>
                     <p className="text-dark-400 text-sm mt-1">
                         {challenge.question.track} • {challenge.question.topic}
                     </p>
                 </div>
                 <div className="flex items-center gap-3">
                     <span className="badge badge-accent text-sm px-3 py-1">
-                        {challenge.xpMultiplier}x XP Bonus
+                        Short session
                     </span>
                     {!isCompleted && (
                         <div className="flex items-center gap-1.5 text-dark-400 text-sm">
-                            <ClockIcon />
+                            <CalendarClock className="h-4 w-4" />
                             <span>{formatTimeRemaining(timeRemaining)}</span>
                         </div>
                     )}
                 </div>
             </div>
 
-            {/* Question */}
             <div className="mb-6">
                 <p className="text-lg text-dark-100 leading-relaxed">{challenge.question.prompt}</p>
             </div>
 
-            {/* Image if available */}
             {challenge.question.imageUrl && (
                 <div className="mb-6 rounded-xl overflow-hidden bg-dark-900/50 border border-dark-700 flex justify-center p-4">
                     <img
@@ -162,7 +149,6 @@ export default function DailyChallenge({ compact = false }) {
                 </div>
             )}
 
-            {/* Answer options */}
             {!isCompleted ? (
                 <>
                     <div className="space-y-3 mb-6">
@@ -191,11 +177,10 @@ export default function DailyChallenge({ compact = false }) {
                         disabled={selectedAnswer === null || submitting}
                         className="btn-primary w-full justify-center py-3 disabled:opacity-50"
                     >
-                        {submitting ? 'Checking...' : 'Submit Answer'}
+                        {submitting ? 'Checking...' : 'Check Answer'}
                     </button>
                 </>
             ) : (
-                /* Result display */
                 <div className={`p-5 rounded-xl ${result?.isCorrect
                         ? 'bg-accent-500/10 border border-accent-500/30'
                         : 'bg-amber-500/10 border border-amber-500/30'
@@ -203,14 +188,14 @@ export default function DailyChallenge({ compact = false }) {
                     <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                             {result?.isCorrect ? (
-                                <span className="text-accent-400 font-bold text-lg">🎉 Correct!</span>
+                                <><CheckCircle2 className="h-5 w-5 text-accent-400" /><span className="text-accent-400 font-bold text-lg">Correct</span></>
                             ) : (
-                                <span className="text-amber-400 font-bold text-lg">Not quite</span>
+                                <><XCircle className="h-5 w-5 text-amber-400" /><span className="text-amber-400 font-bold text-lg">Needs another look</span></>
                             )}
                         </div>
                         {result?.xpEarned > 0 && (
                             <span className="text-primary-400 font-bold">
-                                +{result.xpEarned} XP
+                                +{result.xpEarned} points
                             </span>
                         )}
                     </div>
@@ -218,13 +203,14 @@ export default function DailyChallenge({ compact = false }) {
                         <p className="text-dark-300 text-sm">{result.explanation}</p>
                     )}
                     {result?.dailyStreak > 1 && (
-                        <div className="mt-3 text-amber-400 font-medium text-sm">
-                            🔥 {result.dailyStreak} day challenge streak!
+                        <div className="mt-3 flex items-center gap-2 text-sm font-medium text-amber-400">
+                            <Flame className="h-4 w-4" />
+                            {result.dailyStreak} day routine
                         </div>
                     )}
                     {result?.newAchievements?.length > 0 && (
                         <div className="mt-4 p-3 bg-primary-500/10 rounded-lg">
-                            <p className="text-primary-300 font-medium text-sm mb-2">🏆 New Achievement!</p>
+                            <p className="mb-2 flex items-center gap-2 text-sm font-medium text-primary-300"><Award className="h-4 w-4" /> New milestone</p>
                             {result.newAchievements.map((a, i) => (
                                 <div key={i} className="flex items-center gap-2 text-dark-200">
                                     <span>{a.icon}</span>
@@ -233,6 +219,15 @@ export default function DailyChallenge({ compact = false }) {
                             ))}
                         </div>
                     )}
+                </div>
+            )}
+
+            {!isCompleted && (
+                <div className="mt-6 rounded-2xl border border-dark-800/80 bg-dark-900/60 p-4 text-sm text-dark-300">
+                    <div className="flex items-start gap-3">
+                        <Lightbulb className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-300" />
+                        <p>If you miss a day, just return tomorrow. The point is routine, not perfection. Finish the check-in, then move back into your main pathway.</p>
+                    </div>
                 </div>
             )}
         </div>

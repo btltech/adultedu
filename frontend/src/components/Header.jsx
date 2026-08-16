@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { SlidersHorizontal } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import StreakCounter from './gamification/StreakCounter'
+import DisplayPreferences from './DisplayPreferences'
 
 const MenuIcon = () => (
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -19,22 +21,24 @@ export default function Header() {
     const { user, isAuthenticated, logout } = useAuth()
     const location = useLocation()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+    const [displayOpen, setDisplayOpen] = useState(false)
 
     // Better active state detection for nested routes
     const isActive = (path) => {
         if (path === '/') return location.pathname === '/'
         if (path === '/tracks') return location.pathname === '/tracks' || location.pathname.startsWith('/track/')
         if (path === '/progress') return location.pathname === '/progress'
+        if (path === '/start') return location.pathname === '/start'
         if (path === '/admin') return location.pathname.startsWith('/admin')
         return location.pathname === path
     }
 
     const navLinks = [
-        { to: '/', label: 'Home' },
-        { to: '/tracks', label: 'Courses' },
+        { to: '/tracks', label: 'Pathways' },
     ]
 
     const authNavLinks = isAuthenticated ? [
+        ...(user?.needsOnboarding ? [{ to: '/start', label: 'Start Here' }] : []),
         { to: '/dashboard', label: 'Dashboard' },
         { to: '/progress', label: 'My Progress' },
         { to: '/review', label: 'Review' },
@@ -46,18 +50,20 @@ export default function Header() {
     return (
         <header className="sticky top-0 z-40 backdrop-blur-md bg-dark-950/90 border-b border-dark-800/50">
             <div className="container-app">
-                <div className="flex items-center justify-between h-12">
-                    {/* Logo */}
-                    <Link to="/" className="flex items-center gap-2 group">
+                <div className="flex items-center justify-between h-16">
+                    {/* Brand */}
+                    {/* logo.svg is a full lockup (mark + "AdultEdu" wordmark), so no
+                        adjacent text label — it would render the name twice. */}
+                    <Link to="/" className="flex items-center shrink-0 opacity-90 hover:opacity-100 transition-opacity">
                         <img
-                            src="/logo.png"
+                            src="/logo.svg"
                             alt="AdultEdu"
                             className="h-8 w-auto"
                         />
                     </Link>
 
-                    {/* Desktop Navigation */}
-                    <nav className="hidden md:flex items-center gap-6">
+                    {/* Nav — desktop */}
+                    <nav className="hidden md:flex items-center gap-7 ml-10">
                         {navLinks.map(link => (
                             <Link
                                 key={link.to}
@@ -89,11 +95,10 @@ export default function Header() {
                         )}
                     </nav>
 
-                    {/* Auth buttons + Mobile menu toggle */}
-                    <div className="flex items-center gap-2">
+                    {/* Utilities — right side */}
+                    <div className="flex items-center gap-2 ml-auto">
                         {isAuthenticated ? (
                             <>
-                                {/* Gamification Stats */}
                                 <div className="hidden md:block">
                                     <StreakCounter />
                                 </div>
@@ -103,7 +108,7 @@ export default function Header() {
                                 </div>
                                 <button
                                     onClick={logout}
-                                    className="hidden md:block text-sm font-medium text-dark-300 hover:text-dark-100 transition-colors"
+                                    className="hidden md:block text-sm font-medium text-dark-300 hover:text-dark-100 transition-colors px-2"
                                 >
                                     Log out
                                 </button>
@@ -112,7 +117,7 @@ export default function Header() {
                             <>
                                 <Link
                                     to="/login"
-                                    className="hidden md:block text-sm font-medium text-dark-300 hover:text-dark-100 transition-colors"
+                                    className="hidden md:block text-sm font-medium text-dark-300 hover:text-dark-100 transition-colors px-2"
                                 >
                                     Log in
                                 </Link>
@@ -120,12 +125,29 @@ export default function Header() {
                                     to="/signup"
                                     className="hidden md:block btn-primary text-sm px-4 py-1.5"
                                 >
-                                    Start free
+                                    Start here
                                 </Link>
                             </>
                         )}
 
-                        {/* Mobile menu button */}
+                        {/* Accessibility / Display settings */}
+                        <div className="relative hidden md:block">
+                            <button
+                                type="button"
+                                onClick={() => setDisplayOpen(prev => !prev)}
+                                aria-expanded={displayOpen}
+                                aria-controls="display-preferences-panel"
+                                aria-label="Display settings"
+                                className="p-2 text-dark-500 hover:text-dark-200 transition-colors rounded-lg hover:bg-dark-800/50"
+                            >
+                                <SlidersHorizontal className="h-4 w-4" />
+                            </button>
+                            <DisplayPreferences
+                                isOpen={displayOpen}
+                                onClose={() => setDisplayOpen(false)}
+                            />
+                        </div>
+
                         <button
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             className="md:hidden p-2 text-dark-300 hover:text-dark-100 transition-colors"
@@ -136,7 +158,6 @@ export default function Header() {
                     </div>
                 </div>
 
-                {/* Mobile Navigation */}
                 {mobileMenuOpen && (
                     <div className="md:hidden border-t border-dark-800 py-4 space-y-2">
                         {navLinks.map(link => (
