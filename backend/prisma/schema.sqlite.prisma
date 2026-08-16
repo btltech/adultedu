@@ -25,6 +25,18 @@ model User {
   createdAt      DateTime @default(now()) @map("created_at")
   updatedAt      DateTime @updatedAt @map("updated_at")
 
+  // Email Verification
+  emailVerifiedAt         DateTime? @map("email_verified_at")
+  emailVerificationToken  String?   @unique @map("email_verification_token")
+  emailVerificationExpiry DateTime? @map("email_verification_expiry")
+  verificationEmailSentAt DateTime? @map("verification_email_sent_at")
+  welcomeEmailSentAt      DateTime? @map("welcome_email_sent_at")
+  returnReminderSentAt    DateTime? @map("return_reminder_sent_at")
+
+  // Password Reset
+  passwordResetToken  String?   @unique @map("password_reset_token")
+  passwordResetExpiry DateTime? @map("password_reset_expiry")
+
   // Gamification
   xpTotal              Int       @default(0) @map("xp_total")
   currentStreak        Int       @default(0) @map("current_streak")

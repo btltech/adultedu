@@ -1,6 +1,16 @@
 import dotenv from 'dotenv'
 dotenv.config()
 
+function parseBooleanEnv(value, defaultValue) {
+    if (value === undefined) return defaultValue
+    return value === 'true'
+}
+
+function parseIntegerEnv(value, defaultValue) {
+    const parsed = Number.parseInt(value || '', 10)
+    return Number.isNaN(parsed) ? defaultValue : parsed
+}
+
 export const config = {
     // Environment
     nodeEnv: process.env.NODE_ENV || 'development',
@@ -47,6 +57,18 @@ export const config = {
         // e.g., '.adultedu.com' to share cookies across subdomains
         domain: process.env.COOKIE_DOMAIN || undefined,
         maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
+    },
+
+    // Email (Resend)
+    resend: {
+        apiKey: process.env.RESEND_API_KEY || '',
+        from: process.env.EMAIL_FROM || 'AdultEdu <noreply@adult-edu.org>',
+    },
+
+    returnReminders: {
+        enabled: parseBooleanEnv(process.env.RETURN_REMINDER_CRON_ENABLED, process.env.NODE_ENV === 'production'),
+        hourUtc: Math.min(Math.max(parseIntegerEnv(process.env.RETURN_REMINDER_CRON_UTC_HOUR, 9), 0), 23),
+        minuteUtc: Math.min(Math.max(parseIntegerEnv(process.env.RETURN_REMINDER_CRON_UTC_MINUTE, 0), 0), 59),
     },
 }
 

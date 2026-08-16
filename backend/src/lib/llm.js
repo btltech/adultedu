@@ -3,6 +3,8 @@
  * Connects to local LM Studio instance
  */
 
+import logger from './logger.js';
+
 const LM_STUDIO_URL = process.env.LLM_API_URL || 'http://127.0.0.1:1234/v1';
 const MODEL_NAME = process.env.LLM_MODEL || 'openai/gpt-oss-20b:2';
 
@@ -31,7 +33,12 @@ export async function generateCompletion(prompt, systemPrompt = 'You are a helpf
         const data = await response.json();
         return data.choices[0].message.content;
     } catch (error) {
-        console.error('LLM Generation Failed:', error);
+        logger.error('LLM generation failed', {
+            model: MODEL_NAME,
+            endpoint: LM_STUDIO_URL,
+            error: error.message,
+            stack: error.stack,
+        });
         throw error;
     }
 }
@@ -59,7 +66,11 @@ export async function generateJSON(prompt, systemPrompt) {
 
         return JSON.parse(clean);
     } catch (e) {
-        console.error('Failed to parse JSON response. Content chunk:', content.substring(0, 100) + '...');
+        logger.error('Failed to parse JSON response from LLM', {
+            model: MODEL_NAME,
+            preview: content.substring(0, 100) + '...',
+            error: e.message,
+        });
         const error = new Error('Invalid JSON response from LLM');
         error.content = content;
         throw error;

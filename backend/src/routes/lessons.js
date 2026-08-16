@@ -3,6 +3,10 @@ import prisma from '../lib/db.js'
 import { optionalAuth, requireAuth } from '../middleware/auth.js'
 import { awardXP, XP_CORRECT_ANSWER } from './gamification.js'
 import { parseSourceMeta, scoreQuestionAnswer } from '../lib/scoring.js'
+import {
+    attachPublishedQuestionCounts,
+    getPublishedQuestionCountMap,
+} from '../lib/publishedQuestionCounts.js'
 
 const router = Router()
 
@@ -10,6 +14,90 @@ function clampInt(value, min, max, fallback) {
     const n = Number.parseInt(String(value), 10)
     if (!Number.isFinite(n)) return fallback
     return Math.min(max, Math.max(min, n))
+}
+
+function shuffleArray(items) {
+    const copy = Array.isArray(items) ? [...items] : []
+    for (let index = copy.length - 1; index > 0; index -= 1) {
+        const swapIndex = Math.floor(Math.random() * (index + 1))
+        ;[copy[index], copy[swapIndex]] = [copy[swapIndex], copy[index]]
+    }
+    return copy
+}
+
+function formatPracticeQuestion(question, fallbackUkLevel = null) {
+    let options = null
+    let meta = {}
+
+    try {
+        options = question.options ? JSON.parse(question.options) : null
+    } catch {
+        options = null
+    }
+
+    try {
+        meta = question.sourceMeta ? JSON.parse(question.sourceMeta) : {}
+    } catch {
+        meta = {}
+    }
+
+    const levelCode = question.ukLevel?.code || fallbackUkLevel || 'L1'
+
+    return {
+        id: question.id,
+        type: question.type,
+        prompt: question.prompt,
+        difficulty: question.difficulty,
+        tags: question.tags,
+        imageUrl: question.imageUrl,
+        assets: question.assets,
+        options,
+        ukLevel: levelCode,
+        hints: meta.hints || [],
+        solutionSteps: meta.solutionSteps || [],
+        topic: question.topic
+            ? {
+                id: question.topic.id,
+                title: question.topic.title,
+            }
+            : null,
+    }
+}
+
+function selectBalancedTrackQuestions({ questions, orderedTopicIds, limit }) {
+    const questionPoolByTopicId = new Map(orderedTopicIds.map((topicId) => [topicId, []]))
+
+    for (const question of questions) {
+        if (!questionPoolByTopicId.has(question.topicId)) {
+            questionPoolByTopicId.set(question.topicId, [])
+        }
+        questionPoolByTopicId.get(question.topicId).push(question)
+    }
+
+    const activeTopicIds = orderedTopicIds.filter((topicId) => (questionPoolByTopicId.get(topicId) || []).length > 0)
+    if (activeTopicIds.length === 0) return []
+
+    const selected = []
+    const basePerTopic = Math.floor(limit / activeTopicIds.length)
+    let remainder = limit % activeTopicIds.length
+
+    for (const topicId of activeTopicIds) {
+        const shuffledPool = shuffleArray(questionPoolByTopicId.get(topicId) || [])
+        const takeCount = Math.min(shuffledPool.length, basePerTopic + (remainder > 0 ? 1 : 0))
+        if (remainder > 0) remainder -= 1
+
+        selected.push(...shuffledPool.slice(0, takeCount))
+        questionPoolByTopicId.set(topicId, shuffledPool.slice(takeCount))
+    }
+
+    if (selected.length < limit) {
+        const leftovers = shuffleArray(
+            activeTopicIds.flatMap((topicId) => questionPoolByTopicId.get(topicId) || [])
+        )
+        selected.push(...leftovers.slice(0, limit - selected.length))
+    }
+
+    return shuffleArray(selected).slice(0, limit)
 }
 
 function computeTargetDifficulty(recentAttempts) {
@@ -197,42 +285,9 @@ router.get('/practice/:topicId', requireAuth, async (req, res, next) => {
             }
         }
 
-        const formattedQuestions = selection.questions.map(q => {
-            let options = null
-            let meta = {}
-            try {
-                options = q.options ? JSON.parse(q.options) : null
-            } catch (e) {
-                options = null
-            }
-            try {
-                meta = q.sourceMeta ? JSON.parse(q.sourceMeta) : {}
-            } catch (e) {
-                meta = {}
-            }
-
-            // Safe access for ukLevel
-            let levelCode = 'L1';
-            if (q.ukLevel && q.ukLevel.code) {
-                levelCode = q.ukLevel.code;
-            } else if (topic.ukLevel && topic.ukLevel.code) {
-                levelCode = topic.ukLevel.code;
-            }
-
-            return {
-                id: q.id,
-                type: q.type,
-                prompt: q.prompt,
-                difficulty: q.difficulty,
-                tags: q.tags,
-                imageUrl: q.imageUrl,
-                assets: q.assets,
-                options,
-                ukLevel: levelCode,
-                hints: meta.hints || [],
-                solutionSteps: meta.solutionSteps || []
-            }
-        })
+        const formattedQuestions = selection.questions.map((questionRow) =>
+            formatPracticeQuestion(questionRow, topic.ukLevel?.code)
+        )
 
         res.json({
             topic: {
@@ -262,6 +317,113 @@ router.get('/practice/:topicId', requireAuth, async (req, res, next) => {
     }
 })
 
+// GET public mock-test questions for a track
+router.get('/public/practice/tracks/:trackSlug', async (req, res, next) => {
+    try {
+        const { trackSlug } = req.params
+        const limit = clampInt(req.query.limit ?? 24, 5, 100, 24)
+
+        const track = await prisma.track.findUnique({
+            where: { slug: trackSlug },
+            include: {
+                topics: {
+                    include: {
+                        ukLevel: {
+                            select: { code: true },
+                        },
+                    },
+                    orderBy: { sortOrder: 'asc' },
+                },
+            },
+        })
+
+        if (!track || !track.isLive) {
+            return res.status(404).json({ error: 'Track not found' })
+        }
+
+        const questionCountMap = await getPublishedQuestionCountMap(track.topics.map((topic) => topic.id))
+        const topicsWithCounts = attachPublishedQuestionCounts(track.topics, questionCountMap)
+
+        const liveTopics = topicsWithCounts.filter((topic) => topic.publishedQuestionCount > 0)
+        if (liveTopics.length === 0) {
+            return res.json({
+                track: {
+                    slug: track.slug,
+                    title: track.title,
+                    description: track.description,
+                },
+                questions: [],
+                total: 0,
+                passMark: Math.ceil(limit * 0.75),
+                topics: topicsWithCounts.map((topic) => ({
+                    id: topic.id,
+                    title: topic.title,
+                    ukLevel: topic.ukLevel?.code || null,
+                    questionCount: topic.publishedQuestionCount,
+                })),
+            })
+        }
+
+        const orderedTopicIds = liveTopics.map((topic) => topic.id)
+        const fallbackLevelByTopicId = new Map(liveTopics.map((topic) => [topic.id, topic.ukLevel?.code || null]))
+
+        const publishedQuestions = await prisma.question.findMany({
+            where: {
+                topicId: { in: orderedTopicIds },
+                isPublished: true,
+            },
+            select: {
+                id: true,
+                topicId: true,
+                type: true,
+                prompt: true,
+                options: true,
+                difficulty: true,
+                tags: true,
+                imageUrl: true,
+                assets: true,
+                sourceMeta: true,
+                createdAt: true,
+                ukLevel: { select: { code: true } },
+                topic: {
+                    select: {
+                        id: true,
+                        title: true,
+                    },
+                },
+            },
+            orderBy: { createdAt: 'desc' },
+        })
+
+        const selectedQuestions = selectBalancedTrackQuestions({
+            questions: publishedQuestions,
+            orderedTopicIds,
+            limit,
+        })
+
+        res.json({
+            track: {
+                slug: track.slug,
+                title: track.title,
+                description: track.description,
+            },
+            topics: topicsWithCounts.map((topic) => ({
+                id: topic.id,
+                title: topic.title,
+                ukLevel: topic.ukLevel?.code || null,
+                questionCount: topic.publishedQuestionCount,
+            })),
+            questions: selectedQuestions.map((questionRow) =>
+                formatPracticeQuestion(questionRow, fallbackLevelByTopicId.get(questionRow.topicId))
+            ),
+            total: selectedQuestions.length,
+            passMark: Math.ceil(limit * 0.75),
+        })
+    } catch (error) {
+        next(error)
+    }
+})
+
 
 /**
  * GET /api/lessons/:id
@@ -278,6 +440,15 @@ router.get('/lessons/:id', optionalAuth, async (req, res, next) => {
                             select: { id: true, slug: true, title: true },
                         },
                         ukLevel: true,
+                        lessons: {
+                            where: { isPublished: true },
+                            orderBy: { sortOrder: 'asc' },
+                            select: {
+                                id: true,
+                                title: true,
+                                estMinutes: true,
+                            },
+                        },
                     },
                 },
             },
@@ -299,6 +470,12 @@ router.get('/lessons/:id', optionalAuth, async (req, res, next) => {
             contentBlocks = []
         }
 
+        const currentLessonIndex = lesson.topic.lessons.findIndex((entry) => entry.id === lesson.id)
+        const previousLesson = currentLessonIndex > 0 ? lesson.topic.lessons[currentLessonIndex - 1] : null
+        const nextLesson = currentLessonIndex >= 0 && currentLessonIndex < lesson.topic.lessons.length - 1
+            ? lesson.topic.lessons[currentLessonIndex + 1]
+            : null
+
         res.json({
             id: lesson.id,
             title: lesson.title,
@@ -309,6 +486,11 @@ router.get('/lessons/:id', optionalAuth, async (req, res, next) => {
                 id: lesson.topic.id,
                 title: lesson.topic.title,
                 ukLevel: lesson.topic.ukLevel.code,
+                lessons: lesson.topic.lessons,
+                lessonPosition: currentLessonIndex >= 0 ? currentLessonIndex + 1 : null,
+                lessonCount: lesson.topic.lessons.length,
+                previousLesson,
+                nextLesson,
             },
             track: {
                 id: lesson.topic.track.id,
@@ -456,6 +638,51 @@ router.post('/practice/submit', requireAuth, async (req, res, next) => {
             explanation: question.explanation,
             solutionSteps: meta.solutionSteps || [],
             xp: xpResult, // Include XP info if awarded
+        })
+    } catch (error) {
+        next(error)
+    }
+})
+
+// POST public mock-test answer and feedback
+router.post('/public/practice/tracks/:trackSlug/submit', async (req, res, next) => {
+    try {
+        const { trackSlug } = req.params
+        const { questionId, answer } = req.body
+
+        if (!questionId || answer === undefined) {
+            return res.status(400).json({ error: 'questionId and answer are required' })
+        }
+
+        const question = await prisma.question.findUnique({
+            where: { id: questionId },
+            include: {
+                topic: {
+                    include: {
+                        track: {
+                            select: { slug: true },
+                        },
+                    },
+                },
+            },
+        })
+
+        if (!question || question.topic?.track?.slug !== trackSlug || !question.isPublished) {
+            return res.status(404).json({ error: 'Question not found' })
+        }
+
+        const scored = scoreQuestionAnswer({ question, userAnswer: answer })
+        if (!scored.ok) {
+            return res.status(500).json({ error: 'Question scoring failed', reason: scored.reason || 'unknown' })
+        }
+
+        const meta = parseSourceMeta(question.sourceMeta)
+
+        res.json({
+            isCorrect: !!scored.isCorrect,
+            correctAnswer: scored.correctAnswer,
+            explanation: question.explanation,
+            solutionSteps: meta.solutionSteps || [],
         })
     } catch (error) {
         next(error)

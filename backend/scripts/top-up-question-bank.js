@@ -28,6 +28,7 @@ import path from 'path'
 import { fileURLToPath } from 'url'
 import { PrismaClient as PostgresClient } from '@prisma/client'
 import { PrismaClient as SqliteClient } from '../generated/sqlite-client/index.js'
+import { QUESTION_TARGET_PROFILE_NAME, resolveQuestionTarget } from './question-target-profile.js'
 
 function parseArgs(argv) {
     const args = new Map()
@@ -99,6 +100,99 @@ function computeTypePlanForMode(total, mode) {
     const trueFalse = Math.max(0, Math.round(total * 0.1))
     const mcq = Math.max(0, total - scenario - trueFalse)
     return { mcq, scenario, true_false: trueFalse }
+}
+
+function buildUserPrompt({ batch, trackTitle, topicTitle, levelCode, frameworkHint, plan, mode, existingSnippets, compact }) {
+    if (compact) {
+        return [
+            `Create exactly ${batch} NEW questions.`,
+            `Track: ${trackTitle}`,
+            `Topic: ${topicTitle}`,
+            `UK level: ${levelCode}`,
+            `Hint: ${frameworkHint}`,
+            '',
+            `Counts: mcq=${plan.mcq}, scenario=${plan.scenario}, true_false=${plan.true_false}${mode === 'diverse' ? `, short_answer=${plan.short_answer}, multi_step=${plan.multi_step}` : ''}`,
+            '',
+            'Rules:',
+            '- Return JSON array only.',
+            '- No repeated ideas or wording.',
+            '- mcq/scenario: exactly 4 options and integer answerIndex.',
+            '- true_false: options must be ["True","False"] with answerIndex 0 or 1.',
+            ...(mode === 'diverse'
+                ? [
+                    '- short_answer: use answer as a short string and no options.',
+                    '- multi_step: provide 2-5 steps with prompt, 4 options, answer string, explanation.',
+                ]
+                : []),
+            '- Include explanation, difficulty 1-5, 2 hints, and 2-4 solutionSteps.',
+            existingSnippets.length ? `Avoid these prompts: ${existingSnippets.join(' | ')}` : 'Avoid previously used prompts.',
+            '',
+            'Schema:',
+            '[{"type":"mcq|true_false|scenario' + (mode === 'diverse' ? '|short_answer|multi_step' : '') + '","prompt":"string","options":["..."],"answerIndex":0,"answer":"string(short_answer only)","steps":[{"prompt":"...","options":["...","...","...","..."],"answer":"option text","explanation":"..."}],"explanation":"string","difficulty":1,"hints":["a","b"],"solutionSteps":["a","b"]}]',
+        ].join('\n')
+    }
+
+    return [
+        `Create exactly ${batch} NEW questions for:`,
+        `Track: ${trackTitle}`,
+        `Topic: ${topicTitle}`,
+        `UK level: ${levelCode}`,
+        `Track slug hint: ${frameworkHint}`,
+        '',
+        `Mix these types (exact counts):`,
+        `- mcq: ${plan.mcq}`,
+        `- scenario: ${plan.scenario} (scenario-based MCQ with 4 options)`,
+        `- true_false: ${plan.true_false} (options must be ["True","False"])`,
+        ...(mode === 'diverse'
+            ? [
+                `- short_answer: ${plan.short_answer} (no options; answer is a short string)`,
+                `- multi_step: ${plan.multi_step} (scaffolded; include steps array; each step has 4 options and answer is the correct option string)`,
+            ]
+            : []),
+        '',
+        'Hard rules:',
+        '- Do NOT repeat any of the existing prompts/snippets.',
+        '- For mcq/scenario: options must be exactly 4 distinct strings, with one best answer.',
+        '- For true_false: options must be exactly ["True","False"].',
+        '- For mcq/scenario/true_false: provide answerIndex as an integer index into options.',
+        ...(mode === 'diverse'
+            ? [
+                '- For short_answer: do NOT include options; provide "answer" as a short string.',
+                '- For multi_step: provide "steps" as an array of 2-5 steps.',
+                '- For each multi_step step: include prompt, options (4), answer (string that matches one option), explanation.',
+                '- Do NOT use answerIndex inside steps.',
+            ]
+            : []),
+        '- Provide a short, helpful explanation.',
+        '- Provide difficulty as integer 1-5.',
+        '- Provide 2 hints and 2-4 solutionSteps for each question.',
+        '',
+        'Existing snippets (avoid these concepts/wording):',
+        existingSnippets.length ? existingSnippets.map((s) => `- ${s}`).join('\n') : '- (none)',
+        '',
+        'JSON format (return ONLY a JSON array):',
+        '[',
+        '  {',
+        `    "type": "mcq|true_false|scenario${mode === 'diverse' ? '|short_answer|multi_step' : ''}",`,
+        '    "prompt": "string",',
+        ...(mode === 'diverse'
+            ? [
+                '    "options": ["string", "..."] ,',
+                '    "answerIndex": 0,',
+                '    "answer": "string (short_answer only)",',
+                '    "steps": [ { "prompt":"...", "options":["...","...","...","..."], "answer":"<must match one option>", "explanation":"..." } ],',
+            ]
+            : [
+                '    "options": ["string", "..."],',
+                '    "answerIndex": 0,',
+            ]),
+        '    "explanation": "string",',
+        '    "difficulty": 1,',
+        '    "hints": ["string", "string"],',
+        '    "solutionSteps": ["string", "string"]',
+        '  }',
+        ']',
+    ].join('\n')
 }
 
 function validateGeneratedItem(item) {
@@ -281,7 +375,11 @@ async function main() {
     const db = String(args.get('--db') || 'postgres') // postgres | sqlite
     const category = String(args.get('--category') || 'all') // all | workplace | qual_prep | tech | he
     const trackSlug = args.get('--track-slug') ? String(args.get('--track-slug')) : null
+    const topicTitleContains = args.get('--topic-title-contains')
+        ? String(args.get('--topic-title-contains')).split(',').map((value) => value.trim()).filter(Boolean)
+        : []
     const target = clampInt(args.get('--target') ?? '50', 1, 500, 50)
+    const targetProfile = String(args.get('--target-profile') || QUESTION_TARGET_PROFILE_NAME)
     const batchSize = clampInt(args.get('--batch') ?? '10', 1, 25, 10)
     const mode = String(args.get('--mode') || 'option') // option | diverse
     const maxTopics = args.get('--max-topics') ? clampInt(args.get('--max-topics'), 1, 10_000, 1000) : null
@@ -292,9 +390,9 @@ async function main() {
     const similarity = clampFloat(args.get('--similarity') ?? '0.92', 0.5, 0.999, 0.92)
 
     const v1Url = normalizeV1Url(process.env.LLM_API_URL || 'http://127.0.0.1:1234/v1')
-    const model = process.env.LLM_MODEL || 'qwen3-coder-30b-a3b-instruct-mlx'
+    const model = process.env.LLM_MODEL || 'qwen3-coder-30b-a3b-instruct'
     const embedModel = process.env.EMBEDDINGS_MODEL || 'text-embedding-nomic-embed-text-v1.5'
-    const maxTokens = clampInt(process.env.LLM_MAX_TOKENS || '6000', 256, 16_000, 6000)
+    const maxTokens = clampInt(process.env.LLM_MAX_TOKENS || '2500', 256, 16_000, 2500)
 
     if (db === 'sqlite') {
         process.env.SQLITE_DATABASE_URL = process.env.SQLITE_DATABASE_URL || getDefaultSqliteUrl()
@@ -305,7 +403,10 @@ async function main() {
     console.log(`🔌 LLM_API_URL:     ${v1Url}`)
     console.log(`🧠 LLM_MODEL:       ${model}`)
     console.log(`🧬 EMBEDDINGS_MODEL:${embedModel}`)
-    console.log(`🎯 target=${target} batch=${batchSize} mode=${mode} category=${category}${trackSlug ? ` track=${trackSlug}` : ''}`)
+    console.log(`🎯 target=${target} profile=${targetProfile} batch=${batchSize} mode=${mode} category=${category}${trackSlug ? ` track=${trackSlug}` : ''}`)
+    if (topicTitleContains.length) {
+        console.log(`🧭 topic filter:    ${topicTitleContains.join(', ')}`)
+    }
     console.log(`🧹 dedupe=${dedupe}${dedupe.includes('embedding') ? ` similarity=${similarity}` : ''} apply=${apply}\n`)
 
     const prisma = db === 'sqlite' ? new SqliteClient() : new PostgresClient()
@@ -327,23 +428,40 @@ async function main() {
             orderBy: [{ track: { title: 'asc' } }, { sortOrder: 'asc' }],
         })
 
-        if (!topics.length) {
+        const selectedTopics = topicTitleContains.length
+            ? topics.filter((topic) =>
+                topicTitleContains.some((needle) => topic.title.toLowerCase().includes(needle.toLowerCase()))
+            )
+            : topics
+
+        if (!selectedTopics.length) {
             console.log('No topics found for the selected filters.')
             return
         }
 
-        const low = topics
-            .map((t) => ({
-                topic: t,
-                count: t._count.questions,
-                need: Math.max(0, target - t._count.questions),
-            }))
+        const low = selectedTopics
+            .map((t) => {
+                const effectiveTarget = targetProfile === 'flat'
+                    ? target
+                    : resolveQuestionTarget({
+                        trackSlug: t.track?.slug,
+                        category: t.track?.category,
+                        fallbackTarget: target,
+                    })
+
+                return {
+                    topic: t,
+                    count: t._count.questions,
+                    target: effectiveTarget,
+                    need: Math.max(0, effectiveTarget - t._count.questions),
+                }
+            })
             .filter((x) => x.need > 0)
 
         const limited = maxTopics ? low.slice(0, maxTopics) : low
 
         const totalNeed = limited.reduce((sum, x) => sum + x.need, 0)
-        console.log(`📚 Topics below target: ${limited.length}/${topics.length}`)
+    console.log(`📚 Topics below target: ${limited.length}/${selectedTopics.length}`)
         console.log(`➕ Total questions needed to reach target: ${totalNeed}`)
 
         if (!apply) {
@@ -371,16 +489,14 @@ async function main() {
             const frameworkHint = topic.track.slug
 
             let need = item.need
-            console.log(`\n[${i + 1}/${limited.length}] ${trackTitle} / ${topicTitle} (${levelCode}) has ${item.count}, need ${need}`)
+            console.log(`\n[${i + 1}/${limited.length}] ${trackTitle} / ${topicTitle} (${levelCode}) has ${item.count}, target ${item.target}, need ${need}`)
 
-            // Exact dedupe set per-topic.
             const existing = await prisma.question.findMany({
                 where: { topicId: topic.id },
                 select: { prompt: true },
             })
             const promptSet = new Set(existing.map((q) => normalizePrompt(q.prompt)))
 
-            // Optional semantic dedupe embeddings per-topic.
             const useEmbeddingDedupe = dedupe === 'embedding' || dedupe === 'both'
             let embedIndex = []
 
@@ -399,79 +515,47 @@ async function main() {
                 const plan = computeTypePlanForMode(batch, mode)
 
                 const existingSnippets = existing
-                    .slice(-12)
-                    .map((q) => String(q.prompt).replace(/\s+/g, ' ').trim().slice(0, 90))
+                    .slice(-4)
+                    .map((q) => String(q.prompt).replace(/\s+/g, ' ').trim().slice(0, 60))
                     .filter(Boolean)
 
-                const userPrompt = [
-                    `Create exactly ${batch} NEW questions for:`,
-                    `Track: ${trackTitle}`,
-                    `Topic: ${topicTitle}`,
-                    `UK level: ${levelCode}`,
-                    `Track slug hint: ${frameworkHint}`,
-                    '',
-                    `Mix these types (exact counts):`,
-                    `- mcq: ${plan.mcq}`,
-                    `- scenario: ${plan.scenario} (scenario-based MCQ with 4 options)`,
-                    `- true_false: ${plan.true_false} (options must be [\"True\",\"False\"])`,
-                    ...(mode === 'diverse'
-                        ? [
-                            `- short_answer: ${plan.short_answer} (no options; answer is a short string)`,
-                            `- multi_step: ${plan.multi_step} (scaffolded; include steps array; each step has 4 options and answer is the correct option string)`,
-                        ]
-                        : []),
-                    '',
-                    'Hard rules:',
-                    '- Do NOT repeat any of the existing prompts/snippets.',
-                    '- For mcq/scenario: options must be exactly 4 distinct strings, with one best answer.',
-                    '- For true_false: options must be exactly [\"True\",\"False\"].',
-                    '- For mcq/scenario/true_false: provide answerIndex as an integer index into options.',
-                    ...(mode === 'diverse'
-                        ? [
-                            '- For short_answer: do NOT include options; provide "answer" as a short string.',
-                            '- For multi_step: provide "steps" as an array of 2-5 steps.',
-                            '- For each multi_step step: include prompt, options (4), answer (string that matches one option), explanation.',
-                            '- Do NOT use answerIndex inside steps.',
-                        ]
-                        : []),
-                    '- Provide a short, helpful explanation.',
-                    '- Provide difficulty as integer 1-5.',
-                    '- Provide 2 hints and 2-4 solutionSteps for each question.',
-                    '',
-                    'Existing snippets (avoid these concepts/wording):',
-                    existingSnippets.length ? existingSnippets.map((s) => `- ${s}`).join('\n') : '- (none)',
-                    '',
-                    'JSON format (return ONLY a JSON array):',
-                    '[',
-                    '  {',
-                    `    "type": "mcq|true_false|scenario${mode === 'diverse' ? '|short_answer|multi_step' : ''}",`,
-                    '    "prompt": "string",',
-                    ...(mode === 'diverse'
-                        ? [
-                            '    "options": ["string", "..."] ,',
-                            '    "answerIndex": 0,',
-                            '    "answer": "string (short_answer only)",',
-                            '    "steps": [ { "prompt":"...", "options":["...","...","...","..."], "answer":"<must match one option>", "explanation":"..." } ],',
-                        ]
-                        : [
-                            '    "options": ["string", "..."],',
-                            '    "answerIndex": 0,',
-                        ]),
-                    '    "explanation": "string",',
-                    '    "difficulty": 1,',
-                    '    "hints": ["string", "string"],',
-                    '    "solutionSteps": ["string", "string"]',
-                    '  }',
-                    ']',
-                ].join('\n')
+                let compactPrompt = false
+                let currentMaxTokens = maxTokens
+                let userPrompt = buildUserPrompt({
+                    batch,
+                    trackTitle,
+                    topicTitle,
+                    levelCode,
+                    frameworkHint,
+                    plan,
+                    mode,
+                    existingSnippets,
+                    compact: compactPrompt,
+                })
 
                 let generated = null
                 for (let attempt = 0; attempt <= retries; attempt++) {
                     let content
                     try {
-                        content = await generateCompletion({ v1Url, model, prompt: userPrompt, systemPrompt, maxTokens })
+                        content = await generateCompletion({ v1Url, model, prompt: userPrompt, systemPrompt, maxTokens: currentMaxTokens })
                     } catch (e) {
                         console.error(`   ❌ LLM request failed (attempt ${attempt + 1}/${retries + 1}): ${e.message}`)
+                        if (String(e.message).toLowerCase().includes('context size has been exceeded')) {
+                            compactPrompt = true
+                            currentMaxTokens = Math.max(1200, Math.floor(currentMaxTokens * 0.7))
+                            userPrompt = buildUserPrompt({
+                                batch,
+                                trackTitle,
+                                topicTitle,
+                                levelCode,
+                                frameworkHint,
+                                plan,
+                                mode,
+                                existingSnippets,
+                                compact: compactPrompt,
+                            })
+                            console.error(`   ↪ Retrying with compact prompt and maxTokens=${currentMaxTokens}`)
+                        }
                         if (attempt === retries) break
                         continue
                     }

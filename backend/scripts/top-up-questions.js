@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 // Configuration
 const LLM_API_URL = process.env.LLM_API_URL || 'http://127.0.0.1:1234/v1';
-const MODEL_NAME = process.env.LLM_MODEL || 'openai/gpt-oss-20b:2';
+const MODEL_NAME = process.env.LLM_MODEL || 'qwen3-coder-30b-a3b-instruct';
 const TOPIC_ID = '7b6fbbfe-928e-47e8-974b-601987adc839';
 const COUNT_NEEDED = 10;
 

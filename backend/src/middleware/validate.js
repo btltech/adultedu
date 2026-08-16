@@ -35,6 +35,10 @@ export const signupSchema = z.object({
         .optional(),
 })
 
+export const verifyEmailSchema = z.object({
+    token: z.string().min(1, 'Verification token is required'),
+})
+
 const optionArraySchema = z.array(z.string().min(1)).min(2, 'Provide at least two options for MCQ')
 const trueFalseAnswerSchema = z.union([
     z.boolean(),
