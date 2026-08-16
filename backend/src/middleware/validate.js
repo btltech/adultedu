@@ -25,7 +25,18 @@ export const loginSchema = z.object({
 
 export const signupSchema = z.object({
     email: z.string().email('Invalid email address'),
-    password: z.string().min(8, 'Password must be at least 8 characters')
+    password: z.string().min(8, 'Password must be at least 8 characters'),
+    displayName: z
+        .preprocess((v) => {
+            if (typeof v !== 'string') return v
+            const trimmed = v.trim()
+            return trimmed.length ? trimmed : undefined
+        }, z.string().min(2, 'Name must be at least 2 characters').max(50, 'Name must be 50 characters or less'))
+        .optional(),
+})
+
+export const verifyEmailSchema = z.object({
+    token: z.string().min(1, 'Verification token is required'),
 })
 
 const optionArraySchema = z.array(z.string().min(1)).min(2, 'Provide at least two options for MCQ')

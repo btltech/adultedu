@@ -1,6 +1,7 @@
 
 import express from 'express'
 import prisma from '../lib/db.js'
+import logger from '../lib/logger.js'
 import { requireAuth, requireAdmin } from '../middleware/auth.js'
 import { validate, questionCreateSchema, questionUpdateSchema } from '../middleware/validate.js'
 
@@ -55,7 +56,7 @@ router.get('/users', async (req, res, next) => {
         const search = req.query.search || ''
 
         const where = search ? {
-            email: { contains: search }
+            email: { contains: search, mode: 'insensitive' }
         } : {}
 
         const [users, total] = await Promise.all([
@@ -106,7 +107,7 @@ router.get('/questions', async (req, res, next) => {
 
         const where = {
             AND: [
-                search ? { prompt: { contains: search } } : {},
+                search ? { prompt: { contains: search, mode: 'insensitive' } } : {},
                 type ? { type: type } : {},
                 status === 'published' ? { isPublished: true } :
                     status === 'draft' ? { isPublished: false } : {},
@@ -301,7 +302,11 @@ router.put('/questions/:id', validate(questionUpdateSchema), async (req, res, ne
 
         res.json(question)
     } catch (error) {
-        console.error(error)
+        logger.error('Admin question update failed', {
+            questionId: req.params.id,
+            error: error.message,
+            stack: error.stack,
+        })
         next(error)
     }
 })

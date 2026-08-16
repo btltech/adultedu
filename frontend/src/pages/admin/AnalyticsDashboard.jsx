@@ -50,13 +50,11 @@ export default function AnalyticsDashboard() {
     return (
         <div className="animate-fade-in space-y-6">
             {/* Header */}
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
-                    <h1 className="text-2xl font-bold text-white flex items-center gap-2">
-                        <BarChart2 className="text-primary-400" />
-                        Analytics Dashboard
-                    </h1>
-                    <p className="text-dark-400 mt-1">User behavior and learning insights</p>
+                    <span className="section-eyebrow"><BarChart2 className="h-3.5 w-3.5" /> Analytics</span>
+                    <h1 className="mt-3 text-3xl font-bold text-dark-50">Learning analytics</h1>
+                    <p className="mt-2 max-w-2xl text-sm leading-7 text-dark-400">Scan behavior, time-on-task, and learner funnel signals without leaving the admin workspace.</p>
                 </div>
                 <div className="flex items-center gap-2">
                     <Filter size={16} className="text-dark-400" />

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Award, Lock, Sparkles } from 'lucide-react'
 import { api } from '../../lib/api'
 
 /**
@@ -24,7 +25,7 @@ export default function AchievementBadges({ showAll = false }) {
 
     if (loading) {
         return (
-            <div className="glass-card p-6">
+            <div className="progress-panel">
                 <div className="skeleton h-6 w-32 mb-4" />
                 <div className="grid grid-cols-4 gap-3">
                     {[1, 2, 3, 4].map(i => (
@@ -42,10 +43,11 @@ export default function AchievementBadges({ showAll = false }) {
         : data.achievements.filter(a => a.earned).slice(0, 8)
 
     return (
-        <div className="glass-card p-6">
+        <div className="progress-panel">
             <div className="flex items-center justify-between mb-4">
-                <h3 className="text-lg font-semibold text-dark-50">
-                    🏆 Achievements
+                <h3 className="flex items-center gap-2 text-lg font-semibold text-dark-50">
+                    <Award className="h-5 w-5 text-primary-300" />
+                    Learning milestones
                 </h3>
                 <span className="text-dark-400 text-sm">
                     {data.earned} / {data.total}
@@ -53,9 +55,14 @@ export default function AchievementBadges({ showAll = false }) {
             </div>
 
             {achievements.length === 0 ? (
-                <p className="text-dark-400 text-center py-4">
-                    Complete challenges to earn your first achievement!
-                </p>
+                <div className="rounded-2xl border border-dark-800/80 bg-dark-900/60 p-6 text-center">
+                    <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-primary-500/12 text-primary-300">
+                        <Sparkles className="h-5 w-5" />
+                    </div>
+                    <p className="mt-4 text-dark-400">
+                        Milestones appear as you build a study routine and return to earlier material.
+                    </p>
+                </div>
             ) : (
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                     {achievements.map(achievement => (
@@ -68,9 +75,10 @@ export default function AchievementBadges({ showAll = false }) {
             )}
 
             {!showAll && data.earned < data.total && (
-                <button className="btn-secondary w-full mt-4 text-sm">
-                    View All Achievements
-                </button>
+                <div className="mt-4 flex items-start gap-3 rounded-2xl border border-dark-800/80 bg-dark-900/60 p-4 text-sm text-dark-300">
+                    <Lock className="mt-0.5 h-4 w-4 flex-shrink-0 text-dark-500" />
+                    <span>More milestones appear as you keep showing up, reviewing, and completing sessions.</span>
+                </div>
             )}
         </div>
     )
@@ -101,7 +109,7 @@ function AchievementBadge({ achievement }) {
             {/* Tooltip */}
             {showTooltip && (
                 <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 z-50 pointer-events-none">
-                    <div className="bg-dark-900 border border-dark-700 rounded-lg p-3 shadow-xl min-w-48">
+                    <div className="min-w-48 rounded-lg border border-dark-700 bg-dark-900 p-3 shadow-xl">
                         <p className="font-semibold text-dark-100 text-sm mb-1">
                             {achievement.icon} {achievement.name}
                         </p>
@@ -141,7 +149,7 @@ export function NewAchievementPopup({ achievement, onClose }) {
             <div className="animate-bounce-in bg-dark-800 border-2 border-primary-500 rounded-2xl p-8 shadow-2xl text-center max-w-sm pointer-events-auto">
                 <div className="text-6xl mb-4 animate-pulse">{achievement.icon}</div>
                 <h2 className="text-2xl font-bold text-dark-50 mb-2">
-                    Achievement Unlocked!
+                    Milestone reached
                 </h2>
                 <p className="text-xl text-primary-400 font-semibold mb-2">
                     {achievement.name}
@@ -153,7 +161,7 @@ export function NewAchievementPopup({ achievement, onClose }) {
                     onClick={onClose}
                     className="btn-primary mt-6"
                 >
-                    Awesome!
+                    Continue
                 </button>
             </div>
         </div>

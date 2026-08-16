@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import prisma from '../lib/db.js'
 import { requireAuth } from '../middleware/auth.js'
+import { getPublishedQuestionCountMap } from '../lib/publishedQuestionCounts.js'
 
 const router = Router()
 
@@ -19,7 +20,6 @@ router.get('/progress', requireAuth, async (req, res, next) => {
                         topics: {
                             select: {
                                 id: true,
-                                _count: { select: { questions: { where: { isPublished: true } } } }
                             },
                             orderBy: { sortOrder: 'asc' }
                         },
@@ -50,6 +50,10 @@ router.get('/progress', requireAuth, async (req, res, next) => {
             distinct: ['questionId'] // Only count each question once
         })
 
+        const questionCountMap = await getPublishedQuestionCountMap(
+            enrollments.flatMap((enrollment) => enrollment.track.topics.map((topic) => topic.id))
+        )
+
         // Map of trackId -> topicId -> correct question count
         const trackTopicCorrectMap = new Map()
         for (const attempt of correctAttempts) {
@@ -73,7 +77,7 @@ router.get('/progress', requireAuth, async (req, res, next) => {
             totalTopics: e.track.topics.length,
             completedTopics: e.track.topics.reduce((count, topic) => {
                 const correctCount = trackTopicCorrectMap.get(e.track.id)?.get(topic.id) || 0
-                const totalQuestions = topic._count.questions || 0
+                const totalQuestions = questionCountMap.get(topic.id) || 0
                 if (totalQuestions === 0) return count
 
                 const percentage = Math.round((correctCount / totalQuestions) * 100)
@@ -100,11 +104,6 @@ router.get('/progress/:slug', requireAuth, async (req, res, next) => {
             where: { slug },
             include: {
                 topics: {
-                    include: {
-                        _count: {
-                            select: { questions: { where: { isPublished: true } } }
-                        }
-                    },
                     orderBy: { sortOrder: 'asc' }
                 }
             }
@@ -139,6 +138,7 @@ router.get('/progress/:slug', requireAuth, async (req, res, next) => {
         // Better: Group by questionId where question is in the topics.
 
         const topicIds = track.topics.map(t => t.id)
+        const questionCountMap = await getPublishedQuestionCountMap(topicIds)
 
         const userCorrectAttempts = await prisma.attempt.findMany({
             where: {
@@ -159,7 +159,7 @@ router.get('/progress/:slug', requireAuth, async (req, res, next) => {
 
         // 4. Calculate Mastery per Topic
         const progressByTopic = track.topics.map(topic => {
-            const totalQuestions = topic._count.questions
+            const totalQuestions = questionCountMap.get(topic.id) || 0
             const correctCount = userCorrectAttempts.filter(a => a.question.topicId === topic.id).length
             const percentage = totalQuestions > 0 ? Math.round((correctCount / totalQuestions) * 100) : 0
 
@@ -173,7 +173,7 @@ router.get('/progress/:slug', requireAuth, async (req, res, next) => {
             }
         })
 
-        const totalTrackQuestions = track.topics.reduce((acc, t) => acc + t._count.questions, 0)
+        const totalTrackQuestions = track.topics.reduce((acc, topic) => acc + (questionCountMap.get(topic.id) || 0), 0)
         const totalTrackCorrect = userCorrectAttempts.length
         const totalTrackPercentage = totalTrackQuestions > 0 ? Math.round((totalTrackCorrect / totalTrackQuestions) * 100) : 0
         const masteredTopicsCount = progressByTopic.filter(t => t.isMastered).length

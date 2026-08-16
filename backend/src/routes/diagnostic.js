@@ -1,6 +1,7 @@
 import { Router } from 'express'
 import prisma from '../lib/db.js'
 import { requireAuth } from '../middleware/auth.js'
+import { saveLearnerProfileSnapshot } from '../lib/learnerOnboarding.js'
 
 const router = Router()
 
@@ -63,7 +64,11 @@ router.get('/diagnostic/:trackSlug/start', requireAuth, async (req, res, next) =
         for (const level of levels) {
             const levelQuestions = questionsByLevel[level] || []
             // Shuffle and take questionsPerLevel
-            const shuffled = levelQuestions.sort(() => Math.random() - 0.5)
+            const shuffled = [...levelQuestions]
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
+            }
             const selected = shuffled.slice(0, questionsPerLevel)
 
             for (const q of selected) {
@@ -236,6 +241,35 @@ router.post('/diagnostic/:trackSlug/submit', requireAuth, async (req, res, next)
                 currentUkLevelId: ukLevel?.id,
             }
         })
+
+        await saveLearnerProfileSnapshot(prisma, req.user.id, {
+            recommendedTrack: {
+                id: track.id,
+                slug: track.slug,
+                title: track.title,
+                category: track.category,
+                learningGoal: null,
+                expectedStudyMinutes: null,
+                expectedStudyBand: 'tbd',
+                questionCount: totalQuestions,
+                framework: null,
+            },
+            selectedTrack: {
+                id: track.id,
+                slug: track.slug,
+                title: track.title,
+                category: track.category,
+                learningGoal: null,
+                expectedStudyMinutes: null,
+                expectedStudyBand: 'tbd',
+                questionCount: totalQuestions,
+                framework: null,
+            },
+            recommendedLevel: ukLevel
+                ? { code: ukLevel.code, title: ukLevel.title }
+                : { code: recommendedLevel, title: recommendedLevel },
+            nextStepChoice: 'diagnostic-complete',
+        }, 'diagnostic')
 
         // Calculate overall stats
         const totalCorrect = Object.values(levelScores).reduce((a, b) => a + b, 0)

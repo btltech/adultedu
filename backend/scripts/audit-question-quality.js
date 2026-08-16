@@ -10,9 +10,8 @@ import { PrismaClient } from '@prisma/client'
 import {
     canonicalizeMcqAnswer,
     dedupeExactOptions,
-    normalizeTextLoose,
-    safeJsonParse,
     stableReportId,
+    storedAnswerResolvesAgainstOptions,
 } from './questionQualityUtils.js'
 
 const prisma = new PrismaClient()
@@ -123,20 +122,7 @@ async function main() {
         }
 
         // Check whether the stored answer is interpretable against the options.
-        const parsed = safeJsonParse(q.answer)
-        if (!parsed.ok) {
-            stats.issues.invalidAnswerJson++
-            continue
-        }
-        const storedValue = parsed.value
-        let matches = false
-        if (Number.isInteger(storedValue)) {
-            matches = storedValue >= 0 && storedValue < options.length
-        } else {
-            const storedText = String(storedValue ?? '')
-            matches = options.some((o) => normalizeTextLoose(o) === normalizeTextLoose(storedText))
-        }
-        if (!matches) {
+        if (!storedAnswerResolvesAgainstOptions(q.answer, options)) {
             stats.issues.answerNotInOptions++
             if (stats.samples.answerNotInOptions.length < 10) {
                 stats.samples.answerNotInOptions.push({

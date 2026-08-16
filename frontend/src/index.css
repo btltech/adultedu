@@ -362,6 +362,92 @@ p {
     @apply glass-card-hover p-5 sm:p-6 flex flex-col gap-4;
   }
 
+  /* ---- Premium Marketing Surfaces ---- */
+  .marketing-shell {
+    @apply relative overflow-hidden rounded-3xl border border-dark-800/80 bg-dark-900/70;
+    background:
+      radial-gradient(circle at 14% 0%, rgba(99, 102, 241, 0.16), transparent 34%),
+      radial-gradient(circle at 88% 16%, rgba(20, 184, 166, 0.12), transparent 34%),
+      linear-gradient(135deg, rgba(24, 24, 27, 0.94), rgba(9, 9, 11, 0.96));
+    box-shadow: 0 24px 70px rgba(0, 0, 0, 0.26);
+  }
+
+  .marketing-shell::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.055), transparent 36%);
+  }
+
+  .editorial-panel,
+  .progress-panel,
+  .feature-panel,
+  .premium-track-card,
+  .learning-stat {
+    @apply rounded-2xl border border-dark-800/80 bg-dark-900/70;
+    box-shadow: 0 16px 42px rgba(0, 0, 0, 0.18);
+  }
+
+  .editorial-panel,
+  .progress-panel,
+  .feature-panel {
+    @apply p-5 sm:p-6;
+  }
+
+  .editorial-subpanel {
+    @apply rounded-2xl border border-dark-800/80 bg-dark-950/35;
+  }
+
+  .premium-track-card {
+    @apply flex min-h-[20rem] flex-col gap-5 p-5 transition-all duration-200 sm:p-6;
+    transition-timing-function: var(--ease-smooth);
+  }
+
+  .premium-track-card:hover {
+    border-color: rgba(99, 102, 241, 0.34);
+    background: rgba(24, 24, 27, 0.88);
+    box-shadow: 0 22px 54px rgba(0, 0, 0, 0.28), 0 0 0 1px rgba(99, 102, 241, 0.08);
+    transform: translateY(-2px);
+  }
+
+  .feature-panel {
+    transition: border-color 180ms var(--ease-smooth), background 180ms var(--ease-smooth), transform 180ms var(--ease-smooth);
+  }
+
+  .feature-panel:hover {
+    border-color: rgba(82, 82, 91, 0.9);
+    background: rgba(24, 24, 27, 0.86);
+  }
+
+  .learning-stat {
+    @apply p-4;
+  }
+
+  .learning-stat-label {
+    @apply text-[11px] font-semibold uppercase text-dark-500;
+    letter-spacing: 0.14em;
+  }
+
+  .learning-stat-value {
+    @apply mt-2 text-2xl font-semibold text-dark-50;
+    font-family: var(--font-display);
+  }
+
+  .section-eyebrow {
+    @apply inline-flex items-center gap-2 text-[11px] font-semibold uppercase text-accent-300;
+    letter-spacing: 0.14em;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-xl px-5 py-2.5 font-medium text-dark-300 transition-all duration-200;
+    transition-timing-function: var(--ease-smooth);
+  }
+
+  .btn-ghost:hover {
+    @apply bg-dark-800/80 text-dark-50;
+  }
+
   /* ---- Primary Button ---- */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl font-medium text-white;
@@ -586,4 +672,14 @@ p {
    ======================================== */
 .safe-area-bottom {
   padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+/* ========================================
+   Modern Text Wrapping (2026 aesthetics safely)
+   ======================================== */
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }

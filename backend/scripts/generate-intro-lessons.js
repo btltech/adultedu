@@ -9,7 +9,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const LLM_URL = process.env.LLM_URL || 'http://localhost:1234';
-const LLM_MODEL = process.env.LLM_MODEL || 'qwen3-coder-30b-a3b-instruct-mlx';
+const LLM_MODEL = process.env.LLM_MODEL || 'qwen3-coder-30b-a3b-instruct';
 
 async function callLLM(prompt) {
     try {

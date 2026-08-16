@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { CheckCircle2, Gauge, XCircle } from 'lucide-react';
 
 export default function SliderQuestion({ question, onAnswer, showResult, result }) {
     // Parse config from question.options or generic defaults
@@ -39,7 +40,7 @@ export default function SliderQuestion({ question, onAnswer, showResult, result 
     };
 
     return (
-        <div className="glass-card p-6">
+        <div className="progress-panel p-6">
             <div className="mb-8">
                 <span className="badge badge-purple mb-3">
                     Estimation • Level {question.ukLevel}
@@ -56,13 +57,18 @@ export default function SliderQuestion({ question, onAnswer, showResult, result 
                 )}
             </div>
 
-            <div className="mb-8 px-4">
+            <div className="mb-8 rounded-2xl border border-dark-800 bg-dark-900/60 p-5">
+                <label htmlFor={`slider-question-${question.id || 'current'}`} className="mb-4 flex items-center gap-2 text-sm font-medium text-dark-300">
+                    <Gauge className="h-4 w-4 text-primary-300" />
+                    Choose your estimate
+                </label>
                 <div className="flex justify-between text-dark-400 text-sm mb-2 font-mono">
                     <span>{min}{unit}</span>
                     <span className="text-primary-400 font-bold text-lg">{value}{unit}</span>
                     <span>{max}{unit}</span>
                 </div>
                 <input
+                    id={`slider-question-${question.id || 'current'}`}
                     type="range"
                     min={min}
                     max={max}
@@ -76,16 +82,16 @@ export default function SliderQuestion({ question, onAnswer, showResult, result 
 
             {/* Answer Checking / Result Display */}
             {showResult ? (
-                <div className={`p-4 rounded-xl ${result?.isCorrect
+                <div className={`p-4 rounded-2xl ${result?.isCorrect
                     ? 'bg-accent-500/10 border border-accent-500/30'
                     : 'bg-amber-500/10 border border-amber-500/30'
                     }`}>
                     <div className="flex items-center gap-2 mb-2">
                         {result?.isCorrect ? (
-                            <span className="text-accent-400 font-medium">✓ Correct Estimate!</span>
+                            <span className="flex items-center gap-2 text-accent-400 font-medium"><CheckCircle2 className="h-4 w-4" /> Correct estimate</span>
                         ) : (
                             <div className="flex flex-col">
-                                <span className="text-amber-400 font-medium mb-1">✗ Not quite</span>
+                                <span className="mb-1 flex items-center gap-2 text-amber-400 font-medium"><XCircle className="h-4 w-4" /> Not quite</span>
                                 <span className="text-dark-300 text-sm">
                                     Correct answer: {String(result?.correctAnswer ?? '').trim()}{unit}
                                 </span>

@@ -17,6 +17,6 @@ vi.mock('../lib/api', () => ({
 describe('App', () => {
     it('renders home hero copy', async () => {
         render(<App />)
-        expect(await screen.findByRole('heading', { name: /build skills that/i })).toBeInTheDocument()
+        expect(await screen.findByRole('heading', { name: /learning that feels like a clear plan/i })).toBeInTheDocument()
     })
 })

@@ -1,0 +1,14 @@
+# Wrangler config template for Cloudflare Pages + Functions
+
+name = "adultedu"
+compatibility_date = "2025-12-19"
+
+# Pages configuration
+pages_build_output_dir = "./dist"
+
+# Notes:
+# - Replace `account_id` and `project_name` with your Cloudflare account/project values.
+# - Deploy with: `WRANGLER_PROJECT=my-pages-project npx wrangler pages publish ./dist --project-name "$WRANGLER_PROJECT" --branch main`
+
+[vars]
+API_ORIGIN = "https://backend-production-bec9d.up.railway.app"

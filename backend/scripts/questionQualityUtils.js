@@ -65,6 +65,36 @@ export function dedupeExactOptions(options) {
     return deduped
 }
 
+export function parseNumericStringIndex(answerRaw) {
+    const parsed = safeJsonParse(answerRaw)
+    if (!parsed.ok || typeof parsed.value !== 'string') return null
+
+    const trimmed = parsed.value.trim()
+    if (!/^\d+$/.test(trimmed)) return null
+    return parseInt(trimmed, 10)
+}
+
+export function storedAnswerResolvesAgainstOptions(answerRaw, options) {
+    const parsed = safeJsonParse(answerRaw)
+    if (!parsed.ok || !Array.isArray(options) || options.length < 2) return false
+
+    const answerValue = parsed.value
+    if (Number.isInteger(answerValue)) return answerValue >= 0 && answerValue < options.length
+
+    if (typeof answerValue === 'string') {
+        const trimmed = answerValue.trim()
+        if (/^\d+$/.test(trimmed)) {
+            const idx = parseInt(trimmed, 10)
+            if (idx >= 0 && idx < options.length) return true
+            if (idx > 0 && idx <= options.length) return true
+        }
+        return options.some((option) => normalizeTextLoose(option) === normalizeTextLoose(trimmed))
+    }
+
+    if (typeof answerValue === 'boolean' && options.length >= 2) return true
+    return false
+}
+
 export function canonicalizeMcqAnswer({ options, answerRaw, explanation }) {
     const answerParsed = safeJsonParse(answerRaw)
     if (!answerParsed.ok) return { ok: false, reason: 'answer_invalid_json' }

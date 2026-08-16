@@ -16,6 +16,7 @@ import {
     useSortable
 } from '@dnd-kit/sortable';
 import { CSS } from '@dnd-kit/utilities';
+import { CheckCircle2, GripVertical, XCircle } from 'lucide-react';
 
 // Individual Sortable Item Component
 function SortableItem({ id, content, disabled }) {
@@ -40,13 +41,11 @@ function SortableItem({ id, content, disabled }) {
             style={style}
             {...attributes}
             {...listeners}
-            className={`p-4 rounded-xl border border-dark-700 bg-dark-800 text-dark-200 mb-3 flex items-center gap-4 cursor-grab active:cursor-grabbing ${isDragging ? 'shadow-xl ring-2 ring-primary-500 opacity-90' : 'hover:border-dark-600'
+            className={`p-4 rounded-2xl border border-dark-700 bg-dark-900/80 text-dark-200 mb-3 flex items-center gap-4 cursor-grab active:cursor-grabbing ${isDragging ? 'shadow-xl ring-2 ring-primary-500 opacity-90' : 'hover:border-dark-600 hover:bg-dark-800/80'
                 } ${disabled ? 'cursor-default opacity-80' : ''}`}
         >
-            <div className="text-dark-500">
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8h16M4 16h16" />
-                </svg>
+            <div className="text-dark-500" aria-hidden="true">
+                <GripVertical className="h-5 w-5" />
             </div>
             <span className="flex-1 font-medium">{content}</span>
         </div>
@@ -106,14 +105,14 @@ export default function OrderingQuestion({ question, onAnswer, showResult, resul
     };
 
     return (
-        <div className="glass-card p-6">
+        <div className="progress-panel p-6">
             <div className="mb-6">
                 <span className="badge badge-info mb-3">
                     Drag to Reorder • Level {question.ukLevel}
                 </span>
                 <p className="text-lg text-dark-100 leading-relaxed">{question.prompt}</p>
                 {question.imageUrl && (
-                    <div className="mt-4 rounded-xl overflow-hidden bg-dark-900/50 border border-dark-700 flex justify-center p-4">
+                    <div className="mt-4 rounded-2xl overflow-hidden bg-dark-900/50 border border-dark-700 flex justify-center p-4">
                         <img
                             src={question.imageUrl}
                             alt="Question Diagram"
@@ -147,15 +146,15 @@ export default function OrderingQuestion({ question, onAnswer, showResult, resul
 
             {/* Answer Checking / Result Display */}
             {showResult ? (
-                <div className={`p-4 rounded-xl ${result?.isCorrect
+                <div className={`p-4 rounded-2xl ${result?.isCorrect
                     ? 'bg-accent-500/10 border border-accent-500/30'
                     : 'bg-amber-500/10 border border-amber-500/30'
                     }`}>
                     <div className="flex items-center gap-2 mb-2">
                         {result?.isCorrect ? (
-                            <span className="text-accent-400 font-medium">✓ Correct Order!</span>
+                            <span className="flex items-center gap-2 text-accent-400 font-medium"><CheckCircle2 className="h-4 w-4" /> Correct order</span>
                         ) : (
-                            <span className="text-amber-400 font-medium">✗ Incorrect Order</span>
+                            <span className="flex items-center gap-2 text-amber-400 font-medium"><XCircle className="h-4 w-4" /> Not quite</span>
                         )}
                     </div>
                     <p className="text-dark-300 text-sm">{result?.explanation}</p>

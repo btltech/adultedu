@@ -121,6 +121,11 @@ async function main() {
             title: 'Tech Pathways',
             description: 'Industry-aligned technology skills including programming, cloud, and AI.',
         },
+        {
+            slug: 'LIFEUK',
+            title: 'Life in the UK',
+            description: 'Life in the United Kingdom test preparation for British citizenship and settlement applications.',
+        },
     ]
 
     for (const framework of frameworks) {
@@ -245,14 +250,6 @@ async function main() {
             category: 'workplace',
             isLive: false,
             frameworks: ['FS'],
-        },
-        {
-            slug: 'gcse-english',
-            title: 'GCSE English Language',
-            description: 'Prepare for GCSE English with reading comprehension and writing practice.',
-            category: 'qual_prep',
-            isLive: false,
-            frameworks: ['GCSE'],
         },
         {
             slug: 'a-level-maths',

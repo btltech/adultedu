@@ -5,7 +5,7 @@ import { parseArgs } from 'util';
 const prisma = new PrismaClient();
 
 const LLM_URL = process.env.LLM_URL || 'http://192.168.0.165:1234';
-const LLM_MODEL = process.env.LLM_MODEL || 'qwen3-coder-30b-a3b-instruct-mlx';
+const LLM_MODEL = process.env.LLM_MODEL || 'qwen3-coder-30b-a3b-instruct';
 
 // Parse args
 // node generate-targeted.js --track <slug> --level <E1|E2|L1|L2> --type <mcq|scenario> --count <N>
