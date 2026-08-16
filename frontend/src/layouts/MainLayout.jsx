@@ -1,4 +1,4 @@
-import { Outlet, useLocation } from 'react-router-dom'
+import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -12,6 +12,9 @@ export default function MainLayout() {
 
     return (
         <div className="min-h-screen flex flex-col relative overflow-x-hidden">
+            {/* Without this, a click on a footer link keeps the footer's scroll
+                offset and drops the learner into the middle of the new page. */}
+            <ScrollRestoration />
             <SEO />
             {/* Ambient Spatial Lighting Auras for Depth - purely aesthetic, no color overrides */}
             <div className="pointer-events-none fixed -top-[20%] -left-[10%] w-[60vw] h-[60vw] rounded-full bg-primary-500/10 blur-[120px] -z-10 hidden md:block"></div>

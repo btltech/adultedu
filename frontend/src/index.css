@@ -96,7 +96,11 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  /* No global smooth scrolling: it turns the router's scroll-to-top on
+     navigation into an animated scroll, which AnimatePresence then interrupts
+     when it swaps the page — landing the learner mid-page. Code that wants a
+     smooth scroll asks for it explicitly via scrollIntoView. */
+  scroll-behavior: auto;
 }
 
 body {
