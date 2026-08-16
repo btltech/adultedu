@@ -7,6 +7,24 @@ on:
 jobs:
   test-and-build:
     runs-on: ubuntu-latest
+    env:
+      DATABASE_URL: postgresql://postgres:postgres@localhost:5432/adultedu_test?schema=public
+      ADMIN_SEED_PASSWORD: ci-only-not-for-production
+
+    services:
+      postgres:
+        image: postgres:16
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: adultedu_test
+        options: >-
+          --health-cmd "pg_isready -U postgres -d adultedu_test"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
 
     steps:
       - name: Checkout
@@ -30,6 +48,12 @@ jobs:
 
       - name: Install backend dependencies
         run: npm ci --prefix backend
+
+      - name: Prepare test database
+        working-directory: backend
+        run: |
+          npx prisma migrate deploy
+          npm run db:seed
 
       - name: Run tests
         run: npm test
