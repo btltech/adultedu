@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link, useNavigate } from 'react-router-dom'
 import { ArrowRight, Award, BookOpenCheck, CheckCircle2, Clock3, Layers3, Lock, PlayCircle, ShieldCheck, Target } from 'lucide-react'
-import { getTrack, getProgressDetail, recordOnboardingOutcome } from '../lib/api'
+import { getTrack, getProgressDetail, recordOnboardingOutcome, getUserMessage } from '../lib/api'
+import NotFound from './NotFound'
 import { formatLessonTime } from '../lib/studyTime'
 import { useAuth } from '../context/AuthContext'
 import DiagnosticModal from '../components/diagnostic/DiagnosticModal'
@@ -128,6 +129,7 @@ export default function TrackDetail() {
     const [progressData, setProgressData] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const [missing, setMissing] = useState(false)
     const [confidenceAfter, setConfidenceAfter] = useState(4)
     const [nextStepChoice, setNextStepChoice] = useState('')
     const [savingOutcome, setSavingOutcome] = useState(false)
@@ -161,7 +163,9 @@ export default function TrackDetail() {
                     }
                 }
             } catch (err) {
-                setError(err.message)
+                // See Lesson.jsx: only a 404 means the pathway is really gone.
+                if (err.status === 404) setMissing(true)
+                else setError(getUserMessage(err, "We couldn't load this pathway."))
             } finally {
                 setLoading(false)
             }
@@ -217,12 +221,14 @@ export default function TrackDetail() {
         )
     }
 
+    if (missing) return <NotFound />
+
     if (error || !track) {
         return (
             <div className="py-12">
                 <div className="container-app text-center">
-                    <h1 className="text-2xl font-bold text-dark-50 mb-4">Track not found</h1>
-                    <p className="text-dark-400 mb-6">{error || 'This track does not exist.'}</p>
+                    <h1 className="text-2xl font-bold text-dark-50 mb-4">We couldn't load this pathway</h1>
+                    <p className="text-dark-400 mb-6">{error || 'Something went wrong. Please try again.'}</p>
                     <Link to="/tracks" className="btn-primary">
                         View all tracks
                     </Link>

@@ -1,7 +1,19 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, Compass, Home, SearchX } from 'lucide-react'
+import { usePageSeo } from '../components/SEO'
 
+/**
+ * Shown both for unmatched routes and for content routes whose lesson, topic,
+ * or pathway no longer exists. Owning the noindex signal here means any page
+ * that falls back to this state stops advertising itself to search engines.
+ */
 export default function NotFound() {
+    usePageSeo({
+        title: 'Page not found - AdultEdu',
+        description: 'This AdultEdu page could not be found. Browse the pathways catalogue to pick up where you left off.',
+        robots: 'noindex, nofollow',
+    })
+
     return (
         <div className="py-12">
             <div className="container-app flex min-h-[72vh] items-center justify-center">
@@ -10,9 +22,9 @@ export default function NotFound() {
                         <SearchX className="h-8 w-8" />
                     </div>
                     <p className="mt-6 text-xs font-semibold uppercase tracking-[0.14em] text-accent-300">Page not found</p>
-                    <h1 className="mx-auto mt-3 max-w-2xl text-3xl font-bold text-dark-50 sm:text-4xl">This route is not available anymore.</h1>
+                    <h1 className="mx-auto mt-3 max-w-2xl text-3xl font-bold text-dark-50 sm:text-4xl">We couldn't find that page.</h1>
                     <p className="mx-auto mt-4 max-w-lg text-sm leading-7 text-dark-300">
-                        The page may have moved, or the link may be incomplete. The quickest recovery is to return to the main pathways catalogue.
+                        It may have moved, the link may be incomplete, or the lesson may no longer be part of a pathway. The quickest recovery is to return to the main pathways catalogue.
                     </p>
                     <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
                         <Link to="/tracks" className="btn-primary justify-center">
