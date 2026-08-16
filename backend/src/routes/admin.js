@@ -4,8 +4,25 @@ import prisma from '../lib/db.js'
 import logger from '../lib/logger.js'
 import { requireAuth, requireAdmin } from '../middleware/auth.js'
 import { validate, questionCreateSchema, questionUpdateSchema } from '../middleware/validate.js'
+import {
+    hasLiveContentChange,
+    publicationReadinessIssues,
+    reviewDataFromBody,
+} from '../lib/contentQuality.js'
 
 const router = express.Router()
+
+function rejectUnreadyPublication(res, candidate) {
+    const issues = publicationReadinessIssues(candidate)
+    if (issues.length === 0) return false
+
+    res.status(422).json({
+        error: 'Content review required',
+        message: 'This question cannot be published until its source and review record are complete.',
+        details: issues,
+    })
+    return true
+}
 
 
 // Protect all admin routes
@@ -198,6 +215,16 @@ router.post('/questions', validate(questionCreateSchema), async (req, res, next)
             sourceMeta
         } = req.body
 
+        const reviewData = reviewDataFromBody(req.body)
+        const candidate = {
+            ...req.body,
+            ...reviewData,
+            contentRisk: reviewData.contentRisk || 'standard',
+            reviewStatus: reviewData.reviewStatus || 'draft',
+        }
+
+        if (isPublished && rejectUnreadyPublication(res, candidate)) return
+
         const question = await prisma.question.create({
             data: {
                 topicId,
@@ -212,7 +239,8 @@ router.post('/questions', validate(questionCreateSchema), async (req, res, next)
                 imageUrl: imageUrl || null,
                 assets: assets ? JSON.stringify(assets) : null,
                 isPublished: !!isPublished,
-                sourceMeta: sourceMeta ? JSON.stringify(sourceMeta) : null
+                sourceMeta: sourceMeta ? JSON.stringify(sourceMeta) : null,
+                ...reviewData,
             },
             include: {
                 topic: true,
@@ -245,6 +273,36 @@ router.put('/questions/:id', validate(questionUpdateSchema), async (req, res, ne
             isPublished,
             sourceMeta
         } = req.body
+
+        const existing = await prisma.question.findUnique({
+            where: { id },
+            select: {
+                id: true,
+                isPublished: true,
+                sourceUrl: true,
+                sourceTitle: true,
+                sourceCheckedAt: true,
+                curriculumObjective: true,
+                contentRisk: true,
+                reviewStatus: true,
+                reviewedBy: true,
+                reviewedAt: true,
+                reviewDueAt: true,
+            },
+        })
+
+        if (!existing) {
+            return res.status(404).json({ error: 'Question not found' })
+        }
+
+        const reviewData = reviewDataFromBody(req.body)
+        const willBePublished = isPublished ?? existing.isPublished
+        const requiresGate = isPublished === true || (existing.isPublished && hasLiveContentChange(req.body))
+        if (willBePublished && requiresGate && rejectUnreadyPublication(res, {
+            ...existing,
+            ...req.body,
+            ...reviewData,
+        })) return
 
         const question = await prisma.question.update({
             where: { id },
@@ -291,6 +349,8 @@ router.put('/questions/:id', validate(questionUpdateSchema), async (req, res, ne
                 if (sourceMeta !== undefined) {
                     updateData.sourceMeta = sourceMeta === null ? null : JSON.stringify(sourceMeta)
                 }
+
+                Object.assign(updateData, reviewData)
 
                 return updateData
             })(),
@@ -357,7 +417,15 @@ router.post('/bulk/import', async (req, res, next) => {
                         explanation: q.explanation || null,
                         difficulty: parseInt(q.difficulty) || 3,
                         tags: q.tags ? JSON.stringify(q.tags) : null,
-                        isPublished: !!q.isPublished
+                        // Imports are intentionally drafts. A reviewer must add provenance
+                        // and approve each question through the single-question endpoint.
+                        isPublished: false,
+                        reviewStatus: 'draft',
+                        contentRisk: q.contentRisk || 'standard',
+                        sourceUrl: q.sourceUrl || null,
+                        sourceTitle: q.sourceTitle || null,
+                        sourceCheckedAt: q.sourceCheckedAt ? new Date(q.sourceCheckedAt) : null,
+                        curriculumObjective: q.curriculumObjective || null,
                     }
                 })
                 results.imported++
@@ -412,6 +480,15 @@ router.get('/bulk/export', async (req, res, next) => {
             explanation: q.explanation,
             difficulty: q.difficulty,
             tags: q.tags,
+            sourceUrl: q.sourceUrl,
+            sourceTitle: q.sourceTitle,
+            sourceCheckedAt: q.sourceCheckedAt,
+            curriculumObjective: q.curriculumObjective,
+            contentRisk: q.contentRisk,
+            reviewStatus: q.reviewStatus,
+            reviewedBy: q.reviewedBy,
+            reviewedAt: q.reviewedAt,
+            reviewDueAt: q.reviewDueAt,
             isPublished: q.isPublished
         }))
 
@@ -435,6 +512,13 @@ router.put('/bulk/update', async (req, res, next) => {
 
         if (ids.length > 100) {
             return res.status(400).json({ error: 'Maximum 100 questions per bulk update' })
+        }
+
+        if (updates.isPublished === true) {
+            return res.status(422).json({
+                error: 'Content review required',
+                message: 'Bulk publishing is disabled. Publish questions individually after adding source and reviewer details.',
+            })
         }
 
         const allowedFields = ['topicId', 'ukLevelId', 'difficulty', 'isPublished', 'tags']

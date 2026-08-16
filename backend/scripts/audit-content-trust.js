@@ -19,6 +19,7 @@ import {
     stableReportId,
     storedAnswerResolvesAgainstOptions,
 } from './questionQualityUtils.js'
+import { publicationReadinessIssues } from '../src/lib/contentQuality.js'
 
 const prisma = new PrismaClient()
 
@@ -160,6 +161,15 @@ async function main() {
                     })
                 }
 
+                const publicationIssues = publicationReadinessIssues(question)
+                if (publicationIssues.length > 0) {
+                    increment(issues, 'missingOrExpiredReviewRecord')
+                    addSample(samples, 'missingOrExpiredReviewRecord', question, {
+                        reviewStatus: question.reviewStatus,
+                        reasons: publicationIssues,
+                    })
+                }
+
                 const combinedText = `${question.prompt || ''} ${question.explanation || ''}`
                 const timeSensitiveReason = findTimeSensitiveClaim(combinedText)
                 if (timeSensitiveReason) {
@@ -247,7 +257,7 @@ async function main() {
         issues,
         topicCoverage: topicCoverage.sort((left, right) => left.publishedQuestions - right.publishedQuestions).slice(0, 20),
         samples,
-        note: 'This is an automated trust-risk audit. Use it to prioritize human review; do not treat it as proof of factual correctness.',
+        note: 'This is an automated trust-risk audit. Use it to prioritize human review; do not treat it as proof of factual correctness. Legacy published content is intentionally reported as needing provenance until reviewed.',
     }
 
     console.log(JSON.stringify(report, null, 2))
