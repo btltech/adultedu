@@ -55,15 +55,15 @@ const SeoOverrideContext = createContext(null)
  * written to <head> directly by each page, so the baseline tags and the page
  * tags can never race — SeoProvider is the only writer.
  */
-export function usePageSeo({ title, description } = {}) {
+export function usePageSeo({ title, description, robots } = {}) {
     const setOverride = useContext(SeoOverrideContext)
 
     useEffect(() => {
-        if (!setOverride || (!title && !description)) return
+        if (!setOverride || (!title && !description && !robots)) return
 
-        setOverride({ title, description })
+        setOverride({ title, description, robots })
         return () => setOverride(null)
-    }, [setOverride, title, description])
+    }, [setOverride, title, description, robots])
 }
 
 export function SeoProvider({ children }) {
@@ -81,11 +81,17 @@ export function SeoProvider({ children }) {
         // Hand-written metadata for a specific route is deliberate copy, so a
         // page override only fills in where the baseline is a shared placeholder.
         const useOverride = base.generic && override
+        // `robots` is exempt: it reports whether the content actually exists,
+        // which curated copy has no say over. A deleted curated pathway still
+        // needs noindex.
         const tags = {
             ...base,
             title: (useOverride && override.title) || base.title,
             description: (useOverride && override.description) || base.description,
+            robots: override?.robots || base.robots,
         }
+        // Structured data advertises a real page, so it goes when robots does.
+        if (!tags.robots.startsWith('index')) tags.jsonLd = null
 
         document.title = tags.title
         upsertMeta('meta[name="description"]', { name: 'description', content: tags.description })

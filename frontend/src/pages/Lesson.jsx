@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, BookOpenCheck, Clock3, GraduationCap, Lightbulb, ListChecks, NotebookPen, Target, TriangleAlert } from 'lucide-react'
-import { api } from '../lib/api'
+import { api, getUserMessage } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
+import NotFound from './NotFound'
 import { usePageSeo } from '../components/SEO'
 import { formatPageDescription, formatPageTitle } from '../lib/seo/meta'
 
@@ -10,6 +11,8 @@ export default function Lesson() {
     const { id } = useParams()
     const [lesson, setLesson] = useState(null)
     const [loading, setLoading] = useState(true)
+    const [missing, setMissing] = useState(false)
+    const [loadError, setLoadError] = useState(null)
 
     usePageSeo({
         title: lesson ? formatPageTitle(lesson.title, lesson.track?.title) : undefined,
@@ -23,11 +26,20 @@ export default function Lesson() {
 
     useEffect(() => {
         async function fetchLesson() {
+            setLoading(true)
+            setMissing(false)
+            setLoadError(null)
+
             try {
                 const data = await api(`/lessons/${id}`)
                 setLesson(data)
             } catch (err) {
                 console.error('Failed to load lesson:', err)
+                // Only a 404 means the lesson is genuinely gone. Treating a
+                // network or server failure the same way would tell crawlers a
+                // real lesson had been removed during a temporary outage.
+                if (err.status === 404) setMissing(true)
+                else setLoadError(getUserMessage(err, "We couldn't load this lesson."))
             } finally {
                 setLoading(false)
             }
@@ -46,11 +58,16 @@ export default function Lesson() {
         )
     }
 
+    if (missing) return <NotFound />
+
     if (!lesson) {
         return (
             <div className="py-12">
                 <div className="container-app max-w-4xl text-center">
-                    <h1 className="text-2xl font-bold text-dark-50 mb-4">Lesson not found</h1>
+                    <h1 className="text-2xl font-bold text-dark-50 mb-4">We couldn't load this lesson</h1>
+                    <p className="mx-auto mb-6 max-w-md text-sm leading-7 text-dark-300">
+                        {loadError || 'Something went wrong. Please try again.'}
+                    </p>
                     <Link to="/tracks" className="btn-primary">Browse pathways</Link>
                 </div>
             </div>
