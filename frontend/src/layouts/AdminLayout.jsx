@@ -1,4 +1,4 @@
-import { Outlet, Link, useNavigate, useLocation } from 'react-router-dom'
+import { Outlet, Link, ScrollRestoration, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useEffect } from 'react'
 import { BarChart3, BookOpenCheck, Building2, Home, LayoutDashboard, LogOut, Settings, Users } from 'lucide-react'
@@ -32,6 +32,7 @@ export default function AdminLayout() {
 
     return (
         <div className="min-h-screen bg-dark-950 text-dark-200 lg:flex">
+            <ScrollRestoration />
             <a href="#admin-main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 z-50 bg-white text-dark-900 px-4 py-2 rounded shadow-lg font-bold">
                 Skip to Content
             </a>
