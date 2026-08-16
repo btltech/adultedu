@@ -4,6 +4,8 @@ import { expect } from 'chai';
 import app from '../src/index.js';
 import prisma from '../src/lib/db.js';
 
+const API_PREFIX = '/api/v1';
+
 describe('Gamification & Analytics API Integration', () => {
     let authToken;
     let testUser;
@@ -11,7 +13,7 @@ describe('Gamification & Analytics API Integration', () => {
     // Setup user and auth before tests
     before(async () => {
         // 1. Get CSRF Token
-        const healthRes = await request(app).get('/api/health');
+        const healthRes = await request(app).get(`${API_PREFIX}/health`);
         const cookies = healthRes.headers['set-cookie'];
         const xsrfCookie = cookies.find(c => c.startsWith('XSRF-TOKEN='));
         const csrfToken = xsrfCookie.split(';')[0].split('=')[1];
@@ -24,7 +26,7 @@ describe('Gamification & Analytics API Integration', () => {
         await prisma.user.deleteMany({ where: { email } });
 
         const res = await request(app)
-            .post('/api/auth/signup')
+            .post(`${API_PREFIX}/auth/signup`)
             .set('Cookie', [xsrfCookie])
             .set('X-CSRF-Token', csrfToken)
             .send({ email, password, name: 'Gamification Tester' });
@@ -43,10 +45,10 @@ describe('Gamification & Analytics API Integration', () => {
         }
     });
 
-    describe('GET /api/daily/challenge', () => {
+    describe('GET /api/v1/daily/challenge', () => {
         it('should return a daily challenge', async () => {
             const res = await request(app)
-                .get('/api/daily/challenge')
+                .get(`${API_PREFIX}/daily/challenge`)
                 .set('Cookie', authToken);
 
             // It might be 404 if no challenge is set for TODAY, or 200 if seeded
@@ -61,15 +63,15 @@ describe('Gamification & Analytics API Integration', () => {
 
         it('should return 401 if not authenticated', async () => {
             await request(app)
-                .get('/api/daily/challenge')
+                .get(`${API_PREFIX}/daily/challenge`)
                 .expect(401);
         });
     });
 
-    describe('GET /api/gamification/achievements', () => {
+    describe('GET /api/v1/gamification/achievements', () => {
         it('should return user achievements list', async () => {
             const res = await request(app)
-                .get('/api/gamification/achievements')
+                .get(`${API_PREFIX}/gamification/achievements`)
                 .set('Cookie', authToken)
                 .expect(200);
 
@@ -79,10 +81,10 @@ describe('Gamification & Analytics API Integration', () => {
         });
     });
 
-    describe('GET /api/gamification/leaderboard', () => {
+    describe('GET /api/v1/gamification/leaderboard', () => {
         it('should return leaderboard data', async () => {
             const res = await request(app)
-                .get('/api/gamification/leaderboard?type=weekly')
+                .get(`${API_PREFIX}/gamification/leaderboard?type=weekly`)
                 .set('Cookie', authToken)
                 .expect(200);
 
@@ -96,15 +98,15 @@ describe('Gamification & Analytics API Integration', () => {
 
         it('should return 401 if not authenticated', async () => {
             await request(app)
-                .get('/api/gamification/leaderboard?type=weekly')
+                .get(`${API_PREFIX}/gamification/leaderboard?type=weekly`)
                 .expect(401);
         });
     });
 
-    describe('GET /api/analytics/overview', () => {
+    describe('GET /api/v1/analytics/overview', () => {
         it('should return analytics overview', async () => {
             const res = await request(app)
-                .get('/api/analytics/overview')
+                .get(`${API_PREFIX}/analytics/overview`)
                 .set('Cookie', authToken)
                 .expect(200);
 

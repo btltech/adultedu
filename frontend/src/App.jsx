@@ -1,33 +1,54 @@
+import { Suspense, lazy } from 'react'
 import { RouterProvider, createBrowserRouter, createRoutesFromElements, Route } from 'react-router-dom'
 import { Toaster } from 'react-hot-toast'
 import { AuthProvider } from './context/AuthContext'
 import MainLayout from './layouts/MainLayout'
 import AdminLayout from './layouts/AdminLayout'
 import ProtectedRoute from './components/ProtectedRoute'
-import AdminDashboard from './pages/admin/Dashboard'
-import ContentManager from './pages/admin/ContentManager'
-import Users from './pages/admin/Users'
-import Settings from './pages/admin/Settings'
-import QuestionEditor from './pages/admin/QuestionEditor'
-import AnalyticsDashboard from './pages/admin/AnalyticsDashboard'
 import OfflineIndicator from './components/OfflineIndicator'
-import Home from './pages/Home'
-import NotFound from './pages/NotFound'
+import { CardGridSkeleton } from './components/Skeleton'
 
+const AdminDashboard = lazy(() => import('./pages/admin/Dashboard'))
+const ContentManager = lazy(() => import('./pages/admin/ContentManager'))
+const Users = lazy(() => import('./pages/admin/Users'))
+const Settings = lazy(() => import('./pages/admin/Settings'))
+const QuestionEditor = lazy(() => import('./pages/admin/QuestionEditor'))
+const AnalyticsDashboard = lazy(() => import('./pages/admin/AnalyticsDashboard'))
+const PartnerDelivery = lazy(() => import('./pages/admin/PartnerDelivery'))
+const Home = lazy(() => import('./pages/Home'))
+const NotFound = lazy(() => import('./pages/NotFound'))
+const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
+const Terms = lazy(() => import('./pages/Terms'))
+const Contact = lazy(() => import('./pages/Contact'))
+const About = lazy(() => import('./pages/About'))
+const Accessibility = lazy(() => import('./pages/Accessibility'))
+const CookiePolicy = lazy(() => import('./pages/CookiePolicy'))
+const Login = lazy(() => import('./pages/Login'))
+const Signup = lazy(() => import('./pages/Signup'))
+const VerifyEmail = lazy(() => import('./pages/VerifyEmail'))
+const ForgotPassword = lazy(() => import('./pages/ForgotPassword'))
+const ResetPassword = lazy(() => import('./pages/ResetPassword'))
+const Tracks = lazy(() => import('./pages/Tracks'))
+const TrackDetail = lazy(() => import('./pages/TrackDetail'))
+const Topic = lazy(() => import('./pages/Topic'))
+const Progress = lazy(() => import('./pages/Progress'))
+const Practice = lazy(() => import('./pages/Practice'))
+const LifeInUkTest = lazy(() => import('./pages/LifeInUkTest'))
+const Lesson = lazy(() => import('./pages/Lesson'))
+const Review = lazy(() => import('./pages/Review'))
+const Dashboard = lazy(() => import('./pages/Dashboard'))
+const Daily = lazy(() => import('./pages/Daily'))
+const StartingPoint = lazy(() => import('./pages/StartingPoint'))
 
-
-import Login from './pages/Login'
-import Signup from './pages/Signup'
-import Tracks from './pages/Tracks'
-import TrackDetail from './pages/TrackDetail'
-import Topic from './pages/Topic'
-import Progress from './pages/Progress'
-import Practice from './pages/Practice'
-import Lesson from './pages/Lesson'
-import Review from './pages/Review'
-import Dashboard from './pages/Dashboard'
-import LearningLab from './pages/Lab'
-import Daily from './pages/Daily'
+function RouteFallback() {
+    return (
+        <div className="min-h-screen bg-gray-50">
+            <div className="container-app py-12">
+                <CardGridSkeleton count={3} />
+            </div>
+        </div>
+    )
+}
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -35,14 +56,27 @@ const router = createBrowserRouter(
             {/* Public / User Routes */}
             <Route element={<MainLayout />}>
                 <Route path="/" element={<Home />} />
-                <Route path="/lab" element={<LearningLab />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<Signup />} />
+                <Route path="/verify-email" element={<VerifyEmail />} />
+                <Route path="/forgot-password" element={<ForgotPassword />} />
+                <Route path="/reset-password" element={<ResetPassword />} />
                 <Route path="/tracks" element={<Tracks />} />
+                <Route path="/life-in-the-uk-test" element={<LifeInUkTest />} />
+                <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+                <Route path="/terms" element={<Terms />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/accessibility" element={<Accessibility />} />
+                <Route path="/cookies" element={<CookiePolicy />} />
                 <Route path="/track/:slug" element={<TrackDetail />} />
                 <Route path="/topic/:id" element={<Topic />} />
                 <Route path="/lesson/:id" element={<Lesson />} />
-                <Route path="/practice/:topicId" element={<Practice />} />
+                <Route path="/practice/:topicId" element={
+                    <ProtectedRoute>
+                        <Practice />
+                    </ProtectedRoute>
+                } />
                 <Route path="/progress" element={
                     <ProtectedRoute>
                         <Progress />
@@ -63,6 +97,7 @@ const router = createBrowserRouter(
                         <Dashboard />
                     </ProtectedRoute>
                 } />
+                <Route path="/start" element={<StartingPoint />} />
                 {/* 404 Not Found */}
                 <Route path="*" element={<NotFound />} />
             </Route>
@@ -73,6 +108,7 @@ const router = createBrowserRouter(
                 <Route path="content" element={<ContentManager />} />
                 <Route path="users" element={<Users />} />
                 <Route path="analytics" element={<AnalyticsDashboard />} />
+                <Route path="partners" element={<PartnerDelivery />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="questions/new" element={<QuestionEditor />} />
                 <Route path="questions/:id" element={<QuestionEditor />} />
@@ -108,13 +144,15 @@ function App() {
                     },
                 }}
             />
-            <RouterProvider
-                router={router}
-                future={{
-                    v7_startTransition: true,
-                    v7_relativeSplatPath: true,
-                }}
-            />
+            <Suspense fallback={<RouteFallback />}>
+                <RouterProvider
+                    router={router}
+                    future={{
+                        v7_startTransition: true,
+                        v7_relativeSplatPath: true,
+                    }}
+                />
+            </Suspense>
             <OfflineIndicator />
         </AuthProvider>
     )

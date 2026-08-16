@@ -17,12 +17,25 @@ datasource db {
 model User {
   id           String   @id @default(uuid())
   email        String   @unique
+  displayName  String?  @map("display_name")
   passwordHash String   @map("password_hash")
   role         String   @default("user") // user, admin, org_admin
   organizationId String? @map("organization_id")
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt @map("updated_at")
+
+  // Email Verification
+  emailVerifiedAt         DateTime? @map("email_verified_at")
+  emailVerificationToken  String?   @unique @map("email_verification_token")
+  emailVerificationExpiry DateTime? @map("email_verification_expiry")
+  verificationEmailSentAt DateTime? @map("verification_email_sent_at")
+  welcomeEmailSentAt      DateTime? @map("welcome_email_sent_at")
+  returnReminderSentAt    DateTime? @map("return_reminder_sent_at")
   
+  // Password Reset
+  passwordResetToken  String?   @unique @map("password_reset_token")
+  passwordResetExpiry DateTime? @map("password_reset_expiry")
+
   // Gamification
   xpTotal              Int       @default(0) @map("xp_total")
   currentStreak        Int       @default(0) @map("current_streak")
@@ -416,3 +429,25 @@ model AnalyticsEvent {
   @@index([userId, eventType, createdAt])
   @@map("analytics_events")
 }
+
+// ============================================
+// Dictionary (Kaikki Wiktionary Import)
+// ============================================
+
+model Definition {
+  id          String   @id @default(uuid())
+  word        String   @unique // Normalized UPPERCASE
+  pos         String   // Part of speech: noun, verb, adjective, adverb, etc.
+  definition  String   @db.Text // Primary definition
+  examples    String?  @db.Text // JSON array of example sentences
+  ipa         String?  // IPA pronunciation
+  etymology   String?  @db.Text // Word origin/etymology
+  synonyms    String?  @db.Text // JSON array of synonyms
+  antonyms    String?  @db.Text // JSON array of antonyms
+  tags        String?  // JSON: topic tags, difficulty level
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  @@index([word])
+  @@map("definitions")
+}
+

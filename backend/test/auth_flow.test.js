@@ -3,10 +3,13 @@ import app from '../src/index.js';
 import { expect } from 'chai';
 import prisma from '../src/lib/db.js';
 
+const API_PREFIX = '/api/v1';
+
 describe('Auth Flow Integration', () => {
     let csrfToken;
     let csrfCookie;
     let sessionCookie;
+    let verificationToken;
     const testUser = {
         email: `test_${Date.now()}@example.com`,
         password: 'Password123!',
@@ -20,7 +23,7 @@ describe('Auth Flow Integration', () => {
     });
 
     it('should get CSRF token', async () => {
-        const res = await request(app).get('/api/health');
+        const res = await request(app).get(`${API_PREFIX}/health`);
         expect(res.status).to.equal(200);
 
         // Extract XSRF-TOKEN from cookies
@@ -34,19 +37,20 @@ describe('Auth Flow Integration', () => {
 
     it('should signup a new user', async () => {
         const res = await request(app)
-            .post('/api/auth/signup')
+            .post(`${API_PREFIX}/auth/signup`)
             .set('Cookie', [csrfCookie])
             .set('X-CSRF-Token', csrfToken)
             .send(testUser);
 
         expect(res.status).to.equal(201);
         expect(res.body).to.have.property('user');
+        expect(res.body).to.have.nested.property('user.emailVerified', false);
         expect(res.headers['set-cookie']).to.exist;
     });
 
     it('should login', async () => {
         const res = await request(app)
-            .post('/api/auth/login')
+            .post(`${API_PREFIX}/auth/login`)
             .set('Cookie', [csrfCookie])
             .set('X-CSRF-Token', csrfToken)
             .send(testUser);
@@ -56,9 +60,35 @@ describe('Auth Flow Integration', () => {
         sessionCookie = res.headers['set-cookie'].find(c => c.startsWith('session='));
     });
 
+    it('should resend the verification email for an authenticated user', async () => {
+        const res = await request(app)
+            .post(`${API_PREFIX}/auth/resend-verification`)
+            .set('Cookie', [csrfCookie, sessionCookie])
+            .set('X-CSRF-Token', csrfToken);
+
+        expect(res.status).to.equal(200);
+        expect(res.body).to.have.property('message');
+        expect(res.body).to.have.nested.property('user.emailVerified', false);
+
+        const user = await prisma.user.findUnique({ where: { email: testUser.email } });
+        verificationToken = user.emailVerificationToken;
+        expect(verificationToken).to.be.a('string');
+    });
+
+    it('should verify the email token', async () => {
+        const res = await request(app)
+            .post(`${API_PREFIX}/auth/verify-email`)
+            .set('Cookie', [csrfCookie, sessionCookie])
+            .set('X-CSRF-Token', csrfToken)
+            .send({ token: verificationToken });
+
+        expect(res.status).to.equal(200);
+        expect(res.body).to.have.nested.property('user.emailVerified', true);
+    });
+
     it('should fail login with wrong password', async () => {
         const res = await request(app)
-            .post('/api/auth/login')
+            .post(`${API_PREFIX}/auth/login`)
             .set('Cookie', [csrfCookie])
             .set('X-CSRF-Token', csrfToken)
             .send({ ...testUser, password: 'WrongPassword' });
@@ -68,10 +98,11 @@ describe('Auth Flow Integration', () => {
 
     it('should return current user from /auth/me', async () => {
         const res = await request(app)
-            .get('/api/auth/me')
+            .get(`${API_PREFIX}/auth/me`)
             .set('Cookie', [csrfCookie, sessionCookie]);
 
         expect(res.status).to.equal(200);
         expect(res.body).to.have.nested.property('user.email', testUser.email);
+        expect(res.body).to.have.nested.property('user.emailVerified', true);
     });
 });

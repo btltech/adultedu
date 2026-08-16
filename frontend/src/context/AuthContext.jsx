@@ -24,15 +24,15 @@ export function AuthProvider({ children }) {
         }
     }, [])
 
-    const signup = useCallback(async (email, password) => {
+    const signup = useCallback(async (email, password, displayName) => {
         setError(null)
         try {
             const data = await api('/auth/signup', {
                 method: 'POST',
-                body: { email, password },
+                body: { email, password, displayName },
             })
             setUser(data.user)
-            return { success: true }
+            return { success: true, user: data.user }
         } catch (err) {
             setError(err.message)
             return { success: false, error: err.message }
@@ -64,15 +64,31 @@ export function AuthProvider({ children }) {
         }
     }, [])
 
+    const resendVerification = useCallback(async () => {
+        setError(null)
+        try {
+            const data = await api('/auth/resend-verification', { method: 'POST' })
+            if (data.user) {
+                setUser(data.user)
+            }
+            return { success: true, message: data.message, user: data.user || null }
+        } catch (err) {
+            setError(err.message)
+            return { success: false, error: err.message }
+        }
+    }, [])
+
     const value = {
         user,
         loading,
         error,
         isAuthenticated: !!user,
         isAdmin: user?.role === 'admin',
+        needsOnboarding: !!user?.needsOnboarding,
         signup,
         login,
         logout,
+        resendVerification,
         checkAuth,
     }
 

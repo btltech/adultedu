@@ -20,8 +20,8 @@ import { PrismaClient } from '@prisma/client'
 import {
     canonicalizeMcqAnswer,
     dedupeExactOptions,
-    normalizeTextLoose,
-    safeJsonParse,
+    parseNumericStringIndex,
+    storedAnswerResolvesAgainstOptions,
 } from './questionQualityUtils.js'
 
 const prisma = new PrismaClient()
@@ -108,14 +108,21 @@ async function main() {
                 updates.options = JSON.stringify(deduped)
             }
 
-            // Ensure answer is stored as a JSON string containing the option text exactly.
-            let answerTarget = canonical.answer
-            if (ignoreExplanation && canonical.reason === 'explanation_contradiction' && canonical.stored) {
-                answerTarget = canonical.stored
-            }
-            const answerJson = JSON.stringify(answerTarget)
-            if (q.answer !== answerJson) {
-                updates.answer = answerJson
+            const answerCurrentlyResolves = storedAnswerResolvesAgainstOptions(q.answer, deduped)
+            const storedNumericStringIndex = parseNumericStringIndex(q.answer)
+            const shouldNormalizeIndexedString = storedNumericStringIndex !== null
+
+            // Preserve already-valid answers, but normalize digit-string indexes to exact option text.
+            if (!answerCurrentlyResolves || canonical.reason === 'explanation_contradiction' || shouldNormalizeIndexedString) {
+                let answerTarget = canonical.answer
+                if (ignoreExplanation && canonical.reason === 'explanation_contradiction' && canonical.stored) {
+                    answerTarget = canonical.stored
+                }
+
+                const answerJson = JSON.stringify(answerTarget)
+                if (q.answer !== answerJson) {
+                    updates.answer = answerJson
+                }
             }
         }
 
@@ -157,16 +164,7 @@ async function main() {
             } catch {
                 continue
             }
-            const parsed = safeJsonParse(q.answer)
-            if (!parsed.ok) continue
-            const answerValue = parsed.value
-
-            let found = false
-            if (Number.isInteger(answerValue)) {
-                found = answerValue >= 0 && answerValue < options.length
-            } else {
-                found = options.some((o) => normalizeTextLoose(o) === normalizeTextLoose(String(answerValue ?? '')))
-            }
+            const found = storedAnswerResolvesAgainstOptions(q.answer, options)
             if (!found) mismatches.push(q.id)
         }
         if (mismatches.length > 0) {

@@ -66,7 +66,7 @@ describe('Progress page', () => {
         await user.click(detailsButton)
 
         expect(mockGetProgressDetail).toHaveBeenCalledWith('essential-digital-skills')
-        expect(await screen.findByText('Track mastered')).toBeInTheDocument()
+        expect(await screen.findByText('Pathway complete')).toBeInTheDocument()
         expect(screen.getByText('Basics')).toBeInTheDocument()
         expect(screen.getByText('Safety')).toBeInTheDocument()
     })

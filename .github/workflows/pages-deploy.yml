@@ -19,14 +19,22 @@ jobs:
       - name: Install frontend dependencies
         run: npm ci --prefix frontend
 
+      # No VITE_API_URL here on purpose: frontend/.env.production sets it to
+      # /api/v1 so the app calls the Pages Function proxy same-origin. A real
+      # env var would win over the .env file and pin the build to a hardcoded
+      # backend host (and reintroduce cross-origin cookies).
       - name: Build frontend
         run: npm run build --prefix frontend
 
       - name: Install Wrangler
         run: npm install -g wrangler@latest
 
+      # Runs from frontend/ so wrangler picks up wrangler.toml
+      # (pages_build_output_dir = ./dist) and the functions/ directory.
       - name: Deploy to Cloudflare Pages
+        working-directory: frontend
         env:
-          CF_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CF_ACCOUNT_ID }}
         run: |
-          wrangler pages deploy frontend --project-name adultedu --branch main --commit-message "Deploy from GitHub Actions $GITHUB_SHA"
+          wrangler pages deploy --project-name adultedu --branch main --commit-message "Deploy from GitHub Actions $GITHUB_SHA"

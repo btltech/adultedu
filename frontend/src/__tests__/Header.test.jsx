@@ -31,6 +31,6 @@ describe('Header Component', () => {
             </MemoryRouter>
         )
         // Check for common links
-        expect(screen.getByRole('link', { name: /Courses/i })).toBeInTheDocument()
+        expect(screen.getByRole('link', { name: /Pathways/i })).toBeInTheDocument()
     })
 })

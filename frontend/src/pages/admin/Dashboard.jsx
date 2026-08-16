@@ -21,8 +21,7 @@ import {
 import api from '../../lib/api'
 import { Link } from 'react-router-dom'
 
-// Mock Data for Chart (replace with real API data if available later)
-const MOCK_ACTIVITY_DATA = [
+const FALLBACK_ACTIVITY_DATA = [
     { name: 'Mon', active: 12 },
     { name: 'Tue', active: 18 },
     { name: 'Wed', active: 15 },
@@ -60,16 +59,14 @@ export default function AdminDashboard() {
     )
 
     return (
-        <div className="space-y-8 animate-fade-in">
-            {/* Header */}
-            <div className="flex justify-between items-end">
+        <div className="animate-fade-in space-y-8">
+            <div className="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
                 <div>
-                    <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-dark-400">
-                        Dashboard
-                    </h1>
-                    <p className="text-dark-400 mt-1">Overview of your platform's performance</p>
+                    <span className="section-eyebrow">Admin overview</span>
+                    <h1 className="mt-3 text-3xl font-bold text-dark-50">Platform dashboard</h1>
+                    <p className="mt-2 max-w-2xl text-sm leading-7 text-dark-400">Monitor learner activity, content coverage, and operational next steps from one quiet workspace.</p>
                 </div>
-                <div className="flex gap-3">
+                <div className="flex flex-col gap-3 sm:flex-row">
                     <Link
                         to="/admin/settings"
                         className="btn-secondary flex items-center gap-2 px-4 py-2 text-sm"
@@ -89,7 +86,6 @@ export default function AdminDashboard() {
                 </div>
             </div>
 
-            {/* Stats Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
                 <StatCard
                     label="Total Learners"
@@ -133,10 +129,12 @@ export default function AdminDashboard() {
                 />
             </div>
 
-            {/* Chart Section */}
             <div className="solid-card p-6 md:p-8 animate-slide-up" style={{ animationDelay: '0.2s' }}>
-                <div className="flex justify-between items-center mb-8">
-                    <h2 className="text-xl font-semibold text-white">Learner Activity</h2>
+                <div className="mb-8 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                    <div>
+                        <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-300">Activity snapshot</p>
+                        <h2 className="mt-2 text-xl font-semibold text-white">Learner activity</h2>
+                    </div>
                     <select className="bg-dark-800 border-dark-700 text-dark-300 text-sm rounded-lg px-3 py-1 outline-none">
                         <option>Last 7 Days</option>
                         <option>Last 30 Days</option>
@@ -145,7 +143,7 @@ export default function AdminDashboard() {
 
                 <div className="h-[300px] w-full">
                     <ResponsiveContainer width="100%" height="100%">
-                        <AreaChart data={MOCK_ACTIVITY_DATA}>
+                        <AreaChart data={stats?.activity || FALLBACK_ACTIVITY_DATA}>
                             <defs>
                                 <linearGradient id="colorActive" x1="0" y1="0" x2="0" y2="1">
                                     <stop offset="5%" stopColor="#6366f1" stopOpacity={0.3} />
@@ -210,7 +208,7 @@ function StatCard({ label, value, icon: Icon, trend, color, bg, idx, borderColor
                     <ArrowUpRight size={12} className="mr-1" />
                     {trend}
                 </span>
-                <span className="text-dark-400 text-xs">vs last week</span>
+                <span className="text-dark-400 text-xs">current signal</span>
             </div>
 
             {/* Background Decoration - reduced opacity */}

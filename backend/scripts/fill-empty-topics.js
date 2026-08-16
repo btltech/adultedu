@@ -13,7 +13,7 @@ const prisma = new PrismaClient()
 
 // LLM Configuration
 const LLM_URL = process.env.LLM_URL || 'http://192.168.0.165:1234'
-const LLM_MODEL = process.env.LLM_MODEL || 'qwen2.5-coder-32b-instruct'
+const LLM_MODEL = process.env.LLM_MODEL || 'qwen3-coder-30b-a3b-instruct'
 
 async function generateQuestionsForTopic(topic, trackTitle) {
     console.log(`\n   ❓ Generating questions for: ${topic.title} (${trackTitle})`)

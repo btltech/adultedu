@@ -238,9 +238,13 @@ router.post('/review/submit', requireAuth, async (req, res, next) => {
         const isCorrect = String(answer).toLowerCase().trim() ===
             String(correctAnswer).toLowerCase().trim()
 
+        // Override quality based on correctness so SM-2 always resets on wrong answers
+        // regardless of what the frontend sent. Correct: quality >= 3, Wrong: quality <= 2.
+        const effectiveQuality = isCorrect ? Math.max(quality, 3) : Math.min(quality, 2)
+
         // Calculate new schedule using SM-2
         const { easeFactor, interval, repetitions } = calculateSM2(
-            quality,
+            effectiveQuality,
             reviewItem.repetitions,
             reviewItem.easeFactor,
             reviewItem.interval
