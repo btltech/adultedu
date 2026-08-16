@@ -1,5 +1,5 @@
 import { createClient } from 'redis';
-import config from '../config/env.js';
+import logger from './logger.js';
 
 let client;
 let isReady = false;
@@ -12,25 +12,26 @@ const setupRedis = async () => {
         });
 
         client.on('error', (err) => {
-            console.warn('Redis Client Error', err);
+            logger.warn('Redis client error', {
+                error: err.message,
+            });
             isReady = false;
         });
 
         client.on('ready', () => {
-            console.log('Redis Client Ready');
+            logger.info('Redis client ready');
             isReady = true;
         });
 
         try {
             await client.connect();
         } catch (e) {
-            console.warn('Failed to connect to Redis, caching disabled.');
+            logger.warn('Failed to connect to Redis, caching disabled', {
+                error: e.message,
+            });
         }
     }
 };
-
-// Auto-start connection attempt
-setupRedis();
 
 export const cache = {
     get: async (key) => {

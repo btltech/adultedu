@@ -1,5 +1,6 @@
 
 import { PrismaClient } from '@prisma/client'
+import { canonicalizeMcqAnswer, safeJsonParse } from './questionQualityUtils.js'
 
 const prisma = new PrismaClient()
 
@@ -34,51 +35,40 @@ async function checkIntegrity() {
 
         // 3. Check JSON Fields (Options & Answer)
         let options = null
-        let answer = null
+        const answerParsed = safeJsonParse(q.answer)
 
-        // Parse Options
-        if (q.type === 'mcq' || q.type === 'multi_select') {
-            try {
-                options = typeof q.options === 'string' ? JSON.parse(q.options) : q.options
+        if (!answerParsed.ok) {
+            qIssues.push('Malformed answer JSON')
+        } else if (answerParsed.value === '' || answerParsed.value === null) {
+            qIssues.push('Empty answer')
+        }
+
+        if (q.type === 'mcq' || q.type === 'multi_select' || q.type === 'true_false' || q.type === 'scenario') {
+            const optionsParsed = safeJsonParse(q.options)
+            if (!optionsParsed.ok) {
+                qIssues.push('Malformed options JSON')
+            } else {
+                options = optionsParsed.value
                 if (!Array.isArray(options)) {
                     qIssues.push('Options is not an array')
                 } else if (options.length < 2) {
                     qIssues.push(`Too few options (${options.length})`)
-                } else {
-                    // Check for empty strings in options
-                    if (options.some(o => !o || typeof o !== 'string' || o.trim() === '')) {
-                        qIssues.push('Contains empty or invalid option(s)')
-                    }
+                } else if (options.some(o => !o || typeof o !== 'string' || o.trim() === '')) {
+                    qIssues.push('Contains empty or invalid option(s)')
                 }
-            } catch (e) {
-                qIssues.push('Malformed options JSON')
             }
         }
 
-        // Parse Answer
-        try {
-            let parsedAnswer = q.answer
-            try {
-                parsedAnswer = JSON.parse(q.answer)
-            } catch (e) {
-                // Keep raw
-            }
-            answer = parsedAnswer
+        // 4. Logic Consistency (Answer resolvable against options)
+        if ((q.type === 'mcq' || q.type === 'true_false' || q.type === 'scenario') && Array.isArray(options)) {
+            const canonical = canonicalizeMcqAnswer({
+                options: q.options,
+                answerRaw: q.answer,
+                explanation: q.explanation,
+            })
 
-            if (!answer) {
-                qIssues.push('Empty answer')
-            }
-        } catch (e) {
-            qIssues.push('Error processing answer field')
-        }
-
-        // 4. Logic Consistency (Answer in Options)
-        if ((q.type === 'mcq') && Array.isArray(options) && answer) {
-            const answerStr = String(answer).trim()
-            const found = options.some(opt => String(opt).trim() === answerStr)
-
-            if (!found) {
-                qIssues.push(`Answer "${answerStr}" not found in options: [${options.join(', ')}]`)
+            if (!canonical.ok) {
+                qIssues.push(`Answer cannot be resolved against options (${canonical.reason})`)
             }
         }
 

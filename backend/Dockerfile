@@ -1,4 +1,4 @@
-FROM node:18-bullseye-slim
+FROM node:20-bullseye-slim
 
 WORKDIR /app
 
@@ -19,4 +19,4 @@ EXPOSE 3001
 
 ENV NODE_ENV=production
 
-CMD ["npm", "start"]
+CMD ["sh", "-lc", "echo 'Running Prisma migrations'; npx prisma migrate deploy; echo 'Starting AdultEdu API'; exec node src/index.js"]

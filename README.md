@@ -81,6 +81,8 @@ This starts:
 | `npm run db:studio` | Open Prisma Studio (DB browser) |
 | `cd backend && npm run db:import:sqlite-devdb` | Import legacy `backend/prisma/dev.db` into Postgres (requires `SQLITE_DATABASE_URL=file:./dev.db`) |
 | `cd backend && npm run questions:audit` | Audit question consistency |
+| `cd backend && npm run questions:trust-audit` | Flag content trust risks, duplicates, weak explanations, and low coverage |
+| `cd backend && npm run questions:fix-lifeuk-trust -- --apply` | Apply targeted Life in the UK trust wording/content repairs |
 | `cd backend && npm run questions:fix -- --apply --align-levels` | Fix answers/options and align question levels to topic levels |
 
 ## Project Structure

@@ -1,5 +1,6 @@
 import { Router } from 'express'
 import prisma from '../lib/db.js'
+import logger from '../lib/logger.js'
 import { requireAuth } from '../middleware/auth.js'
 import { awardXP, XP_CORRECT_ANSWER } from './gamification.js'
 
@@ -129,35 +130,34 @@ router.get('/gamification/leaderboard', requireAuth, async (req, res, next) => {
             startDate.setDate(now.getDate() - 30)
         }
 
-        // Get top users by XP (using total XP for simplicity)
-        // In a production app, you'd track XP earned per period separately
-        const topUsers = await prisma.user.findMany({
-            select: {
-                id: true,
-                email: true,
-                xpTotal: true,
-                currentStreak: true,
-            },
-            orderBy: { xpTotal: 'desc' },
-            take: 10
-        })
+        // Get top users by XP and current user data in parallel
+        const [topUsers, currentUser] = await Promise.all([
+            prisma.user.findMany({
+                select: {
+                    id: true,
+                    email: true,
+                    displayName: true,
+                    xpTotal: true,
+                    currentStreak: true,
+                },
+                orderBy: { xpTotal: 'desc' },
+                take: 10
+            }),
+            prisma.user.findUnique({
+                where: { id: req.user.id },
+                select: { xpTotal: true, currentStreak: true }
+            })
+        ])
 
-        // Find current user's rank
-        const allUsersSorted = await prisma.user.findMany({
-            select: { id: true, xpTotal: true },
-            orderBy: { xpTotal: 'desc' }
-        })
-
-        const currentUserRank = allUsersSorted.findIndex(u => u.id === req.user.id) + 1
-        const currentUser = await prisma.user.findUnique({
-            where: { id: req.user.id },
-            select: { xpTotal: true, currentStreak: true }
-        })
+        // Count users with more XP for an efficient rank lookup (no full table scan)
+        const currentUserRank = await prisma.user.count({
+            where: { xpTotal: { gt: currentUser?.xpTotal ?? 0 } }
+        }) + 1
 
         // Calculate levels
         const leaderboard = topUsers.map((user, index) => ({
             rank: index + 1,
-            displayName: user.email.split('@')[0], // Simple anonymization
+            displayName: user.displayName || user.email.split('@')[0],
             xp: user.xpTotal,
             level: Math.floor(user.xpTotal / 100) + 1,
             streak: user.currentStreak,
@@ -205,7 +205,12 @@ export async function awardAchievement(userId, type, metadata = null) {
             earnedAt: achievement.earnedAt
         }
     } catch (error) {
-        console.error('Failed to award achievement:', error)
+        logger.error('Failed to award achievement', {
+            userId,
+            type,
+            error: error.message,
+            stack: error.stack,
+        })
         return null
     }
 }

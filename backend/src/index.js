@@ -21,9 +21,12 @@ import diagnosticRoutes from './routes/diagnostic.js'
 import dailyRoutes from './routes/daily.js'
 import gamificationRoutes from './routes/gamification.js'
 import achievementsRoutes from './routes/achievements.js'
-import labRoutes from './routes/lab.js'
+import dictionaryRoutes from './routes/dictionary.js'
+import onboardingRoutes from './routes/onboarding.js'
+import partnerReportsRoutes from './routes/partnerReports.js'
 
 import logger from './lib/logger.js'
+import { startReturnReminderScheduler } from './lib/returnReminderScheduler.js'
 
 // ... imports ...
 import { generateCsrfToken, verifyCsrfToken } from './middleware/csrf.js'
@@ -55,7 +58,7 @@ app.use(corsMiddleware)
 app.use(express.json({ limit: '10mb' }))
 app.use(express.urlencoded({ extended: true, limit: '10mb' }))
 app.use(cookieParser())
-app.use('/api', apiLimiter)
+app.use('/api/v1', apiLimiter)
 
 // CSRF Protection
 // Note: Frontend must read 'XSRF-TOKEN' cookie and set 'X-CSRF-Token' header on mutations
@@ -64,7 +67,17 @@ app.use(verifyCsrfToken)
 
 // Request logging
 app.use((req, res, next) => {
-    logger.info(`${req.method} ${req.path}`)
+    const startedAt = Date.now()
+
+    res.on('finish', () => {
+        logger.info('HTTP request', {
+            method: req.method,
+            path: req.originalUrl,
+            statusCode: res.statusCode,
+            durationMs: Date.now() - startedAt,
+        })
+    })
+
     next()
 })
 
@@ -82,33 +95,43 @@ v1Router.use('/', lessonsRoutes)
 v1Router.use('/', reviewRoutes)
 v1Router.use('/', analyticsRoutes)
 v1Router.use('/', diagnosticRoutes)
+v1Router.use('/', onboardingRoutes)
 v1Router.use('/', dailyRoutes)
 v1Router.use('/', gamificationRoutes)
 v1Router.use('/', achievementsRoutes)
-v1Router.use('/', labRoutes)
 v1Router.use('/admin', adminRoutes)
+v1Router.use('/admin/partners', partnerReportsRoutes)
 v1Router.use('/', certificatesRoutes)
 v1Router.use('/', eventsRoutes)
 v1Router.use('/organizations', organizationsRoutes)
+v1Router.use('/dictionary', dictionaryRoutes)
 
 app.use('/api/v1', v1Router)
-// Keep /api for backward compatibility safely or redirect? 
-// For now, let's just make v1 standard. 
-// But the frontend uses /api currently. 
-// I should update frontend base URL or map /api to /api/v1 temporarily.
-app.use('/api', v1Router) // Alias for backward compatibility if needed, but let's stick to plan.
 
 // 404 handler
-app.use('/api/*', (req, res) => {
+app.use('/api/v1/*', (req, res) => {
     res.status(404).json({
         error: 'Not Found',
         message: `Cannot ${req.method} ${req.path}`,
     })
 })
 
+app.use('/api', (req, res) => {
+    res.status(410).json({
+        error: 'Gone',
+        message: 'Legacy /api routes have been removed. Use /api/v1.',
+    })
+})
+
 // Error handler
 app.use((err, req, res, next) => {
-    console.error('Error:', err)
+    logger.error('Unhandled request error', {
+        method: req.method,
+        path: req.originalUrl,
+        error: err.message,
+        stack: err.stack,
+        name: err.name,
+    })
 
     const statusCode = err.statusCode || 500
     const message = config.isDev ? err.message : 'Internal Server Error'
@@ -123,18 +146,14 @@ app.use((err, req, res, next) => {
 // Start server
 if (process.env.NODE_ENV !== 'test') {
     app.listen(config.port, config.host, () => {
-        console.log(`
-╔═══════════════════════════════════════════════════╗
-║                                                   ║
-║   🎓 AdultEdu API Server                          ║
-║                                                   ║
-║   Running at: http://${config.host}:${config.port}           ║
-║   Environment: ${config.nodeEnv.padEnd(32)}║
-║                                                   ║
-║   Health: http://${config.host}:${config.port}/api/health    ║
-║                                                   ║
-╚═══════════════════════════════════════════════════╝
-      `)
+        logger.info('AdultEdu API server started', {
+            host: config.host,
+            port: config.port,
+            environment: config.nodeEnv,
+            healthUrl: `http://${config.host}:${config.port}/api/v1/health`,
+        })
+
+        startReturnReminderScheduler()
     })
 }
 
