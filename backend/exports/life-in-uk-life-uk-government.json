@@ -1,0 +1,87 @@
+[
+  {
+    "prompt": "Which body has the power to make laws in the United Kingdom?",
+    "options": [
+      "The Queen",
+      "Parliament",
+      "The Supreme Court",
+      "The Prime Minister"
+    ],
+    "answer": "1",
+    "explanation": "Parliament is the legislative body responsible for making laws. It consists of the House of Commons and the House of Lords, along with the monarch.",
+    "difficulty": "easy",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the minimum voting age in the United Kingdom?",
+    "options": [
+      "16",
+      "17",
+      "18",
+      "21"
+    ],
+    "answer": "2",
+    "explanation": "Citizens aged 18 and over are eligible to vote in UK elections. This includes general elections, local elections, and referendums.",
+    "difficulty": "easy",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a responsibility of citizens in the United Kingdom?",
+    "options": [
+      "Paying taxes",
+      "Voting in elections",
+      "Following the law",
+      "All of the above"
+    ],
+    "answer": "3",
+    "explanation": "Citizens have several responsibilities including paying taxes, voting in elections when eligible, and following the law. These are fundamental duties for maintaining a functioning society.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following best describes the role of the House of Lords in the UK government?",
+    "options": [
+      "It is the lower house that represents the people",
+      "It makes and passes all laws without any input from other bodies",
+      "It reviews, revises and can suggest changes to bills proposed by the House of Commons",
+      "It has no power to influence legislation and only serves ceremonial purposes"
+    ],
+    "answer": "2",
+    "explanation": "The House of Lords is the upper house of Parliament that scrutinizes and revises legislation. While it cannot block most bills indefinitely, it can suggest amendments and delay them for up to one year.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "In which court would a case involving a serious criminal offense such as murder typically be heard in the UK?",
+    "options": [
+      "Magistrates' Court",
+      "County Court",
+      "High Court",
+      "Crown Court"
+    ],
+    "answer": "3",
+    "explanation": "The Crown Court handles more serious criminal cases including murder, rape and robbery. It is where trials for indictable offenses take place with a jury of twelve people.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  }
+]

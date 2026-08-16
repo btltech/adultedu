@@ -2,8 +2,16 @@
 
 import fs from 'fs'
 import path from 'path'
+import { fileURLToPath } from 'url'
 import { PrismaClient } from '@prisma/client'
 import { canonicalizeMcqAnswer, normalizeTextStrict } from './questionQualityUtils.js'
+
+// Resolved from this file so the script works from any checkout, not just the
+// machine it was written on.
+const DEFAULT_EXPORT_PATH = path.resolve(
+    path.dirname(fileURLToPath(import.meta.url)),
+    '../exports/life-in-uk-questions-final.json'
+)
 
 const prisma = new PrismaClient()
 
@@ -90,9 +98,9 @@ async function main() {
     const apply = args.get('--apply') === true
     const trackSlug = String(args.get('--track-slug') || 'life-in-the-uk-test')
     const targetPerTopic = clampInt(args.get('--target') || '100', 1, 500, 100)
-    const exportPath = path.resolve(
-        String(args.get('--file') || '/Users/mobolaji/Adut_Edu/backend/exports/life-in-uk-questions-final.json')
-    )
+    const exportPath = args.get('--file')
+        ? path.resolve(String(args.get('--file')))
+        : DEFAULT_EXPORT_PATH
 
     console.log(`📥 export: ${exportPath}`)
     console.log(`🎯 track:  ${trackSlug}`)

@@ -8,7 +8,7 @@ import { useAuth } from '../context/AuthContext'
 import DiagnosticModal from '../components/diagnostic/DiagnosticModal'
 import { getPathwayGuidance } from '../lib/pathwayGuidance'
 import { usePageSeo } from '../components/SEO'
-import { formatPageDescription, formatPageTitle } from '../lib/seo/meta'
+import { trackSeoTags } from '../lib/seo/meta'
 
 function getNextStepValue(nextStep) {
     if (nextStep.slug) return nextStep.slug
@@ -136,15 +136,7 @@ export default function TrackDetail() {
     const [outcomeError, setOutcomeError] = useState('')
     const [outcomeSaved, setOutcomeSaved] = useState(false)
 
-    usePageSeo({
-        title: track ? formatPageTitle(`${track.title} Pathway`) : undefined,
-        description: track
-            ? formatPageDescription(
-                track.description,
-                `Follow the ${track.title} pathway on AdultEdu with structured topics, lessons, and practice for UK adult learners.`
-            )
-            : undefined,
-    })
+    usePageSeo(trackSeoTags(track))
 
     useEffect(() => {
         async function fetchTrack() {

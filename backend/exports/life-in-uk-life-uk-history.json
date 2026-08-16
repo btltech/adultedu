@@ -1,0 +1,852 @@
+[
+  {
+    "prompt": "Which monarch is known for establishing the Church of England during the 16th century?",
+    "options": [
+      "A) Henry VIII",
+      "B) Elizabeth I",
+      "C) James I",
+      "D) Mary I"
+    ],
+    "answer": "A) Henry VIII",
+    "explanation": "Henry VIII broke away from the Roman Catholic Church and established the Church of England in the 1530s, primarily to annul his marriage.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What significant event occurred in 1666 in London?",
+    "options": [
+      "A) The signing of the Magna Carta",
+      "B) The Great Fire of London",
+      "C) The Battle of Trafalgar",
+      "D) The Industrial Revolution began"
+    ],
+    "answer": "B) The Great Fire of London",
+    "explanation": "In 1666, a devastating fire destroyed much of central London, including over 13,000 buildings, but led to significant rebuilding efforts.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the British Prime Minister during most of World War II?",
+    "options": [
+      "A) Neville Chamberlain",
+      "B) Winston Churchill",
+      "C) Clement Attlee",
+      "D) David Lloyd George"
+    ],
+    "answer": "B) Winston Churchill",
+    "explanation": "Winston Churchill served as Prime Minister from May 1940 to July 1945, leading the UK through most of World War II.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a key development during the Industrial Revolution?",
+    "options": [
+      "A) The invention of the steam engine",
+      "B) The introduction of the internet",
+      "C) The discovery of penicillin",
+      "D) The creation of the United Nations"
+    ],
+    "answer": "A) The invention of the steam engine",
+    "explanation": "The steam engine, especially James Watt's improvements, was a pivotal innovation that powered factories and transportation during the Industrial Revolution.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the first woman to serve as Prime Minister of the United Kingdom?",
+    "options": [
+      "A) Margaret Thatcher",
+      "B) Theresa May",
+      "C) Liz Truss",
+      "D) Harriet Harman"
+    ],
+    "answer": "A) Margaret Thatcher",
+    "explanation": "Margaret Thatcher became the first female Prime Minister of the UK in 1979 and served until 1990.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a major result of the Magna Carta signed in 1215?",
+    "options": [
+      "A) The establishment of a constitutional monarchy",
+      "B) The abolition of the monarchy",
+      "C) The creation of the first parliament",
+      "D) The beginning of the English Civil War"
+    ],
+    "answer": "A) The establishment of a constitutional monarchy",
+    "explanation": "The Magna Carta limited the power of the king and laid the foundation for constitutional governance and the rule of law in England.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which event marked the end of the British Empire's rule over India?",
+    "options": [
+      "A) The Indian Rebellion of 1857",
+      "B) The Partition of India in 1947",
+      "C) The signing of the Treaty of Versailles",
+      "D) The Suez Crisis in 1956"
+    ],
+    "answer": "B) The Partition of India in 1947",
+    "explanation": "In 1947, British India was partitioned into two independent nations—India and Pakistan—ending British colonial rule.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who led the UK during the Suez Crisis of 1956?",
+    "options": [
+      "A) Harold Macmillan",
+      "B) Anthony Eden",
+      "C) Clement Attlee",
+      "D) Winston Churchill"
+    ],
+    "answer": "B) Anthony Eden",
+    "explanation": "Anthony Eden was Prime Minister during the Suez Crisis, which involved a military intervention in Egypt that ultimately failed.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a key achievement of the UK's role in the abolition of slavery?",
+    "options": [
+      "A) The Slave Trade Act of 1807",
+      "B) The Emancipation Proclamation of 1863",
+      "C) The Abolition of Slavery Act of 1833",
+      "D) The Treaty of Tilsit"
+    ],
+    "answer": "C) The Abolition of Slavery Act of 1833",
+    "explanation": "The Slavery Abolition Act of 1833 formally abolished slavery throughout most of the British Empire, freeing over 800,000 enslaved people.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What was the significance of the Battle of Britain during World War II?",
+    "options": [
+      "A) It was a naval battle that protected British trade routes",
+      "B) It was a major air campaign where the RAF defended the UK against German attacks",
+      "C) It was a land invasion that failed due to bad weather",
+      "D) It was a turning point in the war against Japan"
+    ],
+    "answer": "B) It was a major air campaign where the RAF defended the UK against German attacks",
+    "explanation": "The Battle of Britain in 1940 was a crucial air campaign where the Royal Air Force successfully defended the UK against the German Luftwaffe.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which monarch established the Church of England during the 16th century?",
+    "options": [
+      "A) Henry VIII",
+      "B) Elizabeth I",
+      "C) James I",
+      "D) Mary I"
+    ],
+    "answer": "A) Henry VIII",
+    "explanation": "Henry VIII broke away from the Roman Catholic Church and established the Church of England in the 1530s, primarily to annul his marriage.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What major event in 1649 led to the temporary abolition of the monarchy in England?",
+    "options": [
+      "A) The Glorious Revolution",
+      "B) The English Civil War",
+      "C) The Restoration",
+      "D) The execution of Charles I"
+    ],
+    "answer": "D) The execution of Charles I",
+    "explanation": "In 1649, King Charles I was executed following the English Civil War, leading to the establishment of a republic under Oliver Cromwell.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which 18th-century development significantly contributed to the Industrial Revolution in Britain?",
+    "options": [
+      "A) The invention of the steam engine",
+      "B) The discovery of electricity",
+      "C) The construction of the internet",
+      "D) The use of nuclear power"
+    ],
+    "answer": "A) The invention of the steam engine",
+    "explanation": "The steam engine, improved by James Watt, was a key technological advancement that powered factories and transport during the Industrial Revolution.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the British Prime Minister during most of World War II?",
+    "options": [
+      "A) Winston Churchill",
+      "B) Clement Attlee",
+      "C) Neville Chamberlain",
+      "D) Harold Macmillan"
+    ],
+    "answer": "A) Winston Churchill",
+    "explanation": "Winston Churchill served as Prime Minister from 1940 to 1945, leading Britain through most of World War II.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What was the name of the 1918 act that gave voting rights to some women in the UK?",
+    "options": [
+      "A) Representation of the People Act 1918",
+      "B) Parliament Act 1911",
+      "C) Reform Act 1832",
+      "D) Reform Act 1867"
+    ],
+    "answer": "A) Representation of the People Act 1918",
+    "explanation": "The Representation of the People Act 1918 granted voting rights to women over 30 who met property qualifications, and all men over 21.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which historical figure led the campaign to abolish slavery in the British Empire?",
+    "options": [
+      "A) William Wilberforce",
+      "B) Oliver Cromwell",
+      "C) Samuel Johnson",
+      "D) Charles Darwin"
+    ],
+    "answer": "A) William Wilberforce",
+    "explanation": "William Wilberforce was a prominent abolitionist who led the campaign to end the slave trade in the British Empire, culminating in the abolition of slavery in 1833.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What year did the UK join the European Economic Community (EEC)?",
+    "options": [
+      "A) 1973",
+      "B) 1967",
+      "C) 1981",
+      "D) 1957"
+    ],
+    "answer": "A) 1973",
+    "explanation": "The United Kingdom joined the European Economic Community (EEC) in 1973, later becoming part of the European Union.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a major outcome of the Magna Carta in 1215?",
+    "options": [
+      "A) It established the principle that everyone, including the king, is subject to the law.",
+      "B) It created the first British Parliament.",
+      "C) It ended the Hundred Years' War.",
+      "D) It abolished the monarchy permanently."
+    ],
+    "answer": "A) It established the principle that everyone, including the king, is subject to the law.",
+    "explanation": "The Magna Carta, signed in 1215, was a foundational document that limited the power of the king and laid the groundwork for constitutional law.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following best describes the significance of the Battle of Trafalgar in 1805?",
+    "options": [
+      "A) It prevented a French invasion of Britain.",
+      "B) It ended the Napoleonic Wars.",
+      "C) It led to the establishment of the United Nations.",
+      "D) It resulted in the signing of the Treaty of Versailles."
+    ],
+    "answer": "A) It prevented a French invasion of Britain.",
+    "explanation": "The Battle of Trafalgar, led by Admiral Nelson, secured British naval dominance and prevented Napoleon from invading Britain.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the first woman to become Prime Minister of the UK?",
+    "options": [
+      "A) Margaret Thatcher",
+      "B) Theresa May",
+      "C) Angela Merkel",
+      "D) Indira Gandhi"
+    ],
+    "answer": "A) Margaret Thatcher",
+    "explanation": "Margaret Thatcher became the first female Prime Minister of the UK in 1979, serving until 1990.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which event is considered a key moment in the development of democracy in the United Kingdom?",
+    "options": [
+      "A) The signing of the Magna Carta in 1215",
+      "B) The Norman Conquest in 1066",
+      "C) The Union of the Crowns in 1603",
+      "D) The Industrial Revolution in the 18th century"
+    ],
+    "answer": "A) The signing of the Magna Carta in 1215",
+    "explanation": "The Magna Carta, signed by King John in 1215, is a landmark document that limited the power of the monarchy and laid the foundation for modern democracy in the UK.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the British monarch during the height of the British Empire in the 19th century?",
+    "options": [
+      "A) Queen Victoria",
+      "B) King George III",
+      "C) King Edward VII",
+      "D) Queen Elizabeth II"
+    ],
+    "answer": "A) Queen Victoria",
+    "explanation": "Queen Victoria reigned from 1837 to 1901, a period known as the Victorian era, during which the British Empire expanded to its greatest extent.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a major development during the Industrial Revolution in the UK?",
+    "options": [
+      "A) The invention of the steam engine",
+      "B) The establishment of the Royal Navy",
+      "C) The creation of the NHS",
+      "D) The formation of the United Nations"
+    ],
+    "answer": "A) The invention of the steam engine",
+    "explanation": "The steam engine, improved by James Watt, was a key technological advancement that powered the Industrial Revolution in the UK.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What was the main cause of the English Civil War in the 17th century?",
+    "options": [
+      "A) Religious and political conflict between the monarchy and Parliament",
+      "B) Economic crisis due to foreign trade",
+      "C) Invasion by the Spanish Armada",
+      "D) Disputes over colonial expansion"
+    ],
+    "answer": "A) Religious and political conflict between the monarchy and Parliament",
+    "explanation": "The English Civil War (1642–1651) was primarily caused by tensions between King Charles I and Parliament over religious and political control.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which British figure played a crucial role in the abolition of slavery?",
+    "options": [
+      "A) William Wilberforce",
+      "B) Oliver Cromwell",
+      "C) Sir Winston Churchill",
+      "D) Samuel Johnson"
+    ],
+    "answer": "A) William Wilberforce",
+    "explanation": "William Wilberforce was a prominent abolitionist who led the campaign to end the slave trade in the British Empire, culminating in the Slave Trade Act of 1807.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What was the significance of the Battle of Trafalgar in 1805?",
+    "options": [
+      "A) It established British naval dominance for over a century",
+      "B) It led to the end of the Napoleonic Wars",
+      "C) It resulted in the defeat of the Spanish Armada",
+      "D) It marked the beginning of the Industrial Revolution"
+    ],
+    "answer": "A) It established British naval dominance for over a century",
+    "explanation": "The Battle of Trafalgar, led by Admiral Nelson, secured British control of the seas and prevented Napoleon from invading Britain.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a key achievement of the UK during the 20th century?",
+    "options": [
+      "A) The establishment of the National Health Service (NHS) in 1948",
+      "B) The signing of the Treaty of Rome in 1957",
+      "C) The invention of the internet",
+      "D) The construction of the Channel Tunnel"
+    ],
+    "answer": "A) The establishment of the National Health Service (NHS) in 1948",
+    "explanation": "The NHS was created in 1948 under the Labour government to provide free healthcare to all UK citizens, marking a major social reform.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the Prime Minister of the United Kingdom during World War II?",
+    "options": [
+      "A) Winston Churchill",
+      "B) Clement Attlee",
+      "C) Neville Chamberlain",
+      "D) Harold Macmillan"
+    ],
+    "answer": "A) Winston Churchill",
+    "explanation": "Winston Churchill served as Prime Minister from 1940 to 1945 and was a key leader during World War II, known for his inspiring speeches.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What was the main purpose of the Act of Union in 1707?",
+    "options": [
+      "A) To unite England and Scotland into a single kingdom",
+      "B) To establish a constitutional monarchy",
+      "C) To end the monarchy in Britain",
+      "D) To create a federal system of government"
+    ],
+    "answer": "A) To unite England and Scotland into a single kingdom",
+    "explanation": "The Act of Union in 1707 merged the Kingdom of England and the Kingdom of Scotland to form the Kingdom of Great Britain.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a major cultural contribution from the UK during the 18th century?",
+    "options": [
+      "A) The development of the novel as a literary form",
+      "B) The invention of the printing press",
+      "C) The creation of jazz music",
+      "D) The founding of the BBC"
+    ],
+    "answer": "A) The development of the novel as a literary form",
+    "explanation": "The 18th century saw the rise of the novel in English literature, with authors like Daniel Defoe and Samuel Richardson pioneering the genre.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which event marked the beginning of the Industrial Revolution in Britain?",
+    "options": [
+      "A) The invention of the steam engine by James Watt",
+      "B) The signing of the Magna Carta",
+      "C) The Glorious Revolution",
+      "D) The establishment of the British East India Company"
+    ],
+    "answer": "A) The invention of the steam engine by James Watt",
+    "explanation": "The Industrial Revolution began in Britain in the late 18th century, largely due to innovations like James Watt's improved steam engine, which powered factories and transformed industry.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the Prime Minister of the United Kingdom during most of World War II?",
+    "options": [
+      "A) Winston Churchill",
+      "B) Neville Chamberlain",
+      "C) Clement Attlee",
+      "D) David Lloyd George"
+    ],
+    "answer": "A) Winston Churchill",
+    "explanation": "Winston Churchill served as Prime Minister from May 1940 to July 1945, leading the UK through most of World War II and becoming a symbol of resistance.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which monarch was the first to reign over a unified United Kingdom of Great Britain and Ireland?",
+    "options": [
+      "A) George III",
+      "B) George IV",
+      "C) William IV",
+      "D) Victoria"
+    ],
+    "answer": "A) George III",
+    "explanation": "George III was the first monarch to reign over the United Kingdom of Great Britain and Ireland after the Act of Union in 1801.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a key achievement of the Magna Carta in 1215?",
+    "options": [
+      "A) Establishing the right to a fair trial",
+      "B) Creating the first Parliament",
+      "C) Ending the rule of the monarchy",
+      "D) Introducing religious freedom"
+    ],
+    "answer": "A) Establishing the right to a fair trial",
+    "explanation": "The Magna Carta, signed by King John in 1215, laid the foundation for the rule of law and established that everyone, including the king, was subject to the law.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the first British Prime Minister to be elected after the Reform Act 1832?",
+    "options": [
+      "A) Sir Robert Peel",
+      "B) Lord Melbourne",
+      "C) William Gladstone",
+      "D) Benjamin Disraeli"
+    ],
+    "answer": "B) Lord Melbourne",
+    "explanation": "Lord Melbourne became Prime Minister in 1834, shortly after the Reform Act 1832, which expanded voting rights and reformed parliamentary representation.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which historical figure is known for leading the abolition of the slave trade in the British Empire?",
+    "options": [
+      "A) William Wilberforce",
+      "B) Samuel Johnson",
+      "C) Charles Dickens",
+      "D) Oliver Cromwell"
+    ],
+    "answer": "A) William Wilberforce",
+    "explanation": "William Wilberforce was a prominent abolitionist who led the campaign against the slave trade, resulting in the Slave Trade Act of 1807.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What was the significance of the Battle of Trafalgar in 1805?",
+    "options": [
+      "A) It secured British naval supremacy for over a century",
+      "B) It ended the Napoleonic Wars",
+      "C) It led to the end of the British Empire",
+      "D) It resulted in the loss of British colonies"
+    ],
+    "answer": "A) It secured British naval supremacy for over a century",
+    "explanation": "The Battle of Trafalgar, led by Admiral Nelson, was a decisive British victory that established naval dominance and prevented Napoleon from invading Britain.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a major outcome of the English Civil War in the 17th century?",
+    "options": [
+      "A) The establishment of a republic under Oliver Cromwell",
+      "B) The introduction of a constitutional monarchy",
+      "C) The creation of the Church of England",
+      "D) The signing of the Treaty of Utrecht"
+    ],
+    "answer": "A) The establishment of a republic under Oliver Cromwell",
+    "explanation": "After the English Civil War, Oliver Cromwell became Lord Protector and established a republic known as the Commonwealth of England.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the first British monarch to be crowned in the 21st century?",
+    "options": [
+      "A) Queen Elizabeth II",
+      "B) King Charles III",
+      "C) King George VI",
+      "D) King Edward VII"
+    ],
+    "answer": "B) King Charles III",
+    "explanation": "King Charles III was crowned in May 2023, becoming the first British monarch to be crowned in the 21st century.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was a key feature of the British Empire at its height in the late 19th century?",
+    "options": [
+      "A) Control over a quarter of the world's population",
+      "B) Dominance over all of Europe",
+      "C) Expansion into South America",
+      "D) A unified government across all colonies"
+    ],
+    "answer": "A) Control over a quarter of the world's population",
+    "explanation": "At its peak, the British Empire controlled about a quarter of the world's population, making it the largest empire in history.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which monarch is known for establishing the Church of England?",
+    "options": [
+      "A) Henry VIII",
+      "B) Elizabeth I",
+      "C) James I",
+      "D) Mary I"
+    ],
+    "answer": "A) Henry VIII",
+    "explanation": "Henry VIII broke away from the Roman Catholic Church and established the Church of England in the 16th century, primarily to annul his marriage.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What major event in 1789 led to the overthrow of the French monarchy and influenced political thought in Britain?",
+    "options": [
+      "A) The Industrial Revolution",
+      "B) The American War of Independence",
+      "C) The French Revolution",
+      "D) The Napoleonic Wars"
+    ],
+    "answer": "C) The French Revolution",
+    "explanation": "The French Revolution began in 1789 and led to the fall of the French monarchy, inspiring political change and debates about liberty and governance in Britain.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which British prime minister led the country during most of World War II?",
+    "options": [
+      "A) Winston Churchill",
+      "B) Clement Attlee",
+      "C) Neville Chamberlain",
+      "D) David Lloyd George"
+    ],
+    "answer": "A) Winston Churchill",
+    "explanation": "Winston Churchill served as Prime Minister from 1940 to 1945 and was a key figure in leading Britain during World War II.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the first Prime Minister of the United Kingdom to be elected after the introduction of the parliamentary system in its modern form?",
+    "options": [
+      "A) Robert Walpole",
+      "B) William Pitt the Younger",
+      "C) Sir Robert Peel",
+      "D) Arthur Balfour"
+    ],
+    "answer": "A) Robert Walpole",
+    "explanation": "Robert Walpole is widely considered the first Prime Minister of Great Britain, serving from 1721 to 1742 and establishing many traditions of the office.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which development in the 18th century significantly transformed British society and led to urbanization?",
+    "options": [
+      "A) The invention of the steam engine",
+      "B) The Agricultural Revolution",
+      "C) The Industrial Revolution",
+      "D) The expansion of the British Empire"
+    ],
+    "answer": "C) The Industrial Revolution",
+    "explanation": "The Industrial Revolution, beginning in the late 18th century, led to major changes in manufacturing, urbanization, and society across Britain.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the first British woman to become Prime Minister?",
+    "options": [
+      "A) Margaret Thatcher",
+      "B) Theresa May",
+      "C) Harriet Harman",
+      "D) Angela Eagle"
+    ],
+    "answer": "A) Margaret Thatcher",
+    "explanation": "Margaret Thatcher became the first female Prime Minister of the United Kingdom in 1979, serving until 1990.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which historical event led to the end of the Roman occupation of Britain?",
+    "options": [
+      "A) The Norman Conquest",
+      "B) The fall of the Western Roman Empire",
+      "C) The Anglo-Saxon invasions",
+      "D) The Viking raids"
+    ],
+    "answer": "B) The fall of the Western Roman Empire",
+    "explanation": "The Roman withdrawal from Britain around 410 AD followed the fall of the Western Roman Empire, ending Roman rule in the region.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which British scientist developed the theory of evolution by natural selection?",
+    "options": [
+      "A) Isaac Newton",
+      "B) Charles Darwin",
+      "C) Michael Faraday",
+      "D) James Clerk Maxwell"
+    ],
+    "answer": "B) Charles Darwin",
+    "explanation": "Charles Darwin published 'On the Origin of Species' in 1859, introducing the theory of evolution through natural selection.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which act in 1833 abolished slavery throughout most of the British Empire?",
+    "options": [
+      "A) The Slavery Abolition Act",
+      "B) The Emancipation Proclamation",
+      "C) The Abolition of the Slave Trade Act",
+      "D) The Reform Act 1832"
+    ],
+    "answer": "A) The Slavery Abolition Act",
+    "explanation": "The Slavery Abolition Act of 1833 abolished slavery in most British colonies, freeing over 800,000 enslaved people.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who led the campaign for women's suffrage in the early 20th century?",
+    "options": [
+      "A) Emmeline Pankhurst",
+      "B) Millicent Fawcett",
+      "C) Charlotte Despard",
+      "D) Rachel Barrett"
+    ],
+    "answer": "A) Emmeline Pankhurst",
+    "explanation": "Emmeline Pankhurst was a leading figure in the suffragette movement, advocating for women's right to vote through militant action.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  }
+]

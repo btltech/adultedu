@@ -1,0 +1,2059 @@
+[
+  {
+    "prompt": "Which principle is central to the UK’s system of government?",
+    "options": [
+      "A) Parliamentary sovereignty",
+      "B) Absolute monarchy",
+      "C) Presidential authority",
+      "D) Collective tribal leadership"
+    ],
+    "answer": "A) Parliamentary sovereignty",
+    "explanation": "Parliamentary sovereignty means that Parliament can make or unmake any law, and no other body has the power to override it.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does the rule of law ensure in Britain?",
+    "options": [
+      "A) That all citizens are treated equally before the law",
+      "B) That only the monarch can make laws",
+      "C) That laws change daily",
+      "D) That courts are ignored"
+    ],
+    "answer": "A) That all citizens are treated equally before the law",
+    "explanation": "The rule of law guarantees that everyone, including officials, must obey the law and be subject to it.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which value is NOT traditionally listed as a British value in the Life in the UK test?",
+    "options": [
+      "A) Democracy",
+      "B) Respect for the rights of others",
+      "C) Freedom of choice",
+      "D) Unlimited government control"
+    ],
+    "answer": "D) Unlimited government control",
+    "explanation": "British values emphasise democracy, rule of law, individual liberty and mutual respect, not unlimited state power.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "How is the monarch’s role defined in modern Britain?",
+    "options": [
+      "A) Ceremonial with no political power",
+      "B) Absolute ruler of all policy",
+      "C) Chief executive officer",
+      "D) Head of the armed forces with veto rights"
+    ],
+    "answer": "A) Ceremonial with no political power",
+    "explanation": "The monarch’s duties are largely symbolic; real political power lies with elected officials.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which institution is primarily responsible for making laws in the UK?",
+    "options": [
+      "A) The Parliament",
+      "B) The Supreme Court",
+      "C) The Prime Minister’s office",
+      "D) Local councils"
+    ],
+    "answer": "A) The Parliament",
+    "explanation": "Parliament, consisting of the House of Commons and the House of Lords, debates and passes legislation.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does ‘individual liberty’ mean in the UK context?",
+    "options": [
+      "A) Freedom to act within the law",
+      "B) No limits on personal behaviour",
+      "C) State control over private life",
+      "D) Unlimited freedom of speech"
+    ],
+    "answer": "A) Freedom to act within the law",
+    "explanation": "Individual liberty allows people to make choices as long as they do not break the law or harm others.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which principle protects citizens from arbitrary government action?",
+    "options": [
+      "A) Rule of law",
+      "B) Absolute monarchy",
+      "C) Military rule",
+      "D) Corporate governance"
+    ],
+    "answer": "A) Rule of law",
+    "explanation": "The rule of law ensures that all actions by the state are legal and predictable, preventing arbitrary decisions.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "In a democratic system like Britain’s, who ultimately decides on public policy?",
+    "options": [
+      "A) Elected representatives",
+      "B) The monarch alone",
+      "C) International bodies",
+      "D) Corporate lobbyists"
+    ],
+    "answer": "A) Elected representatives",
+    "explanation": "Elected MPs and government ministers formulate and enact policies based on the will of voters.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these is a key feature of British democracy?",
+    "options": [
+      "A) Free and fair elections",
+      "B) One-party rule",
+      "C) No public participation",
+      "D) Random selection of leaders"
+    ],
+    "answer": "A) Free and fair elections",
+    "explanation": "Democracy in the UK relies on regular, transparent elections where citizens can choose their representatives.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the role of the Supreme Court in upholding British values?",
+    "options": [
+      "A) Interpreting the law and ensuring it aligns with constitutional principles",
+      "B) Making new laws",
+      "C) Running elections",
+      "D) Selecting the monarch"
+    ],
+    "answer": "A) Interpreting the law and ensuring it aligns with constitutional principles",
+    "explanation": "The Supreme Court reviews cases to confirm that legislation and government actions respect the rule of law.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which value encourages people to treat each other with dignity?",
+    "options": [
+      "A) Mutual respect",
+      "B) Self‑interest only",
+      "C) Unchecked competition",
+      "D) Ignorance"
+    ],
+    "answer": "A) Mutual respect",
+    "explanation": "Mutual respect is a core British value that promotes tolerance and fair treatment of others.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which element ensures the independence of the judiciary?",
+    "options": [
+      "A) Separation of powers",
+      "B) Parliamentary control",
+      "C) Executive oversight",
+      "D) Public voting"
+    ],
+    "answer": "A) Separation of powers",
+    "explanation": "The separation of powers keeps the courts independent from Parliament and the executive, safeguarding fair justice.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does 'rule of law' protect citizens against?",
+    "options": [
+      "A) Arbitrary use of power",
+      "B) Social welfare",
+      "C) Free trade",
+      "D) International treaties"
+    ],
+    "answer": "A) Arbitrary use of power",
+    "explanation": "The rule of law prevents government officials from acting without legal justification or due process.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which British value supports the idea that everyone should have a fair chance in life?",
+    "options": [
+      "A) Equality",
+      "B) Exclusivity",
+      "C) Privilege",
+      "D) Division"
+    ],
+    "answer": "A) Equality",
+    "explanation": "Equality means people are treated fairly and given equal opportunities, regardless of background.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "How is a ‘free society’ defined in the UK?",
+    "options": [
+      "A) Citizens can make choices without undue interference",
+      "B) The state controls all decisions",
+      "C) No laws exist",
+      "D) Only the wealthy decide"
+    ],
+    "answer": "A) Citizens can make choices without undue interference",
+    "explanation": "Freedom in Britain allows individuals to act within legal limits, with minimal unnecessary government control.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these best describes the UK’s political system?",
+    "options": [
+      "A) Parliamentary democracy",
+      "B) Totalitarian regime",
+      "C) Direct democracy by referendum only",
+      "D) Tribal council"
+    ],
+    "answer": "A) Parliamentary democracy",
+    "explanation": "The UK is a parliamentary democracy where elected MPs form the government and the monarch has a ceremonial role.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does 'individual liberty' protect against?",
+    "options": [
+      "A) Unjust restriction of personal choice",
+      "B) Freedom from all laws",
+      "C) Unlimited state control over property",
+      "D) Mandatory conformity"
+    ],
+    "answer": "A) Unjust restriction of personal choice",
+    "explanation": "Individual liberty guards people against unfair limitations on their actions and decisions.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which principle ensures that the government cannot act outside of its legal authority?",
+    "options": [
+      "A) Rule of law",
+      "B) Executive supremacy",
+      "C) Royal prerogative",
+      "D) Parliamentary veto"
+    ],
+    "answer": "A) Rule of law",
+    "explanation": "The rule of law requires all actions by the state to be based on established laws.",
+    "difficulty": "hard",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is a key feature of British democracy regarding representation?",
+    "options": [
+      "A) Representation through elected MPs",
+      "B) Appointment by the monarch",
+      "C) Selection by corporate boards",
+      "D) Random lottery"
+    ],
+    "answer": "A) Representation through elected MPs",
+    "explanation": "In Britain, citizens elect Members of Parliament to represent their interests in government.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which value encourages people to accept differences and live together peacefully?",
+    "options": [
+      "A) Mutual respect",
+      "B) Intolerance",
+      "C) Aggression",
+      "D) Segregation"
+    ],
+    "answer": "A) Mutual respect",
+    "explanation": "Mutual respect fosters a tolerant society where diverse views coexist.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which principle is essential for protecting human rights in the UK?",
+    "options": [
+      "A) Rule of law",
+      "B) Absolute monarchy",
+      "C) Military rule",
+      "D) Corporate governance"
+    ],
+    "answer": "A) Rule of law",
+    "explanation": "The rule of law ensures that laws protect individuals’ rights and are applied fairly.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does a democratic system like Britain’s allow citizens to do?",
+    "options": [
+      "A) Vote in elections",
+      "B) Decide the monarch’s name",
+      "C) Unilaterally change laws",
+      "D) Bypass courts"
+    ],
+    "answer": "A) Vote in elections",
+    "explanation": "Voting is a fundamental democratic right that lets citizens influence government decisions.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which element of British values supports the idea that everyone should be treated fairly?",
+    "options": [
+      "A) Equality",
+      "B) Privilege",
+      "C) Discrimination",
+      "D) Exclusion"
+    ],
+    "answer": "A) Equality",
+    "explanation": "Equality is a core value that promotes fair treatment for all people.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following best describes how laws are applied in Britain?",
+    "options": [
+      "A) They apply equally to everyone",
+      "B) Only to the wealthy",
+      "C) Only to foreigners",
+      "D) Only to the monarch"
+    ],
+    "answer": "A) They apply equally to everyone",
+    "explanation": "The rule of law means that all individuals, regardless of status, are subject to the same legal standards.",
+    "difficulty": "medium",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is a primary aim of British democracy?",
+    "options": [
+      "A) To represent the will of the people",
+      "B) To centralise power in one individual",
+      "C) To eliminate voting rights",
+      "D) To create secret societies"
+    ],
+    "answer": "A) To represent the will of the people",
+    "explanation": "Democracy seeks to ensure that government decisions reflect the preferences of its citizens.",
+    "difficulty": "easy",
+    "topicId": "life-uk-values",
+    "topicTitle": "The Values and Principles of the UK",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which country makes up the largest land area in the United Kingdom?",
+    "options": [
+      "A) England",
+      "B) Scotland",
+      "C) Wales",
+      "D) Northern Ireland"
+    ],
+    "answer": "A) England",
+    "explanation": "England covers about 130,000 square kilometres, making it the largest of the four constituent countries.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the capital city of Wales?",
+    "options": [
+      "A) Cardiff",
+      "B) Swansea",
+      "C) Newport",
+      "D) Bangor"
+    ],
+    "answer": "A) Cardiff",
+    "explanation": "Cardiff has been the capital of Wales since 1955 and hosts the Welsh Parliament.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a recognised official language in Northern Ireland?",
+    "options": [
+      "A) Irish",
+      "B) Scots Gaelic",
+      "C) French",
+      "D) German"
+    ],
+    "answer": "A) Irish",
+    "explanation": "Irish, along with English and Ulster-Scots, is an official language in Northern Ireland.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the approximate population of the United Kingdom?",
+    "options": [
+      "A) 58 million",
+      "B) 66 million",
+      "C) 73 million",
+      "D) 81 million"
+    ],
+    "answer": "B) 66 million",
+    "explanation": "The UK’s population is around 66 million people, according to recent estimates.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these regions has a climate that is generally cooler and wetter than the rest of England?",
+    "options": [
+      "A) The Midlands",
+      "B) North West England",
+      "C) South East England",
+      "D) East Anglia"
+    ],
+    "answer": "B) North West England",
+    "explanation": "The North West, including cities like Manchester and Liverpool, experiences a maritime climate with higher rainfall.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which body of water separates the island of Great Britain from mainland Europe?",
+    "options": [
+      "A) Irish Sea",
+      "B) English Channel",
+      "C) North Sea",
+      "D) Celtic Sea"
+    ],
+    "answer": "B) English Channel",
+    "explanation": "The English Channel lies between southern England and France, making it the main maritime link to continental Europe.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which city is the capital of Scotland?",
+    "options": [
+      "A) Glasgow",
+      "B) Edinburgh",
+      "C) Aberdeen",
+      "D) Dundee"
+    ],
+    "answer": "B) Edinburgh",
+    "explanation": "Edinburgh has been the Scottish capital since the 15th century and hosts the Scottish Parliament.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "The River Thames flows through which of these major cities?",
+    "options": [
+      "A) Birmingham",
+      "B) Manchester",
+      "C) London",
+      "D) Liverpool"
+    ],
+    "answer": "C) London",
+    "explanation": "The Thames runs through central London and is the longest river entirely in England.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these languages is not an official language of the United Kingdom?",
+    "options": [
+      "A) English",
+      "B) Welsh",
+      "C) Irish",
+      "D) Spanish"
+    ],
+    "answer": "D) Spanish",
+    "explanation": "Spanish has no official status in any UK jurisdiction, unlike English, Welsh and Irish.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the most common climate classification found across England?",
+    "options": [
+      "A) Mediterranean",
+      "B) Oceanic (Marine West Coast)",
+      "C) Continental",
+      "D) Subarctic"
+    ],
+    "answer": "B) Oceanic (Marine West Coast)",
+    "explanation": "England’s climate is largely temperate oceanic, with mild winters and cool summers.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following cities is located in Northern Ireland?",
+    "options": [
+      "A) Belfast",
+      "B) Bristol",
+      "C) York",
+      "D) Norwich"
+    ],
+    "answer": "A) Belfast",
+    "explanation": "Belfast is the capital and largest city of Northern Ireland.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "The UK’s national flag, known as the Union Jack, combines flags from which countries?",
+    "options": [
+      "A) England, Scotland, Wales",
+      "B) England, Scotland, Northern Ireland",
+      "C) England, Wales, Northern Ireland",
+      "D) Scotland, Wales, Northern Ireland"
+    ],
+    "answer": "B) England, Scotland, Northern Ireland",
+    "explanation": "The Union Jack merges the crosses of St George (England), St Andrew (Scotland) and St Patrick (Northern Ireland).",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which region is known for its distinctive lowland moorlands and peat bogs?",
+    "options": [
+      "A) The Peak District",
+      "B) The Lake District",
+      "C) The Yorkshire Dales",
+      "D) The Northumberland National Park"
+    ],
+    "answer": "C) The Yorkshire Dales",
+    "explanation": "The Yorkshire Dales feature moorland and peat bogs, giving it a unique landscape.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the approximate average annual rainfall in the UK?",
+    "options": [
+      "A) 500 mm",
+      "B) 750 mm",
+      "C) 1000 mm",
+      "D) 1250 mm"
+    ],
+    "answer": "C) 1000 mm",
+    "explanation": "The UK receives around 1,000 millimetres of rain each year on average.",
+    "difficulty": "hard",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a major island that is part of the UK but not part of Great Britain?",
+    "options": [
+      "A) Isle of Wight",
+      "B) Jersey",
+      "C) Anglesey",
+      "D) Guernsey"
+    ],
+    "answer": "D) Guernsey",
+    "explanation": "Guernsey is a Crown dependency in the Channel Islands, separate from Great Britain.",
+    "difficulty": "hard",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these cities hosts the UK’s main financial centre?",
+    "options": [
+      "A) Manchester",
+      "B) Edinburgh",
+      "C) Birmingham",
+      "D) London"
+    ],
+    "answer": "D) London",
+    "explanation": "London is home to major banks, the Stock Exchange and global finance.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the mountain range that runs along the northern border of England?",
+    "options": [
+      "A) Pennines",
+      "B) Scottish Highlands",
+      "C) Lake District Mountains",
+      "D) Brecon Beacons"
+    ],
+    "answer": "A) Pennines",
+    "explanation": "The Pennine Range forms a natural spine from Scotland to Yorkshire, often called the 'backbone of England'.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which language is spoken by the majority of people in Wales?",
+    "options": [
+      "A) English",
+      "B) Welsh",
+      "C) Irish",
+      "D) Scots"
+    ],
+    "answer": "A) English",
+    "explanation": "While Welsh is an official language, most Welsh residents speak English as their first language.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "The UK’s population density is highest in which area?",
+    "options": [
+      "A) The North East",
+      "B) Greater London",
+      "C) South West England",
+      "D) Northern Ireland"
+    ],
+    "answer": "B) Greater London",
+    "explanation": "London has the most concentrated population of any region in the UK.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these rivers is the longest in the United Kingdom?",
+    "options": [
+      "A) River Severn",
+      "B) River Thames",
+      "C) River Trent",
+      "D) River Tyne"
+    ],
+    "answer": "A) River Severn",
+    "explanation": "The Severn stretches about 220 kilometres, making it the longest river in the UK.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these is a major national park located in England?",
+    "options": [
+      "A) Snowdonia",
+      "B) Cairngorms",
+      "C) Lake District",
+      "D) Brecon Beacons"
+    ],
+    "answer": "C) Lake District",
+    "explanation": "The Lake District National Park lies in Cumbria, England, and is famed for its lakes and mountains.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following cities is situated on the River Mersey?",
+    "options": [
+      "A) Manchester",
+      "B) Liverpool",
+      "C) Newcastle",
+      "D) Bristol"
+    ],
+    "answer": "B) Liverpool",
+    "explanation": "Liverpool lies on the estuary of the River Mersey and has a rich maritime heritage.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these is not part of the United Kingdom?",
+    "options": [
+      "A) Isle of Man",
+      "B) Guernsey",
+      "C) Jersey",
+      "D) Scotland"
+    ],
+    "answer": "A) Isle of Man",
+    "explanation": "The Isle of Man is a Crown dependency, not part of the UK; Scotland is one of the four constituent countries.",
+    "difficulty": "hard",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the main climatic influence on the western coast of Scotland?",
+    "options": [
+      "A) Mediterranean",
+      "B) Continental",
+      "C) Maritime (Atlantic)",
+      "D) Arctic"
+    ],
+    "answer": "C) Maritime (Atlantic)",
+    "explanation": "The Atlantic Ocean provides a mild, wet maritime climate to western Scotland.",
+    "difficulty": "medium",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a major city in Wales?",
+    "options": [
+      "A) Cardiff",
+      "B) Leeds",
+      "C) Cambridge",
+      "D) Norwich"
+    ],
+    "answer": "A) Cardiff",
+    "explanation": "Cardiff is the capital and largest city of Wales, while the other options are in England.",
+    "difficulty": "easy",
+    "topicId": "life-uk-geography",
+    "topicTitle": "What is the UK?",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which event marked the beginning of the Tudor dynasty in England?",
+    "options": [
+      "A) The signing of the Magna Carta",
+      "B) The Battle of Bosworth Field",
+      "C) The execution of Lady Jane Grey",
+      "D) The marriage of Henry VIII to Catherine of Aragon"
+    ],
+    "answer": "B) The Battle of Bosworth Field",
+    "explanation": "The Battle of Bosworth Field in 1485 ended the Wars of the Roses and saw Henry Tudor defeat Richard III, becoming Henry VII and starting the Tudor dynasty.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the first monarch to be crowned King of England after the Norman Conquest?",
+    "options": [
+      "A) William I",
+      "B) Edward the Confessor",
+      "C) Harold Godwinson",
+      "D) Henry II"
+    ],
+    "answer": "A) William I",
+    "explanation": "William the Conqueror, known as William I, was crowned King of England in 1066 after defeating Harold at Hastings.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What document signed in 1215 limited the powers of the English king?",
+    "options": [
+      "A) The Bill of Rights",
+      "B) The Magna Carta",
+      "C) The Charter of Liberties",
+      "D) The Petition of Right"
+    ],
+    "answer": "B) The Magna Carta",
+    "explanation": "The Magna Carta was signed in 1215 and is considered a foundational document for constitutional law, limiting royal authority.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which English king famously declared 'I am the King, God’s chosen instrument' during the Reformation?",
+    "options": [
+      "A) Edward VI",
+      "B) Henry VIII",
+      "C) Elizabeth I",
+      "D) James I"
+    ],
+    "answer": "B) Henry VIII",
+    "explanation": "Henry VIII asserted his authority over the Church of England, breaking away from Rome and establishing himself as its supreme head.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "The English Civil War (1642-1651) resulted in which political outcome?",
+    "options": [
+      "A) Restoration of the monarchy",
+      "B) Establishment of a republic under Cromwell",
+      "C) Division into three separate kingdoms",
+      "D) Union with Scotland"
+    ],
+    "answer": "B) Establishment of a republic under Cromwell",
+    "explanation": "After defeating the Royalists, Oliver Cromwell led England as Lord Protector in a republican Commonwealth until the monarchy was restored in 1660.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which treaty ended the Hundred Years' War between England and France?",
+    "options": [
+      "A) Treaty of Versailles",
+      "B) Treaty of Utrecht",
+      "C) Treaty of Paris (1453)",
+      "D) Treaty of Tordesillas"
+    ],
+    "answer": "C) Treaty of Paris (1453)",
+    "explanation": "The 1453 treaty marked the end of hostilities, with England ceding most continental possessions back to France.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the first Prime Minister of Great Britain?",
+    "options": [
+      "A) William Pitt",
+      "B) Robert Walpole",
+      "C) Henry Addington",
+      "D) Spencer Compton"
+    ],
+    "answer": "B) Robert Walpole",
+    "explanation": "Robert Walpole is widely regarded as Britain's first de facto Prime Minister, serving from 1721 to 1742.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following was NOT a cause of the Industrial Revolution in Britain?",
+    "options": [
+      "A) Invention of the steam engine",
+      "B) Availability of coal",
+      "C) Decline of feudalism",
+      "D) Abundance of agricultural land"
+    ],
+    "answer": "D) Abundance of agricultural land",
+    "explanation": "While agriculture supported population growth, it was not a direct cause; industrialization relied more on technology and resources like coal.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "The Act of Union in 1707 united which two kingdoms?",
+    "options": [
+      "A) England and Ireland",
+      "B) Scotland and Wales",
+      "C) England and Scotland",
+      "D) England and the Isle of Man"
+    ],
+    "answer": "C) England and Scotland",
+    "explanation": "The 1707 Act merged the Kingdoms of England and Scotland into Great Britain, creating a single parliament at Westminster.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the British monarch during the American Declaration of Independence?",
+    "options": [
+      "A) George II",
+      "B) George III",
+      "C) William IV",
+      "D) Victoria"
+    ],
+    "answer": "B) George III",
+    "explanation": "George III reigned from 1760 to 1820, overseeing events like the American Revolution and the Napoleonic Wars.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which event is considered the beginning of World War I?",
+    "options": [
+      "A) The sinking of the Lusitania",
+      "B) The assassination of Archduke Franz Ferdinand",
+      "C) Germany's invasion of Belgium",
+      "D) The Battle of Jutland"
+    ],
+    "answer": "B) The assassination of Archduke Franz Ferdinand",
+    "explanation": "The 1914 Sarajevo assassination triggered a chain of alliances that led to the outbreak of WWI.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What was the main purpose of the Magna Carta?",
+    "options": [
+      "A) To establish a new monarchy",
+      "B) To create a parliamentary system",
+      "C) To limit royal authority and protect nobles' rights",
+      "D) To codify religious practices"
+    ],
+    "answer": "C) To limit royal authority and protect nobles' rights",
+    "explanation": "Magna Carta was a charter that restricted the king's power, ensuring certain legal protections for subjects.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these figures is known as 'The Father of Modern Britain'?",
+    "options": [
+      "A) Thomas Paine",
+      "B) William Wilberforce",
+      "C) Benjamin Franklin",
+      "D) John Locke"
+    ],
+    "answer": "D) John Locke",
+    "explanation": "John Locke's ideas on liberty and government influenced the development of modern democratic principles in Britain.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "The Battle of Agincourt took place during which conflict?",
+    "options": [
+      "A) The Hundred Years' War",
+      "B) The Wars of the Roses",
+      "C) The English Civil War",
+      "D) The Napoleonic Wars"
+    ],
+    "answer": "A) The Hundred Years' War",
+    "explanation": "Agincourt (1415) was a decisive English victory over France during the protracted Hundred Years' War.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which act gave women over 30 the right to vote in Britain?",
+    "options": [
+      "A) Representation of the People Act 1918",
+      "B) Parliament (Qualification for Women) Act 1928",
+      "C) Suffragette Movement Act 1900",
+      "D) Equal Franchise Act 1931"
+    ],
+    "answer": "A) Representation of the People Act 1918",
+    "explanation": "The 1918 act enfranchised women over 30 who met property qualifications, a key step toward full suffrage.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the first woman to become Prime Minister of the United Kingdom?",
+    "options": [
+      "A) Theresa May",
+      "B) Margaret Thatcher",
+      "C) Angela Merkel",
+      "D) Elizabeth II"
+    ],
+    "answer": "B) Margaret Thatcher",
+    "explanation": "Margaret Thatcher served from 1979 to 1990 and was the UK's first female Prime Minister.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "The Industrial Revolution began in which country?",
+    "options": [
+      "A) France",
+      "B) United States",
+      "C) Germany",
+      "D) Great Britain"
+    ],
+    "answer": "D) Great Britain",
+    "explanation": "Britain pioneered industrialization with inventions like the steam engine and mechanised textile production.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which treaty ended World War II in Europe?",
+    "options": [
+      "A) Treaty of Versailles",
+      "B) Treaty of Paris (1947)",
+      "C) Yalta Agreement",
+      "D) Potsdam Declaration"
+    ],
+    "answer": "B) Treaty of Paris (1947)",
+    "explanation": "The 1947 treaty formally ended the state of war between the Allies and Germany, restoring German sovereignty.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which monarch reigned during the Great Fire of London in 1666?",
+    "options": [
+      "A) Charles I",
+      "B) James II",
+      "C) Charles II",
+      "D) William III"
+    ],
+    "answer": "C) Charles II",
+    "explanation": "Charles II was king when the Great Fire destroyed much of London, leading to major rebuilding efforts.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the significance of the Battle of Waterloo?",
+    "options": [
+      "A) It marked the start of the Napoleonic Wars",
+      "B) It ended Napoleon's rule as Emperor of France",
+      "C) It led to the annexation of Belgium by Britain",
+      "D) It was a decisive victory for the British navy"
+    ],
+    "answer": "B) It ended Napoleon's rule as Emperor of France",
+    "explanation": "Waterloo (1815) was the final defeat of Napoleon, leading to his exile and reshaping European borders.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which event marked the beginning of the English Renaissance?",
+    "options": [
+      "A) The reign of Henry VIII",
+      "B) The publication of Shakespeare’s first play",
+      "C) The dissolution of monasteries",
+      "D) The Battle of Bosworth Field"
+    ],
+    "answer": "B) The publication of Shakespeare’s first play",
+    "explanation": "Shakespeare’s early works in the late 16th century symbolised the flourishing of literature and arts during the English Renaissance.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who was the British Prime Minister at the start of World War II?",
+    "options": [
+      "A) Winston Churchill",
+      "B) Neville Chamberlain",
+      "C) Clement Attlee",
+      "D) Stanley Baldwin"
+    ],
+    "answer": "B) Neville Chamberlain",
+    "explanation": "Chamberlain served as PM from 1937 until he was replaced by Churchill in 1940, famously signing the Munich Agreement before war.",
+    "difficulty": "medium",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "The Act of Settlement 1701 ensured that which monarch could succeed to the English throne?",
+    "options": [
+      "A) Only Protestant heirs",
+      "B) Any heir regardless of religion",
+      "C) Only Catholic heirs",
+      "D) Only heirs from the House of Tudor"
+    ],
+    "answer": "A) Only Protestant heirs",
+    "explanation": "The Act prevented Catholics from ascending to the throne, ensuring a Protestant succession.",
+    "difficulty": "hard",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which English king was known for his long reign and for having a son named Henry that became King Henry VIII?",
+    "options": [
+      "A) Edward VI",
+      "B) Henry VII",
+      "C) George III",
+      "D) William IV"
+    ],
+    "answer": "B) Henry VII",
+    "explanation": "Henry VII, founder of the Tudor dynasty, reigned from 1485 to 1509 and fathered Henry VIII.",
+    "difficulty": "easy",
+    "topicId": "life-uk-history",
+    "topicTitle": "A Long and Illustrious History",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the age at which children in England can start primary school?",
+    "options": [
+      "A) 3",
+      "B) 4",
+      "C) 5",
+      "D) 6"
+    ],
+    "answer": "C) 5",
+    "explanation": "Children usually begin Reception, the first year of primary school, when they turn five in September.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which national health service provides free treatment to all UK residents?",
+    "options": [
+      "A) NHS England",
+      "B) NHS Scotland",
+      "C) NHS Wales",
+      "D) All of the above"
+    ],
+    "answer": "D) All of the above",
+    "explanation": "The National Health Service operates in each part of the UK, offering free care to residents regardless of where they live.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the maximum length of a standard employment contract for full‑time workers in the UK?",
+    "options": [
+      "A) 12 months",
+      "B) 24 months",
+      "C) 36 months",
+      "D) Unlimited"
+    ],
+    "answer": "D) Unlimited",
+    "explanation": "Full‑time employees can be hired on an open‑ended contract with no fixed maximum length.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which benefit is available to parents who have a child under the age of three?",
+    "options": [
+      "A) Child Tax Credit",
+      "B) Universal Credit",
+      "C) Working Tax Credits",
+      "D) Child Benefit"
+    ],
+    "answer": "D) Child Benefit",
+    "explanation": "Child Benefit is paid for every child, including those under three, and is separate from tax credits.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a right that employees have in the UK?",
+    "options": [
+      "A) The right to a written statement of employment",
+      "B) The right to refuse unsafe work",
+      "C) The right to unlimited paid leave",
+      "D) The right to be free from discrimination"
+    ],
+    "answer": "C) The right to unlimited paid leave",
+    "explanation": "Employees have statutory holiday entitlement, but it is limited and not unlimited.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does the NHS stand for?",
+    "options": [
+      "A) National Health Service",
+      "B) National Hospital System",
+      "C) New Health Scheme",
+      "D) National Healthcare Support"
+    ],
+    "answer": "A) National Health Service",
+    "explanation": "NHS is an acronym for National Health Service, which provides healthcare in the UK.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these is a key principle of the UK welfare system?",
+    "options": [
+      "A) Means testing",
+      "B) Private insurance only",
+      "C) No support for unemployed",
+      "D) Unlimited benefits for all"
+    ],
+    "answer": "A) Means testing",
+    "explanation": "Many benefits, such as Universal Credit, are means tested to assess eligibility based on income and savings.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the UK government program that provides support for people with disabilities?",
+    "options": [
+      "A) Disability Living Allowance",
+      "B) Personal Independence Payment",
+      "C) Employment Support Trust",
+      "D) Both A and B"
+    ],
+    "answer": "D) Both A and B",
+    "explanation": "Both DLA (for children) and PIP (for adults) are UK programmes that help with living costs for disabled people.",
+    "difficulty": "hard",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a right of students in higher education?",
+    "options": [
+      "A) The right to study abroad without cost",
+      "B) The right to free textbooks",
+      "C) The right to access university libraries",
+      "D) The right to choose any course regardless of qualifications"
+    ],
+    "answer": "C) The right to access university libraries",
+    "explanation": "Universities must provide library services to students, though costs may apply for certain resources.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the statutory minimum wage for workers aged 25 and over in England (as of 2024)?",
+    "options": [
+      "A) £7.52 per hour",
+      "B) £9.50 per hour",
+      "C) £10.42 per hour",
+      "D) £12.00 per hour"
+    ],
+    "answer": "C) £10.42 per hour",
+    "explanation": "The National Living Wage for 25+ workers in England is £10.42 per hour, higher than the basic minimum wage.",
+    "difficulty": "hard",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these is NOT a type of NHS service?",
+    "options": [
+      "A) Primary care",
+      "B) Secondary care",
+      "C) Tertiary care",
+      "D) Private care"
+    ],
+    "answer": "D) Private care",
+    "explanation": "Private care is paid for by patients and is not part of the publicly funded NHS services.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which benefit provides financial help to people who are unemployed or on low income?",
+    "options": [
+      "A) Child Benefit",
+      "B) Housing Benefit",
+      "C) Pension Credit",
+      "D) Universal Credit"
+    ],
+    "answer": "D) Universal Credit",
+    "explanation": "Universal Credit is a single payment that replaces several older benefits for the unemployed and those on low incomes.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the main purpose of the Equality Act 2010?",
+    "options": [
+      "A) To protect employees from discrimination",
+      "B) To regulate trade unions",
+      "C) To set minimum wages",
+      "D) To provide free education"
+    ],
+    "answer": "A) To protect employees from discrimination",
+    "explanation": "The Equality Act makes it unlawful to discriminate in employment, services and education on protected characteristics.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a right for parents under the Education (Pupil's Presence) Regulations?",
+    "options": [
+      "A) The right to claim tuition fees",
+      "B) The right to attend school meetings",
+      "C) The right to demand a private school",
+      "D) The right to veto curriculum"
+    ],
+    "answer": "B) The right to attend school meetings",
+    "explanation": "Parents can attend parent‑teacher meetings and have a say in their child's education.",
+    "difficulty": "hard",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the maximum number of paid holiday days for full‑time employees in the UK?",
+    "options": [
+      "A) 20",
+      "B) 25",
+      "C) 30",
+      "D) 35"
+    ],
+    "answer": "C) 30",
+    "explanation": "The statutory minimum is 28 days, which can be increased by employers; 30 is a common maximum for many sectors.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these health conditions is covered under the NHS free treatment scheme?",
+    "options": [
+      "A) Cosmetic surgery",
+      "B) Dental implants",
+      "C) Cancer chemotherapy",
+      "D) Hair transplants"
+    ],
+    "answer": "C) Cancer chemotherapy",
+    "explanation": "Essential treatments for serious illnesses, such as cancer, are provided free of charge by the NHS.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a key feature of the UK’s public education system?",
+    "options": [
+      "A) Universal free primary and secondary education",
+      "B) Only private schools exist",
+      "C) Students pay tuition fees at all levels",
+      "D) No compulsory schooling"
+    ],
+    "answer": "A) Universal free primary and secondary education",
+    "explanation": "All children in the UK receive free state‑run education up to age 18.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does 'Universal Credit' replace?",
+    "options": [
+      "A) Housing Benefit only",
+      "B) Child Tax Credit only",
+      "C) Several older benefits including Housing and Income Support",
+      "D) None of the above"
+    ],
+    "answer": "C) Several older benefits including Housing and Income Support",
+    "explanation": "Universal Credit consolidates multiple welfare payments into a single monthly payment.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which right protects workers from being dismissed without good reason?",
+    "options": [
+      "A) Right to free healthcare",
+      "B) Right to fair dismissal procedures",
+      "C) Right to unlimited holiday",
+      "D) Right to private schooling"
+    ],
+    "answer": "B) Right to fair dismissal procedures",
+    "explanation": "Employment law requires a valid reason and proper procedure before an employee can be dismissed.",
+    "difficulty": "hard",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the minimum age for legally buying alcohol in the UK?",
+    "options": [
+      "A) 16",
+      "B) 18",
+      "C) 21",
+      "D) 23"
+    ],
+    "answer": "B) 18",
+    "explanation": "The legal drinking age is 18, although some drinks can be purchased at 16 with an adult in certain settings.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these benefits is specifically aimed at supporting people who have lost a family member?",
+    "options": [
+      "A) Bereavement Support Payment",
+      "B) Pension Credit",
+      "C) Universal Credit",
+      "D) Housing Benefit"
+    ],
+    "answer": "A) Bereavement Support Payment",
+    "explanation": "Bereavement support provides financial help for those who have lost a spouse or partner.",
+    "difficulty": "hard",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT part of the NHS funding model?",
+    "options": [
+      "A) General taxation",
+      "B) National Insurance contributions",
+      "C) Private insurance premiums",
+      "D) Patient charges for prescriptions"
+    ],
+    "answer": "C) Private insurance premiums",
+    "explanation": "The NHS is funded mainly through taxes and NI; private insurance is separate.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does the 'Working Tax Credit' provide?",
+    "options": [
+      "A) Extra holiday",
+      "B) Additional tax refund for employers",
+      "C) Income support for low‑income workers",
+      "D) Free childcare"
+    ],
+    "answer": "C) Income support for low‑income workers",
+    "explanation": "Working Tax Credit helps people who are working but earning below a certain threshold.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these is a key feature of the UK education system?",
+    "options": [
+      "A) Compulsory schooling until age 16",
+      "B) No standard curriculum",
+      "C) Only private schools for higher education",
+      "D) Free tuition at universities"
+    ],
+    "answer": "A) Compulsory schooling until age 16",
+    "explanation": "Children must attend school or receive equivalent education up to the age of 16.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a responsibility of the UK government?",
+    "options": [
+      "A) Providing public services",
+      "B) Setting national interest rates",
+      "C) Maintaining the armed forces",
+      "D) Enforcing laws"
+    ],
+    "answer": "B) Setting national interest rates",
+    "explanation": "The Bank of England sets the national interest rate; it is independent from the government.",
+    "difficulty": "easy",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What type of election determines the composition of the House of Commons?",
+    "options": [
+      "A) General election",
+      "B) Local council election",
+      "C) Referendum",
+      "D) Parliamentary by-election"
+    ],
+    "answer": "A) General election",
+    "explanation": "General elections are held to elect Members of Parliament who sit in the House of Commons.",
+    "difficulty": "easy",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which court is the highest authority on civil and criminal matters in England and Wales?",
+    "options": [
+      "A) High Court",
+      "B) Court of Appeal",
+      "C) Supreme Court",
+      "D) Magistrates' Court"
+    ],
+    "answer": "C) Supreme Court",
+    "explanation": "The Supreme Court is the final court of appeal for civil and criminal cases in England, Wales, Scotland and Northern Ireland.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who has the power to make laws in the UK Parliament?",
+    "options": [
+      "A) The Prime Minister",
+      "B) Members of Parliament (MPs)",
+      "C) The Monarch alone",
+      "D) The Supreme Court"
+    ],
+    "answer": "B) Members of Parliament (MPs)",
+    "explanation": "Laws are proposed and debated by MPs in both Houses before being enacted.",
+    "difficulty": "easy",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following best describes a 'referendum'?",
+    "options": [
+      "A) A vote to elect a local councilor",
+      "B) A national public vote on a specific issue",
+      "C) An election for Members of Parliament",
+      "D) A judicial review"
+    ],
+    "answer": "B) A national public vote on a specific issue",
+    "explanation": "Referendums are held to let the public decide on particular policy questions, such as EU membership.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "In which year did the UK Parliament pass the Human Rights Act?",
+    "options": [
+      "A) 1998",
+      "B) 2000",
+      "C) 2005",
+      "D) 2010"
+    ],
+    "answer": "A) 1998",
+    "explanation": "The Human Rights Act 1998 incorporates the European Convention on Human Rights into UK law.",
+    "difficulty": "hard",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which body is responsible for making decisions about immigration and asylum in the UK?",
+    "options": [
+      "A) The Home Office",
+      "B) The Foreign & Commonwealth Office",
+      "C) The Department of Health",
+      "D) The Treasury"
+    ],
+    "answer": "A) The Home Office",
+    "explanation": "The Home Office manages immigration, visas, and asylum procedures.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the primary role of a Member of Parliament (MP)?",
+    "options": [
+      "A) To represent their constituents in Parliament",
+      "B) To enforce local council bylaws",
+      "C) To preside over court hearings",
+      "D) To serve as a judge"
+    ],
+    "answer": "A) To represent their constituents in Parliament",
+    "explanation": "MPs debate and vote on legislation, raising issues that affect their electorate.",
+    "difficulty": "easy",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is an example of a 'public service' provided by the UK government?",
+    "options": [
+      "A) National Health Service (NHS)",
+      "B) Private tutoring",
+      "C) Personal blog",
+      "D) Freelance graphic design"
+    ],
+    "answer": "A) National Health Service (NHS)",
+    "explanation": "The NHS delivers healthcare services funded by the state, a core public service.",
+    "difficulty": "easy",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Who is the head of state in the United Kingdom?",
+    "options": [
+      "A) The Prime Minister",
+      "B) The Queen/King",
+      "C) The Speaker of the House",
+      "D) The Chancellor of the Exchequer"
+    ],
+    "answer": "B) The Queen/King",
+    "explanation": "The monarch is the ceremonial head of state, while executive power lies with elected officials.",
+    "difficulty": "easy",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does 'devolution' refer to in the UK?",
+    "options": [
+      "A) Transfer of powers from central government to regional governments",
+      "B) A tax reduction scheme",
+      "C) The process of voting for MPs",
+      "D) A judicial appeal process"
+    ],
+    "answer": "A) Transfer of powers from central government to regional governments",
+    "explanation": "Devolution has given Scotland, Wales and Northern Ireland their own parliaments/assemblies with legislative authority.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which court deals primarily with minor criminal offences in England and Wales?",
+    "options": [
+      "A) Crown Court",
+      "B) Magistrates' Court",
+      "C) High Court",
+      "D) Court of Appeal"
+    ],
+    "answer": "B) Magistrates' Court",
+    "explanation": "Magistrates’ Courts handle most low‑level criminal cases, family matters and minor civil disputes.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which principle ensures that a person cannot be tried twice for the same offence?",
+    "options": [
+      "A) Rule of law",
+      "B) Double jeopardy",
+      "C) Due process",
+      "D) Separation of powers"
+    ],
+    "answer": "B) Double jeopardy",
+    "explanation": "Double jeopardy protects individuals from being prosecuted again after acquittal or conviction.",
+    "difficulty": "hard",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which UK institution is responsible for setting the country's fiscal policy?",
+    "options": [
+      "A) The Treasury",
+      "B) HM Revenue & Customs (HMRC)",
+      "C) Bank of England",
+      "D) Parliament"
+    ],
+    "answer": "A) The Treasury",
+    "explanation": "The Treasury designs and implements fiscal policies such as taxation and public spending.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the role of the 'Speaker' in the House of Commons?",
+    "options": [
+      "A) To lead the government",
+      "B) To preside over debates and maintain order",
+      "C) To enforce laws",
+      "D) To appoint ministers"
+    ],
+    "answer": "B) To preside over debates and maintain order",
+    "explanation": "The Speaker manages proceedings, ensures rules are followed and remains politically neutral.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a right guaranteed by the Human Rights Act?",
+    "options": [
+      "A) The right to free education for all",
+      "B) Freedom of expression",
+      "C) Right to own property",
+      "D) Free access to health care"
+    ],
+    "answer": "B) Freedom of expression",
+    "explanation": "The Act protects fundamental rights such as freedom of speech, assembly and religion.",
+    "difficulty": "hard",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the main function of a local council in England?",
+    "options": [
+      "A) To pass national legislation",
+      "B) To provide services like waste collection and planning permission",
+      "C) To oversee the judiciary",
+      "D) To manage the monarchy"
+    ],
+    "answer": "B) To provide services like waste collection and planning permission",
+    "explanation": "Local councils handle community needs, including housing, education and local transport.",
+    "difficulty": "easy",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of these is a requirement for voting in UK general elections?",
+    "options": [
+      "A) Being a citizen of any EU country",
+      "B) Having lived in the UK for at least five years",
+      "C) Being registered on the electoral roll and aged 18 or over",
+      "D) Holding a UK passport"
+    ],
+    "answer": "C) Being registered on the electoral roll and aged 18 or over",
+    "explanation": "All residents who are British, Irish or qualifying Commonwealth citizens can vote if they meet age and registration criteria.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which body decides whether a law is constitutional in the UK?",
+    "options": [
+      "A) Parliament",
+      "B) The Supreme Court",
+      "C) The Prime Minister",
+      "D) The House of Lords"
+    ],
+    "answer": "B) The Supreme Court",
+    "explanation": "The Supreme Court can review legislation for compatibility with human rights but does not strike down laws as in other systems.",
+    "difficulty": "hard",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which type of election is held to choose a Mayor in some UK cities?",
+    "options": [
+      "A) General election",
+      "B) By-election",
+      "C) Local referendum",
+      "D) Mayoral election"
+    ],
+    "answer": "D) Mayoral election",
+    "explanation": "Mayoral elections are specific local elections for city mayors, separate from general parliamentary polls.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What does the term 'bicameral' refer to in UK Parliament?",
+    "options": [
+      "A) Having two chambers: House of Commons and House of Lords",
+      "B) Having two houses of government: executive and legislative",
+      "C) A committee with two members",
+      "D) A court with two judges"
+    ],
+    "answer": "A) Having two chambers: House of Commons and House of Lords",
+    "explanation": "The UK Parliament consists of the elected Commons and the appointed/peer Lords.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which government department is responsible for education policy in England?",
+    "options": [
+      "A) Department for Education",
+      "B) Department for Work and Pensions",
+      "C) Ministry of Defence",
+      "D) Home Office"
+    ],
+    "answer": "A) Department for Education",
+    "explanation": "The Department for Education sets curriculum standards, school funding and higher education policy.",
+    "difficulty": "medium",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a type of court in England?",
+    "options": [
+      "A) Crown Court",
+      "B) High Court",
+      "C) Circuit Court",
+      "D) Supreme Senate"
+    ],
+    "answer": "D) Supreme Senate",
+    "explanation": "The correct term is the Supreme Court; there is no 'Supreme Senate' in the UK judicial system.",
+    "difficulty": "hard",
+    "topicId": "life-uk-government",
+    "topicTitle": "The UK Government, the Law and Your Role",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  }
+]

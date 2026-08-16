@@ -1,0 +1,852 @@
+[
+  {
+    "prompt": "Which of the following is NOT a part of the UK's National Health Service (NHS)?",
+    "options": [
+      "A) Free GP appointments",
+      "B) Free hospital treatment",
+      "C) Free prescription medicines",
+      "D) Free private healthcare"
+    ],
+    "answer": "D) Free private healthcare",
+    "explanation": "The NHS provides free healthcare to all residents, but private healthcare is not included. Patients may choose to pay for private treatment, but it is not part of the NHS.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "At what age can children in the UK start full-time education?",
+    "options": [
+      "A) 3 years",
+      "B) 4 years",
+      "C) 5 years",
+      "D) 6 years"
+    ],
+    "answer": "C) 5 years",
+    "explanation": "Children in the UK typically start full-time education at the age of 5, when they begin Year 1 in primary school.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the benefit provided to unemployed people who are actively seeking work?",
+    "options": [
+      "A) Jobseeker's Allowance",
+      "B) Universal Credit",
+      "C) Pension Credit",
+      "D) Housing Benefit"
+    ],
+    "answer": "A) Jobseeker's Allowance",
+    "explanation": "Jobseeker's Allowance is a benefit for people who are unemployed and actively looking for work. It is replaced in many cases by Universal Credit.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a key feature of the UK's welfare system?",
+    "options": [
+      "A) Universal coverage for all citizens",
+      "B) Means-tested benefits",
+      "C) No support for disabled people",
+      "D) Only available to UK-born citizens"
+    ],
+    "answer": "B) Means-tested benefits",
+    "explanation": "The UK welfare system includes means-tested benefits, where eligibility depends on income and assets. Not all benefits are available to everyone regardless of circumstances.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the government scheme that provides financial support to low-income families with children?",
+    "options": [
+      "A) Child Tax Credit",
+      "B) Child Benefit",
+      "C) Housing Benefit",
+      "D) Income Support"
+    ],
+    "answer": "B) Child Benefit",
+    "explanation": "Child Benefit is a regular payment made to parents or guardians for each child under 16 (or under 20 if in approved education or training).",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is true about the UK's education system?",
+    "options": [
+      "A) Education is free for all residents up to age 18",
+      "B) Education is free for all residents up to age 19",
+      "C) Education is free for all residents up to age 21",
+      "D) Education is free only for residents aged 5 to 16"
+    ],
+    "answer": "B) Education is free for all residents up to age 19",
+    "explanation": "In the UK, education is free for all residents up to the age of 19, including secondary and further education.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the main purpose of the UK's social security system?",
+    "options": [
+      "A) To provide free housing to all citizens",
+      "B) To offer financial support to those in need",
+      "C) To fund public transport",
+      "D) To manage the national budget"
+    ],
+    "answer": "B) To offer financial support to those in need",
+    "explanation": "The UK's social security system provides financial support to people who are unemployed, sick, disabled, or on low incomes.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a requirement to receive Jobseeker's Allowance?",
+    "options": [
+      "A) Being of working age",
+      "B) Being registered as unemployed",
+      "C) Having a valid passport",
+      "D) Being available for work"
+    ],
+    "answer": "C) Having a valid passport",
+    "explanation": "To receive Jobseeker's Allowance, you must be of working age, available for work, and registered as unemployed. A passport is not required.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the system that provides free healthcare to all UK residents?",
+    "options": [
+      "A) Social Security System",
+      "B) National Health Service (NHS)",
+      "C) State Pension System",
+      "D) Welfare Support Network"
+    ],
+    "answer": "B) National Health Service (NHS)",
+    "explanation": "The National Health Service (NHS) provides free healthcare to all UK residents, funded by taxation.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a benefit available to people over 65 in the UK?",
+    "options": [
+      "A) Jobseeker's Allowance",
+      "B) Child Benefit",
+      "C) Pension Credit",
+      "D) Housing Benefit"
+    ],
+    "answer": "C) Pension Credit",
+    "explanation": "Pension Credit is a benefit available to people aged 60 or over (66 in England) to help those on low incomes.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the national healthcare service in the UK?",
+    "options": [
+      "A) National Health Service",
+      "B) National Care System",
+      "C) National Medical Service",
+      "D) National Welfare Health"
+    ],
+    "answer": "A) National Health Service",
+    "explanation": "The National Health Service (NHS) provides healthcare to all residents in the UK, free at the point of use. It is one of the most well-known public services in the country.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a key feature of the UK's welfare system?",
+    "options": [
+      "A) Universal free housing for all citizens",
+      "B) Means-tested benefits and support for those in need",
+      "C) Mandatory employment for all citizens",
+      "D) Free university education for everyone"
+    ],
+    "answer": "B) Means-tested benefits and support for those in need",
+    "explanation": "The UK welfare system provides financial support based on need, including benefits like Universal Credit, which are means-tested to ensure support reaches those who need it most.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "At what age do children in England typically start full-time education?",
+    "options": [
+      "A) 4",
+      "B) 5",
+      "C) 6",
+      "D) 7"
+    ],
+    "answer": "B) 5",
+    "explanation": "Children in England usually start full-time education in the September after their fifth birthday. This is the standard entry point for primary school.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a right guaranteed to all children in the UK under the Education Act?",
+    "options": [
+      "A) Free tertiary education",
+      "B) Access to education until age 18",
+      "C) Free private schooling",
+      "D) Free school meals for all"
+    ],
+    "answer": "B) Access to education until age 18",
+    "explanation": "All children in the UK have the right to a full-time education until the age of 18, which includes compulsory education up to that age.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the main source of funding for the National Health Service (NHS)?",
+    "options": [
+      "A) Private donations",
+      "B) International aid",
+      "C) Taxpayer contributions",
+      "D) Corporate sponsorships"
+    ],
+    "answer": "C) Taxpayer contributions",
+    "explanation": "The NHS is primarily funded through general taxation, meaning that it is supported by the money paid by taxpayers across the country.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a type of benefit provided by the UK welfare system?",
+    "options": [
+      "A) Jobseeker’s Allowance",
+      "B) Housing Benefit",
+      "C) State Pension",
+      "D) Free healthcare for all"
+    ],
+    "answer": "D) Free healthcare for all",
+    "explanation": "While healthcare is free at the point of use through the NHS, it is not classified as a welfare benefit. Welfare benefits include payments like Jobseeker’s Allowance and Housing Benefit.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the government scheme that provides financial support to people who are unemployed and actively seeking work?",
+    "options": [
+      "A) Universal Credit",
+      "B) Jobseeker’s Allowance",
+      "C) Child Benefit",
+      "D) Employment and Support Allowance"
+    ],
+    "answer": "B) Jobseeker’s Allowance",
+    "explanation": "Jobseeker’s Allowance is a benefit provided to unemployed individuals who are actively seeking work and are available for employment.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a responsibility of the UK government in the healthcare system?",
+    "options": [
+      "A) Providing all medical treatment privately",
+      "B) Regulating healthcare professionals and facilities",
+      "C) Charging patients for every medical service",
+      "D) Excluding emergency care for non-residents"
+    ],
+    "answer": "B) Regulating healthcare professionals and facilities",
+    "explanation": "The UK government is responsible for setting standards and regulations for healthcare professionals and services to ensure quality and safety across the NHS.",
+    "difficulty": "hard",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the main purpose of the welfare system in the UK?",
+    "options": [
+      "A) To provide luxury services to the wealthy",
+      "B) To support people who are unemployed or unable to work",
+      "C) To fund private education",
+      "D) To finance public transport"
+    ],
+    "answer": "B) To support people who are unemployed or unable to work",
+    "explanation": "The UK welfare system is designed to provide financial and practical support to individuals who are unemployed, disabled, or otherwise unable to support themselves.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following best describes the structure of the UK education system?",
+    "options": [
+      "A) Only state-funded schools exist",
+      "B) A mix of state and private schools",
+      "C) All schools are privately run",
+      "D) Education is provided only through home schooling"
+    ],
+    "answer": "B) A mix of state and private schools",
+    "explanation": "The UK education system includes both state-funded schools and private schools, offering a range of educational options to families.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following best describes the structure of the UK education system?",
+    "options": [
+      "A) Compulsory education from age 5 to 18",
+      "B) Compulsory education from age 4 to 16",
+      "C) Compulsory education from age 5 to 16",
+      "D) Compulsory education from age 4 to 18"
+    ],
+    "answer": "C) Compulsory education from age 5 to 16",
+    "explanation": "In the UK, children must attend school from the age of 5 until they turn 16, which is the minimum school leaving age. Education is compulsory during this period.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the national health service in the UK?",
+    "options": [
+      "A) National Health Service (NHS)",
+      "B) United Kingdom Healthcare (UKH)",
+      "C) British Medical Service (BMS)",
+      "D) National Care System (NCS)"
+    ],
+    "answer": "A) National Health Service (NHS)",
+    "explanation": "The National Health Service (NHS) provides healthcare services free at the point of use to all UK residents, funded through taxation.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a key feature of the UK welfare system?",
+    "options": [
+      "A) Universal coverage for all citizens regardless of income",
+      "B) Means-tested benefits based on individual circumstances",
+      "C) Benefits only available to pensioners",
+      "D) No state support for unemployed individuals"
+    ],
+    "answer": "B) Means-tested benefits based on individual circumstances",
+    "explanation": "The UK welfare system offers means-tested benefits, which are provided based on an individual's income and financial needs.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the minimum age at which a person can legally work in the UK?",
+    "options": [
+      "A) 14",
+      "B) 16",
+      "C) 18",
+      "D) 21"
+    ],
+    "answer": "B) 16",
+    "explanation": "In the UK, the minimum age to start working legally is 16, although there are restrictions on the type of work for younger workers.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a right granted to all UK residents under the National Health Service?",
+    "options": [
+      "A) Free GP appointments",
+      "B) Free hospital treatment",
+      "C) Free prescription medications",
+      "D) Free private health insurance"
+    ],
+    "answer": "D) Free private health insurance",
+    "explanation": "While the NHS provides free GP appointments, hospital treatment, and prescription medications, private health insurance is not provided free by the NHS.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the primary source of funding for the UK's National Health Service (NHS)?",
+    "options": [
+      "A) Individual insurance premiums",
+      "B) Employer contributions",
+      "C) Government taxation",
+      "D) International aid"
+    ],
+    "answer": "C) Government taxation",
+    "explanation": "The NHS is primarily funded through general taxation, ensuring that healthcare is available to all residents free at the point of use.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a benefit that can be claimed by unemployed individuals in the UK?",
+    "options": [
+      "A) Child Benefit",
+      "B) State Pension",
+      "C) Universal Credit",
+      "D) Housing Benefit"
+    ],
+    "answer": "C) Universal Credit",
+    "explanation": "Universal Credit is a means-tested benefit designed to support people who are on low income or unemployed in the UK.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the system that provides financial support to people who are ill or disabled and unable to work?",
+    "options": [
+      "A) Jobseeker's Allowance",
+      "B) Employment and Support Allowance (ESA)",
+      "C) Pension Credit",
+      "D) Housing Benefit"
+    ],
+    "answer": "B) Employment and Support Allowance (ESA)",
+    "explanation": "Employment and Support Allowance (ESA) is a benefit for people who are unable to work due to illness or disability.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is true about education in England, Scotland, Wales, and Northern Ireland?",
+    "options": [
+      "A) The education system is the same across all four countries",
+      "B) Each country has its own separate education system",
+      "C) Only England has a national curriculum",
+      "D) Education is optional in all four countries"
+    ],
+    "answer": "B) Each country has its own separate education system",
+    "explanation": "While all UK countries have similar structures, each has its own education system with different curricula and policies.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the purpose of the Jobcentre Plus in the UK?",
+    "options": [
+      "A) To provide healthcare services",
+      "B) To offer job search and employment support",
+      "C) To administer tax returns",
+      "D) To issue national identity cards"
+    ],
+    "answer": "B) To offer job search and employment support",
+    "explanation": "Jobcentre Plus helps people find work, supports job seekers, and administers benefits related to employment.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the national healthcare service in the United Kingdom?",
+    "options": [
+      "A) National Health Service (NHS)",
+      "B) National Care System (NCS)",
+      "C) Public Health Service (PHS)",
+      "D) United Kingdom Health Network (UKN)"
+    ],
+    "answer": "A) National Health Service (NHS)",
+    "explanation": "The National Health Service (NHS) provides free healthcare to all residents of the UK, funded by taxation.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "At what age can children in the UK start full-time education in a state school?",
+    "options": [
+      "A) 4",
+      "B) 5",
+      "C) 6",
+      "D) 7"
+    ],
+    "answer": "B) 5",
+    "explanation": "Children in the UK typically start full-time education in a state school at the age of 5, when they enter Reception year.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a key feature of the UK welfare system?",
+    "options": [
+      "A) Universal credit",
+      "B) State pension",
+      "C) Free private healthcare",
+      "D) Jobseeker's Allowance"
+    ],
+    "answer": "C) Free private healthcare",
+    "explanation": "The UK welfare system provides support such as Universal Credit and Jobseeker's Allowance, but private healthcare is not free; it is provided through the NHS for public healthcare.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the system that provides financial support to people who are unemployed and actively seeking work?",
+    "options": [
+      "A) Housing Benefit",
+      "B) Employment and Support Allowance",
+      "C) Jobseeker's Allowance",
+      "D) Child Tax Credit"
+    ],
+    "answer": "C) Jobseeker's Allowance",
+    "explanation": "Jobseeker's Allowance is a benefit for people who are unemployed and actively looking for work.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is a requirement for receiving the state pension in the UK?",
+    "options": [
+      "A) Having lived in the UK for at least 10 years",
+      "B) Having paid national insurance contributions",
+      "C) Being a British citizen",
+      "D) Being over 60 years old"
+    ],
+    "answer": "B) Having paid national insurance contributions",
+    "explanation": "To receive the state pension, individuals must have made enough national insurance contributions during their working life.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the minimum age for compulsory education in the UK?",
+    "options": [
+      "A) 4",
+      "B) 5",
+      "C) 6",
+      "D) 7"
+    ],
+    "answer": "B) 5",
+    "explanation": "Compulsory education in the UK begins at age 5, when children start primary school.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a free service provided by the NHS?",
+    "options": [
+      "A) General practitioner visits",
+      "B) Emergency hospital treatment",
+      "C) Prescription medication",
+      "D) Dental treatment for adults"
+    ],
+    "answer": "D) Dental treatment for adults",
+    "explanation": "While dental treatment is free for children and some adults, it is not free for all adults in the UK; there are charges for most adult dental care.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the UK government programme that supports people with long-term health conditions or disabilities to find and keep work?",
+    "options": [
+      "A) Personal Independence Payment",
+      "B) Employment and Support Allowance",
+      "C) Access to Work",
+      "D) Carer's Allowance"
+    ],
+    "answer": "C) Access to Work",
+    "explanation": "Access to Work is a UK government scheme that provides financial support to help people with disabilities or long-term health conditions stay in or enter employment.",
+    "difficulty": "hard",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following best describes the UK's approach to education funding?",
+    "options": [
+      "A) Education is fully funded by private donations",
+      "B) Education is funded entirely by the government and free for all students",
+      "C) Education is free for primary school but not for secondary",
+      "D) Education is only available to those who can afford it"
+    ],
+    "answer": "B) Education is funded entirely by the government and free for all students",
+    "explanation": "The UK government fully funds state education, making it free for all students from primary through to age 18.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the primary purpose of the welfare system in the UK?",
+    "options": [
+      "A) To provide free housing for all citizens",
+      "B) To support people in times of need such as unemployment or illness",
+      "C) To fund private education",
+      "D) To regulate employment contracts"
+    ],
+    "answer": "B) To support people in times of need such as unemployment or illness",
+    "explanation": "The UK welfare system aims to support individuals who are unable to work due to illness, unemployment, or other circumstances, helping them meet basic needs.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the national healthcare system in the UK?",
+    "options": [
+      "A) National Health Service (NHS)",
+      "B) National Medical Service (NMS)",
+      "C) Public Health System (PHS)",
+      "D) National Care Service (NCS)"
+    ],
+    "answer": "A) National Health Service (NHS)",
+    "explanation": "The National Health Service (NHS) provides free healthcare to all residents of the UK, funded through taxation.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "At what age must children in the UK start full-time education?",
+    "options": [
+      "A) 4",
+      "B) 5",
+      "C) 6",
+      "D) 7"
+    ],
+    "answer": "B) 5",
+    "explanation": "Children in the UK must start full-time education in the September following their fifth birthday.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a benefit provided by the UK welfare system?",
+    "options": [
+      "A) Jobseeker's Allowance",
+      "B) Housing Benefit",
+      "C) Free university education for all",
+      "D) Universal Credit"
+    ],
+    "answer": "C) Free university education for all",
+    "explanation": "While some students receive grants or loans, university education in the UK is not free for all; tuition fees apply for most students.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the main source of funding for the NHS?",
+    "options": [
+      "A) Private donations",
+      "B) International aid",
+      "C) Taxation",
+      "D) International health organizations"
+    ],
+    "answer": "C) Taxation",
+    "explanation": "The NHS is primarily funded through general taxation, ensuring healthcare is free at the point of use for all residents.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which government body is responsible for overseeing education in England?",
+    "options": [
+      "A) Department for Education",
+      "B) Department of Health and Social Care",
+      "C) Department for Work and Pensions",
+      "D) Department for Business, Energy and Industrial Strategy"
+    ],
+    "answer": "A) Department for Education",
+    "explanation": "The Department for Education is responsible for education policy and school standards in England.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What type of support is provided by the UK welfare system to people who are unemployed and actively seeking work?",
+    "options": [
+      "A) Child Benefit",
+      "B) Jobseeker's Allowance",
+      "C) Pension Credit",
+      "D) Housing Benefit"
+    ],
+    "answer": "B) Jobseeker's Allowance",
+    "explanation": "Jobseeker's Allowance is a benefit paid to people who are unemployed and actively looking for work.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is true about the UK's education system?",
+    "options": [
+      "A) Education is free only for primary school",
+      "B) Education is free for all students up to age 18",
+      "C) Education is free only for students from low-income families",
+      "D) Education is free up to age 16, and free for 16-18 year olds in certain circumstances"
+    ],
+    "answer": "D) Education is free up to age 16, and free for 16-18 year olds in certain circumstances",
+    "explanation": "While education is free up to age 16, it remains free for 16-18 year olds in many cases, especially for those in further education.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the primary purpose of the UK's welfare system?",
+    "options": [
+      "A) To provide luxury benefits to the wealthy",
+      "B) To support people who are unable to work or are in financial hardship",
+      "C) To fund private healthcare",
+      "D) To subsidise private education"
+    ],
+    "answer": "B) To support people who are unable to work or are in financial hardship",
+    "explanation": "The UK welfare system aims to provide financial and social support to those in need, including the unemployed, sick, or elderly.",
+    "difficulty": "easy",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "Which of the following is NOT a feature of the UK's employment system?",
+    "options": [
+      "A) Minimum wage laws",
+      "B) Equal pay legislation",
+      "C) Mandatory retirement at age 65",
+      "D) Rights to paid holiday and sick leave"
+    ],
+    "answer": "C) Mandatory retirement at age 65",
+    "explanation": "There is no mandatory retirement age in the UK; employees can work as long as they are able and wish to.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  },
+  {
+    "prompt": "What is the name of the benefit that supports people who are sick or disabled and unable to work?",
+    "options": [
+      "A) Employment and Support Allowance",
+      "B) Jobseeker's Allowance",
+      "C) Income Support",
+      "D) Housing Benefit"
+    ],
+    "answer": "A) Employment and Support Allowance",
+    "explanation": "Employment and Support Allowance (ESA) is provided to people who are too ill or disabled to work.",
+    "difficulty": "medium",
+    "topicId": "life-uk-society",
+    "topicTitle": "A Modern, Thriving Society",
+    "ukLevelId": "entry-3",
+    "subject": "life-in-uk",
+    "type": "multiple-choice"
+  }
+]

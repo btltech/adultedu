@@ -5,7 +5,7 @@ import { api, getUserMessage } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
 import NotFound from './NotFound'
 import { usePageSeo } from '../components/SEO'
-import { formatPageDescription, formatPageTitle } from '../lib/seo/meta'
+import { topicSeoTags } from '../lib/seo/meta'
 
 export default function Topic() {
     const { id } = useParams()
@@ -14,15 +14,7 @@ export default function Topic() {
     const [missing, setMissing] = useState(false)
     const [loadError, setLoadError] = useState(null)
 
-    usePageSeo({
-        title: topic ? formatPageTitle(topic.title, topic.trackTitle) : undefined,
-        description: topic
-            ? formatPageDescription(
-                topic.description,
-                `Work through "${topic.title}" with lessons and practice in the ${topic.trackTitle || 'AdultEdu'} pathway.`
-            )
-            : undefined,
-    })
+    usePageSeo(topicSeoTags(topic))
 
     useEffect(() => {
         async function fetchTopic() {
