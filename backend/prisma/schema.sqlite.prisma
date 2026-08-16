@@ -240,6 +240,15 @@ model Question {
   imageUrl    String?  @map("image_url") // URL to main question image
   assets      String?  // JSON string - additional assets (diagrams, etc)
   sourceMeta  String?  @map("source_meta") // JSON: {framework, paper_style, marks, etc}
+  sourceUrl   String?  @map("source_url")
+  sourceTitle String?  @map("source_title")
+  sourceCheckedAt DateTime? @map("source_checked_at")
+  curriculumObjective String? @map("curriculum_objective")
+  contentRisk String   @default("standard") @map("content_risk")
+  reviewStatus String  @default("draft") @map("review_status")
+  reviewedBy  String?  @map("reviewed_by")
+  reviewedAt  DateTime? @map("reviewed_at")
+  reviewDueAt DateTime? @map("review_due_at")
   isPublished Boolean  @default(false) @map("is_published")
   createdAt   DateTime @default(now()) @map("created_at")
   updatedAt   DateTime @updatedAt @map("updated_at")
@@ -253,6 +262,7 @@ model Question {
   reviewItems         ReviewItem[]
   dailyChallenges     DailyChallenge[]
 
+  @@index([reviewStatus, reviewDueAt])
   @@map("questions")
 }
 

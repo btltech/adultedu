@@ -1,4 +1,5 @@
 import { z } from 'zod'
+import { CONTENT_RISKS, REVIEW_STATUSES } from '../lib/contentQuality.js'
 
 export const validate = (schema) => (req, res, next) => {
     try {
@@ -49,8 +50,10 @@ const trueFalseAnswerSchema = z.union([
 ])
 
 const questionBaseSchema = z.object({
-    topicId: z.string().uuid(),
-    ukLevelId: z.string().uuid(),
+    // Seeded content uses stable slugs such as `gcse-1` alongside UUIDs,
+    // so content identifiers must accept either form.
+    topicId: z.string().min(1, 'Topic is required'),
+    ukLevelId: z.string().min(1, 'UK level is required'),
     type: z.enum(['mcq', 'true_false', 'short_answer', 'multi_step', 'scenario', 'ordering', 'slider', 'image_label']).default('mcq'),
     prompt: z.string().min(5, 'Prompt is required'),
     options: z.any().optional(),
@@ -61,7 +64,16 @@ const questionBaseSchema = z.object({
     tags: z.any().optional(),
     imageUrl: z.string().nullable().optional(),
     assets: z.any().nullable().optional(),
-    sourceMeta: z.any().optional()
+    sourceMeta: z.any().optional(),
+    sourceUrl: z.string().url().nullable().optional(),
+    sourceTitle: z.string().min(3).max(300).nullable().optional(),
+    sourceCheckedAt: z.coerce.date().nullable().optional(),
+    curriculumObjective: z.string().min(3).max(500).nullable().optional(),
+    contentRisk: z.enum(CONTENT_RISKS).optional(),
+    reviewStatus: z.enum(REVIEW_STATUSES).optional(),
+    reviewedBy: z.string().min(2).max(120).nullable().optional(),
+    reviewedAt: z.coerce.date().nullable().optional(),
+    reviewDueAt: z.coerce.date().nullable().optional(),
 })
 
 const validateQuestionFields = (val, ctx, { requireAnswer = false, requireOptionsForMcq = false } = {}) => {
