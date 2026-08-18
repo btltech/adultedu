@@ -410,7 +410,7 @@ export default function LifeInUkTest() {
                         <h1 className="mb-4 mt-6 text-2xl font-bold text-dark-50">Unable to load the mock test</h1>
                         <p className="mb-6 text-dark-400">{error}</p>
                         <div className="flex flex-wrap justify-center gap-3">
-                            <button onClick={fetchMockTest} className="btn-primary">
+                            <button type="button" onClick={fetchMockTest} className="btn-primary">
                                 Try again
                                 <RotateCcw className="h-4 w-4" />
                             </button>
@@ -529,7 +529,7 @@ export default function LifeInUkTest() {
                             </div>
 
                             <div className="mt-6 flex flex-col gap-3">
-                                <button onClick={fetchMockTest} className="btn-primary w-full justify-center">
+                                <button type="button" onClick={fetchMockTest} className="btn-primary w-full justify-center">
                                     Start a fresh mock test
                                     <RotateCcw className="h-4 w-4" />
                                 </button>
@@ -669,12 +669,13 @@ export default function LifeInUkTest() {
                             </div>
 
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-                                <button onClick={handlePrev} disabled={currentIndex === 0} className="btn-secondary w-full justify-center disabled:opacity-50 sm:w-auto">
+                                <button type="button" onClick={handlePrev} disabled={currentIndex === 0} className="btn-secondary w-full justify-center disabled:opacity-50 sm:w-auto">
                                     <ArrowLeft className="h-4 w-4" />
                                     Previous
                                 </button>
 
                                 <button
+                                    type="button"
                                     onClick={handlePrimaryAction}
                                     disabled={!currentResult && (currentSelection === null || timeExpired)}
                                     className="btn-primary w-full justify-center disabled:cursor-not-allowed disabled:opacity-50 sm:min-w-[190px]"

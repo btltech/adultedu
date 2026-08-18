@@ -105,7 +105,7 @@ export default function Users() {
                                         </div>
                                     </td>
                                     <td className="p-4 text-right">
-                                        <button className="p-1.5 text-dark-400 hover:text-white hover:bg-dark-600 rounded">
+                                        <button type="button" aria-label={`More actions for ${user.email || 'user'}`} className="p-1.5 text-dark-400 hover:text-white hover:bg-dark-600 rounded">
                                             <MoreVertical size={16} />
                                         </button>
                                     </td>

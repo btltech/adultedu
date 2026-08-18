@@ -87,7 +87,7 @@ export default function ResetPassword() {
                             </div>
                         </div>
                         {error && (
-                            <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+                            <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm" role="alert">
                                 {error}{' '}
                                 {error.toLowerCase().includes('expired') && (
                                     <Link to="/forgot-password" className="underline hover:text-red-300">

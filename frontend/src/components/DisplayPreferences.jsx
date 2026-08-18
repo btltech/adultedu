@@ -49,12 +49,26 @@ export default function DisplayPreferences({ isOpen, onClose }) {
         setStoredPreference(CONTRAST_KEY, contrast)
     }, [contrast, textSize])
 
+    useEffect(() => {
+        if (!isOpen) return undefined
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                event.preventDefault()
+                onClose()
+            }
+        }
+        document.addEventListener('keydown', handleKeyDown)
+        return () => document.removeEventListener('keydown', handleKeyDown)
+    }, [isOpen, onClose])
+
     if (!isOpen) return null
 
     return (
         <div
             id="display-preferences-panel"
             className="absolute right-0 top-full mt-2 z-50 editorial-panel w-72 p-5 shadow-2xl"
+            role="region"
+            aria-labelledby="display-preferences-title"
         >
             <div className="flex items-center justify-between">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-accent-300">Accessibility</p>
@@ -67,7 +81,7 @@ export default function DisplayPreferences({ isOpen, onClose }) {
                     <X className="h-4 w-4" />
                 </button>
             </div>
-            <h2 className="mt-2 text-sm font-semibold text-dark-50">Adjust reading comfort</h2>
+            <h2 id="display-preferences-title" className="mt-2 text-sm font-semibold text-dark-50">Adjust reading comfort</h2>
             <p className="mt-1 text-xs leading-5 text-dark-400">Settings are saved on this device.</p>
 
             <div className="mt-4 space-y-4">
@@ -85,6 +99,7 @@ export default function DisplayPreferences({ isOpen, onClose }) {
                                 key={option.key}
                                 type="button"
                                 onClick={() => setTextSize(option.key)}
+                                aria-pressed={textSize === option.key}
                                 className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all ${textSize === option.key
                                     ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/20'
                                     : 'border border-dark-700 bg-dark-900/70 text-dark-300 hover:border-dark-500 hover:text-dark-100'
@@ -110,6 +125,7 @@ export default function DisplayPreferences({ isOpen, onClose }) {
                                 key={option.key}
                                 type="button"
                                 onClick={() => setContrast(option.key)}
+                                aria-pressed={contrast === option.key}
                                 className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all ${contrast === option.key
                                     ? 'bg-accent-500 text-dark-950 shadow-lg shadow-accent-500/20'
                                     : 'border border-dark-700 bg-dark-900/70 text-dark-300 hover:border-dark-500 hover:text-dark-100'

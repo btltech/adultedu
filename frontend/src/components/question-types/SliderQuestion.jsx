@@ -102,6 +102,7 @@ export default function SliderQuestion({ question, onAnswer, showResult, result 
                 </div>
             ) : (
                 <button
+                    type="button"
                     onClick={handleSubmit}
                     className="btn-primary w-full justify-center"
                 >

@@ -101,7 +101,7 @@ function QuestionCard({ question, onAnswer, showResult, result, submittedAnswer 
             )}
 
             {isMultiChoice ? (
-                <div className="mb-6 space-y-3">
+                <div className="mb-6 space-y-3" role="group" aria-label="Answer options">
                     {options.map((option, index) => {
                         const isSelected = selected === index
                         const isCorrect = showResult && result?.isCorrect && isSelected
@@ -114,8 +114,10 @@ function QuestionCard({ question, onAnswer, showResult, result, submittedAnswer 
                         return (
                             <button
                                 key={index}
+                                type="button"
                                 onClick={() => !showResult && setSelected(index)}
                                 disabled={showResult}
+                                aria-pressed={isSelected}
                                 className={`w-full rounded-2xl border p-4 text-left transition-all ${isCorrect
                                     ? 'border-accent-500 bg-accent-500/20 text-accent-300'
                                     : isWrong
@@ -166,7 +168,9 @@ function QuestionCard({ question, onAnswer, showResult, result, submittedAnswer 
                 </div>
             ) : (
                 <div className="mb-6">
+                    <label htmlFor={`practice-answer-${question.id || 'current'}`} className="sr-only">Your answer</label>
                     <input
+                        id={`practice-answer-${question.id || 'current'}`}
                         type="text"
                         value={textAnswer}
                         onChange={(event) => setTextAnswer(event.target.value)}
@@ -181,7 +185,7 @@ function QuestionCard({ question, onAnswer, showResult, result, submittedAnswer 
                 <div className={`rounded-2xl p-4 ${result?.isCorrect
                     ? 'border border-accent-500/30 bg-accent-500/10'
                     : 'border border-amber-500/30 bg-amber-500/10'
-                    }`}>
+                    }`} role="status" aria-live="polite">
                     <div className="mb-2 flex items-center gap-2">
                         {result?.isCorrect ? (
                             <>
@@ -200,6 +204,7 @@ function QuestionCard({ question, onAnswer, showResult, result, submittedAnswer 
             ) : (
                 <>
                     <button
+                        type="button"
                         onClick={handleSubmit}
                         disabled={isMultiChoice ? selected === null : !textAnswer.trim()}
                         className="btn-primary w-full justify-center disabled:cursor-not-allowed disabled:opacity-50"
@@ -380,7 +385,7 @@ export default function Practice() {
                         </div>
                         <h1 className="mt-6 mb-4 text-2xl font-bold text-dark-50">Error Loading Questions</h1>
                         <p className="mb-6 text-dark-400">{error}</p>
-                        <button onClick={() => navigate(-1)} className="btn-secondary">
+                        <button type="button" onClick={() => navigate(-1)} className="btn-secondary">
                             <ArrowLeft className="h-4 w-4" />
                             Go back
                         </button>
@@ -405,7 +410,7 @@ export default function Practice() {
                         </div>
                         <h1 className="mt-6 mb-4 text-2xl font-bold text-dark-50">No Questions Yet</h1>
                         <p className="mb-6 text-dark-400">Practice questions for this topic are being developed. Check back soon.</p>
-                        <button onClick={() => navigate(-1)} className="btn-secondary">
+                        <button type="button" onClick={() => navigate(-1)} className="btn-secondary">
                             <ArrowLeft className="h-4 w-4" />
                             Go back
                         </button>
@@ -553,7 +558,7 @@ export default function Practice() {
                         />
 
                         <div className="mt-6 flex items-center justify-between gap-3">
-                            <button onClick={handlePrev} disabled={currentIndex === 0} className="btn-secondary disabled:opacity-50">
+                            <button type="button" onClick={handlePrev} disabled={currentIndex === 0} className="btn-secondary disabled:opacity-50">
                                 <ArrowLeft className="h-4 w-4" />
                                 Previous
                             </button>
@@ -561,7 +566,7 @@ export default function Practice() {
                             <span className="text-center text-sm text-dark-400">Question {currentIndex + 1} of {data.questions.length}</span>
 
                             {currentIndex < data.questions.length - 1 ? (
-                                <button onClick={handleNext} className="btn-primary">
+                                <button type="button" onClick={handleNext} className="btn-primary">
                                     Next
                                     <ArrowRight className="h-4 w-4" />
                                 </button>

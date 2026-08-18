@@ -52,6 +52,7 @@ export default function Leaderboard() {
                 </div>
                 <div className="flex bg-dark-800 rounded-lg p-1">
                     <button
+                        type="button"
                         onClick={() => setPeriod('weekly')}
                         className={`px-3 py-1 rounded-md text-xs font-medium transition-colors ${period === 'weekly'
                                 ? 'bg-primary-500 text-white'
@@ -61,6 +62,7 @@ export default function Leaderboard() {
                         This week
                     </button>
                     <button
+                        type="button"
                         onClick={() => setPeriod('monthly')}
                         className={`px-3 py-1 rounded-md text-xs font-medium transition-colors ${period === 'monthly'
                                 ? 'bg-primary-500 text-white'

@@ -1,4 +1,5 @@
 import { Outlet, ScrollRestoration, useLocation } from 'react-router-dom'
+import { useEffect, useRef } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import Header from '../components/Header'
 import Footer from '../components/Footer'
@@ -9,6 +10,13 @@ import { SeoProvider } from '../components/SEO'
 
 export default function MainLayout() {
     const location = useLocation()
+    const mainRef = useRef(null)
+
+    useEffect(() => {
+        mainRef.current?.focus()
+        const frame = window.requestAnimationFrame(() => mainRef.current?.focus())
+        return () => window.cancelAnimationFrame(frame)
+    }, [location.pathname])
 
     return (
         <SeoProvider>
@@ -27,7 +35,7 @@ export default function MainLayout() {
             <Header className="relative z-10" />
             <EmailVerificationBanner />
             
-            <main id="main-content" className="flex-grow pb-20 md:pb-0 relative z-0">
+            <main ref={mainRef} id="main-content" tabIndex="-1" className="flex-grow pb-20 md:pb-0 relative z-0 outline-none">
                 <ErrorBoundary key={location.pathname}>
                     <AnimatePresence mode="wait">
                         <motion.div

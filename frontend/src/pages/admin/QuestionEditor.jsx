@@ -424,7 +424,7 @@ export default function QuestionEditor() {
                 <AlertCircle /> Error
             </div>
             <p className="text-dark-300">{error}</p>
-            <button onClick={() => navigate('/admin/content')} className="mt-4 btn-secondary">
+            <button type="button" onClick={() => navigate('/admin/content')} className="mt-4 btn-secondary">
                 Back to Questions
             </button>
         </div>
@@ -445,6 +445,7 @@ export default function QuestionEditor() {
             {/* Header */}
             <div className="flex items-center gap-4 mb-8">
                 <button
+                    type="button"
                     onClick={() => navigate('/admin/content')}
                     className="p-2 rounded-lg text-dark-400 hover:text-white hover:bg-dark-800 transition-colors"
                 >
@@ -467,8 +468,9 @@ export default function QuestionEditor() {
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-dark-300">Subject Track</label>
+                            <label htmlFor="question-track" className="text-sm font-medium text-dark-300">Subject Track</label>
                             <select
+                                id="question-track"
                                 className="input w-full"
                                 value={selectedTrack}
                                 onChange={e => setSelectedTrack(e.target.value)}
@@ -479,8 +481,9 @@ export default function QuestionEditor() {
                             </select>
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-dark-300">Topic</label>
+                            <label htmlFor="question-topic" className="text-sm font-medium text-dark-300">Topic</label>
                             <select
+                                id="question-topic"
                                 className="input w-full"
                                 value={formData.topicId}
                                 onChange={e => setFormData({ ...formData, topicId: e.target.value })}
@@ -492,8 +495,9 @@ export default function QuestionEditor() {
                             </select>
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-dark-300">Difficulty Level</label>
+                            <label htmlFor="question-level" className="text-sm font-medium text-dark-300">Difficulty Level</label>
                             <select
+                                id="question-level"
                                 className="input w-full"
                                 value={formData.ukLevelId}
                                 onChange={e => setFormData({ ...formData, ukLevelId: e.target.value })}
@@ -504,8 +508,9 @@ export default function QuestionEditor() {
                             </select>
                         </div>
                         <div className="space-y-2">
-                            <label className="text-sm font-medium text-dark-300">Question Type</label>
+                            <label htmlFor="question-type" className="text-sm font-medium text-dark-300">Question Type</label>
                             <select
+                                id="question-type"
                                 className="input w-full"
                                 value={formData.type}
                                 onChange={e => {
@@ -600,8 +605,9 @@ export default function QuestionEditor() {
                     </h2>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-medium text-dark-300">Question Prompt</label>
+                        <label htmlFor="question-prompt" className="text-sm font-medium text-dark-300">Question Prompt</label>
                         <textarea
+                            id="question-prompt"
                             className="input w-full h-32 font-medium text-white"
                             value={formData.prompt}
                             onChange={e => setFormData({ ...formData, prompt: e.target.value })}
@@ -611,8 +617,9 @@ export default function QuestionEditor() {
                     </div>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-medium text-dark-300">Image URL (optional)</label>
+                        <label htmlFor="question-image-url" className="text-sm font-medium text-dark-300">Image URL (optional)</label>
                         <input
+                            id="question-image-url"
                             type="text"
                             className="input w-full"
                             value={formData.imageUrl || ''}
@@ -624,8 +631,9 @@ export default function QuestionEditor() {
                     {/* Short Answer */}
                     {formData.type === 'short_answer' && (
                         <div className="space-y-3 mt-4 bg-dark-900/30 p-4 rounded-lg border border-dark-700">
-                            <label className="text-sm font-medium text-dark-300 block mb-2">Correct Answer</label>
+                            <label htmlFor="question-short-answer" className="text-sm font-medium text-dark-300 block mb-2">Correct Answer</label>
                             <input
+                                id="question-short-answer"
                                 type="text"
                                 className="input w-full"
                                 value={formData.answer || ''}
@@ -639,9 +647,10 @@ export default function QuestionEditor() {
                     {/* Ordering */}
                     {formData.type === 'ordering' && (
                         <div className="space-y-3 mt-4 bg-dark-900/30 p-4 rounded-lg border border-dark-700">
-                            <label className="text-sm font-medium text-dark-300 block mb-1">Items (one per line, in the correct order)</label>
+                            <label htmlFor="question-ordering" className="text-sm font-medium text-dark-300 block mb-1">Items (one per line, in the correct order)</label>
                             <p className="text-xs text-dark-500 mb-2">Learners see these shuffled in Practice; the correct order is the line order here.</p>
                             <textarea
+                                id="question-ordering"
                                 className="input w-full h-40 font-mono text-sm"
                                 value={formData.orderingText || ''}
                                 onChange={(e) => setFormData({ ...formData, orderingText: e.target.value })}
@@ -657,8 +666,9 @@ export default function QuestionEditor() {
                             <label className="text-sm font-medium text-dark-300 block mb-1">Slider Config</label>
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                 <div className="space-y-2">
-                                    <label className="text-xs text-dark-500">Min</label>
+                                    <label htmlFor="slider-min" className="text-xs text-dark-500">Min</label>
                                     <input
+                                        id="slider-min"
                                         type="number"
                                         className="input w-full"
                                         value={formData.sliderMin}
@@ -667,8 +677,9 @@ export default function QuestionEditor() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs text-dark-500">Max</label>
+                                    <label htmlFor="slider-max" className="text-xs text-dark-500">Max</label>
                                     <input
+                                        id="slider-max"
                                         type="number"
                                         className="input w-full"
                                         value={formData.sliderMax}
@@ -677,8 +688,9 @@ export default function QuestionEditor() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs text-dark-500">Step</label>
+                                    <label htmlFor="slider-step" className="text-xs text-dark-500">Step</label>
                                     <input
+                                        id="slider-step"
                                         type="number"
                                         className="input w-full"
                                         value={formData.sliderStep}
@@ -687,8 +699,9 @@ export default function QuestionEditor() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs text-dark-500">Unit (optional)</label>
+                                    <label htmlFor="slider-unit" className="text-xs text-dark-500">Unit (optional)</label>
                                     <input
+                                        id="slider-unit"
                                         type="text"
                                         className="input w-full"
                                         value={formData.sliderUnit}
@@ -697,8 +710,9 @@ export default function QuestionEditor() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs text-dark-500">Tolerance (optional)</label>
+                                    <label htmlFor="slider-tolerance" className="text-xs text-dark-500">Tolerance (optional)</label>
                                     <input
+                                        id="slider-tolerance"
                                         type="number"
                                         className="input w-full"
                                         value={formData.sliderTolerance}
@@ -707,8 +721,9 @@ export default function QuestionEditor() {
                                     />
                                 </div>
                                 <div className="space-y-2">
-                                    <label className="text-xs text-dark-500">Correct Value</label>
+                                    <label htmlFor="slider-answer" className="text-xs text-dark-500">Correct Value</label>
                                     <input
+                                        id="slider-answer"
                                         type="number"
                                         className="input w-full"
                                         value={formData.answer}
@@ -723,9 +738,10 @@ export default function QuestionEditor() {
                     {/* Image Label */}
                     {formData.type === 'image_label' && (
                         <div className="space-y-4 mt-4 bg-dark-900/30 p-4 rounded-lg border border-dark-700">
-                            <label className="text-sm font-medium text-dark-300 block mb-1">Assets JSON</label>
+                            <label htmlFor="question-assets" className="text-sm font-medium text-dark-300 block mb-1">Assets JSON</label>
                             <p className="text-xs text-dark-500 mb-2">Must include `imageUrl`, `targets`, `options`, and `answer`.</p>
                             <textarea
+                                id="question-assets"
                                 className="input w-full h-56 font-mono text-xs"
                                 value={formData.assetsText || ''}
                                 onChange={(e) => setFormData({ ...formData, assetsText: e.target.value })}
@@ -733,9 +749,10 @@ export default function QuestionEditor() {
                                 placeholder={'{\\n  \"imageUrl\": \"https://…\",\\n  \"targets\": [{\"id\":\"t1\",\"x\":50,\"y\":50,\"width\":15,\"height\":10}],\\n  \"options\": [\"Label 1\",\"Label 2\"],\\n  \"answer\": {\"t1\": \"Label 1\"}\\n}'}
                             />
 
-                            <label className="text-sm font-medium text-dark-300 block mb-1">Answer Mapping JSON</label>
+                            <label htmlFor="question-answer-mapping" className="text-sm font-medium text-dark-300 block mb-1">Answer Mapping JSON</label>
                             <p className="text-xs text-dark-500 mb-2">If left empty, the editor uses `assets.answer`.</p>
                             <textarea
+                                id="question-answer-mapping"
                                 className="input w-full h-28 font-mono text-xs"
                                 value={formData.answer || ''}
                                 onChange={(e) => setFormData({ ...formData, answer: e.target.value })}
@@ -747,11 +764,12 @@ export default function QuestionEditor() {
                     {/* Multi Step */}
                     {formData.type === 'multi_step' && (
                         <div className="space-y-4 mt-4 bg-dark-900/30 p-4 rounded-lg border border-dark-700">
-                            <label className="text-sm font-medium text-dark-300 block mb-1">Multi-step Mode</label>
+                            <label htmlFor="question-multi-step" className="text-sm font-medium text-dark-300 block mb-1">Multi-step Mode</label>
                             <p className="text-xs text-dark-500">
                                 Provide `assets.steps` JSON to make this scaffolded; otherwise it behaves like an MCQ.
                             </p>
                             <textarea
+                                id="question-multi-step"
                                 className="input w-full h-56 font-mono text-xs"
                                 value={formData.assetsText || ''}
                                 onChange={(e) => setFormData({ ...formData, assetsText: e.target.value })}
@@ -773,6 +791,7 @@ export default function QuestionEditor() {
                                 <div key={i} className="flex gap-3 items-center group">
                                     <input
                                         type="radio"
+                                        aria-label={`Mark option ${i + 1} as correct`}
                                         name="correctAnswer"
                                         checked={parseInt(formData.answer) === i}
                                         onChange={() => setFormData({ ...formData, answer: i.toString() })}
@@ -781,6 +800,7 @@ export default function QuestionEditor() {
                                     <div className="flex-1 relative">
                                         <input
                                             type="text"
+                                            aria-label={`Answer option ${i + 1}`}
                                             placeholder={`Option ${i + 1}`}
                                             className={`input w-full ${parseInt(formData.answer) === i ? 'border-primary-500/50 bg-primary-500/5' : ''}`}
                                             value={opt}
@@ -814,6 +834,7 @@ export default function QuestionEditor() {
                                     <input
                                         type="radio"
                                         name="tfAnswer"
+                                        aria-label="True"
                                         className="hidden"
                                         checked={formData.answer === '0'}
                                         onChange={() => setFormData({ ...formData, answer: '0' })}
@@ -828,6 +849,7 @@ export default function QuestionEditor() {
                                     <input
                                         type="radio"
                                         name="tfAnswer"
+                                        aria-label="False"
                                         className="hidden"
                                         checked={formData.answer === '1'}
                                         onChange={() => setFormData({ ...formData, answer: '1' })}
@@ -847,9 +869,10 @@ export default function QuestionEditor() {
                     </h2>
 
                     <div className="space-y-2">
-                        <label className="text-sm font-medium text-dark-300">Explanation </label>
+                        <label htmlFor="question-explanation" className="text-sm font-medium text-dark-300">Explanation </label>
                         <p className="text-xs text-dark-500 mb-1">Shown to the learner after they answer.</p>
                         <textarea
+                            id="question-explanation"
                             className="input w-full h-24"
                             value={formData.explanation}
                             onChange={e => setFormData({ ...formData, explanation: e.target.value })}

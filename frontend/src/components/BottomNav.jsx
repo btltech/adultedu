@@ -55,6 +55,7 @@ export default function BottomNav() {
                         <Link
                             key={item.to}
                             to={item.to}
+                            aria-current={active ? 'page' : undefined}
                             className={`flex flex-col items-center justify-center flex-1 h-full transition-colors ${active
                                     ? 'text-primary-400'
                                     : 'text-dark-400 hover:text-dark-200'

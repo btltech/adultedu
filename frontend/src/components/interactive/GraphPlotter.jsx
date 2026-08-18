@@ -132,6 +132,7 @@ export default function GraphPlotter({ targetSlope, targetIntercept, isChallenge
                                 <span className="text-sm font-bold text-primary-600">{slope}</span>
                             </div>
                             <input
+                                aria-label="Slope"
                                 type="range"
                                 min="-10" max="10" step="0.5"
                                 value={slope}
@@ -146,6 +147,7 @@ export default function GraphPlotter({ targetSlope, targetIntercept, isChallenge
                                 <span className="text-sm font-bold text-accent-600">{intercept}</span>
                             </div>
                             <input
+                                aria-label="Y-intercept"
                                 type="range"
                                 min="-10" max="10" step="1"
                                 value={intercept}
@@ -157,6 +159,7 @@ export default function GraphPlotter({ targetSlope, targetIntercept, isChallenge
 
                     {isChallenge && (
                         <button
+                            type="button"
                             onClick={checkAnswer}
                             className="w-full py-3 bg-dark-50 text-white font-bold rounded-xl shadow-lg hover:bg-dark-100 hover:scale-[1.02] transition-all active:scale-95"
                         >

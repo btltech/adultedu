@@ -350,7 +350,7 @@ export default function Tracks() {
                             <h2 className="text-base font-semibold text-dark-50">Find the right pathway faster</h2>
                         </div>
                         {hasActiveFilters && (
-                            <button onClick={clearFilters} className="btn-ghost px-4 py-2 text-sm">
+                            <button type="button" onClick={clearFilters} className="btn-ghost px-4 py-2 text-sm">
                                 Clear filters
                                 <X className="h-4 w-4" />
                             </button>
@@ -388,6 +388,7 @@ export default function Tracks() {
                             {categories.map((category) => (
                                 <button
                                     key={category.key}
+                                    type="button"
                                     onClick={() => setCategoryFilter(category.key)}
                                     className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${categoryFilter === category.key
                                         ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/20'
@@ -469,7 +470,7 @@ export default function Tracks() {
                                     <>
                                         <h2 className="text-2xl font-semibold text-dark-50">Pathways aren't loading right now</h2>
                                         <p className="mt-3">This is a problem on our side, not yours. Please try again in a few minutes.</p>
-                                        <button onClick={() => window.location.reload()} className="btn-secondary mt-5">
+                                        <button type="button" onClick={() => window.location.reload()} className="btn-secondary mt-5">
                                             Try again
                                         </button>
                                     </>
@@ -483,7 +484,7 @@ export default function Tracks() {
                             <div className="editorial-panel p-12 text-center text-dark-300">
                                 <h2 className="text-2xl font-semibold text-dark-50">No pathways match the current filters</h2>
                                 <p className="mt-3">Try a broader search or clear one or more filters.</p>
-                                <button onClick={clearFilters} className="btn-secondary mt-5">
+                                <button type="button" onClick={clearFilters} className="btn-secondary mt-5">
                                     Reset filters
                                     <X className="h-4 w-4" />
                                 </button>

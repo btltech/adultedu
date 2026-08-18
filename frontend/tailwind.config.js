@@ -41,8 +41,10 @@ export default {
                     200: '#e4e4e7',
                     300: '#d4d4d8',
                     400: '#a1a1aa',
-                    500: '#71717a',
-                    600: '#52525b',
+                    // Muted text must still meet WCAG AA on the dark surfaces.
+                    // Keep 600 available for borders and decorative separators.
+                    500: '#a1a1aa',
+                    600: '#71717a',
                     700: '#3f3f46',
                     800: '#27272a',  // Warmer card bg
                     900: '#18181b',  // Warmer section bg
@@ -113,4 +115,3 @@ export default {
     },
     plugins: [],
 }
-

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const LAST_UPDATED = '12 April 2026'
+const LAST_UPDATED = '18 August 2026'
 const CONTACT_EMAIL = 'hello@adult-edu.org'
 
 function Section({ title, children }) {
@@ -51,7 +51,7 @@ export default function Accessibility() {
                         </li>
                         <li className="flex gap-3">
                             <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-300" />
-                            <span>Sufficient colour contrast ratios across the dark theme for main text and interactive elements.</span>
+                            <span>High-contrast display mode and larger text controls are available from the header.</span>
                         </li>
                         <li className="flex gap-3">
                             <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-300" />
@@ -63,11 +63,11 @@ export default function Accessibility() {
                         </li>
                         <li className="flex gap-3">
                             <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-300" />
-                            <span>Loading states and error messages communicated clearly in text, not colour alone.</span>
+                            <span>Loading states, validation errors, and question feedback are announced in text, not colour alone.</span>
                         </li>
                         <li className="flex gap-3">
                             <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-300" />
-                            <span>Form inputs have visible labels and descriptive placeholders.</span>
+                            <span>Learner-facing form inputs have visible labels or screen-reader labels and useful instructions.</span>
                         </li>
                     </ul>
                 </Section>
@@ -77,7 +77,7 @@ export default function Accessibility() {
                     <ul className="ml-4 space-y-2">
                         <li className="flex gap-3">
                             <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-400" />
-                            <span>Some drag-and-drop question types (ordering questions) do not yet have a full keyboard-accessible alternative.</span>
+                            <span>Image-label questions still offer a keyboard assignment mode, but the drag-and-drop interaction itself is not keyboard-operated.</span>
                         </li>
                         <li className="flex gap-3">
                             <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-amber-400" />
@@ -100,9 +100,9 @@ export default function Accessibility() {
 
                 <Section title="Text size and display">
                     <p>
-                        You can adjust text size using your browser or operating system settings. The platform uses relative
-                        font sizes so content scales with your preferences. High-contrast mode and forced colours are
-                        supported in modern browsers.
+                        You can adjust text size using your browser, operating system settings, or the display controls in
+                        the header. AdultEdu also provides a high-contrast mode. Forced-colour rendering and formal
+                        screen-reader compatibility testing are still being evaluated.
                     </p>
                 </Section>
 

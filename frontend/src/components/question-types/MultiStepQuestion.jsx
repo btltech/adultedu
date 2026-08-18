@@ -158,8 +158,10 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                                     return (
                                         <button
                                             key={optIdx}
+                                            type="button"
                                             onClick={() => !stepResult && !showResult && isCurrent && setSelectedOption(optIdx)}
                                             disabled={!isCurrent || !!stepResult || showResult}
+                                            aria-pressed={isSelected}
                                             className={baseClass}
                                         >
                                             <div className="flex items-center gap-3">
@@ -178,12 +180,13 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                             {/* Feedback */}
                             {stepResult && (
                                 <div className={`mt-4 p-3 rounded-lg text-sm ${stepResult.isCorrect ? 'bg-accent-500/10 text-accent-300' : 'bg-red-500/10 text-red-300'
-                                    }`}>
+                                    }`} role="status" aria-live="polite">
                                     <p className="font-bold mb-1">{stepResult.isCorrect ? 'Correct!' : 'Try Again'}</p>
                                     <p className="opacity-90">{stepResult.explanation}</p>
 
                                     {!stepResult.isCorrect && (
                                         <button
+                                            type="button"
                                             onClick={() => setStepResults(prev => {
                                                 const newRes = { ...prev };
                                                 delete newRes[index];
@@ -200,6 +203,7 @@ export default function MultiStepQuestion({ question, onAnswer, showResult, resu
                             {/* Submit Button for Current Step */}
                             {isCurrent && !stepResult && !showResult && (
                                 <button
+                                    type="button"
                                     onClick={handleStepSubmit}
                                     disabled={selectedOption === null}
                                     className="mt-4 btn-primary w-full justify-center py-2"

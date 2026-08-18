@@ -269,7 +269,7 @@ export default function Review() {
                                 {currentQuestion.prompt}
                             </p>
 
-                            <div className="mb-6 space-y-3">
+                            <div className="mb-6 space-y-3" role="group" aria-label="Answer options">
                                 {currentQuestion.options.map((option, index) => {
                                 const isSelected = selectedOption === option
                                 const showResultStyles = result !== null
@@ -279,8 +279,10 @@ export default function Review() {
                                 return (
                                     <button
                                         key={index}
+                                        type="button"
                                         onClick={() => !result && setSelectedOption(option)}
                                         disabled={result !== null}
+                                        aria-pressed={isSelected}
                                         className={`w-full rounded-2xl border p-4 text-left transition-all duration-200 ${isCorrectAnswer
                                                 ? 'bg-accent-500/20 border-accent-500 text-white'
                                                 : isWrongSelected
@@ -321,7 +323,7 @@ export default function Review() {
                                     <div className={`mb-4 rounded-2xl p-4 ${result.isCorrect
                                         ? 'bg-accent-500/10 border border-accent-500/30'
                                         : 'bg-amber-500/10 border border-amber-500/30'
-                                    }`}>
+                                    }`} role="status" aria-live="polite">
                                         <div className="mb-2 flex flex-wrap items-center gap-2">
                                             {result.isCorrect ? (
                                                 <>
@@ -350,6 +352,7 @@ export default function Review() {
                                     </div>
 
                                     <button
+                                        type="button"
                                         onClick={handleNext}
                                         className="btn-primary w-full justify-center"
                                     >
@@ -359,6 +362,7 @@ export default function Review() {
                                 </>
                             ) : (
                                 <button
+                                    type="button"
                                     onClick={handleSubmit}
                                     disabled={selectedOption === null || submitting}
                                     className="btn-primary w-full justify-center disabled:opacity-50"
