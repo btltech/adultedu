@@ -123,6 +123,7 @@ export function scanQuestion(question) {
     if (optionBased && Array.isArray(optionList)) {
         const normalised = optionList.map(normaliseText)
         if (new Set(normalised).size !== normalised.length) issues.push('duplicate_options')
+        if (optionList.some((option) => /^\s*[A-D][.)]\s+/i.test(String(option)))) issues.push('embedded_option_label')
         if (answer.ok && answer.value !== null && answerIndex(answer.value, optionList) === null) {
             issues.push('answer_unresolved')
         }
@@ -164,7 +165,7 @@ export function scanQuestion(question) {
         safeUpdates.explanation = String(question.explanation).trim().replace(/([.!?])\1+$/, '$1')
     }
     if (MARKER_RE.test(String(question.explanation || ''))) issues.push('semantic_review_marker')
-    if (/\b(?:A|B|C|D)[.)]\s+/.test(String(question.prompt || ''))) issues.push('embedded_answer_list')
+    if (/\b(?:A|B|C|D)[.)]\s+/.test(String(question.prompt || ''))) issues.push('embedded_answer_list_in_prompt')
 
     return { issues, safeUpdates, options: optionList, answer: answer.value }
 }
