@@ -28,7 +28,7 @@ export default function MainLayout() {
             <EmailVerificationBanner />
             
             <main id="main-content" className="flex-grow pb-20 md:pb-0 relative z-0">
-                <ErrorBoundary>
+                <ErrorBoundary key={location.pathname}>
                     <AnimatePresence mode="wait">
                         <motion.div
                             key={location.pathname}

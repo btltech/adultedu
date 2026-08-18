@@ -94,7 +94,7 @@ function QuestionCard({ question, onAnswer, showResult, result, submittedAnswer 
                 <div className="mb-6 flex justify-center overflow-hidden rounded-xl border border-dark-700 bg-dark-900/50 p-4">
                     <img
                         src={question.imageUrl}
-                        alt="Question Diagram"
+                        alt={`Illustration for: ${question.prompt}`}
                         className="max-h-64 rounded-lg object-contain shadow-lg"
                     />
                 </div>

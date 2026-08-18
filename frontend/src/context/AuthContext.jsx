@@ -7,6 +7,7 @@ export function AuthProvider({ children }) {
     const [user, setUser] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
+    const [authUnavailable, setAuthUnavailable] = useState(false)
 
     // Check auth status on mount
     useEffect(() => {
@@ -17,8 +18,17 @@ export function AuthProvider({ children }) {
         try {
             const data = await api('/auth/me')
             setUser(data.user)
+            setAuthUnavailable(false)
         } catch (err) {
-            setUser(null)
+            // A 401 means the learner is anonymous. A 5xx/network failure
+            // means we do not know their session state, so preserve an
+            // existing session and let protected routes offer a retry.
+            if (err.status === 401 || err.status === 403) {
+                setUser(null)
+                setAuthUnavailable(false)
+            } else {
+                setAuthUnavailable(true)
+            }
         } finally {
             setLoading(false)
         }
@@ -32,6 +42,7 @@ export function AuthProvider({ children }) {
                 body: { email, password, displayName },
             })
             setUser(data.user)
+            setAuthUnavailable(false)
             return { success: true, user: data.user }
         } catch (err) {
             setError(err.message)
@@ -47,6 +58,7 @@ export function AuthProvider({ children }) {
                 body: { email, password },
             })
             setUser(data.user)
+            setAuthUnavailable(false)
             return { success: true, user: data.user }
         } catch (err) {
             setError(err.message)
@@ -61,6 +73,7 @@ export function AuthProvider({ children }) {
             console.error('Logout error:', err)
         } finally {
             setUser(null)
+            setAuthUnavailable(false)
         }
     }, [])
 
@@ -82,6 +95,7 @@ export function AuthProvider({ children }) {
         user,
         loading,
         error,
+        authUnavailable,
         isAuthenticated: !!user,
         isAdmin: user?.role === 'admin',
         needsOnboarding: !!user?.needsOnboarding,
