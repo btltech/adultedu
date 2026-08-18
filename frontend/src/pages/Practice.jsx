@@ -9,6 +9,7 @@ import MultiStepQuestion from '../components/question-types/MultiStepQuestion'
 import ImageLabelQuestion from '../components/question-types/ImageLabelQuestion'
 import XPAnimation from '../components/gamification/XPAnimation'
 import HintButton from '../components/hints/HintButton'
+import QuestionReportButton from '../components/QuestionReportButton'
 
 function QuestionCard({ question, onAnswer, showResult, result, submittedAnswer }) {
     const [selected, setSelected] = useState(null)
@@ -224,30 +225,44 @@ function QuestionCard({ question, onAnswer, showResult, result, submittedAnswer 
 }
 
 function QuestionRenderer({ question, onAnswer, showResult, result, submittedAnswer }) {
+    let renderer
     switch (question.type) {
         case 'ordering':
-            return <OrderingQuestion question={question} onAnswer={onAnswer} showResult={showResult} result={result} />
+            renderer = <OrderingQuestion question={question} onAnswer={onAnswer} showResult={showResult} result={result} />
+            break
         case 'slider':
-            return <SliderQuestion question={question} onAnswer={onAnswer} showResult={showResult} result={result} />
+            renderer = <SliderQuestion question={question} onAnswer={onAnswer} showResult={showResult} result={result} />
+            break
         case 'multi_step':
             try {
                 if (question.assets) {
                     const assets = typeof question.assets === 'string' ? JSON.parse(question.assets) : question.assets
                     if (Array.isArray(assets?.steps) && assets.steps.length > 0) {
-                        return <MultiStepQuestion question={question} onAnswer={onAnswer} showResult={showResult} result={result} />
+                        renderer = <MultiStepQuestion question={question} onAnswer={onAnswer} showResult={showResult} result={result} />
                     }
                 }
             } catch {
                 // Fall back to the standard card for malformed assets.
             }
-            return <QuestionCard question={question} onAnswer={onAnswer} showResult={showResult} result={result} submittedAnswer={submittedAnswer} />
+            if (!renderer) renderer = <QuestionCard question={question} onAnswer={onAnswer} showResult={showResult} result={result} submittedAnswer={submittedAnswer} />
+            break
         case 'image_label':
-            return <ImageLabelQuestion question={question} onAnswer={onAnswer} showResult={showResult} result={result} />
+            renderer = <ImageLabelQuestion question={question} onAnswer={onAnswer} showResult={showResult} result={result} />
+            break
         case 'mcq':
         case 'true_false':
         default:
-            return <QuestionCard question={question} onAnswer={onAnswer} showResult={showResult} result={result} submittedAnswer={submittedAnswer} />
+            renderer = <QuestionCard question={question} onAnswer={onAnswer} showResult={showResult} result={result} submittedAnswer={submittedAnswer} />
+            break
     }
+
+    return <>
+        {renderer}
+        <QuestionReportButton
+            question={question}
+            context={{ surface: 'practice', topicId: question.topic?.id, answered: showResult }}
+        />
+    </>
 }
 
 function getPracticeQuestionStatus(questionId, results) {

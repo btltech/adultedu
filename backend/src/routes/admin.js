@@ -577,4 +577,61 @@ router.delete('/bulk/delete', async (req, res, next) => {
     }
 })
 
+// Learner-reported question issues
+router.get('/question-reports', async (req, res, next) => {
+    try {
+        const page = Math.max(1, Number.parseInt(req.query.page, 10) || 1)
+        const limit = Math.min(100, Math.max(1, Number.parseInt(req.query.limit, 10) || 25))
+        const status = ['open', 'acknowledged', 'fixed', 'dismissed'].includes(req.query.status)
+            ? req.query.status
+            : ''
+        const where = status ? { status } : {}
+        const [reports, total] = await Promise.all([
+            prisma.questionReport.findMany({
+                where,
+                skip: (page - 1) * limit,
+                take: limit,
+                orderBy: { createdAt: 'desc' },
+                include: {
+                    question: {
+                        select: {
+                            id: true,
+                            prompt: true,
+                            isPublished: true,
+                            topic: { select: { title: true, track: { select: { title: true, slug: true } } } },
+                        },
+                    },
+                    user: { select: { email: true, displayName: true } },
+                },
+            }),
+            prisma.questionReport.count({ where }),
+        ])
+
+        res.json({ reports, pagination: { total, page, pages: Math.ceil(total / limit) } })
+    } catch (error) {
+        next(error)
+    }
+})
+
+router.put('/question-reports/:id', async (req, res, next) => {
+    try {
+        const { status, adminNote } = req.body || {}
+        if (!['open', 'acknowledged', 'fixed', 'dismissed'].includes(status)) {
+            return res.status(400).json({ error: 'Choose a valid report status' })
+        }
+        const report = await prisma.questionReport.update({
+            where: { id: req.params.id },
+            data: {
+                status,
+                adminNote: typeof adminNote === 'string' ? adminNote.trim().slice(0, 4000) || null : undefined,
+            },
+            select: { id: true, status: true, adminNote: true, updatedAt: true },
+        })
+        res.json(report)
+    } catch (error) {
+        if (error?.code === 'P2025') return res.status(404).json({ error: 'Report not found' })
+        next(error)
+    }
+})
+
 export default router

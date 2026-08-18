@@ -24,6 +24,7 @@ import achievementsRoutes from './routes/achievements.js'
 import dictionaryRoutes from './routes/dictionary.js'
 import onboardingRoutes from './routes/onboarding.js'
 import partnerReportsRoutes from './routes/partnerReports.js'
+import questionReportsRoutes from './routes/questionReports.js'
 
 import logger from './lib/logger.js'
 import { startReturnReminderScheduler } from './lib/returnReminderScheduler.js'
@@ -105,6 +106,7 @@ v1Router.use('/', certificatesRoutes)
 v1Router.use('/', eventsRoutes)
 v1Router.use('/organizations', organizationsRoutes)
 v1Router.use('/dictionary', dictionaryRoutes)
+v1Router.use('/question-reports', questionReportsRoutes)
 
 app.use('/api/v1', v1Router)
 

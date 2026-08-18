@@ -1,7 +1,7 @@
 import { Outlet, Link, ScrollRestoration, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { useEffect } from 'react'
-import { BarChart3, BookOpenCheck, Building2, Home, LayoutDashboard, LogOut, Settings, Users } from 'lucide-react'
+import { BarChart3, BookOpenCheck, Building2, Flag, Home, LayoutDashboard, LogOut, Settings, Users } from 'lucide-react'
 
 export default function AdminLayout() {
     const { user, logout, loading } = useAuth()
@@ -24,6 +24,7 @@ export default function AdminLayout() {
     const navItems = [
         { label: 'Dashboard', path: '/admin', icon: LayoutDashboard },
         { label: 'Content', path: '/admin/content', icon: BookOpenCheck },
+        { label: 'Question reports', path: '/admin/question-reports', icon: Flag },
         { label: 'Analytics', path: '/admin/analytics', icon: BarChart3 },
         { label: 'Partners', path: '/admin/partners', icon: Building2 },
         { label: 'Users', path: '/admin/users', icon: Users },

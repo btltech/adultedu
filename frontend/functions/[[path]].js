@@ -68,6 +68,7 @@ const SPA_ROUTE_PATTERNS = [
     /^\/track\/[^/]+\/?$/,
     /^\/admin\/?$/,
     /^\/admin\/(?:analytics|content|partners|settings|users)\/?$/,
+    /^\/admin\/question-reports\/?$/,
     /^\/admin\/questions\/(?:new|[^/]+)\/?$/,
 ]
 
