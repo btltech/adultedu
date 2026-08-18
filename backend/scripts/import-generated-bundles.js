@@ -176,6 +176,35 @@ function contentBlocksFor(bundle) {
             target: { numerator: 1, denominator: 2 },
         })
     }
+    if (bundle.unit.id === 'gcse-l2-probability') {
+        blocks.push({
+            type: 'interactive',
+            widget: 'probability-spinner',
+            title: 'Watch probability settle down',
+            prompt: 'Spin a few times, then spin many more. Compare the observed percentages with the theoretical 50% chance for each outcome.',
+            outcomes: ['Red', 'Blue'],
+        })
+    }
+    if (bundle.unit.id === 'gcse-l2-ratio-proportion') {
+        blocks.push({
+            type: 'interactive',
+            widget: 'ratio-mixer',
+            title: 'Keep the mixture the same',
+            prompt: 'Adjust the two parts, simplify the ratio, and increase the batches. Notice what changes and what stays fixed.',
+            labels: ['Concentrate', 'Water'],
+            ratio: [2, 6],
+        })
+    }
+    if (bundle.unit.id === 'gcse-l2-graphs') {
+        blocks.push({
+            type: 'interactive',
+            widget: 'gradient-explorer',
+            title: 'See what m and c do',
+            prompt: 'Change the gradient to tilt the line, then change the intercept to slide it without changing its tilt.',
+            gradient: 1,
+            intercept: 0,
+        })
+    }
     return blocks
 }
 
