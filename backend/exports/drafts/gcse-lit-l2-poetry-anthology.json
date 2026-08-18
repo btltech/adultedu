@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T04:41:54.170Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-lit-l2-poetry-anthology",
+    "title": "English Literature: poetry comparison",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-4",
+        "text": "Compare poems using evidence and analysis of language, form, structure and context."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Comparing Poetic Voices and Structures",
+    "summary": "This lesson guides learners through comparing two short poems using precise evidence of language, form, and structure to analyse themes of power and conflict.",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-4",
+        "text": "Compare poems using evidence and analysis of language, form, structure and context."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Identifying Key Poetic Features",
+        "body": "Begin by identifying distinct poetic features in each text. Look closely at specific words, sentence lengths, and stanza breaks. These elements shape the reader’s experience and highlight the poet’s intended emphasis on power or conflict within the narrative structure. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Analysing Voice and Imagery",
+        "body": "Examine how the speaker’s voice shifts between the two poems. Consider the imagery used to describe relationships or authority. Precise evidence from the text reveals how tone and perspective influence the interpretation of the central themes presented in the work. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Synthesising Comparative Insights",
+        "body": "Combine your observations to draw meaningful comparisons. Explain how structural choices in one poem contrast with or mirror the other. Use specific textual evidence to support your analysis of how form reinforces the poet’s message about human interaction. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The door slammed shut.\" / \"The door creaked open slowly.\" Which line uses structure to suggest hesitation?",
+        "options": [
+          "The first line",
+          "The second line",
+          "Both lines",
+          "Neither line"
+        ],
+        "correctIndex": 1,
+        "explanation": "The phrase \"creaked open slowly\" uses adverbs and verb choice to indicate a gradual, hesitant action.",
+        "objectiveCode": "GCSE-LIT-4"
+      },
+      {
+        "prompt": "Read: \"He ruled with an iron fist.\" / \"She listened to every voice.\" Which line uses imagery to depict authoritarian power?",
+        "options": [
+          "The first line",
+          "The second line",
+          "Both lines",
+          "Neither line"
+        ],
+        "correctIndex": 0,
+        "explanation": "The metaphor \"iron fist\" is a common image for strict, authoritarian control, contrasting with the collaborative tone of the second line.",
+        "objectiveCode": "GCSE-LIT-4"
+      },
+      {
+        "prompt": "Read: \"I am the king.\" / \"We are the people.\" How does the pronoun shift change the focus of power?",
+        "options": [
+          "From individual to collective",
+          "From collective to individual",
+          "It remains the same",
+          "It becomes ambiguous"
+        ],
+        "correctIndex": 0,
+        "explanation": "The shift from \"I\" to \"We\" moves the focus of power from a single individual to a group of people.",
+        "objectiveCode": "GCSE-LIT-4"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

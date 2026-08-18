@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T19:25:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation was unavailable. Data displays, grouping decisions and all answer explanations were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-data-charts-grouping",
+    "title": "Data: representing and grouping information",
+    "objectives": [
+      {
+        "code": "FSM-L1-23",
+        "text": "Represent discrete data in tables, diagrams and charts, including pie charts, bar charts and line graphs."
+      },
+      {
+        "code": "FSM-L1-24",
+        "text": "Group discrete data and represent grouped data graphically."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Representing and Grouping Data",
+    "summary": "Choose a clear way to present discrete data, group values sensibly when there are many of them, and read the information a display is designed to show.",
+    "objectives": [
+      {
+        "code": "FSM-L1-23",
+        "text": "Represent discrete data in tables, diagrams and charts, including pie charts, bar charts and line graphs."
+      },
+      {
+        "code": "FSM-L1-24",
+        "text": "Group discrete data and represent grouped data graphically."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Choosing a useful data display",
+        "body": "A table keeps exact values organised. A bar chart is useful for comparing separate categories, such as different types of journey. A pie chart shows how a whole is divided into parts. A line graph can show values changing over time. Choose the display that makes the comparison or pattern easiest for the reader to see."
+      },
+      {
+        "heading": "Grouping values fairly",
+        "body": "When a list contains many different numerical values, grouping can make it easier to read. Create intervals that do not overlap and cover every value, such as 0 to 4, 5 to 9 and 10 to 14. State the group boundaries clearly. Grouping summarises the data, so it may hide individual values that a full table would show."
+      },
+      {
+        "heading": "Reading data with care",
+        "body": "Before drawing a conclusion from a chart, check its title, labels, scale and time period. A bar height or a line position only has meaning when you read the axis labels. Compare like with like, and avoid claiming a pattern that the data does not show. A clear display supports explanation, but it does not replace sensible interpretation."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A community centre wants to compare the numbers attending yoga, swimming, football and art classes in one week. Which display is most suitable?",
+        "options": [
+          "A bar chart",
+          "A temperature gauge",
+          "A map scale",
+          "A clock face"
+        ],
+        "correctIndex": 0,
+        "explanation": "A bar chart makes it easy to compare totals for separate categories such as different classes.",
+        "objectiveCode": "FSM-L1-23"
+      },
+      {
+        "prompt": "The values 2, 4, 5, 7, 8, 11 and 13 are to be grouped. Which set of intervals is clear and has no overlap?",
+        "options": [
+          "0–5, 5–10, 10–15",
+          "0–4, 5–9, 10–14",
+          "0–5, 6–10",
+          "1–10, 5–15"
+        ],
+        "correctIndex": 1,
+        "explanation": "The intervals 0–4, 5–9 and 10–14 cover every value once without sharing a boundary value.",
+        "objectiveCode": "FSM-L1-24"
+      },
+      {
+        "prompt": "A table shows visitors to a museum each month from January to June. Which display is most useful for showing how the number changes over those months?",
+        "options": [
+          "A line graph",
+          "A pie chart with no labels",
+          "A shopping list",
+          "A single total"
+        ],
+        "correctIndex": 0,
+        "explanation": "A line graph is useful for showing a value changing across an ordered time period.",
+        "objectiveCode": "FSM-L1-23"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

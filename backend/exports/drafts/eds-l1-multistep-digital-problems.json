@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:20:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft; checked against the official standard. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-multistep-digital-problems",
+    "title": "Digital problem solving: planning a multi-step task",
+    "objectives": [
+      {
+        "code": "EDS-L1-CE5",
+        "text": "Use digital tools to solve everyday multi-step problems by finding information, recording key details, and completing tasks in a logical order."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Planning a Multi-step Digital Task",
+    "summary": "Use suitable digital tools in a logical order to find information, record it clearly and complete an everyday task.",
+    "objectives": [
+      {
+        "code": "EDS-L1-CE5",
+        "text": "Use digital tools to solve everyday multi-step problems by finding information, recording key details, and completing tasks in a logical order."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Break a task into steps",
+        "body": "A multi-step digital task is easier when you identify its goal, the information needed and the order of actions. Write a short checklist before starting. Decide which tool suits each step, such as a browser for research, a notes app for key details and a calendar for dates. Check progress before moving to the next step."
+      },
+      {
+        "heading": "Record useful information",
+        "body": "When you find information, record the details that answer the task, not every result you see. Include the source, date or link where this will help you check it later. Keep notes organised with headings or a simple table. This makes it easier to compare options, explain your choices and avoid repeating the same search."
+      },
+      {
+        "heading": "Check the outcome",
+        "body": "At the end, compare the result with the original goal. Check that each required step is complete and that the information is current and relevant. A clear final output could be a short summary, checklist or table. Explain which digital tools were used and why they helped, but do not claim a tool made the decision for you."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional task needs a learner to find opening times, save the details and remember a date. Which order is most logical?",
+        "options": [
+          "Search, record key details, then add the date to a calendar.",
+          "Delete files, then guess the opening times.",
+          "Share account credentials, then search.",
+          "Add a random date without finding information."
+        ],
+        "correctIndex": 0,
+        "explanation": "Finding information first, recording it and then using a calendar completes the connected steps logically.",
+        "objectiveCode": "EDS-L1-CE5"
+      },
+      {
+        "prompt": "Which tool is most suitable for keeping a short list of useful details found during a fictional online search?",
+        "options": [
+          "A notes application",
+          "A password-sharing page",
+          "A camera filter",
+          "A volume setting"
+        ],
+        "correctIndex": 0,
+        "explanation": "A notes application can record key details in an organised form for later use.",
+        "objectiveCode": "EDS-L1-CE5"
+      },
+      {
+        "prompt": "What should a learner do before treating a multi-step digital task as complete?",
+        "options": [
+          "Check the result against the original goal.",
+          "Assume the first step completed everything.",
+          "Delete the record of sources.",
+          "Turn off security tools."
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking against the original goal confirms that the required steps and information are complete.",
+        "objectiveCode": "EDS-L1-CE5"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

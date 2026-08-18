@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T20:30:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation requests were unreliable. Search techniques, source checks, sponsored-result guidance and AI-result limitations were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-search-evaluate-ai",
+    "title": "Finding information: searches, sources and AI results",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD4",
+        "text": "Use appropriate techniques to carry out and refine online searches, considering currency, relevance and reliability, and understand that search engines rank results."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Searching, Evaluating Sources and Checking AI Results",
+    "summary": "Refine an online search and check a result's relevance, currency and reliability before using information from a website, search summary or AI tool.",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD4",
+        "text": "Use appropriate techniques to carry out and refine online searches, considering currency, relevance and reliability, and understand that search engines rank results."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Refining a search",
+        "body": "Start with clear keywords that describe the information you need. Refine results by adding a location, date, file type, exact phrase or a specific website where useful. Search filters can reduce irrelevant results, but they do not prove a result is reliable. If the first search is too broad or narrow, adjust the terms and compare results."
+      },
+      {
+        "heading": "Checking a result before using it",
+        "body": "Look at who published a result, when it was published and whether it answers your question. Search engines rank results for many reasons, so the first result is not automatically the best. Sponsored listings should be recognised as advertising. HTTPS and a padlock can show a secure connection, but they do not guarantee that a site is genuine."
+      },
+      {
+        "heading": "Using AI-supported information carefully",
+        "body": "AI tools and search summaries can be useful starting points, but they may be inaccurate, incomplete or unclear about their sources. Check important facts against a trusted and current source. Treat an AI response as information to investigate, not proof. If a claim affects a significant decision, look for the original source and ask for appropriate support when unsure."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A learner needs a phrase exactly as it appears on a fictional council website. Which search technique is most useful?",
+        "options": [
+          "Put the exact phrase in quotation marks.",
+          "Remove all keywords.",
+          "Choose the first advert automatically.",
+          "Share personal login details."
+        ],
+        "correctIndex": 0,
+        "explanation": "Quotation marks help a search engine look for the words together as an exact phrase.",
+        "objectiveCode": "EDS-L1-UD4"
+      },
+      {
+        "prompt": "A fictional search results page marks one result as 'Sponsored'. What does this tell the learner?",
+        "options": [
+          "It is paid advertising and should still be evaluated for relevance and reliability.",
+          "It is automatically the most reliable source.",
+          "It can never contain useful information.",
+          "It removes the need to check the publication date."
+        ],
+        "correctIndex": 0,
+        "explanation": "Sponsored means paid advertising; it does not by itself prove or disprove a result's reliability.",
+        "objectiveCode": "EDS-L1-UD4"
+      },
+      {
+        "prompt": "An AI summary gives a factual answer without showing a source. What is the best next step before using the fact for an important task?",
+        "options": [
+          "Check it against a trusted current source.",
+          "Assume it is correct because it is automatic.",
+          "Post it publicly without checking.",
+          "Disable all browser security settings."
+        ],
+        "correctIndex": 0,
+        "explanation": "Important facts from an AI summary should be checked against a trusted current source because summaries can be inaccurate or incomplete.",
+        "objectiveCode": "EDS-L1-UD4"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

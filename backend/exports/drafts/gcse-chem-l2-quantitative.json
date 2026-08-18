@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:21:31.439Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-chem-l2-quantitative",
+    "title": "Chemistry: quantitative chemistry",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-3",
+        "text": "Use chemical equations and quantitative methods to calculate amounts and concentrations."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Quantitative Chemistry: Moles and Concentration",
+    "summary": "This lesson guides learners through calculating amounts and concentrations using chemical equations and relative masses, focusing on clear unit usage and significant figures.",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-3",
+        "text": "Use chemical equations and quantitative methods to calculate amounts and concentrations."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Moles and Relative Mass",
+        "body": "To calculate moles, divide the given mass by the relative formula mass. Always show your working clearly, including units for mass and moles. This method helps you determine how many particles are present in a sample without needing a periodic table, relying only on provided values."
+      },
+      {
+        "heading": "Calculating Concentration from Moles",
+        "body": "Concentration is found by dividing the number of moles by the volume in cubic decimetres. Ensure your volume is converted correctly before dividing. Show all steps and units to demonstrate your understanding of the relationship between amount of substance and solution volume in quantitative chemistry tasks."
+      },
+      {
+        "heading": "Applying Significant Figures",
+        "body": "Check the significant figures in your given data before finalising your answer. Your result should match the precision of the least precise value provided. This practice ensures your calculations are scientifically accurate and clearly presented, avoiding unnecessary digits that could misrepresent the precision of your measurements."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A student has 10.0 g of substance X with a relative formula mass of 50.0. How many moles are present?",
+        "options": [
+          "0.200 mol",
+          "2.00 mol",
+          "500 mol",
+          "0.500 mol"
+        ],
+        "correctIndex": 0,
+        "explanation": "Dividing 10.0 g by 50.0 gives 0.200 mol, matching the three significant figures in the data.",
+        "objectiveCode": "GCSE-CHEM-3"
+      },
+      {
+        "prompt": "A solution contains 0.500 mol of substance Y in 2.00 dm³. What is the concentration?",
+        "options": [
+          "0.250 mol/dm³",
+          "1.00 mol/dm³",
+          "0.500 mol/dm³",
+          "2.00 mol/dm³"
+        ],
+        "correctIndex": 0,
+        "explanation": "Dividing 0.500 mol by 2.00 dm³ yields 0.250 mol/dm³, respecting the significant figures provided.",
+        "objectiveCode": "GCSE-CHEM-3"
+      },
+      {
+        "prompt": "A calculation uses 12.0 g and 3.00 dm³. How many significant figures should the final answer have?",
+        "options": [
+          "2",
+          "3",
+          "4",
+          "1"
+        ],
+        "correctIndex": 1,
+        "explanation": "Both values have three significant figures, so the result must also be reported to three significant figures.",
+        "objectiveCode": "GCSE-CHEM-3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

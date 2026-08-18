@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:55:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual source-backed draft; unpublished and not approved for production."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-privacy-sharing-footprint",
+    "title": "Safety online: privacy, sharing and digital footprint",
+    "objectives": [
+      {
+        "code": "EDS-L1-S2",
+        "text": "Manage privacy settings and permissions across digital platforms to control who can access personal or shared information."
+      },
+      {
+        "code": "EDS-L1-S3",
+        "text": "Know that all online activity adds up to create a lasting digital footprint which may affect how others view a person in the future."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Managing Sharing and Your Digital Footprint",
+    "summary": "Choose appropriate permissions, limit sensitive sharing and consider how online activity may last.",
+    "objectives": [
+      {
+        "code": "EDS-L1-S2",
+        "text": "Manage privacy settings and permissions across digital platforms to control who can access personal or shared information."
+      },
+      {
+        "code": "EDS-L1-S3",
+        "text": "Know that all online activity adds up to create a lasting digital footprint which may affect how others view a person in the future."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Choose sharing permissions",
+        "body": "Sharing settings decide who can view, comment on or edit a file or post. In a fictional platform, choose the narrowest permission that supports the task and check whether a link can be forwarded. Remove access when collaboration ends. Do not assume that a familiar name or group means every member should see private information."
+      },
+      {
+        "heading": "Limit sensitive information",
+        "body": "Before posting or sending, consider whether the content includes contact details, location, identity information, images or another person's information. Check audience and privacy settings, and ask permission before sharing someone else's material. Settings can change, so review them periodically. Avoid requesting or entering personal examples in a lesson activity."
+      },
+      {
+        "heading": "Think about the footprint",
+        "body": "Online activity can be copied, downloaded, searched or remembered even after a post is edited or deleted. A future audience may view it differently from the intended audience. Pause before publishing, use respectful language and keep a private draft when unsure. No setting guarantees that content can be removed from the internet."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Which permission is usually best for a fictional private document?",
+        "options": [
+          "Only the intended people can view or edit it",
+          "Anyone with the link can edit",
+          "A public post with all details",
+          "An unknown account chosen at random"
+        ],
+        "correctIndex": 0,
+        "explanation": "Limiting access to intended people reduces unnecessary exposure and accidental changes.",
+        "objectiveCode": "EDS-L1-S2"
+      },
+      {
+        "prompt": "Before sharing a fictional photo of another person, what should you do?",
+        "options": [
+          "Ask permission and check the audience",
+          "Post it publicly without checking",
+          "Add their private address",
+          "Share it with unknown accounts"
+        ],
+        "correctIndex": 0,
+        "explanation": "Permission and audience checks respect privacy and reduce unintended sharing.",
+        "objectiveCode": "EDS-L1-S2"
+      },
+      {
+        "prompt": "Why pause before publishing a fictional post?",
+        "options": [
+          "It may be copied or seen by a future audience",
+          "Online posts disappear instantly",
+          "Privacy settings guarantee removal",
+          "A password makes the post private forever"
+        ],
+        "correctIndex": 0,
+        "explanation": "A lasting digital footprint means content may travel beyond its original audience.",
+        "objectiveCode": "EDS-L1-S3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

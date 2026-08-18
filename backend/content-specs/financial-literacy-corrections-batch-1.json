@@ -1,0 +1,12 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "financial-literacy",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 2,
+  "records": [
+    {"id":"ebc6b7b0-ae15-4645-b3b3-5a35b944a607","answer":"0","source":"FSCS deposit limit increase, effective 1 December 2025"},
+    {"id":"e8727664-e100-4a0c-b8fb-2ec6a1d4a731","answer":"0","source":"FSCS deposit limit increase, effective 1 December 2025"}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

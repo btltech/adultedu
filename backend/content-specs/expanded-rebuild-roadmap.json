@@ -1,0 +1,85 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-08-16",
+  "purpose": "Source map for the remaining AdultEdu content rebuild. This is a local planning file; it does not publish or import content.",
+  "qualificationScope": "England, board-neutral common content from DfE/Ofqual unless an exam-board specification is later selected.",
+  "completedLocalDrafts": 45,
+  "completedSubjects": [
+    "Functional Skills English Level 1",
+    "Functional Skills Maths Level 1",
+    "Essential Digital Skills Level 1"
+  ],
+  "streams": [
+    {
+      "id": "gcse-core-and-ebacc",
+      "status": "in-progress",
+      "tracks": [
+        {"id":"gcse-maths","proposedUnitCount":8,"seedTopics":8,"generatedUnitCount":8,"draftStatus":"validated-local"},
+        {"id":"gcse-english-language","proposedUnitCount":7,"seedTopics":7,"generatedUnitCount":7,"draftStatus":"validated-local"},
+        {"id":"gcse-english-literature","proposedUnitCount":5,"seedTopics":5},
+        {"id":"gcse-biology","proposedUnitCount":7,"seedTopics":7},
+        {"id":"gcse-chemistry","proposedUnitCount":8,"seedTopics":8},
+        {"id":"gcse-physics","proposedUnitCount":8,"seedTopics":8},
+        {"id":"gcse-history","proposedUnitCount":6,"seedTopics":6},
+        {"id":"gcse-geography","proposedUnitCount":8,"seedTopics":8}
+      ],
+      "proposedUnitCount": 57,
+      "sources": [
+        {"title":"GCSE subject content collection","url":"https://www.gov.uk/government/collections/gcse-subject-content"},
+        {"title":"National curriculum: mathematics programmes of study","url":"https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study"},
+        {"title":"National curriculum: science programmes of study","url":"https://www.gov.uk/government/publications/national-curriculum-in-england-science-programmes-of-study/national-curriculum-in-england-science-programmes-of-study"}
+      ]
+    },
+    {
+      "id": "a-level-maths",
+      "status": "source-map-next",
+      "tracks": [{"id":"a-level-maths","proposedUnitCount":12}],
+      "proposedUnitCount": 12,
+      "sources": [{"title":"GCE AS and A level mathematics subject content","url":"https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics"}]
+    },
+    {
+      "id": "technical",
+      "status": "source-map-next",
+      "tracks": [
+        {"id":"python-mastery","proposedUnitCount":14,"seedTopics":14},
+        {"id":"cpp-introduction","proposedUnitCount":12},
+        {"id":"aws-cloud-practitioner","proposedUnitCount":12},
+        {"id":"microsoft-office","proposedUnitCount":12},
+        {"id":"intro-to-ai","proposedUnitCount":10}
+      ],
+      "proposedUnitCount": 60,
+      "sources": [
+        {"title":"Python 3 documentation and tutorial","url":"https://docs.python.org/3/tutorial/"},
+        {"title":"Microsoft C++ documentation","url":"https://learn.microsoft.com/en-gb/cpp/"},
+        {"title":"AWS Certified Cloud Practitioner CLF-C02 exam guide","url":"https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html"},
+        {"title":"Microsoft 365 training","url":"https://learn.microsoft.com/en-us/training/m365/"},
+        {"title":"NIST AI Risk Management Framework","url":"https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-ai-rmf-10"}
+      ]
+    },
+    {
+      "id": "financial-literacy",
+      "status": "source-map-next",
+      "tracks": [{"id":"financial-literacy","proposedUnitCount":10}],
+      "proposedUnitCount": 10,
+      "sources": [
+        {"title":"MoneyHelper everyday money guidance","url":"https://www.moneyhelper.org.uk/en/everyday-money"},
+        {"title":"MoneyHelper budget planner guidance","url":"https://www.moneyhelper.org.uk/en/everyday-money/budgeting/budget-planner"},
+        {"title":"FCA consumer campaign resources","url":"https://www.fca.org.uk/consumers/campaign-resources"}
+      ],
+      "safetyNote": "Educational information only; no personalised financial advice, product recommendations or predictions."
+    },
+    {
+      "id": "life-in-the-uk",
+      "status": "source-map-next",
+      "tracks": [{"id":"life-in-the-uk-test","proposedUnitCount":5,"seedTopics":5}],
+      "proposedUnitCount": 5,
+      "sources": [
+        {"title":"Official Life in the UK test service","url":"https://www.gov.uk/life-in-the-uk-test"},
+        {"title":"Home Office naturalisation guidance","url":"https://www.gov.uk/government/publications/knowledge-of-life-and-language-in-the-uk/knowledge-of-language-and-life-in-the-uk-caseworker-guidance-accessible"}
+      ],
+      "safetyNote": "Questions must be derived only from the current official Guide for New Residents; do not reproduce unofficial question banks."
+    }
+  ],
+  "proposedRemainingUnits": 144,
+  "proposedTotalAfterCompletion": 189
+}

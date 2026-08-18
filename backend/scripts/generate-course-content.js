@@ -9,6 +9,8 @@ import { PrismaClient } from '@prisma/client'
 
 const prisma = new PrismaClient()
 
+throw new Error('This script is retired: it writes generated content directly to live learner records. Use `npm run content:draft` to create source-backed draft bundles for review instead.')
+
 const LLM_URL = process.env.LLM_URL || 'http://192.168.0.165:1234'
 const LLM_MODEL = process.env.LLM_MODEL || 'qwen3-coder-30b-a3b-instruct'
 

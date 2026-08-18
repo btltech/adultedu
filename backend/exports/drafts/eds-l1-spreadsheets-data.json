@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:10:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation requests were unreliable. Spreadsheet data, formula, chart and checking guidance were reviewed. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-spreadsheets-data",
+    "title": "Creating content: spreadsheets, formulae and charts",
+    "objectives": [
+      {
+        "code": "EDS-L1-CE4",
+        "text": "Create a spreadsheet, enter and edit numbers, use spreadsheet tools and formulas to carry out calculations, and create charts with appropriate detail."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Spreadsheets, Formulae and Charts",
+    "summary": "Enter and organise numbers in a spreadsheet, use a suitable formula or built-in tool for a calculation, and create a chart that explains the data clearly.",
+    "objectives": [
+      {
+        "code": "EDS-L1-CE4",
+        "text": "Create a spreadsheet, enter and edit numbers, use spreadsheet tools and formulas to carry out calculations, and create charts with appropriate detail."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Organise data before calculating",
+        "body": "A spreadsheet stores information in cells arranged in rows and columns. Use clear headings so each number has a known meaning. Enter data carefully, then check it against the original information before calculating. Consistent units and labels reduce mistakes. A well-organised table also makes it easier to sort values, find information and create a useful chart later."
+      },
+      {
+        "heading": "Use formulas and built-in tools",
+        "body": "A formula tells a spreadsheet how to calculate a result. For example, a total can use a SUM formula or an AutoSum tool. Check which cells are included before accepting the result. If the input changes, a formula can update automatically. This is helpful, but it also means an incorrect cell reference can produce a convincing but wrong answer."
+      },
+      {
+        "heading": "Choose and check a chart",
+        "body": "A chart can make patterns and comparisons easier to see. Choose a chart type that matches the question, such as a bar chart for categories or a line chart for change over time. Include a meaningful title and labels. Before sharing, compare the chart with the source table to check that the data, scale and selected range are correct."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional spreadsheet lists monthly volunteer hours in cells B2 to B5. Which formula adds those four cells?",
+        "options": [
+          "=SUM(B2:B5)",
+          "=B2-B5",
+          "=TEXT(B2:B5)",
+          "=DELETE(B2:B5)"
+        ],
+        "correctIndex": 0,
+        "explanation": "SUM adds the values in the stated range from B2 through B5.",
+        "objectiveCode": "EDS-L1-CE4"
+      },
+      {
+        "prompt": "Which chart is most suitable for comparing the number of volunteers in four separate fictional teams?",
+        "options": [
+          "A bar chart",
+          "A password manager",
+          "A file folder",
+          "A video call"
+        ],
+        "correctIndex": 0,
+        "explanation": "A bar chart makes it easy to compare totals for separate categories such as teams.",
+        "objectiveCode": "EDS-L1-CE4"
+      },
+      {
+        "prompt": "A spreadsheet formula gives an unexpected total. What should the learner check first?",
+        "options": [
+          "The entered values and cell range used by the formula",
+          "Whether every heading is removed",
+          "Whether to share credentials",
+          "Whether to delete the entire sheet"
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking the data and referenced cells helps identify a likely cause of an unexpected calculation.",
+        "objectiveCode": "EDS-L1-CE4"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-physics",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 10,
+  "records": [
+    {"id":"02304089-6042-41ca-9c3a-7d62de5daae7","change":"Rewrote the inconsistent lamp observation as a valid identical-series-lamp question."},
+    {"id":"69383dc6-4c6e-4612-ad71-394f5b843482","change":"Removed the contradictory water-level observation from the melting question."},
+    {"id":"ddf4dde2-e746-423f-9afb-ee7ad3de6de9","change":"Corrected internal radiation hazard answer to alpha particles."},
+    {"id":"60ce8caf-9720-4bbc-85d6-c7f58efaef88","change":"Aligned the prompt with the 1,000 N uphill resultant force."},
+    {"id":"311736e2-d1dc-4d33-9404-a3f50e34c31a","change":"Replaced air-density depth calculation with a coherent water-pressure question."},
+    {"id":"d26f3a31-c688-4761-8b82-9596b5c1c92a","change":"Added the exact 66.7 kPa gas-law result."},
+    {"id":"cb2c395a-8800-41e1-818a-3c8305a9664d","change":"Corrected steel needle answer to retained weaker magnetisation."},
+    {"id":"aeed371b-63b5-469e-ba7d-e19595ad401e","change":"Corrected the mass/radius gravitational scaling to eight times."},
+    {"id":"30e4d226-5ed5-4f18-b9b1-c26c4c2511ce","change":"Corrected gravitational-force answer index to inverse-square decrease."},
+    {"id":"9f1893a8-e672-49ce-bf68-10e92de2e167","change":"Corrected astronaut weightlessness answer to shared free fall."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:50:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual source-backed draft; unpublished and not approved for production."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-online-accounts-security",
+    "title": "Transacting: accounts, services and secure access",
+    "objectives": [
+      {
+        "code": "EDS-L1-T2",
+        "text": "Use online transactional services to view information, manage account settings, complete tasks, and identify features that support security."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Using Online Services Securely",
+    "summary": "Use fictional online services, manage settings and recognise safer sign-in features without sharing credentials.",
+    "objectives": [
+      {
+        "code": "EDS-L1-T2",
+        "text": "Use online transactional services to view information, manage account settings, complete tasks, and identify features that support security."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Use an online service",
+        "body": "Online services may let you view information, update settings, upload a document or complete a task. Start from the service's known website or app and check that you are using the correct account. Read each confirmation before submitting. In practice, use fictional details only and do not upload real identity or financial documents."
+      },
+      {
+        "heading": "Manage settings carefully",
+        "body": "Account settings control notifications, contact details, privacy and sometimes access permissions. Change only the setting needed, review the confirmation and sign out on a shared device. Keep contact information current where appropriate, but never copy a code, password or sensitive document into an untrusted form or message."
+      },
+      {
+        "heading": "Choose safer access",
+        "body": "Security features can include multi-factor authentication, passkeys, biometrics, alerts and recovery options. Follow the service's official instructions and keep recovery methods under your control. No legitimate helper needs your password or one-time code. If a sign-in request is unexpected, stop, close it and contact the service through a trusted route."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Before uploading a fictional document to an online service, what should the learner do?",
+        "options": [
+          "Confirm the service and document are correct",
+          "Upload it to an unknown message link",
+          "Share a password with support",
+          "Ignore the submission confirmation"
+        ],
+        "correctIndex": 0,
+        "explanation": "Confirming the service and document reduces the chance of sending information to the wrong destination.",
+        "objectiveCode": "EDS-L1-T2"
+      },
+      {
+        "prompt": "Which is a safer account-access feature?",
+        "options": [
+          "Multi-factor authentication or a passkey",
+          "A request to tell someone your password",
+          "A public shared login",
+          "An unexpected shortened link"
+        ],
+        "correctIndex": 0,
+        "explanation": "Additional sign-in factors can strengthen access when configured through the genuine service.",
+        "objectiveCode": "EDS-L1-T2"
+      },
+      {
+        "prompt": "What should you do with an unexpected one-time-code request?",
+        "options": [
+          "Stop and use a trusted contact route",
+          "Read the code to the caller",
+          "Post it in a group chat",
+          "Enter it into an unknown page"
+        ],
+        "correctIndex": 0,
+        "explanation": "Unexpected code requests may indicate an attempted takeover, so stopping and checking independently is safer.",
+        "objectiveCode": "EDS-L1-T2"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

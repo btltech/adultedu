@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T23:09:16.839Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-eng-l2-spelling-punctuation-grammar",
+    "title": "Spelling, punctuation and grammar",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-W3",
+        "text": "Use standard English grammar, punctuation and spelling accurately and deliberately."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Mastering Sentence Boundaries and Punctuation",
+    "summary": "This lesson explores how to use standard English grammar, punctuation, and spelling to communicate clearly. Learners will apply sentence boundaries and varied structures to improve accuracy in their writing.",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-W3",
+        "text": "Use standard English grammar, punctuation and spelling accurately and deliberately."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Sentence Boundaries",
+        "body": "Clear sentence boundaries help readers follow your ideas. Each sentence should contain a complete thought with a subject and a verb. Using full stops correctly prevents confusion and ensures your message is understood accurately by the audience. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Punctuation for Clarity",
+        "body": "Punctuation marks guide the reader through your text. Commas separate items in lists, while semicolons link related independent clauses. Choosing the right mark depends on the grammatical relationship between the parts of your sentence. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Varied Sentence Structures",
+        "body": "Varying sentence length and structure keeps writing engaging. Short sentences create impact, while longer ones provide detail. There is no single correct style; instead, choose structures that best suit your purpose and maintain clarity for the reader. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The cat sat on the mat. It was a sunny day.\" Which punctuation mark correctly separates these two independent clauses if joined into one sentence?",
+        "options": [
+          "Comma",
+          "Semicolon",
+          "Colon",
+          "Hyphen"
+        ],
+        "correctIndex": 1,
+        "explanation": "A semicolon is used to join two closely related independent clauses without a conjunction.",
+        "objectiveCode": "GCSE-ENG-W3"
+      },
+      {
+        "prompt": "Read: \"I bought apples, oranges, and bananas from the market.\" What is the grammatical function of the commas in this sentence?",
+        "options": [
+          "Separating clauses",
+          "Listing items",
+          "Indicating a pause",
+          "Ending a sentence"
+        ],
+        "correctIndex": 1,
+        "explanation": "The commas are used to separate individual items within a list of nouns.",
+        "objectiveCode": "GCSE-ENG-W3"
+      },
+      {
+        "prompt": "Read: \"She walked to the park. The trees were green.\" Which option best describes the effect of using two short sentences here?",
+        "options": [
+          "Creates complexity",
+          "Adds detail",
+          "Creates impact",
+          "Confuses the reader"
+        ],
+        "correctIndex": 2,
+        "explanation": "Short sentences are often used to create a sense of impact or emphasis in writing.",
+        "objectiveCode": "GCSE-ENG-W3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

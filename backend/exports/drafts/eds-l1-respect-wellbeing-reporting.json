@@ -1,0 +1,123 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:55:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual source-backed draft; unpublished and not approved for production."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-respect-wellbeing-reporting",
+    "title": "Safety online: respectful use, wellbeing and reporting",
+    "objectives": [
+      {
+        "code": "EDS-L1-S4",
+        "text": "Use other people’s content fairly and behave respectfully and lawfully online, recognising the consequences of inappropriate behaviour."
+      },
+      {
+        "code": "EDS-L1-S5",
+        "text": "Understand how screen time can affect physical health and wellbeing and know how to follow a healthy, balanced routine."
+      },
+      {
+        "code": "EDS-L1-S6",
+        "text": "Understand that harmful or suspicious activity can occur online and know how to report concerns and protect personal safety."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Respect, Wellbeing and Reporting Online",
+    "summary": "Use content fairly, build balanced routines and respond safely to harmful or suspicious online activity.",
+    "objectives": [
+      {
+        "code": "EDS-L1-S4",
+        "text": "Use other people’s content fairly and behave respectfully and lawfully online, recognising the consequences of inappropriate behaviour."
+      },
+      {
+        "code": "EDS-L1-S5",
+        "text": "Understand how screen time can affect physical health and wellbeing and know how to follow a healthy, balanced routine."
+      },
+      {
+        "code": "EDS-L1-S6",
+        "text": "Understand that harmful or suspicious activity can occur online and know how to report concerns and protect personal safety."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Use content fairly and respectfully",
+        "body": "Other people's text, images, music and video may have copyright or licence conditions. In a fictional task, use content with permission, credit the creator where required and follow the stated licence. Communicate respectfully, even when disagreeing. Harmful posts or inappropriate behaviour can affect others and may have lasting consequences."
+      },
+      {
+        "heading": "Build a balanced routine",
+        "body": "Long or poorly timed screen use can affect comfort, sleep, movement and attention. Plan breaks, change position, adjust the display and make time for offline activities. A balanced routine depends on the person and task. If a fictional situation causes concern, speak with a trusted person rather than relying on a lesson for medical advice."
+      },
+      {
+        "heading": "Report and protect yourself",
+        "body": "If harmful, threatening or suspicious activity appears online, avoid escalating it. Use block, mute and report tools, keep only information needed for a report and leave the unsafe space. Follow the platform's official process and ask a trusted person for support. If immediate safety is at risk, seek appropriate local help."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "What is fair use of a fictional online image?",
+        "options": [
+          "Follow its licence and credit the creator when required",
+          "Copy it and claim it as your own",
+          "Remove the creator's name",
+          "Sell it without checking permission"
+        ],
+        "correctIndex": 0,
+        "explanation": "Following the licence and crediting the creator respects ownership and stated conditions.",
+        "objectiveCode": "EDS-L1-S4"
+      },
+      {
+        "prompt": "Which routine supports balanced fictional screen use?",
+        "options": [
+          "Take breaks and make time for offline activities",
+          "Stay online without moving for hours",
+          "Skip sleep to finish every task",
+          "Ignore discomfort"
+        ],
+        "correctIndex": 0,
+        "explanation": "Breaks and offline activities help create a healthier balance around screen tasks.",
+        "objectiveCode": "EDS-L1-S5"
+      },
+      {
+        "prompt": "What is a safer response to a harmful fictional message?",
+        "options": [
+          "Do not engage; block or report it and ask for support",
+          "Reply with more insults",
+          "Share it widely for amusement",
+          "Give the sender private details"
+        ],
+        "correctIndex": 0,
+        "explanation": "Blocking, reporting and seeking support reduce further contact and preserve personal safety.",
+        "objectiveCode": "EDS-L1-S6"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

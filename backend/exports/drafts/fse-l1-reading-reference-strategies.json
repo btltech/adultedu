@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T15:34:44.799Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review removed an inaccurate word-part explanation and replaced it with a source-aligned context and word-part task. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-reading-reference-strategies",
+    "title": "Reading: using reference materials and word strategies",
+    "objectives": [
+      {
+        "code": "FSE-L1-R13",
+        "text": "Use reference materials and appropriate strategies (e.g. using knowledge of different word types) for a range of purposes, including to find the meaning of words."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Decoding Words: Reference Materials and Context Clues",
+    "summary": "This lesson explores how to use reference materials and word strategies to understand unfamiliar terms in straightforward texts. Learners will practise selecting appropriate sources and using context to infer meanings.",
+    "objectives": [
+      {
+        "code": "FSE-L1-R13",
+        "text": "Use reference materials and appropriate strategies (e.g. using knowledge of different word types) for a range of purposes, including to find the meaning of words."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Choosing the Right Reference",
+        "body": "When you meet an unfamiliar word, a reference source can help. A general dictionary gives standard definitions, while a subject-specific glossary may give a more precise meaning for a technical term. Choosing a source that matches the text’s context can make the definition more useful for the task you are doing."
+      },
+      {
+        "heading": "Using Context Clues",
+        "body": "Sometimes, the text itself provides hints about a word’s meaning. By reading the sentences before and after the unfamiliar term, you can often infer its general sense. This strategy is particularly helpful when a dictionary definition feels too abstract or when the word is used in a specific, situational way that a standard definition might not fully capture."
+      },
+      {
+        "heading": "Word Parts and Types",
+        "body": "Parts of a word can sometimes offer a clue. For example, ‘re-’ can suggest doing something again, and ‘-able’ can suggest that something can be done. Combine that clue with the sentence and the word’s job in it, such as whether it describes something or names an action."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read this sentence: 'The chef used a mandoline to slice the vegetables into thin, uniform pieces.' Which reference material would be most useful for finding the specific meaning of 'mandoline' in this cooking context?",
+        "options": [
+          "A general English dictionary",
+          "A culinary glossary",
+          "A thesaurus",
+          "A grammar guide"
+        ],
+        "correctIndex": 1,
+        "explanation": "A culinary glossary provides specific definitions for kitchen tools, making it more relevant than a general dictionary for this context.",
+        "objectiveCode": "FSE-L1-R13"
+      },
+      {
+        "prompt": "Read this notice: 'A hissing sound from a bicycle tyre can mean that air is escaping. Check the tyre before riding.' Based on the nearby words, what does 'hissing' most likely describe?",
+        "options": [
+          "A sound made as air escapes",
+          "A tyre being cleaned",
+          "A bicycle moving quickly",
+          "A rider speaking loudly"
+        ],
+        "correctIndex": 0,
+        "explanation": "The notice links the hissing sound to air escaping from the tyre.",
+        "objectiveCode": "FSE-L1-R13"
+      },
+      {
+        "prompt": "Read this notice: 'Please bring a reusable cup. It can be washed and used again.' Using the word parts and the sentence, what does 'reusable' mean?",
+        "options": [
+          "Able to be used again",
+          "Only suitable for recycling",
+          "Too fragile to wash",
+          "Made for one person only"
+        ],
+        "correctIndex": 0,
+        "explanation": "The notice says that the cup can be washed and used again, which confirms the meaning of reusable.",
+        "objectiveCode": "FSE-L1-R13"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

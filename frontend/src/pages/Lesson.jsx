@@ -1,11 +1,231 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, BookOpenCheck, Clock3, GraduationCap, Lightbulb, ListChecks, NotebookPen, Target, TriangleAlert } from 'lucide-react'
+import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, Clock3, GraduationCap, Lightbulb, ListChecks, Mic, NotebookPen, Play, Square, Target, Trash2, TriangleAlert } from 'lucide-react'
 import { api, getUserMessage } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
 import NotFound from './NotFound'
 import { usePageSeo } from '../components/SEO'
 import { lessonSeoTags } from '../lib/seo/meta'
+
+function WritingActivity({ block, activityId }) {
+    const [response, setResponse] = useState('')
+    const [checkedItems, setCheckedItems] = useState([])
+    const checklist = Array.isArray(block.checklist) ? block.checklist : []
+    const wordCount = response.trim() ? response.trim().split(/\s+/).length : 0
+
+    function toggleChecklistItem(index) {
+        setCheckedItems((current) => current.includes(index)
+            ? current.filter((item) => item !== index)
+            : [...current, index])
+    }
+
+    return (
+        <section className="mb-8 rounded-[1.5rem] border border-primary-500/30 bg-primary-500/5 p-5 sm:p-6">
+            <div className="mb-4 flex items-start gap-3">
+                <NotebookPen className="mt-0.5 h-5 w-5 flex-shrink-0 text-primary-300" aria-hidden="true" />
+                <div>
+                    <h3 className="text-lg font-semibold text-dark-50">{block.title || 'Try it yourself'}</h3>
+                    {block.wordGuide && <p className="mt-1 text-sm text-dark-400">Suggested length: {block.wordGuide}</p>}
+                </div>
+            </div>
+            <p className="mb-4 whitespace-pre-line leading-7 text-dark-200">{block.prompt}</p>
+            <label className="sr-only" htmlFor={`writing-activity-${activityId}`}>Your writing</label>
+            <textarea
+                id={`writing-activity-${activityId}`}
+                value={response}
+                onChange={(event) => setResponse(event.target.value)}
+                placeholder="Write your response here. It stays on this page and is not submitted or marked."
+                className="min-h-44 w-full resize-y rounded-xl border border-dark-700 bg-dark-950/80 px-4 py-3 leading-7 text-dark-100 outline-none transition focus:border-primary-400 focus:ring-2 focus:ring-primary-500/30"
+            />
+            <p className="mt-2 text-right text-xs text-dark-500">{wordCount} words</p>
+            {checklist.length > 0 && (
+                <fieldset className="mt-5 border-t border-dark-700/80 pt-4">
+                    <legend className="mb-3 text-sm font-semibold text-dark-100">Review your own writing</legend>
+                    <div className="space-y-3">
+                        {checklist.map((item, index) => (
+                            <label key={item} className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-dark-300">
+                                <input
+                                    type="checkbox"
+                                    checked={checkedItems.includes(index)}
+                                    onChange={() => toggleChecklistItem(index)}
+                                    className="mt-1 h-4 w-4 rounded border-dark-600 bg-dark-900 text-primary-500 focus:ring-primary-500"
+                                />
+                                <span>{item}</span>
+                            </label>
+                        ))}
+                    </div>
+                    {checkedItems.length === checklist.length && (
+                        <p className="mt-4 flex items-center gap-2 text-sm text-accent-300"><CheckCircle2 className="h-4 w-4" aria-hidden="true" /> You have completed your self-review.</p>
+                    )}
+                </fieldset>
+            )}
+        </section>
+    )
+}
+
+function ImageInferenceActivity({ block, activityId }) {
+    const [selected, setSelected] = useState(null)
+    const [checked, setChecked] = useState(false)
+    const options = Array.isArray(block.options) ? block.options : []
+    const correctIndex = Number.isInteger(block.correctIndex) ? block.correctIndex : null
+    const isCorrect = checked && selected === correctIndex
+
+    return (
+        <section className="mb-8 rounded-[1.5rem] border border-accent-500/30 bg-accent-500/5 p-5 sm:p-6">
+            <div className="mb-4 flex items-start gap-3">
+                <BookOpenCheck className="mt-0.5 h-5 w-5 flex-shrink-0 text-accent-300" aria-hidden="true" />
+                <div>
+                    <h3 className="text-lg font-semibold text-dark-50">{block.title || 'Read the image'}</h3>
+                    <p className="mt-1 text-sm text-dark-400">Use the visual and the accompanying text.</p>
+                </div>
+            </div>
+            <figure className="mb-5 overflow-hidden rounded-xl border border-dark-700 bg-dark-950/80 p-3">
+                <img src={block.imageSrc} alt={block.imageAlt || ''} className="mx-auto max-h-96 w-full rounded-lg object-contain" />
+                {block.imageAlt && <figcaption className="mt-3 text-sm leading-6 text-dark-400">Image description: {block.imageAlt}</figcaption>}
+            </figure>
+            {block.supportingText && <p className="mb-4 rounded-xl bg-dark-900/70 p-4 leading-7 text-dark-200">{block.supportingText}</p>}
+            <p className="mb-4 font-medium leading-7 text-dark-100">{block.prompt}</p>
+            <div className="space-y-3" role="radiogroup" aria-label={block.prompt}>
+                {options.map((option, index) => (
+                    <button
+                        key={option}
+                        type="button"
+                        role="radio"
+                        aria-checked={selected === index}
+                        disabled={checked}
+                        onClick={() => setSelected(index)}
+                        className={`w-full rounded-xl border p-4 text-left text-sm leading-6 transition ${selected === index
+                            ? 'border-accent-400 bg-accent-500/15 text-dark-50'
+                            : 'border-dark-700 bg-dark-900/60 text-dark-200 hover:border-dark-500'} ${checked && index === correctIndex ? 'border-accent-400 bg-accent-500/15' : ''}`}
+                    >
+                        <span className="mr-3 font-semibold text-accent-300">{String.fromCharCode(65 + index)}.</span>{option}
+                    </button>
+                ))}
+            </div>
+            {!checked ? (
+                <button type="button" className="btn-primary mt-5" disabled={selected === null} onClick={() => setChecked(true)}>Check answer</button>
+            ) : (
+                <div className={`mt-5 rounded-xl border p-4 ${isCorrect ? 'border-accent-500/30 bg-accent-500/10' : 'border-amber-500/30 bg-amber-500/10'}`} aria-live="polite">
+                    <p className="font-semibold text-dark-50">{isCorrect ? 'Correct' : `The best answer is ${String.fromCharCode(65 + correctIndex)}.`}</p>
+                    {block.explanation && <p className="mt-2 text-sm leading-6 text-dark-200">{block.explanation}</p>}
+                </div>
+            )}
+        </section>
+    )
+}
+
+function SpeakingActivity({ block, activityId }) {
+    const [isRecording, setIsRecording] = useState(false)
+    const [recordingUrl, setRecordingUrl] = useState(null)
+    const [recordingError, setRecordingError] = useState(null)
+    const [checkedItems, setCheckedItems] = useState([])
+    const recorderRef = useRef(null)
+    const streamRef = useRef(null)
+    const recordingUrlRef = useRef(null)
+    const checklist = Array.isArray(block.checklist) ? block.checklist : []
+
+    useEffect(() => () => {
+        if (recordingUrlRef.current) URL.revokeObjectURL(recordingUrlRef.current)
+        streamRef.current?.getTracks().forEach((track) => track.stop())
+    }, [])
+
+    function stopStream() {
+        streamRef.current?.getTracks().forEach((track) => track.stop())
+        streamRef.current = null
+    }
+
+    async function startRecording() {
+        setRecordingError(null)
+        if (!navigator.mediaDevices?.getUserMedia || typeof MediaRecorder === 'undefined') {
+            setRecordingError('Recording is not supported by this browser. You can still say your response aloud and use the checklist.')
+            return
+        }
+
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ audio: true })
+            const chunks = []
+            const recorder = new MediaRecorder(stream)
+            streamRef.current = stream
+            recorderRef.current = recorder
+            recorder.ondataavailable = (event) => {
+                if (event.data.size > 0) chunks.push(event.data)
+            }
+            recorder.onstop = () => {
+                stopStream()
+                if (chunks.length > 0) {
+                    if (recordingUrlRef.current) URL.revokeObjectURL(recordingUrlRef.current)
+                    const url = URL.createObjectURL(new Blob(chunks, { type: recorder.mimeType || 'audio/webm' }))
+                    recordingUrlRef.current = url
+                    setRecordingUrl(url)
+                }
+                setIsRecording(false)
+            }
+            recorder.start()
+            setIsRecording(true)
+        } catch {
+            stopStream()
+            setRecordingError('We could not access your microphone. Check your browser permission, or practise aloud without recording.')
+        }
+    }
+
+    function stopRecording() {
+        if (recorderRef.current?.state === 'recording') recorderRef.current.stop()
+    }
+
+    function deleteRecording() {
+        if (recordingUrlRef.current) URL.revokeObjectURL(recordingUrlRef.current)
+        recordingUrlRef.current = null
+        setRecordingUrl(null)
+    }
+
+    function toggleChecklistItem(index) {
+        setCheckedItems((current) => current.includes(index)
+            ? current.filter((item) => item !== index)
+            : [...current, index])
+    }
+
+    return (
+        <section className="mb-8 rounded-[1.5rem] border border-violet-500/30 bg-violet-500/5 p-5 sm:p-6">
+            <div className="mb-4 flex items-start gap-3">
+                <Mic className="mt-0.5 h-5 w-5 flex-shrink-0 text-violet-300" aria-hidden="true" />
+                <div>
+                    <h3 className="text-lg font-semibold text-dark-50">{block.title || 'Say it aloud'}</h3>
+                    <p className="mt-1 text-sm text-dark-400">This is private practice. Your recording stays in this browser and is never uploaded or marked.</p>
+                </div>
+            </div>
+            <p className="mb-3 whitespace-pre-line leading-7 text-dark-200">{block.prompt}</p>
+            {block.timingGuide && <p className="mb-4 text-sm text-dark-400">Suggested speaking time: {block.timingGuide}</p>}
+            <div className="flex flex-wrap gap-3">
+                {!isRecording ? (
+                    <button type="button" className="btn-primary" onClick={startRecording}><Mic className="mr-2 h-4 w-4" />Record practice</button>
+                ) : (
+                    <button type="button" className="btn-secondary" onClick={stopRecording}><Square className="mr-2 h-4 w-4" />Stop recording</button>
+                )}
+            </div>
+            {recordingError && <p className="mt-3 text-sm leading-6 text-amber-300" role="status">{recordingError}</p>}
+            {recordingUrl && (
+                <div className="mt-4 flex flex-wrap items-center gap-3 rounded-xl border border-dark-700 bg-dark-950/70 p-3">
+                    <Play className="h-4 w-4 text-violet-300" aria-hidden="true" />
+                    <audio className="min-w-0 flex-1" controls src={recordingUrl}>Your browser cannot play this recording.</audio>
+                    <button type="button" className="btn-secondary px-3 py-2 text-sm" onClick={deleteRecording}><Trash2 className="mr-2 h-4 w-4" />Delete</button>
+                </div>
+            )}
+            {checklist.length > 0 && (
+                <fieldset className="mt-5 border-t border-dark-700/80 pt-4">
+                    <legend className="mb-3 text-sm font-semibold text-dark-100">Review your spoken response</legend>
+                    <div className="space-y-3">
+                        {checklist.map((item, index) => (
+                            <label key={item} className="flex cursor-pointer items-start gap-3 text-sm leading-6 text-dark-300">
+                                <input type="checkbox" checked={checkedItems.includes(index)} onChange={() => toggleChecklistItem(index)} className="mt-1 h-4 w-4 rounded border-dark-600 bg-dark-900 text-violet-500 focus:ring-violet-500" />
+                                <span>{item}</span>
+                            </label>
+                        ))}
+                    </div>
+                </fieldset>
+            )}
+        </section>
+    )
+}
 
 export default function Lesson() {
     const { id } = useParams()
@@ -129,6 +349,12 @@ export default function Lesson() {
                         </div>
                     )
                 }
+            case 'writing_activity':
+                return <WritingActivity key={index} block={block} activityId={index} />
+            case 'image_inference_activity':
+                return <ImageInferenceActivity key={index} block={block} activityId={index} />
+            case 'speaking_activity':
+                return <SpeakingActivity key={index} block={block} activityId={index} />
             default:
                 return <p key={index} className="mb-5 text-base leading-8 text-dark-300">{block.content || JSON.stringify(block)}</p>
         }

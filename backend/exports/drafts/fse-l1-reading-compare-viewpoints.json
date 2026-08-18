@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T15:30:35.986Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review replaced repetitive fact-versus-opinion questions with distinct comparison tasks. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-reading-compare-viewpoints",
+    "title": "Reading: comparing information, ideas and opinions",
+    "objectives": [
+      {
+        "code": "FSE-L1-R10",
+        "text": "Compare information, ideas and opinions in different texts."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Comparing Information and Opinions in Short Texts",
+    "summary": "This lesson helps you distinguish between factual information and personal views when reading two short texts on the same topic. You will learn to identify what each writer states as fact and how they express their own perspective.",
+    "objectives": [
+      {
+        "code": "FSE-L1-R10",
+        "text": "Compare information, ideas and opinions in different texts."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Compare the Same Subject",
+        "body": "Start by finding what the texts have in common: the subject, event or question they discuss. Then note the details each text gives. A comparison is stronger when it says exactly what is shared or different, rather than simply saying that two texts are alike or different."
+      },
+      {
+        "heading": "Information, Ideas and Opinions",
+        "body": "Texts can offer different kinds of content about the same subject. One may give a date, price or instruction that the other does not. Writers may also agree on a problem but suggest different solutions. Notice the words that show a view, such as ‘would help’ or ‘is better’."
+      },
+      {
+        "heading": "Use Evidence from Both Texts",
+        "body": "When answering a comparison question, check both texts before choosing. A good answer names a detail from each one, or identifies the point they both make. Do not add information that is not in the texts. Comparing is about explaining the relationship between the two texts using their evidence."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Text A: \"Free computer workshops run on Tuesdays at 6 pm. There are 20 places.\" Text B: \"Weekly computer workshops are held on Tuesday evenings. Book a place online.\" Which detail appears in Text A but not Text B?",
+        "options": [
+          "The workshops are free",
+          "The workshops are on Tuesdays",
+          "The number of places available",
+          "Learners can book a place"
+        ],
+        "correctIndex": 2,
+        "explanation": "Only Text A says that there are 20 places; the other details are given in one or both texts.",
+        "objectiveCode": "FSE-L1-R10"
+      },
+      {
+        "prompt": "Text A: \"The council plans to repair the playground in June. The work is needed to make the equipment safe.\" Text B: \"I support repairing the playground, but the council should add more benches at the same time.\" What do both texts agree about?",
+        "options": [
+          "The playground should be repaired",
+          "More benches are essential",
+          "The repair will take place in June",
+          "The equipment is already safe"
+        ],
+        "correctIndex": 0,
+        "explanation": "Text A says the repair is planned and Text B says the writer supports it, so both agree that it should happen.",
+        "objectiveCode": "FSE-L1-R10"
+      },
+      {
+        "prompt": "Text A: \"The college should keep its café open until 6 pm because many students finish classes late.\" Text B: \"The college should keep the café open until 6 pm, but it should offer cheaper hot drinks.\" How do the writers' ideas differ?",
+        "options": [
+          "Text A wants a later closing time; Text B wants cheaper drinks instead.",
+          "Text A wants a later closing time; Text B agrees and adds a suggestion about prices.",
+          "Text A thinks students finish early; Text B thinks they finish late.",
+          "Text A supports hot drinks; Text B opposes them."
+        ],
+        "correctIndex": 1,
+        "explanation": "Both writers support a 6 pm closing time, while Text B adds an idea about making hot drinks cheaper.",
+        "objectiveCode": "FSE-L1-R10"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

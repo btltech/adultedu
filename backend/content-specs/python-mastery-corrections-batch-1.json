@@ -1,0 +1,12 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "python-mastery",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 2,
+  "records": [
+    {"id":"9410c5ce-2b10-42c5-8bec-90c97c0b8edd","answer":"1"},
+    {"id":"496f4ca3-2b77-4e57-beb9-cb8c9e3155ef","answer":"0"}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

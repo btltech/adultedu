@@ -1,0 +1,46 @@
+{
+  "auditDate": "2026-08-17",
+  "scope": "All published questions in Railway production",
+  "productionChanges": false,
+  "totals": {
+    "questions": 8301,
+    "subjects": 23,
+    "exactDuplicatePromptGroups": 0,
+    "allQuestionsMissingSourceMetadata": true,
+    "allQuestionsMissingCurriculumObjectives": true
+  },
+  "detectionRules": {
+    "shortPrompt": "fewer than 5 words",
+    "shortExplanation": "fewer than 5 words",
+    "contradictionMarker": "explanation contains phrases such as not in options, recalculate, closest option, typo, or self-correction",
+    "nonIndexAnswer": "MCQ/scenario answer stored as option text rather than numeric index",
+    "invalidIndex": "numeric answer outside the option array"
+  },
+  "priorityOrder": [
+    {"slug":"gcse-maths","title":"GCSE Maths Preparation","questions":491,"shortPrompts":6,"shortExplanations":0,"nonIndexAnswers":1,"invalidIndexes":0,"contradictionMarkers":84,"missingSources":491,"missingObjectives":491},
+    {"slug":"a-level-maths","title":"A-Level Maths","questions":559,"shortPrompts":0,"shortExplanations":3,"nonIndexAnswers":4,"invalidIndexes":0,"contradictionMarkers":64,"missingSources":559,"missingObjectives":559},
+    {"slug":"functional-skills-maths","title":"Functional Skills Maths","questions":435,"shortPrompts":12,"shortExplanations":3,"nonIndexAnswers":1,"invalidIndexes":0,"contradictionMarkers":19,"missingSources":435,"missingObjectives":435},
+    {"slug":"gcse-chemistry","title":"GCSE Chemistry","questions":441,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":16,"missingSources":441,"missingObjectives":441},
+    {"slug":"gcse-physics","title":"GCSE Physics","questions":476,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":16,"missingSources":476,"missingObjectives":476},
+    {"slug":"gcse-english-language","title":"GCSE English Language","questions":822,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":14,"missingSources":822,"missingObjectives":822},
+    {"slug":"financial-literacy","title":"Financial Literacy","questions":177,"shortPrompts":10,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":0,"missingSources":177,"missingObjectives":177},
+    {"slug":"python-mastery","title":"Python Mastery","questions":420,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":4,"invalidIndexes":0,"contradictionMarkers":5,"missingSources":420,"missingObjectives":420},
+    {"slug":"gcse-history","title":"GCSE History","questions":278,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":5,"missingSources":278,"missingObjectives":278},
+    {"slug":"cpp-introduction","title":"Introduction to C++","questions":382,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":1,"invalidIndexes":0,"contradictionMarkers":3,"missingSources":382,"missingObjectives":382},
+    {"slug":"gcse-biology","title":"GCSE Biology","questions":322,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":4,"missingSources":322,"missingObjectives":322},
+    {"slug":"python-foundations","title":"Python Foundations","questions":318,"shortPrompts":2,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":1,"missingSources":318,"missingObjectives":318},
+    {"slug":"intro-to-ai","title":"Introduction to AI","questions":311,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":3,"missingSources":311,"missingObjectives":311},
+    {"slug":"business-english","title":"Business English","questions":234,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":3,"missingSources":234,"missingObjectives":234},
+    {"slug":"functional-skills-english","title":"Functional Skills English","questions":316,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":2,"missingSources":316,"missingObjectives":316},
+    {"slug":"gcse-geography","title":"GCSE Geography","questions":368,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":2,"missingSources":368,"missingObjectives":368},
+    {"slug":"microsoft-office-essentials","title":"Microsoft Office Essentials","questions":184,"shortPrompts":1,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":1,"missingSources":184,"missingObjectives":184},
+    {"slug":"life-in-the-uk-test","title":"Life in the UK Test Preparation","questions":412,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":1,"missingSources":412,"missingObjectives":412},
+    {"slug":"essential-digital-skills","title":"Essential Digital Skills","questions":292,"shortPrompts":0,"shortExplanations":1,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":0,"missingSources":292,"missingObjectives":292},
+    {"slug":"aws-cloud-practitioner","title":"AWS Cloud Practitioner","questions":398,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":0,"missingSources":398,"missingObjectives":398},
+    {"slug":"ai-for-everyone","title":"AI for Everyone","questions":143,"shortPrompts":5,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":0,"missingSources":143,"missingObjectives":143},
+    {"slug":"gcse-english-literature","title":"GCSE English Literature","questions":227,"shortPrompts":0,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":0,"missingSources":227,"missingObjectives":227},
+    {"slug":"gcse-computer-science","title":"GCSE Computer Science","questions":295,"shortPrompts":19,"shortExplanations":0,"nonIndexAnswers":0,"invalidIndexes":0,"contradictionMarkers":1,"missingSources":295,"missingObjectives":295}
+  ],
+  "interpretation": "This is a triage report, not a claim that every marker is wrong. Contradiction markers are strong evidence that the item needs human review because the explanation itself questions the answer or options.",
+  "nextAction": "Review and correct the ranked subjects in order; do not generate replacement content until each existing question has passed answer, explanation, syllabus and source checks."
+}

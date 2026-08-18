@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T04:59:55.998Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-bio-l2-bioenergetics",
+    "title": "Biology: bioenergetics",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-4",
+        "text": "Explain photosynthesis and respiration and analyse factors affecting their rates."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Bioenergetics: Photosynthesis and Respiration",
+    "summary": "This lesson explores the chemical equations for photosynthesis and respiration, analysing how environmental factors influence reaction rates using fictional experimental data.",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-4",
+        "text": "Explain photosynthesis and respiration and analyse factors affecting their rates."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Chemical Equations and Energy Transfer",
+        "body": "Photosynthesis converts light energy into chemical energy, storing it in glucose molecules. The balanced equation shows carbon dioxide and water reacting to produce glucose and oxygen. Respiration reverses this process, releasing energy for cellular work. Understanding these equations helps track energy flow within biological systems."
+      },
+      {
+        "heading": "Factors Affecting Reaction Rates",
+        "body": "Light intensity, temperature, and carbon dioxide concentration significantly impact photosynthesis rates. As light increases, the rate rises until another factor becomes limiting. Similarly, respiration rates depend on temperature and substrate availability. Identifying these variables allows scientists to predict how environmental changes affect metabolic processes. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Analysing Experimental Data",
+        "body": "When interpreting data, distinguish between correlation and causation. A positive correlation between light intensity and oxygen production suggests a relationship, but does not prove causation without controlled variables. Use fictional datasets to practice identifying trends. Careful analysis ensures conclusions are supported by evidence rather than assumption."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional study shows that as light intensity increases from 10 to 50 lux, oxygen production rises linearly. At 60 lux, production stops increasing. What does this pattern suggest about the limiting factor at 60 lux?",
+        "options": [
+          "Light intensity is still the primary limiting factor.",
+          "Another factor, such as carbon dioxide, has become limiting.",
+          "The plant has died due to excessive light.",
+          "Oxygen production is independent of light intensity."
+        ],
+        "correctIndex": 1,
+        "explanation": "The plateau in oxygen production indicates that light is no longer the limiting factor, suggesting another variable is now constraining the rate.",
+        "objectiveCode": "GCSE-BIO-4"
+      },
+      {
+        "prompt": "A fictional experiment records that doubling the temperature from 10°C to 20°C doubles the respiration rate. However, at 40°C, the rate drops sharply. Which statement best explains this trend based on the data?",
+        "options": [
+          "Respiration is unaffected by temperature changes.",
+          "Enzymes involved in respiration denature at higher temperatures.",
+          "The data proves temperature causes no change in respiration.",
+          "Respiration rates always increase linearly with temperature."
+        ],
+        "correctIndex": 1,
+        "explanation": "The sharp drop at 40°C suggests enzyme denaturation, which is a known biological mechanism affecting reaction rates at extreme temperatures.",
+        "objectiveCode": "GCSE-BIO-4"
+      },
+      {
+        "prompt": "A fictional dataset shows a strong positive correlation between carbon dioxide concentration and glucose production. The experiment did not control for light intensity. What is the most appropriate conclusion from this data?",
+        "options": [
+          "Carbon dioxide directly causes glucose production.",
+          "Light intensity was the only variable affecting the results.",
+          "The correlation suggests a relationship, but causation cannot be confirmed.",
+          "Glucose production is unrelated to carbon dioxide levels."
+        ],
+        "correctIndex": 2,
+        "explanation": "Without controlling for other variables like light intensity, the data only shows a correlation, not definitive causation.",
+        "objectiveCode": "GCSE-BIO-4"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

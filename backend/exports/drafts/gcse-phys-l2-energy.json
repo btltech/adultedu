@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:40:13.203Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-phys-l2-energy",
+    "title": "Physics: energy",
+    "objectives": [
+      {
+        "code": "GCSE-PHYS-1",
+        "text": "Use energy models and equations to explain transfers, work, power and efficiency."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Physics: Energy Transfers and Calculations",
+    "summary": "This lesson explains energy stores, transfers, work, power, and efficiency using standard equations and units.",
+    "objectives": [
+      {
+        "code": "GCSE-PHYS-1",
+        "text": "Use energy models and equations to explain transfers, work, power and efficiency."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Energy Stores and Transfers",
+        "body": "Energy exists in distinct stores, such as kinetic or thermal. Transfers move energy between these stores via mechanisms like heating or electrical work. The total energy remains constant, following the conservation principle. Understanding these models helps explain how devices function and how energy changes form during everyday activities without being created or destroyed."
+      },
+      {
+        "heading": "Work and Power Calculations",
+        "body": "Work done equals force multiplied by distance, measured in joules. Power represents the rate of energy transfer, calculated as work divided by time, measured in watts. For example, lifting a heavy box quickly requires more power than lifting it slowly. These calculations quantify the effort and speed involved in physical tasks and mechanical processes."
+      },
+      {
+        "heading": "Efficiency and Conservation",
+        "body": "Efficiency measures useful output energy against total input energy, expressed as a percentage. No system is perfectly efficient because some energy is always dissipated, usually as heat or sound. To calculate efficiency, divide useful energy by total energy and multiply by one hundred. This metric helps evaluate how well devices convert energy into desired forms."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A motor lifts a 10 N weight 2 m in 4 s. What is the power output?",
+        "options": [
+          "5 W",
+          "10 W",
+          "20 W",
+          "40 W"
+        ],
+        "correctIndex": 0,
+        "explanation": "Work is 20 J, and power is 20 J divided by 4 s, which equals 5 W.",
+        "objectiveCode": "GCSE-PHYS-1"
+      },
+      {
+        "prompt": "A lamp uses 100 J of electrical energy and emits 20 J of light. What is its efficiency?",
+        "options": [
+          "20%",
+          "50%",
+          "80%",
+          "100%"
+        ],
+        "correctIndex": 0,
+        "explanation": "Efficiency is 20 J divided by 100 J, multiplied by 100, resulting in 20%.",
+        "objectiveCode": "GCSE-PHYS-1"
+      },
+      {
+        "prompt": "A car engine transfers 500 J to kinetic energy from 2000 J of fuel. How much energy is dissipated?",
+        "options": [
+          "500 J",
+          "1500 J",
+          "2000 J",
+          "2500 J"
+        ],
+        "correctIndex": 1,
+        "explanation": "Dissipated energy is total input minus useful output, so 2000 J minus 500 J equals 1500 J.",
+        "objectiveCode": "GCSE-PHYS-1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

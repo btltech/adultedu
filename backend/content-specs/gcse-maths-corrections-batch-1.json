@@ -1,0 +1,19 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 9,
+  "records": [
+    {"id":"02350086-b650-47bb-9893-6b0b8caadef0","options":["£4,070.00","£4,200.00","£3,950.00","£3,750.00"],"answer":"0","explanation":"The full cost is £125 x 37 = £4,625. A 12% discount is £555, so the final amount is £4,625 - £555 = £4,070."},
+    {"id":"6548d928-9128-4bcb-b1af-2e32776b62d9","options":["£4.40","£2.15","£2.60","£3.45"],"answer":"0","explanation":"The first 100 g costs £1.25. The remaining 320 g requires 7 blocks of 50 g or part thereof, costing 7 x £0.45 = £3.15. The total is £1.25 + £3.15 = £4.40."},
+    {"id":"3afddfa9-2df7-4cba-8f3d-025b7729c8d7","options":["£6,125","£5,100","£3,250","£4,500"],"answer":"0","explanation":"Commission on the first £200,000 is £3,000. Commission on the remaining £125,000 is £3,125. Total commission is £6,125."},
+    {"id":"ae735076-b04f-49b2-9132-f8f4ca21fe7d","options":["£920","£325","£415","£500"],"answer":"0","explanation":"Total expenses are £850 + £320 + £145 + £75 + £90 = £1,480. Savings are £2,400 - £1,480 = £920."},
+    {"id":"d72848bb-e923-4ddc-b5b0-083708654c93","options":["£714","£705","£720","£740"],"answer":"0","explanation":"Basic pay is £18 x 35 = £630. Adding the £75 bonus gives £705. Commission is 20% of £45 = £9, so total earnings are £714."},
+    {"id":"d2304a1f-5814-4735-b026-e0093a962736","options":["177","9","12","15"],"answer":"0","explanation":"The total cost is £36 x 24 + £18 = £882. At £5 per candle, 882 / 5 = 176.4, so Emma must sell 177 whole candles to break even."},
+    {"id":"27b697bc-6ff6-47cc-91bd-bad9492ebc5f","options":["£50","£95","£85","£75"],"answer":"0","explanation":"Total spending is £120 + (3 x £45) + £60 + £85 = £400. The remaining budget is £450 - £400 = £50."},
+    {"id":"d698938a-3304-45f7-97f9-25a96087bd48","options":["£30","£120","£90","£70"],"answer":"0","explanation":"Materials cost £120 + £85 + £95 = £300. Labour costs £30 x 4 = £120. Total spending is £420, leaving £450 - £420 = £30."},
+    {"id":"5779891b-0563-446d-9bdf-5223e285d1a7","options":["£360.60","£90","£105","£120"],"answer":"0","explanation":"Paint costs £84 with a 15% discount, or £71.40. Brushes cost £48, and the voucher reduces the total by £30, so spending is £89.40. The remaining budget is £450 - £89.40 = £360.60."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

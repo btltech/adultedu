@@ -1,0 +1,20 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 10,
+  "records": [
+    {"id":"4fe5555c-bfa7-450d-befd-688894822664","change":"Repaired perimeter/spacing scenario and made 84 the calculated minimum."},
+    {"id":"fe3dd471-ef3b-48a1-b584-ade4129883af","change":"Corrected answer index to £492 and removed self-correction."},
+    {"id":"49117a93-26d0-40e6-9329-300040b60d52","change":"Asked for the £36.40 shortfall and supplied the calculated option."},
+    {"id":"f4aaea66-b303-4f3a-bf5e-b8f64751430b","change":"Asked for the £24.24 overspend and supplied the calculated option."},
+    {"id":"f4faa8aa-568b-44d6-a348-a0e8da89d6a9","change":"Corrected VAT calculation and added £8.65 option."},
+    {"id":"8555014f-2d56-4bd0-9893-63350cb67a24","change":"Corrected VAT calculation and added £113.30 option."},
+    {"id":"b5172f36-b458-4536-b4f9-4e1eec3501dd","change":"Removed the floor ambiguity and corrected the minimum to 10 tins."},
+    {"id":"b071f755-9c0b-45fd-9710-3502fd3913a6","change":"Corrected the final balance to £161 and aligned options."},
+    {"id":"e73c4959-d4c2-4155-8d43-effadc6b1492","change":"Corrected the materials total to £205.26."},
+    {"id":"8b5bdb3f-edcd-4368-91c7-b8c8084bbcd2","change":"Corrected the remaining balance to £20."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

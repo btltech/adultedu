@@ -1,0 +1,40 @@
+{
+  "auditDate": "2026-08-17",
+  "scope": "Published Functional Skills Maths questions reviewed from production API",
+  "productionChanges": false,
+  "trackSlug": "functional-skills-maths",
+  "publishedQuestionCount": 435,
+  "topicCounts": {
+    "Number Operations": 119,
+    "Fractions and Percentages": 45,
+    "Measures and Units": 43,
+    "Data Handling": 44,
+    "Money and Finance": 46,
+    "Shape and Space": 47,
+    "Ratio and Proportion": 46,
+    "Problem Solving": 45
+  },
+  "mechanicalFindings": {
+    "shortPrompts": 12,
+    "shortExplanations": 3,
+    "nearDuplicatePairsAtJaccard085": 12,
+    "interpretation": "Many near-duplicates are deliberately simple early-number questions, but they should be checked for progression and answer correctness rather than retained automatically."
+  },
+  "confirmedAnswerIssues": [
+    {"questionId":"cab3d2b0-c6fa-40ad-83ab-435dc05edbd8","issue":"Answer index 2 selects '2 apples', while the explanation says five apples is greatest and option 3 is correct.","action":"Set the answer to the five-apples option and align the explanation."},
+    {"questionId":"411c0b55-9471-4b9c-b191-73b587ebae32","issue":"Answer index 1 selects 9, but the explanation says 7 is least and option 2 is correct.","action":"Set the answer to 7 and align the explanation."},
+    {"questionId":"96bd43a2-6a2f-4eb9-8c4a-d6f8c09368a1","issue":"Answer index 0 selects 'Two', but the explanation defines zero as nothing and option 1 is correct.","action":"Set the answer to 'Nothing' and align the explanation."},
+    {"questionId":"8addd5a0-8fa3-4f85-81b6-4f7feb3fc2c4","issue":"Answer index 0 selects 'Ball', but the explanation says a circle is flat and option 1 is correct.","action":"Set the answer to 'Circle' and clarify the intended 2D-shape objective."},
+    {"questionId":"df48a349-4ae4-4f5f-9808-3e8c6534aeb1","issue":"Answer index 3 selects 1, but the explanation says 4 is even and option 1 is correct.","action":"Set the answer to 4 and align the explanation."},
+    {"questionId":"eea72d6b-8739-48e3-a7e8-b47b712785fc","issue":"Answer index 0 selects 9, but the explanation says 11 comes after ten and option 1 is correct.","action":"Set the answer to 11 and align the explanation."}
+  ],
+  "explanationOrItemIssues": [
+    {"questionId":"155bde5c-f6e4-40ea-b09b-ed0979c10a90","risk":"high","issue":"The explanation admits the prompt is mis-phrased and then chooses an unrelated option.","action":"Rewrite the question so the requested fraction is unambiguous, then recompute options and answer."},
+    {"questionId":"b8935444-8087-4bf6-bb93-973ea068fa00","risk":"high","issue":"The explanation contains a visible 2/9 miscalculation before correcting itself to 2/5.","action":"Remove the self-correction and publish one clean calculation."},
+    {"questionId":"ead98d08-9bac-4aa5-950b-21a19d775846","risk":"high","issue":"The calculated value is 38.89% (39%), but the explanation says the closest option is 35%.","action":"Check the options and answer; do not accept a non-equivalent closest option without a stated rounding rule."},
+    {"questionId":"ff236d8a-8b29-48c1-8b38-443e0b9f9da3","risk":"high","issue":"The calculation gives 187.5 biscuits, then the explanation claims 175 is the best fit.","action":"Rewrite the scenario or specify a rounding convention; 175 is not a valid nearest-whole result."},
+    {"questionId":"c4727172-c880-4109-b728-8d7f60377359","risk":"high","issue":"The explanation calculates 66.8% but says it is not an option and leaves the item unresolved.","action":"Check the options and answer, then replace the unresolved explanation."},
+    {"questionId":"97629e4d-83d0-4232-b8d7-c1fc840c565a","risk":"high","issue":"The explanation correctly calculates approximately 5.14, then incorrectly says 6 is the correct integer average.","action":"State the required rounding rule; if rounding to the nearest whole number, the result is 5."}
+  ],
+  "approvalRule": "Correct answer, options, prompt and explanation must be checked as one unit before any production update."
+}

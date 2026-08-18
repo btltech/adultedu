@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:50:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual source-backed draft; unpublished and not approved for production."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-receipts-records",
+    "title": "Transacting: organising digital receipts and records",
+    "objectives": [
+      {
+        "code": "EDS-L1-T5",
+        "text": "Know how to organise and manage digital receipts for future reference."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Organising Digital Receipts",
+    "summary": "Save, name, organise and retrieve fictional receipts so key details can be checked later.",
+    "objectives": [
+      {
+        "code": "EDS-L1-T5",
+        "text": "Know how to organise and manage digital receipts for future reference."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Save the right record",
+        "body": "A digital receipt usually shows the item, date, seller, price, total and reference. In a fictional exercise, save the receipt from the official confirmation or download area, then check that it opens. Use a suitable folder rather than leaving files in a temporary downloads area where they may be difficult to find."
+      },
+      {
+        "heading": "Use clear names and folders",
+        "body": "A clear file name can include the date, seller and short item description without exposing sensitive information. Choose folders that match your system, such as Receipts and then a year. Avoid keeping several confusing copies. If a service synchronises files, check that the location and access permissions are appropriate."
+      },
+      {
+        "heading": "Retrieve and check a record",
+        "body": "Practise finding a fictional receipt by searching its name or opening the relevant folder. Compare the item, date and total with the original confirmation. If something is missing or incorrect, use the organisation's trusted support route. Do not share real purchase records or account information while learning this process."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Which details make a fictional receipt easier to find?",
+        "options": [
+          "Date, seller and a short item description",
+          "A random string with no meaning",
+          "Someone else's password",
+          "A public post containing the receipt"
+        ],
+        "correctIndex": 0,
+        "explanation": "Meaningful names make later retrieval easier while avoiding unnecessary sensitive information.",
+        "objectiveCode": "EDS-L1-T5"
+      },
+      {
+        "prompt": "Where should a saved fictional receipt normally go?",
+        "options": [
+          "A suitable, clearly named receipts folder",
+          "An unknown shared folder",
+          "A public message thread",
+          "Only a temporary downloads area"
+        ],
+        "correctIndex": 0,
+        "explanation": "A suitable folder gives the record a predictable, private location.",
+        "objectiveCode": "EDS-L1-T5"
+      },
+      {
+        "prompt": "What should be checked when retrieving a receipt?",
+        "options": [
+          "The item, date and total match the confirmation",
+          "That it was posted publicly",
+          "That the file contains a password",
+          "That all copies were renamed randomly"
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking key fields confirms that the retrieved record is the correct one.",
+        "objectiveCode": "EDS-L1-T5"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

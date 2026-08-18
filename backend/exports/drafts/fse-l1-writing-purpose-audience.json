@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T16:21:05.649Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review replaced over-general writing advice and clarified the communication tasks. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-writing-purpose-audience",
+    "title": "Writing: clear information for purpose and audience",
+    "objectives": [
+      {
+        "code": "FSE-L1-W22",
+        "text": "Communicate information, ideas and opinions clearly, coherently and accurately."
+      },
+      {
+        "code": "FSE-L1-W23",
+        "text": "Write text of an appropriate level of detail and of appropriate length (including where this is specified) to meet the needs of the purpose and audience."
+      },
+      {
+        "code": "FSE-L1-W24",
+        "text": "Use format, structure and language appropriate for the audience and purpose."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Writing for Purpose and Audience",
+    "summary": "Learn to select detail, format, and language that suit a specific reader and goal.",
+    "objectives": [
+      {
+        "code": "FSE-L1-W22",
+        "text": "Communicate information, ideas and opinions clearly, coherently and accurately."
+      },
+      {
+        "code": "FSE-L1-W23",
+        "text": "Write text of an appropriate level of detail and of appropriate length (including where this is specified) to meet the needs of the purpose and audience."
+      },
+      {
+        "code": "FSE-L1-W24",
+        "text": "Use format, structure and language appropriate for the audience and purpose."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Clarity and Coherence",
+        "body": "Clear writing helps readers understand your message quickly. Use a logical order and sentences that fit the detail you need to give. Avoid unexplained jargon or vague words. Check that each paragraph connects to the next so your ideas flow smoothly. The reader should be able to identify your meaning without having to infer missing information."
+      },
+      {
+        "heading": "Choosing the Right Detail",
+        "body": "Include the information that helps your specific purpose. Too much detail can distract the reader, while too little may leave them unsure what to do. Ask what the reader needs to know. For a notice, this may include dates and locations. For an email, it may include the action required and a deadline."
+      },
+      {
+        "heading": "Format and Language",
+        "body": "Match your tone to the audience. A formal report uses different language than a friendly email. Use headings and bullet points for lists. This makes information easier to scan. Choose words that are polite and direct. Avoid slang in professional settings. Your format should support the content and make it accessible."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A manager emails: \"Please submit the budget by Friday.\" Which reply clearly confirms the action and deadline?",
+        "options": [
+          "Okay, will do.",
+          "I will send the budget by Friday.",
+          "Why Friday?",
+          "Maybe next week."
+        ],
+        "correctIndex": 1,
+        "explanation": "Option B confirms the action and deadline clearly.",
+        "objectiveCode": "FSE-L1-W22"
+      },
+      {
+        "prompt": "You are writing a notice for staff about a fire drill. Which detail is most essential?",
+        "options": [
+          "The history of fire safety.",
+          "The date and time of the drill.",
+          "A poem about safety.",
+          "Your personal opinion on drills."
+        ],
+        "correctIndex": 1,
+        "explanation": "The date and time are critical for attendance.",
+        "objectiveCode": "FSE-L1-W23"
+      },
+      {
+        "prompt": "You are writing a formal complaint to a supplier about a late delivery. Which tone is most appropriate?",
+        "options": [
+          "Polite but firm.",
+          "A casual message with no details.",
+          "An insulting message.",
+          "A vague message that does not explain the problem."
+        ],
+        "correctIndex": 0,
+        "explanation": "A polite but firm tone explains the problem professionally while making the request clear.",
+        "objectiveCode": "FSE-L1-W24"
+      }
+    ],
+    "writingActivity": {
+      "title": "Write a Staff Notice",
+      "prompt": "Write a short notice to your team about a change in opening hours. Include the new hours and the start date.",
+      "wordGuide": "50-80 words",
+      "checklist": [
+        "Is the purpose clear?",
+        "Are the new hours and date included?",
+        "Is the tone appropriate for staff?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

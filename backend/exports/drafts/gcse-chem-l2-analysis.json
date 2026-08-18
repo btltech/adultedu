@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:37:32.802Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-chem-l2-analysis",
+    "title": "Chemistry: chemical analysis",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-8",
+        "text": "Interpret qualitative analysis, chromatography and identification evidence."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Identifying Substances Through Analysis",
+    "summary": "Learn to interpret qualitative tests, chromatography results, and instrumental data to identify unknown substances using safe, fictional classroom scenarios.",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-8",
+        "text": "Interpret qualitative analysis, chromatography and identification evidence."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Qualitative Analysis Basics",
+        "body": "Qualitative analysis identifies ions through specific chemical reactions. For instance, adding silver nitrate to a chloride solution creates a white precipitate. This visible change offers clear evidence of the ion's presence. It allows learners to identify substances without requiring complex or expensive laboratory equipment for basic identification tasks."
+      },
+      {
+        "heading": "Chromatography Interpretation",
+        "body": "Paper chromatography separates mixtures based on how components move through a medium. By comparing the distance travelled by unknown spots to known standards, you can identify individual substances. This method helps distinguish components within a complex mixture. It provides a reliable way to analyse samples safely in a classroom setting."
+      },
+      {
+        "heading": "Instrumental Identification Evidence",
+        "body": "Instrumental methods like mass spectrometry provide detailed data about molecular structure. A unique mass spectrum acts as a fingerprint for a specific compound. Matching this pattern against a database allows for precise identification of unknown organic molecules. This approach offers high accuracy for confirming the identity of complex chemical substances."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A student adds silver nitrate to an unknown solution and observes a white precipitate forming. Based on this specific observation, which ion is most likely present in the solution?",
+        "options": [
+          "Sulfate",
+          "Chloride",
+          "Nitrate",
+          "Carbonate"
+        ],
+        "correctIndex": 1,
+        "explanation": "The formation of a white precipitate with silver nitrate is the standard qualitative test for chloride ions.",
+        "objectiveCode": "GCSE-CHEM-8"
+      },
+      {
+        "prompt": "In a chromatography experiment, an unknown spot travels 4 cm while the solvent front moves 8 cm. What is the Rf value of the unknown spot?",
+        "options": [
+          "0.5",
+          "0.75",
+          "0.25",
+          "1.0"
+        ],
+        "correctIndex": 0,
+        "explanation": "The Rf value is calculated by dividing the distance the spot travels by the distance the solvent front travels.",
+        "objectiveCode": "GCSE-CHEM-8"
+      },
+      {
+        "prompt": "A mass spectrum shows a prominent peak at m/z 45, which matches the molecular ion peak of a known compound. What does this specific peak primarily indicate about the unknown sample?",
+        "options": [
+          "Its boiling point",
+          "Its molecular mass",
+          "Its colour",
+          "Its density"
+        ],
+        "correctIndex": 1,
+        "explanation": "The molecular ion peak in a mass spectrum corresponds to the total molecular mass of the compound.",
+        "objectiveCode": "GCSE-CHEM-8"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "editorialReview": {
+    "outcome": "model-rewrite-applied",
+    "reviewedAt": "2026-08-17T20:59:32.500Z",
+    "notes": "Validated local-model proposal applied; human editorial approval is still required before publication."
+  },
+  "modelReview": {
+    "decision": "rewrite",
+    "itemDecisions": [
+      "pass",
+      "rewrite",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

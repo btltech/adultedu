@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:11:49.346Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-bio-l2-ecology",
+    "title": "Biology: ecology",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-7",
+        "text": "Explain ecosystems, biodiversity and human impacts using ecological evidence."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Ecological Systems and Human Impact",
+    "summary": "Explore how ecosystems function through interdependence and biodiversity, using fictional data to distinguish correlation from causation in human environmental effects.",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-7",
+        "text": "Explain ecosystems, biodiversity and human impacts using ecological evidence."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Ecosystem Interdependence",
+        "body": "Ecosystems depend on complex interactions between different species. Producers convert sunlight into energy, supporting various consumers. If one population declines, others may suffer significantly. This interdependence helps maintain overall stability. Understanding these links allows us to predict how changes ripple through the entire biological community over time."
+      },
+      {
+        "heading": "Biodiversity and Resilience",
+        "body": "Biodiversity refers to the variety of life within a specific area. Higher diversity often increases ecosystem resilience against disturbances. Diverse populations can adapt to environmental changes more effectively. Loss of species reduces this protective buffer. Studying biodiversity helps us understand how different organisms contribute to the overall health and function of their habitats."
+      },
+      {
+        "heading": "Human Impact Analysis",
+        "body": "Human activities significantly alter natural environments in many ways. Pollution, habitat loss, and climate change affect species survival. Data analysis helps identify these potential impacts. However, correlation does not prove causation. We must carefully examine evidence to determine if human actions directly cause specific ecological changes or if other factors are involved."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional study shows that as river pollution increased, fish populations decreased over ten years. Which statement best describes this relationship?",
+        "options": [
+          "Pollution directly caused the fish decline.",
+          "Pollution and fish decline are correlated.",
+          "Fish decline caused the pollution.",
+          "Pollution had no effect on fish."
+        ],
+        "correctIndex": 1,
+        "explanation": "The stimulus only shows a simultaneous change, indicating correlation rather than definitive proof of causation.",
+        "objectiveCode": "GCSE-BIO-7"
+      },
+      {
+        "prompt": "In a fictional forest, removing all oak trees led to a drop in squirrel numbers. This demonstrates which ecological concept?",
+        "options": [
+          "Independent species.",
+          "Interdependence.",
+          "No relationship.",
+          "Random fluctuation."
+        ],
+        "correctIndex": 1,
+        "explanation": "The decline in squirrels following tree removal shows that species rely on each other for survival.",
+        "objectiveCode": "GCSE-BIO-7"
+      },
+      {
+        "prompt": "A fictional wetland with high species diversity recovered quickly after a flood, while a low-diversity area did not. This suggests that biodiversity contributes to what?",
+        "options": [
+          "Ecosystem resilience.",
+          "Increased pollution.",
+          "Species isolation.",
+          "Reduced energy flow."
+        ],
+        "correctIndex": 0,
+        "explanation": "The faster recovery of the diverse wetland indicates that biodiversity helps ecosystems withstand and recover from disturbances.",
+        "objectiveCode": "GCSE-BIO-7"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

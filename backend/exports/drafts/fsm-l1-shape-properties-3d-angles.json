@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T19:15:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation was unavailable. Shape properties, view interpretation and angle-direction answers were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-shape-properties-3d-angles",
+    "title": "Shape and space: properties, 3-D views and angles",
+    "objectives": [
+      {
+        "code": "FSM-L1-20",
+        "text": "Draw 2-D shapes and demonstrate an understanding of line symmetry and knowledge of the relative size of angles."
+      },
+      {
+        "code": "FSM-L1-21",
+        "text": "Interpret plans, elevations and nets of simple 3-D shapes."
+      },
+      {
+        "code": "FSM-L1-22",
+        "text": "Measure angles in degrees and use angles when describing position and direction."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Shape Properties, 3-D Views and Angles",
+    "summary": "Use symmetry and angle language to describe shapes, distinguish different two-dimensional views of an object, and give clear directions using degrees.",
+    "objectives": [
+      {
+        "code": "FSM-L1-20",
+        "text": "Draw 2-D shapes and demonstrate an understanding of line symmetry and knowledge of the relative size of angles."
+      },
+      {
+        "code": "FSM-L1-21",
+        "text": "Interpret plans, elevations and nets of simple 3-D shapes."
+      },
+      {
+        "code": "FSM-L1-22",
+        "text": "Measure angles in degrees and use angles when describing position and direction."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Describing 2-D shape properties",
+        "body": "A line of symmetry divides a shape into matching mirror-image halves. A square has four lines of symmetry, while a non-square rectangle has two. Compare angle sizes by using familiar benchmarks: a right angle is 90 degrees, an acute angle is smaller, and an obtuse angle is larger. Use these properties when checking or drawing shapes."
+      },
+      {
+        "heading": "Understanding views of a 3-D object",
+        "body": "Plans, elevations and nets are different ways to show a three-dimensional object. A plan is a view from above, while an elevation is a view from one side. A net is a flat arrangement of faces that can fold into a solid. Read the stated view carefully, because it may show length and width but not height."
+      },
+      {
+        "heading": "Using degrees for direction",
+        "body": "Angles can describe turns and directions as well as shape corners. A quarter turn is 90 degrees, a half turn is 180 degrees, and a full turn is 360 degrees. State whether the turn is clockwise or anticlockwise. Combining a starting direction with an angle gives an unambiguous instruction, such as turn 90 degrees clockwise from north."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Which statement about a square is correct?",
+        "options": [
+          "It has one line of symmetry.",
+          "It has two lines of symmetry.",
+          "It has four lines of symmetry.",
+          "It has no lines of symmetry."
+        ],
+        "correctIndex": 2,
+        "explanation": "A square has four lines of symmetry: vertical, horizontal and two diagonals.",
+        "objectiveCode": "FSM-L1-20"
+      },
+      {
+        "prompt": "A plan of a rectangular storage box is viewed from above. Which pair of measurements can that plan show directly?",
+        "options": [
+          "Length and width",
+          "Length and height",
+          "Width and height",
+          "Height and volume"
+        ],
+        "correctIndex": 0,
+        "explanation": "A plan is viewed from above, so it can show length and width but not the box's height.",
+        "objectiveCode": "FSM-L1-21"
+      },
+      {
+        "prompt": "A person faces north and turns 90 degrees clockwise. Which direction do they face?",
+        "options": [
+          "North",
+          "East",
+          "South",
+          "West"
+        ],
+        "correctIndex": 1,
+        "explanation": "A 90-degree clockwise turn from north is a quarter turn to east.",
+        "objectiveCode": "FSM-L1-22"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

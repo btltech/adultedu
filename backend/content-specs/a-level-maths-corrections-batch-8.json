@@ -1,0 +1,20 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "a-level-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 10,
+  "records": [
+    {"id":"a44865b4-1d49-4d38-a3fd-70496f9b6cab","change":"Added the fractional root −5/2 and corrected the answer."},
+    {"id":"16cc0cd2-2f8c-44a8-a04c-05f423ab6015","change":"Separated simplification from impossible factorisation and supplied the correct expression."},
+    {"id":"ec8cddf7-ba77-4173-acd6-3445a83ef659","change":"Clarified the question as the minimum rate and corrected the derivative reasoning."},
+    {"id":"c0ebd138-8726-4f2a-bd52-e4b9561a82f9","change":"Corrected f'(0) answer index to 5."},
+    {"id":"b7c712ed-35c3-4cc4-8f7a-a7318b11eddb","change":"Added the calculated 64.1 m distance."},
+    {"id":"72a53a63-767f-4156-9c96-21c3108f2bd5","change":"Rewrote the IQR item with explicit quartiles and answer 6."},
+    {"id":"03162c8a-3cd7-47f4-a367-b06abc02e649","change":"Corrected hypothesis-test answer to reject the null hypothesis."},
+    {"id":"dd116d61-d4dd-4771-8c0b-6d2675740e05","change":"Corrected parallel-velocity answer to t = 1."},
+    {"id":"aedba2d4-a1f2-493e-b180-f1dc7de8d2ac","change":"Added the calculated logistic-model value near £49,583."},
+    {"id":"b0371660-33ba-4677-adcd-a46da2a6b848","change":"Added the calculated 150 N resistive-force option."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

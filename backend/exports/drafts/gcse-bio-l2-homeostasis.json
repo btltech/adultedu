@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:03:39.485Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-bio-l2-homeostasis",
+    "title": "Biology: homeostasis",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-5",
+        "text": "Explain homeostasis, coordination and the role of nervous and hormonal systems."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Biology: Homeostasis and Coordination",
+    "summary": "Explore how organisms maintain stable internal conditions through nervous and hormonal systems using simplified control examples.",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-5",
+        "text": "Explain homeostasis, coordination and the role of nervous and hormonal systems."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Defining Homeostasis",
+        "body": "Homeostasis describes the maintenance of a stable internal environment despite external changes. This process ensures that biological functions operate within optimal ranges. Organisms use various mechanisms to detect deviations and initiate corrective actions. Understanding this concept is fundamental to studying biological coordination and regulation systems in living organisms."
+      },
+      {
+        "heading": "Nervous Coordination",
+        "body": "The nervous system provides rapid communication between different parts of the body. It uses electrical signals to transmit information quickly. This allows for immediate responses to stimuli. Such speed is crucial for survival and maintaining internal stability through precise and timely physiological adjustments. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Hormonal Regulation",
+        "body": "Hormonal systems coordinate slower, longer-term changes in the body. Chemical messengers travel through the bloodstream to target organs. This method allows for sustained effects over time. It complements the nervous system by managing gradual adjustments necessary for long-term homeostasis and overall physiological balance. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional thermostat detects a temperature drop and activates a heater. Which system does this best model?",
+        "options": [
+          "Nervous coordination",
+          "Hormonal regulation",
+          "Genetic mutation",
+          "Cellular respiration"
+        ],
+        "correctIndex": 0,
+        "explanation": "The rapid detection and immediate response in the stimulus align with the characteristics of nervous coordination described in the lesson.",
+        "objectiveCode": "GCSE-BIO-5"
+      },
+      {
+        "prompt": "A fictional plant releases a chemical that slowly changes growth over days. Which mechanism does this resemble?",
+        "options": [
+          "Electrical signaling",
+          "Hormonal regulation",
+          "Nervous impulses",
+          "Reflex actions"
+        ],
+        "correctIndex": 1,
+        "explanation": "The slow, sustained effect of the chemical messenger in the stimulus matches the description of hormonal regulation.",
+        "objectiveCode": "GCSE-BIO-5"
+      },
+      {
+        "prompt": "A fictional robot maintains its internal battery level within a specific range. What is this process called?",
+        "options": [
+          "Homeostasis",
+          "Photosynthesis",
+          "Mitosis",
+          "Osmosis"
+        ],
+        "correctIndex": 0,
+        "explanation": "Maintaining a stable internal condition, as shown in the stimulus, is the definition of homeostasis provided in the lesson.",
+        "objectiveCode": "GCSE-BIO-5"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

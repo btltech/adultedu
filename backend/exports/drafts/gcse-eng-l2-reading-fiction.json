@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:44:05.278Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-eng-l2-reading-fiction",
+    "title": "Reading fiction texts",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-R1",
+        "text": "Read and understand extracts, making inferences and selecting relevant evidence."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Reading Fiction: Evidence and Inference",
+    "summary": "Learn to analyse short fictional extracts by identifying evidence, making inferences, and evaluating the writer's methods.",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-R1",
+        "text": "Read and understand extracts, making inferences and selecting relevant evidence."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Identifying Evidence",
+        "body": "Evidence consists of specific words or phrases directly from the text. When analysing fiction, you must locate these exact details to support your interpretation. Avoid guessing based on outside knowledge. Instead, point to the precise language the writer uses to describe actions, settings, or emotions within the provided extract."
+      },
+      {
+        "heading": "Making Inferences",
+        "body": "Inference involves reading between the lines to understand implied meanings. You combine explicit evidence with logical deduction to uncover character motivations or underlying themes. This skill requires careful attention to context. Ensure your conclusions are grounded in the text, avoiding assumptions that lack direct support from the writer's chosen words."
+      },
+      {
+        "heading": "Writer's Methods",
+        "body": "Writers use specific techniques to create effects for the reader. These include imagery, tone, and narrative perspective. Analysing these methods helps explain how meaning is constructed. Look for deliberate choices in word selection and sentence structure. Understanding these tools allows you to articulate how the text influences your interpretation and emotional response."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The rain hammered against the windowpane, a relentless drumming that matched her racing heart.\" What does the phrase \"relentless drumming\" suggest about the character's state?",
+        "options": [
+          "She is enjoying the weather.",
+          "She feels anxious and overwhelmed.",
+          "She is sleeping peacefully.",
+          "She is angry at the noise."
+        ],
+        "correctIndex": 1,
+        "explanation": "The simile comparing rain to a drum and the mention of a racing heart imply anxiety and intensity.",
+        "objectiveCode": "GCSE-ENG-R1"
+      },
+      {
+        "prompt": "Read: \"He placed the letter on the table, his hand trembling slightly as he stepped back.\" Which detail provides direct evidence of his nervousness?",
+        "options": [
+          "The location of the table.",
+          "The act of stepping back.",
+          "His hand trembling slightly.",
+          "The presence of the letter."
+        ],
+        "correctIndex": 2,
+        "explanation": "The physical action of trembling is the specific textual evidence that indicates nervousness.",
+        "objectiveCode": "GCSE-ENG-R1"
+      },
+      {
+        "prompt": "Read: \"The room was silent, save for the ticking of the clock, which seemed to grow louder with each passing second.\" How does the writer use sound to create tension?",
+        "options": [
+          "By describing loud music.",
+          "By highlighting the silence and the clock.",
+          "By mentioning a loud conversation.",
+          "By describing a sudden explosion."
+        ],
+        "correctIndex": 1,
+        "explanation": "The contrast between silence and the increasingly loud clock creates a sense of waiting and tension.",
+        "objectiveCode": "GCSE-ENG-R1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

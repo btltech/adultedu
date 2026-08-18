@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:00:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation requests were unreliable. Media placement, captions, resizing, cropping and accessibility decisions were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-media-layout",
+    "title": "Creating content: images, media and layout",
+    "objectives": [
+      {
+        "code": "EDS-L1-CE2",
+        "text": "Insert and format images, audio, or video using built-in tools, placing them appropriately to support the meaning of digital content."
+      },
+      {
+        "code": "EDS-L1-CE3",
+        "text": "Use headings, bullet points, and layout tools to organise information clearly for different audiences."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Using Images, Media and Layout Clearly",
+    "summary": "Insert and format media so it supports a document's message, while using captions, labels and layout choices that keep information clear for readers.",
+    "objectives": [
+      {
+        "code": "EDS-L1-CE2",
+        "text": "Insert and format images, audio, or video using built-in tools, placing them appropriately to support the meaning of digital content."
+      },
+      {
+        "code": "EDS-L1-CE3",
+        "text": "Use headings, bullet points, and layout tools to organise information clearly for different audiences."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Choose media that has a purpose",
+        "body": "An image, audio clip or video should help a reader understand the message, not simply fill empty space. Choose media that is relevant to the audience and task. Place it near the information it supports and add a clear caption or label where useful. Consider whether the same idea also needs to be explained in text."
+      },
+      {
+        "heading": "Resize, crop and position with care",
+        "body": "Built-in media tools can resize, crop, add borders and control how text flows around an image. Keep the original shape when resizing, because stretching can make an image unclear. Crop only what is unnecessary, not information needed for meaning. Check the page after changing media, as a large image can separate a heading from its related text."
+      },
+      {
+        "heading": "Use layout to guide the reader",
+        "body": "Headings introduce sections, bullet points list key details and spacing makes content easier to scan. Align related items consistently and avoid placing important text over a busy image. Captions, labels and alternative text can make media easier to understand. Review the finished page to check that its visual layout supports, rather than hides, the main message."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional poster includes a photo of the venue. Which placement best supports the poster's meaning?",
+        "options": [
+          "Place it near the venue details with a short clear caption.",
+          "Cover the event date with the photo.",
+          "Stretch it until people cannot recognise it.",
+          "Use it without any related text."
+        ],
+        "correctIndex": 0,
+        "explanation": "Placing relevant media near the related details with a caption helps readers connect the image to the information.",
+        "objectiveCode": "EDS-L1-CE2"
+      },
+      {
+        "prompt": "A learner makes an image wider by dragging only one side. What should they check?",
+        "options": [
+          "Whether the image has become distorted",
+          "Whether a password is visible",
+          "Whether all headings were deleted",
+          "Whether the device is in aeroplane mode"
+        ],
+        "correctIndex": 0,
+        "explanation": "Changing only one dimension can distort an image, so the learner should check that its proportions remain clear.",
+        "objectiveCode": "EDS-L1-CE2"
+      },
+      {
+        "prompt": "Which choice best helps readers scan a fictional set of event instructions?",
+        "options": [
+          "Use a heading and short bullet points",
+          "Put every step in one sentence",
+          "Remove all spacing",
+          "Use unrelated images instead of instructions"
+        ],
+        "correctIndex": 0,
+        "explanation": "A heading and short bullet points organise instructions into clear, scannable sections.",
+        "objectiveCode": "EDS-L1-CE3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "a-level-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 12,
+  "records": [
+    {"id":"64a03d4a-19ae-4296-8ed5-708765b9d9d5","answer":"0"},
+    {"id":"882dbaa4-4614-4ad7-b4e6-fd00ee1cc09a","answer":"0"},
+    {"id":"6ceeae94-3d67-4177-afc0-85da19fd5c6d","answer":"0"},
+    {"id":"204df9df-6ae3-41b3-8c63-6de84e12e2f6","answer":"0"},
+    {"id":"e101b9da-bec5-4729-8e9d-ad114f213ce9","answer":"0"},
+    {"id":"284b0e97-2897-4784-9a2a-5f4e1f62409a","answer":"0"},
+    {"id":"1315c1ad-3094-48fb-b1cf-c528a51cadea","answer":"0"},
+    {"id":"f07109d2-ba2c-4e11-98fe-847254d4487b","answer":"0"},
+    {"id":"cb7fd22c-cfc9-4d2a-ad08-70cf50977836","answer":"1"},
+    {"id":"f58402c4-4d25-4cdd-bcd5-e6a354edfe11","answer":"0"},
+    {"id":"32fe071f-2f75-40f9-9b26-473eae8316f4","answer":"1"},
+    {"id":"52648c34-37c8-43e7-8285-6cc85c908807","answer":"1"}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

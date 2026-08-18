@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T04:51:49.607Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-bio-l2-organisation",
+    "title": "Biology: organisation",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-2",
+        "text": "Explain organisation in living organisms and apply knowledge to digestion and enzymes."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Biology: Organisation, Digestion, and Enzymes",
+    "summary": "This lesson explains how cells form tissues, organs, and systems. It covers digestion and enzyme action using fictional data and stated conditions.",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-2",
+        "text": "Explain organisation in living organisms and apply knowledge to digestion and enzymes."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Cellular Organisation",
+        "body": "Cells are the fundamental units of life. They group together to form tissues, which perform specific functions. Tissues combine to create organs, such as the stomach. Organs work together within systems, like the digestive system, to maintain essential life processes effectively. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Digestive Processes",
+        "body": "Digestion breaks down food into absorbable molecules. Mechanical digestion involves physical breakdown, while chemical digestion uses enzymes. The stomach produces acid and enzymes to start protein digestion. This process prepares nutrients for absorption in the small intestine. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Enzyme Action",
+        "body": "Enzymes are biological catalysts that speed up reactions. They have specific active sites that fit substrates. Temperature and pH affect enzyme activity. Extreme conditions can denature enzymes, changing their shape and stopping their function entirely. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional study shows that at 40°C, enzyme X breaks down 50% of substrate in ten minutes. At 60°C, it breaks down 10%. Which statement is supported by this data?",
+        "options": [
+          "Enzyme X works best at 60°C.",
+          "Enzyme X activity decreases as temperature rises from 40°C to 60°C.",
+          "Enzyme X is unaffected by temperature changes.",
+          "Enzyme X requires 60°C to function."
+        ],
+        "correctIndex": 1,
+        "explanation": "The data shows a drop in breakdown percentage from 50% to 10% as temperature increases, indicating decreased activity.",
+        "objectiveCode": "GCSE-BIO-2"
+      },
+      {
+        "prompt": "A fictional diagram labels the stomach as an organ made of muscle and glandular tissues. Which statement accurately describes this structure?",
+        "options": [
+          "The stomach is a single cell.",
+          "The stomach is a system of organs.",
+          "The stomach is an organ composed of different tissues.",
+          "The stomach is a tissue made of cells."
+        ],
+        "correctIndex": 2,
+        "explanation": "The stimulus explicitly states the stomach is an organ made of muscle and glandular tissues.",
+        "objectiveCode": "GCSE-BIO-2"
+      },
+      {
+        "prompt": "A fictional experiment tests enzyme Y at pH 2 and pH 7. At pH 2, 80% of substrate is broken down. At pH 7, only 5% is broken down. What does this suggest about enzyme Y?",
+        "options": [
+          "Enzyme Y prefers alkaline conditions.",
+          "Enzyme Y is most active in acidic conditions.",
+          "Enzyme Y works equally well at all pH levels.",
+          "Enzyme Y is denatured at pH 2."
+        ],
+        "correctIndex": 1,
+        "explanation": "The higher breakdown percentage at pH 2 indicates greater activity in acidic conditions compared to pH 7.",
+        "objectiveCode": "GCSE-BIO-2"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "cpp-introduction",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 2,
+  "records": [
+    {"id":"35ebd432-2321-43f7-a25c-6230a23495bf","change":"Corrected zero-based index to 2."},
+    {"id":"0bf9a1a3-a039-43e7-9320-9e6717ed85b4","change":"Removed the second valid string-length expression so one answer remains."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

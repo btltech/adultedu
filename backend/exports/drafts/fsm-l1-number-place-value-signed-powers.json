@@ -1,0 +1,133 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T17:21:29.153Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Editorial review strengthened the link between multiplication and division facts, checked all numerical answers and explanations, and confirmed objective alignment. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-number-place-value-signed-powers",
+    "title": "Number: place value, signed numbers and powers of 10",
+    "objectives": [
+      {
+        "code": "FSM-L1-1",
+        "text": "Read, write, order and compare large numbers up to one million."
+      },
+      {
+        "code": "FSM-L1-2",
+        "text": "Recognise and use positive and negative numbers."
+      },
+      {
+        "code": "FSM-L1-3",
+        "text": "Multiply and divide whole numbers and decimals by 10, 100 and 1,000."
+      },
+      {
+        "code": "FSM-L1-4",
+        "text": "Use multiplication facts and make connections with division facts."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Place Value, Signed Numbers and Powers of 10",
+    "summary": "Learn to read large numbers, handle positive and negative values, and apply powers of 10 to whole numbers and decimals with clear place value reasoning.",
+    "objectives": [
+      {
+        "code": "FSM-L1-1",
+        "text": "Read, write, order and compare large numbers up to one million."
+      },
+      {
+        "code": "FSM-L1-2",
+        "text": "Recognise and use positive and negative numbers."
+      },
+      {
+        "code": "FSM-L1-3",
+        "text": "Multiply and divide whole numbers and decimals by 10, 100 and 1,000."
+      },
+      {
+        "code": "FSM-L1-4",
+        "text": "Use multiplication facts and make connections with division facts."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Reading and Comparing Large Numbers",
+        "body": "Compare large numbers by checking the highest place value first. If digits differ, the larger digit means the larger number; if they match, compare the next place. Linked facts also help: if 7 × 8 = 56, then 56 ÷ 7 = 8. Use that connection to check related calculations."
+      },
+      {
+        "heading": "Understanding Signed Numbers",
+        "body": "Signed numbers include positive and negative values. On a number line, negative numbers sit to the left of zero. Temperature contexts help visualise this, as below-zero readings are negative. Understanding direction on the line clarifies comparisons and calculations involving both positive and negative integers effectively."
+      },
+      {
+        "heading": "Applying Powers of 10",
+        "body": "Multiplying by 10, 100 or 1,000 gives each digit a higher place value. Dividing gives each digit a lower place value. For decimals, track the value of every digit rather than using a shortcut with the decimal point. This helps you calculate accurately and check whether an answer is a sensible size."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A warehouse stores 45,000 boxes. Another stores 405,000 boxes. Which warehouse has more boxes, and by how many?",
+        "options": [
+          "405,000 has more by 360,000",
+          "45,000 has more by 360,000",
+          "405,000 has more by 36,000",
+          "45,000 has more by 36,000"
+        ],
+        "correctIndex": 0,
+        "explanation": "405,000 is larger than 45,000, and the difference is 405,000 - 45,000 = 360,000.",
+        "objectiveCode": "FSM-L1-1"
+      },
+      {
+        "prompt": "The temperature drops from 5°C to -3°C. What is the total change in temperature?",
+        "options": [
+          "8°C decrease",
+          "2°C decrease",
+          "8°C increase",
+          "2°C increase"
+        ],
+        "correctIndex": 0,
+        "explanation": "The change is calculated as 5 - (-3) = 5 + 3 = 8, representing an 8°C decrease.",
+        "objectiveCode": "FSM-L1-2"
+      },
+      {
+        "prompt": "A decimal number is 0.45. What is the result when this number is multiplied by 100?",
+        "options": [
+          "45",
+          "4.5",
+          "450",
+          "0.045"
+        ],
+        "correctIndex": 0,
+        "explanation": "Multiplying 0.45 by 100 shifts each digit two places to the left, resulting in 45.",
+        "objectiveCode": "FSM-L1-3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:50:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual source-backed draft; unpublished and not approved for production."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-privacy-notices-agreements",
+    "title": "Transacting: privacy notices and digital agreements",
+    "objectives": [
+      {
+        "code": "EDS-L1-T3",
+        "text": "Use appropriate tools and methods to simplify digital privacy notices and identify key information about how personal data is used, stored and shared."
+      },
+      {
+        "code": "EDS-L1-T4",
+        "text": "Use AI tools to simplify the terms and conditions in digital contracts and identify key information before agreeing to them."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Reading Privacy Notices and Agreements",
+    "summary": "Find important information in fictional notices, use summaries cautiously and check unclear terms before agreeing.",
+    "objectives": [
+      {
+        "code": "EDS-L1-T3",
+        "text": "Use appropriate tools and methods to simplify digital privacy notices and identify key information about how personal data is used, stored and shared."
+      },
+      {
+        "code": "EDS-L1-T4",
+        "text": "Use AI tools to simplify the terms and conditions in digital contracts and identify key information before agreeing to them."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Find the important details",
+        "body": "A privacy notice may explain what information is collected, why it is needed, how long it is kept and who it is shared with. A digital agreement may describe responsibilities, charges or cancellation. In a fictional example, locate these headings and write a short note using the document's own wording."
+      },
+      {
+        "heading": "Use summaries cautiously",
+        "body": "A summary tool, including an AI tool, can make a long notice easier to scan but may omit exceptions, conditions or definitions. Compare the summary with the original headings and mark anything uncertain. Do not paste real personal information into an unapproved tool. A summary is a reading aid, not a replacement for the source."
+      },
+      {
+        "heading": "Pause before agreeing",
+        "body": "Before accepting a fictional agreement, check the purpose, important conditions, costs, data sharing and ways to ask questions. If wording is unclear or important, pause and ask a trusted person or the organisation to explain it. Do not treat a confident summary as legal advice or agree simply to reach the next screen."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Which detail belongs in a privacy-notice summary?",
+        "options": [
+          "What data is collected and who it may be shared with",
+          "A made-up password",
+          "An unrelated advert",
+          "A promise that needs no source"
+        ],
+        "correctIndex": 0,
+        "explanation": "Collection and sharing are key questions when reading how personal data is used.",
+        "objectiveCode": "EDS-L1-T3"
+      },
+      {
+        "prompt": "What is a safe way to use an AI summary of a fictional agreement?",
+        "options": [
+          "Compare it with the original and check unclear terms",
+          "Assume every omitted detail is unimportant",
+          "Paste real identity documents into it",
+          "Agree without reading the source"
+        ],
+        "correctIndex": 0,
+        "explanation": "Comparing the summary with the original helps catch omissions and misunderstandings.",
+        "objectiveCode": "EDS-L1-T4"
+      },
+      {
+        "prompt": "What should happen when an important fictional term is unclear?",
+        "options": [
+          "Pause and ask a trusted person or the organisation",
+          "Agree immediately",
+          "Share a verification code",
+          "Delete the whole record without checking"
+        ],
+        "correctIndex": 0,
+        "explanation": "Pausing for clarification is safer than accepting a term that is not understood.",
+        "objectiveCode": "EDS-L1-T4"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

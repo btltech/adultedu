@@ -1,0 +1,21 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 11,
+  "records": [
+    {"id":"ad0620d5-b9e5-456c-9f93-a7f849959993","options":["£117","£150","£167","£185"],"answer":"0","explanation":"Paint costs £32 x 4 = £128. Adding £120 for curtains and £85 for the lamp gives £333. The remaining budget is £450 - £333 = £117."},
+    {"id":"6b4f3396-8c88-4332-bd2f-abb1ac65c145","options":["£105","£310","£360","£410"],"answer":"0","explanation":"Curtains cost 2 x £120 = £240 and cushions cost 4 x £35 = £140. Adding paint and the lamp gives £240 + £140 + £250 + £75 = £705. The remaining budget is £800 - £705 = £105."},
+    {"id":"fc06d0fe-4213-4777-b7d6-6378b3eac470","options":["£287.20","£288.00","£315.00","£270.00"],"answer":"0","explanation":"The total cost is (3 x £85) + (2 x £32) + £25 + £15 = £359. Sarah pays 80% after the 20% contribution: £359 x 0.8 = £287.20."},
+    {"id":"7bca4eb2-5718-4e20-856f-d5c3f3d97aae","options":["£268","£146","£166","£186"],"answer":"0","explanation":"Paint and brushes cost £84 + £48 = £132. After reserving £50, the amount available for other items is £450 - £132 - £50 = £268."},
+    {"id":"1f2359a0-cd0e-462b-a5b6-2f9c6ea1ffee","options":["£348","£204","£276","£312"],"answer":"0","explanation":"Paint costs £84, of which Tom pays half, so Sarah pays £42. Brushes cost £60. Sarah spends £102 and has £450 - £102 = £348 left."},
+    {"id":"8872d529-aac5-414f-aaed-f84cf3db10ee","options":["£263","£93","£78","£64"],"answer":"0","explanation":"The wall area is 54 square metres, requiring 5 tins at £28 each. Paint, primer and brushes cost £140 + £35 + £12 = £187. The remaining budget is £450 - £187 = £263."},
+    {"id":"e1476a13-e3e1-4f39-b069-7a6efad21426","options":["£101.40","£95","£75","£60"],"answer":"0","explanation":"Paint and brushes cost £132. Five percent VAT is £6.60, and delivery is £30. Including the £180 already spent, total spending is £348.60, leaving £101.40."},
+    {"id":"9e9d22da-e9c8-4451-9af8-272cbdd1a605","options":["£296","£265.50","£285.50","£305.50"],"answer":"0","explanation":"Total expenses are £28 + £15 + £42 + £35 + (4 x £8.50) = £154. The amount left is £450 - £154 = £296."},
+    {"id":"c3c5e011-4a8a-4602-b12f-9c118b556d69","options":["£87.00","£85.00","£47.00","£125.00"],"answer":"0","explanation":"The daily charge is 3 x £25 = £75. Mileage costs 80 x £0.15 = £12. The total cost is £87."},
+    {"id":"9b60f007-c51a-44e9-a3d2-7c145dd34278","options":["840","780","560","420"],"answer":"0","explanation":"If the ratio is 3:4 and the difference is 120, one ratio part is 120. Total pupils are (3 + 4) x 120 = 840."},
+    {"id":"4607faa5-0a71-44df-87ba-1e3b9355f617","options":["90","50","54","60"],"answer":"0","explanation":"If the ratio is 2:3 and the difference is 18, one ratio part is 18. Total students are (2 + 3) x 18 = 90."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

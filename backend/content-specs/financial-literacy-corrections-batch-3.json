@@ -1,0 +1,24 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "financial-literacy",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 8,
+  "records": [
+    {"id":"3deae4fe-1140-4ddb-baa1-3d4b52be9df9","change":"Made fixed-cost definition conditional rather than absolute."},
+    {"id":"60436306-e7d8-45a7-86cc-23f1b71f6896","change":"Defined APR as annual borrowing cost including relevant fees."},
+    {"id":"5d7c432f-6034-4b3d-81a9-a5059d3bccca","change":"Aligned credit-card APR wording with annual borrowing cost."},
+    {"id":"041a855e-cd6a-4c3d-827b-d40d526dbe02","change":"Replaced unsupported highest-interest claim with a fixed-rate savings comparison."},
+    {"id":"ef9f1b8e-062b-4c2a-87b9-71ad176b5e69","change":"Replaced US 401(k) framing with a UK workplace-pension objective."},
+    {"id":"eb2f331c-79f8-485d-9849-6b00bf2e44cd","change":"Rewrote US FDIC item as UK FSCS deposit protection."},
+    {"id":"67fa7266-c2db-47f8-ae73-1aead11b0fba","change":"Replaced mixed FDIC/FSCS wording with UK FSCS wording."},
+    {"id":"c5cdc2d0-93e5-4d9b-bf98-f3dbb8d17ceb","change":"Replaced Australia-specific PDS term with UK pre-contract credit information."}
+  ],
+  "sourceUrls": [
+    "https://www.moneyhelper.org.uk/en/savings/how-to-save/interest-rates-explained",
+    "https://www.moneyhelper.org.uk/en/pensions-and-retirement/pensions-basics/choosing-a-pension-yourself",
+    "https://protected.fscs.org.uk/industry-resources/deposit-protection-banks/",
+    "https://handbook.fca.org.uk/handbook/CONC/4/2"
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

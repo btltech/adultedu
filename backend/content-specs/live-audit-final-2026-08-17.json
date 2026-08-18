@@ -1,0 +1,40 @@
+{
+  "auditDate": "2026-08-17",
+  "scope": "All 8,301 published questions in Railway production",
+  "productionChanges": true,
+  "integrity": {
+    "publishedQuestions": 8301,
+    "inReview": 495,
+    "invalidAnswerIndexes": 0,
+    "embeddedOptionLabels": 0,
+    "nonIndexAnswers": 0,
+    "exactDuplicatePromptGroups": 0,
+    "shortPrompts": 54,
+    "shortExplanations": 7,
+    "explanationMarkers": 18,
+    "missingSourceMetadata": 8293,
+    "missingCurriculumObjectives": 8293
+  },
+  "interpretation": {
+    "shortText": "The remaining short beginner prompts and explanations were retained where they are self-contained and correct; short length alone is not a defect.",
+    "explanationMarkers": "The remaining markers were manually checked as valid uses such as closest-option rounding, legal clarification, or explanatory contrast.",
+    "metadata": "Source and objective metadata remain a separate item-level review queue; the track source map is in legacy-source-objective-plan-2026-08-17.json and has not been copied into questions automatically."
+  },
+  "correctionBatches": {
+    "followupRecordsApplied": 57,
+    "embeddedOptionLabelRecordsApplied": 150,
+    "reviewStatus": "in_review",
+    "isPublishedChanged": false
+  },
+  "drafts": {
+    "bundles": 83,
+    "modelReviewed": 83,
+    "modelPass": 81,
+    "modelRewriteBundles": 2,
+    "modelReviewFailures": 0,
+    "structurallyValidAfterRewrite": 83,
+    "published": 0,
+    "model": "qwen/qwen3.8-27b",
+    "reasoning": "off"
+  }
+}

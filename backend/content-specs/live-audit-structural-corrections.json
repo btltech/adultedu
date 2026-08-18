@@ -1,0 +1,29 @@
+{
+  "auditDate": "2026-08-17",
+  "productionChanges": false,
+  "normalisationCandidates": [
+    {"questionId":"4be8b500-25c9-4f49-9b1a-87f8ceae5c13","track":"python-mastery","recommendedAnswerIndex":2},
+    {"questionId":"c712f904-cb56-41a4-9506-7b9d5378c088","track":"functional-skills-maths","recommendedAnswerIndex":2},
+    {"questionId":"73a0f622-4413-40fb-b2cc-4ac319763a6e","track":"python-mastery","recommendedAnswerIndex":0},
+    {"questionId":"b8e79469-d7ff-4b48-bdc5-ee03fc99849c","track":"python-mastery","recommendedAnswerIndex":0},
+    {"questionId":"cf98b01d-2cf4-408a-8d8d-455a7c0c9c09","track":"python-mastery","recommendedAnswerIndex":1},
+    {"questionId":"20ab7d20-dfba-4f24-95e6-5012b3083c13","track":"a-level-maths","recommendedAnswerIndex":0,"explanationRepair":"Remove the self-correction text and state directly that FOIL gives 6x² + 7x - 20."},
+    {"questionId":"e02d2f29-a805-4641-9e28-a9662caeebfe","track":"a-level-maths","recommendedAnswerIndex":0},
+    {"questionId":"3040b910-067f-4827-9e90-166c80910c97","track":"a-level-maths","recommendedAnswerIndex":0},
+    {"questionId":"8276f742-4aa1-431a-a3ce-1d629411415d","track":"cpp-introduction","recommendedAnswerIndex":0,"explanationRepair":"Say that the first option both declares a five-element array and initialises it; do not refer to option D because only three options exist."},
+    {"questionId":"a5acb9ce-9443-4c33-8c35-a44e2df3e586","track":"gcse-maths","recommendedAnswerIndex":0}
+  ],
+  "editorialRewriteRequired": [
+    {
+      "questionId":"f07109d2-ba2c-4e11-98fe-847254d4487b",
+      "track":"a-level-maths",
+      "issue":"The derivative is zero at both x=1 and x=3, but the item asks for a singular x-coordinate and the explanation contradicts itself.",
+      "action":"Rewrite the prompt to ask for both stationary-point x-coordinates, or add a condition that selects one point; then set the answer and explanation together."
+    }
+  ],
+  "validationBeforePublication": [
+    "Run the scoring tests using both index and text submissions.",
+    "Check that every explanation names an option that actually exists.",
+    "Keep the original production records unchanged until a reviewed correction is approved."
+  ]
+}

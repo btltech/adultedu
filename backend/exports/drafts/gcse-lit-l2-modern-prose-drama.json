@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T04:38:53.804Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-lit-l2-modern-prose-drama",
+    "title": "English Literature: modern prose or drama",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-3",
+        "text": "Analyse modern prose or drama using evidence, structure, language and context."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Analyzing Modern Prose and Drama",
+    "summary": "This lesson teaches transferable skills for analyzing modern literature, focusing on evidence, structure, and language without relying on specific set texts.",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-3",
+        "text": "Analyse modern prose or drama using evidence, structure, language and context."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Using Evidence",
+        "body": "Effective analysis begins with selecting precise textual evidence. Learners should identify specific words or phrases that support their interpretation. This approach ensures arguments are grounded in the text rather than personal opinion. By quoting directly, you demonstrate a close reading of the author’s choices and strengthen the credibility of your critical response."
+      },
+      {
+        "heading": "Examining Structure",
+        "body": "Structure shapes how meaning is developed over time. Consider how scenes, paragraphs, or acts are arranged to build tension or reveal character. Analyzing the order of events helps explain why certain moments feel significant. Understanding structural patterns allows you to see how the author guides the reader’s or audience’s emotional journey throughout the piece."
+      },
+      {
+        "heading": "Language and Context",
+        "body": "Language choices reflect the author’s intent and the work’s context. Examine tone, imagery, and dialogue to uncover deeper meanings. Contextual factors, such as the historical period or social setting, influence how characters interact and how themes are presented. Combining linguistic analysis with contextual awareness provides a comprehensive understanding of the text’s impact."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The rain hammered against the window, a relentless drumbeat.\" The author uses this phrase to convey:",
+        "options": [
+          "The character’s joy.",
+          "The oppressive atmosphere.",
+          "The time of day.",
+          "The weather forecast."
+        ],
+        "correctIndex": 1,
+        "explanation": "The words \"hammered\" and \"relentless\" suggest intensity and pressure, creating an oppressive mood.",
+        "objectiveCode": "GCSE-LIT-3"
+      },
+      {
+        "prompt": "Read: \"She smiled, but her eyes remained cold.\" This contrast primarily serves to:",
+        "options": [
+          "Describe her appearance.",
+          "Show her internal conflict.",
+          "Indicate the setting.",
+          "Explain the plot."
+        ],
+        "correctIndex": 1,
+        "explanation": "The juxtaposition of a smile and cold eyes reveals a disconnect between outward behavior and inner feelings.",
+        "objectiveCode": "GCSE-LIT-3"
+      },
+      {
+        "prompt": "Read: \"The scene ends with the door slamming shut.\" This structural choice likely signals:",
+        "options": [
+          "A peaceful resolution.",
+          "A sudden break in communication.",
+          "A change in weather.",
+          "A new character introduction."
+        ],
+        "correctIndex": 1,
+        "explanation": "Ending a scene with a slammed door structurally emphasizes a final, abrupt severance of the interaction.",
+        "objectiveCode": "GCSE-LIT-3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

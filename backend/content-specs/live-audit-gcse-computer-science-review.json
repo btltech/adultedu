@@ -1,0 +1,67 @@
+{
+  "auditDate": "2026-08-17",
+  "scope": "Published GCSE Computer Science questions reviewed from production API",
+  "productionChanges": false,
+  "trackSlug": "gcse-computer-science",
+  "publishedQuestionCount": 295,
+  "topicCounts": {
+    "Computational Thinking": 60,
+    "Programming Fundamentals": 58,
+    "Selection and Iteration": 60,
+    "Computer Systems": 59,
+    "Networks and Security": 58
+  },
+  "mechanicalFindings": {
+    "shortPrompts": 19,
+    "shortExplanations": 0,
+    "nearDuplicatePairsAtJaccard085": 1,
+    "nearDuplicatePair": {
+      "questionIds": [
+        "14020e03-31fa-4426-a370-78994b1d7f5f",
+        "8b4323e7-7e79-48a7-9ad5-a92536ee9d6c"
+      ],
+      "pattern": "Main purpose of a loop versus main purpose of a while loop",
+      "action": "Keep both only if one explicitly tests general iteration and the other tests while-loop behaviour; otherwise replace one with a code-tracing item."
+    }
+  },
+  "editorialReviewQueue": [
+    {
+      "questionId": "43a63ae4-de81-433e-a412-17af70bb126d",
+      "risk": "medium",
+      "issue": "States that testing is not a core computational-thinking concept.",
+      "action": "Check against the chosen GCSE exam-board specification; rewrite if evaluation/testing is included in the assessed problem-solving process."
+    },
+    {
+      "questionId": "de13b530-fcc1-4096-b0b7-9b4205c1e78c",
+      "risk": "high",
+      "issue": "Says 'most programming languages' but mixes C/Java syntax with Python type hints.",
+      "action": "Name the language explicitly and make the distractors valid enough to test the intended concept."
+    },
+    {
+      "questionId": "0f45cd71-1eca-42f4-86ce-24215a43e3af",
+      "risk": "medium",
+      "issue": "Uses && as though it were the universal Boolean operator.",
+      "action": "Specify a C-like language, or use language-neutral wording and include the relevant operator for the course language."
+    },
+    {
+      "questionId": "23a57cb2-d7f2-42bc-9b0d-f1f38c906bd2",
+      "risk": "high",
+      "issue": "Calls main a keyword that defines a block running once; main is language-dependent and usually an entry-point function.",
+      "action": "Rewrite with a named language and accurate terminology."
+    },
+    {
+      "questionId": "3d1ceb9d-ba01-4c6e-b44b-7d89c905ebff",
+      "risk": "medium",
+      "issue": "The answer says a list is sufficient for records containing title, author and availability.",
+      "action": "Clarify whether the objective is a collection or a record/structure; avoid teaching a list as the complete data-modelling solution."
+    },
+    {
+      "questionId": "748deb4e-98c3-4127-bbe6-ecf21bf2c9bd",
+      "risk": "medium",
+      "issue": "The answer says a list or array stores members' names and membership numbers without addressing paired fields.",
+      "action": "Rewrite around records/objects plus a collection, or simplify the objective to a collection of member records."
+    }
+  ],
+  "shortPromptInterpretation": "The 19 short prompts are mostly introductory definitions, so they are not automatically wrong. Review them for repetition and progression rather than deleting them mechanically.",
+  "approvalRule": "Confirm the target GCSE exam-board specification before changing terminology or marking a concept as outside the syllabus."
+}

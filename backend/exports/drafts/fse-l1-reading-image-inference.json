@@ -1,0 +1,124 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T16:40:01.523Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review replaced symbol-recognition questions with visual-meaning tasks and made the visual-clue guidance more careful. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-reading-image-inference",
+    "title": "Reading: inferring meaning from images",
+    "objectives": [
+      {
+        "code": "FSE-L1-R15",
+        "text": "Infer from images meanings not explicit in the accompanying text."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Reading: Inferring Meaning from Images",
+    "summary": "This lesson helps learners use visual clues and text together to find meanings that are suggested but not directly stated. It focuses on noticing symbols, layout, and expressions to make straightforward inferences.",
+    "objectives": [
+      {
+        "code": "FSE-L1-R15",
+        "text": "Infer from images meanings not explicit in the accompanying text."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Visual Clues",
+        "body": "Images often contain clues that words do not explicitly state. Look for symbols, colours and facial expressions. These visual elements can suggest a mood, action or rule. For example, a crossed-out symbol may signal that something is not permitted. Notice these details, then connect them carefully to the written text before deciding what message is suggested."
+      },
+      {
+        "heading": "Connecting Text and Image",
+        "body": "To infer meaning, connect what you see with what you read. The text provides context, while the image adds specific details. If the text mentions a new area, the image might show how it should be used. This combination helps you understand the full picture. Always check if the visual supports or clarifies the written information."
+      },
+      {
+        "heading": "Avoiding Assumptions",
+        "body": "Be careful not to assume facts that are not visible. An image is not evidence for claims that cannot be seen. Stick to what is suggested by the visual clues and the accompanying text. This approach ensures your inferences are grounded in the provided materials. It helps you make accurate and supported interpretations of the content."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A poster shows a speaker with sound waves crossed out. The text says, 'Please respect the silence zone.' What is suggested by the image?",
+        "options": [
+          "Background noise should be avoided in the area",
+          "The area provides music for learners",
+          "The speaker is broken and needs repair",
+          "Learners should make phone calls there"
+        ],
+        "correctIndex": 0,
+        "explanation": "The crossed-out sound symbol and the words ‘silence zone’ together suggest that learners should avoid making noise.",
+        "objectiveCode": "FSE-L1-R15"
+      },
+      {
+        "prompt": "An illustration shows umbrellas dripping beside a floor mat at the entrance. The text says, 'Please wipe your feet before entering.' What is the most likely reason for the mat?",
+        "options": [
+          "To help keep water off the indoor floor",
+          "To show where umbrellas can be bought",
+          "To make the entrance look brighter",
+          "To stop people leaving the building"
+        ],
+        "correctIndex": 0,
+        "explanation": "The dripping umbrellas and the instruction to wipe feet suggest that the mat helps prevent water being carried inside.",
+        "objectiveCode": "FSE-L1-R15"
+      },
+      {
+        "prompt": "An illustration shows a person checking a watch outside a room with its door closed. The text says, 'Adult workshops begin at 6 pm.' What is most likely suggested by the image?",
+        "options": [
+          "The person may be waiting for the workshop to begin",
+          "The workshop has finished for the day",
+          "The person has been asked to repair the door",
+          "The room is used only for storage"
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking the time outside a closed workshop room suggests the person is waiting for the stated start time.",
+        "objectiveCode": "FSE-L1-R15"
+      }
+    ],
+    "imageInferenceActivity": {
+      "title": "Quiet Study Zone",
+      "imageSrc": "/activities/fse-l1-quiet-study-zone.svg",
+      "imageAlt": "A learner studies at a desk with a book and laptop. A large speech bubble with sound waves is crossed out, suggesting that the area should be quiet.",
+      "supportingText": "New study space opens on Level 2. Tables can be booked at reception.",
+      "prompt": "What is suggested by the image that is not stated directly in the text?",
+      "options": [
+        "The area is noisy",
+        "The area should be quiet",
+        "The area is for eating",
+        "The area is for sleeping"
+      ],
+      "correctIndex": 1,
+      "explanation": "The crossed-out speech bubble suggests the area should be quiet, which is not explicitly stated in the text."
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

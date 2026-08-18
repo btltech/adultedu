@@ -1,0 +1,19 @@
+{
+  "preparedAt": "2026-08-17",
+  "scope": "Published MCQ/scenario questions with answer text exactly matching one option",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 9,
+  "records": [
+    {"id":"4be8b500-25c9-4f49-9b1a-87f8ceae5c13","answer":"2"},
+    {"id":"c712f904-cb56-41a4-9506-7b9d5378c088","answer":"2"},
+    {"id":"73a0f622-4413-40fb-b2cc-4ac319763a6e","answer":"0"},
+    {"id":"b8e79469-d7ff-4b48-bdc5-ee03fc99849c","answer":"0"},
+    {"id":"cf98b01d-2cf4-408a-8d8d-455a7c0c9c09","answer":"1"},
+    {"id":"e02d2f29-a805-4641-9e28-a9662caeebfe","answer":"0"},
+    {"id":"3040b910-067f-4827-9e90-166c80910c97","answer":"0"},
+    {"id":"8276f742-4aa1-431a-a3ce-1d629411415d","answer":"0"},
+    {"id":"a5acb9ce-9443-4c33-8c35-a44e2df3e586","answer":"0"}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

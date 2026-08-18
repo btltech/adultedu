@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:17:03.082Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content and national curriculum mathematics programmes of study",
+    "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-l2-ratio-proportion",
+    "title": "Ratio, proportion and rates of change",
+    "objectives": [
+      {
+        "code": "GCSE-M-R1",
+        "text": "Solve problems involving ratio, proportion, scale, percentage change and rates of change."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Mastering Ratio, Proportion and Rates",
+    "summary": "This lesson explores direct and inverse proportion, scale, and percentage change. It provides clear methods for solving realistic mathematical problems while distinguishing between different types of proportional relationships.",
+    "objectives": [
+      {
+        "code": "GCSE-M-R1",
+        "text": "Solve problems involving ratio, proportion, scale, percentage change and rates of change."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Direct and Inverse Proportion",
+        "body": "Direct proportion means two quantities increase together at a constant rate. Inverse proportion means one quantity increases while the other decreases. Understanding this distinction helps you choose the correct mathematical method for solving various realistic problems accurately and effectively. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Scale and Percentage Change",
+        "body": "Scale factors allow you to resize shapes or maps consistently. Percentage change measures the relative difference between an original and a new value. Both concepts are essential for interpreting data and making accurate comparisons in everyday contexts. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Rates of Change",
+        "body": "Rates describe how one quantity changes relative to another, such as speed or flow. Always include units in your final answer to ensure clarity. Correctly identifying the rate helps you solve complex problems involving time, distance, and volume. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A recipe uses 200g flour for 4 eggs. How many eggs are needed for 500g flour?",
+        "options": [
+          "5",
+          "10",
+          "15",
+          "20"
+        ],
+        "correctIndex": 1,
+        "explanation": "The ratio of flour to eggs is 50:1, so 500g flour requires 10 eggs.",
+        "objectiveCode": "GCSE-M-R1"
+      },
+      {
+        "prompt": "A map scale is 1:100,000. If a road is 5cm on the map, what is its real length in km?",
+        "options": [
+          "5",
+          "50",
+          "500",
+          "5000"
+        ],
+        "correctIndex": 1,
+        "explanation": "5cm multiplied by 100,000 equals 500,000cm, which converts to 5km.",
+        "objectiveCode": "GCSE-M-R1"
+      },
+      {
+        "prompt": "A car travels 120 miles in 2 hours. What is its average speed in mph?",
+        "options": [
+          "40",
+          "60",
+          "80",
+          "120"
+        ],
+        "correctIndex": 1,
+        "explanation": "Speed is distance divided by time, so 120 miles divided by 2 hours is 60 mph.",
+        "objectiveCode": "GCSE-M-R1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "sourceTitle": "GCSE subject content and national curriculum mathematics programmes of study"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

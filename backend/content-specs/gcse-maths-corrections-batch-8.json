@@ -1,0 +1,18 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 8,
+  "records": [
+    {"id":"4fd1ba7a-e7b9-43f3-bcfc-ed3376b64377","change":"Added the calculated £300 balance and removed option guessing."},
+    {"id":"ac75643a-cfd0-4323-8c86-594d84be9acb","change":"Reframed the deficit as a £119.20 shortfall and added the correct option."},
+    {"id":"173df6c5-7a86-4208-9dbc-c31de01e98d4","change":"Added the exact £1,388.50 remaining balance."},
+    {"id":"43d33294-2206-4318-8ac5-1cf3dc12e66b","change":"Clarified the savings reserve and added the £238 balance."},
+    {"id":"feec902e-6bde-4607-9baa-0e8ac529ca76","change":"Clarified the discount threshold and added the £306 balance."},
+    {"id":"79f50390-8155-4c0b-8522-709c083bf827","change":"Added the calculated £194 balance."},
+    {"id":"ea3116c4-d0e2-44d4-9dec-f710c539c4df","change":"Added the exact £146.20 balance after discount."},
+    {"id":"2c8b3a97-90b5-494b-b7fd-a96d85b905c5","change":"Added the calculated £13 additional-spend limit."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

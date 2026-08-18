@@ -1,0 +1,22 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 12,
+  "records": [
+    {"id":"36ea49fd-ce89-4c72-a2d6-96e2100aacfd","change":"Removed multiple-correct ambiguity by asking which point is not on the line."},
+    {"id":"cfaeb468-1052-463b-afc1-a7707b61c95f","change":"Removed self-correction from ratio explanation."},
+    {"id":"31115291-e14d-424a-b1b6-12810f08f1f2","change":"Removed self-correction from simplest-ratio explanation."},
+    {"id":"a252cd4b-247b-44cb-b776-7a0354d74d50","change":"Corrected the map-scale answer index to 2 km."},
+    {"id":"e48ba237-fe41-41af-99f3-c93d011c4c7e","change":"Removed self-correction from ratio explanation."},
+    {"id":"7271ffe1-1571-47cb-bd2d-2f41bc956c36","change":"Made the path area consistent with a 2 m solution."},
+    {"id":"6ff73fb0-6fb6-4179-892c-02a734325878","change":"Corrected Heron-formula answer index to 40 m²."},
+    {"id":"6a0b45ba-2a57-4774-98d7-397a3004083c","change":"Clarified that the requested area excludes the base."},
+    {"id":"ae149a03-9b8e-42d4-a2be-c26eda1f697f","change":"Removed ambiguous conditional-probability wording."},
+    {"id":"bfd18e31-b885-4549-88a8-290142d08da7","change":"Corrected the graph interpretation answer index to option C."},
+    {"id":"2bf24eba-f7c2-4e79-84e9-2c2889b8df09","change":"Removed self-correction from unit-rate explanation."},
+    {"id":"19b01dc8-2f76-4062-9482-942c37e34e28","change":"Changed the difference to 288 so the ratio has an integer solution."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

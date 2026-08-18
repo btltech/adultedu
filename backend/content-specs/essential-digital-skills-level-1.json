@@ -1,0 +1,232 @@
+{
+  "subject": "Essential Digital Skills",
+  "level": "Level 1",
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "units": [
+    {
+      "id": "eds-l1-device-settings-accessibility",
+      "title": "Using devices: updates, settings and accessibility",
+      "description": "Keep a device usable and secure by managing updates, moving between apps, and choosing settings and accessibility tools that support a task.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional device scenarios. Explain that labels and locations vary by device. Do not tell learners to change security or accessibility settings without explaining the purpose and a safe way to reverse the change.",
+      "objectives": [
+        { "code": "EDS-L1-UD1", "text": "Keep operating systems and applications up to date, navigate between apps and windows, and use system settings and accessibility tools to personalise the device interface." }
+      ]
+    },
+    {
+      "id": "eds-l1-troubleshooting-help",
+      "title": "Using devices: finding help and fixing common problems",
+      "description": "Use structured help tools to identify a likely solution to a common app, login or connection problem, and know when to seek further support.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional, low-risk issues only. Never ask a learner to bypass account security, disable protection, or follow an unverified support link. Include the distinction between a sensible first check and escalation when a fix does not work.",
+      "objectives": [
+        { "code": "EDS-L1-UD2", "text": "Access and navigate structured help tools to identify and attempt appropriate solutions to common technical issues." }
+      ]
+    },
+    {
+      "id": "eds-l1-files-storage-backups",
+      "title": "Using devices: organising files, storage and backups",
+      "description": "Use clear names, folders, storage choices, file details and basic backups to keep important information easy to find and share safely.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Cover naming, folder structures, local/cloud/external storage, file size, and basic backups. Use fictional files only and do not claim that any single storage option is always safest.",
+      "objectives": [
+        { "code": "EDS-L1-UD3", "text": "Organise and manage files using suitable naming, storage, and backup methods; use file information to make appropriate decisions about storing and sharing content." }
+      ]
+    },
+    {
+      "id": "eds-l1-search-evaluate-ai",
+      "title": "Finding information: searches, sources and AI results",
+      "description": "Refine searches, recognise sponsored results, and judge currency, relevance and reliability before using online or AI-generated information.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional search-result snippets and sources. Teach that HTTPS and a padlock alone do not prove a site is genuine. Explain that AI results can be inaccurate or incomplete and important facts need checking against trusted sources.",
+      "objectives": [
+        { "code": "EDS-L1-UD4", "text": "Use appropriate techniques to carry out and refine online searches, considering currency, relevance and reliability, and understand that search engines rank results." }
+      ]
+    },
+    {
+      "id": "eds-l1-digital-learning-resources",
+      "title": "Digital literacy: choosing support and learning resources",
+      "description": "Choose suitable help centres, guides, tutorials and AI-supported tools to complete an everyday digital task safely and independently.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Teach selection by task, source, and required support format. AI-supported assistants may be included but must be framed as support that needs checking, not an authority or assessor.",
+      "objectives": [
+        { "code": "EDS-L1-UD5", "text": "Identify online learning resources to maintain and improve digital skills; select and use resources to support everyday digital tasks based on need and context." }
+      ]
+    },
+    {
+      "id": "eds-l1-create-accessible-documents",
+      "title": "Creating content: clear, accessible documents",
+      "description": "Create and edit a purposeful document using formatting, layout, non-text content and accessibility features that suit its reader.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional workplace or everyday documents. Cover suitable applications, headings, layout, alt text, captions and clear labels. Do not imply that formatting alone makes a document accessible.",
+      "objectives": [
+        { "code": "EDS-L1-CE1", "text": "Create and edit digital content using basic formatting and layout tools, applying styles and conventions appropriate to purpose and audience." }
+      ]
+    },
+    {
+      "id": "eds-l1-media-layout",
+      "title": "Creating content: images, media and layout",
+      "description": "Insert, resize, crop, caption and position images or other media so that they support the meaning of a digital document or presentation.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use invented media and scenarios. Focus on clarity, captions, crop, resize and text flow. Do not ask learners to use copyrighted or personal images, and do not present an image as accessible without an equivalent description where needed.",
+      "objectives": [
+        { "code": "EDS-L1-CE2", "text": "Insert and format images, audio, or video using built-in tools, placing them appropriately to support the meaning of digital content." },
+        { "code": "EDS-L1-CE3", "text": "Use headings, bullet points, and layout tools to organise information clearly for different audiences." }
+      ]
+    },
+    {
+      "id": "eds-l1-spreadsheets-data",
+      "title": "Creating content: spreadsheets, formulae and charts",
+      "description": "Create a simple spreadsheet, use basic formulae and tools to calculate values, and select or create a chart with suitable detail.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use small fictional data sets. Cover cells, formulas, simple calculations, charts and sorting. Explain that a spreadsheet result should be checked against the entered data; do not require a particular brand of software.",
+      "objectives": [
+        { "code": "EDS-L1-CE4", "text": "Create a spreadsheet, enter and edit numbers, use spreadsheet tools and formulas to carry out calculations, and create charts with appropriate detail." }
+      ]
+    },
+    {
+      "id": "eds-l1-multistep-digital-problems",
+      "title": "Digital problem solving: planning a multi-step task",
+      "description": "Use suitable digital tools in a logical order to find information, record key details and complete an everyday multi-step problem.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use a fictional, non-sensitive task such as planning a visit or comparing a public activity. Assess choosing a logical next step, a suitable tool, and a clear record of information; do not simulate real transactions.",
+      "objectives": [
+        { "code": "EDS-L1-CE5", "text": "Use digital tools to solve everyday multi-step problems by finding information, recording key details, and completing tasks in a logical order." }
+      ]
+    },
+    {
+      "id": "eds-l1-communication-tools",
+      "title": "Communication: choosing tools and sending clear messages",
+      "description": "Choose an appropriate communication tool and create a clear, respectful message that suits the purpose, audience and accessibility needs.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional messages only. Cover email, messaging, voicemail and video calls, including respectful tone, consent around recordings, captions and translation tools. Do not present suggested replies as automatically appropriate.",
+      "objectives": [
+        { "code": "EDS-L1-CC1", "text": "Select appropriate online communication tools such as email, messaging, voicemail and video calls to send clear, structured messages for different audiences." }
+      ]
+    },
+    {
+      "id": "eds-l1-online-collaboration",
+      "title": "Collaboration: shared documents and respectful feedback",
+      "description": "Use a shared online workspace to contribute to a joint task, make or review changes, and add clear, respectful comments.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional shared-work examples. Cover invitations, permissions, comments, suggestions, simultaneous editing and checking changes. Do not claim that a learner has collaborated with real people or assess personal communication.",
+      "objectives": [
+        { "code": "EDS-L1-CC2", "text": "Use shared online platforms to contribute to joint tasks by accessing shared workspaces, editing content, and adding comments." }
+      ]
+    },
+    {
+      "id": "eds-l1-secure-online-buying",
+      "title": "Transacting: comparing options and buying securely",
+      "description": "Compare fictional online options, recognise basic signs of risk, check the total cost and keep a transaction record without making a real purchase.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "All products, sellers and payment details must be fictional. Teach checks such as seller information, realistic offers, reviews, HTTPS and final charges, while explaining that no single sign guarantees safety. Never request or simulate real payment details.",
+      "objectives": [
+        { "code": "EDS-L1-T1", "text": "Compare online buying options and make a secure purchase using a trusted platform." }
+      ]
+    },
+    {
+      "id": "eds-l1-online-accounts-security",
+      "title": "Transacting: accounts, services and secure access",
+      "description": "Use online services to view information, manage account settings and identify safer ways to access sensitive accounts.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional services only. Cover account settings, confirmations, uploads and secure access including MFA or biometrics. Do not give personal financial guidance or teach learners to share credentials, codes or sensitive documents.",
+      "objectives": [
+        { "code": "EDS-L1-T2", "text": "Use online transactional services to view information, manage account settings, complete tasks, and identify features that support security." }
+      ]
+    },
+    {
+      "id": "eds-l1-privacy-notices-agreements",
+      "title": "Transacting: privacy notices and digital agreements",
+      "description": "Identify key information in a privacy notice or digital agreement, use a summary tool cautiously, and know when to check unclear terms before agreeing.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use short fictional notices and agreements, never legal advice. Teach that an AI summary can omit information and that unclear terms should be checked with a trusted person. Do not make legal-rights claims beyond the official standard supplied.",
+      "objectives": [
+        { "code": "EDS-L1-T3", "text": "Use appropriate tools and methods to simplify digital privacy notices and identify key information about how personal data is used, stored and shared." },
+        { "code": "EDS-L1-T4", "text": "Use AI tools to simplify the terms and conditions in digital contracts and identify key information before agreeing to them." }
+      ]
+    },
+    {
+      "id": "eds-l1-receipts-records",
+      "title": "Transacting: organising digital receipts and records",
+      "description": "Save, name, organise and retrieve fictional digital receipts so that key purchase details can be checked later.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional receipts only. Cover folders, names, retrieval and checking an item, price and date. Do not ask learners to disclose real purchases or account information.",
+      "objectives": [
+        { "code": "EDS-L1-T5", "text": "Know how to organise and manage digital receipts for future reference." }
+      ]
+    },
+    {
+      "id": "eds-l1-cybersecurity",
+      "title": "Safety online: protecting devices and accounts",
+      "description": "Recognise common cybersecurity risks and choose protective actions such as updates, strong passwords, MFA and safe handling of unexpected requests.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional phishing, QR and login scenarios. Never ask a learner to enter a password, PIN or verification code. Avoid exaggerated claims and explain that reporting or asking for help is appropriate when unsure.",
+      "objectives": [
+        { "code": "EDS-L1-S1", "text": "Know the common cybersecurity threats and take steps to protect devices and accounts using secure settings and tools." }
+      ]
+    },
+    {
+      "id": "eds-l1-privacy-sharing-footprint",
+      "title": "Safety online: privacy, sharing and digital footprint",
+      "description": "Manage privacy and sharing permissions, recognise what should stay limited, and understand how online activity can create a lasting digital footprint.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional files, posts and settings. Cover view/edit permissions, authorised sharing, location/privacy settings and the lasting nature of posts. Do not request personal examples or make guarantees that content can be removed from the internet.",
+      "objectives": [
+        { "code": "EDS-L1-S2", "text": "Manage privacy settings and permissions across digital platforms to control who can access personal or shared information." },
+        { "code": "EDS-L1-S3", "text": "Know that all online activity adds up to create a lasting digital footprint which may affect how others view a person in the future." }
+      ]
+    },
+    {
+      "id": "eds-l1-respect-wellbeing-reporting",
+      "title": "Safety online: respectful use, wellbeing and reporting",
+      "description": "Use other people’s content fairly, maintain balanced screen habits, and take safe action when harmful or suspicious online activity occurs.",
+      "contentMode": "digital",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional contexts only. Cover respectful and lawful use, balanced routines, reporting/blocking/muting and leaving unsafe spaces. Do not provide medical, legal or crisis advice; signpost seeking support from a trusted person when a fictional scenario cannot be resolved safely.",
+      "objectives": [
+        { "code": "EDS-L1-S4", "text": "Use other people’s content fairly and behave respectfully and lawfully online, recognising the consequences of inappropriate behaviour." },
+        { "code": "EDS-L1-S5", "text": "Understand how screen time can affect physical health and wellbeing and know how to follow a healthy, balanced routine." },
+        { "code": "EDS-L1-S6", "text": "Understand that harmful or suspicious activity can occur online and know how to report concerns and protect personal safety." }
+      ]
+    }
+  ]
+}

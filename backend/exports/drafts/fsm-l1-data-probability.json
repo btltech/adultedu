@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T19:45:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation was unavailable. Probability-scale language, equally likely outcomes, fractions and all practice answers were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-data-probability",
+    "title": "Data: probability and equally likely outcomes",
+    "objectives": [
+      {
+        "code": "FSM-L1-26",
+        "text": "Understand probability on a scale from 0 (impossible) to 1 (certain) and use probabilities to compare the likelihood of events."
+      },
+      {
+        "code": "FSM-L1-27",
+        "text": "Use equally likely outcomes to find the probabilities of simple events and express them as fractions."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Probability and Equally Likely Outcomes",
+    "summary": "Use the probability scale to compare likelihoods and calculate simple probabilities as fractions when every possible outcome is equally likely.",
+    "objectives": [
+      {
+        "code": "FSM-L1-26",
+        "text": "Understand probability on a scale from 0 (impossible) to 1 (certain) and use probabilities to compare the likelihood of events."
+      },
+      {
+        "code": "FSM-L1-27",
+        "text": "Use equally likely outcomes to find the probabilities of simple events and express them as fractions."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Using the probability scale",
+        "body": "Probability describes how likely an event is. On the probability scale, 0 means impossible and 1 means certain. A value near 0 is unlikely, while a value near 1 is likely. Use the same scale when comparing events. A probability is not a guarantee about one attempt; it describes the chance under the stated conditions."
+      },
+      {
+        "heading": "Counting equally likely outcomes",
+        "body": "When outcomes are equally likely, probability can be written as a fraction. Count the favourable outcomes, then divide by the total number of possible outcomes. For a fair bag with two red counters and two blue counters, the probability of red is 2 out of 4, or 1 out of 2. State why the outcomes are equally likely."
+      },
+      {
+        "heading": "Checking a probability answer",
+        "body": "A probability fraction cannot be less than 0 or greater than 1. Check that the favourable outcomes are included in the total, not added to it twice. If an event has more favourable outcomes, it is more likely only when the total number of equally likely outcomes stays the same. Read the conditions before comparing probabilities."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Which probability represents an event that is certain?",
+        "options": [
+          "0",
+          "1/4",
+          "1/2",
+          "1"
+        ],
+        "correctIndex": 3,
+        "explanation": "On the probability scale, 1 represents an event that is certain.",
+        "objectiveCode": "FSM-L1-26"
+      },
+      {
+        "prompt": "A fair bag contains 3 green counters and 1 yellow counter. What is the probability of selecting a yellow counter?",
+        "options": [
+          "1/3",
+          "1/4",
+          "3/4",
+          "4/1"
+        ],
+        "correctIndex": 1,
+        "explanation": "There is 1 yellow counter among 4 equally likely counters, so the probability is 1/4.",
+        "objectiveCode": "FSM-L1-27"
+      },
+      {
+        "prompt": "A fair spinner has 8 equal sections. Event A covers 2 sections and event B covers 5 sections. Which event is more likely?",
+        "options": [
+          "Event A",
+          "Event B",
+          "They are equally likely",
+          "Neither event has a probability"
+        ],
+        "correctIndex": 1,
+        "explanation": "Event A has probability 2/8 and event B has probability 5/8, so event B is more likely.",
+        "objectiveCode": "FSM-L1-26"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

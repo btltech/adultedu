@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:09:03.772Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content and national curriculum mathematics programmes of study",
+    "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-l2-number",
+    "title": "Number: integers, fractions and standard form",
+    "objectives": [
+      {
+        "code": "GCSE-M-N1",
+        "text": "Apply numerical methods with integers, fractions, powers, roots and standard form."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Mastering Integers, Fractions, and Standard Form",
+    "summary": "This lesson guides learners through accurate calculations involving integers, fractions, powers, roots, and standard form. It focuses on applying numerical methods to solve GCSE-style problems while maintaining precision and clarity in mathematical reasoning.",
+    "objectives": [
+      {
+        "code": "GCSE-M-N1",
+        "text": "Apply numerical methods with integers, fractions, powers, roots and standard form."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Integers and Fractions",
+        "body": "Integers include positive and negative whole numbers. Fractions represent parts of a whole. When adding or subtracting, ensure denominators match. Multiplication involves multiplying numerators and denominators separately. Division requires inverting the second fraction before multiplying. These fundamental operations form the basis for more complex calculations in mathematics."
+      },
+      {
+        "heading": "Powers, Roots, and Indices",
+        "body": "Powers indicate repeated multiplication of a base number. Indices simplify expressions involving large numbers. Roots are inverse operations of powers. Square roots find the number that multiplies by itself to give the result. Cube roots extend this concept to three factors. Understanding these relationships allows for efficient problem-solving and accurate representation of numerical values."
+      },
+      {
+        "heading": "Standard Form and Bounds",
+        "body": "Standard form expresses numbers as a coefficient between one and ten multiplied by a power of ten. This format simplifies comparison and calculation of very large or small values. Bounds define the maximum and minimum possible values for a measurement. Calculating bounds helps assess accuracy and reliability in practical applications involving measurements and data analysis."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A recipe requires 3/4 cup of flour. If you need to make half the recipe, how much flour is required?",
+        "options": [
+          "3/8 cup",
+          "3/4 cup",
+          "1/2 cup",
+          "1/4 cup"
+        ],
+        "correctIndex": 0,
+        "explanation": "Halving 3/4 involves multiplying by 1/2, resulting in 3/8.",
+        "objectiveCode": "GCSE-M-N1"
+      },
+      {
+        "prompt": "Calculate the value of 2^3 × 2^2.",
+        "options": [
+          "2^5",
+          "2^6",
+          "4^5",
+          "8^2"
+        ],
+        "correctIndex": 0,
+        "explanation": "When multiplying powers with the same base, add the indices: 3 + 2 = 5.",
+        "objectiveCode": "GCSE-M-N1"
+      },
+      {
+        "prompt": "Express 0.0056 in standard form.",
+        "options": [
+          "5.6 × 10^-3",
+          "5.6 × 10^3",
+          "56 × 10^-4",
+          "0.56 × 10^-2"
+        ],
+        "correctIndex": 0,
+        "explanation": "Move the decimal point three places right to get 5.6, so the power is -3.",
+        "objectiveCode": "GCSE-M-N1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "sourceTitle": "GCSE subject content and national curriculum mathematics programmes of study"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T15:10:31.974Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review replaced a vocabulary-based structural-feature question and strengthened the specialist-word context. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-reading-structure-vocabulary",
+    "title": "Reading: structure, text types and specialist words",
+    "objectives": [
+      {
+        "code": "FSE-L1-R14",
+        "text": "Understand organisational and structural features, and use them to locate relevant information."
+      },
+      {
+        "code": "FSE-L1-R16",
+        "text": "Recognise vocabulary typically associated with specific types and purposes of texts."
+      },
+      {
+        "code": "FSE-L1-R17",
+        "text": "Read and understand a range of specialist words in context."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Navigating Texts: Structure, Types, and Specialist Words",
+    "summary": "This lesson helps you use organisational features to find information, recognise vocabulary linked to specific text types, and understand specialist words from their context.",
+    "objectives": [
+      {
+        "code": "FSE-L1-R14",
+        "text": "Understand organisational and structural features, and use them to locate relevant information."
+      },
+      {
+        "code": "FSE-L1-R16",
+        "text": "Recognise vocabulary typically associated with specific types and purposes of texts."
+      },
+      {
+        "code": "FSE-L1-R17",
+        "text": "Read and understand a range of specialist words in context."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Using Structure to Find Information",
+        "body": "Texts often use headings, subheadings, and bullet points to organise ideas. These features act as signposts, helping you scan for specific details quickly. By looking at the layout, you can identify where key information is likely to be found without reading every single word. This approach is particularly useful in longer documents where time is limited."
+      },
+      {
+        "heading": "Recognising Text Type Vocabulary",
+        "body": "Different texts use specific words to suit their purpose. For example, a recipe uses imperative verbs like 'mix' and 'bake', while a news article might use past tense verbs to report events. Recognising these patterns helps you understand the text's intent. Being aware of typical vocabulary allows you to predict what kind of information the text is likely to contain."
+      },
+      {
+        "heading": "Understanding Specialist Words in Context",
+        "body": "Specialist words can seem difficult, but their meaning often becomes clear from the surrounding sentences. Look for clues in the text, such as definitions, examples, or contrasting ideas. You do not need to know every word to understand the main point. Focusing on the context helps you make sense of unfamiliar terms and improves your overall comprehension of the material."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read this extract from a staff handbook: 'Health and Safety: Wear protective gear on the assembly line. Reporting an accident: Tell your supervisor immediately.' Which heading helps you find what to do after an accident?",
+        "options": [
+          "Health and Safety",
+          "Reporting an accident",
+          "Staff handbook",
+          "Assembly line"
+        ],
+        "correctIndex": 1,
+        "explanation": "The heading 'Reporting an accident' directs the reader to the information about what to do after an accident.",
+        "objectiveCode": "FSE-L1-R14"
+      },
+      {
+        "prompt": "Read this pharmacy note: 'An antibiotic is a medicine used to treat some bacterial infections.' What does 'antibiotic' mean in this note?",
+        "options": [
+          "A medicine used to treat some bacterial infections",
+          "A food that settles the stomach",
+          "A person who gives medical advice",
+          "A device that checks a patient’s temperature"
+        ],
+        "correctIndex": 0,
+        "explanation": "The note defines an antibiotic as a medicine used to treat some bacterial infections.",
+        "objectiveCode": "FSE-L1-R17"
+      },
+      {
+        "prompt": "Read this text: 'Ingredients: 200g flour, 100g butter. Method: Mix the dry ingredients, then add the butter.' Which vocabulary type is most prominent?",
+        "options": [
+          "Technical jargon",
+          "Imperative verbs",
+          "Past tense narration",
+          "Abstract concepts"
+        ],
+        "correctIndex": 1,
+        "explanation": "The text uses imperative verbs like 'Mix' and 'add' to give direct instructions, typical of recipes.",
+        "objectiveCode": "FSE-L1-R16"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

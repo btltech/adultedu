@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T18:55:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created after local generation requests were interrupted. All conversions, units, scale calculations and objective alignment were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-measures-conversion-scales",
+    "title": "Measures: converting units and using scales",
+    "objectives": [
+      {
+        "code": "FSM-L1-16",
+        "text": "Convert in the same system between units of length, weight, capacity, money and time."
+      },
+      {
+        "code": "FSM-L1-17",
+        "text": "Recognise and make use of simple scales on maps and drawings."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Converting Units and Using Scales",
+    "summary": "Convert related measurements confidently and use a stated scale to work out a real distance without mixing measurement systems.",
+    "objectives": [
+      {
+        "code": "FSM-L1-16",
+        "text": "Convert in the same system between units of length, weight, capacity, money and time."
+      },
+      {
+        "code": "FSM-L1-17",
+        "text": "Recognise and make use of simple scales on maps and drawings."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Converting within one measurement system",
+        "body": "A conversion changes the unit used to describe the same amount. Stay within the same measurement system unless you have a stated conversion factor. For example, one metre equals one hundred centimetres and one litre equals one thousand millilitres. Write the unit at every step, because it helps you choose whether to multiply or divide."
+      },
+      {
+        "heading": "Choosing the direction of a conversion",
+        "body": "When changing to a smaller unit, the number usually becomes larger because more small units fit into the same amount. Changing from centimetres to metres makes the number smaller. Use a known relationship, such as 100 centimetres equals 1 metre, to check the direction. A quick estimate can reveal a result that is an unrealistic size."
+      },
+      {
+        "heading": "Reading a simple map or drawing scale",
+        "body": "A scale links a distance on a map or drawing with a real distance. Read both units before calculating. If 1 centimetre represents 5 kilometres, then 3 centimetres represents three groups of 5 kilometres. Multiply the map distance by the stated real distance per centimetre, then give the answer in the real-world unit."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A shelf is 2.5 metres long. How many centimetres long is it?",
+        "options": [
+          "25 cm",
+          "250 cm",
+          "2,500 cm",
+          "0.25 cm"
+        ],
+        "correctIndex": 1,
+        "explanation": "There are 100 centimetres in 1 metre, so 2.5 × 100 = 250 centimetres.",
+        "objectiveCode": "FSM-L1-16"
+      },
+      {
+        "prompt": "A bottle contains 1.75 litres of juice. How many millilitres is that?",
+        "options": [
+          "175 ml",
+          "1,075 ml",
+          "1,750 ml",
+          "17,500 ml"
+        ],
+        "correctIndex": 2,
+        "explanation": "There are 1,000 millilitres in 1 litre, so 1.75 × 1,000 = 1,750 millilitres.",
+        "objectiveCode": "FSM-L1-16"
+      },
+      {
+        "prompt": "On a map, 1 cm represents 5 km. Two places are 3.2 cm apart on the map. What is the real distance?",
+        "options": [
+          "8 km",
+          "15 km",
+          "16 km",
+          "32 km"
+        ],
+        "correctIndex": 2,
+        "explanation": "Each centimetre represents 5 km, so 3.2 × 5 = 16 km.",
+        "objectiveCode": "FSM-L1-17"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

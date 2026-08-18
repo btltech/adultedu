@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T04:55:28.250Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-bio-l2-infection-response",
+    "title": "Biology: infection and response",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-3",
+        "text": "Explain how pathogens cause disease and how organisms and medicines respond."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Biology: Infection and Response",
+    "summary": "Explore how pathogens cause disease and how biological systems respond. This lesson covers barriers, immune reactions, and the distinction between viral and bacterial infections, using fictional scenarios to illustrate key concepts.",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-3",
+        "text": "Explain how pathogens cause disease and how organisms and medicines respond."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Pathogens and Barriers",
+        "body": "Pathogens are microscopic organisms causing disease. Bacteria are single-celled, while viruses are genetic material wrapped in protein. The body uses physical barriers like skin and mucus to prevent entry. These barriers act as the first line of defence against infection, stopping many pathogens before they can penetrate deeper tissues."
+      },
+      {
+        "heading": "Immune Responses",
+        "body": "If pathogens enter the body, the immune system responds. White blood cells produce antibodies that target specific antigens on the pathogen surface. This process is specific and takes time to develop. Memory cells remain to provide faster protection against future infections of the same type, ensuring quicker recognition and response."
+      },
+      {
+        "heading": "Medicines and Resistance",
+        "body": "Antibiotics treat bacterial infections by killing bacteria or stopping their growth. They have no effect on viruses. Antibiotic resistance occurs when bacteria evolve to survive the drug. Misuse of antibiotics accelerates this process, making infections harder to treat effectively. Understanding this distinction is crucial for appropriate medical responses."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional patient has a viral infection. A doctor prescribes antibiotics. Why is this ineffective?",
+        "options": [
+          "Viruses are larger than bacteria.",
+          "Antibiotics target bacterial structures, not viruses.",
+          "Viruses reproduce faster than bacteria.",
+          "Antibiotics are only for skin infections."
+        ],
+        "correctIndex": 1,
+        "explanation": "Antibiotics work by targeting specific bacterial structures, which viruses do not possess.",
+        "objectiveCode": "GCSE-BIO-3"
+      },
+      {
+        "prompt": "A fictional scenario describes bacteria surviving repeated antibiotic doses. What process explains this?",
+        "options": [
+          "The bacteria became larger.",
+          "The bacteria evolved resistance to the drug.",
+          "The antibiotics changed into viruses.",
+          "The patient’s immune system failed completely."
+        ],
+        "correctIndex": 1,
+        "explanation": "Antibiotic resistance is an evolutionary process where bacteria adapt to survive the medication.",
+        "objectiveCode": "GCSE-BIO-3"
+      },
+      {
+        "prompt": "A fictional text states that skin prevents pathogen entry. What type of defence is this?",
+        "options": [
+          "A specific immune response.",
+          "A physical barrier.",
+          "An antibody production.",
+          "A memory cell reaction."
+        ],
+        "correctIndex": 1,
+        "explanation": "Skin acts as a physical barrier, blocking pathogens from entering the body.",
+        "objectiveCode": "GCSE-BIO-3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

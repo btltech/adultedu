@@ -1,0 +1,15 @@
+{
+  "preparedAt": "2026-08-17",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 6,
+  "records": [
+    {"id":"e76ae238-d110-4184-8266-e21f0ba8d6bf","options":["15 g","7 g","16 g","32 g"],"answer":"0","explanation":"Ethane has relative formula mass (2 x 12) + (6 x 1) = 30. For 0.5 moles, the mass is 0.5 x 30 = 15 g."},
+    {"id":"9cedd6d9-e28f-4313-986d-a26a141a0e85","options":["47.5 g","29 g","38 g","76 g"],"answer":"0","explanation":"Magnesium chloride has relative formula mass 24 + (2 x 35.5) = 95. For 0.5 moles, the mass is 0.5 x 95 = 47.5 g."},
+    {"id":"ec1501d3-f581-4496-8a04-a51eabfa8d42","answer":"2","explanation":"The moles of HCl are 0.100 x 0.0225 = 0.00225 mol. The reaction ratio is 1:1, so the NaOH concentration is 0.00225 / 0.0250 = 0.090 mol dm-3."},
+    {"id":"770cb469-78d7-4ba8-9113-d8c7bca9696e","options":["60%","33%","67%","25%"],"answer":"0","explanation":"Total input is 1200 + 800 = 2000 MW. Efficiency is 1200 / 2000 x 100 = 60%."},
+    {"id":"d3aecca4-ff23-45ce-b6b0-ea9b8b819e86","answer":"2","explanation":"Power is P = V x I = 230 x 0.435 = 100.05 W, which rounds to 100 W."},
+    {"id":"5d4a987b-e6ce-43f6-8e92-27f1947b45d5","options":["6p","25p","3.75p","6.25p"],"answer":"0","explanation":"Energy used is 50 W x 8 h = 400 Wh = 0.4 kWh. At 15p per kWh, the cost is 0.4 x 15p = 6p."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

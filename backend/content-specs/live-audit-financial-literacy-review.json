@@ -1,0 +1,75 @@
+{
+  "auditDate": "2026-08-17",
+  "scope": "Published Financial Literacy questions reviewed from production API",
+  "productionChanges": false,
+  "trackSlug": "financial-literacy",
+  "publishedQuestionCount": 177,
+  "priority": "high",
+  "summary": {
+    "sourceSensitiveQuestions": 99,
+    "nearDuplicatePairsAtJaccard075": 3,
+    "nearDuplicatePairsAtJaccard085": 1,
+    "exactDuplicatePromptGroups": 0,
+    "reasonForPriority": "Several questions contain jurisdiction-specific claims that must be checked against current UK sources before learners rely on them."
+  },
+  "reviewQueue": [
+    {
+      "questionId": "e8727664-e100-4a0c-b8fb-2ec6a1d4a731",
+      "issue": "FSCS limit stated as £50,000",
+      "risk": "high",
+      "action": "Verify against the current official FSCS protection limit; correct the answer, explanation, and distractors if outdated."
+    },
+    {
+      "questionId": "ebc6b7b0-ae15-4645-b3b3-5a35b944a607",
+      "issue": "FSCS limit stated as £100,000",
+      "risk": "high",
+      "action": "Verify against the current official FSCS protection limit and reconcile with the conflicting £50,000 item."
+    },
+    {
+      "questionId": "ef9f1b8e-062b-4c2a-87b9-71ad176b5e69",
+      "issue": "Uses US-specific 401(k) terminology",
+      "risk": "high",
+      "action": "Replace with the appropriate UK pension terminology or explicitly label the comparison as US-specific."
+    },
+    {
+      "issue": "FDIC terminology appears in a UK financial-literacy explanation",
+      "risk": "high",
+      "questionIds": ["eb2f331c-79f8-485d-9849-6b00bf2e44cd", "67fa7266-c2db-47f8-ae73-1aead11b0fba"],
+      "action": "Rewrite around FSCS for a UK learner; retain FDIC only if the learning objective is an explicit international comparison."
+    },
+    {
+      "issue": "PDS terminology appears in the track",
+      "risk": "medium",
+      "questionIds": ["c5cdc2d0-93e5-4d9b-bf98-f3dbb8d17ceb"],
+      "action": "Confirm the intended jurisdiction and replace PDS with the appropriate UK document or explain the term for a UK learner."
+    },
+    {
+      "issue": "Absolute or over-broad claims: money-market accounts have the highest interest; building societies offer better rates; fixed expenses never change; APR is simply yearly interest on loans or savings",
+      "risk": "medium",
+      "questionIds": ["3deae4fe-1140-4ddb-baa1-3d4b52be9df9", "60436306-e7d8-45a7-86cc-23f1b71f6896", "041a855e-cd6a-4c3d-827b-d40d526dbe02", "5d7c432f-6034-4b3d-81a9-a5059d3bccca"],
+      "action": "Rewrite as conditional, sourceable statements and align each explanation with the exact question objective."
+    }
+  ],
+  "nearDuplicateReview": [
+    {
+      "pattern": "FSCS maximum protection per person in a UK bank",
+      "action": "Keep one canonical question after the limit is verified; retire the lightly reworded duplicate."
+    },
+    {
+      "pattern": "Main purpose / purpose of a payslip",
+      "action": "Merge or differentiate by objective; avoid testing the same recall point twice."
+    },
+    {
+      "pattern": "Benefit / advantage of a good credit score",
+      "action": "Merge or give the second item a distinct applied scenario."
+    }
+  ],
+  "approvalRule": "Do not publish corrections until the answer, explanation, distractors, and UK source citation have been checked together.",
+  "authoritativeSources": [
+    {
+      "title": "FSCS deposit protection limit increase",
+      "url": "https://protected.fscs.org.uk/what-we-cover/banks-building-societies-credit-unions/deposit-limit-increase/",
+      "note": "The official FSCS page states that the limit rose to £120,000 on 1 December 2025."
+    }
+  ]
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:31:21.377Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-chem-l2-rate-reaction",
+    "title": "Chemistry: rate of reaction",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-6",
+        "text": "Explain and analyse factors affecting reaction rates using collision theory."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Chemistry: Rate of Reaction",
+    "summary": "Explore collision theory and how concentration, temperature, surface area, and catalysts influence reaction rates using fictional data.",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-6",
+        "text": "Explain and analyse factors affecting reaction rates using collision theory."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Collision Theory Basics",
+        "body": "Collision theory explains that reactions happen when particles collide with enough energy and correct orientation. Increasing concentration raises particle density, causing more frequent collisions. This directly boosts the reaction rate. Understanding this helps predict how changing conditions affects chemical processes in controlled experiments. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Temperature and Surface Area",
+        "body": "Higher temperatures give particles more kinetic energy, increasing successful collision frequency. Larger surface area exposes more particles to react, boosting collision opportunities. Both factors enhance reaction rates. These principles allow scientists to optimise industrial processes by adjusting physical conditions without altering chemical identities. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Catalysts and Controls",
+        "body": "Catalysts lower activation energy, enabling more particles to react successfully. They remain unchanged after the reaction. In experiments, controls ensure only one variable changes at a time. This isolates the effect of each factor on reaction rate, providing reliable data for analysis. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "In a fictional experiment, doubling the concentration of reactant A increased the reaction rate by 50%. Which factor best explains this change?",
+        "options": [
+          "Higher temperature",
+          "Increased particle collisions",
+          "Larger surface area",
+          "Catalyst addition"
+        ],
+        "correctIndex": 1,
+        "explanation": "Doubling concentration increases particle density, leading to more frequent collisions.",
+        "objectiveCode": "GCSE-CHEM-6"
+      },
+      {
+        "prompt": "A fictional study shows that grinding a solid reactant into powder increases the reaction rate. What is the primary reason for this change?",
+        "options": [
+          "Higher temperature",
+          "More exposed particles",
+          "Lower activation energy",
+          "Increased concentration"
+        ],
+        "correctIndex": 1,
+        "explanation": "Grinding increases surface area, exposing more particles for collisions.",
+        "objectiveCode": "GCSE-CHEM-6"
+      },
+      {
+        "prompt": "In a fictional experiment, adding a catalyst speeds up the reaction without being consumed. What is the catalyst's role?",
+        "options": [
+          "Increases temperature",
+          "Lowers activation energy",
+          "Increases concentration",
+          "Increases surface area"
+        ],
+        "correctIndex": 1,
+        "explanation": "Catalysts lower activation energy, allowing more particles to react successfully.",
+        "objectiveCode": "GCSE-CHEM-6"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

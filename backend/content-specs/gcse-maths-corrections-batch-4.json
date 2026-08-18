@@ -1,0 +1,19 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 9,
+  "records": [
+    {"id":"73a11535-7c3a-4397-9189-d8c9be1fc44e","answer":"0"},
+    {"id":"9f6ea68c-56ad-497e-bf7e-0093a342bfec","answer":"2"},
+    {"id":"e9019361-162c-4e4f-8f37-876efa443d35","answer":"0"},
+    {"id":"fc1b15da-26c7-45a0-8088-1f07fe24f487","answer":"3"},
+    {"id":"1ace45a7-3d18-4fbc-acb3-3ff076c1794c","answer":"1"},
+    {"id":"d37828e5-218e-4a6b-bf2e-e61b96919a7e","answer":"1"},
+    {"id":"3c3a3ed7-5ca0-4259-8313-fe39f45d0181","answer":"3"},
+    {"id":"b4c04900-6b59-4624-b4be-df23042453ce","answer":"3"},
+    {"id":"fb2bf0ff-218f-4f6c-a969-bad5c1a0ccfc","answer":"0"}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T16:59:21.626Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review replaced a repeated point with a genuinely relevant contribution and adjusted the private speaking timing. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-speaking-discussion",
+    "title": "Speaking and listening: contributing to a discussion",
+    "objectives": [
+      {
+        "code": "FSE-L1-SLC6",
+        "text": "Follow and understand discussions and make contributions relevant to the situation and subject."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Contributing to a Discussion",
+    "summary": "Learn to follow the main points of a conversation and make relevant contributions. This lesson focuses on identifying topics, selecting appropriate responses, and building on existing ideas within a group setting.",
+    "objectives": [
+      {
+        "code": "FSE-L1-SLC6",
+        "text": "Follow and understand discussions and make contributions relevant to the situation and subject."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Identifying the Core Topic",
+        "body": "Before speaking, listen carefully to determine the central subject of the conversation. This helps you stay focused and avoid drifting into unrelated areas. By recognising the main theme, you can ensure your comments directly address the group's current focus and keep the discussion moving forward effectively."
+      },
+      {
+        "heading": "Selecting Relevant Contributions",
+        "body": "A relevant contribution connects directly to what has already been said. It may add new information, ask a useful question or offer a different perspective without simply repeating a previous point. This shows that you are listening and can help the group work towards a shared understanding or a decision about the subject."
+      },
+      {
+        "heading": "Building on Existing Points",
+        "body": "You can strengthen a discussion by expanding on a colleague's idea. Acknowledge their point first, then add your own thoughts or examples. This creates a collaborative flow and demonstrates respect for others' input while still allowing you to share your unique perspective on the subject."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read this summary: \"The team is deciding where to hold the annual meeting. Sarah suggests the hotel near the station because it is easy to reach by train.\" Which response is most relevant?",
+        "options": [
+          "I like the hotel's breakfast menu.",
+          "The hotel near the station could work; can we check its wheelchair access and cost?",
+          "The hotel is close to the station, as Sarah said.",
+          "I prefer working from home."
+        ],
+        "correctIndex": 1,
+        "explanation": "This response acknowledges Sarah's accessibility point and adds relevant considerations for choosing the venue.",
+        "objectiveCode": "FSE-L1-SLC6"
+      },
+      {
+        "prompt": "Read this summary: \"Mark says the new software is difficult to learn. He mentions that the interface is confusing for new users.\" Which response builds on his point?",
+        "options": [
+          "I think the software is expensive.",
+          "Since new users find the interface confusing, short training sessions could help.",
+          "I prefer using spreadsheets.",
+          "The software was released last year."
+        ],
+        "correctIndex": 1,
+        "explanation": "This response uses Mark's point about new users and adds a practical suggestion that relates to it.",
+        "objectiveCode": "FSE-L1-SLC6"
+      },
+      {
+        "prompt": "Read this summary: \"The group is discussing the best time for the project deadline. Anna argues that Friday is too late because the office closes early.\" Which response is relevant?",
+        "options": [
+          "Friday is a good day for lunch.",
+          "We should aim for Wednesday to allow time for review.",
+          "The office is very large.",
+          "I like working on weekends."
+        ],
+        "correctIndex": 1,
+        "explanation": "Option B offers a specific alternative time that addresses the concern about Friday.",
+        "objectiveCode": "FSE-L1-SLC6"
+      }
+    ],
+    "speakingActivity": {
+      "title": "Private Self-Review Practice",
+      "prompt": "Imagine you are in a meeting about choosing a venue for a team day. One colleague suggests a park because it is free. Record yourself responding to this suggestion. Aim to acknowledge the point and add a relevant consideration, such as weather or accessibility. Listen back to your recording to check your relevance and clarity.",
+      "timingGuide": "About one minute to prepare and speak, then time to listen back.",
+      "checklist": [
+        "Did I acknowledge the colleague's suggestion about the park?",
+        "Did I add a new point relevant to the venue choice?",
+        "Was my tone appropriate for a professional discussion?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

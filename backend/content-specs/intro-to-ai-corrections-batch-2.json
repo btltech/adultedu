@@ -1,0 +1,11 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "intro-to-ai",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 1,
+  "records": [
+    {"id":"3daeb4a8-c53a-45a2-b9f7-552c96f68533","change":"Added the calculated 760 false-positive option and removed the unresolved explanation."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

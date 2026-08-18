@@ -1,0 +1,12 @@
+{
+  "preparedAt": "2026-08-17",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 3,
+  "records": [
+    {"id":"1d88f9d7-b4c2-4530-b5d5-6e4827b48951","options":["£8960","£9000","£8560","£9120"],"answer":"0","explanation":"A 12% increase on £8000 is £8000 x 1.12 = £8960."},
+    {"id":"e95cb354-cbeb-4b48-86b2-dc69bd2e3727","options":["£2.375 - £2.625","£2.30 - £2.70","£2.35 - £2.65","£2.40 - £2.60"],"answer":"0","explanation":"Five percent of £2.50 is £0.125. The possible prices are £2.50 - £0.125 = £2.375 and £2.50 + £0.125 = £2.625."},
+    {"id":"009823a0-a216-4c62-853b-806d8f54718f","options":["4 hours","5 hours","10 hours","7 hours"],"answer":"2","explanation":"By the earlier deadline, there are 5 days. Working 1 hour per day on each of two tasks gives 5 x 2 = 10 hours."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

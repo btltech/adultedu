@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:40:34.117Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content and national curriculum mathematics programmes of study",
+    "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-l2-algebra",
+    "title": "Algebra: expressions, equations and sequences",
+    "objectives": [
+      {
+        "code": "GCSE-M-A1",
+        "text": "Use algebraic notation to manipulate expressions, solve equations and inequalities, and describe sequences."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Algebraic Foundations: Expressions, Equations and Sequences",
+    "summary": "This lesson guides learners through manipulating algebraic expressions, solving linear and quadratic equations, and identifying sequence patterns. It focuses on clear, step-by-step reasoning suitable for independent adult study.",
+    "objectives": [
+      {
+        "code": "GCSE-M-A1",
+        "text": "Use algebraic notation to manipulate expressions, solve equations and inequalities, and describe sequences."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Manipulating Algebraic Expressions",
+        "body": "Begin by expanding brackets to simplify complex terms. For instance, multiplying a constant across a bracket reveals hidden coefficients. Next, factorise by identifying common factors shared by all terms. This process reverses expansion, creating a more compact form. Always check your work by expanding the factorised result to ensure it matches the original expression exactly."
+      },
+      {
+        "heading": "Solving Equations and Inequalities",
+        "body": "Solve linear equations by isolating the variable using inverse operations. For quadratics, factorise or use the quadratic formula to find roots. When handling inequalities, remember that multiplying or dividing by a negative number reverses the inequality sign. Plot solutions on a number line to visualise the range of valid values clearly and accurately."
+      },
+      {
+        "heading": "Recognising and Describing Sequences",
+        "body": "Identify arithmetic sequences by calculating the constant difference between consecutive terms. Geometric sequences require finding the common ratio instead. Write the general term using the first term and the common difference or ratio. This algebraic description allows you to predict any term in the sequence without listing every single intermediate value manually."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A student expands the expression 3(x + 4) and writes 3x + 4. Which error did they make?",
+        "options": [
+          "They forgot to multiply the constant by the variable.",
+          "They forgot to multiply the constant by the number inside the bracket.",
+          "They added the constant to the variable instead of multiplying.",
+          "They reversed the order of the terms."
+        ],
+        "correctIndex": 1,
+        "explanation": "The constant 3 must be multiplied by both x and 4, resulting in 3x + 12, not 3x + 4.",
+        "objectiveCode": "GCSE-M-A1"
+      },
+      {
+        "prompt": "Solving the inequality -2x < 10, a learner divides both sides by -2 and writes x < -5. What is the correct final inequality?",
+        "options": [
+          "x < -5",
+          "x > -5",
+          "x = -5",
+          "x > 5"
+        ],
+        "correctIndex": 1,
+        "explanation": "Dividing by a negative number reverses the inequality sign, so x < -5 becomes x > -5.",
+        "objectiveCode": "GCSE-M-A1"
+      },
+      {
+        "prompt": "A sequence begins 5, 8, 11, 14. What is the general term for the nth term?",
+        "options": [
+          "3n + 2",
+          "3n - 2",
+          "2n + 3",
+          "4n + 1"
+        ],
+        "correctIndex": 0,
+        "explanation": "The common difference is 3, and the first term is 5, so the formula is 3n + 2.",
+        "objectiveCode": "GCSE-M-A1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "sourceTitle": "GCSE subject content and national curriculum mathematics programmes of study"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

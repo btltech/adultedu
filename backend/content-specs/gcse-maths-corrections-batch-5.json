@@ -1,0 +1,26 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 16,
+  "records": [
+    {"id":"4dedb457-7ac8-4280-8101-82a056199980","answer":"0"},
+    {"id":"f6a91672-9a1b-40d0-b090-9a6fd24200f1","answer":"0"},
+    {"id":"4dcd1554-61c4-46b2-bbdd-8b25fa73dd62","answer":"0"},
+    {"id":"597e7826-0255-4045-a033-1484affc282b","answer":"0"},
+    {"id":"2abe8177-88e2-4232-a0d0-9cdbea2404bf","answer":"0"},
+    {"id":"246c3519-2169-48af-8905-a133c5624d77","answer":"0"},
+    {"id":"9c9d1851-3e6d-4f09-b2d5-6b364b9b2925","answer":"0"},
+    {"id":"cc6a0b23-5a77-436c-b417-4f0ce33e0d75","answer":"0"},
+    {"id":"4278febc-ca72-4506-98cf-d20470c25846","answer":"0"},
+    {"id":"f038b4b4-badd-497a-83a9-4d6ae3a24081","answer":"0"},
+    {"id":"4a8c0dbc-79e0-450e-8e1e-fa56e8d29fd4","answer":"0"},
+    {"id":"8e73bde9-b544-4d3f-899b-8f1f8dc867c8","answer":"0"},
+    {"id":"48181d9b-b15a-4dd0-b571-c5843541cac1","answer":"0"},
+    {"id":"9a7f389e-d687-4803-9c58-01b1d03b6a12","answer":"0"},
+    {"id":"239d0fc6-c19d-4152-90e5-866cded8129a","answer":"0"},
+    {"id":"583a4211-882b-4f96-9a61-7bf3b381d75d","answer":"0"}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

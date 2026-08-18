@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T20:20:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation requests were unreliable. File naming, storage, sharing, file size and backup guidance were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-files-storage-backups",
+    "title": "Using devices: organising files, storage and backups",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD3",
+        "text": "Organise and manage files using suitable naming, storage, and backup methods; use file information to make appropriate decisions about storing and sharing content."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Organising Files, Storage and Backups",
+    "summary": "Use clear names, folders, file details and suitable storage choices to keep important files easy to find, share and protect.",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD3",
+        "text": "Organise and manage files using suitable naming, storage, and backup methods; use file information to make appropriate decisions about storing and sharing content."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Naming and grouping files",
+        "body": "A useful file name tells you what a file contains and can include a relevant date or version. Create folders and sub-folders that match a clear purpose, such as Projects, Receipts or Course Work. Consistent names make search easier later. Avoid names like final-final-new, which give little information about the file or its status."
+      },
+      {
+        "heading": "Choosing storage and sharing options",
+        "body": "Files can be stored locally, on an external drive or in cloud storage. Choose based on the file's purpose, size and who needs access. Check file type, size and date when locating or sharing a file. If a service has an upload limit, consider an appropriate smaller version or compression rather than repeatedly sending the same failed upload."
+      },
+      {
+        "heading": "Backing up important information",
+        "body": "A backup is an additional copy that can help if a file is deleted, a device is lost or hardware fails. Important files may be copied to an approved cloud folder or external drive. A backup should be checked occasionally, because an unreadable or forgotten copy is not useful. Share only with the people and permissions the task requires."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Which fictional file name is clearest for a meeting agenda created on 14 August 2026?",
+        "options": [
+          "document-new",
+          "agenda",
+          "2026-08-14_team-meeting_agenda",
+          "final-final-file"
+        ],
+        "correctIndex": 2,
+        "explanation": "The chosen name gives a date, the meeting context and the file's purpose, making it easier to find later.",
+        "objectiveCode": "EDS-L1-UD3"
+      },
+      {
+        "prompt": "A fictional video is too large to upload to a service. What is the most appropriate next step?",
+        "options": [
+          "Check the size limit and choose an appropriate smaller version or compression method.",
+          "Share account credentials with anyone who asks.",
+          "Delete every file from the device.",
+          "Keep retrying without checking the error."
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking the size limit and choosing an appropriate alternative addresses the stated upload problem safely.",
+        "objectiveCode": "EDS-L1-UD3"
+      },
+      {
+        "prompt": "Which action best describes a basic backup for a fictional important document?",
+        "options": [
+          "Keeping the only copy open on screen",
+          "Copying it to an approved second storage location",
+          "Renaming it without saving",
+          "Sharing it publicly"
+        ],
+        "correctIndex": 1,
+        "explanation": "A backup is an additional copy kept in a suitable second location so the only copy is not lost.",
+        "objectiveCode": "EDS-L1-UD3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

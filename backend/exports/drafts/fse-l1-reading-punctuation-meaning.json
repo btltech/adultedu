@@ -1,0 +1,109 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T15:37:35.747Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review strengthened the practice from naming punctuation marks to using punctuation to interpret a text. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-reading-punctuation-meaning",
+    "title": "Reading: using punctuation to understand meaning",
+    "objectives": [
+      {
+        "code": "FSE-L1-R18",
+        "text": "Use their knowledge of punctuation to aid understanding of straightforward texts."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Reading: Using Punctuation to Understand Meaning",
+    "summary": "This lesson explores how punctuation marks like question marks, apostrophes, and commas help readers interpret meaning in straightforward texts. It focuses on identifying questions, possession, and pauses to clarify ideas without relying on memorised rules.",
+    "objectives": [
+      {
+        "code": "FSE-L1-R18",
+        "text": "Use their knowledge of punctuation to aid understanding of straightforward texts."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Questions and Emphasis",
+        "body": "A question mark signals that a sentence seeks information rather than stating a fact. In straightforward texts, this mark helps readers identify direct inquiries. Recognising this punctuation allows you to distinguish between statements and questions, clarifying the writer’s intent and the type of response expected from the reader."
+      },
+      {
+        "heading": "Possession and Ownership",
+        "body": "The apostrophe often indicates possession, showing that one thing belongs to another. For example, it can link a person to an object or idea. Understanding this function helps readers track relationships between nouns, making it easier to follow who owns what or which entity is being discussed in the text."
+      },
+      {
+        "heading": "Pauses and Boundaries",
+        "body": "Commas and colons create pauses that separate ideas or introduce lists. These marks act as boundaries, guiding the reader through complex sentences. By noticing these pauses, you can break down longer thoughts into manageable parts, improving comprehension of how different pieces of information connect within a single sentence."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read this notice: 'Do you need a quiet place to work? Book a study room at the desk.' What does the question mark help you understand about the first sentence?",
+        "options": [
+          "It asks the reader to consider whether they need a quiet place.",
+          "It tells the reader that a study room has already been booked.",
+          "It warns the reader not to use the study room.",
+          "It lists the equipment in the study room."
+        ],
+        "correctIndex": 0,
+        "explanation": "The question mark shows that the notice is asking the reader a question before giving an instruction.",
+        "objectiveCode": "FSE-L1-R18"
+      },
+      {
+        "prompt": "Read this message: 'The children's art table is beside the window.' What does the apostrophe help you understand?",
+        "options": [
+          "The table is intended for the children.",
+          "The children are sitting on the table.",
+          "The window belongs to the children.",
+          "The table has been moved outside."
+        ],
+        "correctIndex": 0,
+        "explanation": "The apostrophe in ‘children's’ shows a relationship between the children and their art table.",
+        "objectiveCode": "FSE-L1-R18"
+      },
+      {
+        "prompt": "Read this reminder: 'The key instruction is simple: return borrowed tools by Friday.' What does the colon help the reader understand?",
+        "options": [
+          "The words after it give the key instruction.",
+          "The tools belong to Friday.",
+          "The first part is a question.",
+          "The reminder has ended before the last words."
+        ],
+        "correctIndex": 0,
+        "explanation": "The colon introduces the explanation of what the key instruction is.",
+        "objectiveCode": "FSE-L1-R18"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

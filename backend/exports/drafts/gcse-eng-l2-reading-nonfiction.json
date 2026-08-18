@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:47:58.027Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-eng-l2-reading-nonfiction",
+    "title": "Reading non-fiction texts",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-R2",
+        "text": "Read and understand non-fiction texts, identifying viewpoints, purposes and supporting evidence."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Decoding Non-Fiction: Viewpoints and Evidence",
+    "summary": "This lesson helps learners identify viewpoints, purposes, and supporting evidence in short non-fiction texts. It distinguishes between explicit statements and reader inferences using fictional stimuli.",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-R2",
+        "text": "Read and understand non-fiction texts, identifying viewpoints, purposes and supporting evidence."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Identifying the Writer's Viewpoint",
+        "body": "A viewpoint is the writer's specific stance on an issue. In non-fiction, this is often stated directly or implied through word choice. Learners must distinguish between what the text explicitly says and what they personally believe. This skill prevents confusion between authorial intent and reader interpretation, ensuring accurate analysis."
+      },
+      {
+        "heading": "Recognising Purpose and Audience",
+        "body": "Writers choose language to persuade, inform, or entertain specific audiences. Identifying the purpose helps explain why certain facts are highlighted. For example, a persuasive text uses emotional language, while an informative text relies on neutral data. Understanding this context clarifies the writer's strategic choices and intent."
+      },
+      {
+        "heading": "Evaluating Supporting Evidence",
+        "body": "Strong arguments rely on evidence such as statistics, examples, or expert opinions. Learners should check if the evidence directly supports the stated claim. Distinguishing between fact and opinion is crucial. This ensures that conclusions are grounded in the text rather than external assumptions or personal bias."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The new park will reduce local noise levels by twenty percent.\" What is the writer's primary purpose in this sentence?",
+        "options": [
+          "To persuade readers to visit the park.",
+          "To inform readers about a specific benefit.",
+          "To express personal dislike of noise.",
+          "To request funding for the park."
+        ],
+        "correctIndex": 1,
+        "explanation": "The sentence presents a specific factual claim about noise reduction, which serves an informative purpose rather than a persuasive or emotional one.",
+        "objectiveCode": "GCSE-ENG-R2"
+      },
+      {
+        "prompt": "Read: \"Many residents feel the new traffic lights are unnecessary.\" Which part of this sentence represents the writer's viewpoint?",
+        "options": [
+          "The mention of traffic lights.",
+          "The phrase \"many residents feel.\"",
+          "The word \"unnecessary.\"",
+          "The sentence structure."
+        ],
+        "correctIndex": 2,
+        "explanation": "The word \"unnecessary\" conveys a negative judgment, reflecting the viewpoint attributed to the residents within the text.",
+        "objectiveCode": "GCSE-ENG-R2"
+      },
+      {
+        "prompt": "Read: \"Sales increased by fifty percent after the campaign launched.\" What type of evidence is used to support the claim?",
+        "options": [
+          "An expert opinion.",
+          "A statistical figure.",
+          "A personal anecdote.",
+          "A rhetorical question."
+        ],
+        "correctIndex": 1,
+        "explanation": "The phrase \"fifty percent\" is a numerical value, which constitutes statistical evidence supporting the claim about sales.",
+        "objectiveCode": "GCSE-ENG-R2"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "functional-skills-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 15,
+  "records": [
+    {"id":"cab3d2b0-c6fa-40ad-83ab-435dc05edbd8","answer":"3","explanation":"Five apples is the greatest amount, so the correct answer is 5 apples."},
+    {"id":"411c0b55-9471-4b9c-b191-73b587ebae32","answer":"2","explanation":"Seven is less than 8, 9 and 10, so the correct answer is 7."},
+    {"id":"96bd43a2-6a2f-4eb9-8c4a-d6f8c09368a1","answer":"1","explanation":"Zero means nothing or no amount, so the correct answer is Nothing."},
+    {"id":"8addd5a0-8fa3-4f85-81b6-4f7feb3fc2c4","answer":"1","explanation":"A circle is a flat, round shape with no corners, so the correct answer is Circle."},
+    {"id":"df48a349-4ae4-4f5f-9808-3e8c6534aeb1","answer":"1","explanation":"Four is even because it can be divided by 2 with no remainder."},
+    {"id":"eea72d6b-8739-48e3-a7e8-b47b712785fc","answer":"1","explanation":"The number after ten is eleven, so the correct answer is 11."},
+    {"id":"f87ae07d-f730-46c2-b7ad-89c42fe33f53","answer":"2","explanation":"364 ÷ 13 = 28, so the correct answer is 28."},
+    {"id":"b63a8b50-dc24-40a0-8a97-1e098eeeaa1c","answer":"2","explanation":"The perimeter is 2 × (12 + 8) = 40 metres, so the correct answer is 40 metres."},
+    {"id":"1cc35002-f219-406f-b596-0e881d876020","answer":"0","explanation":"The storage area is 3.5 × 2.8 = 9.8 m². Dividing by 0.35 m² per box gives 28 full boxes."},
+    {"id":"ead98d08-9bac-4aa5-950b-21a19d775846","options":["30%","39%","40%","45%"],"answer":"1","explanation":"7 ÷ 18 × 100 = 38.89%, which rounds to 39%."},
+    {"id":"ff236d8a-8b29-48c1-8b38-443e0b9f9da3","options":["125","188","180","200"],"answer":"1","explanation":"A 25% increase on 150 is 150 × 1.25 = 187.5. Rounded to the nearest whole biscuit, this is 188."},
+    {"id":"c4727172-c880-4109-b728-8d7f60377359","options":["62.4%","66.8%","67.8%","70%"],"answer":"1","explanation":"The mean is (70 + 68 + 62 + 75 + 59) ÷ 5 = 334 ÷ 5 = 66.8%."},
+    {"id":"97629e4d-83d0-4232-b8d7-c1fc840c565a","answer":"0","explanation":"The mean is (3 + 5 + 4 + 7 + 6 + 5 + 8) ÷ 7 = 36 ÷ 7 ≈ 5.14, which rounds to 5."},
+    {"id":"155bde5c-f6e4-40ea-b09b-ed0979c10a90","options":["1 / 2","1","5 / 6","7 / 8"],"answer":"1","explanation":"The average speed is 240 ÷ 3 = 80 km/h. Compared with the 80 km/h limit, 80 ÷ 80 = 1."},
+    {"id":"b8935444-8087-4bf6-bb93-973ea068fa00","options":["1 / 10","2 / 5","3 / 20","4 / 15"],"answer":"1","explanation":"The rectangle has area 8 × 5 = 40 m² and the square has area 4 × 4 = 16 m². The fraction is 16 ÷ 40 = 2 / 5."}
+  ],
+  "reviewStatusAfterCorrection": "in_review",
+  "validation": [
+    "Every proposed numeric answer points to an existing option.",
+    "Every explanation agrees with the proposed answer.",
+    "Items with missing original options were repaired by replacing a distractor with the mathematically correct value.",
+    "No records are deleted or unpublished by this manifest."
+  ]
+}

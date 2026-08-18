@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T15:02:38.556Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Editorial review corrected duplicated choices, strengthened stimulus-grounding, and confirmed objective alignment. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-reading-fact-opinion-purpose",
+    "title": "Reading: fact, opinion, purpose and audience",
+    "objectives": [
+      {
+        "code": "FSE-L1-R9",
+        "text": "Identify and understand the main points, ideas and details in texts."
+      },
+      {
+        "code": "FSE-L1-R11",
+        "text": "Identify meanings in texts, and distinguish between fact and opinion."
+      },
+      {
+        "code": "FSE-L1-R12",
+        "text": "Recognise that language and other textual features can be varied to suit different audiences and purposes."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Reading: Fact, Opinion, Purpose and Audience",
+    "summary": "This lesson helps you identify main points, distinguish facts from opinions, and notice how language changes for different audiences and purposes.",
+    "objectives": [
+      {
+        "code": "FSE-L1-R9",
+        "text": "Identify and understand the main points, ideas and details in texts."
+      },
+      {
+        "code": "FSE-L1-R11",
+        "text": "Identify meanings in texts, and distinguish between fact and opinion."
+      },
+      {
+        "code": "FSE-L1-R12",
+        "text": "Recognise that language and other textual features can be varied to suit different audiences and purposes."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Finding the Main Point",
+        "body": "When reading, look for the central idea that the text is built around. This main point is supported by specific details and examples. You do not need to memorise every word; instead, focus on what the writer is trying to communicate. Identifying the core message helps you understand the text’s overall direction and purpose."
+      },
+      {
+        "heading": "Fact vs Opinion",
+        "body": "A fact is a statement that can be proven true or false using evidence. An opinion is a belief or judgement that cannot be proven. Words like 'best', 'should', or 'I think' often signal an opinion. Distinguishing between these two types of statements helps you evaluate the reliability of the information you are reading."
+      },
+      {
+        "heading": "Audience and Purpose",
+        "body": "Writers choose their words to suit their audience and purpose. A text for children might use simple words, while a report for managers might use formal language. By noticing these choices, you can better understand why the text was written and who it is intended for. This awareness helps you interpret the message more accurately."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read this notice: \"The library opens at 9 am. It is the best place to study.\" Which statement from the notice is an opinion?",
+        "options": [
+          "The library opens at 9 am.",
+          "It is the best place to study.",
+          "The notice gives an opening time.",
+          "The word 'best' expresses a judgement."
+        ],
+        "correctIndex": 1,
+        "explanation": "The word 'best' expresses a personal judgement, so this statement is an opinion.",
+        "objectiveCode": "FSE-L1-R11"
+      },
+      {
+        "prompt": "Read this staff-room notice: \"Please submit your report by Friday. Ensure all data is accurate.\" Who is the likely audience?",
+        "options": [
+          "Employees completing reports.",
+          "Young children at a playgroup.",
+          "Visitors buying train tickets.",
+          "Tourists booking a hotel."
+        ],
+        "correctIndex": 0,
+        "explanation": "A staff-room notice about reports and accurate data is aimed at employees completing work tasks.",
+        "objectiveCode": "FSE-L1-R12"
+      },
+      {
+        "prompt": "Read this station notice: \"The 10:15 train stops at Riverside, Park Lane and Central.\" What is the main purpose of this notice?",
+        "options": [
+          "To entertain passengers with a story.",
+          "To inform passengers about the train service.",
+          "To persuade passengers to buy a ticket.",
+          "To apologise for a cancelled service."
+        ],
+        "correctIndex": 1,
+        "explanation": "The notice gives practical details about the train’s route, so its purpose is to inform passengers.",
+        "objectiveCode": "FSE-L1-R9"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

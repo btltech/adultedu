@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-08-17",
+  "scope": "Published MCQs whose answer is stored as option text instead of a numeric index",
+  "productionChangesMade": false,
+  "recordCount": 11,
+  "runtimeFinding": "All 11 text answers match an option and are currently resolvable by the scoring layer; this is a consistency and editorial-review queue, not proof of a live scoring failure.",
+  "records": [
+    {"id":"4be8b500-25c9-4f49-9b1a-87f8ceae5c13","track":"python-mastery","action":"convert answer text to option index 2; verify concurrency explanation"},
+    {"id":"c712f904-cb56-41a4-9506-7b9d5378c088","track":"functional-skills-maths","action":"convert answer text to option index 2"},
+    {"id":"73a0f622-4413-40fb-b2cc-4ac319763a6e","track":"python-mastery","action":"convert answer text to option index 0; verify FastAPI behaviour"},
+    {"id":"b8e79469-d7ff-4b48-bdc5-ee03fc99849c","track":"python-mastery","action":"convert answer text to option index 0; verify FastAPI behaviour"},
+    {"id":"cf98b01d-2cf4-408a-8d8d-455a7c0c9c09","track":"python-mastery","action":"convert answer text to option index 1"},
+    {"id":"20ab7d20-dfba-4f24-95e6-5012b3083c13","track":"a-level-maths","action":"convert answer text to option index 0; repair explanation contradiction"},
+    {"id":"f07109d2-ba2c-4e11-98fe-847254d4487b","track":"a-level-maths","action":"do not publish unchanged: derivative has two valid stationary points (x=1 and x=3); rewrite as a multi-answer or specify which point is required, then store the correct index"},
+    {"id":"e02d2f29-a805-4641-9e28-a9662caeebfe","track":"a-level-maths","action":"convert answer text to option index 0"},
+    {"id":"3040b910-067f-4827-9e90-166c80910c97","track":"a-level-maths","action":"convert answer text to option index 0"},
+    {"id":"8276f742-4aa1-431a-a3ce-1d629411415d","track":"cpp-introduction","action":"convert answer text to option index 0; repair explanation referring to nonexistent option D"},
+    {"id":"a5acb9ce-9443-4c33-8c35-a44e2df3e586","track":"gcse-maths","action":"convert answer text to option index 0"}
+  ]
+}

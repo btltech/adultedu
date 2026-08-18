@@ -1,0 +1,77 @@
+{
+  "preparedAt": "2026-08-17",
+  "scope": "Fresh production audit: verified answer/explanation mismatches and malformed learner-facing items",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17T20:57:15Z",
+  "appliedCount": 57,
+  "records": [
+    {"id":"7476a335-4351-43b1-9c7c-e8bf15502839","change":"Selected the direct-bank-contact option and removed the explanation's contradictory claim that deleting the message gives away financial information."},
+    {"id":"c5e4b745-947d-4159-ad37-3d8621436081","change":"Made the NOT-good-practice item have one unambiguously bad option by replacing the second bad security-question distractor."},
+    {"id":"8c7909ca-413e-45d0-a230-f138305f323a","change":"Removed embedded A/B/C/D labels, aligned the woodland answer with the no-browsing option, and made the explanation concise."},
+    {"id":"e9e8170a-68e5-458d-adf3-70e3615ecb12","change":"Replaced the false 19th-century Great Gatsby premise with a source-aligned Oliver Twist publication-year question."},
+    {"id":"abc91021-3f12-476d-9cb6-19997f718feb","change":"Added the mathematically correct nine-friends option and set the answer to it."},
+    {"id":"43acb16e-3ec3-4899-9cc5-59223ebff543","change":"Corrected the rate-limiting answer to exponential backoff with jitter."},
+    {"id":"0acd356d-9ad3-4ae4-81d4-7bc794e09143","change":"Corrected the shopping-cart total to £24.50 and removed the visible self-correction."},
+    {"id":"q-python-1-4","change":"Corrected the Python float type answer index."},
+    {"id":"q-gcse-1-1","change":"Corrected the fraction-addition answer index to 3/5."},
+    {"id":"q-gcse-1-3","change":"Corrected the fraction-multiplication answer index to 1/2."},
+    {"id":"q-gcse-1-4","change":"Corrected the fraction-division answer index to 8/3."},
+    {"id":"q-gcse-2-2","change":"Corrected the linear-equation answer index to x = 7."},
+    {"id":"cf0f49a5-25d3-4f36-83b1-abf209c7d894","change":"Replaced the ambiguous electromagnet distractor with reducing current and stated the direct relationship."},
+    {"id":"6a73a133-0dd6-49bb-89f3-663ecb9b57b8","change":"Rewrote the asyncio item to ask about a coroutine that is created but never awaited."},
+    {"id":"8276f742-4aa1-431a-a3ce-1d629411415d","change":"Removed the stale reference to nonexistent option D from the C++ explanation."},
+    {"id":"b7293a4f-f0bc-420a-9093-8fbb1faca75a","change":"Normalised the correct numeric answer from a JSON string to index 0."},
+    {"id":"06e4af09-76e8-4dd9-961b-503387075e84","change":"Normalised the correct numeric answer from a JSON string to index 0."}
+    ,{"id":"89254ba2-9c2c-4f72-881b-195b4f8af057","change":"Aligned the Oliver Twist answer index with the explanation: the Poor Laws harmed poor children (option 1)."}
+    ,{"id":"9e1e5002-da1c-4b97-927a-d1c02f621dd8","change":"Aligned the rocket answer index with the inverse-square explanation: gravity decreases but does not reach zero (option 2)."}
+    ,{"id":"78b32f80-9d46-4188-a0bc-10cb72151045","change":"Aligned the C++ array answer index with the invalid six-initialiser declaration (option 2)."}
+    ,{"id":"aedba2d4-a1f2-493e-b180-f1dc7de8d2ac","change":"Rounded the logistic-model option to the calculated value and removed the unnecessary closest-option wording."}
+    ,{"id":"ed8e147a-9447-4a7c-8a86-51be43c60387","change":"Added the calculated 141,372-litre option and aligned the cylinder-volume answer."}
+    ,{"id":"89704602-cdfd-44c6-8798-489a2ed7b590","change":"Corrected the Python file-reading answer to open(filename, r)."}
+    ,{"id":"158ef7c4-ff40-49ed-a422-809d4db98f12","change":"Corrected the csv.writer answer to writerow(row)."}
+    ,{"id":"63951e79-bcf1-4eeb-9d50-c33cc8a83e97","change":"Corrected the online-purchase security answer to HTTPS and the padlock."}
+    ,{"id":"c601e4ac-3c91-4ec3-bfec-67a4f0b38368","change":"Corrected the shopping-cart answer to verify discounts and the total."}
+    ,{"id":"01f32214-9ecf-4714-a847-619961274166","change":"Corrected the mean-temperature answer to 16°C and removed the stale option-B explanation."}
+    ,{"id":"6e7dc902-6397-4118-8907-95f5b7345431","change":"Corrected the Python print-function answer."}
+    ,{"id":"c87ca003-9f7b-4821-9141-8c7eff4d17e3","change":"Corrected the HTTP 404 answer to the requested-resource-not-found option."}
+    ,{"id":"b68ce978-ed63-4b75-8d99-87536e49552f","change":"Corrected the news-date answer to checking whether the article is still relevant and accurate."}
+    ,{"id":"0830b591-0538-42d5-a4bb-ba3ff30c287e","change":"Corrected the bank-letter answer to a detailed explanation with supporting evidence."}
+    ,{"id":"da58984e-330e-42b6-9466-6a69efa97691","change":"Corrected the spelling answer to Separate."}
+    ,{"id":"57d13547-6d53-4563-aebb-9bf5ca5c99d8","change":"Corrected the punctuation answer to the sentence using a comma after said and a full stop inside the quotation marks."}
+    ,{"id":"9560d26c-c53f-4b8b-be66-63d4520364a3","change":"Corrected the list-punctuation answer to the Oxford-comma option used by the explanation."}
+    ,{"id":"d19e6b4a-eb88-4a23-a70b-c57adab68a7b","change":"Rewrote the sentence-correction item so exactly one punctuation repair is valid."}
+    ,{"id":"5735ad0a-49c8-4b4a-9b4c-b6511a42bc0e","change":"Rewrote the plural-possessive item with one correctly punctuated option."}
+    ,{"id":"b2fe73ee-579b-4e64-a0bf-2500db2cd6c2","change":"Rewrote the worker sentence so the noun and answer are grammatically compatible."}
+    ,{"id":"5604c78f-2626-42cf-94a1-6ec089314eae","change":"Rewrote the affect item to test one unambiguous verb use."}
+    ,{"id":"3a0d771a-5b0f-49a4-95e9-aecd56e57565","change":"Rewrote the colon-and-list item so only one option is correct."}
+    ,{"id":"e4cdb022-404f-41e5-9088-eff1ca29f29f","change":"Rewrote the apostrophe item so only the singular possessive option is correct."}
+    ,{"id":"696b82b1-991d-4164-802e-117fe860fe45","change":"Corrected the compound-sentence punctuation answer to the valid comma construction."}
+    ,{"id":"6f89c8de-90b4-4003-a7dc-5d809469e0b0","change":"Corrected the anthology answer to comparing poets’ language techniques."}
+    ,{"id":"0fef49cc-3a66-4889-b6a4-0cc4436a5a7d","change":"Added the correct sand-8/gravel-12 option and aligned the concrete-ratio answer."}
+    ,{"id":"d020c8bb-f945-4bb8-9633-d1602878bce1","change":"Added the correct 25-boys option and removed the invalid closest-answer claim."}
+    ,{"id":"c5adecc3-7850-41a0-9c19-b54982e3afb7","change":"Corrected the semicolon item: the original sentence needs no correction."}
+    ,{"id":"fc935b09-6c8b-43d8-ada4-5538ef137bea","change":"Added the calculated 43.12 m² wall-area option and aligned the answer."}
+    ,{"id":"28d28fd6-1b0c-452f-957b-e4760f452320","change":"Corrected the mean change to an increase of 0.2 hours."}
+    ,{"id":"20c3c450-6492-4f16-b4a3-f5942fa5f751","change":"Corrected the third-conditional answer to the option using past perfect plus would have + past participle."}
+    ,{"id":"60a73a08-809e-42f9-b3c4-fab692eb328e","change":"Added the calculated value 41 to the algebra options and aligned the answer."}
+    ,{"id":"b7414b3e-d696-4e5c-8eed-8b12df2ba721","change":"Added the calculated 9,000 counts-per-hour option and removed the invalid closest-answer claim."}
+    ,{"id":"939b72d5-d3da-453d-ad27-cc9b9adce56f","change":"Added the calculated 60 red marbles option and aligned the ratio answer."}
+    ,{"id":"476779a2-ed93-49fb-a95d-cf2371da097e","change":"Added the correct probability 1.0 option and aligned the union answer."}
+    ,{"id":"q-gcse-1-3","change":"Reworded the fraction explanation so the intermediate 6/12 value is not mistaken for the final answer."}
+    ,{"id":"c687adad-fff4-4a69-b591-19c9e11ab5b2","change":"Replaced the exact garden-area duplicate with a perimeter item at the GCSE geometry level."}
+    ,{"id":"5e227f90-a0cf-43a1-8e53-24277c339e4b","change":"Replaced the exact regular-hexagon duplicate with an interior-angle item."}
+    ,{"id":"f44a1bda-96da-452a-8c9e-51eeee4d4100","change":"Replaced the exact direct-speech duplicate with a distinct apostrophe item."}
+    ,{"id":"2d82cac9-5fbe-4dae-b07d-1260ec09299a","change":"Replaced the exact rhombus duplicate with a single-property question."}
+  ],
+  "reviewStatusAfterCorrection": "in_review",
+  "deterministicFormattingBatch": {
+    "change": "Removed leading A/B/C/D labels from option text while preserving array order and answer indexes.",
+    "appliedCount": 150,
+    "productionChanges": true,
+    "reviewStatusAfterCorrection": "in_review"
+  },
+  "sourceChecks": {
+    "financialLiteracy": "Existing production copy checked against FSCS official limit increase to £120,000 from 1 December 2025.",
+    "technicalContent": "Python and C++ corrections are language-specific and retain the existing topic scope."
+  }
+}

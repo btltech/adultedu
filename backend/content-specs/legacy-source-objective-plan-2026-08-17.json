@@ -1,0 +1,42 @@
+{
+  "preparedAt": "2026-08-17",
+  "scope": "8,293 published questions still missing item-level source and curriculum-objective metadata",
+  "productionChanges": false,
+  "purpose": "A reviewed source map for the next metadata batches. Track-level links are evidence candidates, not proof that every question has already been checked.",
+  "rules": [
+    "Do not copy a track-level link into a question until the prompt, options, answer and explanation have been checked against that source.",
+    "Use a specific curriculum objective or exam-board statement; do not use a generic topic title as an objective.",
+    "Keep legacy questions published only while the content review proceeds; never mark them approved from this map alone."
+  ],
+  "tracks": {
+    "gcse-maths": {
+      "sources": [
+        {"title":"GCSE subject content collection","url":"https://www.gov.uk/government/collections/gcse-subject-content"},
+        {"title":"National curriculum mathematics programmes of study","url":"https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study"}
+      ],
+      "objectiveMethod":"Map each topic and item to the relevant mathematics programme-of-study statement before applying metadata."
+    },
+    "gcse-english-language": {"sources":[{"title":"GCSE subject content collection","url":"https://www.gov.uk/government/collections/gcse-subject-content"}],"objectiveMethod":"Map reading, writing, spoken-language and grammar items to the applicable GCSE English Language subject-content statement."},
+    "gcse-english-literature": {"sources":[{"title":"GCSE subject content collection","url":"https://www.gov.uk/government/collections/gcse-subject-content"}],"objectiveMethod":"Map each text, language/form and context item to the selected exam-board specification; do not infer a set text from a topic label alone."},
+    "gcse-biology": {"sources":[{"title":"GCSE subject content and requirements for science","url":"https://www.gov.uk/government/collections/gcse-subject-content"}],"objectiveMethod":"Map each biology item to the relevant DfE biology statement and record the exact statement wording."},
+    "gcse-chemistry": {"sources":[{"title":"GCSE subject content and requirements for science","url":"https://www.gov.uk/government/collections/gcse-subject-content"}],"objectiveMethod":"Map each chemistry item to the relevant DfE chemistry statement and record the exact statement wording."},
+    "gcse-physics": {"sources":[{"title":"GCSE subject content and requirements for science","url":"https://www.gov.uk/government/collections/gcse-subject-content"}],"objectiveMethod":"Map each physics item to the relevant DfE physics statement and record the exact statement wording."},
+    "gcse-history": {"sources":[{"title":"GCSE subject content collection","url":"https://www.gov.uk/government/collections/gcse-subject-content"}],"objectiveMethod":"Record the selected exam-board period, event and historical-enquiry objective for each item."},
+    "gcse-computer-science": {"sources":[{"title":"GCSE subject content collection","url":"https://www.gov.uk/government/collections/gcse-subject-content"}],"objectiveMethod":"Map computational thinking, programming, systems, data representation, networks and security items to the relevant GCSE Computer Science subject-content statement."},
+    "gcse-geography": {"sources":[{"title":"GCSE subject content collection","url":"https://www.gov.uk/government/collections/gcse-subject-content"}],"objectiveMethod":"Map each item to the selected exam-board physical, human or geographical-skills statement."},
+    "a-level-maths": {"sources":[{"title":"GCE AS and A level mathematics subject content","url":"https://www.gov.uk/government/publications/gce-as-and-a-level-mathematics"}],"objectiveMethod":"Map each item to the exact algebra, calculus, statistics, mechanics or proof statement in the GCE content."},
+    "functional-skills-maths": {"sources":[{"title":"Functional skills qualifications: subject content and conditions","url":"https://www.gov.uk/government/collections/functional-skills-qualifications-subject-content-and-conditions"}],"objectiveMethod":"Map each item to the exact Entry, Level 1 or Level 2 functional-maths statement and level."},
+    "functional-skills-english": {"sources":[{"title":"Functional skills qualifications: subject content and conditions","url":"https://www.gov.uk/government/collections/functional-skills-qualifications-subject-content-and-conditions"}],"objectiveMethod":"Map each item to the exact reading, writing, speaking/listening or language statement and level."},
+    "python-foundations": {"sources":[{"title":"Python tutorial","url":"https://docs.python.org/3/tutorial/"}],"objectiveMethod":"Map each item to a named Python language or standard-library concept and verify against the current Python documentation."},
+    "python-mastery": {"sources":[{"title":"Python standard library documentation","url":"https://docs.python.org/3/library/"}],"objectiveMethod":"Map each item to the named Python language, library, concurrency or web-framework concept; framework claims need their own official documentation."},
+    "cpp-introduction": {"sources":[{"title":"Microsoft C++ documentation","url":"https://learn.microsoft.com/en-gb/cpp/"}],"objectiveMethod":"Map each item to an explicit C++ language or standard-library objective and verify syntax against the official documentation."},
+    "aws-cloud-practitioner": {"sources":[{"title":"AWS Certified Cloud Practitioner CLF-C02 exam guide","url":"https://docs.aws.amazon.com/aws-certification/latest/cloud-practitioner-02/cloud-practitioner-02.html"}],"objectiveMethod":"Map each item to the current CLF-C02 domain and task statement; do not imply exam questions are official."},
+    "microsoft-office-essentials": {"sources":[{"title":"Microsoft 365 training","url":"https://learn.microsoft.com/en-us/training/m365/"}],"objectiveMethod":"Map each item to the named Microsoft 365 application and task; version-sensitive claims need a current product page."},
+    "intro-to-ai": {"sources":[{"title":"NIST AI Risk Management Framework","url":"https://www.nist.gov/itl/ai-risk-management-framework"}],"objectiveMethod":"Use NIST only for governance, risk and trustworthiness items; map general AI concepts to a separate approved teaching source."},
+    "ai-for-everyone": {"sources":[{"title":"UNESCO AI competency framework for students","url":"https://www.unesco.org/en/articles/ai-competency-framework-students"}],"objectiveMethod":"Map introductory concepts, responsible use and AI ethics to the UNESCO AI competency framework; keep general claims clearly educational and non-official."},
+    "financial-literacy": {"sources":[{"title":"MoneyHelper everyday money guidance","url":"https://www.moneyhelper.org.uk/en/everyday-money"},{"title":"FCA consumer information","url":"https://www.fca.org.uk/consumers"}],"objectiveMethod":"Map each item to a current UK consumer-finance source and record the checked date; verify limits and regulated claims before approval."},
+    "life-in-the-uk-test": {"sources":[{"title":"Official Life in the UK test service","url":"https://www.gov.uk/life-in-the-uk-test"},{"title":"Home Office Life in the UK caseworker guidance","url":"https://www.gov.uk/government/publications/knowledge-of-life-and-language-in-the-uk"}],"objectiveMethod":"Use the current official Guide for New Residents as the item-level source; do not treat unofficial question banks as evidence."},
+    "essential-digital-skills": {"sources":[{"title":"Essential digital skills framework","url":"https://www.gov.uk/government/publications/essential-digital-skills-framework"}],"objectiveMethod":"Map each item to the exact foundation, communicating, handling information, transacting, problem-solving or being safe-online statement."},
+    "business-english": {"sources":[{"title":"Functional skills English subject content","url":"https://www.gov.uk/government/collections/functional-skills-qualifications-subject-content-and-conditions"}],"objectiveMethod":"Approve a business-English scope and map each item to a specific workplace communication objective; the generic functional-skills link is only a candidate source."}
+  }
+}

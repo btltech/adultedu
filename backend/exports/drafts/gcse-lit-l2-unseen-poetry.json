@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T04:44:28.331Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-lit-l2-unseen-poetry",
+    "title": "English Literature: unseen poetry",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-5",
+        "text": "Analyse an unseen poem and develop an evidence-supported interpretation."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Approaching Unseen Poetry: Voice and Evidence",
+    "summary": "Learn to analyse unfamiliar poems by identifying voice, imagery, and structure to build a defensible interpretation supported by textual evidence.",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-5",
+        "text": "Analyse an unseen poem and develop an evidence-supported interpretation."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Identifying Voice and Tone",
+        "body": "Start by determining who is speaking. Is the voice personal or detached? Notice word choices that reveal attitude. A calm tone suggests reflection, while urgent phrasing implies distress. This initial step grounds your interpretation in the speaker’s perspective, ensuring your analysis remains focused on the text’s specific emotional context rather than external assumptions."
+      },
+      {
+        "heading": "Examining Imagery and Structure",
+        "body": "Look for concrete images that anchor abstract ideas. How does the poem’s layout affect pacing? Short lines can create tension, while long ones suggest flow. Structure often mirrors the speaker’s mental state. By connecting visual details to the poem’s form, you build a stronger argument for how meaning is constructed through both content and arrangement."
+      },
+      {
+        "heading": "Building Defensible Interpretations",
+        "body": "Interpretations must be supported by direct evidence from the text. Different readers may reach different conclusions, but each must be defensible. Quote specific words to back your claims. Avoid vague generalisations. A strong analysis shows how particular lines support your reading, demonstrating that your interpretation is rooted in the poem’s language rather than personal opinion."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The door creaked open, revealing only dust.\" Which word best indicates the speaker’s detached observation?",
+        "options": [
+          "creaked",
+          "revealing",
+          "dust",
+          "open"
+        ],
+        "correctIndex": 2,
+        "explanation": "The word 'dust' is a concrete, neutral image that supports a detached observation without emotional language.",
+        "objectiveCode": "GCSE-LIT-5"
+      },
+      {
+        "prompt": "Read: \"Lines break sharply, then stretch long.\" How does this structure likely affect the reader’s experience?",
+        "options": [
+          "It creates a sense of calm.",
+          "It suggests sudden tension followed by release.",
+          "It indicates the speaker is happy.",
+          "It proves the poem is about nature."
+        ],
+        "correctIndex": 1,
+        "explanation": "Sharp breaks suggest tension, while long lines suggest release, directly linking structure to the reader's pacing experience.",
+        "objectiveCode": "GCSE-LIT-5"
+      },
+      {
+        "prompt": "Read: \"I saw the rain, but felt nothing.\" Which interpretation is best supported by this line?",
+        "options": [
+          "The speaker is physically wet.",
+          "The speaker is emotionally numb.",
+          "The rain is heavy.",
+          "The speaker is outside."
+        ],
+        "correctIndex": 1,
+        "explanation": "The phrase 'felt nothing' directly supports an interpretation of emotional numbness rather than physical conditions.",
+        "objectiveCode": "GCSE-LIT-5"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}
