@@ -50,7 +50,7 @@ export default function SliderQuestion({ question, onAnswer, showResult, result 
                     <div className="mb-6 rounded-xl overflow-hidden bg-dark-900/50 border border-dark-700 flex justify-center p-4">
                         <img
                             src={question.imageUrl}
-                            alt="Question Diagram"
+                            alt={`Illustration for: ${question.prompt}`}
                             className="max-h-64 object-contain rounded-lg shadow-lg"
                         />
                     </div>

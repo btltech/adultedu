@@ -144,7 +144,7 @@ export default function DailyChallenge({ compact = false }) {
                 <div className="mb-6 rounded-xl overflow-hidden bg-dark-900/50 border border-dark-700 flex justify-center p-4">
                     <img
                         src={challenge.question.imageUrl}
-                        alt="Question"
+                        alt={`Illustration for: ${challenge.question.prompt}`}
                         className="max-h-48 object-contain rounded-lg"
                     />
                 </div>

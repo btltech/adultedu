@@ -201,7 +201,7 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
                 <div className="relative mb-8 rounded-2xl overflow-hidden bg-dark-900 border border-dark-700 shadow-2xl">
                     <img
                         src={config.imageUrl || question.imageUrl}
-                        alt="Diagram to label"
+                        alt={`Diagram for: ${question.prompt}`}
                         className="w-full h-auto block"
                         draggable="false"
                     />

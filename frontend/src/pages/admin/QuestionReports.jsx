@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Check, Flag, RefreshCw, X } from 'lucide-react'
+import { Check, ChevronLeft, ChevronRight, Flag, RefreshCw, X } from 'lucide-react'
 import toast from 'react-hot-toast'
 import api from '../../lib/api'
 
@@ -15,13 +15,16 @@ const REASON_LABELS = {
 export default function QuestionReports() {
     const [reports, setReports] = useState([])
     const [status, setStatus] = useState('open')
+    const [page, setPage] = useState(1)
+    const [pages, setPages] = useState(1)
     const [loading, setLoading] = useState(true)
 
     const load = async () => {
         setLoading(true)
         try {
-            const data = await api.get(`/admin/question-reports?status=${status}&limit=100`)
+            const data = await api.get(`/admin/question-reports?status=${status}&page=${page}&limit=50`)
             setReports(data.reports || [])
+            setPages(Math.max(1, data.pagination?.pages || 1))
         } catch {
             toast.error('Could not load question reports')
         } finally {
@@ -29,7 +32,12 @@ export default function QuestionReports() {
         }
     }
 
-    useEffect(() => { load() }, [status])
+    useEffect(() => { load() }, [status, page])
+
+    const changeStatus = (nextStatus) => {
+        setStatus(nextStatus)
+        setPage(1)
+    }
 
     const update = async (id, nextStatus) => {
         try {
@@ -47,14 +55,14 @@ export default function QuestionReports() {
                 <div>
                     <p className="text-sm font-semibold uppercase tracking-[0.14em] text-accent-300">Learner feedback</p>
                     <h1 className="mt-2 text-3xl font-bold text-dark-50">Question reports</h1>
-                    <p className="mt-2 max-w-2xl text-dark-400">Review issues learners flag and record what happened. Reports do not remove questions automatically.</p>
+                    <p className="mt-2 max-w-2xl text-dark-400">Review issues learners flag and record what happened. Automatic quarantine is only used when explicitly enabled and its safety threshold is met.</p>
                 </div>
                 <button type="button" onClick={load} className="btn-secondary"><RefreshCw className="h-4 w-4" /> Refresh</button>
             </div>
 
             <div className="mb-6 flex flex-wrap gap-2">
                 {STATUS_OPTIONS.map((option) => (
-                    <button key={option} type="button" onClick={() => setStatus(option)} className={`rounded-xl px-4 py-2 text-sm font-medium ${status === option ? 'bg-primary-500/20 text-primary-200' : 'bg-dark-900 text-dark-400 hover:text-dark-100'}`}>
+                    <button key={option} type="button" onClick={() => changeStatus(option)} className={`rounded-xl px-4 py-2 text-sm font-medium ${status === option ? 'bg-primary-500/20 text-primary-200' : 'bg-dark-900 text-dark-400 hover:text-dark-100'}`}>
                         {option[0].toUpperCase() + option.slice(1)}
                     </button>
                 ))}
@@ -78,6 +86,7 @@ export default function QuestionReports() {
                                     {report.user?.email && <p className="mt-3 text-xs text-dark-500">Reported by {report.user.email}</p>}
                                 </div>
                                 <div className="flex shrink-0 gap-2 sm:self-start">
+                                    {status === 'open' && <button type="button" onClick={() => update(report.id, 'acknowledged')} className="btn-secondary px-3 py-2 text-sm"><Check className="h-4 w-4" /> Acknowledge</button>}
                                     <button type="button" onClick={() => update(report.id, 'fixed')} className="btn-primary px-3 py-2 text-sm"><Check className="h-4 w-4" /> Fixed</button>
                                     <button type="button" onClick={() => update(report.id, 'dismissed')} className="btn-secondary px-3 py-2 text-sm"><X className="h-4 w-4" /> Dismiss</button>
                                 </div>
@@ -85,6 +94,18 @@ export default function QuestionReports() {
                         </article>
                     ))}
                 </div>
+            )}
+
+            {pages > 1 && (
+                <nav className="mt-6 flex items-center justify-between" aria-label="Question report pages">
+                    <button type="button" onClick={() => setPage((current) => Math.max(1, current - 1))} disabled={page === 1} className="btn-secondary disabled:cursor-not-allowed disabled:opacity-40">
+                        <ChevronLeft className="h-4 w-4" /> Previous
+                    </button>
+                    <span className="text-sm text-dark-400">Page {page} of {pages}</span>
+                    <button type="button" onClick={() => setPage((current) => Math.min(pages, current + 1))} disabled={page === pages} className="btn-secondary disabled:cursor-not-allowed disabled:opacity-40">
+                        Next <ChevronRight className="h-4 w-4" />
+                    </button>
+                </nav>
             )}
         </div>
     )

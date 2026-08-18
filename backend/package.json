@@ -25,7 +25,8 @@
         "content:verify-metadata": "node scripts/verify-topic-mapped-metadata.js",
         "content:audit-snapshot": "node scripts/audit-published-snapshot.js",
         "security:audit": "npm audit",
-        "test": "cross-env NODE_ENV=test mocha \"test/**/*.test.js\" --exit"
+        "test": "cross-env NODE_ENV=test npm run test:prepare && cross-env NODE_ENV=test mocha \"test/**/*.test.js\" --exit",
+        "test:prepare": "node scripts/prepare-test-db.js"
     },
     "deploy:railway": "railway up",
     "prisma": {

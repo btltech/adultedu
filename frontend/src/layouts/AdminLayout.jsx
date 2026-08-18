@@ -11,9 +11,9 @@ export default function AdminLayout() {
     useEffect(() => {
         if (!loading) {
             if (!user) {
-                navigate('/login')
+                navigate('/login', { replace: true })
             } else if (user.role !== 'admin') {
-                navigate('/')
+                navigate('/', { replace: true })
             }
         }
     }, [user, loading, navigate])
