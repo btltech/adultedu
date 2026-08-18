@@ -10,7 +10,7 @@ import prisma from '../src/lib/db.js'
 const handbookNote = {
   type: 'callout',
   variant: 'info',
-  content: 'Source note: The official Life in the UK handbook is the definitive study source for the test. Public guidance is at https://www.gov.uk/life-in-the-uk-test and Parliament information is at https://www.parliament.uk/about/how/. This lesson uses original explanatory prose and is not an official test resource.',
+  content: 'Source note: The official Life in the UK handbook is the definitive study source for the test. Public guidance is at https://www.gov.uk/life-in-the-uk-test and Parliament information is at https://www.parliament.uk/about/how/publications1/how-the-uk-parliament-works/. This lesson uses original explanatory prose and is not an official test resource.',
 }
 
 const lessons = [
@@ -62,6 +62,7 @@ const lessons = [
       { type: 'paragraph', content: 'Magna Carta in 1215 is remembered as a statement that the ruler was not above the law, although its original purpose and audience were narrower than the modern idea of universal rights. Over time, Parliament developed from councils that advised the Crown into an institution involved in taxation, scrutiny, and law-making. The relationship between monarch, ministers, and Parliament changed through conflict such as the seventeenth-century Civil Wars and the later settlement commonly associated with the Bill of Rights 1689.' },
       { type: 'subheading', content: 'Union, industry, and society' },
       { type: 'paragraph', content: 'The political union of England and Scotland in 1707 created the Kingdom of Great Britain; the later union with Ireland in 1801 created the United Kingdom of Great Britain and Ireland. The nineteenth-century Industrial Revolution changed production, transport, towns, and working life. It created wealth and innovation as well as poverty, pollution, and pressure for reform. Social change was not automatic: campaigners, workers, reformers, and lawmakers contested who could vote, work safely, and access education.' },
+      { type: 'interactive', widget: 'history-timeline', title: 'Build the history timeline', prompt: 'Put these five events in order, then read what changed around each one.' },
       { type: 'subheading', content: 'The twentieth century and historical judgement' },
       { type: 'paragraph', content: 'The two World Wars, the expansion and later end of empire, the creation of the welfare state, and changing relationships among the UK’s nations all shaped modern life. When revising, distinguish a fact from an interpretation: a fact can be dated or evidenced, while an interpretation explains significance and may be debated. Ask whose experience is visible in a familiar story and whose is missing. Historical understanding grows by comparing evidence rather than memorising a single heroic narrative.' },
       { type: 'writing_activity', title: 'Build a cause-and-change timeline', prompt: 'Choose four events from this lesson. Put them in order and write one sentence for what each changed and one sentence for a consequence that followed later.', wordGuide: 'Write 140–180 words.', checklist: ['I placed events in chronological order.', 'I explained change rather than listing names.', 'I distinguished evidence from interpretation.'] },
