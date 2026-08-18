@@ -24,7 +24,16 @@ describe('content quality publication gate', () => {
     it('requires evidence and approval before publication', () => {
         const issues = publicationReadinessIssues({ reviewStatus: 'draft', contentRisk: 'standard' })
         expect(issues).to.include('Add a primary source URL before publishing.')
-        expect(issues).to.include('Set reviewStatus to approved before publishing.')
+        expect(issues).to.include('Set reviewStatus to approved before publishing (or legacy for existing public content).')
+    })
+
+    it('accepts legacy content that was public before the governance workflow', () => {
+        expect(publicationReadinessIssues({
+            ...approvedQuestion,
+            reviewStatus: 'legacy',
+            reviewedBy: null,
+            reviewedAt: null,
+        }, new Date('2026-08-16T00:00:00.000Z'))).to.deep.equal([])
     })
 
     it('requires a future review date for regulated content', () => {
