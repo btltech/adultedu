@@ -4,10 +4,13 @@ import {
     attachPublishedQuestionCounts,
     getPublishedQuestionCountMap,
 } from '../lib/publishedQuestionCounts.js'
+import { cache } from '../lib/cache.js'
 
 const router = Router()
 
 const PRACTICE_MINUTES_PER_QUESTION = 1.5
+const TRACK_CACHE_TTL_SECONDS = 60
+const TRACK_CACHE_HEADERS = 'public, max-age=60, stale-while-revalidate=300'
 
 const LEARNING_GOAL_CONFIG = {
     workplace: {
@@ -154,41 +157,44 @@ router.get('/tracks', async (req, res, next) => {
             studyTime: String(req.query.studyTime || '').trim(),
         }
 
-        const tracks = await prisma.track.findMany({
-            include: {
-                trackFrameworks: {
-                    include: {
-                        framework: true,
-                    },
-                },
-                topics: {
-                    select: {
-                        id: true,
-                        title: true,
-                        lessons: {
-                            where: { isPublished: true },
-                            select: { estMinutes: true },
+        const cacheKey = `tracks:list:v1:${JSON.stringify(filters)}`
+        const { value: formattedTracks } = await cache.getOrSetJson(cacheKey, async () => {
+            const tracks = await prisma.track.findMany({
+                include: {
+                    trackFrameworks: {
+                        include: {
+                            framework: true,
                         },
                     },
-                    orderBy: { sortOrder: 'asc' }
+                    topics: {
+                        select: {
+                            id: true,
+                            title: true,
+                            lessons: {
+                                where: { isPublished: true },
+                                select: { estMinutes: true },
+                            },
+                        },
+                        orderBy: { sortOrder: 'asc' },
+                    },
                 },
-            },
-            orderBy: [
-                { isLive: 'desc' },
-                { createdAt: 'asc' },
-            ],
-        })
+                orderBy: [
+                    { isLive: 'desc' },
+                    { createdAt: 'asc' },
+                ],
+            })
 
-        const topicIds = tracks.flatMap((track) => track.topics.map((topic) => topic.id))
-        const questionCountMap = await getPublishedQuestionCountMap(topicIds)
-        const tracksWithCounts = tracks.map((track) => ({
-            ...track,
-            topics: attachPublishedQuestionCounts(track.topics, questionCountMap),
-        }))
+            const topicIds = tracks.flatMap((track) => track.topics.map((topic) => topic.id))
+            const questionCountMap = await getPublishedQuestionCountMap(topicIds)
+            const tracksWithCounts = tracks.map((track) => ({
+                ...track,
+                topics: attachPublishedQuestionCounts(track.topics, questionCountMap),
+            }))
 
-        const formattedTracks = tracksWithCounts.map(formatTrack).filter((track) => matchesTrackFilters(track, filters))
+            return tracksWithCounts.map(formatTrack).filter((track) => matchesTrackFilters(track, filters))
+        }, { EX: TRACK_CACHE_TTL_SECONDS })
 
-        res.json(formattedTracks)
+        return res.set('Cache-Control', TRACK_CACHE_HEADERS).json(formattedTracks)
     } catch (error) {
         next(error)
     }
@@ -200,6 +206,12 @@ router.get('/tracks', async (req, res, next) => {
  */
 router.get('/tracks/:slug', async (req, res, next) => {
     try {
+        const cacheKey = `tracks:detail:v1:${req.params.slug}`
+        const cached = await cache.getJson(cacheKey)
+        if (cached !== null) {
+            return res.set('Cache-Control', TRACK_CACHE_HEADERS).json(cached)
+        }
+
         const track = await prisma.track.findUnique({
             where: { slug: req.params.slug },
             include: {
@@ -277,7 +289,8 @@ router.get('/tracks/:slug', async (req, res, next) => {
             })),
         }
 
-        res.json(formatted)
+        await cache.setJson(cacheKey, formatted, { EX: TRACK_CACHE_TTL_SECONDS })
+        return res.set('Cache-Control', TRACK_CACHE_HEADERS).json(formatted)
     } catch (error) {
         next(error)
     }
