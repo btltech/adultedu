@@ -4,6 +4,7 @@ import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, Clock3, GraduationC
 import { api, getUserMessage } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
 import NotFound from './NotFound'
+import { getLessonWidget } from '../components/lesson/widgets'
 import { usePageSeo } from '../components/SEO'
 import { lessonSeoTags } from '../lib/seo/meta'
 
@@ -349,6 +350,11 @@ export default function Lesson() {
                         </div>
                     )
                 }
+            case 'interactive': {
+                const Widget = getLessonWidget(block.widget)
+                // An unrecognised widget name should cost the learner nothing.
+                return Widget ? <Widget key={index} block={block} /> : null
+            }
             case 'writing_activity':
                 return <WritingActivity key={index} block={block} activityId={index} />
             case 'image_inference_activity':
