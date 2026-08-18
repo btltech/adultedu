@@ -65,6 +65,17 @@ export const config = {
         from: process.env.EMAIL_FROM || 'AdultEdu <noreply@adult-edu.org>',
     },
 
+    questionAudit: {
+        enabled: parseBooleanEnv(process.env.QUESTION_AUDIT_CRON_ENABLED, process.env.NODE_ENV === 'production'),
+        // Monday morning UTC: a full week of attempts behind it, and a whole
+        // working week ahead to act on what it finds.
+        dayOfWeek: Math.min(Math.max(parseIntegerEnv(process.env.QUESTION_AUDIT_CRON_DAY, 1), 0), 6),
+        hourUtc: Math.min(Math.max(parseIntegerEnv(process.env.QUESTION_AUDIT_CRON_UTC_HOUR, 4), 0), 23),
+        minuteUtc: Math.min(Math.max(parseIntegerEnv(process.env.QUESTION_AUDIT_CRON_UTC_MINUTE, 30), 0), 59),
+        // Reporting is on by default; unpublishing is opt-in, because it
+        // changes what learners see with nobody in the loop.
+        quarantine: parseBooleanEnv(process.env.QUESTION_AUDIT_QUARANTINE, false),
+    },
     returnReminders: {
         enabled: parseBooleanEnv(process.env.RETURN_REMINDER_CRON_ENABLED, process.env.NODE_ENV === 'production'),
         hourUtc: Math.min(Math.max(parseIntegerEnv(process.env.RETURN_REMINDER_CRON_UTC_HOUR, 9), 0), 23),
