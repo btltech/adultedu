@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:55:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual source-backed draft; unpublished and not approved for production."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-cybersecurity",
+    "title": "Safety online: protecting devices and accounts",
+    "objectives": [
+      {
+        "code": "EDS-L1-S1",
+        "text": "Know the common cybersecurity threats and take steps to protect devices and accounts using secure settings and tools."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Protecting Devices and Accounts",
+    "summary": "Recognise fictional cyber risks and choose protective actions without sharing passwords or codes.",
+    "objectives": [
+      {
+        "code": "EDS-L1-S1",
+        "text": "Know the common cybersecurity threats and take steps to protect devices and accounts using secure settings and tools."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Recognise common risks",
+        "body": "Cybersecurity risks can include phishing messages, malicious downloads, unsafe links, weak passwords, stolen devices and fake support requests. Warning signs may include urgency, unexpected attachments, unusual addresses or requests for secrets. No single sign proves a message is harmful, so pause and check through a trusted route before acting."
+      },
+      {
+        "heading": "Use protective settings",
+        "body": "Keep devices and apps updated, use a screen lock and choose a different strong password for each important account. A password manager can help when used correctly. Turn on multi-factor authentication or a passkey where available. Never practise by entering a real password, PIN or verification code into a lesson."
+      },
+      {
+        "heading": "Respond safely to uncertainty",
+        "body": "If a fictional message seems suspicious, do not click, reply or download. Close it, report it using the service's built-in process and ask a trusted person when unsure. If an account or device may be affected, use the provider's official recovery guidance. Acting calmly is safer than following an urgent demand."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Which is a warning sign in a fictional message?",
+        "options": [
+          "Urgency combined with an unexpected request for a secret",
+          "A routine message you expected",
+          "A known setting opened from the app",
+          "A saved local document"
+        ],
+        "correctIndex": 0,
+        "explanation": "Urgency and requests for secrets are useful reasons to pause and verify independently.",
+        "objectiveCode": "EDS-L1-S1"
+      },
+      {
+        "prompt": "Which action strengthens a fictional account?",
+        "options": [
+          "A unique password and multi-factor authentication",
+          "Sharing one password everywhere",
+          "Turning off all updates",
+          "Posting a verification code"
+        ],
+        "correctIndex": 0,
+        "explanation": "Unique credentials and an additional sign-in factor reduce common account risks.",
+        "objectiveCode": "EDS-L1-S1"
+      },
+      {
+        "prompt": "What should you do with a suspicious fictional link?",
+        "options": [
+          "Avoid it and check through a trusted route",
+          "Click quickly before it expires",
+          "Reply with your password",
+          "Forward it to everyone"
+        ],
+        "correctIndex": 0,
+        "explanation": "Avoiding the link and checking independently prevents an unsafe action.",
+        "objectiveCode": "EDS-L1-S1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "subject": "Functional Skills English",
+  "level": "Level 1",
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "units": [
+    {
+      "id": "fse-l1-reading-fact-opinion-purpose",
+      "title": "Reading: fact, opinion, purpose and audience",
+      "description": "Build confidence identifying main points and details, separating fact from opinion, and noticing how language changes for an audience and purpose.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "objectives": [
+        {
+          "code": "FSE-L1-R9",
+          "text": "Identify and understand the main points, ideas and details in texts."
+        },
+        {
+          "code": "FSE-L1-R11",
+          "text": "Identify meanings in texts, and distinguish between fact and opinion."
+        },
+        {
+          "code": "FSE-L1-R12",
+          "text": "Recognise that language and other textual features can be varied to suit different audiences and purposes."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-reading-structure-vocabulary",
+      "title": "Reading: structure, text types and specialist words",
+      "description": "Use organisational features to find information, recognise vocabulary linked to different text types, and understand specialist words from their context.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "objectives": [
+        {
+          "code": "FSE-L1-R14",
+          "text": "Understand organisational and structural features, and use them to locate relevant information."
+        },
+        {
+          "code": "FSE-L1-R16",
+          "text": "Recognise vocabulary typically associated with specific types and purposes of texts."
+        },
+        {
+          "code": "FSE-L1-R17",
+          "text": "Read and understand a range of specialist words in context."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-reading-compare-viewpoints",
+      "title": "Reading: comparing information, ideas and opinions",
+      "description": "Compare two short texts on the same subject, separating what each says from the view each writer expresses.",
+      "generationNotes": "Every practice item must contain two short fictional texts about the same subject. Across the set, assess: a difference in information; agreement or disagreement between writers; and a difference in ideas or opinions. Do not reduce this unit to isolated fact-versus-opinion identification.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "objectives": [
+        {
+          "code": "FSE-L1-R10",
+          "text": "Compare information, ideas and opinions in different texts."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-reading-reference-strategies",
+      "title": "Reading: using reference materials and word strategies",
+      "description": "Choose useful reference materials and use word type and context to work out meanings in straightforward texts.",
+      "generationNotes": "Use fictional texts only. Cover choosing a suitable reference source, using nearby words to infer a specialist word, and using word type or word parts as a clue. Do not claim that a dictionary definition is the only valid strategy.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "objectives": [
+        {
+          "code": "FSE-L1-R13",
+          "text": "Use reference materials and appropriate strategies (e.g. using knowledge of different word types) for a range of purposes, including to find the meaning of words."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-reading-punctuation-meaning",
+      "title": "Reading: using punctuation to understand meaning",
+      "description": "Use punctuation in straightforward texts to notice questions, emphasis, possession, pauses and boundaries between ideas.",
+      "generationNotes": "Assess how punctuation changes or clarifies meaning in a fictional sentence or notice. Cover different functions across the set, such as a question mark, apostrophe, comma or colon. Do not test learners by asking them to recall a punctuation rule without a readable context.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "objectives": [
+        {
+          "code": "FSE-L1-R18",
+          "text": "Use their knowledge of punctuation to aid understanding of straightforward texts."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-reading-image-inference",
+      "title": "Reading: inferring meaning from images",
+      "description": "Use a visual and its accompanying text together to infer a straightforward meaning that is suggested but not stated directly in the text.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresImageActivity": true,
+      "generationNotes": "Teach learners to notice visual clues such as symbols, layout, facial expression, direction and colour, then connect those clues to accompanying text. Do not treat an image as evidence for facts that cannot be seen. The image activity must test a meaning suggested by the approved visual but not stated directly in the supporting text.",
+      "imageActivity": {
+        "imageSrc": "/activities/fse-l1-quiet-study-zone.svg",
+        "imageAlt": "A learner studies at a desk with a book and laptop. A large speech bubble with sound waves is crossed out, suggesting that the area should be quiet.",
+        "supportingText": "New study space opens on Level 2. Tables can be booked at reception."
+      },
+      "objectives": [
+        {
+          "code": "FSE-L1-R15",
+          "text": "Infer from images meanings not explicit in the accompanying text."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-writing-punctuation",
+      "title": "Writing: punctuation for clear meaning",
+      "description": "Use punctuation in a short everyday or workplace text to make meaning clear for the reader.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresWritingActivity": true,
+      "generationNotes": "Cover punctuation choices in readable context, including full stops, question marks, commas or possessive apostrophes. The writing activity must invite a short original message and a self-review of punctuation choices; it must not claim to mark the learner's writing.",
+      "objectives": [
+        {
+          "code": "FSE-L1-W19",
+          "text": "Use a range of punctuation correctly (e.g. full stops, question marks, exclamation marks, commas, possessive apostrophes)."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-writing-grammar",
+      "title": "Writing: grammar and consistent tense",
+      "description": "Use clear sentence structure, agreement and consistent tense in a short purposeful piece of writing.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresWritingActivity": true,
+      "generationNotes": "Use fictional, everyday or workplace examples. Cover subject-verb agreement, consistent tense, and articles in context. The writing activity must invite a short original message and a self-review of grammar choices; it must not claim to mark the learner's writing.",
+      "objectives": [
+        {
+          "code": "FSE-L1-W20",
+          "text": "Use correct grammar (e.g. subject-verb agreement, consistent use of different tenses, definite and indefinite articles)."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-writing-spelling",
+      "title": "Writing: checking everyday and specialist words",
+      "description": "Plan and check spellings that matter in work, study and daily-life writing, including relevant specialist words.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresWritingActivity": true,
+      "generationNotes": "Avoid presenting one checking method as universal. Use fictional everyday, study or workplace contexts. The writing activity must include an opportunity to identify words to check and a self-review of spelling; it must not claim to mark the learner's writing.",
+      "objectives": [
+        {
+          "code": "FSE-L1-W21",
+          "text": "Spell words used most often in work, study and daily life, including specialist words."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-writing-purpose-audience",
+      "title": "Writing: clear information for purpose and audience",
+      "description": "Choose suitable detail, format and language when writing for a clear purpose and a particular reader.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresWritingActivity": true,
+      "generationNotes": "Cover clarity and coherence, enough relevant detail, and choices of format, structure and language for a reader and purpose. The writing activity must be an original short text such as an email, notice, instruction or report section with a self-review checklist; it must not claim to mark the learner's writing.",
+      "objectives": [
+        {
+          "code": "FSE-L1-W22",
+          "text": "Communicate information, ideas and opinions clearly, coherently and accurately."
+        },
+        {
+          "code": "FSE-L1-W23",
+          "text": "Write text of an appropriate level of detail and of appropriate length (including where this is specified) to meet the needs of the purpose and audience."
+        },
+        {
+          "code": "FSE-L1-W24",
+          "text": "Use format, structure and language appropriate for the audience and purpose."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-writing-sentences-paragraphs",
+      "title": "Writing: complex sentences and paragraphs",
+      "description": "Use clear complex sentences and paragraphs where they help a reader follow a longer straightforward text.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresWritingActivity": true,
+      "generationNotes": "Use straightforward texts only. Cover combining ideas accurately, paragraphing related information, and checking whether a sentence is clear. The writing activity must invite an original short text with more than one paragraph and a self-review checklist; it must not claim to mark the learner's writing.",
+      "objectives": [
+        {
+          "code": "FSE-L1-W25",
+          "text": "Write consistently and accurately in complex sentences, using paragraphs where appropriate."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-speaking-listening-information",
+      "title": "Speaking and listening: information, questions and responses",
+      "description": "Listen for relevant information and lines of argument, then ask and answer clear questions in a realistic conversation.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresSpeakingActivity": true,
+      "generationNotes": "Use short fictional transcripts or conversation summaries for knowledge practice. Cover identifying relevant information, asking a relevant question, and responding to a detailed question. The speaking activity must be a private role-play with a self-review checklist; it must not claim to assess a qualification.",
+      "objectives": [
+        {
+          "code": "FSE-L1-SLC1",
+          "text": "Identify relevant information and lines of argument in explanations or presentations."
+        },
+        {
+          "code": "FSE-L1-SLC2",
+          "text": "Make requests and ask relevant questions to obtain specific information in different contexts."
+        },
+        {
+          "code": "FSE-L1-SLC3",
+          "text": "Respond effectively to detailed questions."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-speaking-opinions-evidence",
+      "title": "Speaking and listening: clear opinions with evidence",
+      "description": "Explain information and opinions clearly, then support a view with relevant evidence in a short spoken response.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresSpeakingActivity": true,
+      "generationNotes": "Use fictional discussion contexts. Distinguish a reason or evidence from a personal preference. The speaking activity must ask learners to give an opinion and support it with relevant evidence or an example; it must be private self-review only.",
+      "objectives": [
+        {
+          "code": "FSE-L1-SLC4",
+          "text": "Communicate information, ideas and opinions clearly and accurately on a range of topics."
+        },
+        {
+          "code": "FSE-L1-SLC5",
+          "text": "Express opinions and arguments, and support them with evidence."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-speaking-discussion",
+      "title": "Speaking and listening: contributing to a discussion",
+      "description": "Follow the main points of a discussion and make a contribution that is relevant to the situation and subject.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresSpeakingActivity": true,
+      "generationNotes": "Use fictional conversation summaries or brief transcripts. Cover identifying the discussion topic, identifying a relevant contribution, and building on a point already made. The speaking activity must be private self-review only and must not claim to score a discussion.",
+      "objectives": [
+        {
+          "code": "FSE-L1-SLC6",
+          "text": "Follow and understand discussions and make contributions relevant to the situation and subject."
+        }
+      ]
+    },
+    {
+      "id": "fse-l1-speaking-register-turntaking",
+      "title": "Speaking and listening: adapting language and turn-taking",
+      "description": "Choose language that suits the audience and medium, while making respectful interjections in a discussion.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "requiresSpeakingActivity": true,
+      "generationNotes": "Use fictional spoken contexts such as a meeting, telephone call or community discussion. Cover adapting register for audience and medium, recognising respectful interjections, and allowing others to speak. The speaking activity must be private self-review only and must not claim to assess a qualification.",
+      "objectives": [
+        {
+          "code": "FSE-L1-SLC7",
+          "text": "Use appropriate phrases and registers, and adapt contributions to take account of purpose, audience and medium."
+        },
+        {
+          "code": "FSE-L1-SLC8",
+          "text": "Respect the turn-taking rights of others during discussions, using the appropriate language for interjections."
+        }
+      ]
+    }
+  ]
+}

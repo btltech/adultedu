@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:37:05.678Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content and national curriculum mathematics programmes of study",
+    "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-l2-graphs",
+    "title": "Graphs and functions: linear, quadratic and real-life models",
+    "objectives": [
+      {
+        "code": "GCSE-M-A2",
+        "text": "Use graphs and functions to represent, interpret and solve mathematical and real-life problems."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Linear and Quadratic Graphs: Interpretation and Transformation",
+    "summary": "This lesson explores how to plot, interpret, and transform linear and quadratic graphs. It focuses on identifying key features like gradients, intercepts, and roots, and applying these concepts to solve real-life mathematical problems using clear working.",
+    "objectives": [
+      {
+        "code": "GCSE-M-A2",
+        "text": "Use graphs and functions to represent, interpret and solve mathematical and real-life problems."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Linear Relationships and Gradient",
+        "body": "Linear graphs show constant rates of change. The gradient measures steepness by dividing the change in y by the change in x. The y-intercept indicates the starting value when x is zero. Understanding these features helps model steady growth or decline in real-life scenarios effectively."
+      },
+      {
+        "heading": "Quadratic Curves and Roots",
+        "body": "Quadratic graphs form parabolic shapes, representing accelerating or decelerating change. The roots are where the curve crosses the x-axis, indicating zero values. The vertex marks the maximum or minimum point. Identifying these features allows for accurate interpretation of physical motion or profit models. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Transforming Graphs for Analysis",
+        "body": "Transformations shift or stretch graphs without changing their fundamental shape. Adding a constant moves the graph vertically, while multiplying x stretches it horizontally. These techniques help compare different scenarios. By applying these rules, you can predict how changes in variables affect the overall outcome. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A line passes through (0, 5) and (2, 9). What is its gradient?",
+        "options": [
+          "2",
+          "4",
+          "5",
+          "9"
+        ],
+        "correctIndex": 0,
+        "explanation": "The gradient is calculated as (9-5)/(2-0), which equals 4/2 or 2.",
+        "objectiveCode": "GCSE-M-A2"
+      },
+      {
+        "prompt": "A quadratic function has roots at x = -2 and x = 3. Where does it cross the x-axis?",
+        "options": [
+          "At x = -2 and x = 3",
+          "At x = 0",
+          "At x = 1",
+          "At x = 5"
+        ],
+        "correctIndex": 0,
+        "explanation": "Roots are defined as the x-values where the function equals zero, meaning the graph crosses the x-axis there.",
+        "objectiveCode": "GCSE-M-A2"
+      },
+      {
+        "prompt": "If y = x^2 is transformed to y = x^2 + 4, how does the graph move?",
+        "options": [
+          "Up 4 units",
+          "Down 4 units",
+          "Left 4 units",
+          "Right 4 units"
+        ],
+        "correctIndex": 0,
+        "explanation": "Adding a positive constant to the function shifts the entire graph vertically upwards by that amount.",
+        "objectiveCode": "GCSE-M-A2"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "sourceTitle": "GCSE subject content and national curriculum mathematics programmes of study"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

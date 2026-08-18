@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T17:03:41.351Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review made the solo role-play self-contained, removed unsupported turn-taking claims, and corrected leftover prompt formatting. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-speaking-register-turntaking",
+    "title": "Speaking and listening: adapting language and turn-taking",
+    "objectives": [
+      {
+        "code": "FSE-L1-SLC7",
+        "text": "Use appropriate phrases and registers, and adapt contributions to take account of purpose, audience and medium."
+      },
+      {
+        "code": "FSE-L1-SLC8",
+        "text": "Respect the turn-taking rights of others during discussions, using the appropriate language for interjections."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Adapting Language and Turn-Taking in Discussions",
+    "summary": "This lesson explores how to adjust your language for different audiences and media while maintaining respectful turn-taking. Learners will identify appropriate registers for specific contexts and practice making polite interjections without interrupting others. The focus is on practical application in fictional spoken scenarios.",
+    "objectives": [
+      {
+        "code": "FSE-L1-SLC7",
+        "text": "Use appropriate phrases and registers, and adapt contributions to take account of purpose, audience and medium."
+      },
+      {
+        "code": "FSE-L1-SLC8",
+        "text": "Respect the turn-taking rights of others during discussions, using the appropriate language for interjections."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Register and Audience",
+        "body": "Choosing the right words depends on who you are speaking to and how you are communicating. A formal meeting can call for different language from a casual chat with friends. On the phone, clear wording can be especially useful because a listener cannot see facial expressions or gestures. Adapting your tone helps your message suit its intended audience and purpose."
+      },
+      {
+        "heading": "Respecting Turn-Taking Rights",
+        "body": "Good discussions rely on everyone having a fair chance to speak. Interrupting can make others feel unheard and disrupt the flow of conversation. Instead of cutting in, use polite phrases to signal that you want to add a point. Waiting for a natural pause shows respect for the current speaker and helps maintain a collaborative and positive atmosphere during group interactions."
+      },
+      {
+        "heading": "Making Polite Interjections",
+        "body": "When a point needs clarification or you have something relevant to add, wait for a suitable pause where possible. Use polite language to signal your contribution. Phrases like ‘if I may add’ or ‘building on that point’ show that you are listening while contributing. This can help you take part without dominating or dismissing another speaker."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "You are speaking to a new colleague during a formal project review. Which phrase best suits this context?",
+        "options": [
+          "Hey, listen to this.",
+          "I would like to suggest an alternative.",
+          "Dude, that’s wrong.",
+          "Whatever, let’s move on."
+        ],
+        "correctIndex": 1,
+        "explanation": "The formal context of a project review requires professional and polite language.",
+        "objectiveCode": "FSE-L1-SLC7"
+      },
+      {
+        "prompt": "A speaker is explaining a complex idea in a community meeting. How can you interject respectfully?",
+        "options": [
+          "Stop, I have a better idea.",
+          "Sorry to interrupt, but I have a question.",
+          "You are wrong about that.",
+          "Let me tell you what to do."
+        ],
+        "correctIndex": 1,
+        "explanation": "Apologising for the interruption and stating your intent is the most respectful approach.",
+        "objectiveCode": "FSE-L1-SLC8"
+      },
+      {
+        "prompt": "You are on a telephone call with a client who is speaking. What is the best way to wait for your turn?",
+        "options": [
+          "Talk over them to save time.",
+          "Wait for a natural pause in their speech.",
+          "Hang up if they take too long.",
+          "Make loud noises to get attention."
+        ],
+        "correctIndex": 1,
+        "explanation": "Waiting for a natural pause respects the speaker's turn-taking rights.",
+        "objectiveCode": "FSE-L1-SLC8"
+      }
+    ],
+    "speakingActivity": {
+      "title": "Private Self-Recorded Discussion Practice",
+      "prompt": "Practise a response to this colleague: ‘We need clearer notices about the new office policy.’ Acknowledge the point, add one suggestion, then ask a clarifying question about the next steps. Use language that would suit a workplace meeting.",
+      "timingGuide": "About one minute",
+      "checklist": [
+        "Did I use professional language suitable for a workplace meeting?",
+        "Did I use a polite phrase to show how I would add my point after a suitable pause?",
+        "Did I ask a clear question about the next steps?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

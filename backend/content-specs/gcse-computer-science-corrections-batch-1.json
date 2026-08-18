@@ -1,0 +1,17 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-computer-science",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 7,
+  "records": [
+    {"id":"43a63ae4-de81-433e-a412-17af70bb126d","change":"Clarified the four core computational-thinking techniques."},
+    {"id":"de13b530-fcc1-4096-b0b7-9b4205c1e78c","change":"Scoped integer declaration to C and removed mixed-language explanation."},
+    {"id":"0f45cd71-1eca-42f4-86ce-24215a43e3af","change":"Scoped logical AND operator to a C-like language."},
+    {"id":"23a57cb2-d7f2-42bc-9b0d-f1f38c906bd2","change":"Rewrote main as a conventional entry-point function."},
+    {"id":"3d1ceb9d-ba01-4c6e-b44b-7d89c905ebff","change":"Specified records/structures stored in a collection for book data."},
+    {"id":"748deb4e-98c3-4127-bbe6-ecf21bf2c9bd","change":"Specified a list of member records with paired fields."},
+    {"id":"db1e140b-0506-459e-83ff-2bad7a3523dc","change":"Corrected the senior-fee answer index to £16."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

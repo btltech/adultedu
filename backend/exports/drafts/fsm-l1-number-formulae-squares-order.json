@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T17:25:36.861Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Editorial review checked the formulae, square and order-of-operations calculations, confirmed each answer and explanation, and found the objectives appropriately represented. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-number-formulae-squares-order",
+    "title": "Number: formulae, squares and order of operations",
+    "objectives": [
+      {
+        "code": "FSM-L1-5",
+        "text": "Use simple formulae expressed in words for one-step and 2-step operations."
+      },
+      {
+        "code": "FSM-L1-6",
+        "text": "Calculate the squares of one-digit and 2-digit numbers."
+      },
+      {
+        "code": "FSM-L1-7",
+        "text": "Follow the order of precedence of operators."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Number: formulae, squares and order of operations",
+    "summary": "Learn to turn word rules into calculations, calculate squares, and apply the correct order of operations for multi-step problems.",
+    "objectives": [
+      {
+        "code": "FSM-L1-5",
+        "text": "Use simple formulae expressed in words for one-step and 2-step operations."
+      },
+      {
+        "code": "FSM-L1-6",
+        "text": "Calculate the squares of one-digit and 2-digit numbers."
+      },
+      {
+        "code": "FSM-L1-7",
+        "text": "Follow the order of precedence of operators."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Turning word rules into calculations",
+        "body": "You can turn everyday rules into maths. For example, total cost equals price times quantity. If you buy three items at five pounds each, you calculate three times five. This is a one-step formula. For two steps, add a fixed fee. If the fee is two pounds, you calculate three times five plus two. This helps you solve real problems."
+      },
+      {
+        "heading": "Calculating squares of numbers",
+        "body": "Squaring a number means multiplying it by itself. For one-digit numbers, like four, you calculate four times four, which is sixteen. For two-digit numbers, like twelve, you calculate twelve times twelve. This equals one hundred and forty-four. Squaring is useful for area calculations. It helps you find the size of square spaces in everyday life and work settings."
+      },
+      {
+        "heading": "Order of operations",
+        "body": "When a calculation has multiple operations, follow a specific order. First, do any brackets. Next, multiply or divide. Finally, add or subtract. For example, in two plus three times four, you multiply first. Three times four is twelve. Then add two to get fourteen. This ensures everyone gets the same correct answer every time."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A shop sells pens for £2 each. A customer buys 5 pens and pays a £1 delivery fee. What is the total cost?",
+        "options": [
+          "£10",
+          "£11",
+          "£12",
+          "£15"
+        ],
+        "correctIndex": 1,
+        "explanation": "Calculate 5 × £2 = £10, then add the £1 fee to get £11.",
+        "objectiveCode": "FSM-L1-5"
+      },
+      {
+        "prompt": "What is the square of the number 7?",
+        "options": [
+          "14",
+          "21",
+          "49",
+          "70"
+        ],
+        "correctIndex": 2,
+        "explanation": "Squaring 7 means calculating 7 × 7, which equals 49.",
+        "objectiveCode": "FSM-L1-6"
+      },
+      {
+        "prompt": "Calculate the result of 10 + 4 × 2, following the correct order of operations.",
+        "options": [
+          "28",
+          "18",
+          "14",
+          "20"
+        ],
+        "correctIndex": 1,
+        "explanation": "Multiply 4 × 2 = 8 first, then add 10 to get 18.",
+        "objectiveCode": "FSM-L1-7"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

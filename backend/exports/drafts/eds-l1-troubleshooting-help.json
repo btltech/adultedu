@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T20:10:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation requests were unreliable. Safe troubleshooting boundaries, escalation and all practice decisions were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-troubleshooting-help",
+    "title": "Using devices: finding help and fixing common problems",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD2",
+        "text": "Access and navigate structured help tools to identify and attempt appropriate solutions to common technical issues."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Finding Help and Fixing Common Problems",
+    "summary": "Use official help tools to identify a sensible first step for common device, connection, login or app problems, and know when to ask for support.",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD2",
+        "text": "Access and navigate structured help tools to identify and attempt appropriate solutions to common technical issues."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Start with a structured help source",
+        "body": "When an app or device is not working, use a structured help source such as an in-app help menu, official support centre, FAQ or trusted workplace guide. Describe the problem clearly when searching, including any error message but never a password or verification code. Step-by-step guidance can help you identify a safe first action rather than guessing."
+      },
+      {
+        "heading": "Try straightforward checks",
+        "body": "Common first checks include confirming a connection, closing and reopening an app, checking whether an update is available, or using the official password-reset process. Read the guidance fully before acting and check that it matches your device. Do not disable security features or install unknown software just to make a problem disappear. Keep a note of what you tried."
+      },
+      {
+        "heading": "Know when to stop and ask",
+        "body": "If a problem continues, involves sensitive information, or asks you to take an unfamiliar security action, stop and seek appropriate support. Use an official contact route, workplace IT support or a trusted person. Explain what happened, what the device showed and which safe steps you tried. This gives support staff useful information without sharing credentials or private codes."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional email app closes whenever it opens. Which is the best first source of guidance?",
+        "options": [
+          "The app's official help menu or support centre",
+          "A link in an unexpected pop-up",
+          "A request to share the account password",
+          "An unknown file offered in a chat"
+        ],
+        "correctIndex": 0,
+        "explanation": "An official help menu or support centre is a structured source for identifying a safe response to an app problem.",
+        "objectiveCode": "EDS-L1-UD2"
+      },
+      {
+        "prompt": "A fictional device cannot connect to a familiar wi-fi network. Which is a sensible straightforward check?",
+        "options": [
+          "Check the device's connectivity settings and the official help guidance.",
+          "Turn off all account security settings.",
+          "Give a verification code to a stranger.",
+          "Install software from an unknown advert."
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking connectivity settings and official guidance addresses the stated problem without bypassing security.",
+        "objectiveCode": "EDS-L1-UD2"
+      },
+      {
+        "prompt": "A support page asks a learner to reveal a password before it can help with a problem. What should the learner do?",
+        "options": [
+          "Share the password immediately.",
+          "Stop and use an official support route instead.",
+          "Post the password in a public forum.",
+          "Turn off multi-factor authentication."
+        ],
+        "correctIndex": 1,
+        "explanation": "A legitimate support process should not require a learner to disclose a password, so they should stop and use an official route.",
+        "objectiveCode": "EDS-L1-UD2"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

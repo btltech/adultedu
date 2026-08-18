@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:54:10.881Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-eng-l2-structure-form",
+    "title": "Structure and form",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-R4",
+        "text": "Analyse how structure and form organise texts and develop meaning."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Structural Foundations in Texts",
+    "summary": "This lesson explores how beginnings, shifts, and endings shape reader experience. It focuses on structural effects rather than author biography, using short stimuli to analyse form.",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-R4",
+        "text": "Analyse how structure and form organise texts and develop meaning."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "The Power of Beginnings",
+        "body": "A strong opening establishes context and tone immediately. It guides the reader’s expectations by introducing key themes or conflicts. This initial structure creates a framework for understanding subsequent events. Effective beginnings do not merely state facts; they actively shape how the audience interprets the narrative’s direction and emotional weight."
+      },
+      {
+        "heading": "Managing Narrative Shifts",
+        "body": "Transitions and shifts control the pace of information delivery. They signal changes in time, perspective, or focus, preventing confusion. By strategically placing these breaks, writers manage reader attention and highlight significant developments. This structural choice ensures that the progression feels logical and intentional, rather than chaotic or disjointed for the audience."
+      },
+      {
+        "heading": "Crafting Effective Endings",
+        "body": "Conclusions resolve tension or reinforce central themes, leaving a lasting impression. They provide closure while often inviting further reflection on the text’s broader implications. A well-structured ending ties together earlier elements, creating a cohesive whole. This final section determines how the reader ultimately evaluates the message and emotional impact of the piece."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The rain stopped abruptly. Silence filled the room.\" How does the shift in sentence structure affect the reader?",
+        "options": [
+          "It introduces a new character.",
+          "It creates a sudden pause in action.",
+          "It explains the weather forecast.",
+          "It describes the room's colour."
+        ],
+        "correctIndex": 1,
+        "explanation": "The short, declarative sentence following the action creates a structural pause that emphasises the resulting silence.",
+        "objectiveCode": "GCSE-ENG-R4"
+      },
+      {
+        "prompt": "Read: \"She opened the door. Years passed. She closed it again.\" What is the structural effect of the middle sentence?",
+        "options": [
+          "It provides a detailed biography.",
+          "It compresses a long timeframe.",
+          "It lists the room's contents.",
+          "It predicts the future outcome."
+        ],
+        "correctIndex": 1,
+        "explanation": "The brief statement between two actions structurally compresses a significant passage of time into a single moment.",
+        "objectiveCode": "GCSE-ENG-R4"
+      },
+      {
+        "prompt": "Read: \"He looked at the map. He looked at the map.\" How does the repetition in the ending function?",
+        "options": [
+          "It indicates a printing error.",
+          "It emphasises his hesitation.",
+          "It reveals his secret identity.",
+          "It describes the map's size."
+        ],
+        "correctIndex": 1,
+        "explanation": "Repeating the action in the final line structurally emphasises the character's indecision or hesitation.",
+        "objectiveCode": "GCSE-ENG-R4"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

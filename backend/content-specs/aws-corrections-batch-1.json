@@ -1,0 +1,11 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "aws-cloud-practitioner",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 1,
+  "records": [
+    {"id":"ef07c1cc-4e07-484f-9bb0-09dd813f89c1","change":"Corrected database-cost optimisation answer to autoscaling."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

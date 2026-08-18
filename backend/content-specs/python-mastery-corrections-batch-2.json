@@ -1,0 +1,13 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "python-mastery",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 3,
+  "records": [
+    {"id":"03ac1622-37fb-4cdc-b873-70c90e2fc2c4","change":"Added a genuinely non-iterable filter argument and selected the invalid snippet."},
+    {"id":"5b1aff47-b5bb-46fc-8a3a-686a8004a42c","change":"Rewrote the deadlock item to have one definitely self-deadlocking pattern."},
+    {"id":"2be5cdaf-8aa9-43e8-839a-2dbda5121348","change":"Corrected FastAPI validation status from 400 to 422."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

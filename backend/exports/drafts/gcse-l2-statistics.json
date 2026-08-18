@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:33:04.008Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content and national curriculum mathematics programmes of study",
+    "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-l2-statistics",
+    "title": "Statistics: sampling, averages and data",
+    "objectives": [
+      {
+        "code": "GCSE-M-S1",
+        "text": "Interpret and analyse data using statistical measures, representations, sampling and reasoned conclusions."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Statistics: Sampling, Averages and Data",
+    "summary": "Learn to interpret statistical data, compare distributions, and draw cautious conclusions using averages and spread.",
+    "objectives": [
+      {
+        "code": "GCSE-M-S1",
+        "text": "Interpret and analyse data using statistical measures, representations, sampling and reasoned conclusions."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Averages and Spread",
+        "body": "Averages summarise data, but spread reveals variation. A small range suggests consistency, while a wide range indicates diversity. Always consider both measures together. Relying solely on the mean can hide significant differences within a dataset, leading to misleading interpretations of the underlying distribution and potential errors in analysis."
+      },
+      {
+        "heading": "Sampling and Representativeness",
+        "body": "Sampling involves selecting a subset to represent a larger population. A biased sample skews results, making conclusions unreliable. Random selection helps ensure fairness. However, even random samples have limitations. Always acknowledge that findings from a sample are estimates, not absolute truths about the entire group or population."
+      },
+      {
+        "heading": "Correlation and Causation",
+        "body": "Correlation shows a relationship between variables, but it does not prove causation. Two factors may move together due to a third, hidden influence. For example, ice cream sales and drowning incidents both rise in summer. This does not mean one causes the other. Always seek evidence before claiming a direct causal link."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A survey of 50 students found an average height of 160cm, with a range of 10cm. Another group of 50 students had an average of 160cm, but a range of 40cm. Which statement is most accurate?",
+        "options": [
+          "The first group is more consistent in height.",
+          "The second group has taller individuals on average.",
+          "Both groups have identical height distributions.",
+          "The first group contains only students of 160cm."
+        ],
+        "correctIndex": 0,
+        "explanation": "A smaller range indicates less variation, meaning the first group is more consistent.",
+        "objectiveCode": "GCSE-M-S1"
+      },
+      {
+        "prompt": "A researcher surveys only students in a swimming club to estimate average height for all students. What is the primary statistical concern?",
+        "options": [
+          "The sample size is too small.",
+          "The sample may be biased towards taller individuals.",
+          "The average height cannot be calculated.",
+          "The data is not numerical."
+        ],
+        "correctIndex": 1,
+        "explanation": "Selecting only swimmers introduces bias, as they may be taller than the general student population.",
+        "objectiveCode": "GCSE-M-S1"
+      },
+      {
+        "prompt": "Data shows that as hours spent studying increase, exam scores also increase. Which conclusion is statistically valid?",
+        "options": [
+          "Studying directly causes higher exam scores.",
+          "There is a positive correlation between study time and scores.",
+          "Students who study more are naturally smarter.",
+          "Exam scores determine how much students study."
+        ],
+        "correctIndex": 1,
+        "explanation": "The data supports a correlation, but does not prove causation or rule out other factors.",
+        "objectiveCode": "GCSE-M-S1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "sourceTitle": "GCSE subject content and national curriculum mathematics programmes of study"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:40:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual correction after model length failure. Checked against the official standard. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-online-collaboration",
+    "title": "Collaboration: shared documents and respectful feedback",
+    "objectives": [
+      {
+        "code": "EDS-L1-CC2",
+        "text": "Use shared online platforms to contribute to joint tasks by accessing shared workspaces, editing content, and adding comments."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Working in Shared Online Spaces",
+    "summary": "Access a shared workspace, contribute carefully and give respectful feedback while keeping shared work up to date.",
+    "objectives": [
+      {
+        "code": "EDS-L1-CC2",
+        "text": "Use shared online platforms to contribute to joint tasks by accessing shared workspaces, editing content, and adding comments."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Access a shared workspace",
+        "body": "A shared workspace lets people contribute to the same document or task. Use an invitation or trusted link, then check that the platform and permissions are appropriate. View access may allow reading, while edit access allows changes. Before adding information, understand who can see it and whether the workspace is the correct one."
+      },
+      {
+        "heading": "Edit and comment carefully",
+        "body": "When working with others, make changes that support the agreed task. Use comments or suggestions to ask questions and give specific feedback rather than replacing someone else's work without explanation. Check other contributions before saving or submitting. Clear, respectful language helps a team understand what changed and what action is needed next."
+      },
+      {
+        "heading": "Keep shared work up to date",
+        "body": "Shared work can change while several people contribute. Check that your edits were saved and that the latest version is open before continuing. Follow the group's naming, layout and review arrangements. A video call or message may help coordinate a task, but do not share private information or invite people who are not authorised."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional colleague sends a trusted invitation to a shared document. What should the learner check first?",
+        "options": [
+          "The workspace and permissions are appropriate",
+          "A stranger's password",
+          "An unrelated advert",
+          "A random download"
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking the workspace and permissions helps ensure the learner is in the correct shared space with suitable access.",
+        "objectiveCode": "EDS-L1-CC2"
+      },
+      {
+        "prompt": "Which comment is most useful on a fictional shared document?",
+        "options": [
+          "Please check the date in section two; it may need updating.",
+          "This is rubbish.",
+          "Delete everyone else's work.",
+          "Share the login code."
+        ],
+        "correctIndex": 0,
+        "explanation": "Specific, respectful feedback tells collaborators what to check and where.",
+        "objectiveCode": "EDS-L1-CC2"
+      },
+      {
+        "prompt": "Before continuing work in a shared document, what should a learner check?",
+        "options": [
+          "That their edits were saved in the latest version",
+          "That all comments were hidden without reading",
+          "That permissions were shared publicly",
+          "That private details were added"
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking the latest saved version helps prevent lost or conflicting changes.",
+        "objectiveCode": "EDS-L1-CC2"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

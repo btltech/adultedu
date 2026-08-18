@@ -1,0 +1,159 @@
+{
+  "subject": "Functional Skills Maths",
+  "level": "Level 1",
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "units": [
+    {
+      "id": "fsm-l1-number-place-value-signed-powers",
+      "title": "Number: place value, signed numbers and powers of 10",
+      "description": "Read, order and compare large and signed numbers, then use powers of 10 to make reliable changes to whole numbers and decimals.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use short, realistic numerical contexts. Make the direction of a multiply or divide by 10, 100 or 1,000 explicit. Include a number-line or temperature context for signed numbers. Each explanation must show the calculation or comparison clearly; never say that a decimal point simply moves without explaining place value.",
+      "objectives": [
+        { "code": "FSM-L1-1", "text": "Read, write, order and compare large numbers up to one million." },
+        { "code": "FSM-L1-2", "text": "Recognise and use positive and negative numbers." },
+        { "code": "FSM-L1-3", "text": "Multiply and divide whole numbers and decimals by 10, 100 and 1,000." },
+        { "code": "FSM-L1-4", "text": "Use multiplication facts and make connections with division facts." }
+      ]
+    },
+    {
+      "id": "fsm-l1-number-formulae-squares-order",
+      "title": "Number: formulae, squares and order of operations",
+      "description": "Turn a word rule into a calculation, work with squares, and follow the correct order when a calculation has more than one operation.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use everyday formulae such as total cost, perimeter or pay. Include one-step and two-step formulae, but do not introduce algebra beyond the stated skill. For order of operations, use brackets only where they clarify a Level 1 calculation and show each step in the explanation.",
+      "objectives": [
+        { "code": "FSM-L1-5", "text": "Use simple formulae expressed in words for one-step and 2-step operations." },
+        { "code": "FSM-L1-6", "text": "Calculate the squares of one-digit and 2-digit numbers." },
+        { "code": "FSM-L1-7", "text": "Follow the order of precedence of operators." }
+      ]
+    },
+    {
+      "id": "fsm-l1-number-fractions",
+      "title": "Number: fractions and mixed numbers",
+      "description": "Read, order and compare common fractions and mixed numbers, then find a fraction of a whole-number quantity or measurement.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use quantities that divide exactly unless the purpose is comparison. Include one mixed-number comparison and one fraction-of-a-measurement question. Show the method in explanations, for example dividing by the denominator then multiplying by the numerator, rather than offering an unexplained answer.",
+      "objectives": [
+        { "code": "FSM-L1-8", "text": "Read, write, order and compare common fractions and mixed numbers." },
+        { "code": "FSM-L1-9", "text": "Find fractions of whole-number quantities and measurements." }
+      ]
+    },
+    {
+      "id": "fsm-l1-number-decimals-estimation",
+      "title": "Number: decimals, calculation and estimation",
+      "description": "Order decimals, calculate with money-style values, and use rounding to make a sensible estimate or check an answer.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use decimals to no more than the stated precision. Include one addition or subtraction, one multiplication or division, and one estimate/check. Keep monetary contexts fictional and make clear when an estimate is appropriate rather than an exact final amount.",
+      "objectives": [
+        { "code": "FSM-L1-10", "text": "Read, write, order and compare decimals up to 3 decimal places." },
+        { "code": "FSM-L1-11", "text": "Add, subtract, multiply and divide decimals up to 2 decimal places." },
+        { "code": "FSM-L1-12", "text": "Approximate by rounding to a whole number, one decimal place and 2 decimal places." }
+      ]
+    },
+    {
+      "id": "fsm-l1-number-percentages-ratio-proportion",
+      "title": "Number: percentages, equivalence, ratio and proportion",
+      "description": "Compare whole-number percentages, calculate common percentage changes, and connect fractions, decimals, percentages, simple ratios and direct proportion.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Cover a percentage of a quantity or a 5% multiple increase/decrease, a fraction-decimal-percentage equivalence, and a simple ratio or direct-proportion situation. Use exact, checkable values. Do not introduce compound interest or percentages not supported by the Level 1 scope.",
+      "objectives": [
+        { "code": "FSM-L1-13", "text": "Read, write, order and compare percentages in whole numbers." },
+        { "code": "FSM-L1-PCT", "text": "Calculate percentage increases and decreases in multiples of 5%, estimate using fractions and decimals, recognise common fraction-decimal-percentage equivalences, and work with simple ratio and direct proportions." }
+      ]
+    },
+    {
+      "id": "fsm-l1-measures-money-interest-discount",
+      "title": "Measures: money, simple interest and discounts",
+      "description": "Calculate simple interest and discounts in multiples of 5%, then interpret the result in a straightforward money context.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use fictional money examples only. Restrict interest and discounts to multiples of 5%. Clearly distinguish the interest or discount from the final amount. Do not give financial product advice, recommend borrowing, or present this as personal financial guidance.",
+      "objectives": [
+        { "code": "FSM-L1-14", "text": "Calculate simple interest in multiples of 5% on amounts of money." },
+        { "code": "FSM-L1-15", "text": "Calculate discounts in multiples of 5% on amounts of money." }
+      ]
+    },
+    {
+      "id": "fsm-l1-measures-conversion-scales",
+      "title": "Measures: converting units and using scales",
+      "description": "Convert related units for length, weight, capacity, money and time, then use a simple scale on a map or drawing.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Keep conversions within the same measurement system. Include only one conversion step per item unless the item explicitly practises a connected two-step problem. For map or drawing scales, provide all information needed and state the units; do not rely on a diagram the learner cannot see.",
+      "objectives": [
+        { "code": "FSM-L1-16", "text": "Convert in the same system between units of length, weight, capacity, money and time." },
+        { "code": "FSM-L1-17", "text": "Recognise and make use of simple scales on maps and drawings." }
+      ]
+    },
+    {
+      "id": "fsm-l1-shape-perimeter-area-volume",
+      "title": "Shape and space: perimeter, area and volume",
+      "description": "Calculate perimeter and area for straightforward composite rectangles, then calculate the volume of cubes and cuboids.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "State every required dimension in the question. For composite rectangles, use a shape that can be explained fully in words or ASCII-free labelled dimensions; do not require an unseen image. Include units in each answer and explanation, and distinguish square units from cubic units.",
+      "objectives": [
+        { "code": "FSM-L1-18", "text": "Calculate the area and perimeter of simple shapes, including those that are made up of a combination of rectangles." },
+        { "code": "FSM-L1-19", "text": "Calculate the volumes of cubes and cuboids." }
+      ]
+    },
+    {
+      "id": "fsm-l1-shape-properties-3d-angles",
+      "title": "Shape and space: properties, 3-D views and angles",
+      "description": "Describe 2-D shape properties, interpret simple 3-D representations, and measure or use angles to describe position and direction.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "For plans, elevations and nets, describe all relevant faces and dimensions in the question rather than assuming a visual. Include a symmetry or relative-angle concept and a direction or measured-angle context. Do not claim a learner has drawn or measured something when the activity is text-only.",
+      "objectives": [
+        { "code": "FSM-L1-20", "text": "Draw 2-D shapes and demonstrate an understanding of line symmetry and knowledge of the relative size of angles." },
+        { "code": "FSM-L1-21", "text": "Interpret plans, elevations and nets of simple 3-D shapes." },
+        { "code": "FSM-L1-22", "text": "Measure angles in degrees and use angles when describing position and direction." }
+      ]
+    },
+    {
+      "id": "fsm-l1-data-charts-grouping",
+      "title": "Data: representing and grouping information",
+      "description": "Read and choose tables, charts and graphs for discrete data, then group data and represent it clearly for a purpose.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use compact fictional data sets that can be read in plain text. Cover a bar chart, pie chart or line graph concept and a grouped-data decision. Never ask learners to infer values from an unprovided image; give the values in a table or describe the graph precisely.",
+      "objectives": [
+        { "code": "FSM-L1-23", "text": "Represent discrete data in tables, diagrams and charts, including pie charts, bar charts and line graphs." },
+        { "code": "FSM-L1-24", "text": "Group discrete data and represent grouped data graphically." }
+      ]
+    },
+    {
+      "id": "fsm-l1-data-mean-range",
+      "title": "Data: mean and range",
+      "description": "Find the mean and range of a small set of quantities, and choose the statement that describes what each measure tells you.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use small, complete data sets with no ambiguous rounding. Include an interpretation distinction: mean describes an average, range describes spread from lowest to highest. Explanations must show the total and division for a mean, and identify the highest and lowest values for a range.",
+      "objectives": [
+        { "code": "FSM-L1-25", "text": "Find the mean and range of a set of quantities." }
+      ]
+    },
+    {
+      "id": "fsm-l1-data-probability",
+      "title": "Data: probability and equally likely outcomes",
+      "description": "Use the probability scale from impossible to certain, compare likelihoods, and express simple equally likely outcomes as fractions.",
+      "sectionCount": 3,
+      "practiceCount": 3,
+      "generationNotes": "Use transparent, equally likely fictional outcomes such as coloured counters or fair spinners with fully stated sections. Cover the 0-to-1 probability scale, a likelihood comparison, and a fraction probability. Do not use real-world risk claims or assume outcomes are equally likely unless explicitly stated.",
+      "objectives": [
+        { "code": "FSM-L1-26", "text": "Understand probability on a scale from 0 (impossible) to 1 (certain) and use probabilities to compare the likelihood of events." },
+        { "code": "FSM-L1-27", "text": "Use equally likely outcomes to find the probabilities of simple events and express them as fractions." }
+      ]
+    }
+  ]
+}

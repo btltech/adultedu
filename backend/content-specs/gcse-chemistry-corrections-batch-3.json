@@ -1,0 +1,19 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-chemistry",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 9,
+  "records": [
+    {"id":"fbe63f52-6c62-40de-8cb8-555bc45c3a93","change":"Corrected the false aluminium/copper conductivity premise."},
+    {"id":"3c61f73a-09d8-428c-8507-585ce5dccf67","change":"Corrected the MgO reaction result to zero carbon dioxide."},
+    {"id":"2fc0830c-e357-4fd8-93b2-3893418c00b2","change":"Corrected the hydrogen-atom answer index to 6.02 × 10²³."},
+    {"id":"242e115a-197c-4bde-98c7-7c7effe55c70","change":"Replaced inconsistent combustion data with a coherent CH₂ empirical-formula problem."},
+    {"id":"2f5a87cb-5982-44a2-a440-00d4c43d0bca","change":"Added the calculated 7.2 dm³ gas-volume option."},
+    {"id":"4ff18cb1-404d-40d5-9d11-c90cd7b9ee74","change":"Corrected the heater-efficiency answer index to 9 kWh."},
+    {"id":"bf9436a1-7fdb-4c8f-af75-906805427550","change":"Stated the ideal heat-loss assumptions and corrected the predicted rise to 30°C."},
+    {"id":"af46a3c5-e0ce-44c4-896f-9da684a8a1ce","change":"Added the direct-proportionality assumption before selecting doubled rate."},
+    {"id":"3742fb52-98f5-4406-9148-92b797b096c9","change":"Corrected ethanoic-acid stoichiometry and answer index."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

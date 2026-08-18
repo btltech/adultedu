@@ -6,6 +6,8 @@
 import prisma from '../src/lib/db.js';
 import { generateJSON } from '../src/lib/llm.js';
 
+throw new Error('This script is retired: it creates published LLM content without source and review metadata. Use `npm run content:draft` to create a reviewable draft bundle instead.');
+
 const COURSE_SLUG = process.argv[2];
 const QUESTIONS_TO_ADD = parseInt(process.argv[3]) || 10;
 

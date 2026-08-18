@@ -1,0 +1,18 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 8,
+  "records": [
+    {"id":"71f584ab-5af6-43a2-a46c-212ebb6946d5","change":"Added the calculated £118.04 total."},
+    {"id":"1756379d-609e-4a16-8fa6-50e8de354a0a","change":"Added the calculated £220 remaining balance."},
+    {"id":"4f21e3a4-7775-4ed9-8754-29ae7150a5fc","change":"Specified simple interest and added the £93.96 monthly payment."},
+    {"id":"00c0b70f-2662-432c-b05f-97f0e4f5ac13","change":"Added the calculated £44.14 shortfall."},
+    {"id":"86968b06-b3bf-4da0-9355-05daf34726ce","change":"Added the calculated £276 remaining balance."},
+    {"id":"f8557f3b-c775-44b6-9ac2-55a95536d917","change":"Replaced placeholder answer choices with month values and selected seven."},
+    {"id":"7bdb2639-0f82-4722-8f8b-27b02d0975ab","change":"Corrected the rounding answer index to £552."},
+    {"id":"38ff37e9-80f7-4bd4-9bba-b1b5721cceaa","change":"Rewrote the impossible football record as a coherent 20-match probability problem."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

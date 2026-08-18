@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:24:14.013Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content and national curriculum mathematics programmes of study",
+    "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-l2-geometry-measures",
+    "title": "Geometry: measures, area, volume and trigonometry",
+    "objectives": [
+      {
+        "code": "GCSE-M-G2",
+        "text": "Calculate measures of shapes and use Pythagoras and trigonometry in right-angled and non-right-angled contexts."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Geometry: Measures, Area, Volume and Trigonometry",
+    "summary": "This lesson covers calculating perimeter, area, surface area, and volume for standard shapes. It also applies Pythagoras' theorem and trigonometric ratios to solve problems involving right-angled and non-right-angled triangles, ensuring accurate unit usage.",
+    "objectives": [
+      {
+        "code": "GCSE-M-G2",
+        "text": "Calculate measures of shapes and use Pythagoras and trigonometry in right-angled and non-right-angled contexts."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Calculating Area and Volume",
+        "body": "To find area, multiply length by width, ensuring both dimensions use the same unit. The result is expressed in square units, such as square metres. For volume, multiply length, width, and height together. This calculation yields cubic units, like cubic centimetres. Always state your final answer with the correct unit to avoid confusion."
+      },
+      {
+        "heading": "Applying Pythagoras' Theorem",
+        "body": "Pythagoras' theorem applies specifically to right-angled triangles. It states that the square of the hypotenuse equals the sum of the squares of the other two sides. Use this formula to find a missing side length. Ensure your calculator is in the correct mode. Identify the longest side as the hypotenuse before performing any calculations."
+      },
+      {
+        "heading": "Using Trigonometric Ratios",
+        "body": "Trigonometry helps find missing sides or angles in right-angled triangles. Identify the relevant ratio: sine, cosine, or tangent. Match the known sides to the ratio definition. Use your calculator to solve for the unknown value. Always check that your answer is reasonable given the triangle's dimensions and the specific ratio chosen."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A rectangular garden measures 4 metres by 5 metres. What is its area?",
+        "options": [
+          "9 m²",
+          "20 m²",
+          "18 m²",
+          "40 m²"
+        ],
+        "correctIndex": 1,
+        "explanation": "Area is calculated by multiplying length by width, so 4 metres times 5 metres equals 20 square metres.",
+        "objectiveCode": "GCSE-M-G2"
+      },
+      {
+        "prompt": "A right-angled triangle has legs of 3 cm and 4 cm. What is the hypotenuse?",
+        "options": [
+          "5 cm",
+          "7 cm",
+          "12 cm",
+          "25 cm"
+        ],
+        "correctIndex": 0,
+        "explanation": "Using Pythagoras' theorem, the square root of (3² + 4²) equals the square root of 25, which is 5 cm.",
+        "objectiveCode": "GCSE-M-G2"
+      },
+      {
+        "prompt": "In a right-angled triangle, the opposite side is 5 m and the hypotenuse is 10 m. Which ratio finds the angle?",
+        "options": [
+          "Sine",
+          "Cosine",
+          "Tangent",
+          "Secant"
+        ],
+        "correctIndex": 0,
+        "explanation": "Sine is defined as the opposite side divided by the hypotenuse, making it the correct ratio for these given sides.",
+        "objectiveCode": "GCSE-M-G2"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "sourceTitle": "GCSE subject content and national curriculum mathematics programmes of study"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

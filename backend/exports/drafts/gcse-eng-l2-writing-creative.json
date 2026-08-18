@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:58:34.731Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-eng-l2-writing-creative",
+    "title": "Creative writing",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-W1",
+        "text": "Communicate imaginative ideas using effective vocabulary, structure, sentence control and accurate spelling and punctuation."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Crafting Purposeful Descriptive Writing",
+    "summary": "This lesson focuses on planning and editing descriptive writing. Learners will explore vocabulary, structure, and punctuation to communicate imaginative ideas effectively.",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-W1",
+        "text": "Communicate imaginative ideas using effective vocabulary, structure, sentence control and accurate spelling and punctuation."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Planning Your Narrative",
+        "body": "Effective writing begins with clear planning. Identify your core message before drafting. Consider how each sentence supports your overall purpose. This structure helps maintain focus and coherence. A well-planned piece guides the reader smoothly through your ideas without confusion or unnecessary repetition. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Choosing Precise Vocabulary",
+        "body": "Select words that convey specific meanings and emotions. Avoid generic terms where precise alternatives exist. Strong vocabulary enhances imagery and engagement. Ensure your word choices align with your tone. This precision helps readers visualize scenes and understand character motivations more deeply. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Refining Sentence Structure",
+        "body": "Vary sentence length to control pacing and emphasis. Short sentences create impact, while longer ones provide detail. Check punctuation for accuracy and clarity. Read your work aloud to identify awkward phrasing. This editing process ensures your writing flows naturally and communicates your intended meaning effectively."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The rain hammered against the windowpane, creating a rhythmic drumming sound.\" Which word choice best supports the auditory imagery in this sentence?",
+        "options": [
+          "quiet",
+          "rhythmic",
+          "silent",
+          "still"
+        ],
+        "correctIndex": 1,
+        "explanation": "The word 'rhythmic' directly describes the patterned sound of the rain, supporting the auditory imagery.",
+        "objectiveCode": "GCSE-ENG-W1"
+      },
+      {
+        "prompt": "Read: \"She opened the door. It creaked loudly.\" Which revision best combines these sentences using a relative clause?",
+        "options": [
+          "She opened the door and it creaked loudly.",
+          "She opened the door, which creaked loudly.",
+          "The door creaked loudly when she opened it.",
+          "She opened the door loudly."
+        ],
+        "correctIndex": 1,
+        "explanation": "The relative clause 'which creaked loudly' correctly links the description to the door.",
+        "objectiveCode": "GCSE-ENG-W1"
+      },
+      {
+        "prompt": "Read: \"The kitchen smelled of burnt toast and old coffee.\" Which punctuation mark is correctly used to separate the list items?",
+        "options": [
+          "comma",
+          "semicolon",
+          "colon",
+          "dash"
+        ],
+        "correctIndex": 0,
+        "explanation": "A comma is the standard punctuation mark used to separate items in a simple list.",
+        "objectiveCode": "GCSE-ENG-W1"
+      }
+    ],
+    "writingActivity": {
+      "title": "Describing a Workplace Moment",
+      "prompt": "Write a short description of a busy office scene. Focus on one specific moment, such as a phone ringing or a colleague entering. Use precise vocabulary and varied sentence structures.",
+      "wordGuide": "80-120 words",
+      "checklist": [
+        "Did I use specific, descriptive vocabulary?",
+        "Are my sentences varied in length and structure?",
+        "Is my punctuation accurate and consistent?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "editorialReview": {
+    "outcome": "model-rewrite-applied",
+    "reviewedAt": "2026-08-17T20:59:32.504Z",
+    "notes": "Validated local-model proposal applied; human editorial approval is still required before publication."
+  },
+  "modelReview": {
+    "decision": "rewrite",
+    "itemDecisions": [
+      "pass",
+      "rewrite",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

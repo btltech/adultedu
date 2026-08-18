@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T15:50:51.916Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review removed an over-general claim about collective nouns and replaced ambiguous tense and article questions. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-writing-grammar",
+    "title": "Writing: grammar and consistent tense",
+    "objectives": [
+      {
+        "code": "FSE-L1-W20",
+        "text": "Use correct grammar (e.g. subject-verb agreement, consistent use of different tenses, definite and indefinite articles)."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Writing: Grammar and Consistent Tense",
+    "summary": "This lesson focuses on using clear sentence structure, subject-verb agreement, and consistent tense in short, purposeful writing. It provides practical examples and a self-review activity to help learners refine their grammar choices in everyday and workplace contexts.",
+    "objectives": [
+      {
+        "code": "FSE-L1-W20",
+        "text": "Use correct grammar (e.g. subject-verb agreement, consistent use of different tenses, definite and indefinite articles)."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Subject-Verb Agreement",
+        "body": "Check that the verb fits the subject. For example, ‘The player runs quickly’ and ‘The players run quickly’ use different verb forms. Collective nouns such as ‘team’ can need careful attention because the meaning and context affect whether the group is treated as one unit or as people within it."
+      },
+      {
+        "heading": "Consistent Tense Usage",
+        "body": "Maintain a consistent tense throughout a sentence or paragraph unless there is a clear reason to change. If you start in the past tense, keep it past. For instance, 'I sent the report yesterday' is consistent. Avoid mixing tenses unnecessarily, such as 'I sent the report and it is approved now,' unless the timing genuinely shifts. Consistency helps readers follow your message clearly."
+      },
+      {
+        "heading": "Articles in Context",
+        "body": "Use definite articles ('the') for specific items and indefinite articles ('a' or 'an') for general ones. For example, 'Please send the invoice' refers to a specific document. In contrast, 'I need a pen' refers to any pen. Choosing the right article clarifies whether you are referring to a known item or a general category, which is essential for clear communication."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read this sentence: 'The manager and the assistant is reviewing the files.' Which correction makes the subject-verb agreement correct?",
+        "options": [
+          "The manager and the assistant are reviewing the files.",
+          "The manager and the assistant is review the files.",
+          "The manager and the assistant was reviewing the files.",
+          "The manager and the assistant reviewing the files."
+        ],
+        "correctIndex": 0,
+        "explanation": "The compound subject 'manager and assistant' is plural, so it requires the plural verb 'are'.",
+        "objectiveCode": "FSE-L1-W20"
+      },
+      {
+        "prompt": "Read this update: 'Yesterday, I ___ the email and attached the file.' Which word completes the sentence with a past-tense verb?",
+        "options": [
+          "send",
+          "sent",
+          "sending",
+          "will send"
+        ],
+        "correctIndex": 1,
+        "explanation": "‘Yesterday’ signals a completed past action, so ‘sent’ fits with ‘attached’.",
+        "objectiveCode": "FSE-L1-W20"
+      },
+      {
+        "prompt": "Mina has already shared a report, but no summary. Her manager writes: 'Please attach ___ report and ___ summary.' Which words complete the message?",
+        "options": [
+          "a; the",
+          "the; a",
+          "a; a",
+          "the; the"
+        ],
+        "correctIndex": 1,
+        "explanation": "‘The report’ refers to the report already shared, while ‘a summary’ introduces one that has not yet been identified.",
+        "objectiveCode": "FSE-L1-W20"
+      }
+    ],
+    "writingActivity": {
+      "title": "Workplace Email Draft",
+      "prompt": "Write a short email to a colleague asking them to send you a specific project file. Include a reason for the request and a polite closing.",
+      "wordGuide": "40-60 words",
+      "checklist": [
+        "Does the verb agree with the subject in every sentence?",
+        "Is the tense consistent throughout the email?",
+        "Are definite and indefinite articles used correctly for specific and general items?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

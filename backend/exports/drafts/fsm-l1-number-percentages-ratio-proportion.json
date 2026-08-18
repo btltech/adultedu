@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T17:42:56.314Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Editorial review corrected a mismatched answer index in the discount question, checked all percentage, equivalence and proportion calculations, and confirmed objective alignment. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-number-percentages-ratio-proportion",
+    "title": "Number: percentages, equivalence, ratio and proportion",
+    "objectives": [
+      {
+        "code": "FSM-L1-13",
+        "text": "Read, write, order and compare percentages in whole numbers."
+      },
+      {
+        "code": "FSM-L1-PCT",
+        "text": "Calculate percentage increases and decreases in multiples of 5%, estimate using fractions and decimals, recognise common fraction-decimal-percentage equivalences, and work with simple ratio and direct proportions."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Percentages, Ratios and Proportion: Level 1 Essentials",
+    "summary": "This lesson covers reading whole-number percentages, calculating simple increases and decreases, and connecting fractions, decimals, and ratios. It uses practical examples to build confidence in everyday mathematical tasks.",
+    "objectives": [
+      {
+        "code": "FSM-L1-13",
+        "text": "Read, write, order and compare percentages in whole numbers."
+      },
+      {
+        "code": "FSM-L1-PCT",
+        "text": "Calculate percentage increases and decreases in multiples of 5%, estimate using fractions and decimals, recognise common fraction-decimal-percentage equivalences, and work with simple ratio and direct proportions."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Whole-Number Percentages",
+        "body": "Percentages represent parts of a whole out of one hundred. You can compare them easily by looking at the number. For example, fifty percent is larger than twenty-five percent. This helps you judge sizes quickly. Understanding this basic comparison is the first step in mastering percentage calculations for daily life and work."
+      },
+      {
+        "heading": "Calculating Simple Changes",
+        "body": "To find a percentage increase or decrease, multiply the original amount by the percentage. For a ten percent increase, add one-tenth of the value. For a twenty percent decrease, subtract two-tenths. These calculations are common in shopping and budgeting. Keeping your steps clear ensures you get the correct final amount every time."
+      },
+      {
+        "heading": "Connecting Fractions and Ratios",
+        "body": "Fractions, decimals, and percentages are different ways to show the same value. One half equals fifty percent. Ratios compare two quantities directly. If a recipe uses one cup of flour for two cups of sugar, the ratio is one to two. Recognising these links helps you solve problems involving proportions and scaling amounts up or down."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A shop sells a jacket for £40. It is reduced by 25%. What is the new price?",
+        "options": [
+          "£30",
+          "£25",
+          "£10",
+          "£35"
+        ],
+        "correctIndex": 0,
+        "explanation": "25% of £40 is £10, so £40 minus £10 equals £30.",
+        "objectiveCode": "FSM-L1-PCT"
+      },
+      {
+        "prompt": "Which value is equivalent to 0.5?",
+        "options": [
+          "50%",
+          "5%",
+          "1/20",
+          "20%"
+        ],
+        "correctIndex": 0,
+        "explanation": "0.5 is the decimal form of one half, which is 50%.",
+        "objectiveCode": "FSM-L1-PCT"
+      },
+      {
+        "prompt": "A recipe uses 2 eggs for 4 people. How many eggs are needed for 6 people?",
+        "options": [
+          "3",
+          "4",
+          "2",
+          "6"
+        ],
+        "correctIndex": 0,
+        "explanation": "The ratio is 1:2, so 6 people need 3 eggs.",
+        "objectiveCode": "FSM-L1-PCT"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -42,6 +42,9 @@ coverage/
 # Generated Prisma client (SQLite import)
 backend/generated/
 
+# Local AI draft bundles. Reviewed source content is committed separately.
+backend/exports/drafts/
+
 # Playwright/vitest output
 frontend/test-results/
 

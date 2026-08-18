@@ -1,0 +1,127 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T16:55:42.025Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review replaced loose claims presented as evidence with self-contained fictional scenarios. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-speaking-opinions-evidence",
+    "title": "Speaking and listening: clear opinions with evidence",
+    "objectives": [
+      {
+        "code": "FSE-L1-SLC4",
+        "text": "Communicate information, ideas and opinions clearly and accurately on a range of topics."
+      },
+      {
+        "code": "FSE-L1-SLC5",
+        "text": "Express opinions and arguments, and support them with evidence."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Speaking and Listening: Clear Opinions with Evidence",
+    "summary": "This lesson helps you explain your views clearly and support them with relevant examples. You will learn to distinguish between personal preference and factual evidence in a fictional discussion context.",
+    "objectives": [
+      {
+        "code": "FSE-L1-SLC4",
+        "text": "Communicate information, ideas and opinions clearly and accurately on a range of topics."
+      },
+      {
+        "code": "FSE-L1-SLC5",
+        "text": "Express opinions and arguments, and support them with evidence."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Defining Clear Communication",
+        "body": "Clear communication means stating your view directly and giving enough detail for a listener to follow it. When discussing a topic, separate your personal view from the facts or examples you use. This helps listeners understand what you mean and why you hold that position. A clear order can make a spoken response easier to follow."
+      },
+      {
+        "heading": "Distinguishing Evidence from Preference",
+        "body": "A personal preference is what you like or dislike. Evidence is a fact, example or piece of information that supports your view. For example, saying you prefer a later library opening is a preference; explaining that your work shift ends after the present closing time gives a reason connected to that view. Keep the two separate."
+      },
+      {
+        "heading": "Structuring Your Spoken Response",
+        "body": "To support an opinion, start by stating your view clearly. Then, provide a specific example or piece of evidence that directly relates to that view. Finally, link the evidence back to your original point. This simple structure ensures your argument is coherent and easy for your audience to follow and understand."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Maya says: \"I think the library should open later. It closes at 5 pm, but my work shift ends at 5:30 pm.\" Which detail supports Maya's view?",
+        "options": [
+          "The library closes at 5 pm while Maya finishes work at 5:30 pm.",
+          "Maya likes reading books.",
+          "The library has many shelves.",
+          "Maya prefers a quiet place."
+        ],
+        "correctIndex": 0,
+        "explanation": "The two times explain why the current opening hours do not work for Maya.",
+        "objectiveCode": "FSE-L1-SLC5"
+      },
+      {
+        "prompt": "Amir says: \"I prefer the community garden because it has a sheltered seating area.\" Which part is Amir's personal preference?",
+        "options": [
+          "I prefer the community garden.",
+          "It has a sheltered seating area.",
+          "The garden has seating.",
+          "The seating is sheltered."
+        ],
+        "correctIndex": 0,
+        "explanation": "‘I prefer’ expresses Amir's view, while the sheltered seating area is the reason he gives for it.",
+        "objectiveCode": "FSE-L1-SLC4"
+      },
+      {
+        "prompt": "Lee says: \"I think the bus service needs a later journey. The last bus leaves at 8 pm, but my evening course ends at 8:15 pm.\" Which response order communicates Lee's point most clearly?",
+        "options": [
+          "State the view, give the two times, then explain that Lee cannot catch the bus after class.",
+          "Give the two times, then talk about an unrelated journey.",
+          "State the view without giving a reason.",
+          "Describe the bus without explaining the course timing."
+        ],
+        "correctIndex": 0,
+        "explanation": "This order gives the opinion, relevant evidence and the link between the evidence and the view.",
+        "objectiveCode": "FSE-L1-SLC5"
+      }
+    ],
+    "speakingActivity": {
+      "title": "Private Self-Recorded Practice",
+      "prompt": "Imagine you are discussing a fictional community centre that only opens on weekdays. Record yourself giving an opinion on whether this is a good arrangement. Support your view with one specific piece of evidence or an example from the scenario. Speak for one to two minutes.",
+      "timingGuide": "1-2 minutes",
+      "checklist": [
+        "Did I state my opinion clearly at the start?",
+        "Did I provide a specific example or fact as evidence?",
+        "Did I distinguish between my preference and the evidence?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

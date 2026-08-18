@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T19:05:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation was unavailable. All perimeter, area and volume calculations, units and objective alignment were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-shape-perimeter-area-volume",
+    "title": "Shape and space: perimeter, area and volume",
+    "objectives": [
+      {
+        "code": "FSM-L1-18",
+        "text": "Calculate the area and perimeter of simple shapes, including those that are made up of a combination of rectangles."
+      },
+      {
+        "code": "FSM-L1-19",
+        "text": "Calculate the volumes of cubes and cuboids."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Perimeter, Area and Volume",
+    "summary": "Use the right calculation and the right unit when measuring around a shape, covering a surface, or filling a three-dimensional space.",
+    "objectives": [
+      {
+        "code": "FSM-L1-18",
+        "text": "Calculate the area and perimeter of simple shapes, including those that are made up of a combination of rectangles."
+      },
+      {
+        "code": "FSM-L1-19",
+        "text": "Calculate the volumes of cubes and cuboids."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Measuring around a shape: perimeter",
+        "body": "Perimeter is the total distance around the outside edge of a two-dimensional shape. Add every outer side once, using the same unit throughout. For a rectangle, opposite sides are equal, so you can add length plus width and double the result. Perimeter is useful for tasks such as estimating fencing, edging or trim."
+      },
+      {
+        "heading": "Covering a surface: area",
+        "body": "Area measures the surface inside a two-dimensional shape. For a rectangle, multiply length by width and use square units, such as square metres. A shape made from joined rectangles can be split into separate rectangles, provided they do not overlap. Find each area, then add them. Check that every stated dimension has been used once."
+      },
+      {
+        "heading": "Filling a space: volume",
+        "body": "Volume measures the space inside a three-dimensional object. For a cuboid, multiply length by width by height. A cube is a special cuboid with equal edge lengths. Use cubic units, such as cubic centimetres or cubic metres, because three measurements are multiplied. Keeping area and volume units separate helps prevent a common calculation mistake."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A rectangular garden is 8 metres long and 5 metres wide. What is its perimeter?",
+        "options": [
+          "13 m",
+          "26 m",
+          "40 m",
+          "80 m"
+        ],
+        "correctIndex": 1,
+        "explanation": "The perimeter is 8 + 5 + 8 + 5, which equals 26 metres.",
+        "objectiveCode": "FSM-L1-18"
+      },
+      {
+        "prompt": "A floor is made from two joined rectangles with no overlap: one is 6 m by 4 m and the other is 2 m by 3 m. What is the total area?",
+        "options": [
+          "18 m²",
+          "24 m²",
+          "30 m²",
+          "36 m²"
+        ],
+        "correctIndex": 2,
+        "explanation": "The areas are 6 × 4 = 24 m² and 2 × 3 = 6 m², so the total is 30 m².",
+        "objectiveCode": "FSM-L1-18"
+      },
+      {
+        "prompt": "A storage box is 4 m long, 3 m wide and 2 m high. What is its volume?",
+        "options": [
+          "9 m³",
+          "18 m³",
+          "24 m³",
+          "48 m³"
+        ],
+        "correctIndex": 2,
+        "explanation": "Volume is length × width × height, so 4 × 3 × 2 = 24 m³.",
+        "objectiveCode": "FSM-L1-19"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

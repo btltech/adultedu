@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:51:07.236Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-eng-l2-language-analysis",
+    "title": "Language analysis",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-R3",
+        "text": "Analyse how language choices shape meaning and response."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Analyzing Language Choices for Effect",
+    "summary": "This lesson guides learners to identify specific vocabulary and imagery within short texts. It focuses on explaining how these choices shape meaning and response, avoiding unsupported claims about author intention.",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-R3",
+        "text": "Analyse how language choices shape meaning and response."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Identifying Key Vocabulary",
+        "body": "Start by locating specific words or phrases that stand out in the text. Ask yourself how these choices influence the reader's immediate emotional response. Focus on the precise effect created by the language rather than guessing the writer's hidden motives. This approach grounds your analysis in observable evidence."
+      },
+      {
+        "heading": "Explaining Imagery and Figurative Language",
+        "body": "Examine how imagery and figurative language construct vivid mental pictures for the reader. Explain the specific effect these devices have on tone and atmosphere. Link your observations directly to the context provided in the stimulus. Avoid making broad claims about the author's personal feelings or intentions."
+      },
+      {
+        "heading": "Linking Choices to Context",
+        "body": "Connect your analysis of language choices to the specific situation described in the text. Explain how the vocabulary reinforces the context and shapes the reader's understanding. Ensure every claim is supported by the words on the page. This method creates a rigorous and defensible interpretation of the passage."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The wind screamed through the broken window, shattering the silence.\" How does the verb \"screamed\" affect the reader?",
+        "options": [
+          "It suggests the wind is friendly.",
+          "It creates a sense of violent disruption.",
+          "It implies the window is new.",
+          "It indicates the wind is quiet."
+        ],
+        "correctIndex": 1,
+        "explanation": "The verb \"screamed\" personifies the wind as aggressive, creating a violent effect that contrasts with the silence.",
+        "objectiveCode": "GCSE-ENG-R3"
+      },
+      {
+        "prompt": "Read: \"Her smile was a cold, thin slice of ice.\" What effect does this simile have on the description of the smile?",
+        "options": [
+          "It makes the smile appear warm and inviting.",
+          "It suggests the smile is unwelcoming and distant.",
+          "It implies the smile is very wide.",
+          "It indicates the smile is genuine."
+        ],
+        "correctIndex": 1,
+        "explanation": "Comparing the smile to \"cold, thin slice of ice\" creates an effect of distance and unwelcoming nature.",
+        "objectiveCode": "GCSE-ENG-R3"
+      },
+      {
+        "prompt": "Read: \"The room was cluttered with old papers and dust.\" How does the word \"cluttered\" shape the reader's perception of the room?",
+        "options": [
+          "It suggests the room is organized and tidy.",
+          "It creates an impression of disorder and neglect.",
+          "It implies the room is empty.",
+          "It indicates the room is luxurious."
+        ],
+        "correctIndex": 1,
+        "explanation": "The word \"cluttered\" directly conveys a state of disorder, shaping the perception of neglect.",
+        "objectiveCode": "GCSE-ENG-R3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

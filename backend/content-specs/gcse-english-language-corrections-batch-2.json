@@ -1,0 +1,17 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-english-language",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 7,
+  "records": [
+    {"id":"3904ef31-f280-48ab-bf7f-e875b1b9f3a7","change":"Corrected the mockingbird symbolism answer to the broader injustice interpretation."},
+    {"id":"0c2d3c8a-5dd1-4e2b-becd-3f5c8e9e5f94","change":"Corrected indirect-characterisation answer index."},
+    {"id":"c9145a06-292d-40c6-901d-a956533be89b","change":"Corrected golden-sun personification answer index."},
+    {"id":"72857d9f-32ac-4a74-baf3-d8c3c1344155","change":"Corrected mist-danced personification answer index."},
+    {"id":"c30129cc-8334-4e38-bfc2-93c50e31f1e5","change":"Corrected oak-tree personification answer index."},
+    {"id":"645b1c37-ce01-4479-85ef-dce0e2ed0ed3","change":"Rewrote the semicolon item to have one valid answer."},
+    {"id":"6373dfd0-3476-423d-8c4d-70c7ee5bf50f","change":"Corrected suspected-exam-typo action to ask the invigilator."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

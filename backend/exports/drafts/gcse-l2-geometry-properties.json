@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:21:07.098Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content and national curriculum mathematics programmes of study",
+    "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-l2-geometry-properties",
+    "title": "Geometry: properties, congruence and similarity",
+    "objectives": [
+      {
+        "code": "GCSE-M-G1",
+        "text": "Use geometric properties, angle relationships, congruence, similarity and circle theorems to solve problems."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Geometry: Properties, Congruence and Similarity",
+    "summary": "This lesson explores how to use geometric properties, angle relationships, congruence, similarity and circle theorems to justify conclusions and solve problems.",
+    "objectives": [
+      {
+        "code": "GCSE-M-G1",
+        "text": "Use geometric properties, angle relationships, congruence, similarity and circle theorems to solve problems."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Angle Relationships and Shape Properties",
+        "body": "Understanding angle facts is essential for geometric reasoning. Parallel lines create equal alternate and corresponding angles. Triangles have interior angles summing to one hundred and eighty degrees. These properties allow you to calculate unknown angles and justify your steps clearly in written work. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Congruence and Similarity",
+        "body": "Congruent shapes are identical in size and shape, while similar shapes have the same shape but different sizes. You can prove congruence using side-angle-side or angle-side-side rules. Similarity requires matching angles and proportional sides. These concepts help you compare and transform geometric figures accurately. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Circle Theorems",
+        "body": "Circle theorems provide specific rules for angles within circles. The angle at the centre is double the angle at the circumference. Angles in the same segment are equal. A tangent is perpendicular to the radius at the point of contact. Applying these theorems helps you solve complex problems involving circles and chords."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A triangle has angles of 50 degrees and 60 degrees. What is the third angle?",
+        "options": [
+          "70 degrees",
+          "80 degrees",
+          "90 degrees",
+          "100 degrees"
+        ],
+        "correctIndex": 0,
+        "explanation": "The sum of angles in a triangle is 180 degrees, so 180 minus 50 and 60 equals 70.",
+        "objectiveCode": "GCSE-M-G1"
+      },
+      {
+        "prompt": "Two triangles have all corresponding angles equal and sides in a 1:2 ratio. Are they congruent or similar?",
+        "options": [
+          "Congruent",
+          "Similar",
+          "Neither",
+          "Both"
+        ],
+        "correctIndex": 1,
+        "explanation": "Equal angles and proportional sides define similarity, not congruence, which requires equal side lengths.",
+        "objectiveCode": "GCSE-M-G1"
+      },
+      {
+        "prompt": "An angle at the centre of a circle is 100 degrees. What is the angle at the circumference on the same arc?",
+        "options": [
+          "50 degrees",
+          "100 degrees",
+          "150 degrees",
+          "200 degrees"
+        ],
+        "correctIndex": 0,
+        "explanation": "The angle at the circumference is half the angle at the centre, so 100 divided by 2 is 50.",
+        "objectiveCode": "GCSE-M-G1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "sourceTitle": "GCSE subject content and national curriculum mathematics programmes of study"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

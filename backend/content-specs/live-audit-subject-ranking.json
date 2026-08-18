@@ -1,0 +1,23 @@
+{
+  "auditDate": "2026-08-17",
+  "scope": "Published questions in Railway production",
+  "productionChanges": false,
+  "rankingMetric": "short prompts (<5 words) plus short explanations (<5 words)",
+  "reviewOrder": [
+    {"slug":"gcse-computer-science","title":"GCSE Computer Science","questions":295,"shortPrompts":19,"shortExplanations":0},
+    {"slug":"functional-skills-maths","title":"Functional Skills Maths","questions":435,"shortPrompts":12,"shortExplanations":3},
+    {"slug":"financial-literacy","title":"Financial Literacy","questions":177,"shortPrompts":10,"shortExplanations":0},
+    {"slug":"gcse-maths","title":"GCSE Maths Preparation","questions":491,"shortPrompts":6,"shortExplanations":0},
+    {"slug":"ai-for-everyone","title":"AI for Everyone","questions":143,"shortPrompts":5,"shortExplanations":0},
+    {"slug":"a-level-maths","title":"A-Level Maths","questions":559,"shortPrompts":0,"shortExplanations":3},
+    {"slug":"python-foundations","title":"Python Foundations","questions":318,"shortPrompts":2,"shortExplanations":0},
+    {"slug":"essential-digital-skills","title":"Essential Digital Skills","questions":292,"shortPrompts":0,"shortExplanations":1},
+    {"slug":"microsoft-office-essentials","title":"Microsoft Office Essentials","questions":184,"shortPrompts":1,"shortExplanations":0}
+  ],
+  "confirmedHighRiskFindings": {
+    "functional-skills-maths": 12,
+    "gcse-computer-science": 6,
+    "financial-literacy": 6
+  },
+  "interpretation": "This is a triage signal, not a correctness score. The confirmed-high-risk counts come from the focused reviews and should move a subject upward even when its short-text count is modest. Subjects with zero short-text flags still require syllabus and factual review."
+}

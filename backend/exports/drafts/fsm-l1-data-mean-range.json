@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T19:35:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation was unavailable. Mean and range methods, units and practice calculations were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-data-mean-range",
+    "title": "Data: mean and range",
+    "objectives": [
+      {
+        "code": "FSM-L1-25",
+        "text": "Find the mean and range of a set of quantities."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Mean and Range",
+    "summary": "Calculate the mean and range of a set of values, then explain whether you are describing a typical value or the spread from lowest to highest.",
+    "objectives": [
+      {
+        "code": "FSM-L1-25",
+        "text": "Find the mean and range of a set of quantities."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Finding the mean",
+        "body": "The mean is an average. Add all the values in the set, then divide the total by the number of values. For example, the mean of 4, 6 and 8 is 18 divided by 3, which is 6. Count the values carefully before dividing, and keep any measurement unit with the final answer."
+      },
+      {
+        "heading": "Finding the range",
+        "body": "The range describes how spread out a set of values is. Find the highest value and subtract the lowest value. For 4, 6 and 8, the range is 8 minus 4, which is 4. Range does not describe a typical value; it only shows the distance between the smallest and largest values."
+      },
+      {
+        "heading": "Choosing what the result tells you",
+        "body": "Mean and range answer different questions. Use the mean when you need a single average value for the whole set. Use the range when you want to compare variation or spread. One unusually high or low value can change both measures, so always look at the original values as well as reporting the calculation result."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Four workers travelled 6 km, 8 km, 10 km and 12 km. What is the mean distance travelled?",
+        "options": [
+          "8 km",
+          "9 km",
+          "10 km",
+          "12 km"
+        ],
+        "correctIndex": 1,
+        "explanation": "The total is 6 + 8 + 10 + 12 = 36 km, and 36 ÷ 4 = 9 km.",
+        "objectiveCode": "FSM-L1-25"
+      },
+      {
+        "prompt": "The temperatures recorded were 3°C, 7°C, 5°C and 10°C. What is the range?",
+        "options": [
+          "5°C",
+          "7°C",
+          "10°C",
+          "25°C"
+        ],
+        "correctIndex": 1,
+        "explanation": "The highest temperature is 10°C and the lowest is 3°C, so the range is 10 − 3 = 7°C.",
+        "objectiveCode": "FSM-L1-25"
+      },
+      {
+        "prompt": "Which statement correctly describes the range of a set of values?",
+        "options": [
+          "It is the total divided by the number of values.",
+          "It is the difference between the highest and lowest values.",
+          "It is always the most common value.",
+          "It is the middle value after ordering."
+        ],
+        "correctIndex": 1,
+        "explanation": "Range is found by subtracting the lowest value from the highest value in the set.",
+        "objectiveCode": "FSM-L1-25"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

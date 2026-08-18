@@ -1,0 +1,1959 @@
+{
+  "generatedAt": "2026-08-17T20:51:38.594Z",
+  "scope": "local generated draft bundles",
+  "model": {
+    "origin": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoning": "off"
+  },
+  "publicationSafety": "83 bundles reviewed; two validated rewrite proposals were applied to local draft files only. All publication fields remain unpublished/draft.",
+  "totals": {
+    "bundles": 83,
+    "reviewed": 83,
+    "failed": 0,
+    "pass": 81,
+    "rewrite": 2,
+    "uncertain": 0,
+    "itemRewrites": 2
+  },
+  "results": [
+    {
+      "file": "eds-l1-communication-tools.json",
+      "unitId": "eds-l1-communication-tools",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligned with the objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Clear, factual, and consistent with the lesson goal."
+          },
+          {
+            "decision": "pass",
+            "reason": "Appropriate UK context and correct answer selection."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-create-accessible-documents.json",
+      "unitId": "eds-l1-create-accessible-documents",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with accessible document creation objectives."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies text alternatives for charts as an accessibility best practice."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately identifies word processing as the appropriate tool for structured letters."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-cybersecurity.json",
+      "unitId": "eds-l1-cybersecurity",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct security advice with clear explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Safe behavior identified correctly and clearly."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-device-settings-accessibility.json",
+      "unitId": "eds-l1-device-settings-accessibility",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with safe update practices."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies navigation tools for switching between applications."
+          },
+          {
+            "decision": "pass",
+            "reason": "Directly addresses accessibility settings for improved text readability."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-digital-learning-resources.json",
+      "unitId": "eds-l1-digital-learning-resources",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Clear, accessible, and correctly identifies needs-based selection."
+          },
+          {
+            "decision": "pass",
+            "reason": "Safe, accurate, and promotes critical verification of AI."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-files-storage-backups.json",
+      "unitId": "eds-l1-files-storage-backups",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with file naming best practices."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies checking limits and compression as the appropriate solution."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately defines backup as copying to a second storage location."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-media-layout.json",
+      "unitId": "eds-l1-media-layout",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective EDS-L1-CE2."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies distortion risk and aligns with EDS-L1-CE2."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate layout advice aligning with objective EDS-L1-CE3."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-multistep-digital-problems.json",
+      "unitId": "eds-l1-multistep-digital-problems",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with the objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct tool selection with clear, accessible explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Logical completion check with no factual errors."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-online-accounts-security.json",
+      "unitId": "eds-l1-online-accounts-security",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, and aligns with security objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies MFA as a security feature."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate advice for handling suspicious code requests."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-online-collaboration.json",
+      "unitId": "eds-l1-online-collaboration",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with shared workspace access objectives."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies respectful, specific feedback as the best practice."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate advice on version control and saving edits in shared docs."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-privacy-notices-agreements.json",
+      "unitId": "eds-l1-privacy-notices-agreements",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with privacy notice simplification objectives."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly advises verifying AI summaries against original terms for accuracy."
+          },
+          {
+            "decision": "pass",
+            "reason": "Appropriate safety advice for handling unclear contractual terms."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-privacy-sharing-footprint.json",
+      "unitId": "eds-l1-privacy-sharing-footprint",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, aligns with privacy objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies permission and audience checks."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately reflects lasting digital footprint concept."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-receipts-records.json",
+      "unitId": "eds-l1-receipts-records",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, and aligns with the objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Clear, accurate, and supports the learning goal."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, self-contained, and meets the objective."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-respect-wellbeing-reporting.json",
+      "unitId": "eds-l1-respect-wellbeing-reporting",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with fair use objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies healthy screen habits per objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate safety response aligning with reporting objective."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-search-evaluate-ai.json",
+      "unitId": "eds-l1-search-evaluate-ai",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with search refinement objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies sponsored content as paid ads requiring evaluation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Promotes verification of AI outputs against trusted sources."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-secure-online-buying.json",
+      "unitId": "eds-l1-secure-online-buying",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with secure purchasing objectives."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies key checkout verification steps for security."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately advises keeping transaction records without sensitive data."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-spreadsheets-data.json",
+      "unitId": "eds-l1-spreadsheets-data",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate formula, clear options, correct index, aligned explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct chart type, unambiguous answer, clear explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Logical troubleshooting step, clear options, correct index."
+          }
+        ]
+      }
+    },
+    {
+      "file": "eds-l1-troubleshooting-help.json",
+      "unitId": "eds-l1-troubleshooting-help",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-reading-compare-viewpoints.json",
+      "unitId": "fse-l1-reading-compare-viewpoints",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies shared agreement between texts."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately distinguishes the differing ideas."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-reading-fact-opinion-purpose.json",
+      "unitId": "fse-l1-reading-fact-opinion-purpose",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with distinguishing fact from opinion."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies audience based on context and purpose."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately identifies the informational purpose of the notice."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-reading-image-inference.json",
+      "unitId": "fse-l1-reading-image-inference",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate inference, clear options, correct index, aligned explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Logical inference, unambiguous answer, correct index, clear explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Valid inference, distinct options, correct index, aligned explanation."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-reading-punctuation-meaning.json",
+      "unitId": "fse-l1-reading-punctuation-meaning",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies possessive function and meaning."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate explanation of colon usage in context."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-reading-reference-strategies.json",
+      "unitId": "fse-l1-reading-reference-strategies",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligned with reference material strategies."
+          },
+          {
+            "decision": "pass",
+            "reason": "Context clues clearly support the correct answer."
+          },
+          {
+            "decision": "pass",
+            "reason": "Word parts and context confirm the meaning accurately."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-reading-structure-vocabulary.json",
+      "unitId": "fse-l1-reading-structure-vocabulary",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with locating information via headings."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies specialist word meaning from context."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately identifies imperative verbs as the prominent feature."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-speaking-discussion.json",
+      "unitId": "fse-l1-speaking-discussion",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, relevant, and aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, relevant, and aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, relevant, and aligned with objective."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-speaking-listening-information.json",
+      "unitId": "fse-l1-speaking-listening-information",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with identifying relevant information."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies the most relevant clarifying question."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately reflects effective response to detailed questions."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-speaking-opinions-evidence.json",
+      "unitId": "fse-l1-speaking-opinions-evidence",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Clear distinction between opinion and evidence, accurate."
+          },
+          {
+            "decision": "pass",
+            "reason": "Logical structure, clear answer, fits objective."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-speaking-register-turntaking.json",
+      "unitId": "fse-l1-speaking-register-turntaking",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with formal register objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies respectful interjection language for turn-taking."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate advice on waiting for natural pauses in conversation."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-writing-grammar.json",
+      "unitId": "fse-l1-writing-grammar",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-writing-punctuation.json",
+      "unitId": "fse-l1-writing-punctuation",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies list separation function."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate explanation of possessive apostrophe usage."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-writing-purpose-audience.json",
+      "unitId": "fse-l1-writing-purpose-audience",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with clear communication objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies essential detail for audience and purpose."
+          },
+          {
+            "decision": "pass",
+            "reason": "Appropriate tone selection for formal business context."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-writing-sentences-paragraphs.json",
+      "unitId": "fse-l1-writing-sentences-paragraphs",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligned with complex sentence identification."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies temporal conjunction usage for sequence clarity."
+          },
+          {
+            "decision": "pass",
+            "reason": "Validates paragraph structure for distinct communicative purposes."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fse-l1-writing-spelling.json",
+      "unitId": "fse-l1-writing-spelling",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, correct index, aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, correct index, aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, correct index, aligned with objective."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-data-charts-grouping.json",
+      "unitId": "fsm-l1-data-charts-grouping",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective FSM-L1-23."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies non-overlapping intervals for grouping data."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective FSM-L1-23."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-data-mean-range.json",
+      "unitId": "fsm-l1-data-mean-range",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-data-probability.json",
+      "unitId": "fsm-l1-data-probability",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, aligns with objective FSM-L1-26."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct calculation, clear explanation, aligns with FSM-L1-27."
+          },
+          {
+            "decision": "pass",
+            "reason": "Valid comparison, correct index, aligns with FSM-L1-26."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-measures-conversion-scales.json",
+      "unitId": "fsm-l1-measures-conversion-scales",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate conversion, clear options, correct index, aligned explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct calculation, unambiguous answer, clear explanation, objective alignment."
+          },
+          {
+            "decision": "pass",
+            "reason": "Valid scale application, correct math, clear explanation, objective alignment."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-measures-money-interest-discount.json",
+      "unitId": "fsm-l1-measures-money-interest-discount",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate calculation, clear options, correct index, aligned with objective FSM-L1-14."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate calculation, clear options, correct index, aligned with objective FSM-L1-15."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate calculation, clear options, correct index, aligned with objective FSM-L1-14."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-number-decimals-estimation.json",
+      "unitId": "fsm-l1-number-decimals-estimation",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective FSM-L1-10."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective FSM-L1-11."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective FSM-L1-12."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-number-formulae-squares-order.json",
+      "unitId": "fsm-l1-number-formulae-squares-order",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with FSM-L1-5."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct calculation and explanation for FSM-L1-6."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct order of operations for FSM-L1-7."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-number-fractions.json",
+      "unitId": "fsm-l1-number-fractions",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective FSM-L1-8."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective FSM-L1-9."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective FSM-L1-8."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-number-percentages-ratio-proportion.json",
+      "unitId": "fsm-l1-number-percentages-ratio-proportion",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate equivalence, clear options, correct index, aligned."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct proportion calculation, unambiguous, aligned with objective."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-number-place-value-signed-powers.json",
+      "unitId": "fsm-l1-number-place-value-signed-powers",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate calculation, clear options, correct index, aligned with objective FSM-L1-1."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct signed number logic, unambiguous answer, clear explanation, aligned with FSM-L1-2."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct decimal multiplication, clear options, accurate explanation, aligned with FSM-L1-3."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-shape-perimeter-area-volume.json",
+      "unitId": "fsm-l1-shape-perimeter-area-volume",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate calculation, clear options, correct index, and aligned explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct area sum, unambiguous options, and accurate explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct volume calculation, clear options, and accurate explanation."
+          }
+        ]
+      }
+    },
+    {
+      "file": "fsm-l1-shape-properties-3d-angles.json",
+      "unitId": "fsm-l1-shape-properties-3d-angles",
+      "existingEditorialReview": "pilot-approved",
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective FSM-L1-20."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate interpretation of plans, correct index, aligned with FSM-L1-21."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct direction logic, unambiguous, aligned with objective FSM-L1-22."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-bio-l2-bioenergetics.json",
+      "unitId": "gcse-bio-l2-bioenergetics",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-bio-l2-cell-biology.json",
+      "unitId": "gcse-bio-l2-cell-biology",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct definition of diffusion, clear options."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate description of mitosis for repair."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-bio-l2-ecology.json",
+      "unitId": "gcse-bio-l2-ecology",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate distinction between correlation and causation; clear options and explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies interdependence; unambiguous answer and accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately links biodiversity to resilience; clear, self-contained, and objective-aligned."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-bio-l2-homeostasis.json",
+      "unitId": "gcse-bio-l2-homeostasis",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate analogy, unambiguous answer, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate analogy, unambiguous answer, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate definition, unambiguous answer, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-bio-l2-infection-response.json",
+      "unitId": "gcse-bio-l2-infection-response",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-bio-l2-inheritance-evolution.json",
+      "unitId": "gcse-bio-l2-inheritance-evolution",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate Mendelian genetics, clear answer, aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct natural selection logic, unambiguous, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Valid evolutionary inference, self-contained, objective-aligned."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-bio-l2-organisation.json",
+      "unitId": "gcse-bio-l2-organisation",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-chem-l2-analysis.json",
+      "unitId": "gcse-chem-l2-analysis",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "rewrite",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "rewrite",
+            "reason": "Duplicate option values (0.5 and 0.50) create ambiguity.",
+            "proposed": {
+              "prompt": "In a chromatography experiment, an unknown spot travels 4 cm while the solvent front moves 8 cm. What is the Rf value of the unknown spot?",
+              "options": [
+                "0.5",
+                "0.75",
+                "0.25",
+                "1.0"
+              ],
+              "correctIndex": 0,
+              "explanation": "The Rf value is calculated by dividing the distance the spot travels by the distance the solvent front travels."
+            }
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-chem-l2-atomic-structure.json",
+      "unitId": "gcse-chem-l2-atomic-structure",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-chem-l2-bonding-structure.json",
+      "unitId": "gcse-chem-l2-bonding-structure",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-chem-l2-chemical-changes.json",
+      "unitId": "gcse-chem-l2-chemical-changes",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-chem-l2-energy-changes.json",
+      "unitId": "gcse-chem-l2-energy-changes",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-chem-l2-organic.json",
+      "unitId": "gcse-chem-l2-organic",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-chem-l2-quantitative.json",
+      "unitId": "gcse-chem-l2-quantitative",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate calculation, clear options, correct index, and aligned explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct concentration calculation, unambiguous answer, and proper significant figure handling."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct significant figure rule application, clear prompt, and accurate explanation."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-chem-l2-rate-reaction.json",
+      "unitId": "gcse-chem-l2-rate-reaction",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate collision theory explanation; unambiguous answer; clear UK context."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct surface area reasoning; accessible language; objective alignment."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate catalyst definition; clear explanation; no factual errors."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-eng-l2-language-analysis.json",
+      "unitId": "gcse-eng-l2-language-analysis",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate analysis, clear answer, aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct interpretation, unambiguous options, good explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, self-contained, clear correct answer index."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-eng-l2-reading-fiction.json",
+      "unitId": "gcse-eng-l2-reading-fiction",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate inference, clear evidence, and correct answer index."
+          },
+          {
+            "decision": "pass",
+            "reason": "Direct textual evidence correctly identified with unambiguous answer."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies sound contrast as tension device."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-eng-l2-reading-nonfiction.json",
+      "unitId": "gcse-eng-l2-reading-nonfiction",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies viewpoint marker; clear and accurate."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate identification of statistical evidence; clear."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-eng-l2-spelling-punctuation-grammar.json",
+      "unitId": "gcse-eng-l2-spelling-punctuation-grammar",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies list separation function."
+          },
+          {
+            "decision": "pass",
+            "reason": "Valid stylistic effect, clear answer."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-eng-l2-structure-form.json",
+      "unitId": "gcse-eng-l2-structure-form",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate analysis of structural pause; clear options; correct index."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies time compression; unambiguous answer; aligned objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Valid interpretation of repetition; factual; accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-eng-l2-writing-creative.json",
+      "unitId": "gcse-eng-l2-writing-creative",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "rewrite",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "rewrite",
+            "reason": "Multiple options are stylistically valid; lacks single unambiguous answer.",
+            "proposed": {
+              "prompt": "Read: \"She opened the door. It creaked loudly.\" Which revision best combines these sentences using a relative clause?",
+              "options": [
+                "She opened the door and it creaked loudly.",
+                "She opened the door, which creaked loudly.",
+                "The door creaked loudly when she opened it.",
+                "She opened the door loudly."
+              ],
+              "correctIndex": 1,
+              "explanation": "The relative clause 'which creaked loudly' correctly links the description to the door."
+            }
+          },
+          {
+            "decision": "pass",
+            "reason": "Factually correct and clearly identifies the standard punctuation."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-eng-l2-writing-transactional.json",
+      "unitId": "gcse-eng-l2-writing-transactional",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with formal tone objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Clear evidence-based answer, self-contained, and objective-aligned."
+          },
+          {
+            "decision": "pass",
+            "reason": "Logical structure identified correctly, clear, and objective-aligned."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-l2-algebra.json",
+      "unitId": "gcse-l2-algebra",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-l2-geometry-measures.json",
+      "unitId": "gcse-l2-geometry-measures",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, clear explanation, UK context, accessible language, objective aligned."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, clear explanation, UK context, accessible language, objective aligned."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, clear explanation, UK context, accessible language, objective aligned."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-l2-geometry-properties.json",
+      "unitId": "gcse-l2-geometry-properties",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-l2-graphs.json",
+      "unitId": "gcse-l2-graphs",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, clear explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, clear explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, clear explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-l2-number.json",
+      "unitId": "gcse-l2-number",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate calculation, clear options, and correct explanation align with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct application of index laws, unambiguous answer, and accurate explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct standard form conversion, clear options, and accurate explanation provided."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-l2-probability.json",
+      "unitId": "gcse-l2-probability",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-l2-ratio-proportion.json",
+      "unitId": "gcse-l2-ratio-proportion",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-l2-statistics.json",
+      "unitId": "gcse-l2-statistics",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-lit-l2-19th-century-novel.json",
+      "unitId": "gcse-lit-l2-19th-century-novel",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies contrast as irony; clear and accurate."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurately links imagery to industrial context; unambiguous."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-lit-l2-modern-prose-drama.json",
+      "unitId": "gcse-lit-l2-modern-prose-drama",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate analysis of language and mood; unambiguous answer."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly identifies contrast as revealing internal conflict; clear explanation."
+          },
+          {
+            "decision": "pass",
+            "reason": "Valid structural analysis of scene ending; objective alignment maintained."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-lit-l2-poetry-anthology.json",
+      "unitId": "gcse-lit-l2-poetry-anthology",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate analysis, clear answer, objective alignment."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct pronoun analysis, unambiguous, objective aligned."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-lit-l2-shakespeare.json",
+      "unitId": "gcse-lit-l2-shakespeare",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, aligned with objective, clear UK context."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate thematic analysis, single correct answer, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct dramatic convention, unambiguous, fits objective and context."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-lit-l2-unseen-poetry.json",
+      "unitId": "gcse-lit-l2-unseen-poetry",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, and aligned with objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate structural analysis with clear evidence."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correct interpretation supported by textual evidence."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-phys-l2-atomic-structure.json",
+      "unitId": "gcse-phys-l2-atomic-structure",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-phys-l2-energy.json",
+      "unitId": "gcse-phys-l2-energy",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          },
+          {
+            "decision": "pass",
+            "reason": "Factual, unambiguous, correct index, aligned explanation, UK context, accessible language."
+          }
+        ]
+      }
+    },
+    {
+      "file": "gcse-phys-l2-particle-model.json",
+      "unitId": "gcse-phys-l2-particle-model",
+      "existingEditorialReview": null,
+      "ok": true,
+      "review": {
+        "decision": "pass",
+        "items": [
+          {
+            "decision": "pass",
+            "reason": "Accurate, unambiguous, and aligns with density objective."
+          },
+          {
+            "decision": "pass",
+            "reason": "Correctly explains ice density anomaly via particle packing."
+          },
+          {
+            "decision": "pass",
+            "reason": "Accurate kinetic theory explanation for gas expansion."
+          }
+        ]
+      }
+    }
+  ],
+  "retryReports": [
+    "/tmp/retry-20.json",
+    "/tmp/retry-28.json",
+    "/tmp/retry-52.json",
+    "/tmp/retry-64.json",
+    "/tmp/retry-65.json"
+  ]
+}

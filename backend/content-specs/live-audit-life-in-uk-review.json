@@ -1,0 +1,102 @@
+{
+  "auditDate": "2026-08-17",
+  "scope": "Published Life in the UK questions reviewed from production API",
+  "productionChanges": false,
+  "trackSlug": "life-in-the-uk-test",
+  "publishedQuestionCount": 412,
+  "priority": "high",
+  "summary": {
+    "nearDuplicatePairsAtJaccard075": 15,
+    "nearDuplicatePairsAtJaccard085": 3,
+    "exactDuplicatePromptGroups": 1,
+    "sourceMetadataPresent": false,
+    "reasonForPriority": "The content is a citizenship-test subject and every published item needs handbook-level verification before approval."
+  },
+  "exactDuplicateReview": [
+    {
+      "questionIds": [
+        "cf8a4214-de6a-4609-b3a5-0caf3c095911",
+        "1c98dc3a-e841-45af-822e-86fe02783478"
+      ],
+      "topic": "The UK Government, the Law and Your Role",
+      "pattern": "House of Lords role",
+      "action": "Keep one canonical item; replace the other with a distinct, handbook-supported objective."
+    }
+  ],
+  "nearDuplicateReview": [
+    {
+      "questionIds": [
+        "8bf94f5e-b6e7-49ff-874b-7feef6af43be",
+        "218d7f38-bca5-482f-a36c-2a647df5c9f9",
+        "9d2ff2b1-4160-4de3-98de-6f75eae05d57"
+      ],
+      "pattern": "Geographical location or composition of the UK",
+      "action": "Retain only distinct learning objectives; verify each answer against the official Guide for New Residents."
+    },
+    {
+      "questionIds": [
+        "8e1f9c27-477a-492f-b47e-e467a5b620eb",
+        "539cd761-a820-495c-b1ea-f8a93c7865e3",
+        "4781b218-f308-475f-a843-4cc9a65b2f50",
+        "c07a4b32-9b46-4d32-8806-e24628e38068",
+        "ae316d2c-09c4-4af4-9ad8-452d0e519073"
+      ],
+      "pattern": "Diversity, inclusion, employment and multiculturalism",
+      "action": "Consolidate repeated recall prompts and replace them with applied, source-supported items."
+    },
+    {
+      "questionIds": [
+        "5ad1edde-74c7-45b2-a6b5-5bfb5785c45a",
+        "d2ad7a10-0eff-45dd-8bda-12e2c707d2ea",
+        "56a30a14-ee55-4c7d-b6ab-9ab84a8a960d"
+      ],
+      "pattern": "Community integration, participation and cohesion",
+      "action": "Check whether these test different objectives; otherwise keep one and retire the rest."
+    },
+    {
+      "questionIds": [
+        "fa4a4fa1-9683-4a39-9dec-8348038562e2",
+        "d59d7133-aff8-4386-b404-ab09c4d4e779"
+      ],
+      "pattern": "Political system or structure of the UK",
+      "action": "Merge unless the second item tests a clearly different concept."
+    },
+    {
+      "questionIds": [
+        "fff7c276-8a0a-406d-86dd-3488bc9bd25d",
+        "3759902f-2fa9-4d13-a258-f4030aa06ee9"
+      ],
+      "pattern": "Role of Parliament in making laws",
+      "action": "Verify answer choices and retain only distinct objectives."
+    },
+    {
+      "questionIds": [
+        "253f8d80-a042-4b6b-b5a4-eebd0c960c2b",
+        "6c992ede-3d8e-47d3-b880-bbe516f6f0c7"
+      ],
+      "pattern": "Role of the UK Supreme Court",
+      "action": "Merge or rewrite as a different legal-system objective."
+    },
+    {
+      "questionIds": [
+        "29053060-9ab7-43c2-a922-8b7409732b0a",
+        "d778758d-b9d5-45c7-8c50-060382405509"
+      ],
+      "pattern": "Rule of law",
+      "action": "Retain one direct definition and make any second item scenario-based if needed."
+    }
+  ],
+  "approvalRule": "Use the official GOV.UK Life in the UK test guidance and the current Guide for New Residents as the source of truth. Do not copy or reproduce the official question bank.",
+  "authoritativeSources": [
+    {
+      "title": "GOV.UK Life in the UK Test",
+      "url": "https://www.gov.uk/life-in-the-uk-test",
+      "note": "The official service says the test is based on the official Guide for New Residents and has 24 questions in 45 minutes."
+    },
+    {
+      "title": "GOV.UK What happens at the test",
+      "url": "https://www.gov.uk/life-in-the-uk-test/what-happens-test",
+      "note": "Confirms the current test format and 75% pass mark."
+    }
+  ]
+}

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T17:47:12.112Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Editorial review checked all simple-interest and discount calculations and revised the final scenario to remain a neutral maths exercise, not financial guidance. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-measures-money-interest-discount",
+    "title": "Measures: money, simple interest and discounts",
+    "objectives": [
+      {
+        "code": "FSM-L1-14",
+        "text": "Calculate simple interest in multiples of 5% on amounts of money."
+      },
+      {
+        "code": "FSM-L1-15",
+        "text": "Calculate discounts in multiples of 5% on amounts of money."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Calculating Simple Interest and Discounts",
+    "summary": "This lesson explains how to calculate simple interest and discounts using percentages that are multiples of five. It focuses on distinguishing the calculated amount from the final total in practical money contexts.",
+    "objectives": [
+      {
+        "code": "FSM-L1-14",
+        "text": "Calculate simple interest in multiples of 5% on amounts of money."
+      },
+      {
+        "code": "FSM-L1-15",
+        "text": "Calculate discounts in multiples of 5% on amounts of money."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Simple Interest",
+        "body": "Simple interest is a fixed percentage added to a principal amount. To calculate it, multiply the principal by the interest rate. For example, if you have fifty pounds and the rate is ten percent, you calculate ten percent of fifty. This gives you five pounds of interest, which is separate from the original fifty pounds."
+      },
+      {
+        "heading": "Calculating Discounts",
+        "body": "A discount reduces the original price of an item. To find the discount amount, multiply the original price by the discount percentage. If a jacket costs one hundred pounds and has a twenty percent discount, you calculate twenty percent of one hundred. This equals twenty pounds, which is the amount saved, not the final price you pay."
+      },
+      {
+        "heading": "Distinguishing Amounts",
+        "body": "It is crucial to distinguish between the calculated interest or discount and the final total. Interest is added to the principal, while discounts are subtracted from the price. Always check whether the question asks for the interest amount, the discount amount, or the final sum after these calculations are applied."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A savings account holds £200. The simple interest rate is 5%. What is the interest amount earned?",
+        "options": [
+          "£10",
+          "£20",
+          "£210",
+          "£190"
+        ],
+        "correctIndex": 0,
+        "explanation": "5% of £200 is calculated as 0.05 multiplied by 200, which equals £10.",
+        "objectiveCode": "FSM-L1-14"
+      },
+      {
+        "prompt": "A laptop costs £500. A discount of 15% is applied. What is the discount amount?",
+        "options": [
+          "£75",
+          "£425",
+          "£50",
+          "£150"
+        ],
+        "correctIndex": 0,
+        "explanation": "15% of £500 is calculated as 0.15 multiplied by 500, which equals £75.",
+        "objectiveCode": "FSM-L1-15"
+      },
+      {
+        "prompt": "A fictional account has a £1,000 balance with simple interest of 10%. What is the total amount after the interest is added?",
+        "options": [
+          "£100",
+          "£1100",
+          "£900",
+          "£1010"
+        ],
+        "correctIndex": 1,
+        "explanation": "10% of £1000 is £100, so the total is £1000 plus £100, which equals £1100.",
+        "objectiveCode": "FSM-L1-14"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

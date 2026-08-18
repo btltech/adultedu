@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:30:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft; checked against the official standard. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-communication-tools",
+    "title": "Communication: choosing tools and sending clear messages",
+    "objectives": [
+      {
+        "code": "EDS-L1-CC1",
+        "text": "Select appropriate online communication tools such as email, messaging, voicemail and video calls to send clear, structured messages for different audiences."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Choosing Communication Tools and Clear Messages",
+    "summary": "Choose an online communication method that suits the purpose and reader, then send a clear, respectful message.",
+    "objectives": [
+      {
+        "code": "EDS-L1-CC1",
+        "text": "Select appropriate online communication tools such as email, messaging, voicemail and video calls to send clear, structured messages for different audiences."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Match the tool to the purpose",
+        "body": "Email can suit a message that needs a written record or more detail. Messaging can suit a short, timely update. A video call can help when discussion or visual explanation is useful. Consider the audience, urgency and accessibility needs before choosing. Do not assume that one tool is always best for every workplace or everyday situation."
+      },
+      {
+        "heading": "Structure a message clearly",
+        "body": "A clear written message normally has a useful subject line, greeting, main point and closing. Use short paragraphs or bullets when they help the reader. Check names, dates and attachments before sending. Choose a respectful tone that suits the relationship and purpose. Suggested replies or AI wording can help, but read and adapt them before using them."
+      },
+      {
+        "heading": "Use communication features responsibly",
+        "body": "Video and voice tools may include mute, camera, chat, captions and transcription features. Use them to support clear participation and accessibility. Some calls can be recorded or transcribed, so check consent and local expectations before sharing a recording. Keep personal or sensitive information limited to the people and service that genuinely need it."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional team needs a short update that colleagues can read later. Which tool is most suitable?",
+        "options": [
+          "An email with a clear subject line",
+          "An unrelated game",
+          "A public password post",
+          "A camera filter"
+        ],
+        "correctIndex": 0,
+        "explanation": "Email provides a written record and can present a structured update to colleagues.",
+        "objectiveCode": "EDS-L1-CC1"
+      },
+      {
+        "prompt": "Which opening makes a fictional email easiest to understand?",
+        "options": [
+          "A useful subject line and a clear main point",
+          "No subject line and unrelated details",
+          "Only emojis with no explanation",
+          "A copied password"
+        ],
+        "correctIndex": 0,
+        "explanation": "A useful subject line and clear main point help the reader understand the message quickly.",
+        "objectiveCode": "EDS-L1-CC1"
+      },
+      {
+        "prompt": "Before sharing a recording of a fictional video call, what should a learner consider?",
+        "options": [
+          "Whether consent and the service's expectations allow sharing",
+          "Whether to reveal a verification code",
+          "Whether to remove all captions",
+          "Whether to make the message unclear"
+        ],
+        "correctIndex": 0,
+        "explanation": "Call recordings can affect other people, so consent and the service's expectations should be considered before sharing.",
+        "objectiveCode": "EDS-L1-CC1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

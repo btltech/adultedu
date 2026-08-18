@@ -1,0 +1,32 @@
+{
+  "generatedAt": "2026-08-17",
+  "scope": "Published questions in Railway production",
+  "totals": {
+    "tracks": 23,
+    "topics": 161,
+    "publishedQuestions": 8301,
+    "legacyReviewStatus": 8301,
+    "missingSourceMetadata": 8301,
+    "missingCurriculumObjectives": 8301,
+    "missingOrVeryShortExplanations": 7,
+    "veryShortPrompts": 55,
+    "duplicatePromptGroups": 4,
+    "questionsInDuplicateGroups": 8,
+    "questionsWithDuplicateOptions": 8,
+    "questionsWithInvalidAnswerIndexes": 0,
+    "questionsWithNonIndexAnswers": 11,
+    "financialLiteracyNearDuplicatePairsAt75Percent": 3,
+    "lifeInUkNearDuplicatePairsAt75Percent": 15,
+    "lifeInUkNearDuplicatePairsAt85Percent": 3
+  },
+  "interpretation": "This is an audit baseline, not an approval decision. The legacy and missing-metadata flags identify work to review; they do not prove that every question is factually wrong.",
+  "nextSteps": [
+    "Export and retain the full read-only question set for review.",
+    "Audit by track and topic for factual accuracy, syllabus alignment, answer correctness and duplicate content.",
+    "Add source and curriculum metadata only after the question has been checked against an authoritative source.",
+    "Keep good questions, rewrite weak questions and remove duplicates before any publication changes.",
+    "Review the 11 MCQs whose answers are stored as option text; the scoring layer resolves these, but normalising them to indexes improves consistency. One A-Level Maths item is mathematically ambiguous and needs a content rewrite, not just a data conversion.",
+    "For Financial Literacy, verify FSCS claims against the current official limit of £120,000 from 1 December 2025.",
+    "For Life in the UK, verify every item against the official Guide for New Residents and consolidate the duplicate prompt groups."
+  ]
+}

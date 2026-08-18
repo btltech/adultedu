@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T20:00:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation requests were unreliable. Safety, accessibility, device variation and all practice decisions were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-device-settings-accessibility",
+    "title": "Using devices: updates, settings and accessibility",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD1",
+        "text": "Keep operating systems and applications up to date, navigate between apps and windows, and use system settings and accessibility tools to personalise the device interface."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Updates, Settings and Accessibility",
+    "summary": "Keep a device usable and secure by managing updates, moving confidently between open apps and choosing settings that support the way you work.",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD1",
+        "text": "Keep operating systems and applications up to date, navigate between apps and windows, and use system settings and accessibility tools to personalise the device interface."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Updating safely",
+        "body": "Operating-system and app updates can improve security, reliability and features. Check for updates through the device settings or the official app store, not through an unexpected message or link. Automatic updates may be useful when they suit your device and connection. If an update changes something important, use the official help information before making further changes."
+      },
+      {
+        "heading": "Moving between apps and windows",
+        "body": "Everyday tasks often need more than one app, such as a browser and a document. Use the taskbar, app switcher, tabs, windows, gestures or keyboard shortcuts available on your device to move between them. Keep track of which window is active before typing or pasting. The controls may look different on a phone, tablet or computer."
+      },
+      {
+        "heading": "Personalising access and comfort",
+        "body": "Settings can make a device easier and more comfortable to use. Examples include text size, colour filters, captions, screen-reader tools, voice control, brightness and notification options. Choose settings that support your needs and the task. If you are unsure what a setting does, read its description or use official help before changing it."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional tablet shows that an installed app has an update available in its official app store. What is the safest next step?",
+        "options": [
+          "Review the update in the official app store and install it if appropriate.",
+          "Enter account details into a link from an unexpected text message.",
+          "Turn off all device security features.",
+          "Download a replacement app from an unknown website."
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking updates through the official app store avoids relying on an unexpected link or unknown download.",
+        "objectiveCode": "EDS-L1-UD1"
+      },
+      {
+        "prompt": "A learner needs to copy a date from a browser into an open document on a computer. Which feature helps them move between the two open apps?",
+        "options": [
+          "An app switcher or taskbar",
+          "A printer queue",
+          "A password reset form",
+          "A camera filter"
+        ],
+        "correctIndex": 0,
+        "explanation": "An app switcher or taskbar lets the learner move between open applications to complete the task.",
+        "objectiveCode": "EDS-L1-UD1"
+      },
+      {
+        "prompt": "Text on a fictional phone is difficult to read. Which setting is most directly relevant?",
+        "options": [
+          "Increase text size or use an accessibility display option.",
+          "Share the phone passcode with another person.",
+          "Delete all saved files.",
+          "Accept an unknown pop-up."
+        ],
+        "correctIndex": 0,
+        "explanation": "Text-size and accessibility display settings can improve readability without sharing information or taking an unsafe action.",
+        "objectiveCode": "EDS-L1-UD1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

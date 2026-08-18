@@ -1,0 +1,107 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T21:50:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual source-backed draft; unpublished and not approved for production."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-secure-online-buying",
+    "title": "Transacting: comparing options and buying securely",
+    "objectives": [
+      {
+        "code": "EDS-L1-T1",
+        "text": "Compare online buying options and make a secure purchase using a trusted platform."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Comparing Online Buying Options Safely",
+    "summary": "Compare fictional offers, check a trusted platform and record the final cost without making a real purchase.",
+    "objectives": [
+      {
+        "code": "EDS-L1-T1",
+        "text": "Compare online buying options and make a secure purchase using a trusted platform."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Compare the whole offer",
+        "body": "When comparing fictional online offers, look beyond the headline price. Check the seller information, item description, delivery charge, taxes, returns information and final total. Reviews can provide clues, but they are not proof that an offer is safe. A very cheap price deserves careful checking rather than an automatic decision."
+      },
+      {
+        "heading": "Check the platform before buying",
+        "body": "Use a trusted platform and inspect the address, seller details and payment page before continuing. A padlock or HTTPS protects the connection, but it does not guarantee an honest seller. Do not follow unexpected payment links or enter real card details in practice activities. Stop and ask for help if anything feels unusual."
+      },
+      {
+        "heading": "Keep a transaction record",
+        "body": "After a fictional purchase exercise, note the item, seller, date, total cost and reference in a safe record. Read the confirmation carefully and check that it matches the order. Keeping a receipt helps with later questions. Never share real payment details, passwords or one-time codes while practising these checks."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional offer is much cheaper than similar listings. What is the best next step?",
+        "options": [
+          "Check seller information, reviews, delivery and final charges",
+          "Pay immediately because the price is low",
+          "Send a password to the seller",
+          "Download an unknown payment app"
+        ],
+        "correctIndex": 0,
+        "explanation": "A low price is only a reason to investigate the complete offer and seller, not proof of a bargain.",
+        "objectiveCode": "EDS-L1-T1"
+      },
+      {
+        "prompt": "Which detail should be checked on a fictional checkout page?",
+        "options": [
+          "The final total and trusted platform address",
+          "A stranger's verification code",
+          "An unrelated pop-up advert",
+          "A request to share a password"
+        ],
+        "correctIndex": 0,
+        "explanation": "Checking the final total and platform address helps identify unexpected charges or an unsafe destination.",
+        "objectiveCode": "EDS-L1-T1"
+      },
+      {
+        "prompt": "What should a learner keep after a fictional transaction?",
+        "options": [
+          "The item, date, total and reference",
+          "A real card number in a chat",
+          "Someone else's login",
+          "An unknown download"
+        ],
+        "correctIndex": 0,
+        "explanation": "A simple transaction record supports later checking without exposing sensitive credentials.",
+        "objectiveCode": "EDS-L1-T1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

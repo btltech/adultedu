@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:34:02.587Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-chem-l2-organic",
+    "title": "Chemistry: organic chemistry",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-7",
+        "text": "Describe key organic substances, reactions and uses using appropriate formulae."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "GCSE Organic Chemistry Essentials",
+    "summary": "A concise overview of hydrocarbons, crude oil, and polymers for adult learners.",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-7",
+        "text": "Describe key organic substances, reactions and uses using appropriate formulae."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Hydrocarbons and Crude Oil",
+        "body": "Hydrocarbons consist solely of carbon and hydrogen atoms. Crude oil is a complex mixture of these compounds. We separate it into fractions based on boiling points. Each fraction contains different chain lengths. Shorter chains are more volatile. Longer chains are less volatile. This separation allows us to use specific components for distinct industrial and domestic applications effectively."
+      },
+      {
+        "heading": "Polymerisation Basics",
+        "body": "Polymerisation joins small molecules called monomers into long chains. These long chains are known as polymers. Ethene is a common monomer used in this process. The resulting polymer is poly(ethene). This reaction involves breaking double bonds. New single bonds form between monomers. This creates a stable, continuous structure. Understanding this process helps explain the properties of common plastics."
+      },
+      {
+        "heading": "Common Organic Reactions",
+        "body": "Combustion is a key organic reaction. Hydrocarbons react with oxygen to release energy. Complete combustion produces carbon dioxide and water. Incomplete combustion may produce carbon monoxide. This is dangerous and toxic. Substitution reactions also occur in organic chemistry. Hydrogen atoms can be replaced by halogens. These reactions are fundamental to understanding chemical behaviour."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A text states: \"Ethene monomers join together to form a long chain called poly(ethene).\" What is the name of the small molecule that joins to form the polymer?",
+        "options": [
+          "Poly(ethene)",
+          "Ethene",
+          "Carbon",
+          "Hydrogen"
+        ],
+        "correctIndex": 1,
+        "explanation": "The stimulus explicitly identifies ethene as the monomer that joins to form the polymer.",
+        "objectiveCode": "GCSE-CHEM-7"
+      },
+      {
+        "prompt": "A passage reads: \"Complete combustion of hydrocarbons yields carbon dioxide and water.\" Which two products are formed during complete combustion?",
+        "options": [
+          "Carbon monoxide and water",
+          "Carbon dioxide and water",
+          "Oxygen and carbon",
+          "Hydrogen and carbon"
+        ],
+        "correctIndex": 1,
+        "explanation": "The stimulus directly lists carbon dioxide and water as the products of complete combustion.",
+        "objectiveCode": "GCSE-CHEM-7"
+      },
+      {
+        "prompt": "A note says: \"Crude oil fractions are separated based on their boiling points.\" What property determines the separation of crude oil fractions?",
+        "options": [
+          "Colour",
+          "Boiling point",
+          "Density",
+          "Taste"
+        ],
+        "correctIndex": 1,
+        "explanation": "The stimulus clearly states that separation is based on boiling points.",
+        "objectiveCode": "GCSE-CHEM-7"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

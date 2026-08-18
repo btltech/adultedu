@@ -1,0 +1,11 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "a-level-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 1,
+  "records": [
+    {"id":"b419fb00-197e-43f0-bc39-5ee1eb18db27","answer":"1","rewrite":"Made the domain whole-number and changed the breakpoint to a closed left segment so the maximum is uniquely 550 thousand pounds."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

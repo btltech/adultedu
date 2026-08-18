@@ -1,0 +1,13 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-biology",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 3,
+  "records": [
+    {"id":"b3cef7c2-8733-420c-8b6f-dda1fd560be0","answer":"3"},
+    {"id":"96686680-ed4a-482b-bb22-a91b7e10b3c3","answer":"2"},
+    {"id":"630f2819-7a5f-47cf-9641-3883cea57a0a","answer":"1"}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

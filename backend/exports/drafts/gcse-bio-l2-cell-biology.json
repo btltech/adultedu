@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T04:47:48.057Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-bio-l2-cell-biology",
+    "title": "Biology: cell biology",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-1",
+        "text": "Explain cell structures and processes including microscopy, transport and cell division."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Cell Biology Fundamentals",
+    "summary": "Explore cell structures, microscopy, transport, and division using clear scientific reasoning.",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-1",
+        "text": "Explain cell structures and processes including microscopy, transport and cell division."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Cell Structures",
+        "body": "Cells contain specific organelles that perform distinct functions. Animal cells lack cell walls and chloroplasts, unlike plant cells. Bacterial cells are smaller and lack a defined nucleus. Understanding these differences helps identify cell types. Each structure supports the cell's overall survival and growth processes effectively."
+      },
+      {
+        "heading": "Microscopy and Transport",
+        "body": "Microscopes magnify tiny structures for detailed observation. Light microscopes use lenses to focus images. Electron microscopes provide higher resolution for smaller details. Transport moves substances across membranes. Diffusion and osmosis are key passive processes that maintain cellular balance and function without energy input. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Cell Division",
+        "body": "Cell division creates new cells for growth and repair. Mitosis produces two identical daughter cells. The nucleus divides first, followed by the cytoplasm. This process ensures genetic material is copied accurately. Understanding division helps explain how organisms develop and maintain healthy tissue structures over time."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A student observes a cell with a rigid outer layer and green structures. Which cell type is this?",
+        "options": [
+          "Animal cell",
+          "Plant cell",
+          "Bacterial cell",
+          "Red blood cell"
+        ],
+        "correctIndex": 1,
+        "explanation": "Plant cells have cell walls and chloroplasts, unlike animal or bacterial cells.",
+        "objectiveCode": "GCSE-BIO-1"
+      },
+      {
+        "prompt": "A diagram shows molecules moving from high to low concentration without energy. What process is this?",
+        "options": [
+          "Active transport",
+          "Diffusion",
+          "Mitosis",
+          "Osmosis"
+        ],
+        "correctIndex": 1,
+        "explanation": "Diffusion is the passive movement of particles down a concentration gradient.",
+        "objectiveCode": "GCSE-BIO-1"
+      },
+      {
+        "prompt": "A cell divides to produce two identical daughter cells for tissue repair. Which process is occurring?",
+        "options": [
+          "Meiosis",
+          "Mitosis",
+          "Fertilisation",
+          "Apoptosis"
+        ],
+        "correctIndex": 1,
+        "explanation": "Mitosis produces two genetically identical daughter cells for growth and repair.",
+        "objectiveCode": "GCSE-BIO-1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

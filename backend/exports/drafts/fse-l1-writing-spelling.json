@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T15:54:25.218Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review diversified repetitive error-spotting questions and replaced an artificial spelling task with a realistic self-check activity. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-writing-spelling",
+    "title": "Writing: checking everyday and specialist words",
+    "objectives": [
+      {
+        "code": "FSE-L1-W21",
+        "text": "Spell words used most often in work, study and daily life, including specialist words."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Checking Everyday and Specialist Words",
+    "summary": "This lesson helps you plan and check spellings for work, study, and daily life. You will learn to identify words that need checking and use self-review strategies to improve accuracy in your writing.",
+    "objectives": [
+      {
+        "code": "FSE-L1-W21",
+        "text": "Spell words used most often in work, study and daily life, including specialist words."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Why Checking Matters",
+        "body": "Accurate spelling helps a reader understand your message. In work or study, a mistake in a common or specialist word can distract from what you mean. Checking important words before you send or submit writing can make your message clearer. It can also help you spot words that need a second look before they affect the reader."
+      },
+      {
+        "heading": "Identifying Words to Check",
+        "body": "Not every word needs the same level of attention. Focus on words you are unsure about, such as specialist terms or frequently used words that are easy to misspell. Highlighting these words before you finish writing helps you target your checking efforts. You can also notice repeated key words that matter to the purpose of your message."
+      },
+      {
+        "heading": "Self-Review Strategies",
+        "body": "A dictionary, glossary or spell-check tool can be useful when you are unsure. Check that a suggested word fits the meaning you intended, especially with specialist words. You might also make a short list of words to check before you finish. Different writing tasks can call for different checking methods, so choose one that fits your task."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read this note: 'Please ensure the invetory is updated by Friday.' Which word in the note is misspelled?",
+        "options": [
+          "Please",
+          "ensure",
+          "invetory",
+          "updated"
+        ],
+        "correctIndex": 2,
+        "explanation": "The word 'invetory' is misspelled; the correct spelling is 'inventory'.",
+        "objectiveCode": "FSE-L1-W21"
+      },
+      {
+        "prompt": "Read this message: 'Please keep the receipt with the order form.' Which spelling should be used for the document that shows a payment?",
+        "options": [
+          "reciept",
+          "receipt",
+          "receit",
+          "receept"
+        ],
+        "correctIndex": 1,
+        "explanation": "‘Receipt’ is the correct spelling for the document that records a payment.",
+        "objectiveCode": "FSE-L1-W21"
+      },
+      {
+        "prompt": "A learner is writing about a computer table that organises numbers and formulas. Which spelling should they check and use?",
+        "options": [
+          "spredsheet",
+          "spreadsheet",
+          "spreadsheat",
+          "spreadshete"
+        ],
+        "correctIndex": 1,
+        "explanation": "‘Spreadsheet’ is the correct spelling for a digital table used to organise information, numbers or formulas.",
+        "objectiveCode": "FSE-L1-W21"
+      }
+    ],
+    "writingActivity": {
+      "title": "Short workplace message",
+      "prompt": "Write a short message to a colleague explaining that you have updated a spreadsheet. Before you finish, choose two words in your message that you would check in a dictionary, glossary or spell-check tool if you were unsure of them.",
+      "wordGuide": "30 to 50 words",
+      "checklist": [
+        "Have I identified the words I would check if I was unsure of their spelling?",
+        "Have I checked everyday words as well as the specialist word 'spreadsheet'?",
+        "Did I use a checking method that suits the word and its meaning?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

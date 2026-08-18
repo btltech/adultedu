@@ -1,0 +1,61 @@
+{
+  "date": "2026-08-17",
+  "lastVerifiedAt": "2026-08-17T21:51:21Z",
+  "scope": "AdultEdu published question bank and locally generated draft bundles",
+  "production": {
+    "publishedQuestions": 8301,
+    "reviewStatusInReview": 8301,
+    "invalidMcqScenarioIndexes": 0,
+    "recordsWithSourceAndObjectiveMetadata": 8301,
+    "recordsStillMissingSourceMetadata": 0,
+    "recordsStillMissingCurriculumObjective": 0,
+    "recordsPendingItemLevelMetadataReview": 0,
+    "recordsWithTopicMapConsistencyVerified": 5306,
+    "recordsWithItemLevelMetadataReviewProvenance": 2987,
+    "recordsWithDirectOrLegacyMetadataProvenance": 8,
+    "embeddedOptionLabels": 0,
+    "unresolvableAnswerIndexes": 0,
+    "exactDuplicatePromptGroups": 0,
+    "shortPromptsRetained": 54,
+    "shortExplanationsRetained": 7,
+    "validExplanationMarkersRetained": 21,
+    "correctionManifestRecords": 492,
+    "additionalDirectReviewedRecords": 9
+  },
+  "generatedDrafts": {
+    "bundles": 83,
+    "structurallyValid": 83,
+    "structurallyInvalid": 0,
+    "published": 0,
+    "pilotApprovedBundles": 45,
+    "withoutEditorialReview": 0,
+    "decision": "hold until editorial approval and question-level source/objective review",
+    "modelReviewBundles": 83,
+    "modelReviewFailures": 0,
+    "modelReviewPass": 81,
+    "modelReviewRewriteBundles": 2,
+    "modelReviewItemRewritesApplied": 2,
+    "modelReviewReport": "draft-model-review-2026-08-17.json"
+  },
+  "automation": {
+    "script": "backend/scripts/remediate-published-content.js",
+    "modes": ["audit", "normalise", "propose", "apply-proposals"],
+    "defaultIsReadOnly": true,
+    "deterministicFixes": "answer text to zero-based option index only when the match is unique",
+    "semanticFixes": "model proposals are written to a review file and require explicit --apply",
+    "publicationSafety": "never sets isPublished; learner-facing edits become in_review and use version checks",
+    "modelEndpointAtLastCheck": "LM Studio qwen/qwen3.8-27b reviewed all 83 bundles with reasoning off",
+    "metadataProposalScript": "backend/scripts/propose-question-metadata.js",
+    "metadataProposalSafety": "model and deterministic passes select only mapped sources and subject objectives; map consistency is verified; all rows remain in_review and explicit approved:true is still required for publication",
+    "metadataTopicMap": "backend/content-specs/legacy-topic-objectives-2026-08-17.json",
+    "metadataRemoteApply": "backend/scripts/apply-approved-metadata.js",
+    "metadataVerificationScript": "backend/scripts/verify-topic-mapped-metadata.js",
+    "finalSnapshotAuditScript": "backend/scripts/audit-published-snapshot.js"
+  },
+  "remainingWork": [
+    "Keep the remaining valid-marker legacy items under periodic review; no unresolved answer/index contradictions or exact duplicates remain in the current audit.",
+    "Keep factual/editorial review on the normal review cadence; metadata map consistency is complete and all published rows remain in_review until approval.",
+    "Keep all 83 generated bundles unpublished until human editorial approval; model review is complete (81 pass, 2 validated local rewrites).",
+    "Re-run integrity, duplicate, source, objective and publication-gate checks after each batch."
+  ]
+}

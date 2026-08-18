@@ -1,0 +1,25 @@
+{
+  "auditDate": "2026-08-17T22:01:01.540Z",
+  "scope": "published snapshot",
+  "integrity": {
+    "publishedQuestions": 8301,
+    "missingSourceMetadata": 0,
+    "missingCurriculumObjectives": 0,
+    "unresolvableAnswerIndexes": 0,
+    "answerValuesResolvedFromTextOrNumericString": 112,
+    "embeddedOptionLabels": 0,
+    "malformedJson": 0,
+    "exactDuplicatePromptGroups": 0,
+    "shortPrompts": 54,
+    "shortExplanations": 7,
+    "explanationMarkers": 21,
+    "provenance": {
+      "topic-objective-map": 5306,
+      "batch-reviewed": 2987,
+      "direct-or-legacy": 8
+    },
+    "reviewStatus": {
+      "in_review": 8301
+    }
+  }
+}

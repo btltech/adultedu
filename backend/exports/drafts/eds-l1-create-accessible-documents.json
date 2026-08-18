@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T20:50:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation requests were unreliable. Document purpose, layout, accessibility and practice decisions were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-create-accessible-documents",
+    "title": "Creating content: clear, accessible documents",
+    "objectives": [
+      {
+        "code": "EDS-L1-CE1",
+        "text": "Create and edit digital content using basic formatting and layout tools, applying styles and conventions appropriate to purpose and audience."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Creating Clear and Accessible Documents",
+    "summary": "Choose an appropriate application, structure content clearly and use accessible features so a document suits its purpose and reader.",
+    "objectives": [
+      {
+        "code": "EDS-L1-CE1",
+        "text": "Create and edit digital content using basic formatting and layout tools, applying styles and conventions appropriate to purpose and audience."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Start with purpose and audience",
+        "body": "Choose a suitable application for the type of content you need to create, such as a letter, poster, report or presentation. Think about who will read it and what they need to do with the information. A clear purpose guides choices about tone, headings, layout, images and the level of detail to include."
+      },
+      {
+        "heading": "Use structure to make information clear",
+        "body": "Use headings, short paragraphs, bullet points, spacing and alignment to help readers find important information. Consistent styles make a longer document easier to scan. Formatting should support meaning, not distract from it. Before sharing, check that the order of ideas is logical and that important instructions are not hidden in a crowded block of text."
+      },
+      {
+        "heading": "Include accessibility from the start",
+        "body": "Accessible content gives more people a fair chance to understand it. Use clear labels for charts, meaningful headings and alternative text for informative images. Captions can support video content. Good contrast and readable text size can help, but accessibility includes the structure and meaning of the document as well as its appearance. Check the finished document from the reader's viewpoint."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional community notice needs to help readers find opening times quickly. Which choice best supports that purpose?",
+        "options": [
+          "Use a clear heading and a short bulleted list of times.",
+          "Put all details into one long unbroken paragraph.",
+          "Use a different font for every word.",
+          "Hide the times in an image without a description."
+        ],
+        "correctIndex": 0,
+        "explanation": "A clear heading and short list make key information easier to scan and understand.",
+        "objectiveCode": "EDS-L1-CE1"
+      },
+      {
+        "prompt": "A fictional report includes a chart. Which action best supports accessibility?",
+        "options": [
+          "Give the chart a clear label and explain its key information in text.",
+          "Use colour only to show the meaning.",
+          "Remove all headings from the report.",
+          "Make the chart title an unrelated joke."
+        ],
+        "correctIndex": 0,
+        "explanation": "A clear label and text explanation help readers understand the chart even if they cannot rely on colour or the visual alone.",
+        "objectiveCode": "EDS-L1-CE1"
+      },
+      {
+        "prompt": "Which application choice is most suitable for creating a structured fictional letter with headings and paragraphs?",
+        "options": [
+          "A word-processing application",
+          "A calculator",
+          "A device settings screen",
+          "A camera-only application"
+        ],
+        "correctIndex": 0,
+        "explanation": "A word-processing application provides document, formatting and layout tools suitable for a structured letter.",
+        "objectiveCode": "EDS-L1-CE1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

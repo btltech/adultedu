@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T17:34:15.846Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Editorial review corrected an inaccurate denominator explanation, checked all fraction comparisons and calculations, and confirmed the stated objectives. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-number-fractions",
+    "title": "Number: fractions and mixed numbers",
+    "objectives": [
+      {
+        "code": "FSM-L1-8",
+        "text": "Read, write, order and compare common fractions and mixed numbers."
+      },
+      {
+        "code": "FSM-L1-9",
+        "text": "Find fractions of whole-number quantities and measurements."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Fractions and Mixed Numbers: Reading, Ordering, and Calculating",
+    "summary": "This lesson covers reading, ordering, and comparing common fractions and mixed numbers. It also demonstrates how to find a fraction of a whole-number quantity or measurement using clear, step-by-step methods suitable for adult learners.",
+    "objectives": [
+      {
+        "code": "FSM-L1-8",
+        "text": "Read, write, order and compare common fractions and mixed numbers."
+      },
+      {
+        "code": "FSM-L1-9",
+        "text": "Find fractions of whole-number quantities and measurements."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Fractions and Mixed Numbers",
+        "body": "Fractions represent parts of a whole. The denominator shows how many equal parts exist, while the numerator shows how many parts you have. Mixed numbers combine a whole number with a fraction, such as 1 1/2. This format is common in cooking and measurements. Understanding these basics helps you read and write these numbers accurately in daily life and work settings."
+      },
+      {
+        "heading": "Ordering and Comparing Values",
+        "body": "To compare fractions, look at the denominators first. If they are the same, the larger numerator is the bigger fraction. If denominators differ, convert them to a common denominator. For mixed numbers, compare the whole numbers first. If those are equal, compare the fractional parts. Ordering means arranging numbers from smallest to largest. This skill is useful when measuring ingredients or comparing distances."
+      },
+      {
+        "heading": "Finding a Fraction of a Quantity",
+        "body": "To find a fraction of a whole number, divide the number by the denominator first. Then, multiply the result by the numerator. For example, to find one-third of twelve, divide twelve by three to get four. Then multiply four by one to get four. This method works for measurements too. If you need half of ten centimetres, divide ten by two to get five."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A baker has 2 1/2 kg of flour and 3 1/4 kg of sugar. Which quantity is larger?",
+        "options": [
+          "2 1/2 kg of flour",
+          "3 1/4 kg of sugar",
+          "They are equal",
+          "Cannot be determined"
+        ],
+        "correctIndex": 1,
+        "explanation": "Compare the whole numbers first: 3 is greater than 2, so 3 1/4 kg is larger than 2 1/2 kg.",
+        "objectiveCode": "FSM-L1-8"
+      },
+      {
+        "prompt": "A carpenter needs to cut a 12-metre beam into equal sections. What is the length of one section if he takes one-third of the total length?",
+        "options": [
+          "2 metres",
+          "3 metres",
+          "4 metres",
+          "6 metres"
+        ],
+        "correctIndex": 2,
+        "explanation": "Divide 12 by the denominator 3 to get 4, then multiply by the numerator 1 to get 4 metres.",
+        "objectiveCode": "FSM-L1-9"
+      },
+      {
+        "prompt": "Order these fractions from smallest to largest: 1/4, 1/2, 3/4.",
+        "options": [
+          "1/2, 1/4, 3/4",
+          "3/4, 1/2, 1/4",
+          "1/4, 1/2, 3/4",
+          "1/4, 3/4, 1/2"
+        ],
+        "correctIndex": 2,
+        "explanation": "Write one-half as 2/4, so the order is 1/4, 2/4, 3/4; therefore 1/4, 1/2, 3/4 is correct.",
+        "objectiveCode": "FSM-L1-8"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

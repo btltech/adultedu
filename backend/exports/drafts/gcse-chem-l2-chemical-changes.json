@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:24:31.527Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-chem-l2-chemical-changes",
+    "title": "Chemistry: chemical changes",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-4",
+        "text": "Explain chemical changes including reactivity, acids, electrolysis and redox."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Understanding Chemical Changes: Reactivity and Redox",
+    "summary": "This lesson explores chemical changes through reactivity, acids, electrolysis, and redox processes. It uses particle models and equations to explain observations in safe, fictional classroom contexts.",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-4",
+        "text": "Explain chemical changes including reactivity, acids, electrolysis and redox."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Reactivity and Acid Properties",
+        "body": "Metals react with acids to produce hydrogen gas and salts. More reactive metals displace less reactive ones from solutions. Observing bubble formation indicates a chemical change. Particle models show ions rearranging. Equations balance atoms on both sides. These principles explain why some metals corrode faster than others in acidic environments."
+      },
+      {
+        "heading": "Electrolysis and Ion Movement",
+        "body": "Electrolysis splits compounds using electricity. Ions move towards oppositely charged electrodes. Oxidation occurs at the anode, while reduction happens at the cathode. Molten salts or aqueous solutions conduct electricity. Observations include gas bubbles or metal deposits. This process demonstrates how electrical energy drives chemical changes in particles."
+      },
+      {
+        "heading": "Redox Changes and Electron Transfer",
+        "body": "Redox reactions involve electron transfer between species. Oxidation is electron loss, while reduction is electron gain. These processes always occur together. Half-equations show electron movement clearly. Observing colour changes or precipitate formation confirms reaction progress. Understanding redox helps explain energy release in batteries and corrosion processes in daily life."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A student observes vigorous bubbling when adding zinc to dilute hydrochloric acid. The reaction is faster than with copper. Which statement explains this observation based on reactivity series principles?",
+        "options": [
+          "Zinc is less reactive than copper.",
+          "Copper produces more hydrogen gas.",
+          "Zinc is more reactive than copper.",
+          "Hydrochloric acid is stronger with copper."
+        ],
+        "correctIndex": 2,
+        "explanation": "Faster bubbling indicates higher reactivity, so zinc is more reactive than copper.",
+        "objectiveCode": "GCSE-CHEM-4"
+      },
+      {
+        "prompt": "During electrolysis of molten lead(II) bromide, a grey solid forms at the negative electrode. Bromine vapour appears at the positive electrode. Which process occurs at the negative electrode?",
+        "options": [
+          "Oxidation of bromide ions.",
+          "Reduction of lead ions.",
+          "Oxidation of lead ions.",
+          "Reduction of bromide ions."
+        ],
+        "correctIndex": 1,
+        "explanation": "The negative electrode attracts positive ions, which gain electrons in reduction.",
+        "objectiveCode": "GCSE-CHEM-4"
+      },
+      {
+        "prompt": "A redox reaction shows copper(II) ions turning blue to colourless, while zinc metal dissolves. Zinc ions appear in solution. Which species is oxidised in this change?",
+        "options": [
+          "Copper(II) ions.",
+          "Zinc metal.",
+          "Zinc ions.",
+          "Copper metal."
+        ],
+        "correctIndex": 1,
+        "explanation": "Zinc metal loses electrons to become zinc ions, which is oxidation.",
+        "objectiveCode": "GCSE-CHEM-4"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:28:02.634Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-chem-l2-energy-changes",
+    "title": "Chemistry: energy changes",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-5",
+        "text": "Explain and interpret energy changes in chemical reactions."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Understanding Energy Changes in Chemical Reactions",
+    "summary": "This lesson explains exothermic and endothermic reactions using energy profiles and numerical data. It helps learners distinguish between energy transfer and temperature changes while interpreting simple chemical energy diagrams.",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-5",
+        "text": "Explain and interpret energy changes in chemical reactions."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Defining Exothermic and Endothermic Reactions",
+        "body": "Exothermic reactions release energy to the surroundings, causing a temperature rise. Endothermic reactions absorb energy from the surroundings, leading to a temperature drop. Understanding these definitions helps you predict how a reaction will feel and how energy moves between the system and its environment during chemical changes."
+      },
+      {
+        "heading": "Interpreting Energy Profile Diagrams",
+        "body": "Energy profiles show the energy levels of reactants and products. The vertical axis represents energy, while the horizontal axis shows the reaction progress. A lower product energy level indicates an exothermic reaction. A higher product energy level indicates an endothermic reaction. The difference between these levels equals the energy change."
+      },
+      {
+        "heading": "Distinguishing Energy Transfer from Temperature",
+        "body": "Temperature measures the average kinetic energy of particles, while energy transfer is the total heat moved. A small mass can show a large temperature change with little total energy transfer. Always calculate total energy using mass and specific heat capacity. Do not confuse a hot cup of tea with a swimming pool regarding total energy content."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A reaction releases 500 J of energy to the surroundings. The reactants start at 25°C. Which statement correctly describes this reaction?",
+        "options": [
+          "It is endothermic because the temperature is high.",
+          "It is exothermic because energy leaves the system.",
+          "It is endothermic because energy is released.",
+          "It is exothermic because the temperature increases."
+        ],
+        "correctIndex": 1,
+        "explanation": "Releasing energy to the surroundings defines an exothermic reaction, regardless of the starting temperature.",
+        "objectiveCode": "GCSE-CHEM-5"
+      },
+      {
+        "prompt": "An energy profile shows reactants at 100 kJ and products at 150 kJ. What is the energy change for this reaction?",
+        "options": [
+          "-50 kJ, indicating an exothermic process.",
+          "+50 kJ, indicating an endothermic process.",
+          "0 kJ, indicating no energy change.",
+          "250 kJ, indicating a large exothermic release."
+        ],
+        "correctIndex": 1,
+        "explanation": "Products having higher energy than reactants means energy was absorbed, making the change positive and endothermic.",
+        "objectiveCode": "GCSE-CHEM-5"
+      },
+      {
+        "prompt": "A 10 g sample heats up by 5°C. A 1000 g sample heats up by 0.5°C. Which sample likely transferred more total energy?",
+        "options": [
+          "The 10 g sample because its temperature change is larger.",
+          "The 1000 g sample because its mass is significantly larger.",
+          "Both samples transferred exactly the same amount of energy.",
+          "Neither sample transferred any measurable energy."
+        ],
+        "correctIndex": 1,
+        "explanation": "Total energy transfer depends on mass and temperature change; the larger mass generally implies greater total energy despite the smaller temperature rise.",
+        "objectiveCode": "GCSE-CHEM-5"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:47:27.898Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-phys-l2-particle-model",
+    "title": "Physics: particle model",
+    "objectives": [
+      {
+        "code": "GCSE-PHYS-3",
+        "text": "Use the particle model to explain matter, density, pressure and energy changes."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Particle Model: Density and States",
+    "summary": "Explore how the particle model explains density, states of matter, and energy changes using clear, accessible language.",
+    "objectives": [
+      {
+        "code": "GCSE-PHYS-3",
+        "text": "Use the particle model to explain matter, density, pressure and energy changes."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Density",
+        "body": "Density measures how tightly particles pack within a specific volume. Solids have closely packed particles, creating high density. Gases have widely spaced particles, resulting in low density. This particle model helps explain why objects sink or float in fluids based on their relative densities. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "States of Matter",
+        "body": "Particles behave differently in solids, liquids, and gases. Solids maintain fixed shapes due to tight packing. Liquids flow because particles can slide past one another. Gases expand to fill containers as particles move freely. These differences arise from particle arrangement and movement, defining each state's unique properties."
+      },
+      {
+        "heading": "Energy and Pressure",
+        "body": "Internal energy relates to particle motion and arrangement. Heating increases kinetic energy, causing particles to move faster and expand. Pressure results from particles colliding with container walls. Understanding these links helps explain everyday phenomena like boiling water or inflating balloons through particle interactions. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A student observes that a block of iron sinks in water, while a block of wood floats. Which statement best explains this difference using the particle model?",
+        "options": [
+          "Iron particles are heavier than water particles.",
+          "Iron has a higher density than water.",
+          "Wood particles move faster than iron particles.",
+          "Water exerts more pressure on iron than wood."
+        ],
+        "correctIndex": 1,
+        "explanation": "Density determines whether an object sinks or floats; iron is denser than water.",
+        "objectiveCode": "GCSE-PHYS-3"
+      },
+      {
+        "prompt": "When ice melts into water, its volume decreases slightly. What does this indicate about the particle arrangement?",
+        "options": [
+          "Particles are destroyed during melting.",
+          "Particles pack more closely in liquid form.",
+          "Particles gain mass as they melt.",
+          "Particles stop moving completely in liquid."
+        ],
+        "correctIndex": 1,
+        "explanation": "Ice has a less dense structure than liquid water, so melting reduces volume.",
+        "objectiveCode": "GCSE-PHYS-3"
+      },
+      {
+        "prompt": "A sealed balloon expands when heated. Which explanation best describes the particle behavior?",
+        "options": [
+          "Particles break apart into smaller pieces.",
+          "Particles move faster and collide more forcefully.",
+          "Particles lose energy and slow down.",
+          "Particles change into a different element."
+        ],
+        "correctIndex": 1,
+        "explanation": "Heating increases particle kinetic energy, leading to more frequent and forceful collisions.",
+        "objectiveCode": "GCSE-PHYS-3"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T04:33:49.489Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-lit-l2-shakespeare",
+    "title": "English Literature: Shakespeare",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-1",
+        "text": "Analyse how Shakespeare presents characters, themes and ideas through language, form and structure."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Shakespearean Analysis: Character and Language",
+    "summary": "This lesson explores how to analyse character, theme, and language in Shakespearean-style texts. It focuses on identifying dramatic methods and contextualising ideas without relying on copyrighted material.",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-1",
+        "text": "Analyse how Shakespeare presents characters, themes and ideas through language, form and structure."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Character Presentation",
+        "body": "Shakespeare often reveals character through dialogue and action rather than direct description. Learners should examine how word choice and tone indicate a character’s status, emotions, or intentions. This approach allows audiences to infer personality traits based on how characters interact with others and respond to dramatic situations within the play."
+      },
+      {
+        "heading": "Identifying Thematic Elements",
+        "body": "Themes are central ideas explored throughout a play, such as power, love, or betrayal. To analyse them, look for recurring motifs, symbolic language, and structural patterns. Understanding how these elements connect helps reveal the deeper messages Shakespeare conveys about human nature and society, providing a richer interpretation of the text."
+      },
+      {
+        "heading": "Analysing Language and Form",
+        "body": "Shakespeare uses specific linguistic devices, including metaphor, imagery, and rhetorical questions, to enhance meaning. The form of the text, such as verse or prose, also signals shifts in mood or character status. Recognising these techniques allows learners to appreciate how language shapes the audience’s emotional response and understanding of the narrative."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The king’s voice trembled, yet his hand remained steady on the sword.\" What does this contrast suggest about the character?",
+        "options": [
+          "He is physically weak.",
+          "He is internally conflicted but determined.",
+          "He is afraid of the sword.",
+          "He is a coward."
+        ],
+        "correctIndex": 1,
+        "explanation": "The contrast between a trembling voice and steady hand indicates internal conflict alongside external resolve.",
+        "objectiveCode": "GCSE-LIT-1"
+      },
+      {
+        "prompt": "Read: \"She spoke of winter, yet her eyes burned with summer fire.\" Which theme is most strongly suggested?",
+        "options": [
+          "The passage of time.",
+          "The conflict between coldness and passion.",
+          "The importance of seasons.",
+          "The beauty of nature."
+        ],
+        "correctIndex": 1,
+        "explanation": "The juxtaposition of winter and summer fire highlights a thematic tension between emotional coldness and intense passion.",
+        "objectiveCode": "GCSE-LIT-1"
+      },
+      {
+        "prompt": "Read: \"He switched from verse to prose when addressing the servants.\" What is the likely dramatic effect of this shift?",
+        "options": [
+          "It indicates a change in his social status or mood.",
+          "It shows he is tired.",
+          "It proves he is illiterate.",
+          "It suggests he is lying."
+        ],
+        "correctIndex": 0,
+        "explanation": "Shakespeare often uses shifts between verse and prose to signal changes in a character’s status, mood, or the formality of the scene.",
+        "objectiveCode": "GCSE-LIT-1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

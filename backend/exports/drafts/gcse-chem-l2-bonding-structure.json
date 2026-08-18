@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:18:43.274Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-chem-l2-bonding-structure",
+    "title": "Chemistry: bonding and structure",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-2",
+        "text": "Explain bonding, structure and properties of substances."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Chemistry: Bonding and Structure",
+    "summary": "An introductory lesson exploring ionic, covalent, and metallic bonding. It links particle arrangements and forces to observable properties, using clear descriptions and targeted practice.",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-2",
+        "text": "Explain bonding, structure and properties of substances."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Ionic Bonding and Structure",
+        "body": "Ionic compounds form when metals transfer electrons to non-metals, creating oppositely charged ions. These ions arrange in a regular, repeating lattice structure held together by strong electrostatic forces. This arrangement explains why ionic substances often have high melting points and conduct electricity when dissolved in water."
+      },
+      {
+        "heading": "Covalent Bonding and Molecules",
+        "body": "Covalent bonding involves the sharing of electron pairs between non-metal atoms. This creates discrete molecules with specific shapes determined by the number of shared pairs. The forces between these molecules are generally weaker than ionic bonds, resulting in lower melting and boiling points for many covalent substances."
+      },
+      {
+        "heading": "Metallic Bonding and Properties",
+        "body": "Metals consist of positive ions arranged in a regular lattice, surrounded by a sea of delocalised electrons. These free-moving electrons allow metals to conduct electricity and heat efficiently. The strong attraction between ions and electrons gives metals their characteristic strength, malleability, and high melting points compared to many non-metals."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A student notes that Substance A has a high melting point and conducts electricity only when molten. Based on this description, which type of bonding is most likely present?",
+        "options": [
+          "Covalent molecular",
+          "Ionic",
+          "Metallic",
+          "Covalent network"
+        ],
+        "correctIndex": 1,
+        "explanation": "Ionic compounds have high melting points and conduct electricity when molten due to mobile ions.",
+        "objectiveCode": "GCSE-CHEM-2"
+      },
+      {
+        "prompt": "A sample of Substance B is a soft solid with a low melting point and does not conduct electricity. Which structural feature best explains these properties?",
+        "options": [
+          "Delocalised electrons",
+          "Strong ionic lattice",
+          "Weak intermolecular forces",
+          "Metallic bonding"
+        ],
+        "correctIndex": 2,
+        "explanation": "Weak intermolecular forces in covalent molecules lead to low melting points and lack of conductivity.",
+        "objectiveCode": "GCSE-CHEM-2"
+      },
+      {
+        "prompt": "Substance C is a hard, shiny solid that conducts electricity in both solid and liquid states. Which particle arrangement is characteristic of this substance?",
+        "options": [
+          "Discrete molecules",
+          "Regular lattice of ions",
+          "Lattice of ions with delocalised electrons",
+          "Giant covalent structure"
+        ],
+        "correctIndex": 2,
+        "explanation": "Metals have a lattice of ions with delocalised electrons, allowing conductivity in all states.",
+        "objectiveCode": "GCSE-CHEM-2"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

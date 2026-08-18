@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-08-17",
+  "scope": "Local bundles in backend/exports/drafts",
+  "draftBundles": 83,
+  "structurallyValid": 83,
+  "structurallyInvalid": 0,
+  "staticChecks": {
+    "missingDraftSources": 0,
+    "shortSections": 0,
+    "duplicatePrompts": 0,
+    "explanationWordingFlags": 4,
+    "explanationWordingFlagAssessment": "benign uses of words such as cannot; requires human semantic review"
+  },
+  "publishedBundles": 0,
+  "modelReview": {
+    "report": "draft-model-review-2026-08-17.json",
+    "bundlesReviewed": 83,
+    "reviewFailures": 0,
+    "bundlesPassed": 81,
+    "bundlesRequiringRewrite": 2,
+    "itemRewritesAppliedLocally": 2,
+    "reasoning": "off",
+    "model": "qwen/qwen3.8-27b"
+  },
+  "postReviewValidation": {
+    "structurallyValid": 83,
+    "unpublished": 83,
+    "draftStatus": 83
+  },
+  "editorialReviewOutcomes": {
+    "pilot-approved": 45,
+    "missing": 38
+  },
+  "sourceBackedSpecs": [
+    {"file":"essential-digital-skills-level-1.json","units":18},
+    {"file":"functional-skills-english-level-1.json","units":15},
+    {"file":"functional-skills-maths-level-1.json","units":12},
+    {"file":"gcse-english-language.json","units":7},
+    {"file":"gcse-maths.json","units":8},
+    {"file":"gcse-remaining.json","units":23}
+  ],
+  "publicationDecision": "hold: structural validation passed, but editorial approval and question-level source/objective review are still required"
+}

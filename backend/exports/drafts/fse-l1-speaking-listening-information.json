@@ -1,0 +1,135 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T16:46:02.601Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review added lines of argument to the listening guidance, made a response task self-contained, and removed an unsupported stock-and-delivery answer. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-speaking-listening-information",
+    "title": "Speaking and listening: information, questions and responses",
+    "objectives": [
+      {
+        "code": "FSE-L1-SLC1",
+        "text": "Identify relevant information and lines of argument in explanations or presentations."
+      },
+      {
+        "code": "FSE-L1-SLC2",
+        "text": "Make requests and ask relevant questions to obtain specific information in different contexts."
+      },
+      {
+        "code": "FSE-L1-SLC3",
+        "text": "Respond effectively to detailed questions."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Listening for Details and Asking Clear Questions",
+    "summary": "This lesson helps you identify key information in short texts and practice asking relevant questions. You will learn to respond clearly to detailed inquiries in a realistic, low-pressure setting.",
+    "objectives": [
+      {
+        "code": "FSE-L1-SLC1",
+        "text": "Identify relevant information and lines of argument in explanations or presentations."
+      },
+      {
+        "code": "FSE-L1-SLC2",
+        "text": "Make requests and ask relevant questions to obtain specific information in different contexts."
+      },
+      {
+        "code": "FSE-L1-SLC3",
+        "text": "Respond effectively to detailed questions."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Finding the Key Points",
+        "body": "When listening to an explanation, focus on the main idea and the details you need. You might hear a speaker describe a process, a problem, or a reason for a decision. Notice the points that support their argument as well as the facts that answer your immediate question. This helps you follow the core message without getting lost in background information."
+      },
+      {
+        "heading": "Asking for Specifics",
+        "body": "Once you have the general idea, you may need more precise details. Ask clear, direct questions to fill in the gaps. For example, if someone mentions a deadline, ask for the exact date. This ensures you have the specific information required to take action or make a decision in your daily life or work."
+      },
+      {
+        "heading": "Responding to Questions",
+        "body": "When someone asks you a detailed question, listen carefully to what they are actually asking. Avoid giving a vague answer. Instead, provide the specific information requested. If you are unsure, it is better to ask for clarification than to guess. This shows you are engaged and helps prevent misunderstandings in your conversation."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "The manager says, \"We are moving the team meeting to Thursday because the room is booked.\" What specific detail does the manager provide about the reason for the change?",
+        "options": [
+          "The new time of the meeting.",
+          "The availability of the meeting room.",
+          "The number of attendees.",
+          "The agenda for the discussion."
+        ],
+        "correctIndex": 1,
+        "explanation": "The stimulus explicitly states the room is booked as the reason for the move.",
+        "objectiveCode": "FSE-L1-SLC1"
+      },
+      {
+        "prompt": "A colleague mentions, \"I need the report by Friday, but I am not sure if the data is complete.\" What is the most relevant question to ask to clarify the situation?",
+        "options": [
+          "\"What is your name?\"",
+          "\"Is the data currently complete?\"",
+          "\"Do you like Fridays?\"",
+          "\"Where is the office?\""
+        ],
+        "correctIndex": 1,
+        "explanation": "The question directly addresses the uncertainty about the data's completeness mentioned in the stimulus.",
+        "objectiveCode": "FSE-L1-SLC2"
+      },
+      {
+        "prompt": "A customer asks, \"Can you tell me if this item is in stock and when it will arrive?\" The staff member has checked both details. Which response approach is most effective?",
+        "options": [
+          "Give the stock answer and the arrival information.",
+          "Comment only on whether the item is good.",
+          "Give the stock answer but ignore the arrival question.",
+          "Change the subject without responding."
+        ],
+        "correctIndex": 0,
+        "explanation": "An effective response addresses both specific details the customer asked for.",
+        "objectiveCode": "FSE-L1-SLC3"
+      }
+    ],
+    "speakingActivity": {
+      "title": "Role-Play: Booking a Room",
+      "prompt": "Practise a response to this receptionist: ‘Would you prefer a quiet room or one close to the lifts?’ State your preference, give one reason, then ask a clear question about the price for three nights.",
+      "timingGuide": "About one minute",
+      "checklist": [
+        "Did I respond to the choice the receptionist gave?",
+        "Did I state my preference and give a reason?",
+        "Did I ask one clear question about the price?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

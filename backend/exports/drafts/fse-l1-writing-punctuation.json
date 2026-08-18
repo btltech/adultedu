@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T15:43:38.169Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review replaced over-simple punctuation claims and made the writing activity use a natural purpose. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-writing-punctuation",
+    "title": "Writing: punctuation for clear meaning",
+    "objectives": [
+      {
+        "code": "FSE-L1-W19",
+        "text": "Use a range of punctuation correctly (e.g. full stops, question marks, exclamation marks, commas, possessive apostrophes)."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Punctuation for Clear Meaning",
+    "summary": "Learn to use full stops, question marks, commas, and possessive apostrophes to make short workplace and everyday messages clear and easy to read.",
+    "objectives": [
+      {
+        "code": "FSE-L1-W19",
+        "text": "Use a range of punctuation correctly (e.g. full stops, question marks, exclamation marks, commas, possessive apostrophes)."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Full Stops and Question Marks",
+        "body": "Full stops usually end statements, while question marks signal direct questions. These marks help a reader see whether you are giving information or asking for it. For example, ‘The report is ready.’ gives an update, while ‘Is the report ready?’ asks for an answer. Choose punctuation that matches your meaning."
+      },
+      {
+        "heading": "Commas for Clarity",
+        "body": "Commas can separate items in a list and can help a reader follow parts of a longer sentence. In an instruction such as ‘Buy milk, eggs and bread’, they make the items easier to scan. Read your sentence again after adding a comma to check that the meaning is still clear."
+      },
+      {
+        "heading": "Possessive Apostrophes",
+        "body": "Apostrophes show ownership or possession. In business contexts, this often involves names or departments. For example, 'the manager’s decision' indicates the decision belongs to the manager. Using the apostrophe correctly avoids confusion with plural nouns, ensuring that the reader knows exactly who or what is being referred to in the text."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read this email: 'Hi Sarah, I need the file by 5pm. Can you send it now?' Which punctuation mark correctly ends the second sentence?",
+        "options": [
+          "Full stop",
+          "Question mark",
+          "Comma",
+          "Exclamation mark"
+        ],
+        "correctIndex": 1,
+        "explanation": "The sentence 'Can you send it now?' is a direct question, so it requires a question mark.",
+        "objectiveCode": "FSE-L1-W19"
+      },
+      {
+        "prompt": "Consider this instruction: 'Please check the invoice, the receipt, and the bank statement.' What is the primary function of the commas here?",
+        "options": [
+          "To indicate possession",
+          "To separate items in a list",
+          "To end a question",
+          "To show strong emotion"
+        ],
+        "correctIndex": 1,
+        "explanation": "The commas separate the three distinct items in the list to make the instruction clear.",
+        "objectiveCode": "FSE-L1-W19"
+      },
+      {
+        "prompt": "Look at this sentence: 'The team’s performance was excellent.' What does the apostrophe indicate?",
+        "options": [
+          "A plural noun",
+          "A missing letter",
+          "Possession or ownership",
+          "A direct question"
+        ],
+        "correctIndex": 2,
+        "explanation": "The apostrophe in 'team’s' shows that the performance belongs to the team, indicating possession.",
+        "objectiveCode": "FSE-L1-W19"
+      }
+    ],
+    "writingActivity": {
+      "title": "Workplace Message Draft",
+      "prompt": "Write a short message to a colleague. Ask whether you have been sent the team's meeting notes and say where they can send them. Include one direct question and at least one clear statement.",
+      "wordGuide": "30-50 words",
+      "checklist": [
+        "Did I use a full stop to end a statement?",
+        "Did I use a question mark for my direct question?",
+        "If I used an apostrophe, did I check whether it shows possession or a missing letter?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

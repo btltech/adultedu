@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:07:49.234Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-bio-l2-inheritance-evolution",
+    "title": "Biology: inheritance and evolution",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-6",
+        "text": "Explain inheritance, variation, evolution and classification using appropriate evidence."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Inheritance and Evolution: Core Concepts",
+    "summary": "Explore how DNA, genes, and natural selection drive biological change using fictional examples.",
+    "objectives": [
+      {
+        "code": "GCSE-BIO-6",
+        "text": "Explain inheritance, variation, evolution and classification using appropriate evidence."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Genetic Inheritance Basics",
+        "body": "DNA holds genetic information passed from parents to offspring. Genes are specific DNA sections influencing traits. Inheritance follows predictable patterns, though individual outcomes vary. Understanding these mechanisms explains why organisms resemble ancestors while showing unique differences. This foundation helps learners grasp how biological characteristics are transmitted across generations in diverse populations."
+      },
+      {
+        "heading": "Variation and Selection",
+        "body": "Variation arises from mutations and recombination during reproduction. Natural selection acts on this variation, favouring traits that improve survival and reproduction. Over time, populations adapt to their environments. This process drives evolution, resulting in new species and biological diversity. Understanding selection helps explain how fictional organisms change over generations in response to environmental pressures."
+      },
+      {
+        "heading": "Classification Systems",
+        "body": "Biologists classify organisms based on shared characteristics and evolutionary relationships. Modern systems use DNA evidence to group species accurately. This helps us understand biodiversity and trace evolutionary history. Clear classification supports scientific communication and research across different biological disciplines. Using fictional examples, learners can see how shared traits and genetic data inform grouping and naming of species."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional species, the Zorb, has two alleles for colour: B (blue) and b (white). A cross between two Bb parents produces offspring. Which statement best describes the expected genetic outcome?",
+        "options": [
+          "All offspring will be blue.",
+          "All offspring will be white.",
+          "Some offspring may be white.",
+          "No offspring will inherit the b allele."
+        ],
+        "correctIndex": 2,
+        "explanation": "A Bb x Bb cross can produce bb offspring, which would be white.",
+        "objectiveCode": "GCSE-BIO-6"
+      },
+      {
+        "prompt": "In a fictional forest, tall trees (T) are dominant over short trees (t). A population of Tt trees faces a drought where short trees survive better. What is the most likely long-term effect?",
+        "options": [
+          "All trees become tall.",
+          "The frequency of the t allele may increase.",
+          "No variation will remain.",
+          "All trees will die immediately."
+        ],
+        "correctIndex": 1,
+        "explanation": "Natural selection favours the trait that improves survival, potentially increasing the frequency of the t allele.",
+        "objectiveCode": "GCSE-BIO-6"
+      },
+      {
+        "prompt": "Two fictional species, the Glip and the Glap, share a recent common ancestor. Their DNA sequences are 95% identical. What does this evidence suggest?",
+        "options": [
+          "They are unrelated.",
+          "They diverged recently.",
+          "They have no shared genes.",
+          "They evolved independently without any connection."
+        ],
+        "correctIndex": 1,
+        "explanation": "High DNA similarity suggests a recent common ancestor and close evolutionary relationship.",
+        "objectiveCode": "GCSE-BIO-6"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

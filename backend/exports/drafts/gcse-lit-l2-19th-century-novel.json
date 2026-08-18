@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T04:36:44.464Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-lit-l2-19th-century-novel",
+    "title": "English Literature: nineteenth-century novel",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-2",
+        "text": "Analyse nineteenth-century prose using evidence, context and the writer's methods."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Nineteenth-Century Novel: Character and Context",
+    "summary": "This lesson explores how nineteenth-century writers use character and setting to reflect social realities. Learners will analyse short public-domain excerpts to identify writer methods and thematic connections.",
+    "objectives": [
+      {
+        "code": "GCSE-LIT-2",
+        "text": "Analyse nineteenth-century prose using evidence, context and the writer's methods."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Character as Social Mirror",
+        "body": "Nineteenth-century novels frequently present characters whose actions reflect broader social tensions. Writers use dialogue and description to reveal class dynamics. By examining specific words, learners can see how individual behaviour connects to wider societal expectations and moral debates of the era. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Setting and Atmosphere",
+        "body": "Physical environments in these texts frequently symbolise internal states or social conditions. A cramped room might suggest confinement, while open landscapes offer freedom. Analysing these details helps readers understand how setting reinforces theme and influences character development throughout the narrative. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Writer’s Methods",
+        "body": "Authors employ irony, symbolism, and pacing to guide interpretation. Recognising these techniques allows for deeper analysis of intent. Focusing on specific textual evidence ensures that interpretations remain grounded in the writer’s chosen methods rather than personal assumption or external bias. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read: \"The room was stifling, the air thick with dust.\" The narrator describes the space as oppressive. What does this suggest about the character's situation?",
+        "options": [
+          "They are wealthy.",
+          "They feel trapped.",
+          "They are happy.",
+          "It is summer."
+        ],
+        "correctIndex": 1,
+        "explanation": "The words 'stifling' and 'oppressive' directly indicate a sense of confinement and discomfort.",
+        "objectiveCode": "GCSE-LIT-2"
+      },
+      {
+        "prompt": "Read: \"He smiled politely, yet his eyes remained cold.\" The character’s expression contradicts his gaze. What method is the writer using?",
+        "options": [
+          "Irony.",
+          "Rhyme.",
+          "Alliteration.",
+          "Hyperbole."
+        ],
+        "correctIndex": 0,
+        "explanation": "The contrast between the polite smile and cold eyes creates an ironic effect, revealing hidden tension.",
+        "objectiveCode": "GCSE-LIT-2"
+      },
+      {
+        "prompt": "Read: \"The factory smoke choked the sky above the village.\" The setting is described as polluted. How does this reflect the social context?",
+        "options": [
+          "Industrial impact.",
+          "Rural peace.",
+          "Religious faith.",
+          "Military war."
+        ],
+        "correctIndex": 0,
+        "explanation": "The mention of factory smoke directly links the setting to the industrialisation of the nineteenth century.",
+        "objectiveCode": "GCSE-LIT-2"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

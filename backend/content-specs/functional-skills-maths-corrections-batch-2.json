@@ -1,0 +1,22 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "functional-skills-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 12,
+  "records": [
+    {"id":"c538ddbb-9c0d-4dd1-917c-92823c82c432","change":"Clarified the two-fifths concession cost and added £11.20."},
+    {"id":"735e80be-21a2-46e0-a8c9-8b23d936f292","change":"Corrected range answer index to 25."},
+    {"id":"bb15429e-7bff-479e-8af8-da6ffded2ffb","change":"Added the calculated 50 m² path option."},
+    {"id":"4b81a52c-5dc9-4f9a-a975-3de8ed7337d3","change":"Added the calculated 94 cm² surface-area option."},
+    {"id":"e1f4e345-2652-451b-9d05-f051e2d41abd","change":"Added the calculated total of 32 students."},
+    {"id":"e9cf75da-3e4c-4fe9-9f0b-05d75be3f2e3","change":"Added the calculated £600 fencing cost."},
+    {"id":"96b813b9-e3d3-4aaa-a84c-cb3fc7d34a35","change":"Added the calculated 8 kg seed option."},
+    {"id":"84a52d46-c9e1-4edf-9088-b32e8b2b6f37","change":"Corrected profit-maximisation answer to 120 A and 80 B."},
+    {"id":"c5331b46-2b46-4822-bb39-6b328760f6be","change":"Corrected fourth-bus time to 7:15 AM."},
+    {"id":"d84d727e-c844-43e3-a42a-c6527e3a4c0c","change":"Corrected third-bus answer index to 9:15 AM."},
+    {"id":"45dad855-7b1d-4971-bf24-92c9cfeac5a8","change":"Corrected pasta-pack answer index to 15 packs."},
+    {"id":"a1af0f00-de2c-4cd5-97ea-4b35fe9a3ee7","change":"Clarified rows as 0.5 m strips and selected 10 rows."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

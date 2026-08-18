@@ -1,0 +1,40 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "a-level-maths",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 5,
+  "records": [
+    {
+      "id": "5e33fb06-c269-4259-b1cb-4730775651ca",
+      "options": ["4", "16", "24", "32"],
+      "answer": "0",
+      "explanation": "h(0) = 0. h(2) = 2⁴ − 4(2³) + 6(2²) = 16 − 32 + 24 = 8. The average rate of change is (8 − 0) ÷ (2 − 0) = 4."
+    },
+    {
+      "id": "0c580822-acc1-4930-b142-944bb49f4104",
+      "options": ["540", "40", "64", "128"],
+      "answer": "0",
+      "explanation": "Let u = x³ + 2x, so y = u⁴. Then dy/dx = 4u³(3x² + 2). At x = 1, u = 3, so dy/dx = 4(3³)(5) = 540."
+    },
+    {
+      "id": "6c340b0d-8fe8-43d4-bb40-28d9283f7a14",
+      "options": ["£2800", "£2400", "£1000", "£1600"],
+      "answer": "0",
+      "explanation": "P′(x) = −2x + 120, so the maximum occurs at x = 60. P(60) = −60² + 120(60) − 800 = −3600 + 7200 − 800 = £2800."
+    },
+    {
+      "id": "67a5e807-2907-46f0-8586-a72fda4bc56a",
+      "options": ["25,404", "20,600", "22,700", "25,100"],
+      "answer": "0",
+      "explanation": "In 2025, t = 25. P(25) = 12000e^(0.03 × 25) = 12000e^0.75 ≈ 25,404. Rounded to the nearest hundred, this is approximately 25,400."
+    },
+    {
+      "id": "20ab7d20-dfba-4f24-95e6-5012b3083c13",
+      "options": ["6x² + 7x - 20", "6x² - 12x - 20", "6x² + 13x - 20", "6x² - 7x + 20"],
+      "answer": "0",
+      "explanation": "Expanding gives (3x)(2x) + (3x)(5) + (−4)(2x) + (−4)(5) = 6x² + 15x − 8x − 20 = 6x² + 7x − 20."
+    }
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

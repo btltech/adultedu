@@ -1,0 +1,114 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T23:05:31.746Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-eng-l2-writing-transactional",
+    "title": "Transactional writing",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-W2",
+        "text": "Write clearly and coherently for different purposes and audiences using appropriate tone, organisation and evidence."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Transactional Writing: Purpose and Register",
+    "summary": "This lesson explores how to write clearly for specific audiences and purposes. Learners will distinguish between register, tone, and evidence in fictional scenarios.",
+    "objectives": [
+      {
+        "code": "GCSE-ENG-W2",
+        "text": "Write clearly and coherently for different purposes and audiences using appropriate tone, organisation and evidence."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Audience and Purpose",
+        "body": "Transactional writing requires identifying who reads your text and why. A formal letter to a manager differs from a casual note to a colleague. Always ask yourself what action you want the reader to take. This clarity ensures your message is direct and effective, avoiding unnecessary confusion or misinterpretation in professional settings."
+      },
+      {
+        "heading": "Choosing the Right Register",
+        "body": "Register refers to the level of formality in your writing. Use polite, structured language for official requests or complaints. For internal team updates, a slightly relaxed tone may be acceptable. Matching your register to the context shows respect and professionalism, helping you build trust with your intended audience effectively."
+      },
+      {
+        "heading": "Using Evidence and Organisation",
+        "body": "Strong transactional writing uses clear structure and relevant evidence. Start with your main point, then support it with specific details or facts. Keep paragraphs short and focused. This logical flow helps readers process information quickly, ensuring your argument or request is persuasive and easy to follow without feeling cluttered."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Stimulus: You are emailing a client about a delayed delivery. Question: Which opening sentence best suits this formal context?",
+        "options": [
+          "Hey, sorry it's late.",
+          "I am writing to inform you of a delay.",
+          "Guess what happened to your order.",
+          "The truck broke down again."
+        ],
+        "correctIndex": 1,
+        "explanation": "Option B uses formal language appropriate for client communication.",
+        "objectiveCode": "GCSE-ENG-W2"
+      },
+      {
+        "prompt": "Stimulus: A colleague asks why the meeting moved to Friday. Question: Which response provides the clearest evidence?",
+        "options": [
+          "Because the boss said so.",
+          "The venue is unavailable on Thursday.",
+          "I think Friday is better.",
+          "It just happened that way."
+        ],
+        "correctIndex": 1,
+        "explanation": "Option B gives a specific, factual reason for the change.",
+        "objectiveCode": "GCSE-ENG-W2"
+      },
+      {
+        "prompt": "Stimulus: You are writing a request for extra budget. Question: Which structure is most effective?",
+        "options": [
+          "List items randomly.",
+          "State need, then provide cost details.",
+          "Ask for money first, then explain.",
+          "Write a long story about your day."
+        ],
+        "correctIndex": 1,
+        "explanation": "Option B follows a logical order of need followed by supporting evidence.",
+        "objectiveCode": "GCSE-ENG-W2"
+      }
+    ],
+    "writingActivity": {
+      "title": "Drafting a Formal Request",
+      "prompt": "Write a short email to your manager requesting a new laptop. Explain why you need it and mention one specific benefit for the team.",
+      "wordGuide": "80-120 words",
+      "checklist": [
+        "Does the email have a clear subject line?",
+        "Is the tone professional and polite?",
+        "Do you include specific evidence for your request?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

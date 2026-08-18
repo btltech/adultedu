@@ -1,0 +1,125 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T17:38:36.219Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Editorial review corrected the decimal-comparison wording, checked the multiplication and rounding calculations, and confirmed objective alignment. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Maths Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fsm-l1-number-decimals-estimation",
+    "title": "Number: decimals, calculation and estimation",
+    "objectives": [
+      {
+        "code": "FSM-L1-10",
+        "text": "Read, write, order and compare decimals up to 3 decimal places."
+      },
+      {
+        "code": "FSM-L1-11",
+        "text": "Add, subtract, multiply and divide decimals up to 2 decimal places."
+      },
+      {
+        "code": "FSM-L1-12",
+        "text": "Approximate by rounding to a whole number, one decimal place and 2 decimal places."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Decimals: Ordering, Calculation, and Estimation",
+    "summary": "Learn to order decimals, perform basic calculations with money-style values, and use rounding to check answers.",
+    "objectives": [
+      {
+        "code": "FSM-L1-10",
+        "text": "Read, write, order and compare decimals up to 3 decimal places."
+      },
+      {
+        "code": "FSM-L1-11",
+        "text": "Add, subtract, multiply and divide decimals up to 2 decimal places."
+      },
+      {
+        "code": "FSM-L1-12",
+        "text": "Approximate by rounding to a whole number, one decimal place and 2 decimal places."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Ordering Decimals",
+        "body": "To order decimals, compare digits from left to right. Start with the whole number part, then move to the tenths, hundredths, and thousandths. If a digit is larger, the number is larger. This helps you rank values accurately without needing a calculator for simple comparisons."
+      },
+      {
+        "heading": "Calculating with Decimals",
+        "body": "When adding or subtracting decimals, align the decimal points vertically. For multiplication, ignore the decimal points initially, then count the total decimal places in the factors to place the point in the answer. Division requires moving the decimal point to make the divisor a whole number."
+      },
+      {
+        "heading": "Estimating and Checking",
+        "body": "Rounding helps you estimate answers quickly. Round each number to the nearest whole number or one decimal place before calculating. This provides a sensible check to see if your exact answer is reasonable. Use estimation when a precise figure is not strictly required for the task."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Which decimal number is the largest?",
+        "options": [
+          "0.512",
+          "0.520",
+          "0.521",
+          "0.502"
+        ],
+        "correctIndex": 2,
+        "explanation": "0.521 and 0.520 both have 5 tenths and 2 hundredths; at the thousandths place, 1 is greater than 0, so 0.521 is largest.",
+        "objectiveCode": "FSM-L1-10"
+      },
+      {
+        "prompt": "Calculate the total cost of 3 items priced at £2.50 each.",
+        "options": [
+          "£7.50",
+          "£6.50",
+          "£8.50",
+          "£5.50"
+        ],
+        "correctIndex": 0,
+        "explanation": "Multiplying 3 by 2.50 gives 7.50, so the total cost is £7.50.",
+        "objectiveCode": "FSM-L1-11"
+      },
+      {
+        "prompt": "Estimate the sum of 4.8 and 5.2 by rounding each to the nearest whole number.",
+        "options": [
+          "9",
+          "10",
+          "11",
+          "8"
+        ],
+        "correctIndex": 1,
+        "explanation": "Rounding 4.8 to 5 and 5.2 to 5 gives an estimated sum of 10.",
+        "objectiveCode": "FSM-L1-12"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-mathematics/subject-content-functional-skills-maths",
+    "sourceTitle": "Maths Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

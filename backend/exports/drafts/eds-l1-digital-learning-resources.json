@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T20:40:00.000Z",
+  "generator": {
+    "method": "manual-editorial-draft",
+    "reasoningEffort": null
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Manual editorial draft created while local generation requests were unreliable. Resource selection, accessibility, source checking and AI-support boundaries were checked. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "Essential digital skills standards: 2026",
+    "url": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "eds-l1-digital-learning-resources",
+    "title": "Digital literacy: choosing support and learning resources",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD5",
+        "text": "Identify online learning resources to maintain and improve digital skills; select and use resources to support everyday digital tasks based on need and context."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Choosing Digital Learning and Support Resources",
+    "summary": "Select an appropriate online guide, tutorial, help centre or AI-supported tool for an everyday task, and apply the guidance safely.",
+    "objectives": [
+      {
+        "code": "EDS-L1-UD5",
+        "text": "Identify online learning resources to maintain and improve digital skills; select and use resources to support everyday digital tasks based on need and context."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Match the resource to the task",
+        "body": "Different tasks need different support. An official help centre may suit a specific app problem, while a short tutorial can help with a new feature. Choose a resource that matches the device, task and your confidence level. Consider whether written steps, captions, video or interactive practice will make the guidance easier for you to use."
+      },
+      {
+        "heading": "Check who made the guidance",
+        "body": "Before following online guidance, check who published it and whether it applies to your current device or version. Official support pages are often useful for settings and account tasks. Forums and videos can provide ideas, but their advice may be outdated or incorrect. Do not follow instructions that ask you to share passwords, codes or sensitive personal information."
+      },
+      {
+        "heading": "Use AI support as a starting point",
+        "body": "An AI-supported assistant may explain a step or suggest a search, but it can make mistakes or omit important details. Ask clear questions without entering private information. Compare an answer with official guidance when the task affects security, money or personal data. Apply a step only when you understand its purpose and it suits your situation."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A learner needs help changing a setting in a fictional app. Which resource is most directly suited to the task?",
+        "options": [
+          "The app's official help centre",
+          "An unrelated online advert",
+          "A request to give a password to a stranger",
+          "A random download"
+        ],
+        "correctIndex": 0,
+        "explanation": "The official help centre is designed to give current guidance for that app and its settings.",
+        "objectiveCode": "EDS-L1-UD5"
+      },
+      {
+        "prompt": "A learner finds two guides for a fictional device: one has captioned short videos and one has a long unlabelled recording. Which factor can support an informed choice?",
+        "options": [
+          "Whether the format and support level suit the learner's needs",
+          "Which guide has the most pop-ups",
+          "Whether the guide asks for a password",
+          "Whether the title uses more capital letters"
+        ],
+        "correctIndex": 0,
+        "explanation": "A learner can choose a resource whose format, such as captioned video, supports the way they learn and the task they need to complete.",
+        "objectiveCode": "EDS-L1-UD5"
+      },
+      {
+        "prompt": "An AI assistant suggests a step for a fictional account-security task. What should the learner do before applying it?",
+        "options": [
+          "Check it against official guidance and understand the step's purpose.",
+          "Share a verification code with the assistant.",
+          "Assume the suggestion is always correct.",
+          "Turn off security features."
+        ],
+        "correctIndex": 0,
+        "explanation": "Security-related AI suggestions should be checked against official guidance before use because automated guidance can be incomplete or wrong.",
+        "objectiveCode": "EDS-L1-UD5"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/essential-digital-skills-standards-2026",
+    "sourceTitle": "Essential digital skills standards: 2026"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

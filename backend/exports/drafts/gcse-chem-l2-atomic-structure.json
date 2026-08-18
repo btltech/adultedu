@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:15:52.466Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-chem-l2-atomic-structure",
+    "title": "Chemistry: atomic structure",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-1",
+        "text": "Use atomic structure and the periodic table to explain elements, isotopes and ions."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Atomic Structure and the Periodic Table",
+    "summary": "This lesson explores the fundamental building blocks of matter, including atoms, isotopes, and ions. It explains how particle counts and electronic arrangements define elements and their positions in the periodic table.",
+    "objectives": [
+      {
+        "code": "GCSE-CHEM-1",
+        "text": "Use atomic structure and the periodic table to explain elements, isotopes and ions."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Atoms and Elements",
+        "body": "Atoms are the smallest units of elements, containing protons, neutrons, and electrons. The number of protons defines the element's identity. For example, carbon always has six protons. Electrons occupy specific energy levels around the nucleus, determining chemical behaviour and bonding patterns in compounds. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Isotopes and Ions",
+        "body": "Isotopes are atoms of the same element with different numbers of neutrons. This changes their mass but not their chemical properties. Ions form when atoms gain or lose electrons, creating charged particles. Sodium becomes a positive ion by losing one electron, while chlorine gains one to become negative."
+      },
+      {
+        "heading": "The Periodic Table",
+        "body": "The periodic table arranges elements by increasing atomic number. Elements in the same group share similar electronic configurations and chemical properties. This arrangement helps predict reactivity and bonding behaviour. Understanding this layout allows scientists to classify elements and anticipate how they interact in chemical reactions."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A student notes that two atoms both have six protons, but one has six neutrons and the other has seven. What is the relationship between these two atoms?",
+        "options": [
+          "They are different elements.",
+          "They are isotopes of the same element.",
+          "They are ions of different elements.",
+          "They are molecules of the same element."
+        ],
+        "correctIndex": 1,
+        "explanation": "Isotopes are defined as atoms of the same element with different numbers of neutrons.",
+        "objectiveCode": "GCSE-CHEM-1"
+      },
+      {
+        "prompt": "An atom has eleven protons and eleven electrons. If it loses one electron, what type of particle is formed?",
+        "options": [
+          "A neutral atom.",
+          "A negative ion.",
+          "A positive ion.",
+          "A different element."
+        ],
+        "correctIndex": 2,
+        "explanation": "Losing an electron results in more protons than electrons, creating a positive charge.",
+        "objectiveCode": "GCSE-CHEM-1"
+      },
+      {
+        "prompt": "Two elements are in the same group of the periodic table. What feature do they most likely share?",
+        "options": [
+          "The same number of neutrons.",
+          "The same number of protons.",
+          "Similar chemical properties.",
+          "Identical atomic masses."
+        ],
+        "correctIndex": 2,
+        "explanation": "Elements in the same group have similar electronic configurations, leading to similar chemical properties.",
+        "objectiveCode": "GCSE-CHEM-1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

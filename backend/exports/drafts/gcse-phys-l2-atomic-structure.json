@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-17T05:50:59.646Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content collection",
+    "url": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "checkedAt": "2026-08-17"
+  },
+  "unit": {
+    "id": "gcse-phys-l2-atomic-structure",
+    "title": "Physics: atomic structure",
+    "objectives": [
+      {
+        "code": "GCSE-PHYS-4",
+        "text": "Explain atomic structure and radioactive processes using evidence and equations."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Atomic Structure and Radioactive Decay",
+    "summary": "This lesson explores the fundamental components of the atom and the mechanisms of radioactive decay. It covers nuclear equations, half-life calculations, and the proportional risks associated with radiation exposure.",
+    "objectives": [
+      {
+        "code": "GCSE-PHYS-4",
+        "text": "Explain atomic structure and radioactive processes using evidence and equations."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Atomic Composition",
+        "body": "Atoms consist of a dense nucleus containing protons and neutrons, surrounded by electrons. The number of protons defines the element, while neutrons determine the isotope. Understanding this structure is essential for predicting how atoms interact and how they change during radioactive decay processes. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Nuclear Equations",
+        "body": "Radioactive decay involves the emission of particles or energy from an unstable nucleus. Nuclear equations must balance both mass number and atomic number on both sides. This conservation principle allows us to identify the type of radiation emitted and the resulting daughter nucleus. Review the example, then explain the choice in your own words."
+      },
+      {
+        "heading": "Half-Life and Risk",
+        "body": "Half-life is the time taken for half of a radioactive sample to decay. It is a statistical measure, not a fixed deadline for individual atoms. Risk assessment considers dose and duration, ensuring that exposure levels remain within safe limits for both workers and the public."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A fictional isotope X has a mass number of 20 and atomic number 8. It emits an alpha particle. What is the mass number of the daughter nucleus? A: 20 B: 16 C: 18 D: 24",
+        "options": [
+          "20",
+          "16",
+          "18",
+          "24"
+        ],
+        "correctIndex": 1,
+        "explanation": "Alpha decay reduces the mass number by four, so 20 minus 4 equals 16.",
+        "objectiveCode": "GCSE-PHYS-4"
+      },
+      {
+        "prompt": "A fictional sample of isotope Y has a half-life of 10 days. If you start with 80 grams, how much remains after 20 days? A: 40g B: 20g C: 10g D: 60g",
+        "options": [
+          "40g",
+          "20g",
+          "10g",
+          "60g"
+        ],
+        "correctIndex": 1,
+        "explanation": "Two half-lives have passed, reducing the mass from 80g to 40g, then to 20g.",
+        "objectiveCode": "GCSE-PHYS-4"
+      },
+      {
+        "prompt": "A fictional nuclear equation shows a nucleus with atomic number 9 decaying into a nucleus with atomic number 10. What particle was emitted? A: Alpha B: Beta-minus C: Beta-plus D: Gamma",
+        "options": [
+          "Alpha",
+          "Beta-minus",
+          "Beta-plus",
+          "Gamma"
+        ],
+        "correctIndex": 1,
+        "explanation": "An increase in atomic number by one indicates beta-minus decay, where a neutron becomes a proton.",
+        "objectiveCode": "GCSE-PHYS-4"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/collections/gcse-subject-content",
+    "sourceTitle": "GCSE subject content collection"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

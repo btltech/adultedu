@@ -1,0 +1,15 @@
+{
+  "preparedAt": "2026-08-17",
+  "trackSlug": "gcse-history",
+  "productionChanges": true,
+  "appliedAt": "2026-08-17",
+  "appliedCount": 5,
+  "records": [
+    {"id":"4765085d-af63-4cb8-bdd6-6a6ac7edd735","change":"Rewrote the item around penal transportation and corrected the answer."},
+    {"id":"cc5f8247-bf89-4a03-b6bd-2793e689ded3","change":"Corrected Elizabeth I popularity answer to not marrying/having children."},
+    {"id":"510feff9-b864-4d33-a5c7-dc5b4b73e324","change":"Corrected Elizabeth I religious-persecution answer index."},
+    {"id":"11f20561-19ab-4dd7-95a7-cc4a75a200c4","change":"Corrected Armada defeat answer to the false better-equipped statement."},
+    {"id":"b054249d-9b68-40e6-9593-ffad5b0487cc","change":"Corrected World War I cause answer to democracy."}
+  ],
+  "reviewStatusAfterCorrection": "in_review"
+}

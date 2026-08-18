@@ -1,0 +1,104 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T22:28:33.694Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "source": {
+    "title": "GCSE subject content and national curriculum mathematics programmes of study",
+    "url": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "gcse-l2-probability",
+    "title": "Probability: combined events and representations",
+    "objectives": [
+      {
+        "code": "GCSE-M-P1",
+        "text": "Represent and calculate probabilities for single and combined events, including conditional situations."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Probability: Combined Events and Representations",
+    "summary": "This lesson explores calculating probabilities for single and combined events. It uses sample spaces, tree diagrams, and Venn diagrams to clarify conditional and independent scenarios.",
+    "objectives": [
+      {
+        "code": "GCSE-M-P1",
+        "text": "Represent and calculate probabilities for single and combined events, including conditional situations."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Understanding Sample Spaces",
+        "body": "A sample space lists all possible outcomes. For combined events, we multiply independent probabilities. If events are mutually exclusive, we add probabilities. This distinction prevents calculation errors. Always identify whether outcomes overlap or remain separate before choosing the correct mathematical operation for your specific problem."
+      },
+      {
+        "heading": "Tree Diagrams for Conditional Probability",
+        "body": "Tree diagrams show sequential events clearly. Each branch represents a probability. Multiply along branches for combined events. Add across branches for totals. Conditional probability depends on previous outcomes. This visual method helps track dependencies. It ensures you account for changing conditions accurately throughout the entire sequence of events."
+      },
+      {
+        "heading": "Venn Diagrams for Overlapping Sets",
+        "body": "Venn diagrams illustrate set relationships visually. Overlapping regions represent shared outcomes. Mutually exclusive sets do not overlap. Calculate probabilities by dividing favourable outcomes by total outcomes. This method clarifies conditional scenarios. It helps distinguish between independent and dependent events effectively within complex probability problems. Review the example, then explain the choice in your own words."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "A bag contains three red and two blue balls. One ball is drawn, noted, and replaced. What is the probability of drawing two red balls in sequence?",
+        "options": [
+          "9/25",
+          "6/25",
+          "1/5",
+          "3/5"
+        ],
+        "correctIndex": 0,
+        "explanation": "Since the ball is replaced, events are independent, so multiply 3/5 by 3/5 to get 9/25.",
+        "objectiveCode": "GCSE-M-P1"
+      },
+      {
+        "prompt": "A tree diagram shows a first branch with probability 0.5 and a second branch with probability 0.4. What is the probability of this specific combined path?",
+        "options": [
+          "0.9",
+          "0.2",
+          "0.1",
+          "0.5"
+        ],
+        "correctIndex": 1,
+        "explanation": "Multiply the probabilities along the branches: 0.5 times 0.4 equals 0.2 for the combined event.",
+        "objectiveCode": "GCSE-M-P1"
+      },
+      {
+        "prompt": "A Venn diagram shows set A with 10 items and set B with 15 items. They share 5 items. If one item is chosen at random, what is the probability it is in A or B?",
+        "options": [
+          "20/25",
+          "15/25",
+          "10/25",
+          "5/25"
+        ],
+        "correctIndex": 0,
+        "explanation": "Add the unique items in A and B, subtracting the overlap: 10 + 15 - 5 = 20, giving 20/25.",
+        "objectiveCode": "GCSE-M-P1"
+      }
+    ],
+    "sourceUrl": "https://www.gov.uk/government/publications/national-curriculum-in-england-mathematics-programmes-of-study/national-curriculum-in-england-mathematics-programmes-of-study",
+    "sourceTitle": "GCSE subject content and national curriculum mathematics programmes of study"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}

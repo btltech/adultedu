@@ -1,0 +1,146 @@
+{
+  "preparedAt": "2026-08-17",
+  "scope": "Legacy published question metadata queue",
+  "method": "One subject-specific objective per established topic; objectives are mapped to the authoritative source in legacy-source-objective-plan-2026-08-17.json and remain in_review after application.",
+  "tracks": {
+    "essential-digital-skills": {
+      "Digital Foundation Skills": {"code":"EDS-L1-F1","text":"Use common devices, settings, accessibility features and file-management controls safely."},
+      "Communicating Online": {"code":"EDS-L1-C1","text":"Choose an appropriate digital communication tool and send clear, respectful messages."},
+      "Being Safe Online": {"code":"EDS-L1-S1","text":"Protect accounts and personal information and recognise common online risks and scams."},
+      "Handling Information": {"code":"EDS-L1-H1","text":"Find, compare and evaluate digital information and identify trustworthy sources."},
+      "Online Transactions": {"code":"EDS-L1-T1","text":"Complete digital transactions safely by comparing options, checking details and retaining evidence."}
+    },
+    "python-foundations": {
+      "Getting Started with Python": {"code":"PY-F-1","text":"Run simple Python programs and use core syntax, indentation and comments."},
+      "Variables and Data Types": {"code":"PY-F-2","text":"Store and manipulate values using Python variables, strings, numbers and Boolean data."},
+      "Control Flow": {"code":"PY-F-3","text":"Use conditions and loops to control the execution of a Python program."},
+      "Functions": {"code":"PY-F-4","text":"Define, call and document Python functions with parameters and return values."},
+      "Data Structures": {"code":"PY-F-5","text":"Use Python lists, tuples, dictionaries and sets to organise and process data."},
+      "File Handling": {"code":"PY-F-6","text":"Read and write text or structured data files safely using Python file-handling tools."},
+      "Working with APIs": {"code":"PY-F-7","text":"Make and interpret simple web API requests and handle structured responses in Python."},
+      "Mini Projects": {"code":"PY-F-8","text":"Plan, implement, test and explain a small Python program using appropriate core concepts."}
+    },
+    "gcse-english-language": {
+      "Writing: Creative": {"code":"GCSE-ENG-W1","text":"Communicate imaginative ideas using effective vocabulary, structure, sentence control and accurate spelling and punctuation."},
+      "Writing: Transactional": {"code":"GCSE-ENG-W2","text":"Write clearly and coherently for different purposes and audiences using appropriate tone, organisation and evidence."},
+      "Writing Fundamentals": {"code":"GCSE-ENG-W2","text":"Plan and organise clear writing for a stated purpose, audience and register."},
+      "Analyzing Literary Devices": {"code":"GCSE-ENG-R3","text":"Analyse how writers use language devices to shape meaning and a reader's response."},
+      "Writing for Different Purposes": {"code":"GCSE-ENG-W2","text":"Select register, tone, organisation and evidence for a stated writing purpose and audience."},
+      "Exam Skills and Practice": {"code":"GCSE-ENG-R1","text":"Select relevant evidence and explain inferences when reading and responding to texts."},
+      "Reading Comprehension": {"code":"GCSE-ENG-R1","text":"Read and understand extracts, making inferences and selecting relevant evidence."},
+      "Critical Thinking in Reading": {"code":"GCSE-ENG-R2","text":"Evaluate viewpoints, purposes and supporting evidence in non-fiction writing."}
+    },
+    "gcse-english-literature": {
+      "Poetry Anthology": {"code":"GCSE-LIT-4","text":"Compare poems using evidence and analysis of language, form, structure and context."}
+    },
+    "gcse-history": {
+      "World War 1": {"code":"GCSE-HIST-4","text":"Explain causes, developments and consequences of the First World War using historical evidence."}
+    },
+    "functional-skills-maths": {
+      "Fractions and Percentages": {"code":"FSM-L1-N1","text":"Use fractions, decimals and percentages to calculate, compare and solve practical problems."},
+      "Measures and Units": {"code":"FSM-L1-M1","text":"Use and convert common measures and units in practical calculations and interpretations."},
+      "Data Handling": {"code":"FSM-L1-D1","text":"Interpret, represent and summarise data using appropriate tables, charts and statistics."},
+      "Money and Finance": {"code":"FSM-L1-M2","text":"Solve practical money problems involving prices, discounts, wages, bills and simple interest."},
+      "Ratio and Proportion": {"code":"FSM-L1-N2","text":"Use ratio, proportion, scale and rates to solve practical problems."},
+      "Problem Solving": {"code":"FSM-L1-P1","text":"Select methods, estimate, calculate and check solutions to multi-step practical problems."},
+      "Number Operations": {"code":"FSM-L1-N3","text":"Apply the four operations, order of operations and estimation to practical numerical problems."},
+      "Shape and Space": {"code":"FSM-L1-S1","text":"Use properties of shapes, angles, perimeter, area, volume and coordinates in practical contexts."}
+    },
+    "functional-skills-english": {
+      "Reading for Understanding": {"code":"FSE-L1-R1","text":"Read and understand information, viewpoints and purpose in a range of texts."},
+      "Writing Effectively": {"code":"FSE-L1-W1","text":"Write coherent, accurate texts for a stated purpose and audience using appropriate format and tone."},
+      "Communication Skills": {"code":"FSE-L1-S1","text":"Communicate information and respond appropriately in spoken or discussion-based situations."},
+      "Writing Reports and Letters": {"code":"FSE-L1-W2","text":"Organise reports and letters with appropriate structure, register, detail and accuracy."},
+      "Understanding Charts and Tables": {"code":"FSE-L1-R2","text":"Extract, compare and explain information presented in charts, tables and workplace documents."},
+      "Study and Work Skills": {"code":"FSE-L1-R3","text":"Select, organise and communicate information to support study and workplace tasks."}
+    },
+    "a-level-maths": {
+      "Algebraic Manipulation": {"code":"ALEVEL-M-A1","text":"Manipulate algebraic expressions, equations, inequalities and sequences using appropriate notation."},
+      "Trigonometric Functions": {"code":"ALEVEL-M-T1","text":"Use trigonometric functions, identities, graphs and equations to solve mathematical problems."},
+      "Statistical Analysis": {"code":"ALEVEL-M-S1","text":"Analyse data and probability using statistical measures, distributions, sampling and hypothesis methods."},
+      "Vectors and Matrices": {"code":"ALEVEL-M-V1","text":"Use vectors and matrices to represent relationships and solve geometric or algebraic problems."},
+      "Advanced Functions": {"code":"ALEVEL-M-A2","text":"Analyse and apply functions, transformations, logarithms and exponentials in mathematical models."},
+      "Mechanics Principles": {"code":"ALEVEL-M-M1","text":"Apply mechanics models and equations to forces, motion, momentum and connected systems."},
+      "Mathematical Modelling": {"code":"ALEVEL-M-M2","text":"Construct, interpret and evaluate mathematical models, stating assumptions and limitations."},
+      "Calculus Fundamentals": {"code":"ALEVEL-M-C1","text":"Use differentiation and integration to analyse change, area, motion and optimisation."}
+    },
+    "cpp-introduction": {
+      "C++ Fundamentals": {"code":"CPP-1","text":"Write and compile basic C++ programs using types, variables, expressions and standard input and output."},
+      "Control Structures": {"code":"CPP-2","text":"Use C++ selection and iteration statements to control program execution."},
+      "Functions and Modularity": {"code":"CPP-3","text":"Define and use C++ functions, parameters, return values and modular program structure."},
+      "Arrays and Strings": {"code":"CPP-4","text":"Store, access and process collections and text using C++ arrays and strings."},
+      "Object-Oriented Programming": {"code":"CPP-5","text":"Design simple C++ classes and objects using encapsulation, constructors and appropriate methods."},
+      "Memory Management": {"code":"CPP-6","text":"Manage object lifetime and dynamic memory safely using C++ pointers, references and ownership principles."},
+      "File I/O and Data Persistence": {"code":"CPP-7","text":"Read and write structured data using C++ streams and suitable file-handling practices."},
+      "Game Development Basics": {"code":"CPP-8","text":"Apply C++ programming and modular design to a small interactive game system."}
+    },
+    "aws-cloud-practitioner": {
+      "Cloud Fundamentals": {"code":"AWS-CLF-1","text":"Explain cloud concepts, shared responsibility, elasticity and the value of AWS services."},
+      "AWS Core Services": {"code":"AWS-CLF-2","text":"Identify appropriate AWS compute, storage, database and networking services for common workloads."},
+      "Security and Compliance": {"code":"AWS-CLF-3","text":"Apply AWS identity, security, compliance and shared-responsibility concepts to cloud scenarios."},
+      "Networking and Content Delivery": {"code":"AWS-CLF-4","text":"Describe AWS networking and content-delivery services and select suitable basic configurations."},
+      "Storage Solutions": {"code":"AWS-CLF-5","text":"Compare AWS storage services, durability, availability and access patterns for common use cases."},
+      "Database Services": {"code":"AWS-CLF-6","text":"Choose and describe managed AWS database services for relational and non-relational workloads."},
+      "Cost Optimization": {"code":"AWS-CLF-7","text":"Use AWS pricing, billing and cost-management concepts to make cost-aware cloud decisions."},
+      "Deployment and Automation": {"code":"AWS-CLF-8","text":"Explain basic deployment, monitoring and automation approaches for AWS workloads."}
+    },
+    "intro-to-ai": {
+      "AI Fundamentals": {"code":"AI-1","text":"Explain what artificial intelligence is, distinguish common AI task types and identify practical limitations."},
+      "Machine Learning Basics": {"code":"AI-2","text":"Explain how data, features, training, testing and evaluation are used in machine learning."},
+      "Natural Language Processing": {"code":"AI-3","text":"Describe how AI systems process and generate human language and identify common limitations."},
+      "Computer Vision Applications": {"code":"AI-4","text":"Describe how AI systems analyse images and video and recognise accuracy and bias limitations."},
+      "AI in Everyday Life": {"code":"AI-5","text":"Identify everyday AI applications and evaluate their benefits, risks and human oversight needs."},
+      "Ethical AI Considerations": {"code":"AI-6","text":"Apply human-centred, ethical and risk-aware principles when evaluating AI systems."},
+      "Future of AI Technology": {"code":"AI-7","text":"Discuss plausible opportunities, uncertainties and societal responsibilities in future AI development."}
+    },
+    "ai-for-everyone": {
+      "What is AI?": {"code":"AIFE-1","text":"Explain core AI concepts and distinguish AI systems from ordinary software automation."},
+      "How AI Works": {"code":"AIFE-2","text":"Describe at a high level how data, models, training and inference produce AI outputs."},
+      "AI in Daily Life": {"code":"AIFE-3","text":"Recognise everyday AI applications and evaluate their usefulness and limitations."},
+      "Using AI Tools": {"code":"AIFE-4","text":"Use AI tools responsibly by stating goals, checking outputs and protecting personal information."},
+      "AI Ethics and Safety": {"code":"AIFE-5","text":"Identify fairness, privacy, safety, accountability and transparency issues in AI use."},
+      "Future of AI": {"code":"AIFE-6","text":"Discuss social and workplace opportunities and uncertainties associated with future AI systems."}
+    },
+    "microsoft-office-essentials": {
+      "Microsoft Word Basics": {"code":"M365-1","text":"Create, format and review accessible documents using core Microsoft Word tools."},
+      "Excel Fundamentals": {"code":"M365-2","text":"Enter, calculate, format and present information using Microsoft Excel worksheets and formulas."},
+      "PowerPoint Presentations": {"code":"M365-3","text":"Create clear, accessible PowerPoint presentations using appropriate layouts, visuals and speaker support."},
+      "Email and Outlook": {"code":"M365-4","text":"Organise and send clear, safe email and manage common Outlook calendar and mailbox tasks."}
+    },
+    "financial-literacy": {
+      "Budgeting Basics": {"code":"FIN-1","text":"Create and review a personal budget by comparing income, essential costs, priorities and contingencies."},
+      "Saving and Banking": {"code":"FIN-2","text":"Compare everyday banking and saving options and explain interest, access and protection considerations."},
+      "Understanding Credit": {"code":"FIN-3","text":"Explain borrowing, credit records, affordability, interest and risks before taking credit."},
+      "Taxes and Payslips": {"code":"FIN-4","text":"Interpret common payslip and UK tax information and identify when official guidance is needed."}
+    },
+    "gcse-computer-science": {
+      "Computational Thinking": {"code":"GCSE-CS-1","text":"Use abstraction, decomposition, algorithms and logical reasoning to solve computational problems."},
+      "Programming Fundamentals": {"code":"GCSE-CS-2","text":"Use variables, data types, input, output and modular code to develop simple programs."},
+      "Selection and Iteration": {"code":"GCSE-CS-3","text":"Use selection and iteration to express algorithms and trace program execution."},
+      "Computer Systems": {"code":"GCSE-CS-4","text":"Explain how hardware, software, data representation and operating systems work together."},
+      "Networks and Security": {"code":"GCSE-CS-5","text":"Explain networks, protocols, threats and protective measures for computer systems."}
+    },
+    "business-english": {
+      "Professional Email Etiquette": {"code":"BE-1","text":"Write concise, clear and appropriately formal workplace emails for a stated audience and purpose."},
+      "Effective Meeting Participation": {"code":"BE-2","text":"Prepare for and contribute constructively to workplace meetings, including clarifying actions."},
+      "Business Presentation Skills": {"code":"BE-3","text":"Organise and deliver a clear business presentation using appropriate structure, evidence and visual support."},
+      "Cross-Cultural Communication": {"code":"BE-4","text":"Adapt workplace communication respectfully for cultural, linguistic and audience differences."},
+      "Negotiation & Persuasion Techniques": {"code":"BE-5","text":"Use evidence, questions and respectful language to negotiate and persuade in workplace contexts."}
+    },
+    "python-mastery": {
+      "Pythonic Patterns": {"code":"PY-M-1","text":"Apply idiomatic Python patterns and language features to write clear maintainable code."},
+      "Functional Programming in Python": {"code":"PY-M-2","text":"Use functions, comprehensions, iterators and higher-order techniques appropriately in Python."},
+      "Concurrency and Parallelism": {"code":"PY-M-3","text":"Explain and apply suitable Python concurrency or parallelism approaches and their trade-offs."},
+      "Testing and Performance": {"code":"PY-M-4","text":"Test, profile and improve Python programs using repeatable evidence and appropriate tools."},
+      "Web Development with FastAPI": {"code":"PY-M-5","text":"Build and reason about typed HTTP endpoints, validation and error handling with FastAPI."},
+      "Mastery Capstone": {"code":"PY-M-6","text":"Plan, implement, test and evaluate a maintainable Python application using appropriate advanced techniques."}
+    },
+    "life-in-the-uk-test": {
+      "The Values and Principles of the UK": {"code":"LUK-1","text":"Explain the democratic values, rights, responsibilities and principles described in the official Life in the UK material."},
+      "What is the UK?": {"code":"LUK-2","text":"Identify the countries, communities, symbols and geographic features of the United Kingdom."},
+      "A Long and Illustrious History": {"code":"LUK-3","text":"Describe key events, people and developments in the history of the United Kingdom."},
+      "A Modern, Thriving Society": {"code":"LUK-4","text":"Recognise important features of modern UK society, culture, customs and public life."},
+      "The UK Government, the Law and Your Role": {"code":"LUK-5","text":"Explain how UK government, law, public services and civic responsibilities affect residents."}
+    }
+  }
+}

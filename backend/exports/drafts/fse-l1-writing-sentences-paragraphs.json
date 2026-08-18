@@ -1,0 +1,119 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-08-16T16:31:03.906Z",
+  "generator": {
+    "baseUrl": "http://192.168.0.165:1234",
+    "model": "qwen/qwen3.8-27b",
+    "reasoningEffort": "off"
+  },
+  "publication": {
+    "isPublished": false,
+    "reviewStatus": "draft",
+    "reviewedBy": null,
+    "reviewedAt": null
+  },
+  "editorialReview": {
+    "reviewedAt": "2026-08-16",
+    "outcome": "pilot-approved",
+    "notes": "Human editorial review separated complex sentences from compound sentences and made paragraph and clarity guidance less absolute. This remains a draft and is not approved for publication."
+  },
+  "source": {
+    "title": "English Functional Skills: subject content",
+    "url": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "checkedAt": "2026-08-16"
+  },
+  "unit": {
+    "id": "fse-l1-writing-sentences-paragraphs",
+    "title": "Writing: complex sentences and paragraphs",
+    "objectives": [
+      {
+        "code": "FSE-L1-W25",
+        "text": "Write consistently and accurately in complex sentences, using paragraphs where appropriate."
+      }
+    ]
+  },
+  "lesson": {
+    "title": "Building Clear Complex Sentences and Paragraphs",
+    "summary": "This lesson helps you combine ideas into complex sentences and group related information into paragraphs. You will learn to check clarity and structure in straightforward texts.",
+    "objectives": [
+      {
+        "code": "FSE-L1-W25",
+        "text": "Write consistently and accurately in complex sentences, using paragraphs where appropriate."
+      }
+    ],
+    "sections": [
+      {
+        "heading": "Combining Ideas Accurately",
+        "body": "A complex sentence combines a main clause with extra information, often using words such as because, although or when. This can show how events relate. For example, you might write that you arrived late because the bus was delayed. Choose a connecting word that gives the relationship you mean; shorter sentences can also be useful when they make meaning clearer."
+      },
+      {
+        "heading": "Paragraphing Related Information",
+        "body": "A paragraph often develops one main idea or topic. Group related sentences together so the reader can follow your thoughts. When you move to a new point, a new paragraph can help show that change. This visual break can organise a longer text and make it easier to scan without separating ideas that need to stay together."
+      },
+      {
+        "heading": "Checking Sentence Clarity",
+        "body": "After writing, read each sentence again to check that it makes sense. Look for a clear main clause and make sure extra information relates to it. Avoid mixing ideas that do not belong together. If a sentence feels confusing, you might split it or change the order. Read it in the context of the whole paragraph too."
+      }
+    ],
+    "practice": [
+      {
+        "prompt": "Read this: \"The meeting started late because the projector failed.\" Which part shows the reason for the delay?",
+        "options": [
+          "The meeting started late",
+          "The projector failed",
+          "The meeting was long",
+          "The projector worked"
+        ],
+        "correctIndex": 1,
+        "explanation": "The word because introduces the reason, which is the projector failing.",
+        "objectiveCode": "FSE-L1-W25"
+      },
+      {
+        "prompt": "Read this note: \"Sam finished work. He went to the shop. He bought milk and eggs.\" Which sentence combines the information and clearly shows the time relationship?",
+        "options": [
+          "After Sam finished work, he bought milk and eggs at the shop.",
+          "Sam bought milk and eggs because he finished work.",
+          "Although Sam went to the shop, he bought milk and eggs.",
+          "Sam finished work, but he went to the shop."
+        ],
+        "correctIndex": 0,
+        "explanation": "‘After’ shows that finishing work happened before the shopping, without inventing a reason or contrast.",
+        "objectiveCode": "FSE-L1-W25"
+      },
+      {
+        "prompt": "A colleague needs to email a team about a meeting and ask for feedback. Which layout groups the two purposes most clearly?",
+        "options": [
+          "Paragraph 1: meeting time and location. Paragraph 2: request for feedback by Friday.",
+          "One paragraph with the meeting, feedback, a holiday story and a lunch order.",
+          "Paragraph 1: request for feedback. Paragraph 2: the same request repeated.",
+          "A list of unrelated dates without an explanation."
+        ],
+        "correctIndex": 0,
+        "explanation": "The first option keeps the meeting information together and gives the feedback request its own clear paragraph.",
+        "objectiveCode": "FSE-L1-W25"
+      }
+    ],
+    "writingActivity": {
+      "title": "Writing a Short Email",
+      "prompt": "Write a short email to a colleague explaining why you need to reschedule a meeting. Use at least two complex sentences and two paragraphs.",
+      "wordGuide": "50-80 words",
+      "checklist": [
+        "Did I use connecting words like because or although?",
+        "Did I group related ideas into separate paragraphs?",
+        "Is each sentence clear and easy to understand?"
+      ]
+    },
+    "sourceUrl": "https://www.gov.uk/government/publications/functional-skills-subject-content-english/english-functional-skills-subject-content",
+    "sourceTitle": "English Functional Skills: subject content"
+  },
+  "modelReview": {
+    "decision": "pass",
+    "itemDecisions": [
+      "pass",
+      "pass",
+      "pass"
+    ],
+    "reviewedAt": "2026-08-17T20:51:38.594Z",
+    "model": "qwen/qwen3.8-27b"
+  }
+}
