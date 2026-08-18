@@ -1,8 +1,11 @@
 import FractionLab from './FractionLab'
+import GradientExplorer from './GradientExplorer'
+import ProbabilitySpinner from './ProbabilitySpinner'
+import RatioMixer from './RatioMixer'
 
 /**
  * Interactive lesson widgets, addressed from content by name:
- *   { "type": "interactive", "widget": "fraction-lab", "title": "...' }
+ *   { "type": "interactive", "widget": "fraction-lab", "title": "..." }
  *
  * Keeping this a registry means new widgets are added here rather than by
  * growing the renderer's switch, and an unknown name degrades to nothing
@@ -10,6 +13,9 @@ import FractionLab from './FractionLab'
  */
 export const LESSON_WIDGETS = {
     'fraction-lab': FractionLab,
+    'probability-spinner': ProbabilitySpinner,
+    'ratio-mixer': RatioMixer,
+    'gradient-explorer': GradientExplorer,
 }
 
 export function getLessonWidget(name) {
