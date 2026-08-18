@@ -17,13 +17,16 @@
  *                      strong learners do worse on it than weak ones, the
  *                      classic fingerprint of a bad item
  *
- * Read-only by default. --flag marks flagged questions reviewStatus='flagged'
- * (reversible, never unpublishes).
+ * Read-only by default.
+ *   --flag        mark reviewStatus='flagged' (reversible, stays published)
+ *   --quarantine  unpublish questions the evidence condemns twice over
  *
  * Usage:
  *   node scripts/audit-question-signals.js
  *   node scripts/audit-question-signals.js --min-attempts=30 --out=signals.json
  *   node scripts/audit-question-signals.js --flag
+ *   node scripts/audit-question-signals.js --quarantine            # preview
+ *   node scripts/audit-question-signals.js --quarantine --apply    # unpublish
  */
 import { writeFile } from 'node:fs/promises'
 import prisma from '../src/lib/db.js'
@@ -49,6 +52,12 @@ const DEFAULTS = {
     // A dominant wrong option then means a tempting misconception, not a wrong
     // key, and a low success rate means hard, not broken.
     functioningDiscrimination: 0.15,
+    // Quarantine needs corroboration: one signal is a hypothesis, two
+    // independent ones are a case. A learner report counts as one of them.
+    quarantineHighSignals: 2,
+    // A single run must never be able to empty the catalogue. If a change to
+    // the thresholds ever makes everything look broken, this stops it.
+    maxQuarantinePerRun: 25,
 }
 
 function parseArgs(argv) {
@@ -196,6 +205,8 @@ async function main() {
         negativeDiscrimination: num(args, 'negative-discrimination', DEFAULTS.negativeDiscrimination),
         minRestQuestions: num(args, 'min-rest-questions', DEFAULTS.minRestQuestions),
         functioningDiscrimination: num(args, 'functioning-discrimination', DEFAULTS.functioningDiscrimination),
+        quarantineHighSignals: num(args, 'quarantine-high-signals', DEFAULTS.quarantineHighSignals),
+        maxQuarantinePerRun: num(args, 'max-quarantine', DEFAULTS.maxQuarantinePerRun),
     }
 
     const attempts = await prisma.attempt.findMany({
@@ -275,6 +286,43 @@ async function main() {
 
     findings.sort((a, b) => b.impact - a.impact)
 
+    const condemned = findings.filter(
+        (f) => f.signals.filter((s) => s.severity === 'high').length >= config.quarantineHighSignals
+    )
+
+    let quarantined = 0
+    let quarantineAborted = null
+    if (args.get('quarantine') === true) {
+        const apply = args.get('apply') === true
+        if (condemned.length > config.maxQuarantinePerRun) {
+            // Far more than expected looks like a threshold bug, not a bad bank.
+            quarantineAborted = `${condemned.length} questions met the quarantine bar, above the ${config.maxQuarantinePerRun} cap — refusing to act. Review the findings or raise --max-quarantine deliberately.`
+        } else if (apply) {
+            for (const finding of condemned) {
+                const question = questions.find((q) => q.id === finding.questionId)
+                const result = await prisma.question.updateMany({
+                    where: { id: question.id, version: question.version, isPublished: true },
+                    data: {
+                        isPublished: false,
+                        reviewStatus: 'quarantined',
+                        // Keep the reason with the row so the decision is not
+                        // stranded in a console log nobody kept.
+                        sourceMeta: JSON.stringify({
+                            quarantinedAt: new Date().toISOString(),
+                            quarantinedBy: 'audit-question-signals',
+                            attempts: finding.attempts,
+                            successRate: finding.successRate,
+                            discrimination: finding.discrimination,
+                            signals: finding.signals.map((s) => s.signal),
+                        }),
+                        version: { increment: 1 },
+                    },
+                })
+                quarantined += result.count
+            }
+        }
+    }
+
     let flagged = 0
     if (args.get('flag') === true) {
         for (const finding of findings.filter((f) => f.signals.some((s) => s.severity === 'high'))) {
@@ -300,6 +348,9 @@ async function main() {
         questionsWithEnoughData: questions.length,
         questionsFlagged: findings.length,
         questionsMarkedFlagged: flagged,
+        quarantineCandidates: condemned.length,
+        questionsQuarantined: quarantined,
+        ...(quarantineAborted ? { quarantineAborted } : {}),
         bySignal,
         topFindings: findings.slice(0, 25),
     }
