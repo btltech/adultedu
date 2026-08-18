@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { Award, CalendarClock, CheckCircle2, Flame, Lightbulb, Target, XCircle } from 'lucide-react'
 import { api } from '../../lib/api'
+import QuestionReportButton from '../QuestionReportButton'
 
 function formatTimeRemaining(ms) {
     const hours = Math.floor(ms / (1000 * 60 * 60))
@@ -230,6 +231,11 @@ export default function DailyChallenge({ compact = false }) {
                     </div>
                 </div>
             )}
+
+            <QuestionReportButton
+                question={challenge.question}
+                context={{ surface: 'daily-challenge', topicId: challenge.question.topic?.id, answered: !!result }}
+            />
         </div>
     )
 }

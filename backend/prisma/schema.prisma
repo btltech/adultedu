@@ -52,6 +52,7 @@ model User {
   achievements            Achievement[]
   dailyChallengeAttempts  DailyChallengeAttempt[]
   analyticsEvents         AnalyticsEvent[]
+  questionReports         QuestionReport[]
 
   @@map("users")
 }
@@ -262,6 +263,7 @@ model Question {
   assessmentQuestions AssessmentQuestion[]
   reviewItems         ReviewItem[]
   dailyChallenges     DailyChallenge[]
+  reports             QuestionReport[]
 
   @@index([topicId, isPublished, createdAt])
   @@index([reviewStatus, reviewDueAt])
@@ -334,6 +336,28 @@ model Attempt {
   @@index([userId, createdAt])
   @@index([questionId, createdAt])
   @@map("attempts")
+}
+
+// Learner-reported content issues. Reports never affect scoring or publication.
+model QuestionReport {
+  id          String   @id @default(uuid())
+  questionId  String   @map("question_id")
+  userId      String?  @map("user_id")
+  reason      String
+  details     String?  @db.Text
+  context     String?  @db.Text // JSON: route and answer context
+  status      String   @default("open") // open, acknowledged, fixed, dismissed
+  adminNote   String?  @db.Text @map("admin_note")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt @map("updated_at")
+
+  question Question @relation(fields: [questionId], references: [id], onDelete: Cascade)
+  user     User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([status, createdAt])
+  @@index([questionId, status])
+  @@index([userId, questionId, createdAt])
+  @@map("question_reports")
 }
 
 // Spaced Repetition Review Items

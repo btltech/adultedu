@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, BookOpenCheck, Brain, CalendarClock, CheckCircle2, Clock3, Layers3, RotateCcw, Sparkles, XCircle } from 'lucide-react'
 import { api } from '../lib/api'
+import QuestionReportButton from '../components/QuestionReportButton'
 
 function getReviewQuestionStatus(question, sessionResults) {
     const result = sessionResults[question.reviewItemId]
@@ -365,6 +366,11 @@ export default function Review() {
                                     {submitting ? 'Checking...' : 'Check Answer'}
                                 </button>
                             )}
+
+                            <QuestionReportButton
+                                question={currentQuestion}
+                                context={{ surface: 'review', topicId: currentQuestion.topic?.id, answered: !!result }}
+                            />
                         </div>
 
                         <aside className="space-y-4 xl:sticky xl:top-24 xl:self-start">

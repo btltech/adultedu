@@ -15,6 +15,7 @@ const Settings = lazy(() => import('./pages/admin/Settings'))
 const QuestionEditor = lazy(() => import('./pages/admin/QuestionEditor'))
 const AnalyticsDashboard = lazy(() => import('./pages/admin/AnalyticsDashboard'))
 const PartnerDelivery = lazy(() => import('./pages/admin/PartnerDelivery'))
+const QuestionReports = lazy(() => import('./pages/admin/QuestionReports'))
 const Home = lazy(() => import('./pages/Home'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 const PrivacyPolicy = lazy(() => import('./pages/PrivacyPolicy'))
@@ -109,6 +110,7 @@ const router = createBrowserRouter(
                 <Route path="users" element={<Users />} />
                 <Route path="analytics" element={<AnalyticsDashboard />} />
                 <Route path="partners" element={<PartnerDelivery />} />
+                <Route path="question-reports" element={<QuestionReports />} />
                 <Route path="settings" element={<Settings />} />
                 <Route path="questions/new" element={<QuestionEditor />} />
                 <Route path="questions/:id" element={<QuestionEditor />} />

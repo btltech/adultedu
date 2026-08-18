@@ -17,6 +17,7 @@ import {
     Trophy,
 } from 'lucide-react'
 import { api, getUserMessage } from '../lib/api'
+import QuestionReportButton from '../components/QuestionReportButton'
 
 const TRACK_SLUG = 'life-in-the-uk-test'
 const DEFAULT_LIMIT = 24
@@ -129,6 +130,11 @@ function MockTestQuestion({
                     )}
                 </div>
             )}
+
+            <QuestionReportButton
+                question={question}
+                context={{ surface: 'life-in-uk-mock-test', trackSlug: TRACK_SLUG, topicId: question.topic?.id, selectedAnswerIndex: selectedIndex, answered: showResult }}
+            />
         </div>
     )
 }
