@@ -39,17 +39,23 @@
     "sections": [
       {
         "heading": "Understanding Sample Spaces",
-        "body": "A sample space lists all possible outcomes. For combined events, we multiply independent probabilities. If events are mutually exclusive, we add probabilities. This distinction prevents calculation errors. Always identify whether outcomes overlap or remain separate before choosing the correct mathematical operation for your specific problem."
+        "body": "A sample space lists every possible outcome, so a fair six-sided die has {1, 2, 3, 4, 5, 6}. For equally likely outcomes, probability is favourable outcomes ÷ total outcomes, giving P(even) = 3/6 = 1/2. Probabilities lie between 0 and 1, and complementary events satisfy P(not A) = 1 - P(A). For mutually exclusive events, such as rolling a 1 or a 6, add: 1/6 + 1/6 = 1/3. For independent events, such as two separate fair coin tosses, multiply: P(two heads) = 1/2 × 1/2 = 1/4. Ask whether outcomes can happen together before choosing add or multiply. If outcomes are not equally likely, use the supplied probabilities rather than counting them as equal."
       },
       {
         "heading": "Tree Diagrams for Conditional Probability",
-        "body": "Tree diagrams show sequential events clearly. Each branch represents a probability. Multiply along branches for combined events. Add across branches for totals. Conditional probability depends on previous outcomes. This visual method helps track dependencies. It ensures you account for changing conditions accurately throughout the entire sequence of events."
+        "body": "A tree diagram shows stages from left to right. Put a probability on every branch, multiply along one complete path, then add the paths that satisfy the question. If a bag has 3 red and 2 blue counters and counters are replaced, P(red then blue) = 3/5 × 2/5 = 6/25 because the second probability stays the same. Without replacement, after a red counter is taken, P(blue) becomes 2/4, so the events are dependent and the product is 3/5 × 2/4 = 3/10. Check that the branches leaving each point add to 1. Conditional probability means the information changes the sample space; write the condition beside the branch rather than silently reusing the first probability."
       },
       {
         "heading": "Venn Diagrams for Overlapping Sets",
-        "body": "Venn diagrams illustrate set relationships visually. Overlapping regions represent shared outcomes. Mutually exclusive sets do not overlap. Calculate probabilities by dividing favourable outcomes by total outcomes. This method clarifies conditional scenarios. It helps distinguish between independent and dependent events effectively within complex probability problems. Review the example, then explain the choice in your own words."
+        "body": "In a Venn diagram, the overlap represents outcomes in both sets, A ∩ B. The union A ∪ B includes everything in A or B, including the overlap, so P(A ∪ B) = P(A) + P(B) - P(A ∩ B). Subtract the overlap once because it was counted twice. Mutually exclusive sets have no overlap. The outside region represents neither event, and all regions together make the sample space. Conditional probability can be written P(A given B) = P(A ∩ B) ÷ P(B), provided P(B) is not zero. Fill known regions first, check that all probabilities sum to 1, and label whether ‘or’ means inclusive union. Independence is a separate idea: A and B are independent when knowing B does not change the probability of A. For example, if 20 learners are surveyed, 12 use a bus, 8 use a bicycle, and 5 use both, then the union is 12 + 8 - 5 = 15 learners. The probability of using neither is 5/20 = 1/4. Keep counts and probabilities separate until the final division."
       }
     ],
+    "writingActivity": {
+      "title": "Build and explain a probability model",
+      "prompt": "Create a two-stage tree or a labelled Venn diagram for a small fictional experiment. Calculate one combined probability and explain whether the events are independent, dependent, or mutually exclusive.",
+      "wordGuide": "Write 100–140 words with the diagram represented by labelled text if needed.",
+      "checklist": ["I labelled every branch or region.", "I chose addition or multiplication for a stated reason.", "I checked that the complete sample space totals 1."]
+    },
     "practice": [
       {
         "prompt": "A bag contains three red and two blue balls. One ball is drawn, noted, and replaced. What is the probability of drawing two red balls in sequence?",

@@ -39,17 +39,23 @@
     "sections": [
       {
         "heading": "Understanding Integers and Fractions",
-        "body": "Integers include positive and negative whole numbers. Fractions represent parts of a whole. When adding or subtracting, ensure denominators match. Multiplication involves multiplying numerators and denominators separately. Division requires inverting the second fraction before multiplying. These fundamental operations form the basis for more complex calculations in mathematics."
+        "body": "Integers include positive and negative whole numbers, so a temperature of -3°C is three degrees below zero and not simply a smaller 3. On a number line, moving right increases a value and moving left decreases it. For fractions, add or subtract only after finding a common denominator: 2/3 + 1/4 becomes 8/12 + 3/12 = 11/12. For multiplication, multiply numerators and denominators: 3/5 × 10/9 = 30/45 = 2/3. For division, multiply by the reciprocal: 3/4 ÷ 2/5 = 3/4 × 5/2 = 15/8. Estimate first so an answer such as 15/8, which is 1.875, can be checked against the sizes of the original numbers. A common error is cancelling across addition; cancellation is safe only between factors in a multiplication. Use the fraction bar as a grouping symbol and simplify at the end."
       },
       {
         "heading": "Powers, Roots, and Indices",
-        "body": "Powers indicate repeated multiplication of a base number. Indices simplify expressions involving large numbers. Roots are inverse operations of powers. Square roots find the number that multiplies by itself to give the result. Cube roots extend this concept to three factors. Understanding these relationships allows for efficient problem-solving and accurate representation of numerical values."
+        "body": "An index records repeated multiplication: 2^4 means 2 × 2 × 2 × 2, not 2 × 4. The laws a^m × a^n = a^(m+n) and a^m ÷ a^n = a^(m-n) work when the base is the same. Thus 3^2 × 3^4 = 3^6, while 3^2 + 3^4 cannot be combined using an index law. A zero index gives a^0 = 1 for non-zero a, and a negative index means a^-2 = 1/a^2. Roots undo powers: √49 = 7 because 7^2 = 49, and ∛27 = 3 because 3^3 = 27. When a calculator gives a decimal, decide whether the question asks for an exact form or a rounded value. Check by raising your answer to the stated power. A frequent misconception is treating √(a+b) as √a + √b. For example, √(9 + 16) = 5, but √9 + √16 = 7, so the expressions are not equivalent."
       },
       {
         "heading": "Standard Form and Bounds",
-        "body": "Standard form expresses numbers as a coefficient between one and ten multiplied by a power of ten. This format simplifies comparison and calculation of very large or small values. Bounds define the maximum and minimum possible values for a measurement. Calculating bounds helps assess accuracy and reliability in practical applications involving measurements and data analysis."
+        "body": "Standard form writes a number as A × 10^n, where 1 ≤ A < 10 and n is an integer. Moving a decimal point left makes n positive; moving it right makes n negative. For example, 560000 = 5.6 × 10^5 and 0.00056 = 5.6 × 10^-4. To multiply standard-form numbers, multiply the coefficients and add the powers, then renormalise if the coefficient is outside the allowed range. To divide, divide coefficients and subtract powers. Bounds describe the interval in which a rounded measurement lies. A length recorded as 8 cm to the nearest centimetre is at least 7.5 cm and less than 8.5 cm. The upper bound is excluded because 8.5 would round to 9. Use the appropriate bound when finding a maximum or minimum area; do not just substitute the rounded value twice. State units and sensible rounding. Before accepting a result, check its order of magnitude: multiplying by 10^3 should increase a positive number by three places. For a worked bounds example, a rectangle is 8 cm by 5 cm, each length rounded to the nearest centimetre. The minimum area is 7.5 × 4.5 = 33.75 cm² and the maximum is less than 8.5 × 5.5 = 46.75 cm². The word ‘less than’ matters at the upper bound."
       }
     ],
+    "writingActivity": {
+      "title": "Show and check your number reasoning",
+      "prompt": "Choose one calculation involving fractions, indices, or standard form. Write each step, name the rule you used, and finish with a quick estimate or inverse check.",
+      "wordGuide": "Write 80–120 words or a clearly labelled chain of calculations.",
+      "checklist": ["I used a common denominator or reciprocal correctly.", "I stated the index or bounds rule I applied.", "I checked the size and units of my final answer."]
+    },
     "practice": [
       {
         "prompt": "A recipe requires 3/4 cup of flour. If you need to make half the recipe, how much flour is required?",

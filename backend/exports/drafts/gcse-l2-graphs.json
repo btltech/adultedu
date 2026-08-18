@@ -39,17 +39,23 @@
     "sections": [
       {
         "heading": "Linear Relationships and Gradient",
-        "body": "Linear graphs show constant rates of change. The gradient measures steepness by dividing the change in y by the change in x. The y-intercept indicates the starting value when x is zero. Understanding these features helps model steady growth or decline in real-life scenarios effectively."
+        "body": "A linear relationship can be written y = mx + c. The gradient m is the change in y divided by the change in x, and c is the y-intercept, the value of y when x = 0. Using points (2, 5) and (6, 13), the gradient is (13 - 5)/(6 - 2) = 2. Substituting one point gives 5 = 2(2) + c, so c = 1 and the equation is y = 2x + 1. A positive gradient rises from left to right; a negative gradient falls. Choose points carefully from a table or exact coordinates rather than guessing from a rough drawing. In a real-life model, explain what the gradient and intercept mean and check whether the model makes sense at x = 0."
       },
       {
         "heading": "Quadratic Curves and Roots",
-        "body": "Quadratic graphs form parabolic shapes, representing accelerating or decelerating change. The roots are where the curve crosses the x-axis, indicating zero values. The vertex marks the maximum or minimum point. Identifying these features allows for accurate interpretation of physical motion or profit models. Review the example, then explain the choice in your own words."
+        "body": "A quadratic has the form y = ax² + bx + c and produces a parabola. If a is positive the curve has a minimum; if a is negative it has a maximum. The roots are the x-values where y = 0, so they can be found by factorising or solving the equation. For y = x² - 5x + 6, (x - 2)(x - 3) = 0 gives roots x = 2 and x = 3. The y-intercept is c, so here it is 6. The line of symmetry lies halfway between the roots, at x = 2.5, and the vertex can be found by substituting this value. In a context such as height, reject values that are impossible for the situation and explain what each intercept represents."
       },
       {
         "heading": "Transforming Graphs for Analysis",
-        "body": "Transformations shift or stretch graphs without changing their fundamental shape. Adding a constant moves the graph vertically, while multiplying x stretches it horizontally. These techniques help compare different scenarios. By applying these rules, you can predict how changes in variables affect the overall outcome. Review the example, then explain the choice in your own words."
+        "body": "Start with y = f(x) and track what changes outside and inside the function. y = f(x) + 3 moves the graph up 3 units, while y = f(x) - 2 moves it down 2. The graph y = f(x - 4) moves right 4, and y = f(x + 4) moves left 4, so the sign inside feels reversed. Multiplying the output, y = 2f(x), stretches vertical distances from the x-axis by factor 2. Use a small table of coordinates to verify a transformation instead of relying only on memory. Describe the direction and distance in words, and check one transformed point. A transformation changes the graph but may also change the meaning of a model, so state which variable or quantity has been shifted. For example, the point (2, 5) on y = f(x) becomes (6, 5) on y = f(x - 4), while it becomes (2, 10) on y = 2f(x). Make a before-and-after table for at least two points; this exposes the common error of reversing a horizontal shift."
       }
     ],
+    "writingActivity": {
+      "title": "Read a graph like a story",
+      "prompt": "Use one linear or quadratic example from the lesson. Identify its intercepts, gradient or turning point, and write what those features would mean in a realistic context.",
+      "wordGuide": "Write 100–140 words and include at least one calculated feature.",
+      "checklist": ["I calculated rather than guessed a key feature.", "I explained the feature in context.", "I checked that my transformation direction was correct."]
+    },
     "practice": [
       {
         "prompt": "A line passes through (0, 5) and (2, 9). What is its gradient?",

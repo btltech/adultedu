@@ -39,17 +39,23 @@
     "sections": [
       {
         "heading": "Understanding Averages and Spread",
-        "body": "Averages summarise data, but spread reveals variation. A small range suggests consistency, while a wide range indicates diversity. Always consider both measures together. Relying solely on the mean can hide significant differences within a dataset, leading to misleading interpretations of the underlying distribution and potential errors in analysis."
+        "body": "The mean is found by adding all values and dividing by how many values there are. For 4, 5, 7, 8, 16 the mean is 40 ÷ 5 = 8, while the median is the middle value, 7. The mode is the most frequent value and the range is maximum minus minimum, here 12. The mean uses every value but is pulled by an outlier; the median is often more representative for skewed data. If every value increases by 3, the mean, median, and mode increase by 3, but the range stays the same. Compare both an average and a measure of spread before deciding whether two groups are similar. Use the same units throughout and state whether you calculated from raw data or an estimated grouped table."
       },
       {
         "heading": "Sampling and Representativeness",
-        "body": "Sampling involves selecting a subset to represent a larger population. A biased sample skews results, making conclusions unreliable. Random selection helps ensure fairness. However, even random samples have limitations. Always acknowledge that findings from a sample are estimates, not absolute truths about the entire group or population."
+        "body": "A population is the whole group of interest; a sample is the smaller group measured. A random sample gives each member a known chance of selection, while a systematic sample might choose every tenth name after a random start. A convenience sample, such as asking people who happen to pass a doorway, can be biased because some groups are missed. A sample can also be too small or collected at an unrepresentative time. State the population, sampling method, and possible source of bias before interpreting a result. Even a well-designed sample provides an estimate, not certainty about every member. If a survey finds 62% of 100 sampled learners prefer option A, report the sample and avoid saying exactly 62% of all learners prefer it without further evidence."
       },
       {
         "heading": "Correlation and Causation",
-        "body": "Correlation shows a relationship between variables, but it does not prove causation. Two factors may move together due to a third, hidden influence. For example, ice cream sales and drowning incidents both rise in summer. This does not mean one causes the other. Always seek evidence before claiming a direct causal link."
+        "body": "Correlation describes how two variables change together. A positive correlation means larger values of one tend to accompany larger values of the other; a negative correlation means one tends to rise as the other falls. Correlation does not prove that one variable causes the other. Ice-cream sales and swimming incidents may both rise in summer because temperature and holidays are confounding factors. A scatter diagram can reveal strength, direction, and outliers, but it cannot by itself establish a mechanism. Distinguish an observed association from an experiment designed to test cause. Use cautious language such as ‘is associated with’ unless the evidence supports more. Also remember that no correlation does not rule out a non-linear relationship. When describing a scatter diagram, mention direction, strength, and any unusual points. A single outlier can make a weak pattern look stronger or pull an average away from the main cluster. Ask what was measured, who was included, and whether the variables were recorded under comparable conditions before drawing a conclusion."
       }
     ],
+    "writingActivity": {
+      "title": "Make a cautious statistical conclusion",
+      "prompt": "Compare two small datasets or sampling scenarios. Calculate one average and one spread measure, then write a conclusion that names a limitation or possible source of bias.",
+      "wordGuide": "Write 100–140 words with your calculations shown.",
+      "checklist": ["I chose an appropriate average and spread measure.", "I described the sample or data source.", "I avoided claiming causation from correlation alone."]
+    },
     "practice": [
       {
         "prompt": "A survey of 50 students found an average height of 160cm, with a range of 10cm. Another group of 50 students had an average of 160cm, but a range of 40cm. Which statement is most accurate?",
