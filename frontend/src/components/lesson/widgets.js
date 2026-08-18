@@ -2,6 +2,7 @@ import FractionLab from './FractionLab'
 import GradientExplorer from './GradientExplorer'
 import ProbabilitySpinner from './ProbabilitySpinner'
 import RatioMixer from './RatioMixer'
+import TimelineBuilder from './TimelineBuilder'
 
 /**
  * Interactive lesson widgets, addressed from content by name:
@@ -16,6 +17,7 @@ export const LESSON_WIDGETS = {
     'probability-spinner': ProbabilitySpinner,
     'ratio-mixer': RatioMixer,
     'gradient-explorer': GradientExplorer,
+    'history-timeline': TimelineBuilder,
 }
 
 export function getLessonWidget(name) {
