@@ -4,6 +4,10 @@ import logger from './logger.js'
 import { processDueReturnReminders } from './accountEmails.js'
 
 const DAY_MS = 24 * 60 * 60 * 1000
+
+// The ::int casts below are load-bearing. Prisma sends JS numbers as bigint,
+// and pg_try_advisory_lock's two-argument form only exists for (int, int), so
+// the uncast query threw on every run and no reminder pass ever completed.
 const RETURN_REMINDER_LOCK_FAMILY = 20260426
 const RETURN_REMINDER_LOCK_KEY = 1
 
@@ -24,7 +28,7 @@ export function getNextReturnReminderRunAt(now = new Date()) {
 
 async function withReturnReminderLock(callback) {
     const rows = await prisma.$queryRaw`
-        SELECT pg_try_advisory_lock(${RETURN_REMINDER_LOCK_FAMILY}, ${RETURN_REMINDER_LOCK_KEY}) AS locked
+        SELECT pg_try_advisory_lock(${RETURN_REMINDER_LOCK_FAMILY}::int, ${RETURN_REMINDER_LOCK_KEY}::int) AS locked
     `
     const locked = Array.isArray(rows) && rows[0]?.locked === true
 
@@ -37,7 +41,7 @@ async function withReturnReminderLock(callback) {
         return await callback()
     } finally {
         await prisma.$queryRaw`
-            SELECT pg_advisory_unlock(${RETURN_REMINDER_LOCK_FAMILY}, ${RETURN_REMINDER_LOCK_KEY})
+            SELECT pg_advisory_unlock(${RETURN_REMINDER_LOCK_FAMILY}::int, ${RETURN_REMINDER_LOCK_KEY}::int)
         `
     }
 }

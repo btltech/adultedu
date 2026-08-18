@@ -27,6 +27,7 @@ import partnerReportsRoutes from './routes/partnerReports.js'
 import questionReportsRoutes from './routes/questionReports.js'
 
 import logger from './lib/logger.js'
+import { startQuestionAuditScheduler } from './lib/questionAuditScheduler.js'
 import { startReturnReminderScheduler } from './lib/returnReminderScheduler.js'
 
 // ... imports ...
@@ -156,6 +157,7 @@ if (process.env.NODE_ENV !== 'test') {
         })
 
         startReturnReminderScheduler()
+        startQuestionAuditScheduler()
     })
 }
 
