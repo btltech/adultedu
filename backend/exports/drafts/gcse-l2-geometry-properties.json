@@ -39,17 +39,23 @@
     "sections": [
       {
         "heading": "Angle Relationships and Shape Properties",
-        "body": "Understanding angle facts is essential for geometric reasoning. Parallel lines create equal alternate and corresponding angles. Triangles have interior angles summing to one hundred and eighty degrees. These properties allow you to calculate unknown angles and justify your steps clearly in written work. Review the example, then explain the choice in your own words."
+        "body": "Geometry becomes safer when each result has a named reason. Angles on a straight line total 180°, angles around a point total 360°, and vertically opposite angles are equal. In parallel lines, corresponding and alternate angles are equal while co-interior angles sum to 180°. A triangle has interior angles totalling 180°, so if two angles are 48° and 67°, the third is 65°. Write the relationship before subtracting. Do not measure a drawing that is not stated to scale. Use a quick sketch to mark the known angle, identify the relationship, and then check whether the answer is acute, obtuse, or a plausible triangle angle."
       },
       {
         "heading": "Congruence and Similarity",
-        "body": "Congruent shapes are identical in size and shape, while similar shapes have the same shape but different sizes. You can prove congruence using side-angle-side or angle-side-side rules. Similarity requires matching angles and proportional sides. These concepts help you compare and transform geometric figures accurately. Review the example, then explain the choice in your own words."
+        "body": "Congruent shapes have exactly the same size and shape, even if one is rotated or reflected. Valid congruence tests include SSS, SAS, ASA, and RHS for right-angled triangles; matching only two angles proves similarity, not congruence. Similar shapes have equal corresponding angles and a constant scale factor between corresponding lengths. If a small triangle has sides 3, 4, and 5 and a similar triangle has scale factor 2.5, its sides are 7.5, 10, and 12.5. Areas scale by the square of the length factor, so the area factor is 6.25. Match corresponding vertices consistently, write the scale factor as new ÷ original, and use it in the correct direction."
       },
       {
         "heading": "Circle Theorems",
-        "body": "Circle theorems provide specific rules for angles within circles. The angle at the centre is double the angle at the circumference. Angles in the same segment are equal. A tangent is perpendicular to the radius at the point of contact. Applying these theorems helps you solve complex problems involving circles and chords."
+        "body": "Circle theorems connect angles, chords, and tangents. The angle at the centre is twice the angle at the circumference standing on the same arc. Angles in the same segment are equal, and the angle in a semicircle is 90°. A tangent is perpendicular to the radius at the point of contact; the two tangents from an external point have equal lengths. When solving, identify the arc or chord first, state the theorem, and then calculate. If the central angle is 112°, the matching circumference angle is 56°. Use the diagram only to identify the stated relationships, not to estimate sizes. A final check is that angles in a triangle or around a point still satisfy the basic totals."
       }
     ],
+    "writingActivity": {
+      "title": "Justify a geometric conclusion",
+      "prompt": "Choose an angle, similarity, or circle-theorem example. Write a short proof with one reason per line, then explain how you checked that the result fits the shape.",
+      "wordGuide": "Write 100–140 words with labelled steps.",
+      "checklist": ["I named the theorem or congruence test.", "I matched corresponding sides or angles consistently.", "I checked the final result against a basic angle or scale fact."]
+    },
     "practice": [
       {
         "prompt": "A triangle has angles of 50 degrees and 60 degrees. What is the third angle?",
