@@ -235,23 +235,25 @@ async function loadQuestions(args) {
 function summarise(rows) {
     const issueCounts = {}
     const byTrack = {}
-    let safeFixes = 0
+    // Fixes this scan COULD still apply, not fixes already made. A clean run
+    // reports 0 because nothing is outstanding — see safeFixesApplied for work done.
+    let pendingSafeFixes = 0
     let answerValuesResolvedFromTextOrNumericString = 0
     for (const row of rows) {
         const scan = scanQuestion(row)
         for (const issue of scan.issues) issueCounts[issue] = (issueCounts[issue] || 0) + 1
-        safeFixes += Object.keys(scan.safeUpdates).length
+        pendingSafeFixes += Object.keys(scan.safeUpdates).length
         if (['mcq', 'true_false', 'scenario'].includes(row.type) && !Number.isInteger(scan.answer) && answerIndex(scan.answer, scan.options) !== null) {
             answerValuesResolvedFromTextOrNumericString += 1
         }
         const track = row.topic?.track?.slug || 'unknown'
         byTrack[track] = (byTrack[track] || 0) + 1
     }
-    return { scanned: rows.length, issueCounts, answerValuesResolvedFromTextOrNumericString, safeFixes, tracks: byTrack }
+    return { scanned: rows.length, issueCounts, answerValuesResolvedFromTextOrNumericString, pendingSafeFixes, tracks: byTrack }
 }
 
 async function applySafeFixes(rows, reviewer = DEFAULT_REVIEWER) {
-    let updated = 0
+    let safeFixesApplied = 0
     const changes = []
     for (const row of rows) {
         const scan = scanQuestion(row)
@@ -266,10 +268,10 @@ async function applySafeFixes(rows, reviewer = DEFAULT_REVIEWER) {
         // Version-match the row so a concurrent editor cannot be overwritten.
         const result = await prisma.question.updateMany({ where: { id: row.id, version: row.version, isPublished: true }, data })
         if (result.count !== 1) continue
-        updated += 1
+        safeFixesApplied += 1
         changes.push({ id: row.id, version: row.version, updates: scan.safeUpdates })
     }
-    return { updated, changes }
+    return { safeFixesApplied, changes }
 }
 
 function proposalPrompt(question) {
@@ -375,7 +377,7 @@ export async function main(argv = process.argv.slice(2)) {
     }
     if (mode === 'normalise' || mode === 'normalize') {
         const dryRun = !apply
-        const result = dryRun ? { updated: 0, changes: rows.flatMap((row) => { const s = scanQuestion(row); return Object.keys(s.safeUpdates).length ? [{ id: row.id, version: row.version, updates: s.safeUpdates }] : [] }) } : await applySafeFixes(rows, reviewer)
+        const result = dryRun ? { safeFixesApplied: 0, changes: rows.flatMap((row) => { const s = scanQuestion(row); return Object.keys(s.safeUpdates).length ? [{ id: row.id, version: row.version, updates: s.safeUpdates }] : [] }) } : await applySafeFixes(rows, reviewer)
         console.log(JSON.stringify({ mode, dryRun, ...summarise(rows), ...result }, null, 2))
         return
     }
