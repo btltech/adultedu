@@ -15,6 +15,11 @@ export default function ProbabilitySpinner({ block = {} }) {
 
     const [counts, setCounts] = useState(() => outcomes.map(() => 0))
     const [lastResult, setLastResult] = useState(null)
+    // Checkpoints of (spins, gap) so the learner sees a trend rather than
+    // comparing two points. Ten spins landing exactly on the theoretical share
+    // is common with few outcomes, and a single before/after reading can then
+    // show the gap growing — which is luck, not a counterexample.
+    const [history, setHistory] = useState([])
     const spinning = useRef(false)
 
     const total = counts.reduce((sum, count) => sum + count, 0)
@@ -23,21 +28,32 @@ export default function ProbabilitySpinner({ block = {} }) {
     const spin = (times) => {
         if (spinning.current) return
         spinning.current = true
-        setCounts((current) => {
-            const next = [...current]
-            for (let i = 0; i < times; i += 1) {
-                const index = Math.floor(Math.random() * outcomes.length)
-                next[index] += 1
-                if (i === times - 1) setLastResult(index)
-            }
-            return next
-        })
+
+        // Derive the next state first, then set each piece once. Updating
+        // history from inside the counts updater made it a side effect of a
+        // state reducer, which React is free to run more than once — and did,
+        // recording every batch twice.
+        const next = [...counts]
+        let last = null
+        for (let i = 0; i < times; i += 1) {
+            const index = Math.floor(Math.random() * outcomes.length)
+            next[index] += 1
+            last = index
+        }
+
+        const nextTotal = next.reduce((sum, count) => sum + count, 0)
+        const worst = Math.max(...next.map((count) => Math.abs(count / nextTotal - theoretical)))
+
+        setCounts(next)
+        setLastResult(last)
+        setHistory((entries) => [...entries, { spins: nextTotal, gap: worst }].slice(-8))
         spinning.current = false
     }
 
     const reset = () => {
         setCounts(outcomes.map(() => 0))
         setLastResult(null)
+        setHistory([])
     }
 
     // How far the worst outcome still sits from its theoretical share.
@@ -107,17 +123,37 @@ export default function ProbabilitySpinner({ block = {} }) {
                 {total === 0 ? (
                     <p className="text-dark-400">No spins yet. Start with 10, then try 1000.</p>
                 ) : (
-                    <p className="text-dark-200">
-                        {total} spin{total === 1 ? '' : 's'}. The furthest any outcome sits from {Math.round(theoretical * 100)}% is{' '}
-                        <span className="font-semibold text-dark-50">
-                            {Math.round(worstGap * 100)} percentage point{Math.round(worstGap * 100) === 1 ? '' : 's'}
-                        </span>
-                        {total >= 500
-                            ? ' — small, because more trials squeeze the results towards the true chance.'
-                            : total >= 100
-                                ? '. Try 1000 more and watch that gap shrink.'
-                                : '. With this few spins, luck still dominates.'}
-                    </p>
+                    <>
+                        <p className="text-dark-200">
+                            {total} spin{total === 1 ? '' : 's'}. The furthest any outcome sits from {Math.round(theoretical * 100)}% is{' '}
+                            <span className="font-semibold text-dark-50">
+                                {Math.round(worstGap * 100)} percentage point{Math.round(worstGap * 100) === 1 ? '' : 's'}
+                            </span>
+                            {total >= 500
+                                ? ' — and with this many spins it will stay small however often you try.'
+                                : ' — but with this few spins that number is unreliable. It can land perfectly on chance or miss badly, purely by luck.'}
+                        </p>
+
+                        {history.length > 1 && (
+                            <div className="mt-3 border-t border-dark-700 pt-3">
+                                <p className="mb-2 text-xs uppercase tracking-[0.14em] text-dark-500">Gap as spins add up</p>
+                                <div className="space-y-1">
+                                    {history.map((entry, index) => (
+                                        <div key={index} className="flex items-center gap-2 text-xs">
+                                            <span className="w-16 tabular-nums text-right text-dark-400">{entry.spins}</span>
+                                            <div className="h-2 flex-1 overflow-hidden rounded bg-dark-800">
+                                                <div className="h-full bg-primary-500/70" style={{ width: `${Math.min(100, entry.gap * 300)}%` }} />
+                                            </div>
+                                            <span className="w-10 tabular-nums text-dark-400">{Math.round(entry.gap * 100)}%</span>
+                                        </div>
+                                    ))}
+                                </div>
+                                <p className="mt-2 text-xs leading-6 text-dark-500">
+                                    Small runs bounce around. Large runs stay close — that reliability is the point, not a gap that only ever shrinks.
+                                </p>
+                            </div>
+                        )}
+                    </>
                 )}
             </div>
         </section>
