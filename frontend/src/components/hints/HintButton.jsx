@@ -31,6 +31,7 @@ export default function HintButton({ hints = [], onHintUsed }) {
         <div className="mt-6">
             {/* Hint Toggle Button */}
             <button
+                type="button"
                 onClick={() => {
                     if (revealedCount === 0) {
                         handleRevealHint()
@@ -73,6 +74,7 @@ export default function HintButton({ hints = [], onHintUsed }) {
                     {/* Reveal Next Hint Button */}
                     {revealedCount < hints.length && (
                         <button
+                            type="button"
                             onClick={handleRevealHint}
                             className="text-sm text-amber-400/70 hover:text-amber-400 transition-colors pl-9"
                         >

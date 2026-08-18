@@ -91,6 +91,7 @@ export default function FractionExplorer() {
                                 <span className="text-sm font-bold text-primary-600">{numerator}</span>
                             </div>
                             <input
+                                aria-label="Numerator"
                                 type="range"
                                 min="0"
                                 max={denominator}
@@ -106,6 +107,7 @@ export default function FractionExplorer() {
                                 <span className="text-sm font-bold text-primary-600">{denominator}</span>
                             </div>
                             <input
+                                aria-label="Denominator"
                                 type="range"
                                 min="1"
                                 max="12"

@@ -152,11 +152,13 @@ export default function DailyChallenge({ compact = false }) {
 
             {!isCompleted ? (
                 <>
-                    <div className="space-y-3 mb-6">
+                    <div className="space-y-3 mb-6" role="group" aria-label="Answer options">
                         {challenge.question.options.map((option, index) => (
                             <button
                                 key={index}
+                                type="button"
                                 onClick={() => setSelectedAnswer(index)}
+                                aria-pressed={selectedAnswer === index}
                                 className={`w-full text-left p-4 rounded-xl border transition-all ${selectedAnswer === index
                                         ? 'bg-primary-500/20 border-primary-500 text-primary-300'
                                         : 'bg-dark-800 border-dark-600 text-dark-200 hover:border-dark-500'
@@ -174,6 +176,7 @@ export default function DailyChallenge({ compact = false }) {
                     </div>
 
                     <button
+                        type="button"
                         onClick={handleSubmit}
                         disabled={selectedAnswer === null || submitting}
                         className="btn-primary w-full justify-center py-3 disabled:opacity-50"
@@ -185,7 +188,7 @@ export default function DailyChallenge({ compact = false }) {
                 <div className={`p-5 rounded-xl ${result?.isCorrect
                         ? 'bg-accent-500/10 border border-accent-500/30'
                         : 'bg-amber-500/10 border border-amber-500/30'
-                    }`}>
+                    }`} role="status" aria-live="polite">
                     <div className="flex items-center justify-between mb-3">
                         <div className="flex items-center gap-2">
                             {result?.isCorrect ? (

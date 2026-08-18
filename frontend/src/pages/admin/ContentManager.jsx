@@ -211,6 +211,7 @@ export default function ContentManager() {
                 <div className="lg:col-span-1 space-y-4">
                     <div className="solid-card p-4">
                         <button
+                            type="button"
                             onClick={resetFilters}
                             className={`w-full text-left px-4 py-3 rounded-lg flex items-center gap-3 transition-colors ${!selectedTrack ? 'bg-primary-500/20 text-primary-300 border border-primary-500/30' : 'text-dark-300 hover:bg-dark-700/50'}`}
                         >
@@ -224,6 +225,7 @@ export default function ContentManager() {
                         {tracks.map(track => (
                             <div key={track.id} className="space-y-1">
                                 <button
+                                    type="button"
                                     onClick={() => handleTrackSelect(track)}
                                     className={`w-full text-left px-3 py-2 rounded-lg flex items-center justify-between transition-colors ${selectedTrack?.id === track.id && !selectedTopic ? 'bg-dark-700 text-white' : 'text-dark-300 hover:bg-dark-700/50'}`}
                                 >
@@ -237,6 +239,7 @@ export default function ContentManager() {
                                         {track.topics.map(topic => (
                                             <button
                                                 key={topic.id}
+                                                type="button"
                                                 onClick={(e) => { e.stopPropagation(); handleTopicSelect(topic, track); }}
                                                 className={`w-full text-left px-3 py-1.5 rounded-md text-xs transition-colors ${selectedTopic?.id === topic.id ? 'text-primary-400 bg-primary-500/10' : 'text-dark-400 hover:text-dark-200'}`}
                                             >
@@ -270,10 +273,10 @@ export default function ContentManager() {
                             )}
                         </div>
                         <div className="flex items-center gap-2">
-                            <button onClick={() => setShowImportModal(true)} className="btn-secondary px-3 py-2 text-sm flex items-center gap-2">
+                            <button type="button" onClick={() => setShowImportModal(true)} className="btn-secondary px-3 py-2 text-sm flex items-center gap-2">
                                 <Upload size={16} /> Import
                             </button>
-                            <button onClick={handleExport} className="btn-secondary px-3 py-2 text-sm flex items-center gap-2">
+                            <button type="button" onClick={handleExport} className="btn-secondary px-3 py-2 text-sm flex items-center gap-2">
                                 <Download size={16} /> Export
                             </button>
                             <Link to="/admin/questions/new" className="btn-primary px-4 py-2 text-sm flex items-center gap-2">
@@ -288,16 +291,16 @@ export default function ContentManager() {
                             <span className="text-sm text-primary-300 font-medium">
                                 {selectedIds.size} selected
                             </span>
-                            <button onClick={() => handleBulkPublish(true)} className="text-sm text-dark-300 hover:text-white">
+                            <button type="button" onClick={() => handleBulkPublish(true)} className="text-sm text-dark-300 hover:text-white">
                                 Publish
                             </button>
-                            <button onClick={() => handleBulkPublish(false)} className="text-sm text-dark-300 hover:text-white">
+                            <button type="button" onClick={() => handleBulkPublish(false)} className="text-sm text-dark-300 hover:text-white">
                                 Unpublish
                             </button>
-                            <button onClick={handleBulkDelete} className="text-sm text-red-400 hover:text-red-300">
+                            <button type="button" onClick={handleBulkDelete} className="text-sm text-red-400 hover:text-red-300">
                                 Delete
                             </button>
-                            <button onClick={clearSelection} className="ml-auto text-dark-400 hover:text-white">
+                            <button type="button" onClick={clearSelection} className="ml-auto text-dark-400 hover:text-white">
                                 <X size={16} />
                             </button>
                         </div>
@@ -321,6 +324,7 @@ export default function ContentManager() {
                             {['all', 'draft', 'published'].map(tab => (
                                 <button
                                     key={tab}
+                                    type="button"
                                     onClick={() => { setStatusFilter(tab); setPage(1) }}
                                     className={`px-3 py-1.5 text-xs font-medium rounded-md capitalize transition-all ${statusFilter === tab
                                         ? 'bg-dark-700 text-white shadow-sm'
@@ -351,7 +355,7 @@ export default function ContentManager() {
                                 <thead className="bg-dark-900/50 text-dark-400 text-xs uppercase font-medium border-b border-dark-700">
                                     <tr>
                                         <th className="p-4 w-10">
-                                            <button onClick={toggleSelectAll} className="text-dark-400 hover:text-white">
+                                            <button type="button" onClick={toggleSelectAll} className="text-dark-400 hover:text-white">
                                                 {selectedIds.size === questions.length && questions.length > 0 ? <CheckSquare size={18} /> : <Square size={18} />}
                                             </button>
                                         </th>
@@ -371,7 +375,7 @@ export default function ContentManager() {
                                         questions.map(q => (
                                             <tr key={q.id} className={`hover:bg-dark-700/30 transition-colors group ${selectedIds.has(q.id) ? 'bg-primary-500/5' : ''}`}>
                                                 <td className="p-4">
-                                                    <button onClick={() => toggleSelect(q.id)} className="text-dark-400 hover:text-white">
+                                                    <button type="button" onClick={() => toggleSelect(q.id)} className="text-dark-400 hover:text-white">
                                                         {selectedIds.has(q.id) ? <CheckSquare size={18} className="text-primary-400" /> : <Square size={18} />}
                                                     </button>
                                                 </td>
@@ -415,6 +419,7 @@ export default function ContentManager() {
                                                             <Edit3 size={16} />
                                                         </Link>
                                                         <button
+                                                            type="button"
                                                             onClick={() => handleDelete(q.id)}
                                                             className="p-1.5 text-dark-400 hover:text-red-400 hover:bg-dark-600 rounded"
                                                             aria-label="Delete"
@@ -434,6 +439,7 @@ export default function ContentManager() {
                         {totalPages > 1 && (
                             <div className="p-4 border-t border-dark-700 flex justify-between items-center bg-dark-900/30">
                                 <button
+                                    type="button"
                                     disabled={page === 1}
                                     onClick={() => setPage(p => p - 1)}
                                     className="px-3 py-1.5 text-sm rounded bg-dark-800 border border-dark-600 text-dark-300 hover:bg-dark-700 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -442,6 +448,7 @@ export default function ContentManager() {
                                 </button>
                                 <span className="text-sm text-dark-400">Page {page} of {totalPages}</span>
                                 <button
+                                    type="button"
                                     disabled={page === totalPages}
                                     onClick={() => setPage(p => p + 1)}
                                     className="px-3 py-1.5 text-sm rounded bg-dark-800 border border-dark-600 text-dark-300 hover:bg-dark-700 disabled:opacity-50 disabled:cursor-not-allowed"
@@ -460,7 +467,7 @@ export default function ContentManager() {
                     <div className="solid-card p-6 max-w-md w-full mx-4">
                         <div className="flex items-center justify-between mb-4">
                             <h3 className="text-lg font-semibold text-white">Import Questions</h3>
-                            <button onClick={() => setShowImportModal(false)} className="text-dark-400 hover:text-white">
+                            <button type="button" onClick={() => setShowImportModal(false)} className="text-dark-400 hover:text-white">
                                 <X size={20} />
                             </button>
                         </div>
@@ -484,6 +491,7 @@ export default function ContentManager() {
                         <input
                             ref={fileInputRef}
                             type="file"
+                            aria-label="Import question JSON file"
                             accept=".json"
                             onChange={handleImportFile}
                             className="hidden"

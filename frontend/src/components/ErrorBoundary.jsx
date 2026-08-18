@@ -49,6 +49,7 @@ class ErrorBoundary extends Component {
                         )}
                         <div className="flex flex-col sm:flex-row gap-3 justify-center">
                             <button
+                                type="button"
                                 onClick={() => window.location.reload()}
                                 className="btn-secondary"
                             >

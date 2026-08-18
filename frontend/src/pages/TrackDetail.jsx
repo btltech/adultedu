@@ -423,6 +423,7 @@ export default function TrackDetail() {
                             )}
 
                             <button
+                                type="button"
                                 onClick={handleStartDiagnostic}
                                 className="btn-primary mt-6 w-full justify-center"
                             >

@@ -153,10 +153,14 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
 
         if (over && config.targets.find(t => t.id === over.id)) {
             // Dropped on a valid target
-            setPlacements(prev => ({
-                ...prev,
-                [over.id]: active.id // Map targetId -> Label Content
-            }));
+            setPlacements(prev => {
+                const next = { ...prev }
+                Object.keys(next).forEach((key) => {
+                    if (next[key] === active.id) delete next[key]
+                })
+                next[over.id] = active.id
+                return next
+            });
         } else {
             // Dropped outside? Remove from placement if it was placed before?
             // Actually, if we drag from the "bank", it's fine.
@@ -171,6 +175,18 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
     // Helper to check if a label is placed ANYWHERE
     const isLabelPlaced = (label) => Object.values(placements).includes(label);
 
+    const handleKeyboardPlacement = (targetId, label) => {
+        setPlacements((previous) => {
+            const next = { ...previous }
+            Object.keys(next).forEach((key) => {
+                if (next[key] === label) delete next[key]
+            })
+            if (label) next[targetId] = label
+            else delete next[targetId]
+            return next
+        })
+    };
+
     const checkAnswer = () => {
         // Construct answer object: { targetId: label }
         // Verify against config.answer
@@ -184,7 +200,7 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
     // If showResult is true, we check local state against config.answer if available, or parsed result.
 
     return (
-        <div className="progress-panel p-6 select-none touch-none"> {/* touch-none prevents scrolling while dragging on mobile */}
+        <div className="progress-panel p-6 select-none">
             <div className="mb-6">
                 <span className="badge badge-accent mb-3">
                     Drag & Drop Labeling • Level {question.ukLevel}
@@ -243,6 +259,35 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
                     </div>
                 )}
 
+                <fieldset className="mt-5 rounded-2xl border border-dark-700 bg-dark-900/60 p-4">
+                    <legend className="px-2 text-sm font-semibold text-dark-100">Keyboard alternative: assign labels</legend>
+                    <p className="mb-4 text-sm leading-6 text-dark-400">
+                        Use these controls if dragging is difficult. Choose one label for each diagram target.
+                    </p>
+                    <div className="space-y-3">
+                        {(config.targets || []).map((target, index) => {
+                            const targetName = target.label || target.title || target.id || `Target ${index + 1}`
+                            return (
+                                <label key={target.id} className="flex flex-col gap-2 text-sm text-dark-300 sm:flex-row sm:items-center sm:justify-between">
+                                    <span>{targetName}</span>
+                                    <select
+                                        value={placements[target.id] || ''}
+                                        onChange={(event) => handleKeyboardPlacement(target.id, event.target.value)}
+                                        disabled={showResult}
+                                        className="input sm:max-w-xs"
+                                        aria-label={`Label for ${targetName}`}
+                                    >
+                                        <option value="">Choose a label</option>
+                                        {(config.options || [])
+                                            .filter((label) => !isLabelPlaced(label) || placements[target.id] === label)
+                                            .map((label) => <option key={label} value={label}>{label}</option>)}
+                                    </select>
+                                </label>
+                            )
+                        })}
+                    </div>
+                </fieldset>
+
                 {/* Drag Overlay for smooth visuals */}
                 <DragOverlay dropAnimation={{ sideEffects: defaultDropAnimationSideEffects({ styles: { active: { opacity: '0.5' } } }) }}>
                     {activeDraggable ? <OverlayLabel content={activeDraggable} /> : null}
@@ -267,6 +312,7 @@ export default function ImageLabelQuestion({ question, onAnswer, showResult, res
                 </div>
             ) : (
                 <button
+                    type="button"
                     onClick={checkAnswer}
                     // Disable if not all targets filled? Or allow partial attempts.
                     // Let's require at least one placement.

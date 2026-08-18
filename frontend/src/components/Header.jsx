@@ -68,6 +68,7 @@ export default function Header() {
                             <Link
                                 key={link.to}
                                 to={link.to}
+                                aria-current={isActive(link.to) ? 'page' : undefined}
                                 className={`text-sm font-medium transition-colors ${isActive(link.to) ? 'text-white' : 'text-dark-400 hover:text-dark-200'
                                     }`}
                             >
@@ -78,6 +79,7 @@ export default function Header() {
                             <Link
                                 key={link.to}
                                 to={link.to}
+                                aria-current={isActive(link.to) ? 'page' : undefined}
                                 className={`text-sm font-medium transition-colors ${isActive(link.to) ? 'text-white' : 'text-dark-400 hover:text-dark-200'
                                     }`}
                             >
@@ -87,6 +89,7 @@ export default function Header() {
                         {adminLink && (
                             <Link
                                 to={adminLink.to}
+                                aria-current={isActive('/admin') ? 'page' : undefined}
                                 className={`text-sm font-medium transition-colors ${isActive('/admin') ? 'text-accent-400' : 'text-accent-500/70 hover:text-accent-400'
                                     }`}
                             >
@@ -107,6 +110,7 @@ export default function Header() {
                                     <span className="text-dark-300 truncate max-w-[120px]">{user.displayName || user.email}</span>
                                 </div>
                                 <button
+                                    type="button"
                                     onClick={logout}
                                     className="hidden md:block text-sm font-medium text-dark-300 hover:text-dark-100 transition-colors px-2"
                                 >
@@ -206,6 +210,7 @@ export default function Header() {
                         <div className="border-t border-dark-800 pt-4 mt-4 space-y-2">
                             {isAuthenticated ? (
                                 <button
+                                    type="button"
                                     onClick={() => {
                                         logout()
                                         setMobileMenuOpen(false)

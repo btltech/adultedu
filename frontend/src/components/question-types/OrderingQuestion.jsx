@@ -183,6 +183,7 @@ export default function OrderingQuestion({ question, onAnswer, showResult, resul
                 </div>
             ) : (
                 <button
+                    type="button"
                     onClick={() => {
                         // Pass current ordered content
                         onAnswer(items.map(i => i.content));

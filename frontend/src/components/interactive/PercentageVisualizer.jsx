@@ -149,6 +149,7 @@ export default function PercentageVisualizer({
             {/* Slider for fine control */}
             <div className="w-full max-w-xs">
                 <input
+                    aria-label="Percentage"
                     type="range"
                     min="0"
                     max="100"

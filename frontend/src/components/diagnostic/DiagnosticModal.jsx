@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef, useCallback } from 'react'
 import { api } from '../../lib/api'
 
 const CloseIcon = () => (
@@ -21,29 +21,34 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
     const [loading, setLoading] = useState(false)
     const [results, setResults] = useState(null)
     const [selectedOption, setSelectedOption] = useState(null)
+    const [error, setError] = useState('')
+    const modalRef = useRef(null)
+    const closeButtonRef = useRef(null)
+    const previousFocusRef = useRef(null)
 
     // Fetch diagnostic questions when opening
-    useEffect(() => {
-        if (isOpen && stage === 'quiz' && questions.length === 0) {
-            fetchQuestions()
-        }
-    }, [isOpen, stage])
-
-    const fetchQuestions = async () => {
+    const fetchQuestions = useCallback(async () => {
         setLoading(true)
+        setError('')
         try {
             const data = await api(`/diagnostic/${trackSlug}/start`)
             setQuestions(data.questions)
         } catch (err) {
             console.error('Failed to load diagnostic:', err)
+            setError('We could not load the assessment. Please try again.')
         } finally {
             setLoading(false)
         }
-    }
+    }, [trackSlug])
+
+    useEffect(() => {
+        if (isOpen && stage === 'quiz' && questions.length === 0) {
+            fetchQuestions()
+        }
+    }, [isOpen, stage, questions.length, fetchQuestions])
 
     const handleStartQuiz = () => {
         setStage('quiz')
-        fetchQuestions()
     }
 
     const handleSelectOption = (option) => {
@@ -92,12 +97,13 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
             setStage('results')
         } catch (err) {
             console.error('Failed to submit diagnostic:', err)
+            setError('We could not submit the assessment. Please try again.')
         } finally {
             setLoading(false)
         }
     }
 
-    const handleClose = () => {
+    const handleClose = useCallback(() => {
         // Reset state
         setStage('intro')
         setQuestions([])
@@ -105,25 +111,74 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
         setAnswers({})
         setSelectedOption(null)
         setResults(null)
+        setError('')
         onClose()
-    }
+    }, [onClose])
+
+    useEffect(() => {
+        if (!isOpen) return undefined
+
+        previousFocusRef.current = document.activeElement
+        const focusTimer = window.setTimeout(() => closeButtonRef.current?.focus(), 0)
+
+        const handleModalKeyDown = (event) => {
+            if (event.key === 'Escape') {
+                event.preventDefault()
+                handleClose()
+                return
+            }
+
+            if (event.key !== 'Tab' || !modalRef.current) return
+            const focusable = [...modalRef.current.querySelectorAll(
+                'button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+            )]
+            if (focusable.length === 0) return
+            const first = focusable[0]
+            const last = focusable[focusable.length - 1]
+            if (event.shiftKey && document.activeElement === first) {
+                event.preventDefault()
+                last.focus()
+            } else if (!event.shiftKey && document.activeElement === last) {
+                event.preventDefault()
+                first.focus()
+            }
+        }
+
+        document.addEventListener('keydown', handleModalKeyDown)
+        return () => {
+            window.clearTimeout(focusTimer)
+            document.removeEventListener('keydown', handleModalKeyDown)
+            previousFocusRef.current?.focus?.()
+            previousFocusRef.current = null
+        }
+    }, [isOpen, handleClose])
 
     if (!isOpen) return null
 
     return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4" role="presentation">
             {/* Backdrop */}
             <div
                 className="absolute inset-0 bg-dark-950/90 backdrop-blur-sm"
                 onClick={handleClose}
+                aria-hidden="true"
             />
 
             {/* Modal */}
-            <div className="relative bg-dark-900 border border-dark-700 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-slide-up">
+            <div
+                ref={modalRef}
+                className="relative bg-dark-900 border border-dark-700 rounded-2xl w-full max-w-2xl max-h-[90vh] overflow-y-auto shadow-2xl animate-fade-slide-up"
+                role="dialog"
+                aria-modal="true"
+                aria-labelledby="diagnostic-modal-title"
+            >
                 {/* Close button */}
                 <button
+                    ref={closeButtonRef}
+                    type="button"
                     onClick={handleClose}
                     className="absolute top-4 right-4 text-dark-400 hover:text-white transition-colors z-10"
+                    aria-label="Close diagnostic assessment"
                 >
                     <CloseIcon />
                 </button>
@@ -132,7 +187,7 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
                 {stage === 'intro' && (
                     <div className="p-8 text-center">
                         <div className="text-6xl mb-6">🎯</div>
-                        <h2 className="text-2xl font-bold text-white mb-4">
+                        <h2 id="diagnostic-modal-title" className="text-2xl font-bold text-white mb-4">
                             Diagnostic Assessment
                         </h2>
                         <p className="text-dark-300 mb-6 max-w-md mx-auto">
@@ -151,6 +206,7 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
                         </div>
 
                         <button
+                            type="button"
                             onClick={handleStartQuiz}
                             className="btn-primary px-8 py-3 text-lg"
                         >
@@ -162,10 +218,15 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
                 {/* Quiz Stage */}
                 {stage === 'quiz' && (
                     <div className="p-8">
+                        {error && (
+                            <div className="mb-6 rounded-xl border border-red-500/30 bg-red-500/10 p-3 text-sm text-red-200" role="alert">
+                                {error}
+                            </div>
+                        )}
                         {loading ? (
                             <div className="text-center py-12">
                                 <div className="w-12 h-12 border-4 border-primary-500 border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-                                <p className="text-dark-400">Loading questions...</p>
+                                <p className="text-dark-400" role="status" aria-live="polite">Loading questions...</p>
                             </div>
                         ) : questions.length > 0 ? (
                             <>
@@ -196,7 +257,9 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
                                     {questions[currentIndex].options.map((option, index) => (
                                         <button
                                             key={index}
+                                            type="button"
                                             onClick={() => handleSelectOption(option)}
+                                            aria-pressed={selectedOption === option}
                                             className={`w-full p-4 rounded-xl text-left transition-all duration-200 border ${selectedOption === option
                                                     ? 'bg-primary-500/20 border-primary-500 text-white'
                                                     : 'bg-dark-800 border-dark-700 text-dark-200 hover:border-dark-500'
@@ -212,6 +275,7 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
 
                                 {/* Next Button */}
                                 <button
+                                    type="button"
                                     onClick={handleNext}
                                     disabled={selectedOption === null}
                                     className="btn-primary w-full justify-center disabled:opacity-50"
@@ -222,7 +286,9 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
                             </>
                         ) : (
                             <div className="text-center py-12">
-                                <p className="text-dark-400">No questions available for this track.</p>
+                                <p className="text-dark-400" role={error ? 'alert' : 'status'} aria-live="polite">
+                                    {error || 'No questions available for this track.'}
+                                </p>
                             </div>
                         )}
                     </div>
@@ -281,6 +347,7 @@ export default function DiagnosticModal({ trackSlug, trackTitle, isOpen, onClose
                         <p className="text-dark-400 mb-6">{results.message}</p>
 
                         <button
+                            type="button"
                             onClick={() => {
                                 handleClose()
                                 onComplete?.(results)

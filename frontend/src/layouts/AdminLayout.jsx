@@ -1,12 +1,13 @@
 import { Outlet, Link, ScrollRestoration, useNavigate, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import { BarChart3, BookOpenCheck, Building2, Flag, Home, LayoutDashboard, LogOut, Settings, Users } from 'lucide-react'
 
 export default function AdminLayout() {
     const { user, logout, loading } = useAuth()
     const navigate = useNavigate()
     const location = useLocation()
+    const mainRef = useRef(null)
 
     useEffect(() => {
         if (!loading) {
@@ -17,6 +18,12 @@ export default function AdminLayout() {
             }
         }
     }, [user, loading, navigate])
+
+    useEffect(() => {
+        mainRef.current?.focus()
+        const frame = window.requestAnimationFrame(() => mainRef.current?.focus())
+        return () => window.cancelAnimationFrame(frame)
+    }, [location.pathname])
 
     if (loading) return <div className="min-h-screen bg-dark-950 p-8 text-dark-300">Loading admin workspace...</div>
     if (!user || user.role !== 'admin') return null
@@ -58,6 +65,7 @@ export default function AdminLayout() {
                         <Link
                             key={item.path}
                             to={item.path}
+                            aria-current={active ? 'page' : undefined}
                             className={`flex min-w-fit items-center gap-3 rounded-2xl px-4 py-3 text-sm font-medium transition-colors ${active
                                 ? 'border border-primary-500/35 bg-primary-500/15 text-primary-200'
                                 : 'text-dark-400 hover:bg-dark-900 hover:text-dark-100'
@@ -72,6 +80,7 @@ export default function AdminLayout() {
                 <div className="hidden border-t border-dark-800/80 p-4 lg:block">
                     <div className="mb-3 rounded-2xl border border-dark-800 bg-dark-900/70 p-3 text-sm text-dark-400">{user.email}</div>
                     <button
+                        type="button"
                         onClick={logout}
                         className="flex w-full items-center gap-2 rounded-2xl px-4 py-2 text-left text-sm font-medium text-red-300 transition-colors hover:bg-red-500/10"
                     >
@@ -85,7 +94,7 @@ export default function AdminLayout() {
                 </div>
             </aside>
 
-            <main id="admin-main-content" className="min-w-0 flex-1 overflow-auto">
+            <main ref={mainRef} id="admin-main-content" tabIndex="-1" className="min-w-0 flex-1 overflow-auto outline-none">
                 <div className="mx-auto max-w-7xl p-4 sm:p-6 lg:p-8">
                     <Outlet />
                 </div>

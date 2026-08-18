@@ -80,8 +80,10 @@ export default function LogicEngine({ challenge, isChallenge = false, onCorrect 
                             return (
                                 <button
                                     key={key}
+                                    type="button"
                                     onClick={() => toggle(key)}
                                     disabled={isLocked}
+                                    aria-pressed={!!inputs[key]}
                                     className={`w-16 h-12 rounded-lg border-2 shadow-sm font-bold text-lg transition-all flex items-center justify-center relative z-10 
                                         ${inputs[key] ? 'border-green-500 bg-green-50 text-green-700' : 'border-red-500 bg-red-50 text-red-700'}
                                         ${isLocked ? 'opacity-50 cursor-not-allowed' : 'hover:scale-105 active:scale-95'}
@@ -133,6 +135,7 @@ export default function LogicEngine({ challenge, isChallenge = false, onCorrect 
 
                 {isChallenge && (
                     <button
+                        type="button"
                         onClick={checkAnswer}
                         className="w-full max-w-lg py-3 bg-dark-50 text-white font-bold rounded-xl shadow-lg hover:bg-dark-100 hover:scale-[1.02] transition-all active:scale-95"
                     >

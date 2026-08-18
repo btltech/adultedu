@@ -158,6 +158,7 @@ export function NewAchievementPopup({ achievement, onClose }) {
                     {achievement.description}
                 </p>
                 <button
+                    type="button"
                     onClick={onClose}
                     className="btn-primary mt-6"
                 >

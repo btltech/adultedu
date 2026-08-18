@@ -8,6 +8,7 @@
         "build": "vite build",
         "preview": "vite preview",
         "lint": "eslint . --ext js,jsx",
+        "a11y:static": "node scripts/a11y-static-check.mjs",
         "test": "vitest",
         "test:ui": "vitest --ui",
         "security:audit": "npm audit",

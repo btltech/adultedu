@@ -52,13 +52,17 @@ export default function ProbabilityEngine() {
                 </div>
                 <div className="flex bg-gray-100 p-1 rounded-lg">
                     <button
+                        type="button"
                         onClick={() => setMode('coin')}
+                        aria-pressed={mode === 'coin'}
                         className={`px-3 py-1 text-sm font-semibold rounded-md transition-all ${mode === 'coin' ? 'bg-white shadow-sm text-primary-600' : 'text-dark-300'}`}
                     >
                         Coin
                     </button>
                     <button
+                        type="button"
                         onClick={() => setMode('dice')}
+                        aria-pressed={mode === 'dice'}
                         className={`px-3 py-1 text-sm font-semibold rounded-md transition-all ${mode === 'dice' ? 'bg-white shadow-sm text-primary-600' : 'text-dark-300'}`}
                     >
                         Dice
@@ -124,6 +128,7 @@ export default function ProbabilityEngine() {
 
                     <div className="grid grid-cols-2 gap-3">
                         <button
+                            type="button"
                             onClick={() => flip(1)}
                             disabled={rolling}
                             className="bg-white border border-gray-200 hover:border-primary-500 hover:text-primary-600 font-bold py-3 px-4 rounded-lg shadow-sm transition-all active:scale-95 disabled:opacity-50"
@@ -131,6 +136,7 @@ export default function ProbabilityEngine() {
                             +1
                         </button>
                         <button
+                            type="button"
                             onClick={() => flip(10)}
                             disabled={rolling}
                             className="bg-white border border-gray-200 hover:border-primary-500 hover:text-primary-600 font-bold py-3 px-4 rounded-lg shadow-sm transition-all active:scale-95 disabled:opacity-50"
@@ -138,6 +144,7 @@ export default function ProbabilityEngine() {
                             +10
                         </button>
                         <button
+                            type="button"
                             onClick={() => flip(100)}
                             disabled={rolling}
                             className="col-span-2 bg-primary-600 hover:bg-primary-700 text-white font-bold py-3 px-4 rounded-lg shadow-md transition-all active:scale-95 disabled:opacity-50"
@@ -148,6 +155,7 @@ export default function ProbabilityEngine() {
 
                     <div className="pt-4 border-t border-gray-200">
                         <button
+                            type="button"
                             onClick={reset}
                             className="w-full text-sm text-red-500 hover:text-red-600 font-semibold"
                         >

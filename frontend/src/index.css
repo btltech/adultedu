@@ -103,6 +103,48 @@ html {
   scroll-behavior: auto;
 }
 
+/* Display preferences are user-facing controls, so their state must change
+   the actual rendering rather than only writing a data attribute. Root font
+   scaling keeps all rem-based type and spacing proportional. */
+html[data-text-size="large"] {
+  font-size: 112.5%;
+}
+
+/* A deliberately high-contrast override for the shared palette. The default
+   palette remains expressive; this mode removes low-contrast muted text and
+   borders for users who request stronger separation. */
+html[data-contrast="high"] body {
+  background-color: #000 !important;
+  color: #fff !important;
+}
+
+html[data-contrast="high"] .text-dark-500,
+html[data-contrast="high"] .text-dark-400,
+html[data-contrast="high"] .text-dark-300 {
+  color: #f4f4f5 !important;
+}
+
+html[data-contrast="high"] .text-dark-600,
+html[data-contrast="high"] .text-dark-700 {
+  color: #d4d4d8 !important;
+  border-color: #a1a1aa !important;
+}
+
+html[data-contrast="high"] [class*="border-dark-"] {
+  border-color: #a1a1aa !important;
+}
+
+html[data-contrast="high"] [class*="bg-dark-"] {
+  background-color: #000 !important;
+}
+
+html[data-contrast="high"] .btn-ghost,
+html[data-contrast="high"] .text-primary-400,
+html[data-contrast="high"] .text-primary-300,
+html[data-contrast="high"] .text-accent-300 {
+  color: #fff !important;
+}
+
 body {
   @apply bg-dark-950 text-dark-200 antialiased;
   font-family: var(--font-body);

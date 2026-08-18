@@ -56,6 +56,7 @@ export default function ForgotPassword() {
                             <p className="text-dark-300 text-sm leading-relaxed">
                                 Didn't receive it? Check your spam folder, or{' '}
                                 <button
+                                    type="button"
                                     onClick={() => setSubmitted(false)}
                                     className="text-primary-400 hover:text-primary-300 underline"
                                 >
@@ -77,7 +78,7 @@ export default function ForgotPassword() {
                                 </div>
                             </div>
                             {error && (
-                                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm">
+                                <div className="p-3 rounded-lg bg-red-500/10 border border-red-500/30 text-red-400 text-sm" role="alert">
                                     {error}
                                 </div>
                             )}
