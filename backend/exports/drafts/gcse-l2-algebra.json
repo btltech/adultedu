@@ -39,17 +39,23 @@
     "sections": [
       {
         "heading": "Manipulating Algebraic Expressions",
-        "body": "Begin by expanding brackets to simplify complex terms. For instance, multiplying a constant across a bracket reveals hidden coefficients. Next, factorise by identifying common factors shared by all terms. This process reverses expansion, creating a more compact form. Always check your work by expanding the factorised result to ensure it matches the original expression exactly."
+        "body": "Algebra uses letters to represent values, so keep the operation attached to the correct term. Expand 3(x + 4) by multiplying 3 by both terms: 3x + 12. With two brackets, (x + 2)(x + 5) gives x² + 7x + 10 after collecting like terms. Factorising reverses this process: 6x + 9 has a highest common factor of 3, so it becomes 3(2x + 3). For x² + 7x + 10, find two numbers that multiply to 10 and add to 7, giving (x + 5)(x + 2). Check by expanding the factorised form. Like terms have identical variable parts: 3x and 5x combine to 8x, but 3x and 5x² do not. Keep an equals sign balanced: every operation performed on one side must also be performed on the other. Write one transformation per line so an error can be located rather than hidden in a single jump."
       },
       {
         "heading": "Solving Equations and Inequalities",
-        "body": "Solve linear equations by isolating the variable using inverse operations. For quadratics, factorise or use the quadratic formula to find roots. When handling inequalities, remember that multiplying or dividing by a negative number reverses the inequality sign. Plot solutions on a number line to visualise the range of valid values clearly and accurately."
+        "body": "Solve an equation by undoing operations in reverse order. For 4x - 7 = 13, add 7 to both sides, then divide by 4: 4x = 20, so x = 5. If the variable appears on both sides, collect variable terms on one side and constants on the other. For a quadratic such as x² - 5x + 6 = 0, factorise to (x - 2)(x - 3) = 0, so x = 2 or x = 3; verify both in the original equation. If factorising is not suitable, the quadratic formula gives the same roots. Inequalities follow the same steps except that multiplying or dividing by a negative reverses the sign: -2x < 10 becomes x > -5. Show the reversal explicitly and represent the result on a number line. Substitute a chosen value from the solution region and one outside it to test the inequality."
       },
       {
         "heading": "Recognising and Describing Sequences",
-        "body": "Identify arithmetic sequences by calculating the constant difference between consecutive terms. Geometric sequences require finding the common ratio instead. Write the general term using the first term and the common difference or ratio. This algebraic description allows you to predict any term in the sequence without listing every single intermediate value manually."
+        "body": "An arithmetic sequence changes by a constant difference. In 5, 8, 11, 14 the difference is 3, so the nth term is 3n + 2: when n = 1 it gives 5. To find a formula, compare the difference with the coefficient of n, then adjust the constant using the first term. A geometric sequence multiplies by a constant ratio, such as 3, 6, 12, 24, where the ratio is 2. Do not confuse a difference with a ratio. Some sequences are defined by a quadratic rule; if the first differences are not constant, calculate second differences before deciding. Use a table with n and term values to test a proposed formula at more than one position. A formula that works only for the first two terms is not enough. Explain whether your pattern describes the terms for every positive integer n, and check the context if the sequence represents a count that cannot be negative. For example, the sequence 2, 5, 10, 17 has first differences 3, 5, 7 and second difference 2. That suggests an n² pattern; testing n² + 1 gives 2, 5, 10, 17, so the nth term is n² + 1. Write the first four terms from any proposed rule before trusting it."
       }
     ],
+    "writingActivity": {
+      "title": "Explain an algebraic method",
+      "prompt": "Work through one equation or sequence from the lesson. Annotate each line with the operation or pattern rule, then test your result by substitution or by checking two terms.",
+      "wordGuide": "Write 80–120 words or a clearly labelled chain of algebraic steps.",
+      "checklist": ["I kept both sides of an equation balanced.", "I showed why an inequality sign changed, if relevant.", "I checked my answer in the original expression or sequence."]
+    },
     "practice": [
       {
         "prompt": "A student expands the expression 3(x + 4) and writes 3x + 4. Which error did they make?",

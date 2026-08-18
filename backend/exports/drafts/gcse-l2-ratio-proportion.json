@@ -39,17 +39,23 @@
     "sections": [
       {
         "heading": "Direct and Inverse Proportion",
-        "body": "Direct proportion means two quantities increase together at a constant rate. Inverse proportion means one quantity increases while the other decreases. Understanding this distinction helps you choose the correct mathematical method for solving various realistic problems accurately and effectively. Review the example, then explain the choice in your own words."
+        "body": "Two quantities are in direct proportion when their ratio is constant: y = kx. If 4 notebooks cost £6, one costs £1.50 and 10 cost £15. Check that the graph would pass through the origin. In inverse proportion, xy is constant: if a journey takes 6 hours at 50 km/h, the same distance takes 3 hours at 100 km/h, assuming the distance and conditions stay fixed. A useful diagnostic is to ask what happens when one quantity doubles. In direct proportion the other doubles; in inverse proportion it halves. Do not call every relationship with an increase ‘proportional’. If there is a fixed starting charge, such as a delivery fee, the relationship is not direct proportion because it does not start at zero. State the constant and its units before substituting values, and check the answer against the context."
       },
       {
         "heading": "Scale and Percentage Change",
-        "body": "Scale factors allow you to resize shapes or maps consistently. Percentage change measures the relative difference between an original and a new value. Both concepts are essential for interpreting data and making accurate comparisons in everyday contexts. Review the example, then explain the choice in your own words."
+        "body": "A scale factor multiplies every length by the same number. If a drawing uses 1 cm for 2 m, 5 cm represents 10 m; convert units before comparing measurements. For area, a scale factor of 3 multiplies area by 3² = 9, and for volume it multiplies volume by 3³ = 27. Percentage change compares the change with the original value: a rise from 80 to 92 is 12/80 × 100 = 15%, not 12%. A decrease of 15% is found by multiplying by 0.85. Successive percentage changes are applied one after another, so +10% followed by -10% returns 99% of the starting amount, not the original amount. Identify the original before calculating, keep the multiplier visible, and round only at the end."
       },
       {
         "heading": "Rates of Change",
-        "body": "Rates describe how one quantity changes relative to another, such as speed or flow. Always include units in your final answer to ensure clarity. Correctly identifying the rate helps you solve complex problems involving time, distance, and volume. Review the example, then explain the choice in your own words."
+        "body": "A rate compares different units. Speed is distance ÷ time, so 120 miles in 2 hours is 60 miles per hour. Rearrange the triangle of relationships: distance = speed × time and time = distance ÷ speed. Convert units first; 90 minutes is 1.5 hours, so 60 miles in 90 minutes is 40 mph. For a flow rate of 12 litres per 3 minutes, divide to get 4 litres per minute, then multiply by the required time. A rate can be fractional, and the unit tells you what the number means. Check whether a question asks for an average rate or an instantaneous rate; GCSE contexts usually provide enough information for an average. Estimate the result before calculating and consider whether the answer is sensible for the situation. In a multi-step problem, keep a unit at every line: 2.4 litres in 6 minutes is 0.4 litres per minute, so in 15 minutes the same rate gives 6 litres. If the rate changes, calculate each interval separately and combine the quantities; do not average the two rates unless the time intervals justify it."
       }
     ],
+    "writingActivity": {
+      "title": "Choose the right proportional model",
+      "prompt": "Compare two short scenarios: one direct proportion and one inverse proportion. Write the constant relationship, solve one missing value in each, and explain how you recognised the model.",
+      "wordGuide": "Write 100–140 words with units included.",
+      "checklist": ["I tested whether the relationship starts at zero.", "I used the correct constant relationship.", "I converted units and checked the size of my answer."]
+    },
     "practice": [
       {
         "prompt": "A recipe uses 200g flour for 4 eggs. How many eggs are needed for 500g flour?",

@@ -39,17 +39,23 @@
     "sections": [
       {
         "heading": "Calculating Area and Volume",
-        "body": "To find area, multiply length by width, ensuring both dimensions use the same unit. The result is expressed in square units, such as square metres. For volume, multiply length, width, and height together. This calculation yields cubic units, like cubic centimetres. Always state your final answer with the correct unit to avoid confusion."
+        "body": "Area measures a two-dimensional surface, so a rectangle 8 cm by 3 cm has area 8 × 3 = 24 cm². A triangle with base 8 cm and perpendicular height 3 cm has area ½ × 8 × 3 = 12 cm²; the sloping side is not the height unless it is perpendicular to the base. For a prism, volume equals cross-sectional area × length. A cuboid 8 cm by 3 cm by 5 cm has volume 120 cm³. Convert lengths before calculating, and keep square units for area and cubic units for volume. For a compound shape, split it into familiar parts, calculate each part, then add or subtract. Write a formula before inserting numbers so a missing dimension is easier to spot. A perimeter is a length around the boundary, not an area. Estimate whether your answer should be larger or smaller than the dimensions supplied."
       },
       {
         "heading": "Applying Pythagoras' Theorem",
-        "body": "Pythagoras' theorem applies specifically to right-angled triangles. It states that the square of the hypotenuse equals the sum of the squares of the other two sides. Use this formula to find a missing side length. Ensure your calculator is in the correct mode. Identify the longest side as the hypotenuse before performing any calculations."
+        "body": "Pythagoras applies only to a right-angled triangle. If the perpendicular sides are a and b and the hypotenuse is c, then a² + b² = c². The hypotenuse is opposite the right angle and is always the longest side. For legs 6 cm and 8 cm, c² = 36 + 64 = 100, so c = 10 cm. If the hypotenuse is 13 cm and one leg is 5 cm, the other leg is √(13² - 5²) = √144 = 12 cm. Draw or describe the right angle before choosing the formula. Do not subtract when finding the hypotenuse, and do not forget the positive square root for a length. Keep units consistent, use the square-root key carefully, and substitute the result back into the equation to check that the squares balance."
       },
       {
         "heading": "Using Trigonometric Ratios",
-        "body": "Trigonometry helps find missing sides or angles in right-angled triangles. Identify the relevant ratio: sine, cosine, or tangent. Match the known sides to the ratio definition. Use your calculator to solve for the unknown value. Always check that your answer is reasonable given the triangle's dimensions and the specific ratio chosen."
+        "body": "For a right-angled triangle, label the side opposite the angle, the adjacent side, and the hypotenuse. The mnemonic SOH CAH TOA links sine = opposite/hypotenuse, cosine = adjacent/hypotenuse, and tangent = opposite/adjacent. If the opposite side is 7 cm and the hypotenuse is 10 cm, sin θ = 0.7, so θ = sin⁻¹(0.7) ≈ 44.4°. If the angle is known and the adjacent side is 5 cm, a tangent calculation may find the opposite side. Choose the ratio that uses the two sides you know and the side you want. Check that the calculator is in degree mode, keep full precision until the final rounding, and make sure an angle lies between 0° and 90° in an ordinary right triangle. A quick sketch prevents swapping opposite and adjacent. For a complete example, if θ = 35° and the hypotenuse is 12 cm, the opposite side is 12 sin 35° ≈ 6.88 cm. If the question asks for a length, round only at the end and retain the unit. Use Pythagoras as a second check when the third side is available."
       }
     ],
+    "writingActivity": {
+      "title": "Plan a measurement solution",
+      "prompt": "Choose one shape problem. Sketch or describe the shape, label the known measurements and units, select the formula, and explain one reason your final answer is sensible.",
+      "wordGuide": "Write 100–140 words with a labelled calculation.",
+      "checklist": ["I used a perpendicular height where required.", "I identified the hypotenuse or the correct trig ratio.", "I gave square, cubic, or ordinary units correctly."]
+    },
     "practice": [
       {
         "prompt": "A rectangular garden measures 4 metres by 5 metres. What is its area?",
