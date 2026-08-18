@@ -167,6 +167,15 @@ function contentBlocksFor(bundle) {
     if (bundle.lesson.writingActivity) blocks.push({ type: 'writing_activity', ...bundle.lesson.writingActivity })
     if (bundle.lesson.imageInferenceActivity) blocks.push({ type: 'image_inference_activity', ...bundle.lesson.imageInferenceActivity })
     if (bundle.lesson.speakingActivity) blocks.push({ type: 'speaking_activity', ...bundle.lesson.speakingActivity })
+    if (bundle.unit.id === 'gcse-l2-number') {
+        blocks.push({
+            type: 'interactive',
+            widget: 'fraction-lab',
+            title: 'See equivalent fractions',
+            prompt: 'Adjust the two bars and watch equivalent fractions become equal in front of you.',
+            target: { numerator: 1, denominator: 2 },
+        })
+    }
     return blocks
 }
 
