@@ -14,6 +14,7 @@ import {
     RotateCcw,
     ShieldCheck,
     Target,
+    Timer,
     Trophy,
 } from 'lucide-react'
 import { api, getUserMessage } from '../lib/api'
@@ -21,6 +22,13 @@ import QuestionReportButton from '../components/QuestionReportButton'
 
 const TRACK_SLUG = 'life-in-the-uk-test'
 const DEFAULT_LIMIT = 24
+const EXAM_DURATION_SECONDS = 45 * 60
+
+function formatRemainingTime(totalSeconds) {
+    const minutes = Math.floor(totalSeconds / 60)
+    const seconds = totalSeconds % 60
+    return `${minutes}:${String(seconds).padStart(2, '0')}`
+}
 
 function MockTestQuestion({
     question,
@@ -28,6 +36,7 @@ function MockTestQuestion({
     onSelect,
     showResult,
     result,
+    locked,
 }) {
     return (
         <div className="progress-panel">
@@ -60,8 +69,8 @@ function MockTestQuestion({
                         <button
                             key={index}
                             type="button"
-                            onClick={() => !showResult && onSelect(index)}
-                            disabled={showResult}
+                            onClick={() => !showResult && !locked && onSelect(index)}
+                            disabled={showResult || locked}
                             aria-pressed={isSelected}
                             className={`w-full rounded-2xl border p-4 text-left transition-all ${isCorrectSelection
                                 ? 'border-accent-500 bg-accent-500/20 text-accent-200'
@@ -72,7 +81,7 @@ function MockTestQuestion({
                                         : isSelected
                                             ? 'border-primary-500 bg-primary-500/20 text-primary-200'
                                             : 'border-dark-600 bg-dark-800 text-dark-200 hover:border-dark-500'
-                                }`}
+                                } ${locked && !showResult ? 'cursor-not-allowed opacity-60' : ''}`}
                         >
                             <span className="flex items-start gap-3">
                                 <span className={`mt-0.5 flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg text-sm font-medium ${isSelected || isActualCorrect ? 'bg-current/20' : 'bg-dark-700'}`}>
@@ -204,6 +213,8 @@ export default function LifeInUkTest() {
     const [results, setResults] = useState({})
     const [selectedAnswers, setSelectedAnswers] = useState({})
     const [error, setError] = useState(null)
+    const [remainingSeconds, setRemainingSeconds] = useState(EXAM_DURATION_SECONDS)
+    const [timeExpired, setTimeExpired] = useState(false)
     const resultSummaryRef = useRef(null)
 
     const fetchMockTest = async () => {
@@ -216,6 +227,8 @@ export default function LifeInUkTest() {
             setCurrentIndex(0)
             setResults({})
             setSelectedAnswers({})
+            setRemainingSeconds(EXAM_DURATION_SECONDS)
+            setTimeExpired(false)
         } catch (requestError) {
             const message = getUserMessage(
                 requestError,
@@ -241,6 +254,25 @@ export default function LifeInUkTest() {
     const passMark = data?.passMark ?? Math.ceil(DEFAULT_LIMIT * 0.75)
     const isComplete = !!data && answeredCount === data.questions.length && data.questions.length > 0
     const hasPassed = correctCount >= passMark
+    const showSummary = isComplete || timeExpired
+    const unansweredCount = Math.max(0, (data?.questions?.length || 0) - answeredCount)
+    const timeLabel = formatRemainingTime(remainingSeconds)
+
+    useEffect(() => {
+        if (!data?.questions?.length || isComplete) return undefined
+
+        const deadline = Date.now() + (EXAM_DURATION_SECONDS * 1000)
+        const interval = window.setInterval(() => {
+            const next = Math.max(0, Math.ceil((deadline - Date.now()) / 1000))
+            setRemainingSeconds(next)
+            if (next === 0) {
+                setTimeExpired(true)
+                window.clearInterval(interval)
+            }
+        }, 1000)
+
+        return () => window.clearInterval(interval)
+    }, [data, isComplete])
 
     const topicBreakdown = useMemo(() => {
         if (!data?.questions?.length) return []
@@ -263,7 +295,7 @@ export default function LifeInUkTest() {
     }, [data, results])
 
     const handleSelectAnswer = (index) => {
-        if (!currentQuestion || currentResult) return
+        if (!currentQuestion || currentResult || timeExpired) return
 
         setSelectedAnswers((previous) => ({
             ...previous,
@@ -282,7 +314,7 @@ export default function LifeInUkTest() {
     }
 
     const handleAnswer = async (answer) => {
-        if (!currentQuestion || currentResult) return
+        if (!currentQuestion || currentResult || timeExpired) return
 
         try {
             const result = await api(`/public/practice/tracks/${TRACK_SLUG}/submit`, {
@@ -326,7 +358,7 @@ export default function LifeInUkTest() {
 
             if (['1', '2', '3', '4'].includes(event.key)) {
                 const index = Number.parseInt(event.key, 10) - 1
-                if (index >= 0 && index < (currentQuestion.options?.length || 0) && !currentResult) {
+                if (index >= 0 && index < (currentQuestion.options?.length || 0) && !currentResult && !timeExpired) {
                     setSelectedAnswers((previous) => ({
                         ...previous,
                         [currentQuestion.id]: index,
@@ -354,7 +386,7 @@ export default function LifeInUkTest() {
 
         window.addEventListener('keydown', handleKeyDown)
         return () => window.removeEventListener('keydown', handleKeyDown)
-    }, [currentIndex, currentQuestion, currentResult, currentSelection, data])
+    }, [currentIndex, currentQuestion, currentResult, currentSelection, data, timeExpired])
 
     if (loading) {
         return (
@@ -443,7 +475,7 @@ export default function LifeInUkTest() {
                                 </div>
                             </div>
 
-                            <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                            <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-5">
                                 <div className="learning-stat">
                                     <p className="learning-stat-label">Questions</p>
                                     <p className="learning-stat-value">{data.questions.length}</p>
@@ -463,6 +495,11 @@ export default function LifeInUkTest() {
                                     <p className="learning-stat-label">Accuracy</p>
                                     <p className="learning-stat-value">{accuracy}%</p>
                                     <p className="mt-2 text-sm text-dark-400">Updates as you move through the set</p>
+                                </div>
+                                <div className={`learning-stat ${remainingSeconds <= 300 && !timeExpired ? 'border-amber-500/40' : ''}`}>
+                                    <p className="learning-stat-label">Time left</p>
+                                    <p className={`learning-stat-value tabular-nums ${remainingSeconds <= 300 && !timeExpired ? 'text-amber-300' : ''}`}>{timeLabel}</p>
+                                    <p className="mt-2 text-sm text-dark-400">45-minute practice limit</p>
                                 </div>
                             </div>
                         </div>
@@ -505,7 +542,7 @@ export default function LifeInUkTest() {
                     </div>
                 </section>
 
-                {isComplete && (
+                {showSummary && (
                     <section ref={resultSummaryRef} className="mb-8 grid gap-6 xl:grid-cols-[minmax(0,1.15fr)_minmax(260px,0.85fr)]">
                         <div className="progress-panel">
                             <div className="flex items-start gap-4">
@@ -515,12 +552,16 @@ export default function LifeInUkTest() {
                                 <div>
                                     <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-dark-500">Final result</p>
                                     <h2 className="mt-2 text-2xl font-semibold text-dark-50">
-                                        {hasPassed ? 'Pass standard reached.' : 'Below the current pass line.'}
+                                        {timeExpired && !isComplete
+                                            ? 'Time is up.'
+                                            : hasPassed ? 'Pass standard reached.' : 'Below the current pass line.'}
                                     </h2>
                                     <p className="mt-2 text-sm leading-7 text-dark-300">
-                                        You answered {correctCount} of {data.questions.length} correctly. {hasPassed
-                                            ? 'That meets the usual 75% threshold used for the official test.'
-                                            : `Aim for at least ${passMark} correct answers and focus your next revision on the weaker topics below.`}
+                                        You answered {correctCount} of {data.questions.length} correctly. {timeExpired && unansweredCount > 0
+                                            ? `${unansweredCount} question${unansweredCount === 1 ? '' : 's'} remained unanswered and count against the pass target. `
+                                            : ''}{hasPassed
+                                                ? `That meets the ${passMark}-of-${data.questions.length} practice target.`
+                                                : `Aim for at least ${passMark} correct answers and focus your next revision on the weaker topics below.`}
                                     </p>
                                 </div>
                             </div>
@@ -560,6 +601,7 @@ export default function LifeInUkTest() {
                             onSelect={handleSelectAnswer}
                             showResult={!!currentResult}
                             result={currentResult}
+                            locked={timeExpired}
                         />
 
                         <div className="rounded-2xl border border-dark-800/80 bg-dark-900/60 p-4 text-sm text-dark-300 xl:hidden">
@@ -603,6 +645,13 @@ export default function LifeInUkTest() {
                                 <div className="rounded-2xl border border-dark-800/80 bg-dark-900/60 px-4 py-3 text-sm text-dark-300">
                                     <span className="font-medium text-dark-100">Current question:</span> {currentIndex + 1} of {data.questions.length}
                                 </div>
+                                <div className={`rounded-2xl border px-4 py-3 text-sm ${timeExpired ? 'border-amber-500/40 bg-amber-500/10 text-amber-100' : remainingSeconds <= 300 ? 'border-amber-500/30 bg-amber-500/5 text-amber-200' : 'border-dark-800/80 bg-dark-900/60 text-dark-300'}`} role="timer" aria-live="polite">
+                                    <div className="flex items-center justify-between gap-3">
+                                        <span className="flex items-center gap-2 font-medium text-dark-100"><Timer className="h-4 w-4" />Time remaining</span>
+                                        <span className="font-semibold tabular-nums">{timeExpired ? '00:00' : timeLabel}</span>
+                                    </div>
+                                    <p className="mt-1 text-xs opacity-80">Pass target: {passMark}/{data.questions.length}</p>
+                                </div>
                             </div>
                         </div>
                     </aside>
@@ -616,7 +665,7 @@ export default function LifeInUkTest() {
                             <div className="text-sm text-dark-300">
                                 <span className="font-medium text-dark-100">Question {currentIndex + 1} of {data.questions.length}</span>
                                 <span className="mx-2 text-dark-600">•</span>
-                                <span>{currentResult ? 'Answer checked' : currentSelection !== null ? 'Answer selected' : 'Choose an option to continue'}</span>
+                                <span>{timeExpired ? 'Time expired — review your score above' : currentResult ? 'Answer checked' : currentSelection !== null ? 'Answer selected' : 'Choose an option to continue'}</span>
                             </div>
 
                             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
@@ -627,11 +676,11 @@ export default function LifeInUkTest() {
 
                                 <button
                                     onClick={handlePrimaryAction}
-                                    disabled={!currentResult && currentSelection === null}
+                                    disabled={!currentResult && (currentSelection === null || timeExpired)}
                                     className="btn-primary w-full justify-center disabled:cursor-not-allowed disabled:opacity-50 sm:min-w-[190px]"
                                 >
                                     {!currentResult
-                                        ? 'Check answer'
+                                        ? timeExpired ? 'Time expired' : 'Check answer'
                                         : currentIndex < data.questions.length - 1
                                             ? 'Next question'
                                             : 'Review results'}
