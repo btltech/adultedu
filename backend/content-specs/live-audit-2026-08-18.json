@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-08-18T01:06:38.637Z",
+  "mode": "audit",
+  "scope": "published questions only",
+  "scanned": 8301,
+  "shortPrompts": 0,
+  "shortExplanations": 0,
+  "embeddedOptionLabels": 0,
+  "answerValuesResolvedFromTextOrNumericString": 0,
+  "issueCounts": {
+    "duplicate_options": 8,
+    "semantic_review_marker": 21,
+    "embedded_answer_list_in_prompt": 41
+  },
+  "safeFixes": 0,
+  "tracks": {
+    "essential-digital-skills": 292,
+    "gcse-maths": 491,
+    "python-foundations": 318,
+    "gcse-biology": 322,
+    "gcse-chemistry": 441,
+    "gcse-english-language": 822,
+    "gcse-english-literature": 227,
+    "gcse-geography": 368,
+    "gcse-history": 278,
+    "gcse-physics": 476,
+    "functional-skills-maths": 435,
+    "functional-skills-english": 316,
+    "a-level-maths": 559,
+    "cpp-introduction": 382,
+    "aws-cloud-practitioner": 398,
+    "intro-to-ai": 311,
+    "ai-for-everyone": 143,
+    "microsoft-office-essentials": 184,
+    "financial-literacy": 177,
+    "gcse-computer-science": 295,
+    "business-english": 234,
+    "python-mastery": 420,
+    "life-in-the-uk-test": 412
+  }
+}
