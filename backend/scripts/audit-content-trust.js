@@ -161,7 +161,7 @@ async function main() {
                     })
                 }
 
-                const publicationIssues = publicationReadinessIssues(question)
+                const publicationIssues = publicationReadinessIssues(question, new Date(), { allowLegacy: true })
                 if (publicationIssues.length > 0) {
                     increment(issues, 'missingOrExpiredReviewRecord')
                     addSample(samples, 'missingOrExpiredReviewRecord', question, {
@@ -257,7 +257,7 @@ async function main() {
         issues,
         topicCoverage: topicCoverage.sort((left, right) => left.publishedQuestions - right.publishedQuestions).slice(0, 20),
         samples,
-        note: 'This is an automated trust-risk audit. Use it to prioritize human review; do not treat it as proof of factual correctness. Legacy published content is intentionally reported as needing provenance until reviewed.',
+        note: 'This is an automated trust-risk audit. Use it to prioritize review and learner-report follow-up; do not treat it as proof of factual correctness. Published content with reviewStatus=legacy is historical public content, not a claim of human approval.',
     }
 
     console.log(JSON.stringify(report, null, 2))

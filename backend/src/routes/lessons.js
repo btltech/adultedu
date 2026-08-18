@@ -518,7 +518,9 @@ router.post('/practice/submit', requireAuth, async (req, res, next) => {
         }
 
         const question = await prisma.question.findUnique({
-            where: { id: questionId },
+            // Practice is a learner-facing surface. Never allow a draft or
+            // quarantined question to be scored just because its id leaked.
+            where: { id: questionId, isPublished: true },
             include: {
                 topic: {
                     select: {

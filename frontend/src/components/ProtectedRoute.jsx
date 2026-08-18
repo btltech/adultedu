@@ -6,7 +6,7 @@ import { useAuth } from '../context/AuthContext'
  * Use this to protect routes that require authentication.
  */
 export default function ProtectedRoute({ children }) {
-    const { isAuthenticated, loading } = useAuth()
+    const { isAuthenticated, loading, authUnavailable, checkAuth } = useAuth()
     const location = useLocation()
 
     // Show loading while checking auth status
@@ -19,6 +19,18 @@ export default function ProtectedRoute({ children }) {
                         <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
                     </svg>
                     <span>Loading...</span>
+                </div>
+            </div>
+        )
+    }
+
+    if (authUnavailable) {
+        return (
+            <div className="min-h-[80vh] flex items-center justify-center px-4">
+                <div className="editorial-panel max-w-md p-8 text-center">
+                    <h1 className="text-2xl font-bold text-dark-50">We could not check your session</h1>
+                    <p className="mt-3 text-dark-400">AdultEdu is temporarily unavailable. Your account has not been signed out.</p>
+                    <button type="button" onClick={checkAuth} className="btn-primary mt-6">Try again</button>
                 </div>
             </div>
         )

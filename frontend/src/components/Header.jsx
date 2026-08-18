@@ -149,9 +149,12 @@ export default function Header() {
                         </div>
 
                         <button
+                            type="button"
                             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                             className="md:hidden p-2 text-dark-300 hover:text-dark-100 transition-colors"
                             aria-label="Toggle menu"
+                            aria-expanded={mobileMenuOpen}
+                            aria-controls="mobile-navigation"
                         >
                             {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
                         </button>
@@ -159,7 +162,7 @@ export default function Header() {
                 </div>
 
                 {mobileMenuOpen && (
-                    <div className="md:hidden border-t border-dark-800 py-4 space-y-2">
+                    <div id="mobile-navigation" className="md:hidden border-t border-dark-800 py-4 space-y-2">
                         {navLinks.map(link => (
                             <Link
                                 key={link.to}

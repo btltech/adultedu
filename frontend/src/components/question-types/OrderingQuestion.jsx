@@ -115,7 +115,7 @@ export default function OrderingQuestion({ question, onAnswer, showResult, resul
                     <div className="mt-4 rounded-2xl overflow-hidden bg-dark-900/50 border border-dark-700 flex justify-center p-4">
                         <img
                             src={question.imageUrl}
-                            alt="Question Diagram"
+                            alt={`Illustration for: ${question.prompt}`}
                             className="max-h-64 object-contain rounded-lg shadow-lg"
                         />
                     </div>

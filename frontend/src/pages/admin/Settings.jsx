@@ -1,5 +1,5 @@
 
-import { Save, ShieldCheck, SlidersHorizontal } from 'lucide-react'
+import { ShieldCheck, SlidersHorizontal } from 'lucide-react'
 
 export default function Settings() {
     return (
@@ -12,7 +12,7 @@ export default function Settings() {
 
             <div className="solid-card px-6 py-16 text-center sm:px-8">
                 <div className="w-16 h-16 bg-dark-800 rounded-2xl flex items-center justify-center mx-auto mb-4 border border-dark-700">
-                    <Save size={32} className="text-dark-400" />
+                    <SlidersHorizontal size={32} className="text-dark-400" />
                 </div>
                 <h2 className="text-xl font-semibold text-white mb-2">Detailed configuration coming soon</h2>
                 <p className="text-dark-400 max-w-md mx-auto leading-7">
@@ -24,15 +24,11 @@ export default function Settings() {
                         <p>Until these controls are connected, production configuration should stay in environment variables and deployment settings.</p>
                     </div>
                 </div>
-                <div className="mt-8 flex justify-center gap-4">
-                    <button className="btn-secondary text-sm">Cancel</button>
-                    <button className="btn-primary text-sm opacity-50 cursor-not-allowed">Save Changes</button>
-                </div>
             </div>
 
             {/* Version Info */}
             <div className="text-center text-xs text-dark-600 font-mono">
-                AdultEdu Admin v1.0.0 • Build 2024.12
+                AdultEdu Admin • Configuration remains deployment-managed
             </div>
         </div>
     )

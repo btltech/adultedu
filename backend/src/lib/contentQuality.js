@@ -21,10 +21,13 @@ export function toDate(value) {
     return Number.isNaN(date.getTime()) ? null : date
 }
 
-export function publicationReadinessIssues(question, now = new Date()) {
+export function publicationReadinessIssues(question, now = new Date(), { allowLegacy = false } = {}) {
     const issues = []
 
     for (const [field, label] of REQUIRED_PUBLICATION_FIELDS) {
+        // Historical public content has no claim of a named human review.
+        // Source and curriculum provenance still remain mandatory.
+        if (allowLegacy && question.reviewStatus === 'legacy' && ['reviewedBy', 'reviewedAt'].includes(field)) continue
         if (!question[field] || (typeof question[field] === 'string' && !question[field].trim())) {
             issues.push(`Add ${label} before publishing.`)
         }
@@ -34,8 +37,11 @@ export function publicationReadinessIssues(question, now = new Date()) {
         issues.push('Use an HTTPS source URL before publishing.')
     }
 
-    if (question.reviewStatus !== 'approved') {
-        issues.push('Set reviewStatus to approved before publishing.')
+    // `legacy` means content that was already public before the governance
+    // workflow existed. It is not a claim of human approval; it simply keeps
+    // the publication gate from rewriting the history of the live bank.
+    if (question.reviewStatus !== 'approved' && !(allowLegacy && question.reviewStatus === 'legacy')) {
+        issues.push('Set reviewStatus to approved before publishing (or legacy for existing public content).')
     }
 
     const sourceCheckedAt = toDate(question.sourceCheckedAt)
