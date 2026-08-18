@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import { Check, ChevronLeft, ChevronRight, Flag, RefreshCw, X } from 'lucide-react'
 import toast from 'react-hot-toast'
 import api from '../../lib/api'
@@ -19,7 +19,7 @@ export default function QuestionReports() {
     const [pages, setPages] = useState(1)
     const [loading, setLoading] = useState(true)
 
-    const load = async () => {
+    const load = useCallback(async () => {
         setLoading(true)
         try {
             const data = await api.get(`/admin/question-reports?status=${status}&page=${page}&limit=50`)
@@ -30,9 +30,9 @@ export default function QuestionReports() {
         } finally {
             setLoading(false)
         }
-    }
+    }, [page, status])
 
-    useEffect(() => { load() }, [status, page])
+    useEffect(() => { load() }, [load])
 
     const changeStatus = (nextStatus) => {
         setStatus(nextStatus)
