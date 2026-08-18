@@ -1,10 +1,25 @@
 import rateLimit, { ipKeyGenerator } from 'express-rate-limit'
+import { createHash } from 'node:crypto'
+
+// apiLimiter runs before route authentication, so req.user is not available.
+// The session cookie is already parsed at this point and is a stable,
+// per-learner identifier. Hash it so the raw session token never becomes a
+// rate-limit key in logs or diagnostics. Anonymous traffic remains IP-keyed.
+export function apiRateLimitKey(req) {
+    const sessionToken = req.cookies?.session
+    if (sessionToken) {
+        const sessionHash = createHash('sha256').update(sessionToken).digest('hex')
+        return `session:${sessionHash}`
+    }
+    return `ip:${ipKeyGenerator(req.ip)}`
+}
 
 export const apiLimiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100, // Limit each IP to 100 requests per windowMs
     standardHeaders: true, // Return rate limit info in the `RateLimit-*` headers
     legacyHeaders: false, // Disable the `X-RateLimit-*` headers
+    keyGenerator: apiRateLimitKey,
     message: { error: 'Too Many Requests', message: 'Too many requests, please try again later.' }
 })
 
