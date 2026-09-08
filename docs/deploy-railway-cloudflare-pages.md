@@ -53,6 +53,20 @@ Use one of these approaches:
 
 ## 2) Frontend on Cloudflare Pages
 
+### Coordinated local-first release order
+
+Treat backend and frontend as one release window:
+
+1. Back up the production database and record the currently deployed releases.
+2. Run `npx prisma migrate deploy` and verify that the `LearnerState` table exists.
+3. Start the compatible backend and check `/api/v1/health`, `/api/v1/tracks`,
+   and an authenticated `/api/v1/learner-state` request.
+4. Deploy the frontend immediately after the backend health checks pass.
+5. Complete the mobile checks below before promoting or closing the release.
+
+The backend must be ready first because the new frontend performs learner-state
+merge requests after account authentication.
+
 ### Pages project settings
 In Cloudflare Pages:
 - **Framework preset**: Vite
@@ -77,11 +91,24 @@ Create a proxy function so requests to your Pages site at `/api/v1/*` forward to
 2. Use the included function file:
    - `frontend/functions/api/v1/[[path]].js`
 
-## 4) Quick production smoke test
+## 4) Staging and production smoke test
 After deploy:
-- Open the Pages site
-- Sign up / log in
-- Start a practice session and submit an answer (confirms cookies + CSRF + scoring)
+
+- On a real iPhone in Safari, start a guest lesson, refresh, close/reopen the
+  browser, and confirm `/progress` still contains the saved position.
+- Create an account from that guest session and confirm the progress survives
+  login and appears after a second refresh.
+- In private browsing, confirm the UI reports temporary storage and learning
+  still works without crashing.
+- On a shared-browser test, sync and log out, then visit `/progress` as a guest;
+  no account-bound lessons, attempts, bookmarks, or activity should remain.
+- Export a backup, add newer progress, then import it and confirm records merge
+  without reverting completion or removing cloud/local activity.
+- Start a practice session and submit an answer to confirm cookies, CSRF,
+  scoring, and attempt merge.
+- Confirm the public curriculum runtime cache name includes the current Pages
+  commit and that a new deployment does not serve the previous curriculum
+  response.
 
 ## 5) Optional: add Entry Level (E1/E2) workplace content
 If you want workplace learners to start at E1/E2:

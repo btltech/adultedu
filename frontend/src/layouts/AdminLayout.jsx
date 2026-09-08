@@ -2,6 +2,7 @@ import { Outlet, Link, ScrollRestoration, useNavigate, useLocation } from 'react
 import { useAuth } from '../context/AuthContext'
 import { useEffect, useRef } from 'react'
 import { BarChart3, BookOpenCheck, Building2, Flag, Home, LayoutDashboard, LogOut, Settings, Users } from 'lucide-react'
+import toast from 'react-hot-toast'
 
 export default function AdminLayout() {
     const { user, logout, loading } = useAuth()
@@ -9,15 +10,22 @@ export default function AdminLayout() {
     const location = useLocation()
     const mainRef = useRef(null)
 
+    const handleLogout = async () => {
+        const result = await logout()
+        if (!result?.success) {
+            toast.error('Still signed in: your device progress could not be safely synced. Please try again.')
+        }
+    }
+
     useEffect(() => {
         if (!loading) {
             if (!user) {
-                navigate('/login', { replace: true })
+                navigate('/login', { replace: true, state: { from: location } })
             } else if (user.role !== 'admin') {
                 navigate('/', { replace: true })
             }
         }
-    }, [user, loading, navigate])
+    }, [user, loading, navigate, location])
 
     useEffect(() => {
         mainRef.current?.focus()
@@ -60,7 +68,9 @@ export default function AdminLayout() {
                 <nav className="flex gap-2 overflow-x-auto p-3 lg:flex-1 lg:flex-col lg:overflow-x-visible lg:p-4">
                     {navItems.map(item => {
                         const Icon = item.icon
-                        const active = location.pathname === item.path
+                        const active = item.path === '/admin/content'
+                            ? location.pathname === item.path || location.pathname.startsWith('/admin/questions/')
+                            : location.pathname === item.path
                         return (
                         <Link
                             key={item.path}
@@ -77,11 +87,11 @@ export default function AdminLayout() {
                     )})}
                 </nav>
 
-                <div className="hidden border-t border-dark-800/80 p-4 lg:block">
+                <div className="border-t border-dark-800/80 p-4">
                     <div className="mb-3 rounded-2xl border border-dark-800 bg-dark-900/70 p-3 text-sm text-dark-400">{user.email}</div>
                     <button
                         type="button"
-                        onClick={logout}
+                        onClick={handleLogout}
                         className="flex w-full items-center gap-2 rounded-2xl px-4 py-2 text-left text-sm font-medium text-red-300 transition-colors hover:bg-red-500/10"
                     >
                         <LogOut className="h-4 w-4" />

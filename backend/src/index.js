@@ -25,6 +25,7 @@ import dictionaryRoutes from './routes/dictionary.js'
 import onboardingRoutes from './routes/onboarding.js'
 import partnerReportsRoutes from './routes/partnerReports.js'
 import questionReportsRoutes from './routes/questionReports.js'
+import learnerStateRoutes from './routes/learnerState.js'
 
 import logger from './lib/logger.js'
 import { startQuestionAuditScheduler } from './lib/questionAuditScheduler.js'
@@ -108,6 +109,7 @@ v1Router.use('/', eventsRoutes)
 v1Router.use('/organizations', organizationsRoutes)
 v1Router.use('/dictionary', dictionaryRoutes)
 v1Router.use('/question-reports', questionReportsRoutes)
+v1Router.use('/', learnerStateRoutes)
 
 app.use('/api/v1', v1Router)
 

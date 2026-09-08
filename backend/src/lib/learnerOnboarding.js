@@ -1,3 +1,5 @@
+import { normalizeFrameworks, normalizeTrackCategory } from './curriculumTaxonomy.js'
+
 const PROFILE_SNAPSHOT_EVENT = 'learner_profile_snapshot'
 const ONBOARDING_COMPLETED_EVENT = 'onboarding_completed'
 const PROGRESSION_OUTCOME_EVENT = 'progression_outcome_recorded'
@@ -160,19 +162,17 @@ function summarizeTrack(track) {
     )
     const practiceMinutes = questionCount > 0 ? Math.round(questionCount * 1.5) : 0
     const expectedStudyMinutes = estimatedMinutes + practiceMinutes
-    const frameworks = track.trackFrameworks.map((entry) => ({
-        slug: entry.framework.slug,
-        title: entry.framework.title,
-    }))
+    const category = normalizeTrackCategory(track.category)
+    const frameworks = normalizeFrameworks(track.trackFrameworks)
 
     return {
         id: track.id,
         slug: track.slug,
         title: track.title,
         description: track.description,
-        category: track.category,
+        category,
         frameworks,
-        learningGoal: LEARNING_GOAL_LABELS[track.category] || 'Structured learning',
+        learningGoal: LEARNING_GOAL_LABELS[category] || 'Structured learning',
         lessonCount,
         questionCount,
         estimatedMinutes,

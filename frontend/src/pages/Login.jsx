@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link, useNavigate, useLocation } from 'react-router-dom'
 import { ArrowRight, Eye, EyeOff, ShieldCheck } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
+import { normaliseReturnLocation, returnLocationPath } from '../lib/navigation'
 
 export default function Login() {
     const [email, setEmail] = useState('')
@@ -15,7 +16,10 @@ export default function Login() {
     const location = useLocation()
 
     // Redirect destination after login
-    const from = location.state?.from?.pathname || '/'
+    const fromLocation = location.state?.from
+    const hasReturnLocation = !!fromLocation
+    const returnLocation = normaliseReturnLocation(fromLocation, '/')
+    const from = returnLocationPath(returnLocation)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -27,12 +31,15 @@ export default function Login() {
         setLoading(false)
 
         if (result.success) {
-            if (result.user?.role === 'admin') {
+            if (result.migration && !result.migration.success) {
+                setError('You are signed in, but your device progress has not synced yet. It is still safe on this device and you can retry from My Progress.')
+            }
+            if (result.user?.role === 'admin' && !hasReturnLocation) {
                 navigate('/admin', { replace: true })
             } else if (result.user?.needsOnboarding && from === '/') {
                 navigate('/start', { replace: true })
             } else {
-                navigate(from, { replace: true })
+                navigate(from, { replace: true, state: returnLocation.state })
             }
         } else {
             setError(result.error || 'Login failed')
@@ -49,7 +56,7 @@ export default function Login() {
                     </span>
                     <h1 className="mt-4 text-4xl font-bold text-dark-50">Return to the pathway you were building.</h1>
                     <p className="mt-4 max-w-xl text-base leading-8 text-dark-300">
-                        Sign in to continue practice, review due cards, and keep your starting-point plan connected to real progress.
+                        Sign in to sync this device with your account, continue on other devices, and use account-only review tools.
                     </p>
                     <div className="mt-6 grid gap-3 sm:grid-cols-3">
                         <div className="learning-stat"><p className="learning-stat-label">Progress</p><p className="mt-2 text-sm text-dark-300">Saved across pathways</p></div>
@@ -101,6 +108,7 @@ export default function Login() {
                                 </label>
                                 <Link
                                     to="/forgot-password"
+                                    state={location.state}
                                     className="text-xs text-dark-400 hover:text-primary-300"
                                 >
                                     Forgot password?
@@ -149,7 +157,7 @@ export default function Login() {
                     <div className="mt-6 text-center">
                         <p className="text-dark-400 text-sm">
                             Don't have an account?{' '}
-                            <Link to="/signup" className="text-primary-400 hover:text-primary-300 font-medium">
+                            <Link to="/signup" state={location.state} className="text-primary-400 hover:text-primary-300 font-medium">
                                 Sign up
                             </Link>
                         </p>

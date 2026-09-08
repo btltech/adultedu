@@ -24,7 +24,7 @@ export default function Footer() {
                     <div>
                         <h4 className="font-semibold text-dark-200 text-sm mb-4">Learn</h4>
                         <ul className="space-y-2.5">
-                            <li><Link to="/tracks" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">All Pathways</Link></li>
+                            <li><Link to="/tracks#pathway-finder" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">All Pathways</Link></li>
                             <li><Link to="/life-in-the-uk-test" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">Free Life in the UK Test</Link></li>
                             <li><Link to="/track/essential-digital-skills" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">Digital Skills</Link></li>
                             <li><Link to="/track/gcse-maths" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">GCSE Maths</Link></li>
@@ -35,9 +35,9 @@ export default function Footer() {
                     <div>
                         <h4 className="font-semibold text-dark-200 text-sm mb-4">Browse</h4>
                         <ul className="space-y-2.5">
-                            <li><Link to="/tracks?category=qual_prep" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">Qualification Prep</Link></li>
-                            <li><Link to="/tracks?category=workplace" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">Workplace Skills</Link></li>
-                            <li><Link to="/tracks?category=tech" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">Tech Pathways</Link></li>
+                            <li><Link to="/tracks?category=qual_prep#pathway-finder" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">Qualification Prep</Link></li>
+                            <li><Link to="/tracks?category=workplace#pathway-finder" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">Workplace Skills</Link></li>
+                            <li><Link to="/tracks?category=tech#pathway-finder" className="text-dark-400 hover:text-dark-200 text-sm transition-colors">Tech Pathways</Link></li>
                         </ul>
                     </div>
 
@@ -66,4 +66,3 @@ export default function Footer() {
         </footer>
     )
 }
-

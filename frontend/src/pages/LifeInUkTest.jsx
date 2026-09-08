@@ -447,7 +447,7 @@ export default function LifeInUkTest() {
         <div className="py-12 pb-40">
             <div className="container-app max-w-6xl">
                 <nav className="mb-4 text-sm" aria-label="Breadcrumb">
-                    <Link to="/tracks" className="text-dark-400 hover:text-dark-200">Pathways</Link>
+                    <Link to="/tracks#pathway-finder" className="text-dark-400 hover:text-dark-200">Pathways</Link>
                     <span className="mx-2 text-dark-600">/</span>
                     <Link to="/track/life-in-the-uk-test" className="text-dark-400 hover:text-dark-200">Life in the UK Test Preparation</Link>
                     <span className="mx-2 text-dark-600">/</span>

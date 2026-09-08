@@ -1,6 +1,6 @@
 import { Router } from 'express'
 import prisma from '../lib/db.js'
-import { optionalAuth, requireAuth } from '../middleware/auth.js'
+import { optionalAuth } from '../middleware/auth.js'
 import { awardXP, XP_CORRECT_ANSWER } from './gamification.js'
 import { parseSourceMeta, scoreQuestionAnswer } from '../lib/scoring.js'
 import {
@@ -225,7 +225,7 @@ async function getAdaptivePracticeBatch({ userId, topicId, limit }) {
 
 // REWRITE: Explicit practice route test
 // GET practice questions for a topic
-router.get('/practice/:topicId', requireAuth, async (req, res, next) => {
+router.get('/practice/:topicId', optionalAuth, async (req, res, next) => {
     try {
         const { topicId } = req.params
         const limit = clampInt(req.query.limit ?? 10, 1, 50, 10)
@@ -240,7 +240,10 @@ router.get('/practice/:topicId', requireAuth, async (req, res, next) => {
             return res.status(404).json({ error: 'Topic not found' })
         }
 
-        const selection = strategy === 'latest'
+        // Guests receive a deterministic published batch so a refresh can
+        // restore their local answers. Signed-in learners retain the existing
+        // adaptive selection based on their account history.
+        const selection = strategy === 'latest' || !req.user
             ? {
                 questions: await prisma.question.findMany({
                     where: { topicId, isPublished: true },
@@ -265,7 +268,7 @@ router.get('/practice/:topicId', requireAuth, async (req, res, next) => {
             : await getAdaptivePracticeBatch({ userId: req.user.id, topicId, limit })
 
         // Auto-enroll user if not already enrolled (unless admin)
-        if (req.user.role !== 'admin') {
+        if (req.user && req.user.role !== 'admin') {
             const enrollment = await prisma.enrollment.findUnique({
                 where: {
                     userId_trackId: {
@@ -296,6 +299,7 @@ router.get('/practice/:topicId', requireAuth, async (req, res, next) => {
                 ukLevel: topic.ukLevel?.code,
             },
             track: {
+                id: topic.track.id,
                 slug: topic.track.slug,
                 title: topic.track.title,
             },
@@ -471,6 +475,9 @@ router.get('/lessons/:id', optionalAuth, async (req, res, next) => {
         }
 
         const currentLessonIndex = lesson.topic.lessons.findIndex((entry) => entry.id === lesson.id)
+        const trackLessonCount = await prisma.lesson.count({
+            where: { isPublished: true, topic: { trackId: lesson.topic.track.id } },
+        })
         const previousLesson = currentLessonIndex > 0 ? lesson.topic.lessons[currentLessonIndex - 1] : null
         const nextLesson = currentLessonIndex >= 0 && currentLessonIndex < lesson.topic.lessons.length - 1
             ? lesson.topic.lessons[currentLessonIndex + 1]
@@ -496,6 +503,7 @@ router.get('/lessons/:id', optionalAuth, async (req, res, next) => {
                 id: lesson.topic.track.id,
                 slug: lesson.topic.track.slug,
                 title: lesson.topic.track.title,
+                lessonCount: trackLessonCount,
             },
         })
     } catch (error) {
@@ -509,9 +517,12 @@ router.get('/lessons/:id', optionalAuth, async (req, res, next) => {
  * POST /api/practice/submit
  * Submit an answer and get feedback
  */
-router.post('/practice/submit', requireAuth, async (req, res, next) => {
+router.post('/practice/submit', optionalAuth, async (req, res, next) => {
     try {
         const { questionId, answer, timeSpentSec } = req.body
+        const requestedAttemptId = typeof req.body.attemptId === 'string' && /^[a-zA-Z0-9_-]{8,120}$/.test(req.body.attemptId)
+            ? req.body.attemptId
+            : null
 
         if (!questionId || answer === undefined) {
             return res.status(400).json({ error: 'questionId and answer are required' })
@@ -535,7 +546,7 @@ router.post('/practice/submit', requireAuth, async (req, res, next) => {
         }
 
         // Auto-enroll user if not already enrolled (unless admin)
-        if (req.user.role !== 'admin') {
+        if (req.user && req.user.role !== 'admin') {
             const enrollment = await prisma.enrollment.findUnique({
                 where: {
                     userId_trackId: {
@@ -578,14 +589,17 @@ router.post('/practice/submit', requireAuth, async (req, res, next) => {
             })
             isFirstTry = previousAttempts === 0
 
-            await prisma.attempt.create({
-                data: {
+            await prisma.attempt.createMany({
+                data: [{
+                    ...(requestedAttemptId ? { id: requestedAttemptId } : {}),
                     userId: req.user.id,
                     questionId,
                     isCorrect,
                     userAnswer: JSON.stringify(answer),
                     timeSpentSec: timeSpentSec || null,
-                },
+                }],
+                // A retry with the same client attempt id is idempotent.
+                skipDuplicates: true,
             })
 
             // Award XP for correct answers
@@ -635,6 +649,7 @@ router.post('/practice/submit', requireAuth, async (req, res, next) => {
         const meta = parseSourceMeta(question.sourceMeta)
 
         res.json({
+            attemptId: requestedAttemptId,
             isCorrect,
             correctAnswer: correctAnswerForClient,
             explanation: question.explanation,

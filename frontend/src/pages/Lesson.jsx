@@ -1,12 +1,14 @@
 import { useState, useEffect, useRef } from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, Clock3, GraduationCap, Lightbulb, ListChecks, Mic, NotebookPen, Play, Square, Target, Trash2, TriangleAlert } from 'lucide-react'
+import { ArrowLeft, ArrowRight, Bookmark, BookOpenCheck, CheckCircle2, Clock3, GraduationCap, Lightbulb, ListChecks, Mic, NotebookPen, Play, Square, Target, Trash2, TriangleAlert } from 'lucide-react'
 import { api, getUserMessage } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
 import NotFound from './NotFound'
 import { getLessonWidget } from '../components/lesson/widgets'
 import { usePageSeo } from '../components/SEO'
 import { lessonSeoTags } from '../lib/seo/meta'
+import { useAuth } from '../context/AuthContext'
+import { localLearnerProgressStore, syncLocalProgressToCloud } from '../lib/learnerProgress'
 
 function WritingActivity({ block, activityId }) {
     const [response, setResponse] = useState('')
@@ -230,10 +232,15 @@ function SpeakingActivity({ block, activityId }) {
 
 export default function Lesson() {
     const { id } = useParams()
+    const { isAuthenticated } = useAuth()
     const [lesson, setLesson] = useState(null)
     const [loading, setLoading] = useState(true)
     const [missing, setMissing] = useState(false)
     const [loadError, setLoadError] = useState(null)
+    const [completed, setCompleted] = useState(false)
+    const [bookmarked, setBookmarked] = useState(false)
+    const [savedLessonCount, setSavedLessonCount] = useState(0)
+    const [saveMessage, setSaveMessage] = useState('')
 
     usePageSeo(lessonSeoTags(lesson))
 
@@ -260,6 +267,86 @@ export default function Lesson() {
         fetchLesson()
     }, [id])
 
+    useEffect(() => {
+        if (!lesson) return undefined
+        let cancelled = false
+        const input = {
+            lessonId: lesson.id,
+            lessonTitle: lesson.title,
+            topicId: lesson.topic.id,
+            topicTitle: lesson.topic.title,
+            trackId: lesson.track.id,
+            trackSlug: lesson.track.slug,
+            trackTitle: lesson.track.title,
+            totalLessons: lesson.track.lessonCount,
+        }
+
+        async function restoreAndSavePosition() {
+            const [progress, bookmarks] = await Promise.all([
+                localLearnerProgressStore.getLessonProgress(lesson.id),
+                localLearnerProgressStore.getBookmarks(),
+            ])
+            if (!cancelled) {
+                setCompleted(!!progress?.completed)
+                setBookmarked(bookmarks.some((bookmark) => bookmark.itemId === lesson.id))
+            }
+            await localLearnerProgressStore.saveCurrentPosition(input)
+            const pathway = await localLearnerProgressStore.getPathwayProgress(lesson.track.id)
+            if (!cancelled) setSavedLessonCount(pathway?.completedLessonIds?.length || 0)
+            if (isAuthenticated) syncLocalProgressToCloud().catch(() => {})
+        }
+
+        restoreAndSavePosition().catch((error) => console.error('Could not save lesson position:', error))
+        return () => { cancelled = true }
+    }, [lesson, isAuthenticated])
+
+    const progressInput = lesson ? {
+        lessonId: lesson.id,
+        lessonTitle: lesson.title,
+        topicId: lesson.topic.id,
+        topicTitle: lesson.topic.title,
+        trackId: lesson.track.id,
+        trackSlug: lesson.track.slug,
+        trackTitle: lesson.track.title,
+        totalLessons: lesson.track.lessonCount,
+    } : null
+
+    const handleCompleteLesson = async () => {
+        if (!progressInput) return
+        await localLearnerProgressStore.completeLesson(progressInput)
+        const pathway = await localLearnerProgressStore.getPathwayProgress(lesson.track.id)
+        setCompleted(true)
+        setSavedLessonCount(pathway?.completedLessonIds?.length || 1)
+        setSaveMessage('Lesson complete. Your progress is saved on this device.')
+        if (isAuthenticated) {
+            try {
+                await syncLocalProgressToCloud()
+                setSaveMessage('Lesson complete and synced to your account.')
+            } catch {
+                setSaveMessage('Lesson complete and safe on this device. Account sync will retry later.')
+            }
+        }
+    }
+
+    const handleBookmark = async () => {
+        if (!lesson) return
+        if (bookmarked) {
+            await localLearnerProgressStore.removeBookmark(lesson.id)
+            setBookmarked(false)
+        } else {
+            await localLearnerProgressStore.addBookmark({
+                itemId: lesson.id,
+                type: 'lesson',
+                title: lesson.title,
+                subtitle: `${lesson.track.title} · ${lesson.topic.title}`,
+                route: `/lesson/${lesson.id}`,
+                trackId: lesson.track.id,
+            })
+            setBookmarked(true)
+        }
+        if (isAuthenticated) syncLocalProgressToCloud().catch(() => {})
+    }
+
     if (loading) {
         return (
             <div className="py-12">
@@ -281,7 +368,7 @@ export default function Lesson() {
                     <p className="mx-auto mb-6 max-w-md text-sm leading-7 text-dark-300">
                         {loadError || 'Something went wrong. Please try again.'}
                     </p>
-                    <Link to="/tracks" className="btn-primary">Browse pathways</Link>
+                    <Link to="/tracks#pathway-finder" className="btn-primary">Browse pathways</Link>
                 </div>
             </div>
         )
@@ -370,7 +457,7 @@ export default function Lesson() {
         <div className="section-padding animate-fade-slide-up">
             <div className="container-app max-w-6xl">
                 <nav className="mb-6 text-sm">
-                    <Link to={`/track/${lesson.track.slug}`} className="text-dark-400 hover:text-dark-200">
+                    <Link to={`/track/${lesson.track.slug}#topic-outline`} className="text-dark-400 hover:text-dark-200">
                         {lesson.track.title}
                     </Link>
                     <span className="mx-2 text-dark-600">/</span>
@@ -450,6 +537,14 @@ export default function Lesson() {
                             </div>
 
                             <div className="mt-6 flex flex-col gap-3">
+                                <button type="button" onClick={handleCompleteLesson} className={completed ? 'btn-secondary w-full justify-center' : 'btn-primary w-full justify-center'}>
+                                    <CheckCircle2 className="h-4 w-4" />
+                                    {completed ? 'Lesson completed' : 'Mark lesson complete'}
+                                </button>
+                                <button type="button" onClick={handleBookmark} className="btn-ghost w-full justify-center" aria-pressed={bookmarked}>
+                                    <Bookmark className="h-4 w-4" />
+                                    {bookmarked ? 'Remove bookmark' : 'Bookmark lesson'}
+                                </button>
                                 <Link to={`/practice/${lesson.topic.id}`} className="btn-primary w-full justify-center">
                                     Practice this topic
                                     <Target className="h-4 w-4" />
@@ -462,6 +557,20 @@ export default function Lesson() {
                         </div>
                     </div>
                 </section>
+
+                {saveMessage && (
+                    <div className="progress-panel mb-6 text-sm text-dark-200" role="status" aria-live="polite">{saveMessage}</div>
+                )}
+
+                {!isAuthenticated && savedLessonCount >= 2 && (
+                    <section className="progress-panel mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between" aria-label="Protect your progress">
+                        <div>
+                            <p className="font-semibold text-dark-50">You have completed {savedLessonCount} lessons.</p>
+                            <p className="mt-1 text-sm text-dark-300">Your progress is saved on this device. An account can protect it and make it available on your other devices.</p>
+                        </div>
+                        <Link to="/signup" state={{ from: { pathname: `/lesson/${lesson.id}` } }} className="btn-secondary shrink-0">Protect my progress</Link>
+                    </section>
+                )}
 
                 <div className="grid gap-8 xl:grid-cols-[minmax(0,1.15fr)_minmax(280px,0.85fr)]">
                     {/* min-w-0: a grid item defaults to min-width:auto and refuses to

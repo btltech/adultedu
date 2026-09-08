@@ -1,5 +1,6 @@
 import { Link, useLocation } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
+import { authReturnState } from '../lib/navigation'
 
 const HomeIcon = () => (
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -31,30 +32,39 @@ export default function BottomNav() {
 
     const isActive = (path) => {
         if (path === '/') return location.pathname === '/'
+        if (path === '/tracks') return location.pathname === '/tracks'
+            || location.pathname.startsWith('/track/')
+            || location.pathname.startsWith('/topic/')
+            || location.pathname.startsWith('/lesson/')
+            || location.pathname.startsWith('/practice/')
+            || location.pathname === '/life-in-the-uk-test'
         return location.pathname.startsWith(path)
     }
 
     const navItems = [
         { to: '/', icon: HomeIcon, label: 'Home' },
-        { to: '/tracks', icon: BookIcon, label: 'Pathways' },
-        { to: '/progress', icon: ChartIcon, label: 'Progress', authRequired: true },
-        { to: isAuthenticated ? '/dashboard' : '/login', icon: UserIcon, label: isAuthenticated ? 'Dashboard' : 'Login' },
+        { to: '/tracks#pathway-finder', activePath: '/tracks', icon: BookIcon, label: 'Pathways' },
+        { to: '/progress', icon: ChartIcon, label: 'Progress' },
+        {
+            to: isAuthenticated ? '/dashboard' : '/login',
+            state: isAuthenticated ? undefined : authReturnState(location),
+            icon: UserIcon,
+            label: isAuthenticated ? 'Dashboard' : 'Login',
+        },
     ]
 
     return (
         <nav className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-dark-900/95 backdrop-blur-md border-t border-dark-700 safe-area-bottom">
             <div className="flex items-center justify-around h-16">
                 {navItems.map((item) => {
-                    // Skip auth-required items for non-authenticated users
-                    if (item.authRequired && !isAuthenticated) return null
-
                     const Icon = item.icon
-                    const active = isActive(item.to)
+                    const active = isActive(item.activePath || item.to)
 
                     return (
                         <Link
                             key={item.to}
                             to={item.to}
+                            state={item.state}
                             aria-current={active ? 'page' : undefined}
                             className={`flex flex-col items-center justify-center flex-1 h-full transition-colors ${active
                                     ? 'text-primary-400'

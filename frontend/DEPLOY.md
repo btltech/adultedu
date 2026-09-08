@@ -14,6 +14,10 @@ npm ci
 npm run build
 ```
 
+Cloudflare Pages supplies `CF_PAGES_COMMIT_SHA`, which versions the public
+curriculum service-worker cache on every deployment. For another build system,
+set `VITE_CURRICULUM_CACHE_VERSION` to the release or schema version.
+
 2. Publish to Pages using `wrangler` (replace project name):
 
 ```bash

@@ -58,7 +58,7 @@ export default function Topic() {
                     <p className="mx-auto mb-6 max-w-md text-sm leading-7 text-dark-300">
                         {loadError || 'Something went wrong. Please try again.'}
                     </p>
-                    <Link to="/tracks" className="btn-primary">Browse pathways</Link>
+                    <Link to="/tracks#pathway-finder" className="btn-primary">Browse pathways</Link>
                 </div>
             </div>
         )
@@ -79,9 +79,9 @@ export default function Topic() {
         <div className="py-12">
             <div className="container-app max-w-6xl">
                 <nav className="mb-6 text-sm">
-                    <Link to="/tracks" className="text-dark-400 hover:text-dark-200">Pathways</Link>
+                    <Link to="/tracks#pathway-finder" className="text-dark-400 hover:text-dark-200">Pathways</Link>
                     <span className="mx-2 text-dark-600">/</span>
-                    <Link to={`/track/${topic.trackSlug}`} className="text-dark-400 hover:text-dark-200">{topic.trackTitle}</Link>
+                    <Link to={`/track/${topic.trackSlug}#topic-outline`} className="text-dark-400 hover:text-dark-200">{topic.trackTitle}</Link>
                     <span className="mx-2 text-dark-600">/</span>
                     <span className="text-dark-200">{topic.title}</span>
                 </nav>
@@ -105,6 +105,21 @@ export default function Topic() {
                             <p className="mt-4 max-w-3xl text-lg leading-8 text-dark-300">
                                 {topic.description}
                             </p>
+
+                            <div className="mt-6 flex flex-col gap-3 sm:flex-row lg:hidden">
+                                {firstLesson && (
+                                    <Link to={`/lesson/${firstLesson.id}`} className="btn-primary justify-center">
+                                        Start first lesson
+                                        <ArrowRight className="h-4 w-4" />
+                                    </Link>
+                                )}
+                                {topic.questionCount > 0 && (
+                                    <Link to={`/practice/${id}`} className="btn-secondary justify-center">
+                                        Start practice
+                                        <PlayCircle className="h-4 w-4" />
+                                    </Link>
+                                )}
+                            </div>
 
                             <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                                 <div className="learning-stat">
@@ -191,7 +206,7 @@ export default function Topic() {
 
                 {hasContent ? (
                     <div className="grid gap-8 xl:grid-cols-[minmax(0,1.2fr)_minmax(280px,0.8fr)]">
-                        <section>
+                        <section id="lesson-list" className="scroll-mt-24">
                             <div className="mb-6 flex items-end justify-between gap-4">
                                 <div>
                                     <span className="section-eyebrow">
@@ -308,7 +323,7 @@ export default function Topic() {
                             Lessons and practice questions for this topic are being developed.
                             Check back soon to start learning!
                         </p>
-                        <Link to={`/track/${topic.trackSlug}`} className="btn-secondary">
+                        <Link to={`/track/${topic.trackSlug}#topic-outline`} className="btn-secondary">
                             Back to track
                         </Link>
                     </div>
@@ -316,7 +331,7 @@ export default function Topic() {
 
                 {hasContent && (
                     <div className="mt-8 flex justify-start">
-                        <Link to={`/track/${topic.trackSlug}`} className="btn-ghost text-sm">
+                        <Link to={`/track/${topic.trackSlug}#topic-outline`} className="btn-ghost text-sm">
                             Back to {topic.trackTitle}
                         </Link>
                     </div>

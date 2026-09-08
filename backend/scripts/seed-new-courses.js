@@ -282,20 +282,24 @@ async function main() {
     })
     if (!entryLevel) throw new Error('Entry Level 3 not found')
 
-    // Get framework
-    const framework = await prisma.framework.findFirst()
-    if (!framework) throw new Error('No framework found')
+    const frameworks = await prisma.framework.findMany({
+        where: { slug: { in: ['EDS', 'GCSE'] } },
+    })
+    const frameworkBySlug = new Map(frameworks.map((framework) => [framework.slug, framework]))
+    if (!frameworkBySlug.has('EDS') || !frameworkBySlug.has('GCSE')) {
+        throw new Error('EDS and GCSE frameworks must be seeded first')
+    }
 
     console.log(`📚 Using levels: ${entryLevel.title}, ${level2?.title || 'default'}`)
-    console.log(`🎯 Using framework: ${framework.title}\n`)
+    console.log('🎯 Using explicit EDS and GCSE framework assignments\n')
 
     const courses = [
-        { data: OFFICE_COURSE, level: entryLevel },
-        { data: FINANCE_COURSE, level: entryLevel },
-        { data: CS_COURSE, level: level2 || entryLevel },
+        { data: OFFICE_COURSE, level: entryLevel, frameworkSlug: 'EDS' },
+        { data: FINANCE_COURSE, level: entryLevel, frameworkSlug: 'EDS' },
+        { data: CS_COURSE, level: level2 || entryLevel, frameworkSlug: 'GCSE' },
     ]
 
-    for (const { data: courseData, level } of courses) {
+    for (const { data: courseData, level, frameworkSlug } of courses) {
         console.log(`━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`)
         console.log(`📘 Creating: ${courseData.title}`)
 
@@ -312,7 +316,7 @@ async function main() {
             data: {
                 ...trackData,
                 trackFrameworks: {
-                    create: { frameworkId: framework.id }
+                    create: { frameworkId: frameworkBySlug.get(frameworkSlug).id }
                 }
             }
         })

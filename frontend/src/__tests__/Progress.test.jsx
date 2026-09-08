@@ -3,9 +3,8 @@ import { render, screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { MemoryRouter } from 'react-router-dom'
 
-vi.mock('../context/AuthContext', () => ({
-    useAuth: () => ({ user: { id: 'user-1', email: 'user@example.com' }, loading: false })
-}))
+const authState = vi.hoisted(() => ({ current: { user: { id: 'user-1', email: 'user@example.com' }, isAuthenticated: true, loading: false } }))
+vi.mock('../context/AuthContext', () => ({ useAuth: () => authState.current }))
 
 const mockApi = vi.hoisted(() => vi.fn())
 const mockGetProgressDetail = vi.hoisted(() => vi.fn())
@@ -17,6 +16,7 @@ vi.mock('../lib/api', () => ({
 }))
 
 import Progress from '../pages/Progress'
+import { localLearnerProgressStore, resetLearnerProgressForTests } from '../lib/learnerProgress'
 
 const mockEnrollments = [
     {
@@ -45,10 +45,27 @@ const mockDetail = {
 }
 
 describe('Progress page', () => {
-    beforeEach(() => {
+    beforeEach(async () => {
         vi.clearAllMocks()
+        await resetLearnerProgressForTests()
+        authState.current = { user: { id: 'user-1', email: 'user@example.com' }, isAuthenticated: true, loading: false }
         mockApi.mockResolvedValue({ enrollments: mockEnrollments })
         mockGetProgressDetail.mockResolvedValue(mockDetail)
+    })
+
+    it('shows locally saved learning to a guest instead of a login wall', async () => {
+        authState.current = { user: null, isAuthenticated: false, loading: false }
+        await localLearnerProgressStore.completeLesson({
+            lessonId: 'lesson-1', lessonTitle: 'Everyday fractions', topicId: 'topic-1', topicTitle: 'Number',
+            trackId: 'track-1', trackSlug: 'maths', trackTitle: 'Maths', totalLessons: 4,
+        })
+
+        render(<MemoryRouter><Progress /></MemoryRouter>)
+
+        expect(await screen.findByText('Maths')).toBeInTheDocument()
+        expect(screen.getByText(/1 of 4 lessons complete/i)).toBeInTheDocument()
+        expect(screen.getByRole('link', { name: /continue/i })).toHaveAttribute('href', '/lesson/lesson-1')
+        expect(mockApi).not.toHaveBeenCalled()
     })
 
     it('shows enrollments and per-topic detail on expand', async () => {

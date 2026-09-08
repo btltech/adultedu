@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect, useCallback } from 'react'
 import { api } from '../lib/api'
+import { localLearnerProgressStore, syncLocalProgressToCloud } from '../lib/learnerProgress'
 
 const AuthContext = createContext(null)
 
@@ -8,10 +9,21 @@ export function AuthProvider({ children }) {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [authUnavailable, setAuthUnavailable] = useState(false)
+    const [progressSync, setProgressSync] = useState({ status: 'idle', error: null })
 
-    // Check auth status on mount
-    useEffect(() => {
-        checkAuth()
+    const syncProgress = useCallback(async () => {
+        setProgressSync({ status: 'syncing', error: null })
+        try {
+            const result = await syncLocalProgressToCloud()
+            setProgressSync({ status: 'synced', error: null })
+            return { success: true, result }
+        } catch (err) {
+            // Authentication has still succeeded. Local progress remains the
+            // source of truth and can be retried without data loss.
+            console.error('Learner progress sync failed:', err)
+            setProgressSync({ status: 'failed', error: err.message })
+            return { success: false, error: err.message }
+        }
     }, [])
 
     const checkAuth = useCallback(async () => {
@@ -19,6 +31,7 @@ export function AuthProvider({ children }) {
             const data = await api('/auth/me')
             setUser(data.user)
             setAuthUnavailable(false)
+            await syncProgress()
         } catch (err) {
             // A 401 means the learner is anonymous. A 5xx/network failure
             // means we do not know their session state, so preserve an
@@ -32,7 +45,12 @@ export function AuthProvider({ children }) {
         } finally {
             setLoading(false)
         }
-    }, [])
+    }, [syncProgress])
+
+    // Check auth status on mount.
+    useEffect(() => {
+        checkAuth()
+    }, [checkAuth])
 
     const signup = useCallback(async (email, password, displayName) => {
         setError(null)
@@ -43,12 +61,13 @@ export function AuthProvider({ children }) {
             })
             setUser(data.user)
             setAuthUnavailable(false)
-            return { success: true, user: data.user }
+            const migration = await syncProgress()
+            return { success: true, user: data.user, migration }
         } catch (err) {
             setError(err.message)
             return { success: false, error: err.message }
         }
-    }, [])
+    }, [syncProgress])
 
     const login = useCallback(async (email, password) => {
         setError(null)
@@ -59,23 +78,37 @@ export function AuthProvider({ children }) {
             })
             setUser(data.user)
             setAuthUnavailable(false)
-            return { success: true, user: data.user }
+            const migration = await syncProgress()
+            return { success: true, user: data.user, migration }
         } catch (err) {
             setError(err.message)
             return { success: false, error: err.message }
         }
-    }, [])
+    }, [syncProgress])
 
     const logout = useCallback(async () => {
+        const syncResult = await syncProgress()
+        if (!syncResult.success) {
+            setError('We could not safely sync this device, so you are still signed in. Your local progress has not been cleared.')
+            return { success: false, error: syncResult.error }
+        }
+
         try {
+            // Once verified in the cloud, remove account-bound local state
+            // before ending the session so a subsequent guest on a shared
+            // device cannot see the previous learner's record.
+            await localLearnerProgressStore.clearAccountBoundLearningData()
             await api('/auth/logout', { method: 'POST' })
-        } catch (err) {
-            console.error('Logout error:', err)
-        } finally {
             setUser(null)
             setAuthUnavailable(false)
+            setProgressSync({ status: 'idle', error: null })
+            return { success: true }
+        } catch (err) {
+            console.error('Logout error:', err)
+            setError('We could not finish signing you out. Please try again.')
+            return { success: false, error: err.message }
         }
-    }, [])
+    }, [syncProgress])
 
     const resendVerification = useCallback(async () => {
         setError(null)
@@ -104,6 +137,8 @@ export function AuthProvider({ children }) {
         logout,
         resendVerification,
         checkAuth,
+        progressSync,
+        syncProgress,
     }
 
     return (

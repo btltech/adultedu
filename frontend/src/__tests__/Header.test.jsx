@@ -13,6 +13,8 @@ vi.mock('../context/AuthContext', () => ({
     })
 }))
 
+vi.mock('../components/DisplayPreferences', () => ({ default: () => null }))
+
 describe('Header Component', () => {
     it('renders the logo and brand name', () => {
         render(
@@ -31,6 +33,7 @@ describe('Header Component', () => {
             </MemoryRouter>
         )
         // Check for common links
-        expect(screen.getByRole('link', { name: /Pathways/i })).toBeInTheDocument()
+        expect(screen.getByRole('link', { name: /^Learn$/i })).toHaveAttribute('href', '/tracks#pathway-finder')
+        expect(screen.getByRole('link', { name: /My Progress/i })).toHaveAttribute('href', '/progress')
     })
 })

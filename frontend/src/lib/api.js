@@ -140,7 +140,15 @@ export const verifyEmail = (body) => apiPost('/auth/verify-email', body);
 export const resendVerificationEmail = () => apiPost('/auth/resend-verification', {});
 
 // Tracks
-export const getTracks = (params) => apiGet(withQuery('/tracks', params));
+export const getTracks = async (params) => {
+    const data = await apiGet(withQuery('/tracks', params));
+    if (!Array.isArray(data)) {
+        const error = new Error('Invalid tracks response')
+        error.userMessage = 'Pathways are temporarily unavailable. Please try again.'
+        throw error
+    }
+    return data
+};
 export const getTrack = (slug) => apiGet(`/tracks/${slug}`);
 export const getCertificate = (slug) => apiGet(`/progress/${slug}`);
 

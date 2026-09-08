@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
 import { AlertTriangle, ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, CircleX, ClipboardCheck, Lightbulb, PlayCircle, Target } from 'lucide-react'
 import { api } from '../lib/api'
@@ -10,6 +10,8 @@ import ImageLabelQuestion from '../components/question-types/ImageLabelQuestion'
 import XPAnimation from '../components/gamification/XPAnimation'
 import HintButton from '../components/hints/HintButton'
 import QuestionReportButton from '../components/QuestionReportButton'
+import { useAuth } from '../context/AuthContext'
+import { localLearnerProgressStore, syncLocalProgressToCloud } from '../lib/learnerProgress'
 
 function QuestionCard({ question, onAnswer, showResult, result, submittedAnswer }) {
     const [selected, setSelected] = useState(null)
@@ -278,7 +280,7 @@ function getPracticeQuestionStatus(questionId, results) {
 
 export default function Practice() {
     const { topicId } = useParams()
-    const navigate = useNavigate()
+    const { isAuthenticated } = useAuth()
 
     const [data, setData] = useState(null)
     const [loading, setLoading] = useState(true)
@@ -298,6 +300,24 @@ export default function Practice() {
                 setError(null)
                 const response = await api(`/practice/${topicId}?limit=10`)
                 setData(response)
+                const storedAttempts = await localLearnerProgressStore.getQuizAttempts(topicId)
+                const visibleQuestionIds = new Set(response.questions.map((question) => question.id))
+                const restoredResults = {}
+                const restoredAnswers = {}
+                storedAttempts.forEach((attempt) => {
+                    if (!visibleQuestionIds.has(attempt.questionId)) return
+                    restoredResults[attempt.questionId] = {
+                        attemptId: attempt.id,
+                        isCorrect: attempt.isCorrect,
+                        correctAnswer: attempt.correctAnswer,
+                        explanation: attempt.explanation,
+                    }
+                    restoredAnswers[attempt.questionId] = attempt.answer
+                })
+                setResults(restoredResults)
+                setSubmittedAnswers(restoredAnswers)
+                const firstUnanswered = response.questions.findIndex((question) => !restoredResults[question.id])
+                setCurrentIndex(firstUnanswered >= 0 ? firstUnanswered : Math.max(0, response.questions.length - 1))
             } catch (err) {
                 toast.error(err.message || 'Failed to load questions')
                 setError(err.message || 'Failed to load questions')
@@ -312,12 +332,35 @@ export default function Practice() {
         if (!data?.questions[currentIndex]) return
 
         const question = data.questions[currentIndex]
+        const attemptId = `attempt_${globalThis.crypto?.randomUUID?.() || `${Date.now()}_${Math.random().toString(36).slice(2)}`}`
 
         try {
             const result = await api('/practice/submit', {
                 method: 'POST',
-                body: { questionId: question.id, answer },
+                body: { questionId: question.id, answer, attemptId },
             })
+
+            await localLearnerProgressStore.saveQuizAttempt({
+                id: result.attemptId || attemptId,
+                quizId: topicId,
+                questionId: question.id,
+                topicId,
+                topicTitle: data.topic.title,
+                trackId: data.track.id,
+                trackSlug: data.track.slug,
+                trackTitle: data.track.title,
+                answer,
+                isCorrect: result.isCorrect,
+                correctAnswer: result.correctAnswer,
+                explanation: result.explanation,
+            })
+
+            if (isAuthenticated) {
+                syncLocalProgressToCloud().catch((error) => {
+                    console.error('Practice saved locally but cloud sync failed:', error)
+                    toast('Answer saved on this device. Cross-device sync will retry later.')
+                })
+            }
 
             setResults((previous) => ({
                 ...previous,
@@ -385,10 +428,10 @@ export default function Practice() {
                         </div>
                         <h1 className="mt-6 mb-4 text-2xl font-bold text-dark-50">Error Loading Questions</h1>
                         <p className="mb-6 text-dark-400">{error}</p>
-                        <button type="button" onClick={() => navigate(-1)} className="btn-secondary">
+                        <Link to={`/topic/${topicId}`} className="btn-secondary">
                             <ArrowLeft className="h-4 w-4" />
-                            Go back
-                        </button>
+                            Back to topic
+                        </Link>
                     </div>
                     {import.meta.env.DEV && (
                         <div className="mt-4 rounded border border-red-900 bg-red-900/10 p-4 font-mono text-xs text-red-400">
@@ -410,10 +453,10 @@ export default function Practice() {
                         </div>
                         <h1 className="mt-6 mb-4 text-2xl font-bold text-dark-50">No Questions Yet</h1>
                         <p className="mb-6 text-dark-400">Practice questions for this topic are being developed. Check back soon.</p>
-                        <button type="button" onClick={() => navigate(-1)} className="btn-secondary">
+                        <Link to={`/topic/${topicId}`} className="btn-secondary">
                             <ArrowLeft className="h-4 w-4" />
-                            Go back
-                        </button>
+                            Back to topic
+                        </Link>
                     </div>
                     {import.meta.env.DEV && (
                         <div className="mt-4 rounded border border-red-900 bg-red-900/10 p-4 text-xs text-red-400">
@@ -456,9 +499,9 @@ export default function Practice() {
 
             <div className="container-app max-w-6xl">
                 <nav className="mb-4 text-sm">
-                    <Link to="/tracks" className="text-dark-400 hover:text-dark-200">Pathways</Link>
+                    <Link to="/tracks#pathway-finder" className="text-dark-400 hover:text-dark-200">Pathways</Link>
                     <span className="mx-2 text-dark-600">/</span>
-                    <Link to={`/track/${data.track.slug}`} className="text-dark-400 hover:text-dark-200">{data.track.title}</Link>
+                    <Link to={`/track/${data.track.slug}#topic-outline`} className="text-dark-400 hover:text-dark-200">{data.track.title}</Link>
                     <span className="mx-2 text-dark-600">/</span>
                     <Link to={`/topic/${topicId}`} className="text-dark-400 hover:text-dark-200">{data.topic.title}</Link>
                     <span className="mx-2 text-dark-600">/</span>
@@ -546,6 +589,16 @@ export default function Practice() {
                     </div>
                 </section>
 
+                {!isAuthenticated && answeredCount >= 3 && (
+                    <section className="progress-panel mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between" aria-label="Protect your progress">
+                        <div>
+                            <p className="font-semibold text-dark-50">You have answered {answeredCount} questions.</p>
+                            <p className="mt-1 text-sm text-dark-300">Your progress is saved on this device. Create a free account only if you want to protect it and continue on other devices.</p>
+                        </div>
+                        <Link to="/signup" state={{ from: { pathname: `/practice/${topicId}` } }} className="btn-secondary shrink-0">Save across devices</Link>
+                    </section>
+                )}
+
                 <div className="grid gap-6 xl:grid-cols-[minmax(0,1.15fr)_minmax(260px,0.85fr)]">
                     <div>
                         <QuestionRenderer
@@ -571,7 +624,7 @@ export default function Practice() {
                                     <ArrowRight className="h-4 w-4" />
                                 </button>
                             ) : (
-                                <Link to={`/track/${data.track.slug}`} className="btn-primary">
+                                <Link to={`/track/${data.track.slug}#topic-outline`} className="btn-primary">
                                     Finish
                                     <PlayCircle className="h-4 w-4" />
                                 </Link>

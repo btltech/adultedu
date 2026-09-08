@@ -237,7 +237,7 @@ export default function Review() {
                             No questions due for review right now. Come back later!
                         </p>
                         <div className="flex flex-wrap justify-center gap-3">
-                            <Link to="/tracks" className="btn-primary">
+                            <Link to="/tracks#pathway-finder" className="btn-primary">
                                 Continue Learning
                                 <ArrowRight className="h-4 w-4" />
                             </Link>
@@ -345,7 +345,7 @@ export default function Review() {
                                             <Link to={`/topic/${currentQuestion.topic.id}`} className="btn-secondary text-sm">
                                                 Review this topic
                                             </Link>
-                                            <Link to={`/track/${currentQuestion.track.slug}`} className="btn-ghost text-sm">
+                                            <Link to={`/track/${currentQuestion.track.slug}#topic-outline`} className="btn-ghost text-sm">
                                                 Back to pathway
                                             </Link>
                                         </div>

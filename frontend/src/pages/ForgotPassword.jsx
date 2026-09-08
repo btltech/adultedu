@@ -1,9 +1,10 @@
 import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Mail, ArrowLeft, ShieldCheck } from 'lucide-react'
 import { api } from '../lib/api'
 
 export default function ForgotPassword() {
+    const location = useLocation()
     const [email, setEmail] = useState('')
     const [submitted, setSubmitted] = useState(false)
     const [error, setError] = useState('')
@@ -64,7 +65,7 @@ export default function ForgotPassword() {
                                 </button>
                                 .
                             </p>
-                            <Link to="/login" className="btn-secondary w-full justify-center flex items-center gap-2">
+                            <Link to="/login" state={location.state} className="btn-secondary w-full justify-center flex items-center gap-2">
                                 <ArrowLeft className="h-4 w-4" />
                                 Back to login
                             </Link>
@@ -118,7 +119,7 @@ export default function ForgotPassword() {
                             </button>
 
                             <div className="text-center pt-2">
-                                <Link to="/login" className="text-sm text-dark-400 hover:text-dark-200 inline-flex items-center gap-1">
+                                <Link to="/login" state={location.state} className="text-sm text-dark-400 hover:text-dark-200 inline-flex items-center gap-1">
                                     <ArrowLeft className="h-3.5 w-3.5" />
                                     Back to login
                                 </Link>

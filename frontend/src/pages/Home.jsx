@@ -17,11 +17,11 @@ import {
 import { checkHealth, getTracks } from '../lib/api'
 import { formatLessonTime } from '../lib/studyTime'
 import { useAuth } from '../context/AuthContext'
+import { normalizeFrameworkSlug, normalizeTrackCategory } from '../lib/curriculumTaxonomy'
 
 const categoryConfig = {
     workplace: { icon: BriefcaseBusiness, label: 'Workplace Skills' },
     qual_prep: { icon: GraduationCap, label: 'Qualification Prep' },
-    qualifications: { icon: GraduationCap, label: 'GCSE Subjects' },
     tech: { icon: Code2, label: 'Tech Pathways' },
     he: { icon: BookOpenCheck, label: 'Higher Education' },
 }
@@ -33,7 +33,7 @@ const defaultTracks = [
 ]
 
 function TrackCard({ track }) {
-    const config = categoryConfig[track.category] || categoryConfig.workplace
+    const config = categoryConfig[normalizeTrackCategory(track.category)] || categoryConfig.workplace
     const Icon = config.icon
     const topicCount = typeof track.topics === 'number' ? track.topics : (track.topics?.length || 0)
     const lessonTime = formatLessonTime(track.estimatedMinutes)
@@ -63,7 +63,7 @@ function TrackCard({ track }) {
 
                 <div className="flex shrink-0 flex-wrap justify-end gap-1.5">
                     <span className={`badge ${track.isLive ? 'badge-primary' : 'badge-neutral'}`}>
-                        {track.framework}
+                        {normalizeFrameworkSlug(track.framework)}
                     </span>
                     {!track.isLive && <span className="badge badge-neutral">Soon</span>}
                 </div>
@@ -126,7 +126,7 @@ function Hero() {
         ? (user.needsOnboarding
             ? { to: '/start', label: 'Find your starting point' }
             : { to: '/dashboard', label: 'Continue learning' })
-        : { to: '/signup', label: 'Find your starting point' }
+        : { to: '/tracks#pathway-finder', label: 'Start learning' }
 
     return (
         <section className="relative overflow-hidden pt-14 sm:pt-18 lg:pt-20">
@@ -149,7 +149,7 @@ function Hero() {
                         <div className="mt-6 flex flex-wrap gap-2 text-xs font-medium text-dark-300">
                             <span className="inline-flex items-center gap-1.5 rounded-full border border-accent-500/25 bg-accent-500/10 px-3 py-1.5 text-accent-200">
                                 <ShieldCheck className="h-3.5 w-3.5" />
-                                Free public practice available
+                                No account needed
                             </span>
                             <span className="inline-flex items-center gap-1.5 rounded-full border border-dark-700 bg-dark-900/70 px-3 py-1.5">
                                 UK-aligned pathways
@@ -164,7 +164,7 @@ function Hero() {
                                 {primaryCta.label}
                                 <ArrowRight className="h-4 w-4" />
                             </Link>
-                            <Link to="/tracks" className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-dark-400 transition-colors hover:text-dark-100">
+                            <Link to="/tracks#pathway-finder" className="inline-flex items-center justify-center gap-2 px-5 py-3 text-sm font-medium text-dark-400 transition-colors hover:text-dark-100">
                                 Browse pathways
                                 <ArrowRight className="h-4 w-4" />
                             </Link>
@@ -190,8 +190,8 @@ function WhyDifferent({ liveTrackCount }) {
         },
         {
             icon: CheckCircle2,
-            title: 'Try before signing up',
-            description: 'The Life in the UK mock test is public, so learners can check the practice experience before creating an account.',
+            title: 'Learn before signing up',
+            description: 'Lessons and ordinary practice are open, and progress is saved on this device.',
         },
     ]
 
@@ -314,7 +314,7 @@ function TracksSection({ tracks, loading, failed }) {
                     </div>
 
                     {!loading && liveTracks.length <= featuredTracks.length && (
-                        <Link to="/tracks" className="btn-secondary shrink-0 self-start lg:self-auto">
+                        <Link to="/tracks#pathway-finder" className="btn-secondary shrink-0 self-start lg:self-auto">
                             Browse all pathways
                             <ArrowRight className="h-4 w-4" />
                         </Link>
@@ -337,7 +337,7 @@ function TracksSection({ tracks, loading, failed }) {
 
                         {liveTracks.length > featuredTracks.length && (
                             <div className="mt-8 flex justify-center">
-                                <Link to="/tracks" className="btn-primary">
+                                <Link to="/tracks#pathway-finder" className="btn-primary">
                                     View all pathways
                                     <ArrowRight className="h-4 w-4" />
                                 </Link>
@@ -433,7 +433,7 @@ function FinalCta() {
         ? (user.needsOnboarding
             ? { to: '/start', label: 'Find your starting point', description: 'Answer a few questions and let AdultEdu point you toward a pathway that fits your goal.' }
             : { to: '/dashboard', label: 'Continue learning', description: 'Pick up from your dashboard and keep moving through your current pathway.' })
-        : { to: '/signup', label: 'Find your starting point', description: 'Answer a few questions and let AdultEdu point you toward a pathway that fits your goal.' }
+        : { to: '/tracks', label: 'Start learning', description: 'Choose a pathway and begin now. An account is optional and can protect your progress later.' }
 
     return (
         <section className="section-padding pt-0">

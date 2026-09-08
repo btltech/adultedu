@@ -24,7 +24,7 @@ export default function NotFound() {
                         It may have moved, the link may be incomplete, or the lesson may no longer be part of a pathway. The quickest recovery is to return to the main pathways catalogue.
                     </p>
                     <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-                        <Link to="/tracks" className="btn-primary justify-center">
+                        <Link to="/tracks#pathway-finder" className="btn-primary justify-center">
                             <Compass className="h-4 w-4" />
                             Browse pathways
                         </Link>

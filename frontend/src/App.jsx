@@ -73,16 +73,8 @@ const router = createBrowserRouter(
                 <Route path="/track/:slug" element={<TrackDetail />} />
                 <Route path="/topic/:id" element={<Topic />} />
                 <Route path="/lesson/:id" element={<Lesson />} />
-                <Route path="/practice/:topicId" element={
-                    <ProtectedRoute>
-                        <Practice />
-                    </ProtectedRoute>
-                } />
-                <Route path="/progress" element={
-                    <ProtectedRoute>
-                        <Progress />
-                    </ProtectedRoute>
-                } />
+                <Route path="/practice/:topicId" element={<Practice />} />
+                <Route path="/progress" element={<Progress />} />
                 <Route path="/review" element={
                     <ProtectedRoute>
                         <Review />
