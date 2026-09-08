@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { ArrowRight, BookOpenCheck, Compass, ShieldCheck } from 'lucide-react'
 import { completeOnboarding } from '../lib/api'
 import { useAuth } from '../context/AuthContext'
+import { normaliseReturnLocation, returnLocationPath } from '../lib/navigation'
 
 export default function Signup() {
     const [displayName, setDisplayName] = useState('')
@@ -16,7 +17,9 @@ export default function Signup() {
     const location = useLocation()
     const navigate = useNavigate()
     const onboardingDraft = location.state?.onboardingDraft || null
-    const from = location.state?.from?.pathname || '/start'
+    const fromLocation = location.state?.from
+    const returnLocation = normaliseReturnLocation(fromLocation, '/start')
+    const from = returnLocationPath(returnLocation)
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -65,7 +68,7 @@ export default function Signup() {
                             },
                         })
                     } else {
-                        navigate(`/track/${selectedTrack?.slug || onboardingDraft.selectedTrackSlug}`, { replace: true })
+                        navigate(`/track/${selectedTrack?.slug || onboardingDraft.selectedTrackSlug}#topic-outline`, { replace: true })
                     }
 
                     return
@@ -81,7 +84,7 @@ export default function Signup() {
                 }
             }
 
-            navigate(from === '/login' || from === '/signup' ? '/start' : from, { replace: true })
+            navigate(from, { replace: true, state: returnLocation.state })
         } else {
             setLoading(false)
             setError(result.error || 'Signup failed')
@@ -96,9 +99,9 @@ export default function Signup() {
                         <Compass className="h-3.5 w-3.5" />
                         Start with direction
                     </span>
-                    <h1 className="mt-4 text-4xl font-bold text-dark-50">Create an account, then choose a realistic first pathway.</h1>
+                    <h1 className="mt-4 text-4xl font-bold text-dark-50">Protect the progress you have already made.</h1>
                     <p className="mt-4 max-w-xl text-base leading-8 text-dark-300">
-                        AdultEdu starts by asking what you need, how confident you feel, and how much time you have. The first route should feel manageable from day one.
+                        Learning is open without an account. Sign up when you want your device progress protected and available on your other devices.
                     </p>
                     <div className="mt-6 space-y-3">
                         <div className="editorial-subpanel p-4"><div className="flex gap-3"><ShieldCheck className="mt-0.5 h-5 w-5 text-primary-300" /><p className="text-sm text-dark-300">Progress, review, and recommendations are saved to your account.</p></div></div>
@@ -114,7 +117,7 @@ export default function Signup() {
                         </div>
                     </Link>
                     <h1 className="text-3xl font-bold text-dark-50 mb-2">Create your account</h1>
-                    <p className="text-dark-400">We will help you find the right starting route after sign-up.</p>
+                    <p className="text-dark-400">Create a free account to protect and sync your learning.</p>
                 </div>
 
                 {/* Form */}
@@ -202,7 +205,7 @@ export default function Signup() {
                                     Creating account...
                                 </span>
                             ) : (
-                                <span className="inline-flex items-center gap-2">Create account and start <ArrowRight className="h-4 w-4" /></span>
+                                <span className="inline-flex items-center gap-2">Create account and sync <ArrowRight className="h-4 w-4" /></span>
                             )}
                         </button>
 
@@ -221,7 +224,7 @@ export default function Signup() {
                     <div className="mt-6 text-center">
                         <p className="text-dark-400 text-sm">
                             Already have an account?{' '}
-                            <Link to="/login" className="text-primary-400 hover:text-primary-300 font-medium">
+                            <Link to="/login" state={location.state} className="text-primary-400 hover:text-primary-300 font-medium">
                                 Log in
                             </Link>
                         </p>

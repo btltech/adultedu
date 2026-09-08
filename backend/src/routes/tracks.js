@@ -5,6 +5,13 @@ import {
     getPublishedQuestionCountMap,
 } from '../lib/publishedQuestionCounts.js'
 import { cache } from '../lib/cache.js'
+import {
+    normalizeFrameworkSlug,
+    normalizeFrameworks,
+    normalizeTrackCategory,
+} from '../lib/curriculumTaxonomy.js'
+import { visibleTopicsForLearner } from '../lib/curriculumVisibility.js'
+import { optionalAuth } from '../middleware/auth.js'
 
 const router = Router()
 
@@ -32,7 +39,7 @@ const LEARNING_GOAL_CONFIG = {
 }
 
 function getLearningGoal(category) {
-    return LEARNING_GOAL_CONFIG[category] || {
+    return LEARNING_GOAL_CONFIG[normalizeTrackCategory(category)] || {
         key: 'structured-learning',
         label: 'Structured learning',
     }
@@ -75,25 +82,24 @@ function summarizeTrackLessonTime(topics) {
 }
 
 function formatTrack(track) {
-    const lessonSummary = summarizeTrackLessonTime(track.topics)
-    const learningGoal = getLearningGoal(track.category)
-    const frameworks = track.trackFrameworks.map((tf) => ({
-        slug: tf.framework.slug,
-        title: tf.framework.title,
-    }))
+    const visibleTopics = visibleTopicsForLearner(track.topics)
+    const lessonSummary = summarizeTrackLessonTime(visibleTopics)
+    const category = normalizeTrackCategory(track.category)
+    const learningGoal = getLearningGoal(category)
+    const frameworks = normalizeFrameworks(track.trackFrameworks)
 
     return {
         id: track.id,
         slug: track.slug,
         title: track.title,
         description: track.description,
-        category: track.category,
+        category,
         isLive: track.isLive,
         framework: frameworks[0]?.slug || null,
         frameworks,
         learningGoal,
-        topics: track.topics.map(({ id, title }) => ({ id, title })),
-        topicsCount: track.topics.length,
+        topics: visibleTopics.map(({ id, title }) => ({ id, title })),
+        topicsCount: visibleTopics.length,
         lessonCount: lessonSummary.lessonCount,
         questionCount: lessonSummary.questionCount,
         estimatedMinutes: lessonSummary.estimatedMinutes,
@@ -123,11 +129,11 @@ function matchesTrackFilters(track, filters) {
         return false
     }
 
-    if (filters.category && track.category !== filters.category) {
+    if (filters.category && normalizeTrackCategory(track.category) !== normalizeTrackCategory(filters.category)) {
         return false
     }
 
-    if (filters.framework && !frameworks.includes(filters.framework.toLowerCase())) {
+    if (filters.framework && !frameworks.includes(normalizeFrameworkSlug(filters.framework).toLowerCase())) {
         return false
     }
 
@@ -151,13 +157,13 @@ router.get('/tracks', async (req, res, next) => {
     try {
         const filters = {
             query: String(req.query.q || '').trim(),
-            category: String(req.query.category || '').trim(),
-            framework: String(req.query.framework || '').trim(),
+            category: normalizeTrackCategory(req.query.category),
+            framework: normalizeFrameworkSlug(req.query.framework),
             goal: String(req.query.goal || '').trim(),
             studyTime: String(req.query.studyTime || '').trim(),
         }
 
-        const cacheKey = `tracks:list:v1:${JSON.stringify(filters)}`
+        const cacheKey = `tracks:list:v3:${JSON.stringify(filters)}`
         const { value: formattedTracks } = await cache.getOrSetJson(cacheKey, async () => {
             const tracks = await prisma.track.findMany({
                 include: {
@@ -204,9 +210,10 @@ router.get('/tracks', async (req, res, next) => {
  * GET /api/tracks/:slug
  * Get a single track with topics
  */
-router.get('/tracks/:slug', async (req, res, next) => {
+router.get('/tracks/:slug', optionalAuth, async (req, res, next) => {
     try {
-        const cacheKey = `tracks:detail:v1:${req.params.slug}`
+        const includeEmptyTopics = req.user?.role === 'admin'
+        const cacheKey = `tracks:detail:v3:${includeEmptyTopics ? 'admin' : 'learner'}:${req.params.slug}`
         const cached = await cache.getJson(cacheKey)
         if (cached !== null) {
             return res.set('Cache-Control', TRACK_CACHE_HEADERS).json(cached)
@@ -246,18 +253,19 @@ router.get('/tracks/:slug', async (req, res, next) => {
         const topicsWithCounts = attachPublishedQuestionCounts(track.topics, questionCountMap)
         const hydratedTrack = {
             ...track,
-            topics: topicsWithCounts,
+            topics: includeEmptyTopics ? topicsWithCounts : visibleTopicsForLearner(topicsWithCounts),
         }
 
         const lessonSummary = summarizeTrackLessonTime(hydratedTrack.topics)
-        const learningGoal = getLearningGoal(hydratedTrack.category)
+        const category = normalizeTrackCategory(hydratedTrack.category)
+        const learningGoal = getLearningGoal(category)
 
         const formatted = {
             id: hydratedTrack.id,
             slug: hydratedTrack.slug,
             title: hydratedTrack.title,
             description: hydratedTrack.description,
-            category: hydratedTrack.category,
+            category,
             isLive: hydratedTrack.isLive,
             learningGoal,
             lessonCount: lessonSummary.lessonCount,
@@ -268,10 +276,7 @@ router.get('/tracks/:slug', async (req, res, next) => {
             expectedStudyMinutes: lessonSummary.expectedStudyMinutes,
             expectedStudyHours: lessonSummary.expectedStudyHours,
             expectedStudyBand: lessonSummary.expectedStudyBand,
-            frameworks: hydratedTrack.trackFrameworks.map(tf => ({
-                slug: tf.framework.slug,
-                title: tf.framework.title,
-            })),
+            frameworks: normalizeFrameworks(hydratedTrack.trackFrameworks),
             topics: hydratedTrack.topics.map(topic => ({
                 id: topic.id,
                 title: topic.title,

@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const LAST_UPDATED = '12 April 2026'
+const LAST_UPDATED = '21 August 2026'
 const CONTACT_EMAIL = 'privacy@adult-edu.org'
 
 function Section({ title, children }) {
@@ -52,6 +52,10 @@ export default function PrivacyPolicy() {
                         <li className="flex gap-3">
                             <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-300" />
                             <span><strong className="text-dark-200">Learning activity:</strong> course enrolments, question attempts, correct and incorrect answers, time spent, and progress milestones.</span>
+                        </li>
+                        <li className="flex gap-3">
+                            <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-300" />
+                            <span><strong className="text-dark-200">Guest learning data:</strong> lesson completion, practice attempts, bookmarks, preferences and recent position are stored in IndexedDB in your browser. The random local learner ID contains no name, email, IP address or fingerprint data. This data reaches our account database only if you sign in or create an account to sync it.</span>
                         </li>
                         <li className="flex gap-3">
                             <span className="mt-2.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent-300" />
@@ -136,6 +140,9 @@ export default function PrivacyPolicy() {
                         We do not use tracking, analytics, or advertising cookies. See our{' '}
                         <Link to="/cookies" className="text-primary-400 hover:text-primary-300">Cookie Policy</Link> for
                         full details.
+                    </p>
+                    <p>
+                        IndexedDB is browser storage rather than a cookie. AdultEdu uses it to provide the learning service you request as a guest. You can export your learning data from My Progress or remove it using your browser's site-data controls.
                     </p>
                 </Section>
 

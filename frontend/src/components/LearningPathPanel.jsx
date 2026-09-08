@@ -25,11 +25,12 @@ export default function LearningPathPanel({
                         const isCurrent = item.id === currentId
                         const isCompleted = completedSet.has(item.id)
                         const href = getHref?.(item)
+                        const ItemWrapper = href ? Link : 'div'
 
                         return (
-                            <Link
+                            <ItemWrapper
                                 key={item.id}
-                                to={href || '#'}
+                                {...(href ? { to: href } : {})}
                                 aria-current={isCurrent ? 'step' : undefined}
                                 className={`block rounded-2xl border p-4 transition-all ${isCurrent
                                     ? 'border-primary-500/60 bg-primary-500/10'
@@ -73,7 +74,7 @@ export default function LearningPathPanel({
                                         )}
                                     </div>
                                 </div>
-                            </Link>
+                            </ItemWrapper>
                         )
                     })}
                 </div>

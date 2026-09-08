@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { SlidersHorizontal } from 'lucide-react'
+import toast from 'react-hot-toast'
 import { useAuth } from '../context/AuthContext'
 import StreakCounter from './gamification/StreakCounter'
 import DisplayPreferences from './DisplayPreferences'
+import { authReturnState } from '../lib/navigation'
 
 const MenuIcon = () => (
     <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -22,11 +24,29 @@ export default function Header() {
     const location = useLocation()
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
     const [displayOpen, setDisplayOpen] = useState(false)
+    const [loggingOut, setLoggingOut] = useState(false)
+    const loginState = authReturnState(location)
+
+    const handleLogout = async () => {
+        if (loggingOut) return
+        setLoggingOut(true)
+        const result = await logout()
+        setLoggingOut(false)
+        if (!result?.success) {
+            toast.error('Still signed in: your device progress could not be safely synced. Please try again.')
+        }
+        return result
+    }
 
     // Better active state detection for nested routes
     const isActive = (path) => {
         if (path === '/') return location.pathname === '/'
-        if (path === '/tracks') return location.pathname === '/tracks' || location.pathname.startsWith('/track/')
+        if (path === '/tracks') return location.pathname === '/tracks'
+            || location.pathname.startsWith('/track/')
+            || location.pathname.startsWith('/topic/')
+            || location.pathname.startsWith('/lesson/')
+            || location.pathname.startsWith('/practice/')
+            || location.pathname === '/life-in-the-uk-test'
         if (path === '/progress') return location.pathname === '/progress'
         if (path === '/start') return location.pathname === '/start'
         if (path === '/admin') return location.pathname.startsWith('/admin')
@@ -34,13 +54,13 @@ export default function Header() {
     }
 
     const navLinks = [
-        { to: '/tracks', label: 'Pathways' },
+        { to: '/tracks#pathway-finder', activePath: '/tracks', label: 'Learn' },
+        { to: '/progress', label: 'My Progress' },
     ]
 
     const authNavLinks = isAuthenticated ? [
         ...(user?.needsOnboarding ? [{ to: '/start', label: 'Start Here' }] : []),
         { to: '/dashboard', label: 'Dashboard' },
-        { to: '/progress', label: 'My Progress' },
         { to: '/review', label: 'Review' },
     ] : []
 
@@ -68,8 +88,8 @@ export default function Header() {
                             <Link
                                 key={link.to}
                                 to={link.to}
-                                aria-current={isActive(link.to) ? 'page' : undefined}
-                                className={`text-sm font-medium transition-colors ${isActive(link.to) ? 'text-white' : 'text-dark-400 hover:text-dark-200'
+                                aria-current={isActive(link.activePath || link.to) ? 'page' : undefined}
+                                className={`text-sm font-medium transition-colors ${isActive(link.activePath || link.to) ? 'text-white' : 'text-dark-400 hover:text-dark-200'
                                     }`}
                             >
                                 {link.label}
@@ -111,25 +131,27 @@ export default function Header() {
                                 </div>
                                 <button
                                     type="button"
-                                    onClick={logout}
+                                    onClick={handleLogout}
+                                    disabled={loggingOut}
                                     className="hidden md:block text-sm font-medium text-dark-300 hover:text-dark-100 transition-colors px-2"
                                 >
-                                    Log out
+                                    {loggingOut ? 'Saving…' : 'Log out'}
                                 </button>
                             </>
                         ) : (
                             <>
                                 <Link
                                     to="/login"
+                                    state={loginState}
                                     className="hidden md:block text-sm font-medium text-dark-300 hover:text-dark-100 transition-colors px-2"
                                 >
                                     Log in
                                 </Link>
                                 <Link
-                                    to="/signup"
+                                    to="/tracks#pathway-finder"
                                     className="hidden md:block btn-primary text-sm px-4 py-1.5"
                                 >
-                                    Start here
+                                    Start learning
                                 </Link>
                             </>
                         )}
@@ -172,7 +194,7 @@ export default function Header() {
                                 key={link.to}
                                 to={link.to}
                                 onClick={() => setMobileMenuOpen(false)}
-                                className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(link.to)
+                                className={`block px-4 py-2 rounded-lg text-sm font-medium transition-colors ${isActive(link.activePath || link.to)
                                     ? 'bg-primary-500/20 text-primary-400'
                                     : 'text-dark-300 hover:bg-dark-800 hover:text-dark-100'
                                     }`}
@@ -211,29 +233,31 @@ export default function Header() {
                             {isAuthenticated ? (
                                 <button
                                     type="button"
-                                    onClick={() => {
-                                        logout()
-                                        setMobileMenuOpen(false)
+                                    onClick={async () => {
+                                        const result = await handleLogout()
+                                        if (result?.success) setMobileMenuOpen(false)
                                     }}
+                                    disabled={loggingOut}
                                     className="block w-full text-left px-4 py-2 text-sm font-medium text-red-400 hover:bg-dark-800 rounded-lg transition-colors"
                                 >
-                                    Log out
+                                    {loggingOut ? 'Saving progress…' : 'Log out'}
                                 </button>
                             ) : (
                                 <>
                                     <Link
                                         to="/login"
+                                        state={loginState}
                                         onClick={() => setMobileMenuOpen(false)}
                                         className="block px-4 py-2 text-sm font-medium text-dark-300 hover:bg-dark-800 hover:text-dark-100 rounded-lg transition-colors"
                                     >
                                         Log in
                                     </Link>
                                     <Link
-                                        to="/signup"
+                                        to="/tracks#pathway-finder"
                                         onClick={() => setMobileMenuOpen(false)}
                                         className="block mx-4 text-center btn-primary text-sm px-4 py-2"
                                     >
-                                        Sign up
+                                        Start learning
                                     </Link>
                                 </>
                             )}

@@ -110,7 +110,7 @@ export default function About() {
                 </section>
 
                 <div className="flex flex-col sm:flex-row gap-4">
-                    <Link to="/tracks" className="btn-primary">Browse pathways</Link>
+                    <Link to="/tracks#pathway-finder" className="btn-primary">Browse pathways</Link>
                     <Link to="/contact" className="btn-secondary">Contact us</Link>
                 </div>
             </div>

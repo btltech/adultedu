@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import {
     ArrowRight,
@@ -24,6 +24,7 @@ import { formatLessonTime } from '../lib/studyTime'
 import { useAuth } from '../context/AuthContext'
 import DiagnosticModal from '../components/diagnostic/DiagnosticModal'
 import { getPathwayGuidance } from '../lib/pathwayGuidance'
+import { normalizeFrameworkSlug } from '../lib/curriculumTaxonomy'
 
 const GOAL_OPTIONS = [
     {
@@ -141,7 +142,7 @@ function PathwayCard({ pathway, featured = false, current = false, onChoose, onD
     if (!pathway) return null
 
     const guidance = getPathwayGuidance(pathway)
-    const primaryFramework = pathway.framework || pathway.frameworks?.[0]?.slug || null
+    const primaryFramework = normalizeFrameworkSlug(pathway.framework || pathway.frameworks?.[0]?.slug) || null
 
     return (
         <div className={`editorial-panel p-6 ${featured ? 'border-primary-500/30 bg-primary-500/8' : ''}`}>
@@ -257,6 +258,14 @@ export default function StartingPoint() {
     const [referralSource, setReferralSource] = useState('self')
     const [cohortTag, setCohortTag] = useState('')
     const [organizationTag, setOrganizationTag] = useState('')
+    const recommendationRef = useRef(null)
+    const revealRecommendationRef = useRef(false)
+
+    useEffect(() => {
+        if (!recommendation || !revealRecommendationRef.current) return
+        revealRecommendationRef.current = false
+        recommendationRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, [recommendation])
 
     useEffect(() => {
         if (!onboardingDraft) return
@@ -370,6 +379,7 @@ export default function StartingPoint() {
                 confidenceBefore,
                 weeklyTime,
             })
+            revealRecommendationRef.current = true
             setRecommendation(result)
         } catch (err) {
             setError(err.message || 'We could not generate a recommendation right now.')
@@ -382,6 +392,11 @@ export default function StartingPoint() {
         if (!recommendation?.recommendedPathway && !pathway) return
 
         if (!user) {
+            if (nextStepChoice === 'open-pathway') {
+                navigate(`/track/${pathway.slug}#topic-outline`)
+                return
+            }
+
             navigate('/signup', {
                 state: {
                     from: { pathname: '/start' },
@@ -423,7 +438,7 @@ export default function StartingPoint() {
             if (nextStepChoice === 'start-diagnostic') {
                 setDiagnosticTrack({ slug: pathway.slug, title: pathway.title })
             } else {
-                navigate(`/track/${pathway.slug}`)
+                navigate(`/track/${pathway.slug}#topic-outline`)
             }
         } catch (err) {
             setError(err.message || 'We could not save this starting route right now.')
@@ -492,7 +507,7 @@ export default function StartingPoint() {
                                 </p>
                             </div>
                             <div className="flex flex-col gap-3 sm:flex-row">
-                                <Link to={`/track/${savedOnboarding.selectedTrack.slug}`} className="btn-secondary">
+                                <Link to={`/track/${savedOnboarding.selectedTrack.slug}#topic-outline`} className="btn-secondary">
                                     Open saved pathway
                                 </Link>
                                 <button type="button" onClick={handleRecommend} className="btn-ghost">
@@ -672,7 +687,7 @@ export default function StartingPoint() {
                 </div>
 
                 {recommendation && (
-                    <div className="mt-8 space-y-6">
+                    <div ref={recommendationRef} className="mt-8 scroll-mt-24 space-y-6" aria-live="polite">
                         <div className="mb-2">
                             <span className="section-eyebrow">
                                 <Compass className="h-3.5 w-3.5" />

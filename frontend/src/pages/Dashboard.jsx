@@ -188,7 +188,7 @@ export default function Dashboard() {
                         <p className="mx-auto mt-3 max-w-lg text-sm leading-7 text-dark-300">
                             Start a pathway or answer a practice set and this page will turn into your personal learning record.
                         </p>
-                        <Link to="/tracks" className="btn-primary mt-6">
+                        <Link to="/tracks#pathway-finder" className="btn-primary mt-6">
                             Browse pathways
                             <ArrowRight className="h-4 w-4" />
                         </Link>
@@ -247,7 +247,7 @@ export default function Dashboard() {
                         </div>
                         <div className="flex flex-col gap-3 sm:flex-row">
                             <Link to="/review" className="btn-primary justify-center">Review due cards</Link>
-                            <Link to="/tracks" className="btn-secondary justify-center">Continue learning</Link>
+                            <Link to="/tracks#pathway-finder" className="btn-secondary justify-center">Continue learning</Link>
                             <Link to="/progress" className="btn-ghost justify-center">View full progress</Link>
                         </div>
                     </div>

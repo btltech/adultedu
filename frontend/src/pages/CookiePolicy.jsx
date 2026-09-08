@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 
-const LAST_UPDATED = '12 April 2026'
+const LAST_UPDATED = '21 August 2026'
 const CONTACT_EMAIL = 'hello@adult-edu.org'
 
 function Section({ title, children }) {
@@ -83,6 +83,15 @@ export default function CookiePolicy() {
                             </li>
                         ))}
                     </ul>
+                </Section>
+
+                <Section title="Local learning storage">
+                    <p>
+                        Guest lesson progress, practice attempts, bookmarks and recent position are stored in IndexedDB on your device. IndexedDB is not a cookie and is not used for advertising or cross-site tracking. Its random local learner ID does not contain your name, email address, IP address or fingerprint data.
+                    </p>
+                    <p>
+                        You can export a backup from My Progress. Clearing AdultEdu site data in your browser removes local guest progress unless you have synced it to an account or exported a backup first.
+                    </p>
                 </Section>
 
                 <Section title="Do I need to give consent?">

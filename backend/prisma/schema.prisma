@@ -53,8 +53,24 @@ model User {
   dailyChallengeAttempts  DailyChallengeAttempt[]
   analyticsEvents         AnalyticsEvent[]
   questionReports         QuestionReport[]
+  learnerState            LearnerState?
 
   @@map("users")
+}
+
+// Local-first learner state that has no existing normalized server model.
+// Question attempts remain in Attempt so existing progress calculations and
+// historical records continue to work unchanged.
+model LearnerState {
+  userId        String   @id @map("user_id")
+  schemaVersion Int      @default(1) @map("schema_version")
+  data          String   @db.Text
+  createdAt     DateTime @default(now()) @map("created_at")
+  updatedAt     DateTime @updatedAt @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("learner_states")
 }
 
 // ============================================

@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Eye, Type, X } from 'lucide-react'
+import { cloudLearnerProgressStore, localLearnerProgressStore } from '../lib/learnerProgress'
+import { useAuth } from '../context/AuthContext'
 
 const TEXT_SIZE_KEY = 'adultedu:text-size'
 const CONTRAST_KEY = 'adultedu:contrast'
@@ -32,22 +34,35 @@ function setStoredPreference(key, value) {
 // Controlled panel — trigger and positioning are owned by the parent (Header).
 // Pass isOpen + onClose from outside.
 export default function DisplayPreferences({ isOpen, onClose }) {
+    const { isAuthenticated } = useAuth()
     const [textSize, setTextSize] = useState('default')
     const [contrast, setContrast] = useState('default')
+    const [preferencesLoaded, setPreferencesLoaded] = useState(false)
 
     useEffect(() => {
-        const savedTextSize = getStoredPreference(TEXT_SIZE_KEY, 'default')
-        const savedContrast = getStoredPreference(CONTRAST_KEY, 'default')
-        setTextSize(savedTextSize)
-        setContrast(savedContrast)
-        applyDisplayPreferences(savedTextSize, savedContrast)
+        let cancelled = false
+        async function restorePreferences() {
+            const saved = await localLearnerProgressStore.getPreferences()
+            const savedTextSize = saved.textSize || getStoredPreference(TEXT_SIZE_KEY, 'default')
+            const savedContrast = saved.contrast || getStoredPreference(CONTRAST_KEY, 'default')
+            if (cancelled) return
+            setTextSize(savedTextSize)
+            setContrast(savedContrast)
+            applyDisplayPreferences(savedTextSize, savedContrast)
+            setPreferencesLoaded(true)
+        }
+        restorePreferences().catch(() => {})
+        return () => { cancelled = true }
     }, [])
 
     useEffect(() => {
+        if (!preferencesLoaded) return
         applyDisplayPreferences(textSize, contrast)
         setStoredPreference(TEXT_SIZE_KEY, textSize)
         setStoredPreference(CONTRAST_KEY, contrast)
-    }, [contrast, textSize])
+        localLearnerProgressStore.savePreferences({ textSize, contrast }).catch(() => {})
+        if (isAuthenticated) cloudLearnerProgressStore.savePreferences({ textSize, contrast }).catch(() => {})
+    }, [contrast, isAuthenticated, preferencesLoaded, textSize])
 
     useEffect(() => {
         if (!isOpen) return undefined

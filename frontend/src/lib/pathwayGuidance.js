@@ -92,6 +92,10 @@ const CATEGORY_GUIDANCE = {
     },
 }
 
+// Older GCSE expansion records used `qualifications`; keep their guidance
+// correct until every environment has completed the taxonomy migration.
+CATEGORY_GUIDANCE.qualifications = CATEGORY_GUIDANCE.qual_prep
+
 const PATHWAY_OVERRIDES = {
     'essential-digital-skills': {
         audience: 'Adults with low or uneven digital confidence who need a practical starting point for life, services, and work.',

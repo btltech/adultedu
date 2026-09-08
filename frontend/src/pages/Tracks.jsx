@@ -4,28 +4,38 @@ import { ArrowRight, BookOpenCheck, BriefcaseBusiness, CheckCircle2, Clock3, Cod
 import { getTracks } from '../lib/api'
 import { averagePublishedLessonMinutes, formatLessonTime } from '../lib/studyTime'
 import { TrackSkeleton } from '../components/Skeleton'
+import { normalizeFrameworkSlug, normalizeTrackCategory } from '../lib/curriculumTaxonomy'
 
 const categoryConfig = {
     workplace: { icon: BriefcaseBusiness, label: 'Workplace Skills' },
     qual_prep: { icon: GraduationCap, label: 'Qualification Prep' },
-    qualifications: { icon: GraduationCap, label: 'GCSE Subjects' },
     tech: { icon: Code2, label: 'Tech Pathways' },
     he: { icon: BookOpenCheck, label: 'Higher Education' },
 }
 
 const starterSlugs = ['essential-digital-skills', 'life-in-the-uk-test', 'gcse-maths', 'python-foundations']
 
-const categoryOrder = ['workplace', 'qual_prep', 'qualifications', 'tech', 'he']
+const categoryOrder = ['workplace', 'qual_prep', 'tech', 'he']
+
+function categoryFromSearch(searchParams) {
+    const value = searchParams.get('category') || 'all'
+    return value === 'all' ? value : normalizeTrackCategory(value)
+}
+
+function frameworkFromSearch(searchParams) {
+    const value = searchParams.get('framework') || 'all'
+    return value === 'all' ? value : normalizeFrameworkSlug(value)
+}
 
 function TrackCard({ track }) {
-    const config = categoryConfig[track.category] || categoryConfig.workplace
+    const config = categoryConfig[normalizeTrackCategory(track.category)] || categoryConfig.workplace
     const Icon = config.icon
     const topicCount = typeof track.topics === 'number' ? track.topics : (track.topics?.length || 0)
     const lessonTime = formatLessonTime(track.estimatedMinutes)
     const expectedStudyTime = formatLessonTime(track.expectedStudyMinutes)
 
     const CardWrapper = track.isLive ? Link : 'div'
-    const cardProps = track.isLive ? { to: `/track/${track.slug}` } : {}
+    const cardProps = track.isLive ? { to: `/track/${track.slug}#topic-outline` } : {}
 
     return (
         <CardWrapper
@@ -48,7 +58,7 @@ function TrackCard({ track }) {
                 </div>
                 <div className="flex shrink-0 flex-wrap justify-end gap-1.5">
                     <span className={`badge ${track.isLive ? 'badge-primary' : 'badge-neutral'}`}>
-                        {track.framework}
+                        {normalizeFrameworkSlug(track.framework)}
                     </span>
                     {!track.isLive && (
                         <span className="badge badge-neutral">Coming Soon</span>
@@ -89,11 +99,11 @@ function TrackCard({ track }) {
 function StarterPathway({ track }) {
     if (!track) return null
 
-    const config = categoryConfig[track.category] || categoryConfig.workplace
+    const config = categoryConfig[normalizeTrackCategory(track.category)] || categoryConfig.workplace
     const Icon = config.icon
 
     return (
-        <Link to={`/track/${track.slug}`} className="feature-panel group block p-5">
+        <Link to={`/track/${track.slug}#topic-outline`} className="feature-panel group block p-5">
             <div className="flex items-start gap-3">
                 <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-primary-500/12 text-primary-300">
                     <Icon className="h-5 w-5" />
@@ -125,20 +135,20 @@ function SelectFilter({ label, value, onChange, options }) {
 }
 
 export default function Tracks() {
-    const [searchParams] = useSearchParams()
+    const [searchParams, setSearchParams] = useSearchParams()
     const [tracks, setTracks] = useState([])
     const [loading, setLoading] = useState(true)
     const [failed, setFailed] = useState(false)
-    const [categoryFilter, setCategoryFilter] = useState(searchParams.get('category') || 'all')
-    const [frameworkFilter, setFrameworkFilter] = useState(searchParams.get('framework') || 'all')
+    const [categoryFilter, setCategoryFilter] = useState(categoryFromSearch(searchParams))
+    const [frameworkFilter, setFrameworkFilter] = useState(frameworkFromSearch(searchParams))
     const [goalFilter, setGoalFilter] = useState(searchParams.get('goal') || 'all')
     const [studyTimeFilter, setStudyTimeFilter] = useState(searchParams.get('studyTime') || 'all')
     const [searchTerm, setSearchTerm] = useState(searchParams.get('q') || searchParams.get('search') || '')
     const deferredSearchTerm = useDeferredValue(searchTerm)
 
     useEffect(() => {
-        setCategoryFilter(searchParams.get('category') || 'all')
-        setFrameworkFilter(searchParams.get('framework') || 'all')
+        setCategoryFilter(categoryFromSearch(searchParams))
+        setFrameworkFilter(frameworkFromSearch(searchParams))
         setGoalFilter(searchParams.get('goal') || 'all')
         setStudyTimeFilter(searchParams.get('studyTime') || 'all')
         setSearchTerm(searchParams.get('q') || searchParams.get('search') || '')
@@ -165,7 +175,6 @@ export default function Tracks() {
         { key: 'all', label: 'All Pathways' },
         { key: 'workplace', label: 'Workplace' },
         { key: 'qual_prep', label: 'Qualification Prep' },
-        { key: 'qualifications', label: 'GCSE Subjects' },
         { key: 'tech', label: 'Tech' },
         { key: 'he', label: 'Higher Education' },
     ]
@@ -190,7 +199,9 @@ export default function Tracks() {
 
             frameworks.forEach((framework) => {
                 if (!framework?.slug) return
-                unique.set(framework.slug, framework.title || framework.slug)
+                const slug = normalizeFrameworkSlug(framework.slug)
+                if (!slug || unique.has(slug)) return
+                unique.set(slug, framework.title || slug)
             })
         })
 
@@ -227,10 +238,12 @@ export default function Tracks() {
             ].join(' ').toLowerCase()
 
             if (query && !haystack.includes(query)) return false
-            if (categoryFilter !== 'all' && track.category !== categoryFilter) return false
+            if (categoryFilter !== 'all' && normalizeTrackCategory(track.category) !== normalizeTrackCategory(categoryFilter)) return false
             if (frameworkFilter !== 'all') {
-                const frameworkSlugs = Array.isArray(track.frameworks) ? track.frameworks.map((framework) => framework.slug) : [track.framework]
-                if (!frameworkSlugs.includes(frameworkFilter)) return false
+                const frameworkSlugs = Array.isArray(track.frameworks)
+                    ? track.frameworks.map((framework) => normalizeFrameworkSlug(framework.slug))
+                    : [normalizeFrameworkSlug(track.framework)]
+                if (!frameworkSlugs.includes(normalizeFrameworkSlug(frameworkFilter))) return false
             }
             if (goalFilter !== 'all' && track.learningGoal?.key !== goalFilter) return false
             if (studyTimeFilter !== 'all' && track.expectedStudyBand !== studyTimeFilter) return false
@@ -250,7 +263,7 @@ export default function Tracks() {
             key: categoryKey,
             ...categoryConfig[categoryKey],
             tracks: liveTracks
-                .filter((track) => track.category === categoryKey)
+                .filter((track) => normalizeTrackCategory(track.category) === categoryKey)
                 .sort((left, right) => left.title.localeCompare(right.title)),
         }))
         .filter((group) => group.tracks.length > 0)
@@ -267,12 +280,22 @@ export default function Tracks() {
         || studyTimeFilter !== 'all'
         || searchTerm.trim().length > 0
 
+    const updateFilter = (key, value, setter) => {
+        setter(value)
+        const next = new URLSearchParams(searchParams)
+        next.delete('search')
+        if (!value || value === 'all') next.delete(key)
+        else next.set(key, value)
+        setSearchParams(next, { replace: true })
+    }
+
     const clearFilters = () => {
         setCategoryFilter('all')
         setFrameworkFilter('all')
         setGoalFilter('all')
         setStudyTimeFilter('all')
         setSearchTerm('')
+        setSearchParams({}, { replace: true })
     }
 
     return (
@@ -343,7 +366,7 @@ export default function Tracks() {
                 {/* Filters over a catalogue we failed to load would just report
                     "0 pathways shown" next to the error panel. */}
                 {!failed && (
-                <section className="editorial-panel mb-8 p-5 sm:p-6">
+                <section id="pathway-finder" className="editorial-panel mb-8 scroll-mt-24 p-5 sm:p-6">
                     <div className="flex flex-wrap items-center justify-between gap-3">
                         <div className="flex items-center gap-2 text-dark-100">
                             <SlidersHorizontal className="h-4 w-4 text-accent-300" />
@@ -365,7 +388,7 @@ export default function Tracks() {
                                 <input
                                     type="search"
                                     value={searchTerm}
-                                    onChange={(event) => setSearchTerm(event.target.value)}
+                                    onChange={(event) => updateFilter('q', event.target.value, setSearchTerm)}
                                     placeholder="Search by subject, topic, or framework"
                                     aria-label="Search pathways"
                                     className="w-full rounded-2xl border border-dark-700 bg-dark-900/80 py-3 pl-11 pr-4 text-sm text-dark-100 outline-none transition-all placeholder:text-dark-500 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20"
@@ -373,13 +396,14 @@ export default function Tracks() {
                             </span>
                         </label>
 
-                        <SelectFilter label="Learning goal" value={goalFilter} onChange={setGoalFilter} options={goalOptions} />
-                        <SelectFilter label="Framework" value={frameworkFilter} onChange={setFrameworkFilter} options={frameworkOptions} />
-                        <SelectFilter label="Study time" value={studyTimeFilter} onChange={setStudyTimeFilter} options={studyTimeOptions} />
+                        <SelectFilter label="Learning goal" value={goalFilter} onChange={(value) => updateFilter('goal', value, setGoalFilter)} options={goalOptions} />
+                        <SelectFilter label="Framework" value={frameworkFilter} onChange={(value) => updateFilter('framework', value, setFrameworkFilter)} options={frameworkOptions} />
+                        <SelectFilter label="Study time" value={studyTimeFilter} onChange={(value) => updateFilter('studyTime', value, setStudyTimeFilter)} options={studyTimeOptions} />
 
-                        <div className="rounded-2xl border border-dark-800/80 bg-dark-900/60 px-4 py-3 text-sm text-dark-300">
-                            <span className="font-semibold text-dark-100">{filteredTracks.length}</span> pathway{filteredTracks.length === 1 ? '' : 's'} shown
-                        </div>
+                        <a href="#pathway-results" className="btn-secondary justify-center px-4 py-3 text-sm">
+                            View {filteredTracks.length} pathway{filteredTracks.length === 1 ? '' : 's'}
+                            <ArrowRight className="h-4 w-4" />
+                        </a>
                     </div>
 
                     <div className="mt-5">
@@ -389,7 +413,7 @@ export default function Tracks() {
                                 <button
                                     key={category.key}
                                     type="button"
-                                    onClick={() => setCategoryFilter(category.key)}
+                                    onClick={() => updateFilter('category', category.key, setCategoryFilter)}
                                     className={`rounded-full px-4 py-2 text-sm font-medium transition-all ${categoryFilter === category.key
                                         ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/20'
                                         : 'border border-dark-700 bg-dark-900/70 text-dark-300 hover:border-dark-500 hover:text-dark-100'
@@ -410,6 +434,7 @@ export default function Tracks() {
                 </section>
                 )}
 
+                <div id="pathway-results" className="scroll-mt-24">
                 {loading ? (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
                         {[1, 2, 3, 4, 5, 6].map(i => (
@@ -492,6 +517,7 @@ export default function Tracks() {
                         )}
                     </>
                 )}
+                </div>
             </div>
         </div>
     )

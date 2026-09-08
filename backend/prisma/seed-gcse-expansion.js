@@ -23,10 +23,10 @@ async function seedGCSEExpansion() {
 
     // Create or get the GCSE framework
     const gcseFramework = await prisma.framework.upsert({
-        where: { slug: 'gcse' },
-        update: {},
+        where: { slug: 'GCSE' },
+        update: { title: 'GCSE' },
         create: {
-            slug: 'gcse',
+            slug: 'GCSE',
             title: 'GCSE',
             description: 'General Certificate of Secondary Education',
         },
@@ -37,12 +37,12 @@ async function seedGCSEExpansion() {
     // ============================================
     const gcseEnglishLang = await prisma.track.upsert({
         where: { slug: 'gcse-english-language' },
-        update: {},
+        update: { category: 'qual_prep' },
         create: {
             slug: 'gcse-english-language',
             title: 'GCSE English Language',
             description: 'Develop reading comprehension, writing skills, and language analysis for GCSE English Language.',
-            category: 'qualifications',
+            category: 'qual_prep',
             isLive: true,
             
         },
@@ -84,7 +84,7 @@ async function seedGCSEExpansion() {
             slug: 'gcse-english-literature',
             title: 'GCSE English Literature',
             description: 'Study poetry, prose, and drama texts for GCSE English Literature.',
-            category: 'qualifications',
+            category: 'qual_prep',
             isLive: true,
             
         },
@@ -124,7 +124,7 @@ async function seedGCSEExpansion() {
             slug: 'gcse-biology',
             title: 'GCSE Biology',
             description: 'Study cells, organisms, genetics, and ecology for GCSE Biology.',
-            category: 'qualifications',
+            category: 'qual_prep',
             isLive: true,
             
         },
@@ -166,7 +166,7 @@ async function seedGCSEExpansion() {
             slug: 'gcse-chemistry',
             title: 'GCSE Chemistry',
             description: 'Study atomic structure, reactions, and materials for GCSE Chemistry.',
-            category: 'qualifications',
+            category: 'qual_prep',
             isLive: true,
             
         },
@@ -209,7 +209,7 @@ async function seedGCSEExpansion() {
             slug: 'gcse-physics',
             title: 'GCSE Physics',
             description: 'Study energy, forces, waves, and electricity for GCSE Physics.',
-            category: 'qualifications',
+            category: 'qual_prep',
             isLive: true,
             
         },
@@ -252,7 +252,7 @@ async function seedGCSEExpansion() {
             slug: 'gcse-history',
             title: 'GCSE History',
             description: 'Study key periods and events in British and world history.',
-            category: 'qualifications',
+            category: 'qual_prep',
             isLive: true,
             
         },
@@ -293,7 +293,7 @@ async function seedGCSEExpansion() {
             slug: 'gcse-geography',
             title: 'GCSE Geography',
             description: 'Study physical and human geography including climate, cities, and development.',
-            category: 'qualifications',
+            category: 'qual_prep',
             isLive: true,
             
         },
@@ -327,7 +327,7 @@ async function seedGCSEExpansion() {
     console.log(`✓ GCSE Geography: ${geographyTopics.length} topics`)
 
     // Summary
-    const trackCount = await prisma.track.count({ where: { category: 'qualifications' } })
+    const trackCount = await prisma.track.count({ where: { slug: { startsWith: 'gcse-' } } })
     const topicCount = await prisma.topic.count()
 
     console.log('\n✅ GCSE expansion complete!')

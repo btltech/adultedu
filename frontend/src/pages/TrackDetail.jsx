@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useParams, Link, useNavigate } from 'react-router-dom'
+import { useParams, Link, useLocation, useNavigate } from 'react-router-dom'
 import { ArrowRight, Award, BookOpenCheck, CheckCircle2, Clock3, Layers3, Lock, PlayCircle, ShieldCheck, Target } from 'lucide-react'
 import { getTrack, getProgressDetail, recordOnboardingOutcome, getUserMessage } from '../lib/api'
 import NotFound from './NotFound'
@@ -9,6 +9,7 @@ import DiagnosticModal from '../components/diagnostic/DiagnosticModal'
 import { getPathwayGuidance } from '../lib/pathwayGuidance'
 import { usePageSeo } from '../components/SEO'
 import { trackSeoTags } from '../lib/seo/meta'
+import { localLearnerProgressStore } from '../lib/learnerProgress'
 
 function getNextStepValue(nextStep) {
     if (nextStep.slug) return nextStep.slug
@@ -124,9 +125,11 @@ export default function TrackDetail() {
     const { slug } = useParams()
     const { isAuthenticated, user, checkAuth } = useAuth()
     const navigate = useNavigate()
+    const location = useLocation()
 
     const [track, setTrack] = useState(null)
     const [progressData, setProgressData] = useState(null)
+    const [deviceProgress, setDeviceProgress] = useState(null)
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)
     const [missing, setMissing] = useState(false)
@@ -143,6 +146,7 @@ export default function TrackDetail() {
             try {
                 const data = await getTrack(slug)
                 setTrack(data)
+                setDeviceProgress(await localLearnerProgressStore.getPathwayProgress(data.id))
 
                 // Fetch progress if logged in
                 if (isAuthenticated) {
@@ -168,6 +172,24 @@ export default function TrackDetail() {
     const [showDiagnostic, setShowDiagnostic] = useState(false)
 
     useEffect(() => {
+        if (!isAuthenticated || !location.state?.openDiagnostic) return
+        setShowDiagnostic(true)
+        navigate(`/track/${slug}`, { replace: true, state: null })
+    }, [isAuthenticated, location.state, navigate, slug])
+
+    useEffect(() => {
+        if (!track || !location.hash) return
+        let targetId
+        try {
+            targetId = decodeURIComponent(location.hash.slice(1))
+        } catch {
+            return
+        }
+        const target = document.getElementById(targetId)
+        target?.scrollIntoView({ block: 'start' })
+    }, [location.hash, track])
+
+    useEffect(() => {
         if (!track) return
 
         const savedOutcome = user?.onboarding?.completedTrack?.slug === slug ? user.onboarding : null
@@ -188,7 +210,7 @@ export default function TrackDetail() {
 
     const handleStartDiagnostic = () => {
         if (!isAuthenticated) {
-            navigate('/login', { state: { from: { pathname: `/track/${slug}` } } })
+            navigate('/login', { state: { from: { pathname: `/track/${slug}`, state: { openDiagnostic: true } } } })
             return
         }
         setShowDiagnostic(true)
@@ -221,7 +243,7 @@ export default function TrackDetail() {
                 <div className="container-app text-center">
                     <h1 className="text-2xl font-bold text-dark-50 mb-4">We couldn't load this pathway</h1>
                     <p className="text-dark-400 mb-6">{error || 'Something went wrong. Please try again.'}</p>
-                    <Link to="/tracks" className="btn-primary">
+                    <Link to="/tracks#pathway-finder" className="btn-primary">
                         View all tracks
                     </Link>
                 </div>
@@ -233,7 +255,11 @@ export default function TrackDetail() {
     const totalQuestions = track.topics.reduce((sum, t) => sum + t.questionCount, 0)
     const lessonTime = formatLessonTime(track.estimatedMinutes)
     const expectedStudyTime = formatLessonTime(track.expectedStudyMinutes)
-    const progressPercent = progressData?.overall?.percentage ?? null
+    const deviceCompletedLessons = deviceProgress?.completedLessonIds?.length || 0
+    const deviceProgressPercent = totalLessons > 0
+        ? Math.min(100, Math.round((deviceCompletedLessons / totalLessons) * 100))
+        : (deviceProgress ? 0 : null)
+    const progressPercent = progressData?.overall?.percentage ?? deviceProgressPercent
     const trackMastered = !!progressData?.overall?.isMastered
     const topicsMastered = progressData?.topicsMastered ?? 0
     const topicsTotal = progressData?.topics?.length ?? 0
@@ -280,7 +306,7 @@ export default function TrackDetail() {
 
             <div className="container-app">
                 <nav className="mb-6 text-sm">
-                    <Link to="/tracks" className="text-dark-400 hover:text-dark-200">Pathways</Link>
+                    <Link to="/tracks#pathway-finder" className="text-dark-400 hover:text-dark-200">Pathways</Link>
                     <span className="mx-2 text-dark-600">/</span>
                     <span className="text-dark-200">{track.title}</span>
                 </nav>
@@ -305,6 +331,11 @@ export default function TrackDetail() {
                             <p className="text-dark-300 text-lg max-w-2xl mb-6 leading-8">
                                 {track.description}
                             </p>
+
+                            <a href="#topic-outline" className="btn-primary mb-6 inline-flex">
+                                View topics and start learning
+                                <ArrowRight className="h-4 w-4" />
+                            </a>
 
                             <div className="mb-6 rounded-2xl border border-accent-500/25 bg-accent-500/10 p-4 text-sm leading-7 text-dark-200">
                                 <div className="flex items-start gap-3">
@@ -446,7 +477,7 @@ export default function TrackDetail() {
                                         />
                                     </div>
                                     <div className="flex justify-between text-xs text-dark-400">
-                                        <span>{topicsMastered} / {topicsTotal} topics mastered</span>
+                                        <span>{progressData ? `${topicsMastered} / ${topicsTotal} topics mastered` : `${deviceCompletedLessons} / ${totalLessons} lessons completed on this device`}</span>
                                         <span>{progressPercent}%</span>
                                     </div>
 
@@ -550,14 +581,14 @@ export default function TrackDetail() {
 
                             {progressPercent === null && (
                                 <div className="mt-6 rounded-2xl border border-dark-800/80 bg-dark-900/60 p-4 text-sm leading-7 text-dark-300">
-                                    Start with the diagnostic if you want a guided placement, or open the suggested topic and move through the pathway one step at a time.
+                                    Your progress is 0%. Open the suggested topic and start a lesson or practice set now. A diagnostic is optional and requires an account because it saves a named placement record.
                                 </div>
                             )}
                         </div>
                     </div>
                 </div>
 
-                <div id="topic-outline">
+                <div id="topic-outline" className="scroll-mt-24">
                     <div className="mb-6 flex items-end justify-between gap-4">
                         <div>
                             <span className="section-eyebrow">
