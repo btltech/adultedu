@@ -1,10 +1,12 @@
-FROM node:20-bullseye-slim
+FROM node:20-bookworm-slim
 
 WORKDIR /app
 
-# Install OpenSSL and ca-certificates required by Prisma
+# Install OpenSSL and ca-certificates required by Prisma. Debian 12 ships
+# OpenSSL 3 (there is no libssl1.1 package); Prisma detects the version when
+# the client is generated, so no binaryTargets are pinned in the schema.
 RUN apt-get update && \
-    apt-get install -y libssl1.1 ca-certificates --no-install-recommends && \
+    apt-get install -y openssl ca-certificates --no-install-recommends && \
     rm -rf /var/lib/apt/lists/*
 
 COPY package*.json ./
