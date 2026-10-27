@@ -16,6 +16,9 @@ build/
 # Database
 *.db
 *.db-journal
+# Database backups/snapshots can hold user emails, password hashes and session tokens.
+*.db.backup*
+*.sqlite.backup*
 prisma/*.db
 backend/prisma/backups/
 
