@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom'
 import { ArrowLeft, ArrowRight, Bookmark, BookOpenCheck, CheckCircle2, Clock3, GraduationCap, Lightbulb, ListChecks, Mic, NotebookPen, Play, Square, Target, Trash2, TriangleAlert } from 'lucide-react'
 import { api, getUserMessage } from '../lib/api'
 import LearningPathPanel from '../components/LearningPathPanel'
+import ListenButton from '../components/ListenButton'
 import NotFound from './NotFound'
 import { getLessonWidget } from '../components/lesson/widgets'
 import { usePageSeo } from '../components/SEO'
@@ -487,6 +488,8 @@ export default function Lesson() {
                             {lesson.summary && (
                                 <p className="mt-4 max-w-3xl text-lg leading-8 text-dark-300">{lesson.summary}</p>
                             )}
+
+                            <ListenButton lesson={lesson} />
 
                             <div className="mt-6 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
                                 <div className="learning-stat">
