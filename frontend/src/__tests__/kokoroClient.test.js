@@ -21,7 +21,13 @@ describe('kokoroClient', () => {
     beforeEach(() => {
         resetKokoroForTests()
         FakeWorker.instances = []
-        localStorage.clear()
+        const storage = new Map()
+        vi.stubGlobal('localStorage', {
+            getItem: (key) => storage.get(String(key)) ?? null,
+            setItem: (key, value) => storage.set(String(key), String(value)),
+            removeItem: (key) => storage.delete(String(key)),
+            clear: () => storage.clear(),
+        })
         vi.stubGlobal('Worker', FakeWorker)
         vi.stubGlobal('caches', {})
         vi.stubGlobal('AudioContext', class {})
