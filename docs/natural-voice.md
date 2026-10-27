@@ -24,9 +24,9 @@ huggingface.co:
   bound as `MODEL_STORE`. Without the binding it returns 503 and the switch stays hidden.
 - The model files are the same ones the KS2 app uses: `models/kokoro-82m-v1.0/` in the
   `demiwuraks2-app-audio` bucket (`config.json`, `tokenizer.json`, `tokenizer_config.json`,
-  `onnx/model_quantized.onnx`, `voices/bf_emma.bin`). If this project is in the same Cloudflare
-  account, just uncomment the `[[r2_buckets]]` block in `frontend/wrangler.toml` and deploy.
-  Otherwise upload those files to your own bucket and change `bucket_name`.
+  `onnx/model_quantized.onnx`, `voices/bf_emma.bin`). This project is in the same Cloudflare
+  account, so the `[[r2_buckets]]` block in `frontend/wrangler.toml` is enabled. If you move it to
+  another account, upload those files to your own bucket and change `bucket_name`.
 - `scripts/copy-onnx-runtime.mjs` (runs before `dev`/`build`) copies the ONNX WebAssembly runtime to
   `public/onnxruntime/` so it also loads from this site. The copy is gitignored.
 - `functions/_middleware.js` now allows `'wasm-unsafe-eval'` in `script-src`. Without it the
