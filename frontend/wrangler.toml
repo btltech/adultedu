@@ -12,3 +12,11 @@ pages_build_output_dir = "./dist"
 
 [vars]
 API_ORIGIN = "https://backend-production-bec9d.up.railway.app"
+
+# Natural English voice (Kokoro). The model files are served from R2 by
+# functions/api/kokoro-model. The bucket is in the same Cloudflare account as this Pages
+# project (verified). If the binding is ever removed, the Listen button simply keeps using
+# the browser voice. See docs/natural-voice.md.
+[[r2_buckets]]
+binding = "MODEL_STORE"
+bucket_name = "demiwuraks2-app-audio"
