@@ -1,12 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Eye, Headphones, Type, X } from 'lucide-react'
-import {
-    disableKokoro,
-    enableKokoro,
-    getKokoroState,
-    probeKokoroAvailable,
-    subscribeKokoro,
-} from '../lib/speech/kokoroClient'
+import { Eye, Type, X } from 'lucide-react'
 import { cloudLearnerProgressStore, localLearnerProgressStore } from '../lib/learnerProgress'
 import { useAuth } from '../context/AuthContext'
 
@@ -45,12 +38,6 @@ export default function DisplayPreferences({ isOpen, onClose }) {
     const [textSize, setTextSize] = useState('default')
     const [contrast, setContrast] = useState('default')
     const [preferencesLoaded, setPreferencesLoaded] = useState(false)
-    const [naturalVoice, setNaturalVoice] = useState(getKokoroState())
-
-    useEffect(() => subscribeKokoro(setNaturalVoice), [])
-    useEffect(() => {
-        if (isOpen) probeKokoroAvailable().catch(() => {})
-    }, [isOpen])
 
     useEffect(() => {
         let cancelled = false
@@ -164,32 +151,6 @@ export default function DisplayPreferences({ isOpen, onClose }) {
                         ))}
                     </div>
                 </div>
-
-                {naturalVoice.available && (
-                    <div>
-                        <div className="mb-2 flex items-center gap-2 text-xs font-medium text-dark-200">
-                            <Headphones className="h-3.5 w-3.5 text-accent-300" />
-                            Natural voice
-                        </div>
-                        <button
-                            type="button"
-                            onClick={() => (naturalVoice.status === 'off' ? enableKokoro() : disableKokoro())}
-                            aria-pressed={naturalVoice.status !== 'off'}
-                            className={`rounded-full px-3 py-1.5 text-xs font-medium transition-all ${naturalVoice.status !== 'off'
-                                ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/20'
-                                : 'border border-dark-700 bg-dark-900/70 text-dark-300 hover:border-dark-500 hover:text-dark-100'
-                                }`}
-                        >
-                            {naturalVoice.status === 'off' ? 'Turn on' : 'On'}
-                        </button>
-                        <p className="mt-2 text-xs leading-5 text-dark-400" role="status" aria-live="polite">
-                            {naturalVoice.status === 'loading' && `Downloading voice… ${Math.round(naturalVoice.progress * 100)}%`}
-                            {naturalVoice.status === 'ready' && 'Ready. Works offline and nothing you read leaves this device.'}
-                            {naturalVoice.status === 'error' && (naturalVoice.error || 'The natural voice could not start. The standard voice is used instead.')}
-                            {(naturalVoice.status === 'off' || naturalVoice.status === 'idle') && 'A more natural English voice for "Listen". One-off download of about 90MB, best on Wi-Fi.'}
-                        </p>
-                    </div>
-                )}
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ const SECURITY_HEADERS = {
         "img-src 'self' data: https:",
         "font-src 'self' data: https://fonts.gstatic.com",
         "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-        "script-src 'self' 'wasm-unsafe-eval'",
+        "script-src 'self'",
         "connect-src 'self'",
         "worker-src 'self'",
         "object-src 'none'",
