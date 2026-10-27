@@ -7,9 +7,24 @@ const curriculumCacheVersion = process.env.VITE_CURRICULUM_CACHE_VERSION
   || 'schema-v1'
 
 // https://vitejs.dev/config/
+// transformers.js bundles its own copy of the ONNX WebAssembly runtime (~21MB), but the
+// natural-voice worker loads it from /onnxruntime instead (see copy-onnx-runtime.mjs),
+// so don't ship the unused duplicate.
+const dropBundledOnnxWasm = () => ({
+  name: 'drop-bundled-onnx-wasm',
+  generateBundle(_options, bundle) {
+    for (const name of Object.keys(bundle)) {
+      if (/(^|\/)ort-wasm[^/]*\.wasm$/.test(name)) delete bundle[name]
+    }
+  },
+})
+
 export default defineConfig({
+  // The natural-voice worker is an ES module with dynamic imports.
+  worker: { format: 'es' },
   plugins: [
     react(),
+    dropBundledOnnxWasm(),
     VitePWA({
       injectRegister: null,
       registerType: 'autoUpdate',
@@ -19,6 +34,8 @@ export default defineConfig({
         cleanupOutdatedCaches: true,
         clientsClaim: true,
         globPatterns: ['**/*.{js,css,html,ico,png,svg,woff2}'],
+        // The natural-voice worker is loaded on demand, only after a learner opts in.
+        globIgnores: ['**/kokoro.worker-*.js'],
         skipWaiting: true,
         runtimeCaching: [
           {
